@@ -312,12 +312,12 @@
 
 <div class="viewcode-block" id="export"><a class="viewcode-back" href="../../../laygo2.interface.html#laygo2.interface.magic.export">[docs]</a><span class="k">def</span> <span class="nf">export</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">libpath</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">reset_library</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tech_library</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Export a design object to magic(tcl) code.</span>
+<span class="sd">    Export design(s) to magic&#39;s tcl code.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    db: laygo2.database.Library</span>
-<span class="sd">        Design to export</span>
+<span class="sd">        The library database to be exported.</span>
 <span class="sd">    filename: str, optional</span>
 <span class="sd">        If specified, the generated magic(tcl) script is stored in filename.</span>
 <span class="sd">    cellname: str or List[str]</span>
@@ -328,7 +328,12 @@
 <span class="sd">        If True, the library to export the cells is reset.</span>
 <span class="sd">    tech_library: str, optional</span>
 <span class="sd">        The name of technology library to be attached to the resetted library.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str: the string object contains corresponding tcl scripts.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="c1"># parse header functions.</span>
     <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;# laygo2 layout export magic(tcl) script.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
     <span class="kn">import</span> <span class="nn">os</span>

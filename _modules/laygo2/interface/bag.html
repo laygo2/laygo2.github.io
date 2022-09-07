@@ -185,6 +185,28 @@
 
 <div class="viewcode-block" id="export"><a class="viewcode-back" href="../../../laygo2.interface.html#laygo2.interface.bag.export">[docs]</a><span class="k">def</span> <span class="nf">export</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">cellname</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">reset_library</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tech_library</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">skill_str</span><span class="o">=</span><span class="n">laygo2</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">skill</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">cellname</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">reset_library</span><span class="p">,</span> <span class="n">tech_library</span><span class="p">)</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Export design(s) to BAG2.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    db: laygo2.database.Library</span>
+<span class="sd">        The library database to be exported.</span>
+<span class="sd">    filename: str, optional</span>
+<span class="sd">        The path of the intermediate skill scipt file.</span>
+<span class="sd">    cellname: str or List[str]</span>
+<span class="sd">        The name(s) of cell(s) to be exported.</span>
+<span class="sd">    scale: float</span>
+<span class="sd">        The scaling factor between laygo2&#39;s integer coordinats actual physical coordinates.</span>
+<span class="sd">    reset_library: bool, optional</span>
+<span class="sd">        If True, the library to export the cells is reset.</span>
+<span class="sd">    tech_library: str, optional</span>
+<span class="sd">        The name of technology library to be attached to the resetted library.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str: the string object contains corresponding skill scripts.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="kn">import</span> <span class="nn">bag</span>
     <span class="n">prj</span><span class="o">=</span><span class="n">bag</span><span class="o">.</span><span class="n">BagProject</span><span class="p">()</span>

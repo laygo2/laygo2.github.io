@@ -422,7 +422,7 @@
 <td><p>The coordinates of the secondary corner of the object.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.VirtualInstance.size" title="laygo2.object.physical.VirtualInstance.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a></p></td>
-<td><p>The size of the object.</p></td>
+<td><p>The size of the object ([width, height]).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.physical.VirtualInstance.pitch" title="laygo2.object.physical.VirtualInstance.pitch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pitch</span></code></a></p></td>
 <td><p>Get the pitch of the instance.</p></td>
@@ -629,7 +629,7 @@
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)">object</a> (laygo2.VirtualInstance)</p>
+<dd class="field-even"><p>laygo2.VirtualInstance</p>
 </dd>
 </dl>
 <div class="admonition seealso">
@@ -644,23 +644,19 @@
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_VirtualInstance_init.png"><img alt="_images/object_physical_VirtualInstance_init.png" src="_images/object_physical_VirtualInstance_init.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>:     VirtualInstance 클래스의 생성자 함수</p>
+<p><strong>Reference in Korean</strong>: VirtualInstance 클래스의 생성자.</p>
 <p>파라미터</p>
-<p>xy(numpy.ndarray): 객체의 주좌표 [x0, y0]</p>
-<p>libname(str): 객체의 library 이름</p>
-<p>cellname(str): 객체의 cell이름</p>
-<p>native_elements(dict): 객체를 구성하는 물리객체를 갖는 Dict</p>
-<p>shape(numpy.ndarray): elements 의 shape</p>
-<p>pitch(numpy.ndarray): 배열로 구성된 객체의 하위객체간 간격</p>
-<p>transform(str): 객체의 변환 속성</p>
-<p>unit_size(list): 객체의 단위 크기</p>
-<p>pins(dict): 객체에 속한 핀들을 갖는 Dictionary</p>
-<p>name(str): 객체의 이름</p>
-<p>params(dict): 객체의 속성을 갖는 Dictionary</p>
-<p>반환값</p>
-<p>object (laygo2.VirtualInstance)</p>
-<p>참조</p>
-<p>Class Instance</p>
+<p>xy(numpy.ndarray): 객체의 주좌표 [x0, y0].</p>
+<p>libname(str): 객체의 library 이름.</p>
+<p>cellname(str): 객체의 cell이름.</p>
+<p>native_elements(dict): 객체를 구성하는 물리 객체를 갖는 dict.</p>
+<p>shape(numpy.ndarray): elements의 배열 크기 ([col, row]).</p>
+<p>pitch(numpy.ndarray): 배열로 구성된 객체의 하위 객체 (element)간의 간격.</p>
+<p>transform(str): 객체의 변환 속성 (R0, MX, MY 등).</p>
+<p>unit_size(list): 객체의 단위 크기.</p>
+<p>pins(dict): 객체에 속한 핀들을 갖는 dict.</p>
+<p>name(str): 객체의 이름.</p>
+<p>params(dict): 객체의 주요 속성을 갖는 dict.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -772,7 +768,7 @@
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_bbox.png"><img alt="_images/object_physical_PhysicalObject_bbox.png" src="_images/object_physical_PhysicalObject_bbox.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: numpy.ndarray: Physical 객체의 bbox.</p>
+<p><strong>Reference in Korean</strong>: numpy.ndarray: 객체의 bbox (bounding box).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -792,7 +788,7 @@
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_bottom.png"><img alt="_images/object_physical_PhysicalObject_bottom.png" src="_images/object_physical_PhysicalObject_bottom.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: Physical 객체의 bottom pointer.</p>
+<p><strong>Reference in Korean</strong>: 객체의 bottom-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -812,7 +808,7 @@
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_bottom_left.png"><img alt="_images/object_physical_PhysicalObject_bottom_left.png" src="_images/object_physical_PhysicalObject_bottom_left.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: Physical 객체의 bottom_left pointer.</p>
+<p><strong>Reference in Korean</strong>: 객체의 bottom-left 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -832,7 +828,7 @@
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_bottom_right.png"><img alt="_images/object_physical_PhysicalObject_bottom_right.png" src="_images/object_physical_PhysicalObject_bottom_right.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: Physical 객체의 bottom_right pointer.</p>
+<p><strong>Reference in Korean</strong>: 객체의 bottom-right 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -875,7 +871,7 @@ mycell
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_center.png"><img alt="_images/object_physical_PhysicalObject_center.png" src="_images/object_physical_PhysicalObject_center.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: Physical 객체의 center pointer.</p>
+<p><strong>Reference in Korean</strong>: 객체의 center-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -900,7 +896,7 @@ mycell
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: 객체의 하위 구성원.</p>
+<p><strong>Reference in Korean</strong>: 객체의 하위 구성원을 담고 있는 list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -954,7 +950,7 @@ mycell
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_left.png"><img alt="_images/object_physical_PhysicalObject_left.png" src="_images/object_physical_PhysicalObject_left.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: Physical 객체의 left pointer.</p>
+<p><strong>Reference in Korean</strong>: 객체의 left-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -996,7 +992,7 @@ mylib
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: Physical 객체의 master.</p>
+<p><strong>Reference in Korean</strong>: 객체의 master (배열 element 또는 pin 객체들의 master 객체에 연결).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1016,7 +1012,7 @@ mylib
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_name.png"><img alt="_images/object_physical_PhysicalObject_name.png" src="_images/object_physical_PhysicalObject_name.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: Physical 객체의 이름.</p>
+<p><strong>Reference in Korean</strong>: 객체의 이름.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
@@ -1043,7 +1039,7 @@ mylib
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_VirtualInstance_native_elements.png"><img alt="_images/object_physical_VirtualInstance_native_elements.png" src="_images/object_physical_VirtualInstance_native_elements.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: 객체를 구성하는 물리객체들을 갖고있는 Dict.</p>
+<p><strong>Reference in Korean</strong>: 객체를 구성하는 하위 물리 객체들(Rect, Path, Pin, Text, Instance 등)을 갖고 있는 dict.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
@@ -1062,7 +1058,7 @@ mylib
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: Physical 객체의 속성.</p>
+<p><strong>Reference in Korean</strong>: 객체의 속성.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
@@ -1091,7 +1087,7 @@ mylib
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_instance_pins.png"><img alt="_images/object_physical_instance_pins.png" src="_images/object_physical_instance_pins.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: 객체에 속한 핀들을 갖는 Dict.</p>
+<p><strong>Reference in Korean</strong>: 객체에 속한 핀들을 갖는 dict.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
@@ -1128,7 +1124,7 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_pointers.png"><img alt="_images/object_physical_PhysicalObject_pointers.png" src="_images/object_physical_PhysicalObject_pointers.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: Physical 객체의 주요좌표들.</p>
+<p><strong>Reference in Korean</strong>: 객체의 주요 좌표들을 담고 있는 dict.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
@@ -1148,7 +1144,7 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_right.png"><img alt="_images/object_physical_PhysicalObject_right.png" src="_images/object_physical_PhysicalObject_right.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: Physical 객체의 right pointer.</p>
+<p><strong>Reference in Korean</strong>: 객체의 right-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1170,7 +1166,7 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.size">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.size" title="Permalink to this definition"></a></dt>
-<dd><p>The size of the object.</p>
+<dd><p>The size of the object ([width, height]).</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; inst0_pins = dict()
 &gt;&gt;&gt; inst0_pins[‘in’] = physical.Pin( xy = [[0, 0], [10,10]], layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in’)
@@ -1182,7 +1178,7 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_instance_size.png"><img alt="_images/object_physical_instance_size.png" src="_images/object_physical_instance_size.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>:     numpy.ndarray: 객체의 크기.</p>
+<p><strong>Reference in Korean</strong>:     numpy.ndarray: 객체의 크기 ([width, height]).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1207,7 +1203,7 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_top.png"><img alt="_images/object_physical_PhysicalObject_top.png" src="_images/object_physical_PhysicalObject_top.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: Physical 객체의 top pointer.</p>
+<p><strong>Reference in Korean</strong>: 객체의 top-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1227,7 +1223,7 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_top_left.png"><img alt="_images/object_physical_PhysicalObject_top_left.png" src="_images/object_physical_PhysicalObject_top_left.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: Physical 객체의 top_left pointer.</p>
+<p><strong>Reference in Korean</strong>: 객체의 top-left 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1247,7 +1243,7 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_top_right.png"><img alt="_images/object_physical_PhysicalObject_top_right.png" src="_images/object_physical_PhysicalObject_top_right.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: Physical 객체의 top_right pointer.</p>
+<p><strong>Reference in Korean</strong>: 객체의 top-right 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1270,7 +1266,7 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_instance_transform.png"><img alt="_images/object_physical_instance_transform.png" src="_images/object_physical_instance_transform.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: 객체의 변환 속성.</p>
+<p><strong>Reference in Korean</strong>: 객체의 변환 속성 (R0, MX, MY 등).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>

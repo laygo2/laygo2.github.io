@@ -161,13 +161,13 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#from-github-repository">
-     From github repository
+    <a class="reference internal nav-link" href="#installing-laygo2-from-github">
+     Installing laygo2 from github
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#from-pypi-not-verified">
-     From Pypi (not verified)
+    <a class="reference internal nav-link" href="#installing-laygo2-from-pypi">
+     Installing laygo2 from Pypi
     </a>
    </li>
   </ul>
@@ -214,10 +214,11 @@ laygo in linux environments.
 -->
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
-<section id="from-github-repository">
-<h3>From github repository<a class="headerlink" href="#from-github-repository" title="Permalink to this headline"></a></h3>
-<p>Users can easily download and install the laygo2 package by cloning its github
-repository by using the following command.</p>
+<p>There are two ways of installing laygo2 on your environment; 1) cloning from github and 2) running pip.</p>
+<section id="installing-laygo2-from-github">
+<h3>Installing laygo2 from github<a class="headerlink" href="#installing-laygo2-from-github" title="Permalink to this headline"></a></h3>
+<p>Users can download and install the laygo2 package by cloning its github
+repository by typing the following command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;&gt; git clone https://github.com/niftylab/laygo2.git
 </pre></div>
 </div>
@@ -225,16 +226,14 @@ repository by using the following command.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;&gt; git pull origin master
 </pre></div>
 </div>
-<p>Secondly, update the PHTHONPATH environment variable to import the laygo2 package.
-(The example shown below is the simplest one for beginners, and we recommend to use a virtual environment for
-advanced users.)</p>
+<p>After that, update the PHTHONPATH environment variable to point out the laygo2 package path for importing.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># (csh/tcsh example) add the following command to your .cshrc
 setenv PYTHONPATH ${PYTHONPATH}:[LAYGO2_INSTALLATION_DIR]/laygo2
 </pre></div>
 </div>
 </section>
-<section id="from-pypi-not-verified">
-<h3>From Pypi (not verified)<a class="headerlink" href="#from-pypi-not-verified" title="Permalink to this headline"></a></h3>
+<section id="installing-laygo2-from-pypi">
+<h3>Installing laygo2 from Pypi<a class="headerlink" href="#installing-laygo2-from-pypi" title="Permalink to this headline"></a></h3>
 <p>Instead of cloning github repository, laygo2 package can be installed by running the following pip command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;&gt; pip install laygo2
 </pre></div>
@@ -243,12 +242,22 @@ setenv PYTHONPATH ${PYTHONPATH}:[LAYGO2_INSTALLATION_DIR]/laygo2
 </section>
 <section id="technology-setup-for-laygo2">
 <h2>Technology setup for laygo2<a class="headerlink" href="#technology-setup-for-laygo2" title="Permalink to this headline"></a></h2>
-<p>To be added</p>
+<p>Users need to set up the following files in laygo_tech.py to enable laygo2 for a new technology:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>laygo2_tech_templayes.py  # for templates
+laygo2_tech_grids.py      # for grids
+laygo2_tech.yaml          # for technology parameters
+</pre></div>
+</div>
+<p>A bare-minimum tech setup for quick_start.py can be found <a class="reference external" href="https://github.com/niftylab/laygo2/tree/master/laygo2/examples/laygo2_tech">here</a>.
+A more complete tech setup example for gpdk045 can be found <a class="reference external" href="https://github.com/niftylab/laygo2_workspace_gpdk045/tree/master/laygo2_tech_example">here</a>.</p>
 </section>
 <section id="simple-gate-generation">
 <h2>Simple gate generation<a class="headerlink" href="#simple-gate-generation" title="Permalink to this headline"></a></h2>
 <p>Running the following command will generate a NAND gate layout.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;&gt; run ./laygo2/examples/nand_generate.py
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(after git clone)
+&gt;&gt;&gt;&gt; cd laygo2 
+&gt;&gt;&gt;&gt; python -m quick_start.py
+(or you can run ipython and type run &#39;quick_start.py&#39; instead)
 </pre></div>
 </div>
 <p>The resulting layout of the NAND gate is shown in the figure below:</p>

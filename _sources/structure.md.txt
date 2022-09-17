@@ -16,7 +16,7 @@ The folowing modules compose the object package:
 * **[physical module](#physical-module)** is defining classes for physical objects that compose actual IC layouts.
 * **[template module](#template-module)** describes classes for templates that generate various 
 instance objects for target technology and design parameters.
-* **[grid module](#grid-module)* describes grid classes to abstract placement and routing coordinates.
+* **[grid module](#grid-module)** describes grid classes to abstract placement and routing coordinates.
 parameterizations.
 * **[database module](#database-module)** implements classes for design hierarchy management.
 

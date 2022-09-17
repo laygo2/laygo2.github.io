@@ -156,11 +156,6 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#laygo2-tech-layermap">
-   laygo2_tech.layermap
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#laygo2-tech-templates-py">
    laygo2_tech_templates.py
   </a>
@@ -178,6 +173,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#init-py">
    __init__.py
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laygo2-tech-layermap">
+   laygo2_tech.layermap
   </a>
  </li>
 </ul>
@@ -214,14 +214,6 @@
 </ul>
 <p>A simple example for the technology setup for Laygo2 can be found <a class="reference external" href="https://github.com/niftylab/laygo2/tree/master/laygo2/examples/laygo2_tech">here</a>.</p>
 <p>Please find detailed descriptions for the listed files below:</p>
-<section id="laygo2-tech-layermap">
-<h2>laygo2_tech.layermap<a class="headerlink" href="#laygo2-tech-layermap" title="Permalink to this headline"></a></h2>
-<p>Contains layer mapping information for the target technology, which is used for layout object generation, gds export, and skill export.</p>
-<p>The layermap file is normally provided by the technology ventor.
-If the layermap file is created manually by users, please use the following format to define layer information.</p>
-<p><em>layername layerpurpose stream_layer_number datatype</em></p>
-<p>(please find the example layermap file for reference).</p>
-</section>
 <section id="laygo2-tech-templates-py">
 <h2>laygo2_tech_templates.py<a class="headerlink" href="#laygo2-tech-templates-py" title="Permalink to this headline"></a></h2>
 <p>The python module that contains technology-specific templates. When the load_templates() in the module is called,
@@ -243,6 +235,14 @@ The example file contains various technology parameters such as unit resolutons,
 <section id="init-py">
 <h2>__init__.py<a class="headerlink" href="#init-py" title="Permalink to this headline"></a></h2>
 <p>This initialization file contains code to read out load_templates / load_grids funtions when the package is loaded.</p>
+</section>
+<section id="laygo2-tech-layermap">
+<h2>laygo2_tech.layermap<a class="headerlink" href="#laygo2-tech-layermap" title="Permalink to this headline"></a></h2>
+<p>Contains layer mapping information for the target technology, which is used for layout object generation, gds export, and skill export.</p>
+<p>The layermap file is normally provided by the technology ventor.
+If the layermap file is created manually by users, please use the following format to define layer information.</p>
+<p><em>layername layerpurpose stream_layer_number datatype</em></p>
+<p>(please find the example layermap file for reference).</p>
 </section>
 </section>
 

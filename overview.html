@@ -161,8 +161,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quick-trials">
-   Quick trials
+  <a class="reference internal nav-link" href="#quick-trial">
+   Quick trial
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -171,13 +171,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#laygo2-design-flow">
-   laygo2 design flow
+  <a class="reference internal nav-link" href="#typical-design-flow">
+   Typical design flow
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#developer-list">
-   Developer list
+  <a class="reference internal nav-link" href="#list-of-developers">
+   List of developers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -210,19 +210,19 @@
 <h1>laygo2 Overview<a class="headerlink" href="#laygo2-overview" title="Permalink to this headline"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
-<p>The LAYout with Gridded Object 2 (laygo2) package is a Python-based layout generation framework with the following goals:</p>
+<p><strong>The LAYout with Gridded Object 2 (laygo2)</strong> package is a Python-based layout generation framework with the following goals:</p>
 <ul class="simple">
 <li><p>Automation and reuse of layout generation process.</p></li>
 <li><p>Parametrized layout generation.</p></li>
 <li><p>Layout automation in advanced technologies such as FinFET.</p></li>
 <li><p>Code-based layout generation.</p></li>
 </ul>
-<p>LAYGO, the previous version of laygo2, is orignally developed as one of layout generation engines in
-Berkeley Analog Generator2 (BAG2), and laygo2 extends the origial LAYGO’s functions and capabilities.
+<p><strong>LAYGO</strong>, the previous version of laygo2, is orignally developed as one of layout generation engines in
+<strong>Berkeley Analog Generator2 (BAG2)</strong>, and laygo2 extends the origial LAYGO’s functions and capabilities.
 laygo2 can be launched either in standalone mode or in combination with BAG2.</p>
 <p><strong>The major features supported by both LAYGO and laygo2 are summarized below:</strong></p>
 <ol class="arabic simple">
-<li><p><strong>Template and grid-based device placements</strong>: LAYGO enhances the portability and reusability of layout
+<li><p><strong>Template and grid-based device placements</strong>: LAYGO/laygo2 enhances the portability and reusability of layout
 generation process by using abstract grids and instances (templates), without directly dealing with physical
 instances and coordinates.</p></li>
 <li><p><strong>Instance placements based on relative information</strong>: The process portability is maximized by enhancing
@@ -246,34 +246,36 @@ of the primitive template class (Template) for new template definitions.</p></li
 <li><p><strong>Advanced instanced and grid indexing</strong>: Instance and grid objects are tightly integrated to Numpy
 array objects, to support advanced indexing and slicing functions. The grid objects especially extend
 the Numpy array to implement unlimited indexing over their defined ranges.</p></li>
-<li><p><strong>Code quality enhancement and refactoring</strong></p></li>
-<li><p>(on-going) <strong>More documents and tests added</strong></p></li>
-<li><p>(on-going) <strong>Generator code separated from the main framework</strong></p></li>
+<li><p><strong>Code quality enhancement and refactoring</strong>.</p></li>
+<li><p>(on-going) <strong>More documents and tests added</strong>.</p></li>
+<li><p>(on-going) <strong>Generator code separated from the main framework</strong>.</p></li>
 </ol>
 </section>
-<section id="quick-trials">
-<h2>Quick trials<a class="headerlink" href="#quick-trials" title="Permalink to this headline"></a></h2>
+<section id="quick-trial">
+<h2>Quick trial<a class="headerlink" href="#quick-trial" title="Permalink to this headline"></a></h2>
 <p>Example procedures to install and generate simple structures are introduced in the <strong><a class="reference internal" href="trial.html"><span class="doc std std-doc">Trial</span></a></strong> page to help users to understand the basic dynamics of laygo2.</p>
 </section>
 <section id="laygo2-structure">
 <h2>laygo2 structure<a class="headerlink" href="#laygo2-structure" title="Permalink to this headline"></a></h2>
 <p>The structures of packages and modules in laygo2 are described in the <strong><a class="reference internal" href="structure.html"><span class="doc std std-doc">Structure</span></a></strong> page.</p>
-<p><img alt="laygo2 UML diagram" src="_images/user_guide_uml.png" /></p>
 </section>
-<section id="laygo2-design-flow">
-<h2>laygo2 design flow<a class="headerlink" href="#laygo2-design-flow" title="Permalink to this headline"></a></h2>
+<section id="typical-design-flow">
+<h2>Typical design flow<a class="headerlink" href="#typical-design-flow" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
-<li><p>Load technology parameters, primitive templates, and grids.</p></li>
-<li><p>Generate instances from templates.</p></li>
-<li><p>Place the generated instances.</p></li>
-<li><p>Route wires and vias between the instances’ terminals.</p></li>
-<li><p>Pin creation.</p></li>
-<li><p>Export the generated design in proper formats.</p></li>
-<li><p>(Optional) export the design as a new template.</p></li>
+<li><p>Load technology parameters, primitive templates, and grids
+(check <a class="reference external" href="https://github.com/niftylab/laygo2/blob/master/laygo2/examples/laygo2_tech/laygo2_tech_templates.py">laygo2_tech.load_templates()</a>
+and <a class="reference external" href="https://github.com/niftylab/laygo2/blob/master/laygo2/examples/laygo2_tech/laygo2_tech_grids.py">laygo2_tech.load_grids()</a>).</p></li>
+<li><p>Generate instances from templates (check <a class="reference external" href="https://laygo2.github.io/laygo2.object.template.Template.html#laygo2.object.template.Template.generate">object.Template.generate()</a>).</p></li>
+<li><p>Place the generated instances (check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.place">object.database.Design.place()</a>).</p></li>
+<li><p>Route wires and vias between the instances’ terminals (check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.route">object.database.Design.route()</a>).</p></li>
+<li><p>Pin creation (check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.pin">object.database.Design.pin()</a>).</p></li>
+<li><p>Export the generated design in proper formats
+(check <a class="reference external" href="https://laygo2.github.io/laygo2.interface.html#laygo2.interface.skill.export">interface.skill.export()</a>).</p></li>
+<li><p><em>(Optional)</em> export the design as a new template (check <a class="reference external" href="https://laygo2.github.io/laygo2.interface.html#laygo2.interface.yaml.export_template">interface.yaml.export_template()</a>).</p></li>
 </ol>
 </section>
-<section id="developer-list">
-<h2>Developer list<a class="headerlink" href="#developer-list" title="Permalink to this headline"></a></h2>
+<section id="list-of-developers">
+<h2>List of developers<a class="headerlink" href="#list-of-developers" title="Permalink to this headline"></a></h2>
 <p>See the <a class="reference external" href="https://github.com/niftylab/laygo2">github repository README</a> for the full list of developers and contributors.</p>
 </section>
 <section id="license">

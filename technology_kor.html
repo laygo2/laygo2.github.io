@@ -35,8 +35,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="laygo2 API Reference" href="laygo2.html" />
-    <link rel="prev" title="Laygo2의 구조" href="3_structure_kor_link.html" />
+    <link rel="prev" title="Laygo2의 구조" href="structure_kor.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -72,38 +71,38 @@
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="introduction_link.html">
-  User Guide
+ <a class="reference internal nav-link" href="overview.html">
+  Overview
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="examples_link.html">
+ <a class="reference internal nav-link" href="trial.html">
   Trial
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="structure_link.html">
+ <a class="reference internal nav-link" href="structure.html">
   Structure
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="technology_link.html">
+ <a class="reference internal nav-link" href="technology.html">
   Tech Setup
- </a>
-</li>
-
-<li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="introduction_kor.html">
-  Korean
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="laygo2.html">
   API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="kor.html">
+  Korean
  </a>
 </li>
 
@@ -138,17 +137,17 @@
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="readme_kor_link.html">
+  <a class="reference internal" href="readme_kor.html">
    Laygo2 사용자 안내서
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="2_examples_kor_link.html">
+  <a class="reference internal" href="trial_kor.html">
    laygo2의 쉬운 예제들
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="3_structure_kor_link.html">
+  <a class="reference internal" href="structure_kor.html">
    Laygo2의 구조
   </a>
  </li>
@@ -177,14 +176,6 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#technology-name-example-layermap">
-   <em>
-    (technology_name)
-   </em>
-   _example.layermap
-  </a>
- </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#technology-name-templates-py">
    <em>
@@ -215,6 +206,14 @@
     init
    </strong>
    .py
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technology-name-example-layermap">
+   <em>
+    (technology_name)
+   </em>
+   _example.layermap
   </a>
  </li>
 </ul>
@@ -252,15 +251,6 @@ laygo2 제네레이터 코드에서 관련 Paython module들(template, grid)를 
 </ul>
 <p>Laygo2의 공정 패키지 예제는 <span class="xref myst">다음 경로</span>에서 찾을 수 있다.</p>
 <p>공정 패키지를 구성하는 각각의 파일들에 대한 설명은 아래에 기술되어 있다.</p>
-<section id="technology-name-example-layermap">
-<h2><em>(technology_name)</em>_example.layermap<a class="headerlink" href="#technology-name-example-layermap" title="Permalink to this headline"></a></h2>
-<p>사용되는 공정 PDK에서 사용되는 layer 맵핑 정보를 가지고 있는 파일이며, 해당 layer정보들은
-내부 레이아웃 개체 생성 및 변환, GDS생성, Skill script출력 등에 사용된다.</p>
-<p>해당 layermap 파일은 일반적으로 공정 PDK에서 제공된다.
-사용자가 직접 layermap파일을 만들 경우, 행마다 레이어 정보를 정의하는 다음 형식의 파일을 생성하면 된다
-(상세한 내용은 예제 layermap 파일 참조).</p>
-<p><em>layername layerpurpose stream_layer_number datatype</em></p>
-</section>
 <section id="technology-name-templates-py">
 <h2><em>(technology_name)</em>_templates.py<a class="headerlink" href="#technology-name-templates-py" title="Permalink to this headline"></a></h2>
 <p>공정 패키지에서 제공되는 템플릿들을 정의하고 있는 파이썬 코드이며, 해당 파일의 load_templates()라는 함수가
@@ -287,6 +277,15 @@ load_grids()라는 함수가호출되면, 공정에서 사용될 다양한 그�
 <h2><strong>init</strong>.py<a class="headerlink" href="#init-py" title="Permalink to this headline"></a></h2>
 <p>패키지 로드시 load_templates / load_grids 함수들을 읽을 수 있도록 하는 코드가 들어 있다.</p>
 </section>
+<section id="technology-name-example-layermap">
+<h2><em>(technology_name)</em>_example.layermap<a class="headerlink" href="#technology-name-example-layermap" title="Permalink to this headline"></a></h2>
+<p>사용되는 공정 PDK에서 사용되는 layer 맵핑 정보를 가지고 있는 파일이며, 해당 layer정보들은
+내부 레이아웃 개체 생성 및 변환, GDS생성, Skill script출력 등에 사용된다.</p>
+<p>해당 layermap 파일은 일반적으로 공정 PDK에서 제공된다.
+사용자가 직접 layermap파일을 만들 경우, 행마다 레이어 정보를 정의하는 다음 형식의 파일을 생성하면 된다
+(상세한 내용은 예제 layermap 파일 참조).</p>
+<p><em>layername layerpurpose stream_layer_number datatype</em></p>
+</section>
 </section>
 
 
@@ -295,19 +294,12 @@ load_grids()라는 함수가호출되면, 공정에서 사용될 다양한 그�
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="3_structure_kor_link.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="structure_kor.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Laygo2의 구조</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="laygo2.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">laygo2 API Reference</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
               

@@ -96,14 +96,14 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="introduction_kor.html">
-  Korean
+ <a class="reference internal nav-link" href="laygo2.html">
+  API Reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="laygo2.html">
-  API Reference
+ <a class="reference internal nav-link" href="kor.html">
+  Korean
  </a>
 </li>
 
@@ -351,7 +351,7 @@
 <li><p><strong><a class="reference external" href="#util-package">util package</a></strong> contains useful functions for other sub-packages.</p></li>
 </ul>
 <p>The following figure illustrates a UML diagram of laygo2.
-<img alt="laygo2 UML diagram" src="_images/user_guide_uml1.png" /></p>
+<img alt="laygo2 UML diagram" src="_images/user_guide_uml.png" /></p>
 <p>Introductions to the sub-packages can be found in the following sections, and see the API documentation
 (to be added) for more detailed explanations.</p>
 <section id="object-package">
@@ -385,7 +385,7 @@ physical object groups (to be implemented).</p></li>
 (instances that do not exist explict in design hierarachies).</p></li>
 </ul>
 <p>The following figure shows various examples of generating physical objects using the classes introduced.</p>
-<p><img alt="laygo2 physical_objects" src="_images/user_guide_physical1.png" /></p>
+<p><img alt="laygo2 physical_objects" src="_images/user_guide_physical.png" /></p>
 <section id="physicalobject-class">
 <h4>PhysicalObject class<a class="headerlink" href="#physicalobject-class" title="Permalink to this headline"></a></h4>
 <p>PhysicalObject class implements basic physical objects and their operations, with their properties and
@@ -748,7 +748,7 @@ and methods described as follows:</p>
 <p>grid module is composed of classes that implement abstract coordinate systems that are interacting with
 technology-specific physical coordinate systems.</p>
 <p>laygo2 implements the layout designs based on the abstract coordinate system.</p>
-<p><img alt="laygo2 grid" src="_images/user_guide_grid1.png" /></p>
+<p><img alt="laygo2 grid" src="_images/user_guide_grid.png" /></p>
 <p>Grid module implements the following classes.</p>
 <ul class="simple">
 <li><p><strong><a class="reference external" href="#CircularMapping-class">CircularMapping</a></strong>: basic circular mapping class.</p></li>
@@ -827,7 +827,7 @@ CircularMappingArray includes the following attributes and methods.</p>
 <p>_AbsToPhyGridConverter is an internal class that converts abstract coordinates to physical coordinates.
 It also supports reverse conversions (physical-to-abstract) with comparison operators
 (which requires its pair converter class, _PhyToAbsGridConverter defined in its master grid object).</p>
-<p><img alt="laygo2 abs2phy" src="_images/user_guide_abs2phy1.png" /></p>
+<p><img alt="laygo2 abs2phy" src="_images/user_guide_abs2phy.png" /></p>
 <p>_AbsToPhyGridConverter class contains various attributes and methods described as follows:</p>
 <ul class="simple">
 <li><p><strong>Major attributes</strong></p>
@@ -852,7 +852,7 @@ and converts it to a physical coordinate.</p></li>
 <p>_PhyToAbsGridConverter is an internal class that converts physical coordinates to abstract coordinates.
 It also supports reverse conversions (abstract-to-physical) with comparison operators
 (which requires its pair converter class, _AbsToPhyGridConverter defined in its master grid object).</p>
-<p><img alt="laygo2 phy2abs" src="_images/user_guide_phy2abs1.png" /></p>
+<p><img alt="laygo2 phy2abs" src="_images/user_guide_phy2abs.png" /></p>
 <p>_PhyToAbsGridConverter class contains various attributes and methods described as follows:</p>
 <ul class="simple">
 <li><p><strong>Major attributes</strong></p>
@@ -919,7 +919,7 @@ Returns a physical coordinate that meets the comparison operation condition.</p>
 <p>Grid class implements an abstract coordinate that is mapped to a 2-dimensional physical coordinate system.</p>
 <p>The Grid class and its objects support various coordinate conversion functions, with their examples introduced in the
 following figure.</p>
-<p><img alt="laygo2 grid_conversion" src="_images/user_guide_grid_conversion1.png" /></p>
+<p><img alt="laygo2 grid_conversion" src="_images/user_guide_grid_conversion.png" /></p>
 <p>The grid class contains the following attributes and methods.</p>
 <ul class="simple">
 <li><p><strong>Major attributes</strong></p>
@@ -1166,7 +1166,7 @@ follows:</p>
 <section id="interface-package">
 <h2>interface package<a class="headerlink" href="#interface-package" title="Permalink to this headline"></a></h2>
 <p>interface package includes classes and functions that interact with laygo2 and external EDA tools or data structures.</p>
-<p><img alt="laygo2 interface" src="_images/user_guide_interface1.png" /></p>
+<p><img alt="laygo2 interface" src="_images/user_guide_interface.png" /></p>
 <ul class="simple">
 <li><p><strong>gds module</strong> contains various functions to store the layout structures in GDS-II format, which is the most popular
 format to store layout structures.</p></li>

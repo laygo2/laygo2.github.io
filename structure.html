@@ -354,37 +354,37 @@
 and check the API reference for details on key classes and functions.</p>
 <section id="object-package">
 <h2>object package<a class="headerlink" href="#object-package" title="Permalink to this headline"></a></h2>
-<p>The object package includes various classes that are related to various physical and abstract object for
-layout generation processes and final results. There are various modules that compose the object package:</p>
+<p>The object package includes various classes for physical and abstract objects.
+The folowing modules compose the object package:</p>
 <ul class="simple">
-<li><p><strong><a class="reference external" href="#physical-module">physical module</a></strong> is about physical objects that compose actual IC layouts.</p></li>
-<li><p><strong><a class="reference external" href="#template-module">template module</a></strong> describes various classes for templates that generate various
-instance objects.</p></li>
-<li><p><strong><a class="reference external" href="#grid-module">grid module</a></strong> includes grid classes that are implemented for process portability and
+<li><p><strong><a class="reference external" href="#physical-module">physical module</a></strong> is defining classes for physical objects that compose actual IC layouts.</p></li>
+<li><p><strong><a class="reference external" href="#template-module">template module</a></strong> describes classes for templates that generate various
+instance objects for target technology and design parameters.</p></li>
+<li><p>*<em><a class="reference external" href="#grid-module">grid module</a></em> describes grid classes to abstract placement and routing coordinates.
 parameterizations.</p></li>
-<li><p><strong><a class="reference external" href="#database-module">database module</a></strong> implements the hierarchy of designs for database management.</p></li>
+<li><p><strong><a class="reference external" href="#database-module">database module</a></strong> implements classes for design hierarchy management.</p></li>
 </ul>
-<p>The following figure illustrates a UML diagram of laygo2.object.
+<p>The following figure illustrates a UML diagram of the object package.
 <img alt="laygo2 UML diagram" src="_images/user_guide_uml.png" /></p>
 <section id="physical-module">
 <h3>physical module<a class="headerlink" href="#physical-module" title="Permalink to this headline"></a></h3>
-<p>The physical module consists of classes corresponding to various physical objects for IC layout design.
+<p>The physical module implments classes for physical layout objects.
 Here are the summary of classes in the physical module:</p>
 <ul class="simple">
-<li><p><strong><a class="reference external" href="#PhysicalObject-class">PhysicalObject</a></strong> is the most basic class for physical objects.</p></li>
-<li><p><strong><a class="reference external" href="#IterablePhysicalObject-class">IterablePhysicalObject</a></strong>(PhysicalObject) is the most basic class for
-‘iterable’ physical objects (e.g. arrays and groups).</p></li>
+<li><p><strong><a class="reference external" href="#PhysicalObject-class">PhysicalObject</a></strong> is the base class for physical objects.</p></li>
+<li><p><strong><a class="reference external" href="#IterablePhysicalObject-class">IterablePhysicalObject</a></strong>(PhysicalObject) is the base class for
+‘iterable’ physical objects (such as arrays and groups).</p></li>
 <li><p><strong><a class="reference external" href="#PhysicalObjectGroup-class">PhysicalObjectGroup</a></strong>(IterablePhysicalObject) is a dedicated class for
-physical object groups (to be implemented).</p></li>
+groups of physical objects (not implemented yet).</p></li>
 <li><p><strong><a class="reference external" href="#Rect-class">Rect</a></strong>(PhysucalObject) is for rect objects.</p></li>
 <li><p><strong><a class="reference external" href="#Path-class">Path</a></strong>(PhysicalObject) is for path objects.</p></li>
 <li><p><strong><a class="reference external" href="#Pin-class">Pin</a></strong>(IterablePhysicalObject) is for pin objects.</p></li>
 <li><p><strong><a class="reference external" href="#Text-class">Text</a></strong>(PhysicalObject) is for text objects.</p></li>
 <li><p><strong><a class="reference external" href="#Instance-class">Instance</a></strong>(IterablePhysicalObject) is for instances.</p></li>
 <li><p><strong><a class="reference external" href="#VirtualInstance-class">VirtualInstance</a></strong>(IterablePhysicalObject) is for virtual instances
-(instances that do not exist explict in design hierarachies).</p></li>
+(a group of objects that acts as a single instance).</p></li>
 </ul>
-<p>The following figure shows various examples of generating physical objects using the classes introduced.</p>
+<p>The following figure illustrates examples of the physical objects from one of the classes.</p>
 <p><img alt="laygo2 physical_objects" src="_images/user_guide_physical.png" /></p>
 <section id="physicalobject-class">
 <h4>PhysicalObject class<a class="headerlink" href="#physicalobject-class" title="Permalink to this headline"></a></h4>

@@ -178,10 +178,7 @@
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#init-py">
-   <strong>
-    init
-   </strong>
-   .py
+   __init__.py
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -230,7 +227,7 @@
 <p>신규 공정에서 Laygo2를 설치하기 위해서는, 해당 공정에 대한 다음 파일들을 작업 경로 내의 laygo2_tech내에 패키지의 형태로 준비하여,
 레이아웃 생성 스크립트들이 관련 Paython module들(template, grid)를 import할 수 있도록 한다.</p>
 <ul class="simple">
-<li><p><em><strong><strong>init</strong>.py</strong></em>: 패키지 정의 파일</p></li>
+<li><p><em><strong>__init__.py</strong></em>: 패키지 정의 파일</p></li>
 <li><p><strong>laygo2_tech_templates.py</strong>: Template 정의 파이썬 코드</p></li>
 <li><p><strong>laygo2_tech_grids.py</strong>: Grid 정의 파이썬 코드</p></li>
 <li><p><strong>laygo2_tech.yaml</strong>: (_template.py, _grid.py파일들에 의하여 사용될 수 있는) 공정 관련 파라미터들</p></li>
@@ -240,7 +237,7 @@
 <p>Laygo2의 공정 패키지 셋업 예제는 <a class="reference external" href="https://github.com/niftylab/laygo2/tree/master/laygo2/examples/laygo2_tech">여기</a>에서 찾을 수 있다.</p>
 <p>공정 패키지를 구성하는 각각의 파일들에 대한 설명은 아래에 기술되어 있다.</p>
 <section id="init-py">
-<h2><strong>init</strong>.py<a class="headerlink" href="#init-py" title="Permalink to this headline"></a></h2>
+<h2>__init__.py<a class="headerlink" href="#init-py" title="Permalink to this headline"></a></h2>
 <p>패키지 import 시 load_templates / load_grids 함수들에 접근할 수 있도록 하는 선언문이 들어 있다.</p>
 </section>
 <section id="laygo2-tech-templates-py">

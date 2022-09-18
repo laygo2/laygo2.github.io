@@ -173,8 +173,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#technology-setup-for-laygo2">
-   Technology setup for laygo2
+  <a class="reference internal nav-link" href="#technology-setup">
+   Technology setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -228,7 +228,7 @@ repository by typing the following command:</p>
 </div>
 <p>After that, update the PHTHONPATH environment variable to point out the laygo2 package path for importing.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># (csh/tcsh example) add the following command to your .cshrc
-setenv PYTHONPATH ${PYTHONPATH}:[LAYGO2_INSTALLATION_DIR]/laygo2
+setenv PYTHONPATH ${PYTHONPATH}:[LAYGO2_INSTALLATION_PATH]/laygo2
 </pre></div>
 </div>
 </section>
@@ -240,9 +240,9 @@ setenv PYTHONPATH ${PYTHONPATH}:[LAYGO2_INSTALLATION_DIR]/laygo2
 </div>
 </section>
 </section>
-<section id="technology-setup-for-laygo2">
-<h2>Technology setup for laygo2<a class="headerlink" href="#technology-setup-for-laygo2" title="Permalink to this headline"></a></h2>
-<p>Users need to set up the following files in laygo_tech.py to enable laygo2 for a new technology:</p>
+<section id="technology-setup">
+<h2>Technology setup<a class="headerlink" href="#technology-setup" title="Permalink to this headline"></a></h2>
+<p>Users need to set up the following files in the <strong>laygo_tech</strong> directory to enable laygo2 for a new technology:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>laygo2_tech_templayes.py  # for templates
 laygo2_tech_grids.py      # for grids
 laygo2_tech.yaml          # for technology parameters

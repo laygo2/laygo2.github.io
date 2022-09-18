@@ -176,6 +176,21 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#circularmapping-class">
+       CircularMapping class
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#abstophygridconverter-class">
+       _AbsToPhyGridConverter class
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#phytoabsgridconverter-class">
+       _PhyToAbsGridConverter class
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#grid-class">
        Grid class
       </a>
@@ -301,6 +316,40 @@ technology-specific physical coordinate systems.
 <li><p><strong><a class="reference external" href="https://laygo2.github.io/laygo2.object.grid.PlacementGrid.html">PlacementGrid</a></strong>(Grid): a 2-dimensional grid class for instance placement.</p></li>
 <li><p><strong><a class="reference external" href="https://laygo2.github.io/laygo2.object.grid.RoutingGrid.html">RoutingGrid</a></strong>(Grid): a 2-dimensional grid class for wire routing.</p></li>
 </ul>
+<section id="circularmapping-class">
+<h4>CircularMapping class<a class="headerlink" href="#circularmapping-class" title="Permalink to this headline"></a></h4>
+<p>CircularMapping class implements basic circular mappings (their indices extend to the entire axis with cyclic mapping).
+The following code block shows several examples of using CircularMapping objects.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; map = CircularMapping(elements=[100, 200, 300])
+&gt;&gt;&gt; print(map[0])
+100
+&gt;&gt;&gt; print(map[2])
+300
+&gt;&gt;&gt; print(map[4])
+200
+&gt;&gt;&gt; print(map[-3])
+100
+&gt;&gt;&gt; print(map[[2, 3, -2])
+[300, 100, 200]
+&gt;&gt;&gt; print(map[2:7])
+[300, 100, 200, 300, 100]
+</pre></div>
+</div>
+</section>
+<section id="abstophygridconverter-class">
+<h4>_AbsToPhyGridConverter class<a class="headerlink" href="#abstophygridconverter-class" title="Permalink to this headline"></a></h4>
+<p>_AbsToPhyGridConverter is an internal class that converts abstract coordinates to physical coordinates.
+It also supports reverse conversions (physical-to-abstract) with comparison operators
+(which requires its pair converter class, _PhyToAbsGridConverter defined in its master grid object).</p>
+<p><img alt="laygo2 abs2phy" src="_images/user_guide_abs2phy.png" /></p>
+</section>
+<section id="phytoabsgridconverter-class">
+<h4>_PhyToAbsGridConverter class<a class="headerlink" href="#phytoabsgridconverter-class" title="Permalink to this headline"></a></h4>
+<p>_PhyToAbsGridConverter is an internal class that converts physical coordinates to abstract coordinates.
+It also supports reverse conversions (abstract-to-physical) with comparison operators
+(which requires its pair converter class, _AbsToPhyGridConverter defined in its master grid object).</p>
+<p><img alt="laygo2 phy2abs" src="_images/user_guide_phy2abs.png" /></p>
+</section>
 <section id="grid-class">
 <h4>Grid class<a class="headerlink" href="#grid-class" title="Permalink to this headline"></a></h4>
 <p>Grid class implements an abstract coordinate that is mapped to a 2-dimensional physical coordinate system.</p>

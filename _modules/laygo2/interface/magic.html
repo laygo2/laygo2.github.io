@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>laygo2.interface.magic &#8212; laygo2  documentation</title>
+    <title>laygo2.interface.magic &#8212; laygo2</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -310,7 +310,8 @@
 
     <span class="k">return</span> <span class="s2">&quot;&quot;</span>
 
-<div class="viewcode-block" id="export"><a class="viewcode-back" href="../../../laygo2.interface.html#laygo2.interface.magic.export">[docs]</a><span class="k">def</span> <span class="nf">export</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">libpath</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">reset_library</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tech_library</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="export"><a class="viewcode-back" href="../../../laygo2.interface.html#laygo2.interface.magic.export">[docs]</a><span class="k">def</span> <span class="nf">export</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">libpath</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+           <span class="n">reset_library</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tech_library</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gds_filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Export design(s) to magic&#39;s tcl code.</span>
 
@@ -328,6 +329,8 @@
 <span class="sd">        If True, the library to export the cells is reset.</span>
 <span class="sd">    tech_library: str, optional</span>
 <span class="sd">        The name of technology library to be attached to the resetted library.</span>
+<span class="sd">    gds_filename: str, optional</span>
+<span class="sd">        If specified, export a gds file with the filename provided.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -344,19 +347,20 @@
 
     <span class="n">cellname</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">cellname</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">cellname</span>  <span class="c1"># export all cells if cellname is not given.</span>
     <span class="n">cellname</span> <span class="o">=</span> <span class="p">[</span><span class="n">cellname</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cellname</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">cellname</span>  <span class="c1"># convert to a list for iteration.</span>
-    <span class="c1"># if reset_library:</span>
-    <span class="c1">#     cmd += &quot;_laygo2_reset_library(\&quot;%s\&quot; \&quot;%s\&quot;)\n&quot; % (db.name, tech_library)</span>
+    <span class="c1"># if reset_library: (not implemented)</span>
     <span class="k">for</span> <span class="n">cn</span> <span class="ow">in</span> <span class="n">cellname</span><span class="p">:</span>
         <span class="n">cmd</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"># exporting </span><span class="si">%s</span><span class="s2">__</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">cn</span><span class="p">)</span>  <span class="c1"># open the design.</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Export_to_MAGIC: Cellname:&#39;</span> <span class="o">+</span> <span class="n">cn</span><span class="p">)</span>
-    <span class="c1">#    cmd += &quot;let( (cv) \n&quot;  # limit the scope of cv</span>
         <span class="n">cmd</span> <span class="o">+=</span> <span class="s2">&quot;_laygo2_create_layout </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">((</span><span class="n">libpath</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="n">db</span><span class="o">.</span><span class="n">name</span><span class="p">),</span> <span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="n">cn</span><span class="p">),</span> <span class="n">tech_library</span><span class="p">)</span>  <span class="c1"># open the design, /WORK/magc_layout -&gt; temp libpath</span>
         <span class="c1"># export objects</span>
         <span class="k">for</span> <span class="n">objname</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">db</span><span class="p">[</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="n">cmd</span> <span class="o">+=</span> <span class="n">_translate_obj</span><span class="p">(</span><span class="n">libpath</span><span class="p">,</span> <span class="n">objname</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">)</span>
         <span class="n">cmd</span> <span class="o">+=</span> <span class="s2">&quot;save</span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="c1">#    cmd += &quot;_laygo2_save_and_close_layout(cv)\n&quot;  # close the layout</span>
-    <span class="c1">#    cmd += &quot;);let\n&quot;</span>
+    
+    <span class="c1"># gds export</span>
+    <span class="k">if</span> <span class="n">gds_filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">cmd</span> <span class="o">+=</span> <span class="s2">&quot;gds write &quot;</span><span class="o">+</span><span class="n">gds_filename</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+
     <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># export to a file.</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>

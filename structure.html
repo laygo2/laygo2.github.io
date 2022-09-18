@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>laygo2 Structure &#8212; laygo2  documentation</title>
+    <title>Structure &#8212; laygo2</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -35,8 +35,8 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Setting up laygo2 for a new technology" href="technology.html" />
-    <link rel="prev" title="laygo2 Quick Trial" href="trial.html" />
+    <link rel="next" title="Tech Setup" href="technology.html" />
+    <link rel="prev" title="Trial" href="trial.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -235,8 +235,8 @@
               
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="laygo2-structure">
-<h1>laygo2 Structure<a class="headerlink" href="#laygo2-structure" title="Permalink to this headline"></a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="structure">
+<h1>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h1>
 <p>laygo2 is composed of the following three sub-packages.</p>
 <ul class="simple">
 <li><p><strong><a class="reference external" href="#object-package">object</a></strong> package implements various physical and abstract objects that compose layouts.</p></li>
@@ -247,7 +247,7 @@
 <p>Brief explanations on the sub-packages can be found in the following sections,
 and check the API reference for details on key classes and functions.</p>
 <section id="object-package">
-<h2>object package<a class="headerlink" href="#object-package" title="Permalink to this headline"></a></h2>
+<h2>object package<a class="headerlink" href="#object-package" title="Permalink to this headline">¶</a></h2>
 <p>The object package includes various classes for physical and abstract objects
 (<a class="reference external" href="https://laygo2.github.io/laygo2.object.html">API reference link</a>).</p>
 <p>The folowing modules compose the object package:</p>
@@ -262,7 +262,7 @@ parameterizations.</p></li>
 <p>The following figure illustrates a UML diagram of the object package.
 <img alt="laygo2 UML diagram" src="_images/user_guide_uml.png" /></p>
 <section id="physical-module">
-<h3>physical module<a class="headerlink" href="#physical-module" title="Permalink to this headline"></a></h3>
+<h3>physical module<a class="headerlink" href="#physical-module" title="Permalink to this headline">¶</a></h3>
 <p>The physical module implments classes for physical layout objects
 (<a class="reference external" href="https://laygo2.github.io/laygo2.object.physical.html">API reference link</a>).</p>
 <p>Here are the summary of classes in the physical module:</p>
@@ -284,7 +284,7 @@ groups of physical objects (not implemented yet).</p></li>
 <p><img alt="laygo2 physical_objects" src="_images/user_guide_physical.png" /></p>
 </section>
 <section id="template-module">
-<h3>template module<a class="headerlink" href="#template-module" title="Permalink to this headline"></a></h3>
+<h3>template module<a class="headerlink" href="#template-module" title="Permalink to this headline">¶</a></h3>
 <p>template module is composed of classes that abstract instances and virtual instances.
 (<a class="reference external" href="https://laygo2.github.io/laygo2.object.template.html">API reference link</a>).</p>
 <p>Here are the summary of classes in the template module:</p>
@@ -299,7 +299,7 @@ generates VirtualInstance objects with its bbox / pins / generate functions.</p>
 </ul>
 </section>
 <section id="grid-module">
-<h3>grid module<a class="headerlink" href="#grid-module" title="Permalink to this headline"></a></h3>
+<h3>grid module<a class="headerlink" href="#grid-module" title="Permalink to this headline">¶</a></h3>
 <p>grid module is composed of classes that implement abstract coordinate systems that are interacting with
 technology-specific physical coordinate systems.
 (<a class="reference external" href="https://laygo2.github.io/laygo2.object.grid.html">API reference link</a>).</p>
@@ -317,7 +317,7 @@ technology-specific physical coordinate systems.
 <li><p><strong><a class="reference external" href="https://laygo2.github.io/laygo2.object.grid.RoutingGrid.html">RoutingGrid</a></strong>(Grid): a 2-dimensional grid class for wire routing.</p></li>
 </ul>
 <section id="circularmapping-class">
-<h4>CircularMapping class<a class="headerlink" href="#circularmapping-class" title="Permalink to this headline"></a></h4>
+<h4>CircularMapping class<a class="headerlink" href="#circularmapping-class" title="Permalink to this headline">¶</a></h4>
 <p>CircularMapping class implements basic circular mappings (their indices extend to the entire axis with cyclic mapping).
 The following code block shows several examples of using CircularMapping objects.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; map = CircularMapping(elements=[100, 200, 300])
@@ -337,21 +337,21 @@ The following code block shows several examples of using CircularMapping objects
 </div>
 </section>
 <section id="abstophygridconverter-class">
-<h4>_AbsToPhyGridConverter class<a class="headerlink" href="#abstophygridconverter-class" title="Permalink to this headline"></a></h4>
+<h4>_AbsToPhyGridConverter class<a class="headerlink" href="#abstophygridconverter-class" title="Permalink to this headline">¶</a></h4>
 <p>_AbsToPhyGridConverter is an internal class that converts abstract coordinates to physical coordinates.
 It also supports reverse conversions (physical-to-abstract) with comparison operators
 (which requires its pair converter class, _PhyToAbsGridConverter defined in its master grid object).</p>
 <p><img alt="laygo2 abs2phy" src="_images/user_guide_abs2phy.png" /></p>
 </section>
 <section id="phytoabsgridconverter-class">
-<h4>_PhyToAbsGridConverter class<a class="headerlink" href="#phytoabsgridconverter-class" title="Permalink to this headline"></a></h4>
+<h4>_PhyToAbsGridConverter class<a class="headerlink" href="#phytoabsgridconverter-class" title="Permalink to this headline">¶</a></h4>
 <p>_PhyToAbsGridConverter is an internal class that converts physical coordinates to abstract coordinates.
 It also supports reverse conversions (abstract-to-physical) with comparison operators
 (which requires its pair converter class, _AbsToPhyGridConverter defined in its master grid object).</p>
 <p><img alt="laygo2 phy2abs" src="_images/user_guide_phy2abs.png" /></p>
 </section>
 <section id="grid-class">
-<h4>Grid class<a class="headerlink" href="#grid-class" title="Permalink to this headline"></a></h4>
+<h4>Grid class<a class="headerlink" href="#grid-class" title="Permalink to this headline">¶</a></h4>
 <p>Grid class implements an abstract coordinate that is mapped to a 2-dimensional physical coordinate system.</p>
 <p>The Grid class and its objects support various coordinate conversion functions, with their examples introduced in the
 following figure.</p>
@@ -359,7 +359,7 @@ following figure.</p>
 </section>
 </section>
 <section id="database-module">
-<h3>database module<a class="headerlink" href="#database-module" title="Permalink to this headline"></a></h3>
+<h3>database module<a class="headerlink" href="#database-module" title="Permalink to this headline">¶</a></h3>
 <p>database module consists classes that implement design hierarchy to manage designs and libraries with its component
 classes described as follows:</p>
 <ul class="simple">
@@ -371,7 +371,7 @@ classes described as follows:</p>
 </section>
 </section>
 <section id="interface-package">
-<h2>interface package<a class="headerlink" href="#interface-package" title="Permalink to this headline"></a></h2>
+<h2>interface package<a class="headerlink" href="#interface-package" title="Permalink to this headline">¶</a></h2>
 <p>interface package includes classes and functions that interact with laygo2 and external EDA tools or data structures.
 (<a class="reference external" href="https://laygo2.github.io/laygo2.interface.html">API reference link</a>).</p>
 <p><img alt="laygo2 interface" src="_images/user_guide_interface.png" /></p>
@@ -383,7 +383,7 @@ format to store layout structures.</p></li>
 </ul>
 </section>
 <section id="util-package">
-<h2>util package<a class="headerlink" href="#util-package" title="Permalink to this headline"></a></h2>
+<h2>util package<a class="headerlink" href="#util-package" title="Permalink to this headline">¶</a></h2>
 <p>util package contains various functions used in other packages.</p>
 </section>
 </section>
@@ -398,13 +398,13 @@ format to store layout structures.</p></li>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">laygo2 Quick Trial</p>
+            <p class="prev-next-title">Trial</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="technology.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Setting up laygo2 for a new technology</p>
+        <p class="prev-next-title">Tech Setup</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

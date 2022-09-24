@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>laygo2.object.grid module &#8212; laygo2</title>
+    <title>export_to_template() method &#8212; laygo2</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -35,8 +35,8 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="CircularMapping class" href="laygo2.object.grid.CircularMapping.html" />
-    <link rel="prev" title="UserDefinedTemplate class" href="laygo2.object.template.UserDefinedTemplate.html" />
+    <link rel="next" title="laygo2.interface package" href="laygo2.interface.html" />
+    <link rel="prev" title="pin() method" href="laygo2.object.database.Design.pin.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -236,11 +236,11 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 current active has-children">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="laygo2.object.grid.html">
      laygo2.object.grid module
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
     <label for="toctree-checkbox-4">
      <i class="fas fa-chevron-down">
      </i>
@@ -288,16 +288,16 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 has-children">
+   <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="laygo2.object.database.html">
      laygo2.object.database module
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
     <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="laygo2.object.database.BaseDatabase.html">
        BaseDatabase class
@@ -308,16 +308,16 @@
        Library class
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3 current active has-children">
       <a class="reference internal" href="laygo2.object.database.Design.html">
        Design class
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
       <label for="toctree-checkbox-6">
        <i class="fas fa-chevron-down">
        </i>
       </label>
-      <ul>
+      <ul class="current">
        <li class="toctree-l4">
         <a class="reference internal" href="laygo2.object.database.Design.place.html">
          place() method
@@ -343,8 +343,8 @@
          pin() method
         </a>
        </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="laygo2.object.database.Design.export_to_template.html">
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
          export_to_template() method
         </a>
        </li>
@@ -400,21 +400,50 @@
               
               <div>
                 
-  <section id="module-laygo2.object.grid">
-<span id="laygo2-object-grid-module"></span><h1>laygo2.object.grid module<a class="headerlink" href="#module-laygo2.object.grid" title="Permalink to this headline">¶</a></h1>
-<p>Module containing functions and objects related to abstract coordinate system and coordinate conversion.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.object.grid.CircularMapping.html">CircularMapping class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.object.grid.CircularMappingArray.html">CircularMappingArray class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.object.grid._AbsToPhyGridConverter.html">_AbsToPhyGridConverter class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html">_PhyToAbsGridConverter class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.object.grid.OneDimGrid.html">OneDimGrid class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.object.grid.Grid.html">Grid class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.object.grid.PlacementGrid.html">PlacementGrid class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.object.grid.RoutingGrid.html">RoutingGrid class</a></li>
-</ul>
+  <section id="export-to-template-method">
+<h1>export_to_template() method<a class="headerlink" href="#export-to-template-method" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.database.Design.export_to_template">
+<span class="sig-prename descclassname"><span class="pre">Design.</span></span><span class="sig-name descname"><span class="pre">export_to_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">libname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.export_to_template"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.export_to_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate NativeInstanceTemplate object corresponding to Design object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>laygo2.NativeInstanceTemplate</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; dsn    = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;)
+&gt;&gt;&gt; rect0  = laygo2.object.Rect(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’]……)
+&gt;&gt;&gt; pin0   = laygo2.object.Pin(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;pin’]……)
+&gt;&gt;&gt; inst0  = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100]……)
+&gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;VI0’, ……)
+&gt;&gt;&gt; text0  = laygo2.object.physical.Text(xy=[[ 0, 0], [100,100 ]], layer=[&#39;text&#39;, &#39;drawing’]……)
+&gt;&gt;&gt; dsn.append(rect0)
+&gt;&gt;&gt; dsn.append(pin0)
+&gt;&gt;&gt; dsn.append(inst0)
+&gt;&gt;&gt; dsn.append(vinst0)
+&gt;&gt;&gt; dsn.append(text0)
+&gt;&gt;&gt; print(dsn.export_to_template())
+&lt;laygo2.object.template.NativeInstanceTemplate object&gt; name: dsn,
+ class: NativeInstanceTemplate,
+ bbox: [[100, 100], [800, 700]],
+ pins: {&#39;NoName_0&#39;: &lt;laygo2.object.physical.Pin object&gt;}
+</pre></div>
 </div>
+<p class="rubric">Notes</p>
+<p>Reference in Korean:
+Design 객체에 해당하는 NativeInstanceTemplate 객체 생성.
+파라미터
+없음
+반환값
+laygo2.NativeInstanceTemplate
+참조
+없음</p>
+</dd></dl>
+
 </section>
 
 
@@ -423,17 +452,17 @@
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="laygo2.object.template.UserDefinedTemplate.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="laygo2.object.database.Design.pin.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">UserDefinedTemplate class</p>
+            <p class="prev-next-title">pin() method</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="laygo2.object.grid.CircularMapping.html" title="next page">
+    <a class='right-next' id="next-link" href="laygo2.interface.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">CircularMapping class</p>
+        <p class="prev-next-title">laygo2.interface package</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -1014,8 +1014,24 @@
             <span class="s2">&quot;&quot;</span></div>
 
     <span class="c1"># Object creation and manipulation functions.</span>
-<div class="viewcode-block" id="Design.place"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.place">[docs]</a>    <span class="k">def</span> <span class="nf">place</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Place an instance on the specified coordinate mn, on this grid.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Design.place"><a class="viewcode-back" href="../../../laygo2.object.database.Design.place.html#laygo2.object.database.Design.place">[docs]</a>    <span class="k">def</span> <span class="nf">place</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Place the instance on the abstract coordinate mn, on the abstract grid.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        inst : laygo2.object.physical.Instance or laygo2.object.physical.VirtualInstance</span>
+<span class="sd">            The instance to be placed.</span>
+<span class="sd">        grid : laygo2.object.grid.PlacementGrid</span>
+<span class="sd">            The placement grid where the instance is placed on.</span>
+<span class="sd">        mn : numpy.ndarray or list</span>
+<span class="sd">            The abstract coordinate value [m, n] to place the instance.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        laygo2.object.physical.Instance or laygo2.object.physical.VirtualInstance : </span>
+<span class="sd">            The placed instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="p">(</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">Instance</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">VirtualInstance</span><span class="p">)</span> <span class="p">)</span> <span class="p">:</span>
             <span class="n">inst</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">mn</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
@@ -1054,33 +1070,58 @@
                         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span> <span class="n">element</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
                             <span class="n">mn_ref</span> <span class="o">=</span> <span class="n">mn_ref</span> <span class="o">+</span> <span class="p">[</span> <span class="n">element</span><span class="p">,</span><span class="mi">0</span> <span class="p">]</span></div>
 
-<div class="viewcode-block" id="Design.route"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.route">[docs]</a>    <span class="k">def</span> <span class="nf">route</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">via_tag</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create Path and Via objects over the abstract coordinates specified by mn, on this routing grid. &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Design.route"><a class="viewcode-back" href="../../../laygo2.object.database.Design.route.html#laygo2.object.database.Design.route">[docs]</a>    <span class="k">def</span> <span class="nf">route</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">via_tag</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a rect wire object for routing.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        grid : laygo2.object.grid.RoutingGrid</span>
+<span class="sd">            The placement grid where the wire is placed on.</span>
+<span class="sd">        mn : list(numpy.ndarray)</span>
+<span class="sd">            The list containing two or more mn coordinates to be connected.</span>
+<span class="sd">        direction : str, optional.</span>
+<span class="sd">            None or “vertical” or &quot;horizontal&quot;. The direction of the routing object.</span>
+<span class="sd">        via_tag : list(Boolean), optional.</span>
+<span class="sd">            The list containing switches deciding whether to place via at the edges.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        laygo2.object.physical.Rect or list : </span>
+<span class="sd">            The generated routing object(s). </span>
+<span class="sd">            Check the example code in laygo2.object.grid.RoutingGrid.route for details. </span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        laygo2.object.grid.RoutingGrid.route</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
         <span class="n">r</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="n">mn</span><span class="o">=</span><span class="n">mn</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="n">direction</span><span class="p">,</span> <span class="n">via_tag</span><span class="o">=</span><span class="n">via_tag</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">r</span></div>
 
-<div class="viewcode-block" id="Design.route_via_track"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.route_via_track">[docs]</a>    <span class="k">def</span> <span class="nf">route_via_track</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">,</span> <span class="n">track</span><span class="p">,</span> <span class="n">via_tag</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">True</span><span class="p">]):</span>
+<div class="viewcode-block" id="Design.route_via_track"><a class="viewcode-back" href="../../../laygo2.object.database.Design.route_via_track.html#laygo2.object.database.Design.route_via_track">[docs]</a>    <span class="k">def</span> <span class="nf">route_via_track</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">,</span> <span class="n">track</span><span class="p">,</span> <span class="n">via_tag</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">True</span><span class="p">]):</span>
         <span class="sd">&quot;&quot;&quot;Create Path and Via objects over the abstract coordinates specified by mn, </span>
 <span class="sd">        on the track of specified routing grid. &quot;&quot;&quot;</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">route_via_track</span><span class="p">(</span><span class="n">mn</span><span class="o">=</span><span class="n">mn</span><span class="p">,</span> <span class="n">track</span><span class="o">=</span><span class="n">track</span><span class="p">,</span> <span class="n">via_tag</span><span class="o">=</span><span class="n">via_tag</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">r</span></div>
 
-<div class="viewcode-block" id="Design.via"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.via">[docs]</a>    <span class="k">def</span> <span class="nf">via</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Design.via"><a class="viewcode-back" href="../../../laygo2.object.database.Design.via.html#laygo2.object.database.Design.via">[docs]</a>    <span class="k">def</span> <span class="nf">via</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a Via object over the abstract coordinates specified by mn, on this routing grid. &quot;&quot;&quot;</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">via</span><span class="p">(</span><span class="n">mn</span><span class="o">=</span><span class="n">mn</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">v</span></div>
 
-<div class="viewcode-block" id="Design.pin"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.pin">[docs]</a>    <span class="k">def</span> <span class="nf">pin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">netname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Design.pin"><a class="viewcode-back" href="../../../laygo2.object.database.Design.pin.html#laygo2.object.database.Design.pin">[docs]</a>    <span class="k">def</span> <span class="nf">pin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">netname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a Pin object over the abstract coordinates specified by mn, on this routing grid. &quot;&quot;&quot;</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">pin</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="n">mn</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="n">direction</span><span class="p">,</span> <span class="n">netname</span><span class="o">=</span><span class="n">netname</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">p</span></div>
 
     <span class="c1"># I/O functions</span>
-<div class="viewcode-block" id="Design.export_to_template"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.export_to_template">[docs]</a>    <span class="k">def</span> <span class="nf">export_to_template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Design.export_to_template"><a class="viewcode-back" href="../../../laygo2.object.database.Design.export_to_template.html#laygo2.object.database.Design.export_to_template">[docs]</a>    <span class="k">def</span> <span class="nf">export_to_template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate NativeInstanceTemplate object corresponding to Design object.</span>
 

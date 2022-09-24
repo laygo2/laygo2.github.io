@@ -2830,20 +2830,19 @@
 
 <div class="viewcode-block" id="PlacementGrid.place"><a class="viewcode-back" href="../../../laygo2.object.grid.PlacementGrid.html#laygo2.object.grid.PlacementGrid.place">[docs]</a>    <span class="k">def</span> <span class="nf">place</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">,</span> <span class="n">mn</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Maps abstract coordinates with instance xy attribute.</span>
+<span class="sd">        Place the instance on the specified coordinate mn, on this grid.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">        inst : laygo2.physical.instance</span>
-<span class="sd">            instance to be placed</span>
+<span class="sd">        inst : laygo2.object.physical.Instance or laygo2.object.physical.VirtualInstance</span>
+<span class="sd">            The instance to be placed on the grid.</span>
 <span class="sd">        mn : numpy.ndarray or list</span>
-<span class="sd">            abstract coordinates to place instance</span>
+<span class="sd">            The abstract coordinate [m, n] to place the instance.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        laygo2.physical.instance : instance with revised coordinates</span>
-
-<span class="sd">        </span>
+<span class="sd">        laygo2.object.physical.Instance or laygo2.object.physical.VirtualInstance : </span>
+<span class="sd">            The placed instance.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
@@ -3242,22 +3241,21 @@
 
 <div class="viewcode-block" id="RoutingGrid.route"><a class="viewcode-back" href="../../../laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid.route">[docs]</a>    <span class="k">def</span> <span class="nf">route</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mn</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">via_tag</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Wire routing function, generate Rect object.</span>
+<span class="sd">        Create a rect wire object for routing.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        mn : list(numpy.ndarray)</span>
-<span class="sd">            list containing two or more mn coordinates being connected</span>
+<span class="sd">            The list containing two or more mn coordinates to be connected.</span>
 <span class="sd">        direction : str, optional.</span>
-<span class="sd">            None or “vertical” ; decides the direction of path as vertical or horizontal</span>
+<span class="sd">            None or “vertical” or &quot;horizontal&quot;. The direction of the routing object.</span>
 <span class="sd">        via_tag : list(Boolean), optional.</span>
-<span class="sd">            list of switches deciding whether to form via on the path</span>
+<span class="sd">            The list containing switches deciding whether to place via at the edges.</span>
 <span class="sd">        </span>
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        list: list containing the generated routing objects</span>
-
-<span class="sd">        </span>
+<span class="sd">        laygo2.object.physical.Rect or list : </span>
+<span class="sd">            The generated routing object(s). Check the example code for details. </span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>

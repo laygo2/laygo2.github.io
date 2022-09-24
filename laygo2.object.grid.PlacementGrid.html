@@ -308,10 +308,47 @@
        Library class
       </a>
      </li>
-     <li class="toctree-l3">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="laygo2.object.database.Design.html">
        Design class
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.place.html">
+         place() method
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.route.html">
+         route() method
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.route_via_track.html">
+         route_via_track() method
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.via.html">
+         via() method
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.pin.html">
+         pin() method
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.export_to_template.html">
+         export_to_template() method
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -458,7 +495,7 @@ PlacementGrid 클래스는 Instance 및 VirtualInstance 개체들의 배치를 �
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.PlacementGrid.place" title="laygo2.object.grid.PlacementGrid.place"><code class="xref py py-obj docutils literal notranslate"><span class="pre">place</span></code></a>(inst, mn)</p></td>
-<td><p>Maps abstract coordinates with instance xy attribute.</p></td>
+<td><p>Place the instance on the specified coordinate mn, on this grid.</p></td>
 </tr>
 </tbody>
 </table>
@@ -625,19 +662,19 @@ See _PhyToAbsGridConverter.overlap() for details.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.place">
 <span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#PlacementGrid.place"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.place" title="Permalink to this definition">¶</a></dt>
-<dd><p>Maps abstract coordinates with instance xy attribute.</p>
+<dd><p>Place the instance on the specified coordinate mn, on this grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>inst</strong> (<em>laygo2.physical.instance</em>) – instance to be placed</p></li>
-<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a>) – abstract coordinates to place instance</p></li>
+<li><p><strong>inst</strong> (<a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><em>laygo2.object.physical.Instance</em></a><em> or </em><a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance"><em>laygo2.object.physical.VirtualInstance</em></a>) – The instance to be placed on the grid.</p></li>
+<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a>) – The abstract coordinate [m, n] to place the instance.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>laygo2.physical.instance</strong></p>
+<dd class="field-even"><p>The placed instance.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>instance with revised coordinates</p>
+<dd class="field-odd"><p><a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance">laygo2.object.physical.Instance</a> or <a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance">laygo2.object.physical.VirtualInstance</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>

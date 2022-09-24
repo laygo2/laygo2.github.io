@@ -308,10 +308,47 @@
        Library class
       </a>
      </li>
-     <li class="toctree-l3">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="laygo2.object.database.Design.html">
        Design class
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.place.html">
+         place() method
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.route.html">
+         route() method
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.route_via_track.html">
+         route_via_track() method
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.via.html">
+         via() method
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.pin.html">
+         pin() method
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.export_to_template.html">
+         export_to_template() method
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -503,7 +540,7 @@
 <td><p>Constructor function of RoutingGrid class.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.route" title="laygo2.object.grid.RoutingGrid.route"><code class="xref py py-obj docutils literal notranslate"><span class="pre">route</span></code></a>(mn[, direction, via_tag])</p></td>
-<td><p>Wire routing function, generate Rect object.</p></td>
+<td><p>Create a rect wire object for routing.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.via" title="laygo2.object.grid.RoutingGrid.via"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via</span></code></a>([mn, params])</p></td>
 <td><p>Via generating function.</p></td>
@@ -741,20 +778,20 @@ laygo2.physical.Pin: Pin object
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid.route">
 <span class="sig-name descname"><span class="pre">route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">via_tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#RoutingGrid.route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.RoutingGrid.route" title="Permalink to this definition">¶</a></dt>
-<dd><p>Wire routing function, generate Rect object.</p>
+<dd><p>Create a rect wire object for routing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>)</em>) – list containing two or more mn coordinates being connected</p></li>
-<li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional.</em>) – None or “vertical” ; decides the direction of path as vertical or horizontal</p></li>
-<li><p><strong>via_tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><em>Boolean</em><em>)</em><em>, </em><em>optional.</em>) – list of switches deciding whether to form via on the path</p></li>
+<li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>)</em>) – The list containing two or more mn coordinates to be connected.</p></li>
+<li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional.</em>) – None or “vertical” or “horizontal”. The direction of the routing object.</p></li>
+<li><p><strong>via_tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><em>Boolean</em><em>)</em><em>, </em><em>optional.</em>) – The list containing switches deciding whether to place via at the edges.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>list</strong></p>
+<dd class="field-even"><p>The generated routing object(s). Check the example code for details.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list containing the generated routing objects</p>
+<dd class="field-odd"><p><a class="reference internal" href="laygo2.object.physical.Rect.html#laygo2.object.physical.Rect" title="laygo2.object.physical.Rect">laygo2.object.physical.Rect</a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>

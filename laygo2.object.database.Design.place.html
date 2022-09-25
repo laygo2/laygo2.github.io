@@ -421,6 +421,33 @@
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance">laygo2.object.physical.Instance</a> or <a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance">laygo2.object.physical.VirtualInstance</a></p>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; dsn = Design(name=&#39;mycell&#39;, libname=&quot;testlib&quot;)
+&gt;&gt;&gt; g1_x = laygo2.object.grid.OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 20], elements=[0])
+&gt;&gt;&gt; g1_y = laygo2.object.grid.OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[0])
+&gt;&gt;&gt; g2   = laygo2.object.grid.PlacementGrid(name=&#39;test&#39;, vgrid=g1_x, hgrid=g1_y)
+&gt;&gt;&gt; inst0= laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100, 100], transform=‘R0’……)
+&gt;&gt;&gt; print(inst0.xy)
+[100, 100]
+&gt;&gt;&gt; dsn.place(inst=inst0, grid=g2, mn=[10,10])
+&gt;&gt;&gt; print(inst0.xy)
+[200, 1000]
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid.PlacementGrid.html#laygo2.object.grid.PlacementGrid.place" title="laygo2.object.grid.PlacementGrid.place"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.PlacementGrid.place</span></code></a></p>
+</div>
+<p class="rubric">Notes</p>
+<p>Reference in Korean:
+인스턴스를 grid위 추상 좌표 mn에 배치함.
+파라미터
+inst(laygo2.physical.instance): 배치할 인스턴스
+mn(numpy.ndarray or list): 인스턴스를 배치할 추상좌표
+반환값
+laygo2.physical.instance: 좌표가 수정된 인스턴스
+참조
+없음</p>
 </dd></dl>
 
 </section>

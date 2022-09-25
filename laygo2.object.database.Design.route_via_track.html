@@ -405,8 +405,45 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.route_via_track">
 <span class="sig-prename descclassname"><span class="pre">Design.</span></span><span class="sig-name descname"><span class="pre">route_via_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">via_tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[None,</span> <span class="pre">True]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.route_via_track"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.route_via_track" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create Path and Via objects over the abstract coordinates specified by mn,
-on the track of specified routing grid.</p>
+<dd><p>Perform routing on the specified track with accessing wires to mn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>)</em>) – list containing coordinates of the points being connected through a track</p></li>
+<li><p><strong>track</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a>) – list containing coordinate values and direction of a track.
+Vertical tracks have [v, None] format, while horizontal tracks have [None, v] format
+(v is the coordinates of the track).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The list containing the generated routing objects;
+The last object corresponds to the routing object on the track.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; r23=grids[“routing_23_cmos”]
+&gt;&gt;&gt; mn_list = [[0, -2], [1, 0], [2, 5], [3, 4], [4, 5], [5, 5]]
+&gt;&gt;&gt; track = r23.route_via_track(mn=mn_list, track=[None,0])
+&gt;&gt;&gt; print(track)
+[[&lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;], &lt;laygo2.object.physical.VirtualInstance object&gt;, [&lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;], [&lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;], [&lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;], [&lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;], &lt;laygo2.object.physical.Rect object&gt;]
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_route_via_track.png"><img alt="_images/object_grid_RoutingGrid_route_via_track.png" src="_images/object_grid_RoutingGrid_route_via_track.png" style="height: 250px;" /></a>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid.route_via_track" title="laygo2.object.grid.RoutingGrid.route_via_track"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.RoutingGrid.route_via_track</span></code></a></p>
+</div>
+<p class="rubric">Notes</p>
+<p>Reference in Korean:
+wire 라우팅 함수, track을 기준점으로 routing을 진행한다.
+파라미터
+track(numpy.ndarray): track의 좌표값과 방향을 담고 있는 list. 수직 트랙일 경우 [v, None], 수평 트랙일 경우 [None, v]의 형태를 가지고 있다 (v는 track의 좌표값).
+mn(list(numpy.ndarray)): track을 통해 연결될 지점들의 좌표를 담고 있는 list.
+반환값
+list: 생성된 routing object들을 담고 있는 list. 마지막 object가 track위의 routing object에 해당.</p>
 </dd></dl>
 
 </section>

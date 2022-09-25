@@ -540,16 +540,16 @@
 <td><p>Constructor function of RoutingGrid class.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.route" title="laygo2.object.grid.RoutingGrid.route"><code class="xref py py-obj docutils literal notranslate"><span class="pre">route</span></code></a>(mn[, direction, via_tag])</p></td>
-<td><p>Create a rect wire object for routing.</p></td>
+<td><p>Create wire object(s) for routing.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.via" title="laygo2.object.grid.RoutingGrid.via"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via</span></code></a>([mn, params])</p></td>
-<td><p>Via generating function.</p></td>
+<td><p>Create Via object(s) on abstract grid.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.route_via_track" title="laygo2.object.grid.RoutingGrid.route_via_track"><code class="xref py py-obj docutils literal notranslate"><span class="pre">route_via_track</span></code></a>(mn, track[, via_tag])</p></td>
-<td><p>Wire routing function; performs routing with track as a reference point.</p></td>
+<td><p>Perform routing on the specified track with accessing wires to mn.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.pin" title="laygo2.object.grid.RoutingGrid.pin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pin</span></code></a>(name, mn[, direction, netname, params])</p></td>
-<td><p>Pin generating function.</p></td>
+<td><p>Create a Pin object over the abstract coordinates specified by mn, on the specified routing grid.</p></td>
 </tr>
 </tbody>
 </table>
@@ -735,27 +735,28 @@ See _PhyToAbsGridConverter.overlap() for details.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid.pin">
 <span class="sig-name descname"><span class="pre">pin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">netname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#RoutingGrid.pin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.RoutingGrid.pin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Pin generating function.</p>
+<dd><p>Create a Pin object over the abstract coordinates specified by mn,
+on the specified routing grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Pin name</p></li>
-<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a>) – Abstract coordinates for generating Pin</p></li>
-<li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional.</em>) – Direction</p></li>
-<li><p><strong>netname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional.</em>) – Net name of Pin</p></li>
-<li><p><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a><em>, </em><em>optional</em>) – Pin attribute</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Pin name.</p></li>
+<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a>) – Abstract coordinates for generating Pin.</p></li>
+<li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional.</em>) – Direction.</p></li>
+<li><p><strong>netname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional.</em>) – Net name of Pin.</p></li>
+<li><p><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a><em>, </em><em>optional</em>) – Pin attributes.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>laygo2.physical.Pin</strong></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Pin object</p>
+<dd class="field-odd"><p>The generated pin object.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mn_list</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pin</span> <span class="o">=</span> <span class="n">r23</span><span class="o">.</span><span class="n">pin</span><span class="p">(</span><span class="n">mn</span><span class="o">=</span><span class="n">mn_list</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;pin&quot;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mn</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pin</span> <span class="o">=</span> <span class="n">mygrid</span><span class="o">.</span><span class="n">pin</span><span class="p">(</span><span class="n">mn</span><span class="o">=</span><span class="n">mn</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;pin&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pin&quot;</span><span class="p">)</span>
 <span class="go">&lt;laygo2.object.physical.Pin object&gt; name: pin, class: Pin, xy: [[0, 5], [300, 265]]……</span>
 </pre></div>
@@ -770,15 +771,13 @@ direction(str): 방향 [optional]
 netname(str): Pin의 net이름 [optional]
 params(dict): Pin 속성 [optional]
 반환값
-laygo2.physical.Pin: Pin object
-참조
-없음</p>
+laygo2.physical.Pin: Pin object</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid.route">
 <span class="sig-name descname"><span class="pre">route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">via_tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#RoutingGrid.route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.RoutingGrid.route" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a rect wire object for routing.</p>
+<dd><p>Create wire object(s) for routing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -795,9 +794,9 @@ laygo2.physical.Pin: Pin object
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; r23=grids[“routing_23_cmos”]
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; mygrid=grids[“routing_23_cmos”]  # assuming that the routing grid is available.
 &gt;&gt;&gt; mn_list = [[0, -2], [0, 1], [2, 1], [5,1] ]
-&gt;&gt;&gt; route = r23.route(grid=mygrid, mn=mn_list, via_tag=[True, None, True, True])
+&gt;&gt;&gt; route = mygrid.route(mn=mn_list, via_tag=[True, None, True, True])
 &gt;&gt;&gt; print(route)
 [&lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;]
 </pre></div>
@@ -805,33 +804,34 @@ laygo2.physical.Pin: Pin object
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_route.png"><img alt="_images/object_grid_RoutingGrid_route.png" src="_images/object_grid_RoutingGrid_route.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
 <p>Reference in Korean:
-wire 라우팅 함수, rect object를 생성.
+추상 좌표 위에 라우팅을 수행 하는 함수.
 파라미터
-mn(list(numpy.ndarray)): 2개이상의 연결할 mn 좌표를 갖고있는 list
-direction(str): None or “vertical”; path의 방향을 수평 or 수직을 결정 [optional]
-via_tag(list(Boolean)): Path에 via를 형성할지 switch들의 list [optional]
+mn(list(numpy.ndarray)): 배선을 수행할 2개 이상의 mn 좌표를 담고 있는 list.
+direction(str): None or “vertical”; path의 방향을 결정 (수평 or 수직) [optional].
+via_tag(list(Boolean)): Path에 via를 형성 할지를 결정하는 switch들을 담고 있는 list [optional].
 반환값
-list: 생성된 routing object들을 담고 있는 list.
-참조
-없음</p>
+list: 생성된 routing object들을 담고 있는 list.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid.route_via_track">
 <span class="sig-name descname"><span class="pre">route_via_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">via_tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[None,</span> <span class="pre">True]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#RoutingGrid.route_via_track"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.RoutingGrid.route_via_track" title="Permalink to this definition">¶</a></dt>
-<dd><p>Wire routing function; performs routing with track as a reference point.</p>
+<dd><p>Perform routing on the specified track with accessing wires to mn.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>)</em>) – list containing coordinates of the points being connected through a track</p></li>
-<li><p><strong>track</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a>) – list containing coordinate values and direction of a track Vertical track has [v, None] format, while horizontal track has [None, v] format (v is the coordinates of the track)</p></li>
+<li><p><strong>track</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a>) – list containing coordinate values and direction of a track.
+Vertical tracks have [v, None] format, while horizontal tracks have [None, v] format
+(v is the coordinates of the track).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>list</strong></p>
+<dd class="field-even"><p>The list containing the generated routing objects;
+The last object corresponds to the routing object on the track.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list containing the generated routing objects; the last object corresponds to the routing object on the track</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -850,9 +850,7 @@ wire 라우팅 함수, track을 기준점으로 routing을 진행한다.
 track(numpy.ndarray): track의 좌표값과 방향을 담고 있는 list. 수직 트랙일 경우 [v, None], 수평 트랙일 경우 [None, v]의 형태를 가지고 있다 (v는 track의 좌표값).
 mn(list(numpy.ndarray)): track을 통해 연결될 지점들의 좌표를 담고 있는 list.
 반환값
-list: 생성된 routing object들을 담고 있는 list. 마지막 object가 track위의 routing object에 해당.
-참조
-없음</p>
+list: 생성된 routing object들을 담고 있는 list. 마지막 object가 track위의 routing object에 해당.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -915,22 +913,22 @@ See _PhyToAbsGridConverter.union() for details.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid.via">
 <span class="sig-name descname"><span class="pre">via</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([0,</span> <span class="pre">0])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#RoutingGrid.via"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.RoutingGrid.via" title="Permalink to this definition">¶</a></dt>
-<dd><p>Via generating function.</p>
+<dd><p>Create Via object(s) on abstract grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>)</em>) – mn coordinates for generating via, 2 or more</p>
+<dd class="field-odd"><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>)</em>) – Abstract coordinate(s) that specify location(s) to insert via(s).</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>list(physical.PhysicalObject)</strong></p>
+<dd class="field-even"><p>The list containing the generated via objects.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>list containing the generated via objects</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a>(<a class="reference internal" href="laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject" title="laygo2.object.physical.PhysicalObject">physical.PhysicalObject</a>)</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; r23=grids[“routing_23_cmos”]
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; mygrid=grids[“routing_23_cmos”]
 &gt;&gt;&gt; mn_list = [[0, -2], [1, 0], [2, 5]]
-&gt;&gt;&gt; via = r23.via(mn=mn_list)
+&gt;&gt;&gt; via = mygrid.via(mn=mn_list)
 &gt;&gt;&gt; print(via)
 [&lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;]
 </pre></div>
@@ -940,11 +938,9 @@ See _PhyToAbsGridConverter.union() for details.</p>
 <p>Reference in Korean:
 via 생성함수.
 파라미터
-mn(list(numpy.ndarray)): via를 생성할 mn좌표, 2개이상 가능
+mn(list(numpy.ndarray)): via를 생성할 mn좌표. 복수 개 입력 가능.
 반환값
-list(physical.PhysicalObject)): 생성된 via object들을 담고 있는 list
-참조
-없음</p>
+list(physical.PhysicalObject)): 생성된 via object들을 담고 있는 list.</p>
 </dd></dl>
 
 <dl class="py attribute">

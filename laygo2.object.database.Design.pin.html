@@ -405,7 +405,45 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.pin">
 <span class="sig-prename descclassname"><span class="pre">Design.</span></span><span class="sig-name descname"><span class="pre">pin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">netname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.pin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.pin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a Pin object over the abstract coordinates specified by mn, on this routing grid.</p>
+<dd><p>Create a Pin object over the abstract coordinates specified by mn,
+on the specified routing grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Pin name.</p></li>
+<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a>) – Abstract coordinates for generating Pin.</p></li>
+<li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional.</em>) – Direction.</p></li>
+<li><p><strong>netname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional.</em>) – Net name of Pin.</p></li>
+<li><p><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a><em>, </em><em>optional</em>) – Pin attributes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>laygo2.physical.Pin</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The generated pin object.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; dsn = Design(name=&#39;mycell&#39;, libname=&quot;testlib&quot;)
+&gt;&gt;&gt; mygrid = grids[“routing_23_cmos”]
+&gt;&gt;&gt; mn = [[0, 0], [10, 10]]
+&gt;&gt;&gt; pin = dsn.pin(name=&quot;pin&quot;, grid=mygrid, mn=mn)
+&gt;&gt;&gt; print(&quot;pin&quot;)
+&lt;laygo2.object.physical.Pin object&gt; name: pin, class: Pin, xy: [[0, 5], [300, 265]]……
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Reference in Korean:
+pin 생성함수.
+파라미터
+name(str): Pin 이름.
+mn(numpy.ndarray): Pin을 생성할 abstract 좌표.
+direction(str): 방향 [optional].
+netname(str): Pin의 net이름 [optional].
+params(dict): Pin 속성 [optional].
+반환값
+laygo2.physical.Pin: Pin object.</p>
 </dd></dl>
 
 </section>

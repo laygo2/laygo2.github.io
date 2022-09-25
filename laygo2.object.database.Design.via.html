@@ -405,7 +405,39 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.via">
 <span class="sig-prename descclassname"><span class="pre">Design.</span></span><span class="sig-name descname"><span class="pre">via</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.via"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.via" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a Via object over the abstract coordinates specified by mn, on this routing grid.</p>
+<dd><p>Create Via object(s) on abstract grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>)</em>) – Abstract coordinate(s) that specify location(s) to insert via(s).</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The list containing the generated via objects.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a>(<a class="reference internal" href="laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject" title="laygo2.object.physical.PhysicalObject">physical.PhysicalObject</a>)</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; dsn = Design(name=&#39;mycell&#39;, libname=&quot;testlib&quot;)
+&gt;&gt;&gt; mygrid=grids[“routing_23_cmos”]
+&gt;&gt;&gt; mn_list = [[0, -2], [1, 0], [2, 5]]
+&gt;&gt;&gt; via = dsn.via(grid=mygrid, mn=mn_list)
+&gt;&gt;&gt; print(via)
+[&lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;]
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_via.png"><img alt="_images/object_grid_RoutingGrid_via.png" src="_images/object_grid_RoutingGrid_via.png" style="height: 250px;" /></a>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid.via" title="laygo2.object.grid.RoutingGrid.via"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.RoutingGrid.via</span></code></a></p>
+</div>
+<p class="rubric">Notes</p>
+<p>Reference in Korean:
+via 생성함수.
+파라미터
+mn(list(numpy.ndarray)): via를 생성할 mn좌표. 복수 개 입력 가능.
+반환값
+list(physical.PhysicalObject)): 생성된 via object들을 담고 있는 list.</p>
 </dd></dl>
 
 </section>

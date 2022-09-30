@@ -1,183 +1,119 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>PlacementGrid class &#8212; laygo2</title>
-  <script>
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  
+    
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/6.1.2/css/all.min.css">
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="_static/autoclasstoc.css" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b">
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'laygo2.object.grid.PlacementGrid';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="RoutingGrid class" href="laygo2.object.grid.RoutingGrid.html" />
     <link rel="prev" title="Grid class" href="laygo2.object.grid.Grid.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
-  
-  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
-  <label class="overlay overlay-primary" for="__primary"></label>
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
 
-  
-  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-      
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
-  </div>
-
-  
-  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fas fa-bars"></span>
-  </label>
   <div id="navbar-start">
     
     
-  
-
-
-<a class="navbar-brand logo" href="index.html">
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-    <p class="title logo__title">laygo2</p>
-  
+<a class="navbar-brand" href="index.html">
+<p class="title">laygo2</p>
 </a>
+
     
   </div>
 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
   
-  <div class="col-lg-9 navbar-header-items">
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
     <div id="navbar-center" class="mr-auto">
       
       <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
-                <li class="nav-item">
-                    <a class="nav-link" href="overview.html">
-                        Overview
-                    </a>
-                </li>
-                
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="overview.html">
+  Overview
+ </a>
+</li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="trial.html">
-                        Trial
-                    </a>
-                </li>
-                
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="trial.html">
+  Trial
+ </a>
+</li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="structure.html">
-                        Structure
-                    </a>
-                </li>
-                
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="structure.html">
+  Structure
+ </a>
+</li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="technology.html">
-                        Tech Setup
-                    </a>
-                </li>
-                
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="technology.html">
+  Tech Setup
+ </a>
+</li>
 
-                <li class="nav-item current active">
-                    <a class="nav-link" href="laygo2.html">
-                        API Reference
-                    </a>
-                </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                <li class="nav-item">
-                    <a class="nav-link" href="kor.html">
-                        Korean
-                    </a>
-                </li>
-                
-                </div>
-            </div>
-            
-    </ul>
-</nav>
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="laygo2.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="kor.html">
+  Korean
+ </a>
+</li>
+
+    
+</ul>
       </div>
       
     </div>
 
     <div id="navbar-end">
-      <div class="navbar-end-item navbar-end__search-button-container">
-        
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
-  <i class="fas fa-search"></i>
-</button>
-      </div>
-      
-      <div class="navbar-end-item">
-        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
-    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
-    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
-    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
-</span>
-      </div>
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
@@ -186,134 +122,27 @@
       
     </div>
   </div>
-
-
-  
-  <div class="search-button-container--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
-  <i class="fas fa-search"></i>
-</button>
-  </div>
-
-  
-  <label class="sidebar-toggle secondary-toggle" for="__secondary">
-      <span class="fas fa-outdent"></span>
-  </label>
-  
-
 </div>
-  </nav>
-  
-
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-  
-  <div class="sidebar-header-items sidebar-primary__section">
+    </nav>
     
-    
-      <div class="sidebar-header-items__center">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
-                <li class="nav-item">
-                    <a class="nav-link" href="overview.html">
-                        Overview
-                    </a>
-                </li>
-                
 
-                <li class="nav-item">
-                    <a class="nav-link" href="trial.html">
-                        Trial
-                    </a>
-                </li>
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="structure.html">
-                        Structure
-                    </a>
-                </li>
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="technology.html">
-                        Tech Setup
-                    </a>
-                </li>
-                
-
-                <li class="nav-item current active">
-                    <a class="nav-link" href="laygo2.html">
-                        API Reference
-                    </a>
-                </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                <li class="nav-item">
-                    <a class="nav-link" href="kor.html">
-                        Korean
-                    </a>
-                </li>
-                
-                </div>
-            </div>
+    <div class="container-xl">
+      <div class="row">
+          
             
-    </ul>
-</nav>
-      </div>
-      
-      </div>
-    
-
-    
-    
-    <div class="sidebar-header-items__end">
-      
-      <div class="navbar-end-item">
-        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
-    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
-    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
-    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
-</span>
-      </div>
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-      </ul>
-      </div>
-      
-    </div>
-    
-  </div>
-
-  
-  <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">
-    Section Navigation
-  </p>
-  <div class="bd-toc-item navbar-nav">
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="laygo2.object.html">
    laygo2.object package
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label class="toctree-toggle" for="toctree-checkbox-1">
+  <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -323,7 +152,7 @@
      laygo2.object.physical module
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label class="toctree-toggle" for="toctree-checkbox-2">
+    <label for="toctree-checkbox-2">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -380,7 +209,7 @@
      laygo2.object.template module
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label class="toctree-toggle" for="toctree-checkbox-3">
+    <label for="toctree-checkbox-3">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -412,7 +241,7 @@
      laygo2.object.grid module
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label class="toctree-toggle" for="toctree-checkbox-4">
+    <label for="toctree-checkbox-4">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -464,7 +293,7 @@
      laygo2.object.database module
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label class="toctree-toggle" for="toctree-checkbox-5">
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -484,7 +313,7 @@
        Design class
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-      <label class="toctree-toggle" for="toctree-checkbox-6">
+      <label for="toctree-checkbox-6">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -539,43 +368,51 @@
 
   </div>
 </nav>
-    </div>
-  </div>
-  
-
-  
-  <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
-  </div>
-
-      </div>
-      <main class="bd-main">
-        
-        
-        <div class="bd-content">
-          <div class="bd-article-container">
-            
-            <div class="bd-header-article">
-                
             </div>
             
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
             
-            <article class="bd-article" role="main">
               
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
   <section id="placementgrid-class">
-<h1>PlacementGrid class<a class="headerlink" href="#placementgrid-class" title="Permalink to this heading">#</a></h1>
+<h1>PlacementGrid class<a class="headerlink" href="#placementgrid-class" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">PlacementGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hgrid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#PlacementGrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.PlacementGrid" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="laygo2.object.grid.Grid.html#laygo2.object.grid.Grid" title="laygo2.object.grid.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Grid</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">PlacementGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hgrid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#PlacementGrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.PlacementGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="laygo2.object.grid.Grid.html#laygo2.object.grid.Grid" title="laygo2.object.grid.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">laygo2.object.grid.Grid</span></code></a></p>
 <p>PlacementGrid class implements a grid for placement of Instance and VirtualInstance.</p>
 <p class="rubric">Notes</p>
 <p>Reference in Korean:
 PlacementGrid 클래스는 Instance 및 VirtualInstance 개체들의 배치를 위한 격자 그리드를 구현한다.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
-<table class="autosummary longtable table autosummary">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -586,7 +423,7 @@ PlacementGrid 클래스는 Instance 및 VirtualInstance 개체들의 배치를 �
 </tr>
 </tbody>
 </table>
-<details><summary>Inherited from <a class="reference internal" href="laygo2.object.grid.Grid.html#laygo2.object.grid.Grid" title="laygo2.object.grid.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Grid</span></code></a></summary><table class="autosummary longtable table autosummary">
+<details><summary>Inherited from <a class="reference internal" href="laygo2.object.grid.Grid.html#laygo2.object.grid.Grid" title="laygo2.object.grid.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Grid</span></code></a></summary><table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -651,7 +488,7 @@ PlacementGrid 클래스는 Instance 및 VirtualInstance 개체들의 배치를 �
 </details></div>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Methods:</p>
-<table class="autosummary longtable table autosummary">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -662,7 +499,7 @@ PlacementGrid 클래스는 Instance 및 VirtualInstance 개체들의 배치를 �
 </tr>
 </tbody>
 </table>
-<details><summary>Inherited from <a class="reference internal" href="laygo2.object.grid.Grid.html#laygo2.object.grid.Grid" title="laygo2.object.grid.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Grid</span></code></a></summary><table class="autosummary longtable table autosummary">
+<details><summary>Inherited from <a class="reference internal" href="laygo2.object.grid.Grid.html#laygo2.object.grid.Grid" title="laygo2.object.grid.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Grid</span></code></a></summary><table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -740,7 +577,7 @@ PlacementGrid 클래스는 Instance 및 VirtualInstance 개체들의 배치를 �
 <hr class="docutils" />
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hgrid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hgrid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructor function of Grid class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -777,54 +614,54 @@ laygo2.Grid
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.bbox">
-<span class="sig-name descname"><span class="pre">bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.bbox" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.bbox" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the ‘internal’ bounding box of obj.
 See _PhyToAbsGridConverter.bbox() for details.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.bottom_left">
-<span class="sig-name descname"><span class="pre">bottom_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.bottom_left" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">bottom_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.bottom_left" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the bottom-left corner of obj.
 See _PhyToAbsGridConverter.bottom_left() for details.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.bottom_right">
-<span class="sig-name descname"><span class="pre">bottom_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.bottom_right" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">bottom_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.bottom_right" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the bottom-right corner of obj.
 See _PhyToAbsGridConverter.bottom_right() for details.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.center">
-<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.center" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.center" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the abstrack grid coordinates corresponding to the center point of obj.
 See _PhyToAbsGridConverter.center for details.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.crossing">
-<span class="sig-name descname"><span class="pre">crossing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.crossing" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">crossing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.crossing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the crossing point of args.
 See _PhyToAbsGridConverter.crossing() for details.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.get_range">
-<span class="sig-name descname"><span class="pre">get_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.get_range" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.get_range" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.overlap">
-<span class="sig-name descname"><span class="pre">overlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bbox'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.overlap" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">overlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bbox'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.overlap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the overlap of args.
 See _PhyToAbsGridConverter.overlap() for details.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.place">
-<span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#PlacementGrid.place"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.place" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#PlacementGrid.place"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.place" title="Permalink to this definition">¶</a></dt>
 <dd><p>Place the instance on the specified coordinate mn, on this grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -866,12 +703,12 @@ laygo2.physical.instance: 좌표가 수정된 인스턴스
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.set_range">
-<span class="sig-name descname"><span class="pre">set_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.set_range" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.set_range" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.summarize">
-<span class="sig-name descname"><span class="pre">summarize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.summarize" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">summarize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.summarize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output the information of the respective grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -902,28 +739,28 @@ str
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.top_left">
-<span class="sig-name descname"><span class="pre">top_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.top_left" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">top_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.top_left" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the top-left corner of obj.
 See _PhyToAbsGridConverter.top_left() for details.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.top_right">
-<span class="sig-name descname"><span class="pre">top_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.top_right" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">top_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.top_right" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the top-right corner of obj.
 See _PhyToAbsGridConverter.top_right() for details.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.union">
-<span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.union" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.union" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to union of args.
 See _PhyToAbsGridConverter.union() for details.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid._xy">
-<span class="sig-name descname"><span class="pre">_xy</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid.PlacementGrid._xy" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">_xy</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid.PlacementGrid._xy" title="Permalink to this definition">¶</a></dt>
 <dd><p>the list contains the 1d-grid objects for x and y axes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -934,13 +771,13 @@ See _PhyToAbsGridConverter.union() for details.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.abs2phy">
-<span class="sig-name descname"><span class="pre">abs2phy</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.abs2phy" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">abs2phy</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.abs2phy" title="Permalink to this definition">¶</a></dt>
 <dd><p>AbsToPhyGridConverter(master=self)</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.elements">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elements</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.elements" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elements</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.elements" title="Permalink to this definition">¶</a></dt>
 <dd><p>return elements of subgrids ([_xy[0].elements, _xy[1].elements]).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -951,7 +788,7 @@ See _PhyToAbsGridConverter.union() for details.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.h">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">h</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.h" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">h</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.h" title="Permalink to this definition">¶</a></dt>
 <dd><p>OneDimGrid of the y-coordinate system.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])
@@ -973,7 +810,7 @@ y좌표계 OneDimGrid.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.height">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.height" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.height" title="Permalink to this definition">¶</a></dt>
 <dd><p>Height of the region in which the coordinate system is defined.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])
@@ -995,7 +832,7 @@ y좌표계 OneDimGrid.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.height_vec">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height_vec</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.height_vec" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height_vec</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.height_vec" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the height vector [0, h].</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])
@@ -1017,7 +854,7 @@ height를 list로 반환.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.m">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">m</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.m" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">m</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.m" title="Permalink to this definition">¶</a></dt>
 <dd><p>One-dimensional _PhyToAbsConverter of the x-coordinate system.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])
@@ -1049,7 +886,7 @@ x좌표계 1차원 _PhyToAbsConverter.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.mn">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mn</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.mn" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mn</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.mn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Two-dimensional _PhyToAbsConverter of a coordinate system.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])
@@ -1081,7 +918,7 @@ x좌표계 1차원 _PhyToAbsConverter.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.n">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.n" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.n" title="Permalink to this definition">¶</a></dt>
 <dd><p>One-dimensional _PhyToAbsConverter of the y-coordinate system.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])
@@ -1113,7 +950,7 @@ y좌표계 1차원 _PhyToAbsConverter.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.name" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name of the grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -1124,18 +961,18 @@ y좌표계 1차원 _PhyToAbsConverter.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.phy2abs">
-<span class="sig-name descname"><span class="pre">phy2abs</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.phy2abs" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">phy2abs</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.phy2abs" title="Permalink to this definition">¶</a></dt>
 <dd><p>PhyToAbsGridConverter(master=self)</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.range">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">range</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.range" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">range</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.range" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.shape" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.shape" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Two-dimensional element length in a coordinate system.</dt><dd><p>length of x-axis elements, length of y-axis elements</p>
 </dd>
@@ -1160,12 +997,12 @@ y좌표계 1차원 _PhyToAbsConverter.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.type">
-<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'placement'</span></em><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.type" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'placement'</span></em><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.v">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">v</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.v" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">v</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.v" title="Permalink to this definition">¶</a></dt>
 <dd><p>OneDimGrid of the x-coordinate system.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])
@@ -1187,7 +1024,7 @@ x좌표계 OneDimGrid.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.width">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.width" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.width" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Width of the region in which the coordinate system is defined.</dt><dd><p>x scope</p>
 </dd>
@@ -1212,7 +1049,7 @@ x좌표계 OneDimGrid.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.width_vec">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width_vec</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.width_vec" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width_vec</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.width_vec" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Return width as a list.</dt><dd><p>length of the respective axis and zero</p>
 </dd>
@@ -1237,7 +1074,7 @@ width를 list로 반환.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.x">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.x" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.x" title="Permalink to this definition">¶</a></dt>
 <dd><p>One-dimensional _AbsToPhyGridConverter of the x-coordinate system.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])
@@ -1267,7 +1104,7 @@ x좌표계 1차원 _AbsToPhyGridConverter.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.xy">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xy</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.xy" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xy</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.xy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Two-dimensional _AbsToPhyConverter of a coordinate system.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])
@@ -1299,7 +1136,7 @@ x좌표계 1차원 _AbsToPhyGridConverter.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.y">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.y" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.y" title="Permalink to this definition">¶</a></dt>
 <dd><p>One-dimensional _AbsToPhyGridConverter of the y-coordinate system.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])
@@ -1332,90 +1169,50 @@ y좌표계 1차원 _AbsToPhyGridConverter.</p>
 </section>
 
 
-            </article>
-            
-            
-            
-            <footer class="bd-footer-article">
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="laygo2.object.grid.Grid.html" title="previous page">
-      <i class="fas fa-angle-left"></i>
-      <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Grid class</p>
-      </div>
-  </a>
-  <a class='right-next' id="next-link" href="laygo2.object.grid.RoutingGrid.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">RoutingGrid class</p>
-  </div>
-  <i class="fas fa-angle-right"></i>
-  </a>
-</div>
-            </footer>
-            
-          </div>
-          
-          
-          
-            <div class="bd-sidebar-secondary bd-toc">
+              </div>
               
-<div class="toc-item">
-  
-</div>
-
-<div class="toc-item">
-  
-<div class="tocsection sourcelink">
-    <a href="_sources/laygo2.object.grid.PlacementGrid.rst.txt">
-        <i class="fas fa-file-alt"></i> Show Source
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="laygo2.object.grid.Grid.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Grid class</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="laygo2.object.grid.RoutingGrid.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">RoutingGrid class</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
-
-</div>
-
-            </div>
+              
+          </main>
           
-          
-        </div>
-        <footer class="bd-footer-content">
-          <div class="bd-footer-content__inner">
-            
-          </div>
-        </footer>
-        
-      </main>
+
+      </div>
     </div>
-  </div>
-
   
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
     
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b"></script>
-
-  <footer class="bd-footer"><div class="bd-footer__inner container">
-  
-  <div class="footer-item">
-    
-<p class="copyright">
-
+    <div class="footer-item">
+      <p class="copyright">
     &copy; Copyright 2021, Niftylab at Hanyang University, South Korea.<br>
-
 </p>
-
-  </div>
-  
-  <div class="footer-item">
+    </div>
     
-<p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
-
+    </div>
+    
   </div>
-  
-</div>
-  </footer>
+</footer>
   </body>
 </html>

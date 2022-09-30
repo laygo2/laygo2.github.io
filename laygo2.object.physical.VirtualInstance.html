@@ -1,183 +1,119 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>VirtualInstance class &#8212; laygo2</title>
-  <script>
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  
+    
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/6.1.2/css/all.min.css">
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="_static/autoclasstoc.css" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b">
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'laygo2.object.physical.VirtualInstance';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="laygo2.object.template module" href="laygo2.object.template.html" />
     <link rel="prev" title="Instance class" href="laygo2.object.physical.Instance.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
-  
-  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
-  <label class="overlay overlay-primary" for="__primary"></label>
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
 
-  
-  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-      
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
-  </div>
-
-  
-  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fas fa-bars"></span>
-  </label>
   <div id="navbar-start">
     
     
-  
-
-
-<a class="navbar-brand logo" href="index.html">
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-    <p class="title logo__title">laygo2</p>
-  
+<a class="navbar-brand" href="index.html">
+<p class="title">laygo2</p>
 </a>
+
     
   </div>
 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
   
-  <div class="col-lg-9 navbar-header-items">
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
     <div id="navbar-center" class="mr-auto">
       
       <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
-                <li class="nav-item">
-                    <a class="nav-link" href="overview.html">
-                        Overview
-                    </a>
-                </li>
-                
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="overview.html">
+  Overview
+ </a>
+</li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="trial.html">
-                        Trial
-                    </a>
-                </li>
-                
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="trial.html">
+  Trial
+ </a>
+</li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="structure.html">
-                        Structure
-                    </a>
-                </li>
-                
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="structure.html">
+  Structure
+ </a>
+</li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="technology.html">
-                        Tech Setup
-                    </a>
-                </li>
-                
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="technology.html">
+  Tech Setup
+ </a>
+</li>
 
-                <li class="nav-item current active">
-                    <a class="nav-link" href="laygo2.html">
-                        API Reference
-                    </a>
-                </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                <li class="nav-item">
-                    <a class="nav-link" href="kor.html">
-                        Korean
-                    </a>
-                </li>
-                
-                </div>
-            </div>
-            
-    </ul>
-</nav>
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="laygo2.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="kor.html">
+  Korean
+ </a>
+</li>
+
+    
+</ul>
       </div>
       
     </div>
 
     <div id="navbar-end">
-      <div class="navbar-end-item navbar-end__search-button-container">
-        
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
-  <i class="fas fa-search"></i>
-</button>
-      </div>
-      
-      <div class="navbar-end-item">
-        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
-    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
-    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
-    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
-</span>
-      </div>
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
@@ -186,134 +122,27 @@
       
     </div>
   </div>
-
-
-  
-  <div class="search-button-container--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
-  <i class="fas fa-search"></i>
-</button>
-  </div>
-
-  
-  <label class="sidebar-toggle secondary-toggle" for="__secondary">
-      <span class="fas fa-outdent"></span>
-  </label>
-  
-
 </div>
-  </nav>
-  
-
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-  
-  <div class="sidebar-header-items sidebar-primary__section">
+    </nav>
     
-    
-      <div class="sidebar-header-items__center">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
-                <li class="nav-item">
-                    <a class="nav-link" href="overview.html">
-                        Overview
-                    </a>
-                </li>
-                
 
-                <li class="nav-item">
-                    <a class="nav-link" href="trial.html">
-                        Trial
-                    </a>
-                </li>
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="structure.html">
-                        Structure
-                    </a>
-                </li>
-                
-
-                <li class="nav-item">
-                    <a class="nav-link" href="technology.html">
-                        Tech Setup
-                    </a>
-                </li>
-                
-
-                <li class="nav-item current active">
-                    <a class="nav-link" href="laygo2.html">
-                        API Reference
-                    </a>
-                </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                <li class="nav-item">
-                    <a class="nav-link" href="kor.html">
-                        Korean
-                    </a>
-                </li>
-                
-                </div>
-            </div>
+    <div class="container-xl">
+      <div class="row">
+          
             
-    </ul>
-</nav>
-      </div>
-      
-      </div>
-    
-
-    
-    
-    <div class="sidebar-header-items__end">
-      
-      <div class="navbar-end-item">
-        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
-    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
-    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
-    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
-</span>
-      </div>
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-      </ul>
-      </div>
-      
-    </div>
-    
-  </div>
-
-  
-  <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">
-    Section Navigation
-  </p>
-  <div class="bd-toc-item navbar-nav">
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="laygo2.object.html">
    laygo2.object package
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label class="toctree-toggle" for="toctree-checkbox-1">
+  <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -323,7 +152,7 @@
      laygo2.object.physical module
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label class="toctree-toggle" for="toctree-checkbox-2">
+    <label for="toctree-checkbox-2">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -380,7 +209,7 @@
      laygo2.object.template module
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label class="toctree-toggle" for="toctree-checkbox-3">
+    <label for="toctree-checkbox-3">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -412,7 +241,7 @@
      laygo2.object.grid module
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label class="toctree-toggle" for="toctree-checkbox-4">
+    <label for="toctree-checkbox-4">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -464,7 +293,7 @@
      laygo2.object.database module
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label class="toctree-toggle" for="toctree-checkbox-5">
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -484,7 +313,7 @@
        Design class
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-      <label class="toctree-toggle" for="toctree-checkbox-6">
+      <label for="toctree-checkbox-6">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -539,42 +368,50 @@
 
   </div>
 </nav>
-    </div>
-  </div>
-  
-
-  
-  <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
-  </div>
-
-      </div>
-      <main class="bd-main">
-        
-        
-        <div class="bd-content">
-          <div class="bd-article-container">
-            
-            <div class="bd-header-article">
-                
             </div>
             
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
             
-            <article class="bd-article" role="main">
               
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
   <section id="virtualinstance-class">
-<h1>VirtualInstance class<a class="headerlink" href="#virtualinstance-class" title="Permalink to this heading">#</a></h1>
+<h1>VirtualInstance class<a class="headerlink" href="#virtualinstance-class" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.physical.</span></span><span class="sig-name descname"><span class="pre">VirtualInstance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">native_elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viewname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'layout'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'R0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([0,</span> <span class="pre">0])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/physical.html#VirtualInstance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.physical.VirtualInstance" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><code class="xref py py-class docutils literal notranslate"><span class="pre">Instance</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.physical.</span></span><span class="sig-name descname"><span class="pre">VirtualInstance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">native_elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viewname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'layout'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'R0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([0,</span> <span class="pre">0])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/physical.html#VirtualInstance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.physical.VirtualInstance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><code class="xref py py-class docutils literal notranslate"><span class="pre">laygo2.object.physical.Instance</span></code></a></p>
 <p>VirtualInstance object class.</p>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: VirtualInstance 객체 클래스.</p>
+<p><strong>Reference in Korean</strong>: VirtualInstance 객체 클래스.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
-<table class="autosummary longtable table autosummary">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -585,7 +422,7 @@
 </tr>
 </tbody>
 </table>
-<details><summary>Inherited from <a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><code class="xref py py-class docutils literal notranslate"><span class="pre">Instance</span></code></a></summary><table class="autosummary longtable table autosummary">
+<details><summary>Inherited from <a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><code class="xref py py-class docutils literal notranslate"><span class="pre">Instance</span></code></a></summary><table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -604,7 +441,7 @@
 <td><p>The shape of the instance mosaic.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.VirtualInstance.unit_size" title="laygo2.object.physical.VirtualInstance.unit_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit_size</span></code></a></p></td>
-<td><p>The unit size when the object is constructed in array.</p></td>
+<td><p>Unit size when the object is constructed in array.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.physical.VirtualInstance.transform" title="laygo2.object.physical.VirtualInstance.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a></p></td>
 <td><p>The transformation attribute of the object.</p></td>
@@ -647,7 +484,7 @@
 </tr>
 </tbody>
 </table>
-</details><details><summary>Inherited from <a class="reference internal" href="laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject" title="laygo2.object.physical.IterablePhysicalObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">IterablePhysicalObject</span></code></a></summary><table class="autosummary longtable table autosummary">
+</details><details><summary>Inherited from <a class="reference internal" href="laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject" title="laygo2.object.physical.IterablePhysicalObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">IterablePhysicalObject</span></code></a></summary><table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -664,7 +501,7 @@
 </tr>
 </tbody>
 </table>
-</details><details><summary>Inherited from <a class="reference internal" href="laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject" title="laygo2.object.physical.PhysicalObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">PhysicalObject</span></code></a></summary><table class="autosummary longtable table autosummary">
+</details><details><summary>Inherited from <a class="reference internal" href="laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject" title="laygo2.object.physical.PhysicalObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">PhysicalObject</span></code></a></summary><table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -720,7 +557,7 @@
 </details></div>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Methods:</p>
-<table class="autosummary longtable table autosummary">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -737,7 +574,7 @@
 </tr>
 </tbody>
 </table>
-<details><summary>Inherited from <a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><code class="xref py py-class docutils literal notranslate"><span class="pre">Instance</span></code></a></summary><table class="autosummary longtable table autosummary">
+<details><summary>Inherited from <a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><code class="xref py py-class docutils literal notranslate"><span class="pre">Instance</span></code></a></summary><table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -763,7 +600,7 @@
 </tr>
 </tbody>
 </table>
-</details><details><summary>Inherited from <a class="reference internal" href="laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject" title="laygo2.object.physical.IterablePhysicalObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">IterablePhysicalObject</span></code></a></summary><table class="autosummary longtable table autosummary">
+</details><details><summary>Inherited from <a class="reference internal" href="laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject" title="laygo2.object.physical.IterablePhysicalObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">IterablePhysicalObject</span></code></a></summary><table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -789,7 +626,7 @@
 </tr>
 </tbody>
 </table>
-</details><details><summary>Inherited from <a class="reference internal" href="laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject" title="laygo2.object.physical.PhysicalObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">PhysicalObject</span></code></a></summary><table class="autosummary longtable table autosummary">
+</details><details><summary>Inherited from <a class="reference internal" href="laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject" title="laygo2.object.physical.PhysicalObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">PhysicalObject</span></code></a></summary><table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -810,7 +647,7 @@
 <hr class="docutils" />
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">native_elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viewname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'layout'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'R0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([0,</span> <span class="pre">0])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/physical.html#VirtualInstance.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">native_elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viewname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'layout'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'R0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([0,</span> <span class="pre">0])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/physical.html#VirtualInstance.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>The constructor function of VirtualInstance class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -834,89 +671,64 @@
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Instance</span></code></a></p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Class</span></code></p>
 </div>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Pin information</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;in&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Element information</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">native_elements</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">native_elements</span><span class="p">[</span><span class="s1">&#39;R0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">native_elements</span><span class="p">[</span><span class="s1">&#39;R1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">native_elements</span><span class="p">[</span><span class="s1">&#39;R2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;prBoundary&#39;, &#39;drawing&#39;])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">VirtualInstance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;I0&#39;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span>
-<span class="go">        cellname=&#39;myvcell&#39;, xy=[500, 500], native_elements=native_elements,</span>
-<span class="go">        shape=[3, 2], pitch=[100, 100], unit_size=[100, 100], pins=vinst0_pins,</span>
-<span class="go">        transform=&#39;R0&#39;)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0</span> <span class="o">=</span> <span class="n">physical</span><span class="o">.</span><span class="n">VirtualInstance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;I0&#39;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;myvcell&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span> <span class="n">native_elements</span><span class="o">=</span><span class="n">vinst0_native_elements</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">pitch</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">unit_size</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">pins</span><span class="o">=</span><span class="n">vinst0_pins</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="s1">&#39;R0’)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0</span><span class="o">.</span><span class="n">native_elements</span>
-<span class="go">{&#39;R0&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCE170&gt;,</span>
-<span class="go"> &#39;R1&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCEA40&gt;,</span>
-<span class="go"> &#39;R2&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCE0B0&gt;}</span>
+<span class="go">{ ‘R0’ : physical.Rect, ‘R1’ : physical.Rect, ‘R2’ : physical.Rect }</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_VirtualInstance_init.png"><img alt="_images/object_physical_VirtualInstance_init.png" src="_images/object_physical_VirtualInstance_init.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: VirtualInstance 클래스의 생성자.</p>
-<p>파라미터
-- xy(numpy.ndarray): 객체의 주좌표 [x0, y0].
-- libname(str): 객체의 library 이름.
-- cellname(str): 객체의 cell이름.
-- native_elements(dict): 객체를 구성하는 물리 객체를 갖는 dict.
-- shape(numpy.ndarray): elements의 배열 크기 ([col, row]).
-- pitch(numpy.ndarray): 배열로 구성된 객체의 하위 객체 (element)간의 간격.
-- transform(str): 객체의 변환 속성 (R0, MX, MY 등).
-- unit_size(list): 객체의 단위 크기.
-- pins(dict): 객체에 속한 핀들을 갖는 dict.
-- name(str): 객체의 이름.
-- params(dict): 객체의 주요 속성을 갖는 dict.</p>
+<p><strong>Reference in Korean</strong>: VirtualInstance 클래스의 생성자.</p>
+<p>파라미터</p>
+<p>xy(numpy.ndarray): 객체의 주좌표 [x0, y0].</p>
+<p>libname(str): 객체의 library 이름.</p>
+<p>cellname(str): 객체의 cell이름.</p>
+<p>native_elements(dict): 객체를 구성하는 물리 객체를 갖는 dict.</p>
+<p>shape(numpy.ndarray): elements의 배열 크기 ([col, row]).</p>
+<p>pitch(numpy.ndarray): 배열로 구성된 객체의 하위 객체 (element)간의 간격.</p>
+<p>transform(str): 객체의 변환 속성 (R0, MX, MY 등).</p>
+<p>unit_size(list): 객체의 단위 크기.</p>
+<p>pins(dict): 객체에 속한 핀들을 갖는 dict.</p>
+<p>name(str): 객체의 이름.</p>
+<p>params(dict): 객체의 주요 속성을 갖는 dict.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance._get_xy">
-<span class="sig-name descname"><span class="pre">_get_xy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._get_xy" title="Permalink to this definition">#</a></dt>
-<dd><p>numpy.ndarray(dtype=numpy.int): Get the x and y coordinate values of
-this object.</p>
+<span class="sig-name descname"><span class="pre">_get_xy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._get_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>numpy.ndarray(dtype=numpy.int): Get the x and y coordinate values of this object.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance._set_xy">
-<span class="sig-name descname"><span class="pre">_set_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._set_xy" title="Permalink to this definition">#</a></dt>
-<dd><p>numpy.ndarray(dtype=numpy.int): Set the x and y coordinate values of
-this object.</p>
+<span class="sig-name descname"><span class="pre">_set_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._set_xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>numpy.ndarray(dtype=numpy.int): Set the x and y coordinate values of this object.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance._update_elements">
-<span class="sig-name descname"><span class="pre">_update_elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy_ofst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._update_elements" title="Permalink to this definition">#</a></dt>
-<dd><p>Update xy-coordinates of this object’s elements. An internal function
-for _set_xy()</p>
+<span class="sig-name descname"><span class="pre">_update_elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy_ofst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._update_elements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update xy-coordinates of this object’s elements. An internal function for _set_xy()</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance._update_pins">
-<span class="sig-name descname"><span class="pre">_update_pins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy_ofst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._update_pins" title="Permalink to this definition">#</a></dt>
-<dd><p>Update xy-coordinates of this object’s pins. An internal function for
-_set_xy()</p>
+<span class="sig-name descname"><span class="pre">_update_pins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy_ofst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._update_pins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update xy-coordinates of this object’s pins. An internal function for _set_xy()</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance._update_pointers">
-<span class="sig-name descname"><span class="pre">_update_pointers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._update_pointers" title="Permalink to this definition">#</a></dt>
-<dd><p>Update pointers of this object. Called when the xy-coordinate of this
-object is updated.</p>
+<span class="sig-name descname"><span class="pre">_update_pointers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._update_pointers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update pointers of this object. Called when the xy-coordinate of this object is updated.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.get_element_position">
-<span class="sig-name descname"><span class="pre">get_element_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/physical.html#VirtualInstance.get_element_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.get_element_position" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_element_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/physical.html#VirtualInstance.get_element_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.get_element_position" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get element’s xy-position from origin.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -927,42 +739,41 @@ object is updated.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.get_pitch">
-<span class="sig-name descname"><span class="pre">get_pitch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.get_pitch" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_pitch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.get_pitch" title="Permalink to this definition">¶</a></dt>
 <dd><p>numpy.ndarray(dtype=int): Get the pitch of the instance.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.get_spacing">
-<span class="sig-name descname"><span class="pre">get_spacing</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.get_spacing" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_spacing</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.get_spacing" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.ndenumerate">
-<span class="sig-name descname"><span class="pre">ndenumerate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.ndenumerate" title="Permalink to this definition">#</a></dt>
-<dd><p>Enumerate over the element array. Calls np.ndenumerate() of the elements
-of this object.</p>
+<span class="sig-name descname"><span class="pre">ndenumerate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.ndenumerate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumerate over the element array. Calls np.ndenumerate() of the elements of this object.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.set_pitch">
-<span class="sig-name descname"><span class="pre">set_pitch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.set_pitch" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_pitch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.set_pitch" title="Permalink to this definition">¶</a></dt>
 <dd><p>numpy.ndarray(dtype=int): Set the pitch of the instance.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.set_spacing">
-<span class="sig-name descname"><span class="pre">set_spacing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.set_spacing" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_spacing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.set_spacing" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.summarize">
-<span class="sig-name descname"><span class="pre">summarize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/physical.html#VirtualInstance.summarize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.summarize" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">summarize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/physical.html#VirtualInstance.summarize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.summarize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Summarize object information.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance._pitch">
-<span class="sig-name descname"><span class="pre">_pitch</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._pitch" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">_pitch</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._pitch" title="Permalink to this definition">¶</a></dt>
 <dd><p>The internal variable for pitch.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -973,7 +784,7 @@ of this object.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance._xy">
-<span class="sig-name descname"><span class="pre">_xy</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([0,</span> <span class="pre">0])</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._xy" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">_xy</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([0,</span> <span class="pre">0])</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance._xy" title="Permalink to this definition">¶</a></dt>
 <dd><p>The internal variable of xy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -984,19 +795,17 @@ of this object.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.bbox">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bbox</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.bbox" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bbox</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.bbox" title="Permalink to this definition">¶</a></dt>
 <dd><p>The physical bounding box of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">bbox</span>
-<span class="go">array([[  0,   0],</span>
-<span class="go">       [200, 200]])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">xy</span>
+<span class="go">[ [0,0], [200,200] ]</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_bbox.png"><img alt="_images/object_physical_PhysicalObject_bbox.png" src="_images/object_physical_PhysicalObject_bbox.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: numpy.ndarray: 객체의 bbox (bounding box).</p>
+<p><strong>Reference in Korean</strong>: numpy.ndarray: 객체의 bbox (bounding box).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1006,18 +815,17 @@ of this object.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.bottom">
-<span class="sig-name descname"><span class="pre">bottom</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.bottom" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">bottom</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.bottom" title="Permalink to this definition">¶</a></dt>
 <dd><p>The bottom-center coordinate of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">top</span>
-<span class="go">array([100,   0])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">bottom</span>
+<span class="go">[ 100, 0 ]</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_bottom.png"><img alt="_images/object_physical_PhysicalObject_bottom.png" src="_images/object_physical_PhysicalObject_bottom.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 bottom-center 좌표.</p>
+<p><strong>Reference in Korean</strong>: 객체의 bottom-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1027,18 +835,17 @@ of this object.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.bottom_left">
-<span class="sig-name descname"><span class="pre">bottom_left</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.bottom_left" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">bottom_left</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.bottom_left" title="Permalink to this definition">¶</a></dt>
 <dd><p>The bottom-left coordinate of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">bottom_left</span>
-<span class="go">array([  0,   0])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">bottom_left</span>
+<span class="go">[ 0,0 ]</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_bottom_left.png"><img alt="_images/object_physical_PhysicalObject_bottom_left.png" src="_images/object_physical_PhysicalObject_bottom_left.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 bottom-left 좌표.</p>
+<p><strong>Reference in Korean</strong>: 객체의 bottom-left 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1048,18 +855,17 @@ of this object.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.bottom_right">
-<span class="sig-name descname"><span class="pre">bottom_right</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.bottom_right" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">bottom_right</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.bottom_right" title="Permalink to this definition">¶</a></dt>
 <dd><p>The bottom-right coordinate of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">bottom_right</span>
-<span class="go">array([200,   0])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">bottom_right</span>
+<span class="go">[200, 0]</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_bottom_right.png"><img alt="_images/object_physical_PhysicalObject_bottom_right.png" src="_images/object_physical_PhysicalObject_bottom_right.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 bottom-right 좌표.</p>
+<p><strong>Reference in Korean</strong>: 객체의 bottom-right 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1069,25 +875,20 @@ of this object.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.cellname">
-<span class="sig-name descname"><span class="pre">cellname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.cellname" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">cellname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.cellname" title="Permalink to this definition">¶</a></dt>
 <dd><p>The cellname of the instance object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
-<span class="go">        libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
-<span class="go">        unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span><span class="o">.</span><span class="n">cellname</span>
-<span class="go">&#39;mycell&#39;</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; inst0_pins = dict()
+&gt;&gt;&gt; inst0_pins[‘in’] = physical.Pin( xy = [[0, 0], [10,10]], layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in’)
+&gt;&gt;&gt; inst0_pins[‘out’]= physical.Pin( xy = [[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out’)
+&gt;&gt;&gt; inst0 = physical.Instance( name = &quot;I0&quot;, xy = [ 100,100], libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape = [3,2], pitch = [200,200], unit_size = [100, 100], pins = inst0_pins , transform =  &#39;R0’)
+&gt;&gt;&gt; inst0.cellname
+mycell
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_instance_cellname.png"><img alt="_images/object_physical_instance_cellname.png" src="_images/object_physical_instance_cellname.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체가 속한 셀 이름.</p>
+<p><strong>Reference in Korean</strong>: 객체가 속한 셀 이름.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
@@ -1097,18 +898,17 @@ of this object.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.center">
-<span class="sig-name descname"><span class="pre">center</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.center" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">center</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.center" title="Permalink to this definition">¶</a></dt>
 <dd><p>The center-center coordinate of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">center</span>
-<span class="go">array([100, 100])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">center</span>
+<span class="go">[ 100, 100 ]</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_center.png"><img alt="_images/object_physical_PhysicalObject_center.png" src="_images/object_physical_PhysicalObject_center.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 center-center 좌표.</p>
+<p><strong>Reference in Korean</strong>: 객체의 center-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1118,26 +918,22 @@ of this object.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.elements">
-<span class="sig-name descname"><span class="pre">elements</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.elements" title="Permalink to this definition">#</a></dt>
-<dd><p>The numpy array that contains this object’s subelements as
-its elements.</p>
+<span class="sig-name descname"><span class="pre">elements</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.elements" title="Permalink to this definition">¶</a></dt>
+<dd><p>The numpy array that contains this object’s subelements as its elements.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">phy0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">phy1</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">phy2</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">]])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">phy0</span> <span class="o">=</span> <span class="n">physical</span><span class="o">.</span><span class="n">IterablePhysicalObject</span><span class="p">(</span> <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span> <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phy1</span> <span class="o">=</span> <span class="n">physical</span><span class="o">.</span><span class="n">IterablePhysicalObject</span><span class="p">(</span> <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phy2</span> <span class="o">=</span> <span class="n">physical</span><span class="o">.</span><span class="n">IterablePhysicalObject</span><span class="p">(</span> <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">element</span> <span class="o">=</span> <span class="p">[</span><span class="n">phy0</span><span class="p">,</span> <span class="n">phy1</span><span class="p">,</span> <span class="n">phy2</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">iphy0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">IterablePhysicalObject</span><span class="p">(</span>
-<span class="go">        xy=[[0, 0], [300, 300]], elements = elements)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iphy0</span> <span class="o">=</span> <span class="n">physical</span><span class="o">.</span><span class="n">IterablePhysicalObject</span><span class="p">(</span> <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">elements</span> <span class="o">=</span> <span class="n">element</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">iphy0</span><span class="o">.</span><span class="n">elements</span>
-<span class="go">array([&lt;laygo2.object.physical.PhysicalObject object at 0x000002049A77FDF0&gt;,</span>
-<span class="go">       &lt;laygo2.object.physical.PhysicalObject object at 0x000002049A77F3D0&gt;,</span>
-<span class="go">       &lt;laygo2.object.physical.PhysicalObject object at 0x000002049A77FF40&gt;],</span>
-<span class="go">      dtype=object)</span>
+<span class="go">[physical.IterablePhysicalObject object,</span>
+<span class="go"> physical.IterablePhysicalObject object,</span>
+<span class="go"> physical.IterablePhysicalObject object ]</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 하위 구성원을 담고 있는 list.</p>
+<p><strong>Reference in Korean</strong>: 객체의 하위 구성원을 담고 있는 list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1147,25 +943,20 @@ its elements.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.height">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.height" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.height" title="Permalink to this definition">¶</a></dt>
 <dd><p>The height of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
-<span class="go">        libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
-<span class="go">        unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span><span class="o">.</span><span class="n">height</span>
-<span class="go">300</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; inst0_pins = dict()
+&gt;&gt;&gt; inst0_pins[‘in’] = physical.Pin( xy = [[0, 0], [10,10]], layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in’)
+&gt;&gt;&gt; inst0_pins[‘out’]= physical.Pin( xy = [[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out’)
+&gt;&gt;&gt; inst0 = physical.Instance( name = &quot;I0&quot;, xy = [ 100,100], libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape = [3,2], pitch = [200,200], unit_size = [100, 100], pins = inst0_pins , transform =  &#39;R0’)
+&gt;&gt;&gt; inst0.height
+300
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_instance_height.png"><img alt="_images/object_physical_instance_height.png" src="_images/object_physical_instance_height.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 높이.</p>
+<p><strong>Reference in Korean</strong>:     int: 객체의 높이.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a></p>
@@ -1175,7 +966,7 @@ its elements.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.height_vec">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height_vec</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.height_vec" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height_vec</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.height_vec" title="Permalink to this definition">¶</a></dt>
 <dd><p>The height vector [0, height].</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -1186,18 +977,17 @@ its elements.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.left">
-<span class="sig-name descname"><span class="pre">left</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.left" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">left</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.left" title="Permalink to this definition">¶</a></dt>
 <dd><p>The left-center coordinate of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">left</span>
-<span class="go">array([  0, 100])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">left</span>
+<span class="go">[ 0, 100 ]</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_left.png"><img alt="_images/object_physical_PhysicalObject_left.png" src="_images/object_physical_PhysicalObject_left.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 left-center 좌표.</p>
+<p><strong>Reference in Korean</strong>: 객체의 left-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1207,25 +997,20 @@ its elements.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.libname">
-<span class="sig-name descname"><span class="pre">libname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.libname" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">libname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.libname" title="Permalink to this definition">¶</a></dt>
 <dd><p>The library name of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
-<span class="go">        libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
-<span class="go">        unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span><span class="o">.</span><span class="n">libname</span>
-<span class="go">&#39;mylib&#39;</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; inst0_pins = dict()
+&gt;&gt;&gt; inst0_pins[‘in’] = physical.Pin( xy = [[0, 0], [10,10]], layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in’)
+&gt;&gt;&gt; inst0_pins[‘out’]= physical.Pin( xy = [[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out’)
+&gt;&gt;&gt; inst0 = physical.Instance( name = &quot;I0&quot;, xy = [ 100,100], libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape = [3,2], pitch = [200,200], unit_size = [100, 100], pins = inst0_pins , transform = &#39;R0’)
+&gt;&gt;&gt; inst0.libname
+mylib
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_instance_libname.png"><img alt="_images/object_physical_instance_libname.png" src="_images/object_physical_instance_libname.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 라이브러리 이름.</p>
+<p><strong>Reference in Korean</strong>: 객체의 라이브러리 이름.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
@@ -1235,20 +1020,16 @@ its elements.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.master">
-<span class="sig-name descname"><span class="pre">master</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.master" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">master</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.master" title="Permalink to this definition">¶</a></dt>
 <dd><p>The master of the current object (for array and pin objects).</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj1</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span>
-<span class="go">        name=&quot;test1&quot;, params=None)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj2</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer = [&quot;M1&quot;, &quot;drawing&quot;], master=obj1)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj2</span><span class="o">.</span><span class="n">master</span>
-<span class="go">&lt;laygo2.object.physical.PhysicalObject object at 0x00000204AAF3C7C0&gt;</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">master</span>
+<span class="go">None</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 master (배열 element 또는 pin 객체들의 master 객체에 연결).</p>
+<p><strong>Reference in Korean</strong>: 객체의 master (배열 element 또는 pin 객체들의 master 객체에 연결).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1258,19 +1039,17 @@ its elements.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.name" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>The name of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span>
-<span class="go">        name=&quot;test&quot;, params={&#39;maxI&#39;: 0.005})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">name</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">name</span>
 <span class="go">“test”</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_name.png"><img alt="_images/object_physical_PhysicalObject_name.png" src="_images/object_physical_PhysicalObject_name.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 이름.</p>
+<p><strong>Reference in Korean</strong>: 객체의 이름.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
@@ -1280,37 +1059,24 @@ its elements.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.native_elements">
-<span class="sig-name descname"><span class="pre">native_elements</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.native_elements" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">native_elements</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.native_elements" title="Permalink to this definition">¶</a></dt>
 <dd><p>The dictionary containing physical entities constituting the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Pin information</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;in&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Element information</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">native_elements</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">native_elements</span><span class="p">[</span><span class="s1">&#39;R0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">native_elements</span><span class="p">[</span><span class="s1">&#39;R1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">native_elements</span><span class="p">[</span><span class="s1">&#39;R2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;prBoundary&#39;, &#39;drawing&#39;])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">VirtualInstance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;I0&#39;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span>
-<span class="go">        cellname=&#39;myvcell&#39;, xy=[500, 500], native_elements=native_elements,</span>
-<span class="go">        shape=[3, 2], pitch=[100, 100], unit_size=[100, 100], pins=vinst0_pins,</span>
-<span class="go">        transform=&#39;R0&#39;)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s1">&#39;out’)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0_native_elements</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0_native_elements</span><span class="p">[</span><span class="s1">&#39;R0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">physical</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0_native_elements</span><span class="p">[</span><span class="s1">&#39;R1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">physical</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0_native_elements</span><span class="p">[</span><span class="s1">&#39;R2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">physical</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;prBoundary&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing’])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0</span> <span class="o">=</span> <span class="n">physical</span><span class="o">.</span><span class="n">VirtualInstance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;I0&#39;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;myvcell&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span> <span class="n">native_elements</span><span class="o">=</span><span class="n">vinst0_native_elements</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">pitch</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">unit_size</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">pins</span><span class="o">=</span><span class="n">vinst0_pins</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="s1">&#39;R0’)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vinst0</span><span class="o">.</span><span class="n">native_elements</span>
-<span class="go">{&#39;R0&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCE170&gt;,</span>
-<span class="go"> &#39;R1&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCEA40&gt;,</span>
-<span class="go"> &#39;R2&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCE0B0&gt;}</span>
+<span class="go">{ ‘R0’ : physical.Rect, ‘R1’ : physical.Rect, ‘R2’ : physical.Rect }</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_VirtualInstance_native_elements.png"><img alt="_images/object_physical_VirtualInstance_native_elements.png" src="_images/object_physical_VirtualInstance_native_elements.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체를 구성하는 하위 물리 객체들(Rect, Path, Pin, Text, Instance 등)을 갖고 있는 dict.</p>
+<p><strong>Reference in Korean</strong>: 객체를 구성하는 하위 물리 객체들(Rect, Path, Pin, Text, Instance 등)을 갖고 있는 dict.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
@@ -1320,18 +1086,16 @@ its elements.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.params">
-<span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.params" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.params" title="Permalink to this definition">¶</a></dt>
 <dd><p>The dictionary that contains the object parameters.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span>
-<span class="go">        name=&quot;test&quot;, params={&#39;maxI&#39;: 0.005})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">params</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="n">maxI</span><span class="o">=</span><span class="mf">0.005</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">params</span>
 <span class="go">{‘maxI’: 0.005 }</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 속성.</p>
+<p><strong>Reference in Korean</strong>: 객체의 속성.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
@@ -1341,32 +1105,26 @@ its elements.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.pins">
-<span class="sig-name descname"><span class="pre">pins</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.pins" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">pins</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.pins" title="Permalink to this definition">¶</a></dt>
 <dd><p>The dictionary having the pins belonging to the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
-<span class="go">        libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
-<span class="go">        unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span><span class="o">.</span><span class="n">pins</span>
-<span class="go">{&#39;in&#39;: &lt;laygo2.object.physical.Pin object at 0x000001CA76EE1348&gt;,</span>
-<span class="go">&#39;out&#39;: &lt;laygo2.object.physical.Pin object at 0x000001CA7709BD48&gt;}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span><span class="o">.</span><span class="n">pins</span><span class="p">[</span><span class="s2">&quot;in&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
-<span class="go">array([3, 2])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span><span class="o">.</span><span class="n">pins</span><span class="p">[</span><span class="s2">&quot;out&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
-<span class="go">array([3, 2] )</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span><span class="o">.</span><span class="n">pins</span><span class="p">[</span><span class="s2">&quot;in&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span>
-<span class="go">array([[300, 300], [310, 310]])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; inst0_pins = dict()
+&gt;&gt;&gt; inst0_pins[‘in’] = physical.Pin( xy = [[0, 0], [10,10]], layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in’)
+&gt;&gt;&gt; inst0_pins[‘out’]= physical.Pin( xy = [[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out’)
+&gt;&gt;&gt; inst0 = physical.Instance( name = &quot;I0&quot;, xy = [ 100,100], libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape = [3,2], pitch = [200,200], unit_size = [100, 100], pins = inst0_pins , transform =  &#39;R0’)
+&gt;&gt;&gt; inst0.pins
+{&#39;in&#39;: &lt;laygo2.object.physical.Pin object at 0x000001CA76EE1348&gt;, &#39;out&#39;: &lt;laygo2.object.physical.Pin object at 0x000001CA7709BD48&gt;}
+&gt;&gt;&gt; inst0.pins[“in”].shape
+[3,2]
+&gt;&gt;&gt; inst0.pins[“out”].shape
+[3,2]
+&gt;&gt;&gt; inst0.pins[“in”][1,1].xy
+[ [300, 300], [310, 310] ]
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_instance_pins.png"><img alt="_images/object_physical_instance_pins.png" src="_images/object_physical_instance_pins.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체에 속한 핀들을 갖는 dict.</p>
+<p><strong>Reference in Korean</strong>: 객체에 속한 핀들을 갖는 dict.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
@@ -1376,7 +1134,7 @@ its elements.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.pitch">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pitch</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.pitch" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pitch</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.pitch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the pitch of the instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -1387,13 +1145,12 @@ its elements.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.pointers">
-<span class="sig-name descname"><span class="pre">pointers</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.pointers" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">pointers</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.pointers" title="Permalink to this definition">¶</a></dt>
 <dd><p>The dictionary that contains major physical coordinates of the object.
 Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">pointers</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">pointers</span>
 <span class="go">{&#39;left&#39;: array([0, 100]), &#39;right&#39;: array([200, 100]),</span>
 <span class="go"> &#39;bottom&#39;: array([100, 0]), &#39;top&#39;: array([100, 200]),</span>
 <span class="go"> &#39;bottom_left&#39;: array([0, 0]), &#39;bottom_right&#39;: array([200, 0]),</span>
@@ -1404,7 +1161,7 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_pointers.png"><img alt="_images/object_physical_PhysicalObject_pointers.png" src="_images/object_physical_PhysicalObject_pointers.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 주요 좌표들을 담고 있는 dict.</p>
+<p><strong>Reference in Korean</strong>: 객체의 주요 좌표들을 담고 있는 dict.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
@@ -1414,18 +1171,17 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.right">
-<span class="sig-name descname"><span class="pre">right</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.right" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">right</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.right" title="Permalink to this definition">¶</a></dt>
 <dd><p>The right-center coordinate of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">right</span>
-<span class="go">array([200, 100])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">right</span>
+<span class="go">[ 200, 100 ]</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_right.png"><img alt="_images/object_physical_PhysicalObject_right.png" src="_images/object_physical_PhysicalObject_right.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 right-center 좌표.</p>
+<p><strong>Reference in Korean</strong>: 객체의 right-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1435,9 +1191,8 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.shape">
-<span class="sig-name descname"><span class="pre">shape</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.shape" title="Permalink to this definition">#</a></dt>
-<dd><p>The shape of the instance mosaic. None if
-the instance is non-mosaic.</p>
+<span class="sig-name descname"><span class="pre">shape</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>The shape of the instance mosaic. None if the instance is non-mosaic.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>np.array([<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a>]) or None</p>
@@ -1447,25 +1202,20 @@ the instance is non-mosaic.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.size">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.size" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>The size of the object ([width, height]).</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
-<span class="go">        libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
-<span class="go">        unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span><span class="o">.</span><span class="n">size</span>
-<span class="go">array([500, 300])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; inst0_pins = dict()
+&gt;&gt;&gt; inst0_pins[‘in’] = physical.Pin( xy = [[0, 0], [10,10]], layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in’)
+&gt;&gt;&gt; inst0_pins[‘out’]= physical.Pin( xy = [[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out’)
+&gt;&gt;&gt; inst0 = physical.Instance( name = &quot;I0&quot;, xy = [ 100,100], libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape = [3,2], pitch = [200,200], unit_size = [100, 100], pins = inst0_pins , transform =  &#39;R0’)
+&gt;&gt;&gt; inst0.size
+[500, 300]
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_instance_size.png"><img alt="_images/object_physical_instance_size.png" src="_images/object_physical_instance_size.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 크기 ([width, height]).</p>
+<p><strong>Reference in Korean</strong>:     numpy.ndarray: 객체의 크기 ([width, height]).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1475,23 +1225,22 @@ the instance is non-mosaic.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.spacing">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">spacing</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.spacing" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">spacing</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.spacing" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.top">
-<span class="sig-name descname"><span class="pre">top</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.top" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">top</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.top" title="Permalink to this definition">¶</a></dt>
 <dd><p>The top-center coordinate of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">top</span>
-<span class="go">array([100, 200])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">top</span>
+<span class="go">[ 100, 200 ]</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_top.png"><img alt="_images/object_physical_PhysicalObject_top.png" src="_images/object_physical_PhysicalObject_top.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 top-center 좌표.</p>
+<p><strong>Reference in Korean</strong>: 객체의 top-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1501,18 +1250,17 @@ the instance is non-mosaic.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.top_left">
-<span class="sig-name descname"><span class="pre">top_left</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.top_left" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">top_left</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.top_left" title="Permalink to this definition">¶</a></dt>
 <dd><p>The top-left coordinate of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">top_left</span>
-<span class="go">array([  0, 200])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">top_left</span>
+<span class="go">[ 0, 200 ]</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_top_left.png"><img alt="_images/object_physical_PhysicalObject_top_left.png" src="_images/object_physical_PhysicalObject_top_left.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 top-left 좌표.</p>
+<p><strong>Reference in Korean</strong>: 객체의 top-left 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1522,18 +1270,17 @@ the instance is non-mosaic.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.top_right">
-<span class="sig-name descname"><span class="pre">top_right</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.top_right" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">top_right</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.top_right" title="Permalink to this definition">¶</a></dt>
 <dd><p>The top-right coordinate of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">top_right</span>
-<span class="go">array([200, 200])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">physical</span><span class="o">.</span><span class="n">top_right</span>
+<span class="go">[200, 200]</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_top_right.png"><img alt="_images/object_physical_PhysicalObject_top_right.png" src="_images/object_physical_PhysicalObject_top_right.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 top-right 좌표.</p>
+<p><strong>Reference in Korean</strong>: 객체의 top-right 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1543,25 +1290,20 @@ the instance is non-mosaic.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.transform">
-<span class="sig-name descname"><span class="pre">transform</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'R0'</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.transform" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">transform</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'R0'</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>The transformation attribute of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
-<span class="go">        libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
-<span class="go">        unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span><span class="o">.</span><span class="n">transform</span>
-<span class="go">&quot;R0&quot;</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; inst0_pins = dict()
+&gt;&gt;&gt; inst0_pins[‘in’] = physical.Pin( xy = [[0, 0], [10,10]], layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in’)
+&gt;&gt;&gt; inst0_pins[‘out’]= physical.Pin( xy = [[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out’)
+&gt;&gt;&gt; inst0 = physical.Instance( name = &quot;I0&quot;, xy = [ 100,100], libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape = [3,2], pitch = [200,200], unit_size = [100, 100], pins = inst0_pins , transform =  &#39;R0’)
+&gt;&gt;&gt; inst0.transform
+“R0”
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_instance_transform.png"><img alt="_images/object_physical_instance_transform.png" src="_images/object_physical_instance_transform.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 변환 속성 (R0, MX, MY 등).</p>
+<p><strong>Reference in Korean</strong>: 객체의 변환 속성 (R0, MX, MY 등).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
@@ -1571,25 +1313,20 @@ the instance is non-mosaic.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.unit_size">
-<span class="sig-name descname"><span class="pre">unit_size</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.unit_size" title="Permalink to this definition">#</a></dt>
-<dd><p>The unit size when the object is constructed in array.</p>
+<span class="sig-name descname"><span class="pre">unit_size</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.unit_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unit size when the object is constructed in array.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
-<span class="go">        libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
-<span class="go">        unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span><span class="o">.</span><span class="n">unit_size</span>
-<span class="go">array([100, 100])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; inst0_pins = dict()
+&gt;&gt;&gt; inst0_pins[‘in’] = physical.Pin( xy = [[0, 0], [10,10]], layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in’)
+&gt;&gt;&gt; inst0_pins[‘out’]= physical.Pin( xy = [[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out’)
+&gt;&gt;&gt; inst0 = physical.Instance( name = &quot;I0&quot;, xy = [ 100,100], libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape = [3,2], pitch = [200,200], unit_size = [100, 100], pins = inst0_pins , transform =  &#39;R0’)
+&gt;&gt;&gt; inst0.unit_size
+[100, 100]
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_instance_unit_size.png"><img alt="_images/object_physical_instance_unit_size.png" src="_images/object_physical_instance_unit_size.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체가 배열로 구성되었을 때 단위 크기.</p>
+<p><strong>Reference in Korean</strong>: 객체가 배열로 구성되었을 때 단위 크기.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1599,7 +1336,7 @@ the instance is non-mosaic.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.viewname">
-<span class="sig-name descname"><span class="pre">viewname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.viewname" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">viewname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.viewname" title="Permalink to this definition">¶</a></dt>
 <dd><p>The view name of the instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -1610,25 +1347,20 @@ the instance is non-mosaic.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.width">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.width" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.width" title="Permalink to this definition">¶</a></dt>
 <dd><p>The width of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
-<span class="go">        libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
-<span class="go">        unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span><span class="o">.</span><span class="n">width</span>
-<span class="go">500</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; inst0_pins = dict()
+&gt;&gt;&gt; inst0_pins[‘in’] = physical.Pin( xy = [[0, 0], [10,10]], layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in’)
+&gt;&gt;&gt; inst0_pins[‘out’]= physical.Pin( xy = [[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out’)
+&gt;&gt;&gt; inst0 = physical.Instance( name = &quot;I0&quot;, xy = [ 100,100], libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape = [3,2], pitch = [200,200], unit_size = [100, 100], pins = inst0_pins , transform =  &#39;R0’)
+&gt;&gt;&gt; inst0.width
+500
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_instance_width.png"><img alt="_images/object_physical_instance_width.png" src="_images/object_physical_instance_width.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 폭.</p>
+<p><strong>Reference in Korean</strong>:     int: 객체의 폭.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a></p>
@@ -1638,7 +1370,7 @@ the instance is non-mosaic.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.width_vec">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width_vec</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.width_vec" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width_vec</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.width_vec" title="Permalink to this definition">¶</a></dt>
 <dd><p>The width vector [width, 0].</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -1649,9 +1381,8 @@ the instance is non-mosaic.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.xy">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xy</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.xy" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the x and y coordinate values of
-this object.</p>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xy</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the x and y coordinate values of this object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a>(dtype=numpy.int)</p>
@@ -1661,25 +1392,20 @@ this object.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.xy0">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xy0</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.xy0" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xy0</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.xy0" title="Permalink to this definition">¶</a></dt>
 <dd><p>The coordinates of the primary corner of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
-<span class="go">        libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
-<span class="go">        unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span><span class="o">.</span><span class="n">xy0</span>
-<span class="go">array([100, 100])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; inst0_pins = dict()
+&gt;&gt;&gt; inst0_pins[‘in’] = physical.Pin( xy = [[0, 0], [10,10]], layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in’)
+&gt;&gt;&gt; inst0_pins[‘out’]= physical.Pin( xy = [[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out’)
+&gt;&gt;&gt; inst0 = physical.Instance( name = &quot;I0&quot;, xy = [ 100,100], libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape = [3,2], pitch = [200,200], unit_size = [100, 100], pins = inst0_pins , transform =  &#39;R0’)
+&gt;&gt;&gt; inst0.xy0
+[100, 100]
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_instance_xy0.png"><img alt="_images/object_physical_instance_xy0.png" src="_images/object_physical_instance_xy0.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:     numpy.ndarray: 객체의 주 코너 좌표.</p>
+<p><strong>Reference in Korean</strong>:     numpy.ndarray: 객체의 주 코너 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1689,25 +1415,20 @@ this object.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.VirtualInstance.xy1">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xy1</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.xy1" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xy1</span></span><a class="headerlink" href="#laygo2.object.physical.VirtualInstance.xy1" title="Permalink to this definition">¶</a></dt>
 <dd><p>The coordinates of the secondary corner of the object.</p>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">]],</span>
-<span class="go">        layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
-<span class="go">        layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
-<span class="go">        libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
-<span class="go">        unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span><span class="o">.</span><span class="n">xy1</span>
-<span class="go">array([600, 400])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; inst0_pins = dict()
+&gt;&gt;&gt; inst0_pins[‘in’] = physical.Pin( xy = [[0, 0], [10,10]], layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in’)
+&gt;&gt;&gt; inst0_pins[‘out’]= physical.Pin( xy = [[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out’)
+&gt;&gt;&gt; inst0 = physical.Instance( name = &quot;I0&quot;, xy = [ 100,100], libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape = [3,2], pitch = [200,200], unit_size = [100, 100], pins = inst0_pins , transform =  &#39;R0’)
+&gt;&gt;&gt; inst0.xy1
+[600, 400]
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_instance_xy1.png"><img alt="_images/object_physical_instance_xy1.png" src="_images/object_physical_instance_xy1.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:     numpy.ndarray: 객체의 보조 코너 좌표.</p>
+<p><strong>Reference in Korean</strong>:     numpy.ndarray: 객체의 보조 코너 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
@@ -1720,90 +1441,50 @@ this object.</p>
 </section>
 
 
-            </article>
-            
-            
-            
-            <footer class="bd-footer-article">
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="laygo2.object.physical.Instance.html" title="previous page">
-      <i class="fas fa-angle-left"></i>
-      <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Instance class</p>
-      </div>
-  </a>
-  <a class='right-next' id="next-link" href="laygo2.object.template.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">laygo2.object.template module</p>
-  </div>
-  <i class="fas fa-angle-right"></i>
-  </a>
-</div>
-            </footer>
-            
-          </div>
-          
-          
-          
-            <div class="bd-sidebar-secondary bd-toc">
+              </div>
               
-<div class="toc-item">
-  
-</div>
-
-<div class="toc-item">
-  
-<div class="tocsection sourcelink">
-    <a href="_sources/laygo2.object.physical.VirtualInstance.rst.txt">
-        <i class="fas fa-file-alt"></i> Show Source
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="laygo2.object.physical.Instance.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Instance class</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="laygo2.object.template.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">laygo2.object.template module</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
-
-</div>
-
-            </div>
+              
+          </main>
           
-          
-        </div>
-        <footer class="bd-footer-content">
-          <div class="bd-footer-content__inner">
-            
-          </div>
-        </footer>
-        
-      </main>
+
+      </div>
     </div>
-  </div>
-
   
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
     
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b"></script>
-
-  <footer class="bd-footer"><div class="bd-footer__inner container">
-  
-  <div class="footer-item">
-    
-<p class="copyright">
-
+    <div class="footer-item">
+      <p class="copyright">
     &copy; Copyright 2021, Niftylab at Hanyang University, South Korea.<br>
-
 </p>
-
-  </div>
-  
-  <div class="footer-item">
+    </div>
     
-<p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
-
+    </div>
+    
   </div>
-  
-</div>
-  </footer>
+</footer>
   </body>
 </html>

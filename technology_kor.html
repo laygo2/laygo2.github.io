@@ -1,118 +1,182 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>신규 공정에서의 laygo2 셋업 &#8212; laygo2</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
 
-    
+  
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="_static/vendor/fontawesome/6.1.2/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="_static/autoclasstoc.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'technology_kor';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="laygo2의 구조" href="structure_kor.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
 
-    
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
 
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fas fa-bars"></span>
+  </label>
   <div id="navbar-start">
     
     
-<a class="navbar-brand" href="index.html">
-<p class="title">laygo2</p>
-</a>
+  
 
+
+<a class="navbar-brand logo" href="index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">laygo2</p>
+  
+</a>
     
   </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
   
-  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+  <div class="col-lg-9 navbar-header-items">
     <div id="navbar-center" class="mr-auto">
       
       <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="overview.html">
-  Overview
- </a>
-</li>
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="overview.html">
+                        Overview
+                    </a>
+                </li>
+                
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="trial.html">
-  Trial
- </a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="trial.html">
+                        Trial
+                    </a>
+                </li>
+                
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="structure.html">
-  Structure
- </a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="structure.html">
+                        Structure
+                    </a>
+                </li>
+                
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="technology.html">
-  Tech Setup
- </a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="technology.html">
+                        Tech Setup
+                    </a>
+                </li>
+                
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="laygo2.html">
-  API Reference
- </a>
-</li>
-
-<li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="kor.html">
-  Korean
- </a>
-</li>
-
-    
-</ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="laygo2.html">
+                        API Reference
+                    </a>
+                </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                <li class="nav-item current active">
+                    <a class="nav-link" href="kor.html">
+                        Korean
+                    </a>
+                </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
       </div>
       
     </div>
 
     <div id="navbar-end">
+      <div class="navbar-end-item navbar-end__search-button-container">
+        
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+  <i class="fas fa-search"></i>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
@@ -121,20 +185,127 @@
       
     </div>
   </div>
+
+
+  
+  <div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
+  <i class="fas fa-search"></i>
+</button>
+  </div>
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fas fa-outdent"></span>
+  </label>
+  
+
 </div>
-    </nav>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="overview.html">
+                        Overview
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="trial.html">
+                        Trial
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="structure.html">
+                        Structure
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="technology.html">
+                        Tech Setup
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="laygo2.html">
+                        API Reference
+                    </a>
+                </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                <li class="nav-item current active">
+                    <a class="nav-link" href="kor.html">
+                        Korean
+                    </a>
+                </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
     
 
-    <div class="container-xl">
-      <div class="row">
-          
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <div class="bd-toc-item active">
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">
+    Section Navigation
+  </p>
+  <div class="bd-toc-item navbar-nav">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="overview_kor.html">
@@ -160,21 +331,111 @@
 
   </div>
 </nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+      </div>
+      <main class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
             </div>
             
-          
-
-          
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
             
+            <article class="bd-article" role="main">
               
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
+  <section id="laygo2">
+<h1>신규 공정에서의 laygo2 셋업<a class="headerlink" href="#laygo2" title="Permalink to this heading">#</a></h1>
+<p>신규 공정에서 laygo2를 설치하기 위해서는, 해당 공정에 대한 다음 파일들을 작업 경로 내의 laygo2_tech내에 패키지의 형태로 준비하여,
+레이아웃 생성 스크립트들이 관련 Paython module들(template, grid)를 import할 수 있도록 한다.</p>
+<ul class="simple">
+<li><p><em><strong>__init__.py</strong></em>: 패키지 정의 파일</p></li>
+<li><p><strong>laygo2_tech_templates.py</strong>: Template 정의 파이썬 코드</p></li>
+<li><p><strong>laygo2_tech_grids.py</strong>: Grid 정의 파이썬 코드</p></li>
+<li><p><strong>laygo2_tech.yaml</strong>: (_template.py, _grid.py파일들에 의하여 사용될 수 있는) 공정 관련 파라미터들</p></li>
+<li><p><strong>laygo2_tech.layermap</strong>: (optional) 공정 PDK에 의해 정의된 레이아웃 레이어 정보</p></li>
+<li><p><strong>laygo2_tech.lyp</strong>: (optional) KLayout용 레이어 디스플레이 정보</p></li>
+</ul>
+<p>laygo2의 공정 패키지 셋업 예제는 <a class="reference external" href="https://github.com/niftylab/laygo2/tree/master/laygo2/examples/laygo2_tech">여기</a>에서 찾을 수 있다.</p>
+<p>공정 패키지를 구성하는 각각의 파일들에 대한 설명은 아래에 기술되어 있다.</p>
+<section id="init-py">
+<h2>__init__.py<a class="headerlink" href="#init-py" title="Permalink to this heading">#</a></h2>
+<p>패키지 import 시 load_templates / load_grids 함수들에 접근할 수 있도록 하는 선언문이 들어 있다.</p>
+</section>
+<section id="laygo2-tech-templates-py">
+<h2>laygo2_tech_templates.py<a class="headerlink" href="#laygo2-tech-templates-py" title="Permalink to this heading">#</a></h2>
+<p>공정 패키지에서 제공되는 템플릿들을 정의하고 있는 파이썬 코드이며, 해당 파일의 load_templates()라는 함수가
+호출되면, 공정에서 사용될 다양한 템플릿 개체들(MOS, CAP, RES등)을 생성하여 템플릿 라이브러리(TemplateLibrary)
+개체로 묶어 반환하는 작업을 수행한다.</p>
+<p>템플릿의 경우 NativeInstanceTemplate(고정 인스턴스용), ParameterizedInstanceTemplate(PCell용),
+UserDefinedTemplate(사용자 정의형-PCell in Python)의 세가지 클래스를 기본으로 제공한다.</p>
+</section>
+<section id="laygo2-tech-grids-py">
+<h2>laygo2_tech_grids.py<a class="headerlink" href="#laygo2-tech-grids-py" title="Permalink to this heading">#</a></h2>
+<p>공정 패키지에서 제공되는 배치(placement)/배선(routing) 그리드들을 정의하고 있는 파이썬 코드이며, 해당 파일의
+load_grids()라는 함수가호출되면, 공정에서 사용될 다양한 그리드 개체들을 생성하여 그리드 라이브러리(GridLibrary)
+개체로 묶어 반환하는 작업을 수행한다.</p>
+</section>
+<section id="laygo2-tech-yaml">
+<h2>laygo2_tech.yaml<a class="headerlink" href="#laygo2-tech-yaml" title="Permalink to this heading">#</a></h2>
+<p>공정 패키지의 템플릿 및 그리드 정의 파일들 (_templates.py, _grids.py)에서 사용되는 다양한 파라미터들을
+모아놓은 파일. 해당 파일은 필수적으로 요구되는 것은 아니며, 실제 templates.py, grids.py파일을 작성하는
+형태에 따라 필요하지 않을 수 있다. 예제 공정 패키지에서는 해당 파일에서 템플릿의 크기(unit_size), 핀 정보(pins)
+구조 정보들 (rects), 그리고 그리드의 종류, 크기, 좌표들, 라우팅 그리드 정보들 (레이어, 방향, via 등)을
+저장하고 있다.</p>
+</section>
+<section id="laygo2-tech-layermap">
+<h2>laygo2_tech.layermap<a class="headerlink" href="#laygo2-tech-layermap" title="Permalink to this heading">#</a></h2>
+<p>사용되는 공정 PDK에서 사용되는 layer 맵핑 정보를 가지고 있는 파일이며, 해당 layer정보들은
+내부 레이아웃 개체 생성 및 변환, GDS생성, Skill script출력 등에 사용된다.</p>
+<p>해당 layermap 파일은 일반적으로 공정 PDK에서 제공된다.
+사용자가 직접 layermap파일을 만들 경우, 행마다 레이어 정보를 정의하는 다음 형식의 파일을 생성하면 된다
+(상세한 내용은 예제 layermap 파일 참조).</p>
+<p><em>layername layerpurpose stream_layer_number datatype</em></p>
+</section>
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="structure_kor.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">laygo2의 구조</p>
+      </div>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
     <i class="fas fa-list"></i> On this page
 </div>
-
-<nav id="bd-toc-nav">
+<nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#init-py">
@@ -204,113 +465,62 @@
 </ul>
 
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
+</div>
 
-          
-          
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-              
-              <div>
-                
-  <section class="tex2jax_ignore mathjax_ignore" id="laygo2">
-<h1>신규 공정에서의 laygo2 셋업<a class="headerlink" href="#laygo2" title="Permalink to this headline">¶</a></h1>
-<p>신규 공정에서 laygo2를 설치하기 위해서는, 해당 공정에 대한 다음 파일들을 작업 경로 내의 laygo2_tech내에 패키지의 형태로 준비하여,
-레이아웃 생성 스크립트들이 관련 Paython module들(template, grid)를 import할 수 있도록 한다.</p>
-<ul class="simple">
-<li><p><em><strong>__init__.py</strong></em>: 패키지 정의 파일</p></li>
-<li><p><strong>laygo2_tech_templates.py</strong>: Template 정의 파이썬 코드</p></li>
-<li><p><strong>laygo2_tech_grids.py</strong>: Grid 정의 파이썬 코드</p></li>
-<li><p><strong>laygo2_tech.yaml</strong>: (_template.py, _grid.py파일들에 의하여 사용될 수 있는) 공정 관련 파라미터들</p></li>
-<li><p><strong>laygo2_tech.layermap</strong>: (optional) 공정 PDK에 의해 정의된 레이아웃 레이어 정보</p></li>
-<li><p><strong>laygo2_tech.lyp</strong>: (optional) KLayout용 레이어 디스플레이 정보</p></li>
-</ul>
-<p>laygo2의 공정 패키지 셋업 예제는 <a class="reference external" href="https://github.com/niftylab/laygo2/tree/master/laygo2/examples/laygo2_tech">여기</a>에서 찾을 수 있다.</p>
-<p>공정 패키지를 구성하는 각각의 파일들에 대한 설명은 아래에 기술되어 있다.</p>
-<section id="init-py">
-<h2>__init__.py<a class="headerlink" href="#init-py" title="Permalink to this headline">¶</a></h2>
-<p>패키지 import 시 load_templates / load_grids 함수들에 접근할 수 있도록 하는 선언문이 들어 있다.</p>
-</section>
-<section id="laygo2-tech-templates-py">
-<h2>laygo2_tech_templates.py<a class="headerlink" href="#laygo2-tech-templates-py" title="Permalink to this headline">¶</a></h2>
-<p>공정 패키지에서 제공되는 템플릿들을 정의하고 있는 파이썬 코드이며, 해당 파일의 load_templates()라는 함수가
-호출되면, 공정에서 사용될 다양한 템플릿 개체들(MOS, CAP, RES등)을 생성하여 템플릿 라이브러리(TemplateLibrary)
-개체로 묶어 반환하는 작업을 수행한다.</p>
-<p>템플릿의 경우 NativeInstanceTemplate(고정 인스턴스용), ParameterizedInstanceTemplate(PCell용),
-UserDefinedTemplate(사용자 정의형-PCell in Python)의 세가지 클래스를 기본으로 제공한다.</p>
-</section>
-<section id="laygo2-tech-grids-py">
-<h2>laygo2_tech_grids.py<a class="headerlink" href="#laygo2-tech-grids-py" title="Permalink to this headline">¶</a></h2>
-<p>공정 패키지에서 제공되는 배치(placement)/배선(routing) 그리드들을 정의하고 있는 파이썬 코드이며, 해당 파일의
-load_grids()라는 함수가호출되면, 공정에서 사용될 다양한 그리드 개체들을 생성하여 그리드 라이브러리(GridLibrary)
-개체로 묶어 반환하는 작업을 수행한다.</p>
-</section>
-<section id="laygo2-tech-yaml">
-<h2>laygo2_tech.yaml<a class="headerlink" href="#laygo2-tech-yaml" title="Permalink to this headline">¶</a></h2>
-<p>공정 패키지의 템플릿 및 그리드 정의 파일들 (_templates.py, _grids.py)에서 사용되는 다양한 파라미터들을
-모아놓은 파일. 해당 파일은 필수적으로 요구되는 것은 아니며, 실제 templates.py, grids.py파일을 작성하는
-형태에 따라 필요하지 않을 수 있다. 예제 공정 패키지에서는 해당 파일에서 템플릿의 크기(unit_size), 핀 정보(pins)
-구조 정보들 (rects), 그리고 그리드의 종류, 크기, 좌표들, 라우팅 그리드 정보들 (레이어, 방향, via 등)을
-저장하고 있다.</p>
-</section>
-<section id="laygo2-tech-layermap">
-<h2>laygo2_tech.layermap<a class="headerlink" href="#laygo2-tech-layermap" title="Permalink to this headline">¶</a></h2>
-<p>사용되는 공정 PDK에서 사용되는 layer 맵핑 정보를 가지고 있는 파일이며, 해당 layer정보들은
-내부 레이아웃 개체 생성 및 변환, GDS생성, Skill script출력 등에 사용된다.</p>
-<p>해당 layermap 파일은 일반적으로 공정 PDK에서 제공된다.
-사용자가 직접 layermap파일을 만들 경우, 행마다 레이어 정보를 정의하는 다음 형식의 파일을 생성하면 된다
-(상세한 내용은 예제 layermap 파일 참조).</p>
-<p><em>layername layerpurpose stream_layer_number datatype</em></p>
-</section>
-</section>
+<div class="toc-item">
+  
+</div>
 
-
-              </div>
-              
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="structure_kor.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">laygo2의 구조</p>
-        </div>
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="_sources/technology_kor.md.txt">
+        <i class="fas fa-file-alt"></i> Show Source
     </a>
 </div>
-              
-          </main>
-          
 
-      </div>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
     </div>
-  
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
-    &copy; Copyright 2021, Niftylab at Hanyang University, South Korea.<br>
-</p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
-</p>
-    </div>
-    
   </div>
-</footer>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2021, Niftylab at Hanyang University, South Korea.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
   </body>
 </html>

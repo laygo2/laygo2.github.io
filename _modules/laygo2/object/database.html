@@ -1393,12 +1393,17 @@
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
+<span class="sd">        grid : laygo2.object.grid.RoutingGrid</span>
+<span class="sd">            The placement grid where the wire is placed on.</span>
 <span class="sd">        mn : list(numpy.ndarray)</span>
 <span class="sd">            list containing coordinates of the points being connected through a track</span>
 <span class="sd">        track : numpy.ndarray</span>
 <span class="sd">            list containing coordinate values and direction of a track.</span>
 <span class="sd">            Vertical tracks have [v, None] format, while horizontal tracks have [None, v] format</span>
 <span class="sd">            (v is the coordinates of the track).</span>
+<span class="sd">        via_tag : list(Boolean), optional.</span>
+<span class="sd">            The list containing switches deciding whether to place via at </span>
+<span class="sd">            the edges of individual stubs.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>

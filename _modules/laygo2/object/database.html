@@ -1201,7 +1201,7 @@
 <span class="sd">        &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
 <span class="sd">        &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
 <span class="sd">        &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
-<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;) </span>
+<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
 <span class="sd">        &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; g = laygo2.object.grid.RoutingGrid(name=&#39;mygrid&#39;, vgrid=gv, hgrid=gh,</span>
 <span class="sd">                                               vwidth=wv, hwidth=wh,</span>
@@ -1281,12 +1281,62 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; dsn = Design(name=&#39;mycell&#39;, libname=&quot;testlib&quot;)</span>
-<span class="sd">        &gt;&gt;&gt; mygrid=grids[“routing_23_cmos”]</span>
+<span class="sd">        &gt;&gt;&gt; import laygo2</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, RoutingGrid</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.template import NativeInstanceTemplate</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.database import Design</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Instance</span>
+<span class="sd">        &gt;&gt;&gt; # Routing grid construction (not needed if laygo2_tech is set up).</span>
+<span class="sd">        &gt;&gt;&gt; gv = OneDimGrid(name=&quot;gv&quot;, scope=[0, 50], elements=[0])</span>
+<span class="sd">        &gt;&gt;&gt; gh = OneDimGrid(name=&quot;gv&quot;, scope=[0, 100], elements=[0, 40, 60])</span>
+<span class="sd">        &gt;&gt;&gt; wv = CM([10])           # vertical (xgrid) width</span>
+<span class="sd">        &gt;&gt;&gt; wh = CM([20, 10, 10])   # horizontal (ygrid) width</span>
+<span class="sd">        &gt;&gt;&gt; ev = CM([10])           # vertical (xgrid) extension</span>
+<span class="sd">        &gt;&gt;&gt; eh = CM([10, 10, 10])   # horizontal (ygrid) extension</span>
+<span class="sd">        &gt;&gt;&gt; e0v = CM([15])          # vert. extension (for zero-length wires)</span>
+<span class="sd">        &gt;&gt;&gt; e0h = CM([15, 15, 15])  # hori. extension (for zero-length wires)</span>
+<span class="sd">        &gt;&gt;&gt; lv = CM([[&#39;M1&#39;, &#39;drawing&#39;]], dtype=object)  # layer information</span>
+<span class="sd">        &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
+<span class="sd">        &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
+<span class="sd">        &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
+<span class="sd">        &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
+<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;) </span>
+<span class="sd">        &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
+<span class="sd">        &gt;&gt;&gt; g = laygo2.object.grid.RoutingGrid(name=&#39;mygrid&#39;, vgrid=gv, hgrid=gh,</span>
+<span class="sd">                                               vwidth=wv, hwidth=wh,</span>
+<span class="sd">                                               vextension=ev, hextension=eh,</span>
+<span class="sd">                                               vlayer=lv, hlayer=lh,</span>
+<span class="sd">                                               pin_vlayer=plv, pin_hlayer=plh,</span>
+<span class="sd">                                               viamap=viamap, primary_grid=primary_grid,</span>
+<span class="sd">                                               xcolor=xcolor, ycolor=ycolor,</span>
+<span class="sd">                                               vextension0=e0v, hextension0=e0h)</span>
+<span class="sd">        &gt;&gt;&gt; # Create a design</span>
+<span class="sd">        &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # Via on grid </span>
 <span class="sd">        &gt;&gt;&gt; mn_list = [[0, -2], [1, 0], [2, 5]]</span>
-<span class="sd">        &gt;&gt;&gt; via = dsn.via(grid=mygrid, mn=mn_list)</span>
-<span class="sd">        &gt;&gt;&gt; print(via)</span>
-<span class="sd">        [&lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;]</span>
+<span class="sd">        &gt;&gt;&gt; via = dsn.via(grid=g, mn=mn_list)</span>
+<span class="sd">        &gt;&gt;&gt; # Display generated design.</span>
+<span class="sd">        &gt;&gt;&gt; print(dsn)</span>
+<span class="sd">        &lt;laygo2.object.database.Design object at 0x0000015A77C6A110&gt; </span>
+<span class="sd">        name: mycell, params: None,</span>
+<span class="sd">        elements: {</span>
+<span class="sd">        &#39;NoName_0&#39;: &lt;laygo2.object.physical.Instance object at 0x0000015A77C6AC20&gt;, </span>
+<span class="sd">        &#39;NoName_1&#39;: &lt;laygo2.object.physical.Instance object at 0x0000015A77C6AD10&gt;, </span>
+<span class="sd">        &#39;NoName_2&#39;: &lt;laygo2.object.physical.Instance object at 0x0000015A77C6AD40&gt;}</span>
+<span class="sd">        libname:genlib</span>
+<span class="sd">        rects:{}</span>
+<span class="sd">        paths:{}</span>
+<span class="sd">        pins:{}</span>
+<span class="sd">        texts:{}</span>
+<span class="sd">        instances:{</span>
+<span class="sd">        &#39;NoName_0&#39;: &lt;laygo2.object.physical.Instance object at 0x0000015A77C6AC20&gt;, </span>
+<span class="sd">        &#39;NoName_1&#39;: &lt;laygo2.object.physical.Instance object at 0x0000015A77C6AD10&gt;, </span>
+<span class="sd">        &#39;NoName_2&#39;: &lt;laygo2.object.physical.Instance object at 0x0000015A77C6AD40&gt;}</span>
+<span class="sd">        virtual instances:{}</span>
 
 <span class="sd">        .. image:: ../assets/img/object_grid_RoutingGrid_via.png</span>
 <span class="sd">           :height: 250</span>
@@ -1297,12 +1347,11 @@
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        via 생성함수.</span>
+<span class="sd">        **(Korean)** via 생성함수.</span>
 <span class="sd">        파라미터</span>
-<span class="sd">        mn(list(numpy.ndarray)): via를 생성할 mn좌표. 복수 개 입력 가능.</span>
+<span class="sd">            - mn(list(numpy.ndarray)): via를 생성할 mn좌표. 복수 개 입력 가능.</span>
 <span class="sd">        반환값</span>
-<span class="sd">        list(physical.PhysicalObject)): 생성된 via object들을 담고 있는 list.</span>
+<span class="sd">            - list(physical.PhysicalObject)): 생성된 via object들을 담고 있는 list.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">via</span><span class="p">(</span><span class="n">mn</span><span class="o">=</span><span class="n">mn</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
@@ -1329,11 +1378,74 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; r23=grids[“routing_23_cmos”]</span>
+<span class="sd">        &gt;&gt;&gt; import laygo2</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, RoutingGrid</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.template import NativeInstanceTemplate</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.database import Design</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Instance</span>
+<span class="sd">        &gt;&gt;&gt; # Routing grid construction (not needed if laygo2_tech is set up).</span>
+<span class="sd">        &gt;&gt;&gt; gv = OneDimGrid(name=&quot;gv&quot;, scope=[0, 50], elements=[0])</span>
+<span class="sd">        &gt;&gt;&gt; gh = OneDimGrid(name=&quot;gv&quot;, scope=[0, 100], elements=[0, 40, 60])</span>
+<span class="sd">        &gt;&gt;&gt; wv = CM([10])           # vertical (xgrid) width</span>
+<span class="sd">        &gt;&gt;&gt; wh = CM([20, 10, 10])   # horizontal (ygrid) width</span>
+<span class="sd">        &gt;&gt;&gt; ev = CM([10])           # vertical (xgrid) extension</span>
+<span class="sd">        &gt;&gt;&gt; eh = CM([10, 10, 10])   # horizontal (ygrid) extension</span>
+<span class="sd">        &gt;&gt;&gt; e0v = CM([15])          # vert. extension (for zero-length wires)</span>
+<span class="sd">        &gt;&gt;&gt; e0h = CM([15, 15, 15])  # hori. extension (for zero-length wires)</span>
+<span class="sd">        &gt;&gt;&gt; lv = CM([[&#39;M1&#39;, &#39;drawing&#39;]], dtype=object)  # layer information</span>
+<span class="sd">        &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
+<span class="sd">        &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
+<span class="sd">        &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
+<span class="sd">        &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
+<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
+<span class="sd">        &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
+<span class="sd">        &gt;&gt;&gt; g = laygo2.object.grid.RoutingGrid(name=&#39;mygrid&#39;, vgrid=gv, hgrid=gh,</span>
+<span class="sd">                                               vwidth=wv, hwidth=wh,</span>
+<span class="sd">                                               vextension=ev, hextension=eh,</span>
+<span class="sd">                                               vlayer=lv, hlayer=lh,</span>
+<span class="sd">                                               pin_vlayer=plv, pin_hlayer=plh,</span>
+<span class="sd">                                               viamap=viamap, primary_grid=primary_grid,</span>
+<span class="sd">                                               xcolor=xcolor, ycolor=ycolor,</span>
+<span class="sd">                                               vextension0=e0v, hextension0=e0h)</span>
+<span class="sd">        &gt;&gt;&gt; # Create a design</span>
+<span class="sd">        &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # Do routing</span>
 <span class="sd">        &gt;&gt;&gt; mn_list = [[0, -2], [1, 0], [2, 5], [3, 4], [4, 5], [5, 5]]</span>
-<span class="sd">        &gt;&gt;&gt; track = r23.route_via_track(mn=mn_list, track=[None,0])</span>
-<span class="sd">        &gt;&gt;&gt; print(track)</span>
-<span class="sd">        [[&lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;], &lt;laygo2.object.physical.VirtualInstance object&gt;, [&lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;], [&lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;], [&lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;], [&lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;], &lt;laygo2.object.physical.Rect object&gt;]</span>
+<span class="sd">        &gt;&gt;&gt; track = dsn.route_via_track(grid=g, mn=mn_list, track=[None,0])</span>
+<span class="sd">        &gt;&gt;&gt; # Display design</span>
+<span class="sd">        &gt;&gt;&gt; print(dsn)</span>
+<span class="sd">            &lt;laygo2.object.database.Design object at 0x0000015A77C6BA60&gt; </span>
+<span class="sd">            name: mycell, params: None</span>
+<span class="sd">            elements: {</span>
+<span class="sd">            &#39;NoName_0&#39;: &lt;laygo2.object.physical.Rect object at 0x0000015A77C6B790&gt;, </span>
+<span class="sd">            &#39;NoName_1&#39;: &lt;laygo2.object.physical.Instance object at 0x0000015A77C6B820&gt;, </span>
+<span class="sd">            &#39;NoName_2&#39;: &lt;laygo2.object.physical.Instance object at 0x0000015A77C6B7C0&gt;, </span>
+<span class="sd">            &#39;NoName_3&#39;: &lt;laygo2.object.physical.Rect object at 0x0000015A77C6B760&gt;, </span>
+<span class="sd">            &#39;NoName_4&#39;: &lt;laygo2.object.physical.Instance object at 0x0000015A77C6A2F0&gt;, </span>
+<span class="sd">            &#39;NoName_5&#39;: &lt;laygo2.object.physical.Rect object at 0x0000015A77C6BA90&gt;}</span>
+<span class="sd">            libname:genlib</span>
+<span class="sd">            rects:{</span>
+<span class="sd">            &#39;NoName_0&#39;: &lt;laygo2.object.physical.Rect object at 0x0000015A77C6B790&gt;, </span>
+<span class="sd">            &#39;NoName_3&#39;: &lt;laygo2.object.physical.Rect object at 0x0000015A77C6B760&gt;, </span>
+<span class="sd">            &#39;NoName_5&#39;: &lt;laygo2.object.physical.Rect object at 0x0000015A77C6BA90&gt;}</span>
+<span class="sd">            paths:{}</span>
+<span class="sd">            pins:{}</span>
+<span class="sd">            texts:{}</span>
+<span class="sd">            instances:{</span>
+<span class="sd">            &#39;NoName_1&#39;: &lt;laygo2.object.physical.Instance object at 0x0000015A77C6B820&gt;, </span>
+<span class="sd">            &#39;NoName_2&#39;: &lt;laygo2.object.physical.Instance object at 0x0000015A77C6B7C0&gt;, </span>
+<span class="sd">            &#39;NoName_4&#39;: &lt;laygo2.object.physical.Instance object at 0x0000015A77C6A2F0&gt;}</span>
+<span class="sd">            virtual instances:{}</span>
+<span class="sd">        &gt;&gt;&gt; print(track[-1]) </span>
+<span class="sd">            &lt;laygo2.object.physical.Rect object at 0x0000015A77C6BA90&gt; </span>
+<span class="sd">            name: None,</span>
+<span class="sd">            class: Rect,</span>
+<span class="sd">            xy: [[0, 0], [100, 0]],</span>
+<span class="sd">            params: None, , layer: [&#39;M2&#39; &#39;drawing&#39;], netname: None </span>
 
 <span class="sd">        .. image:: ../assets/img/object_grid_RoutingGrid_route_via_track.png</span>
 <span class="sd">           :height: 250</span>
@@ -1344,13 +1456,17 @@
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        wire 라우팅 함수, track을 기준점으로 routing을 진행한다.</span>
+<span class="sd">        **(Korean)** wire 라우팅 함수, track을 기준점으로 routing을 진행한다.</span>
+
 <span class="sd">        파라미터</span>
-<span class="sd">        track(numpy.ndarray): track의 좌표값과 방향을 담고 있는 list. 수직 트랙일 경우 [v, None], 수평 트랙일 경우 [None, v]의 형태를 가지고 있다 (v는 track의 좌표값).</span>
-<span class="sd">        mn(list(numpy.ndarray)): track을 통해 연결될 지점들의 좌표를 담고 있는 list.</span>
+<span class="sd">            - track(numpy.ndarray): track의 좌표값과 방향을 담고 있는 list. </span>
+<span class="sd">            수직 트랙일 경우 [v, None], 수평 트랙일 경우 [None, v]의 형태를 </span>
+<span class="sd">            가지고 있다 (v는 track의 좌표값).</span>
+<span class="sd">            - mn(list(numpy.ndarray)): track을 통해 연결될 지점들의 좌표를 </span>
+<span class="sd">            담고 있는 list.</span>
 <span class="sd">        반환값</span>
-<span class="sd">        list: 생성된 routing object들을 담고 있는 list. 마지막 object가 track위의 routing object에 해당.</span>
+<span class="sd">            - list: 생성된 routing object들을 담고 있는 list. </span>
+<span class="sd">            마지막 object가 track위의 routing object에 해당.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">route_via_track</span><span class="p">(</span><span class="n">mn</span><span class="o">=</span><span class="n">mn</span><span class="p">,</span> <span class="n">track</span><span class="o">=</span><span class="n">track</span><span class="p">,</span> <span class="n">via_tag</span><span class="o">=</span><span class="n">via_tag</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
@@ -1380,25 +1496,75 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; dsn = Design(name=&#39;mycell&#39;, libname=&quot;testlib&quot;)</span>
-<span class="sd">        &gt;&gt;&gt; mygrid = grids[“routing_23_cmos”]</span>
+<span class="sd">        &gt;&gt;&gt; import laygo2</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, RoutingGrid</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.template import NativeInstanceTemplate</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.database import Design</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Instance</span>
+<span class="sd">        &gt;&gt;&gt; # Routing grid construction (not needed if laygo2_tech is set up).</span>
+<span class="sd">        &gt;&gt;&gt; gv = OneDimGrid(name=&quot;gv&quot;, scope=[0, 50], elements=[0])</span>
+<span class="sd">        &gt;&gt;&gt; gh = OneDimGrid(name=&quot;gv&quot;, scope=[0, 100], elements=[0, 40, 60])</span>
+<span class="sd">        &gt;&gt;&gt; wv = CM([10])           # vertical (xgrid) width</span>
+<span class="sd">        &gt;&gt;&gt; wh = CM([20, 10, 10])   # horizontal (ygrid) width</span>
+<span class="sd">        &gt;&gt;&gt; ev = CM([10])           # vertical (xgrid) extension</span>
+<span class="sd">        &gt;&gt;&gt; eh = CM([10, 10, 10])   # horizontal (ygrid) extension</span>
+<span class="sd">        &gt;&gt;&gt; e0v = CM([15])          # vert. extension (for zero-length wires)</span>
+<span class="sd">        &gt;&gt;&gt; e0h = CM([15, 15, 15])  # hori. extension (for zero-length wires)</span>
+<span class="sd">        &gt;&gt;&gt; lv = CM([[&#39;M1&#39;, &#39;drawing&#39;]], dtype=object)  # layer information</span>
+<span class="sd">        &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
+<span class="sd">        &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
+<span class="sd">        &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
+<span class="sd">        &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
+<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
+<span class="sd">        &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
+<span class="sd">        &gt;&gt;&gt; g = laygo2.object.grid.RoutingGrid(name=&#39;mygrid&#39;, vgrid=gv, hgrid=gh,</span>
+<span class="sd">                                               vwidth=wv, hwidth=wh,</span>
+<span class="sd">                                               vextension=ev, hextension=eh,</span>
+<span class="sd">                                               vlayer=lv, hlayer=lh,</span>
+<span class="sd">                                               pin_vlayer=plv, pin_hlayer=plh,</span>
+<span class="sd">                                               viamap=viamap, primary_grid=primary_grid,</span>
+<span class="sd">                                               xcolor=xcolor, ycolor=ycolor,</span>
+<span class="sd">                                               vextension0=e0v, hextension0=e0h)</span>
+<span class="sd">        &gt;&gt;&gt; # Create a design</span>
+<span class="sd">        &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
 <span class="sd">        &gt;&gt;&gt; mn = [[0, 0], [10, 10]]</span>
-<span class="sd">        &gt;&gt;&gt; pin = dsn.pin(name=&quot;pin&quot;, grid=mygrid, mn=mn)</span>
-<span class="sd">        &gt;&gt;&gt; print(&quot;pin&quot;)</span>
-<span class="sd">        &lt;laygo2.object.physical.Pin object&gt; name: pin, class: Pin, xy: [[0, 5], [300, 265]]……</span>
+<span class="sd">        &gt;&gt;&gt; pin = dsn.pin(name=&quot;pin&quot;, grid=g, mn=mn)</span>
+<span class="sd">        &gt;&gt;&gt; print(pin)</span>
+<span class="sd">        &lt;laygo2.object.physical.Pin object at 0x0000028DABE3AB90&gt; </span>
+<span class="sd">            name: pin,</span>
+<span class="sd">            class: Pin,</span>
+<span class="sd">            xy: [[0, -10], [500, 350]],</span>
+<span class="sd">            params: None, , layer: [&#39;M2&#39; &#39;pin&#39;], netname: pin, shape: None, </span>
+<span class="sd">            master: None</span>
+<span class="sd">        &gt;&gt;&gt; print(dsn)</span>
+<span class="sd">        &lt;laygo2.object.database.Design object at 0x0000028DABE3A110&gt; name: mycell, params: None</span>
+<span class="sd">            elements: {&#39;pin&#39;: &lt;laygo2.object.physical.Pin object at </span>
+<span class="sd">            0x0000028DABE3AB90&gt;}</span>
+<span class="sd">            libname:genlib</span>
+<span class="sd">            rects:{}</span>
+<span class="sd">            paths:{}</span>
+<span class="sd">            pins:{&#39;pin&#39;: &lt;laygo2.object.physical.Pin object at 0x0000028DABE3AB90&gt;}</span>
+<span class="sd">            texts:{}</span>
+<span class="sd">            instances:{}</span>
+<span class="sd">            virtual instances:{}</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)**</span>
 <span class="sd">        pin 생성함수.</span>
+<span class="sd">        </span>
 <span class="sd">        파라미터</span>
-<span class="sd">        name(str): Pin 이름.</span>
-<span class="sd">        mn(numpy.ndarray): Pin을 생성할 abstract 좌표.</span>
-<span class="sd">        direction(str): 방향 [optional].</span>
-<span class="sd">        netname(str): Pin의 net이름 [optional].</span>
-<span class="sd">        params(dict): Pin 속성 [optional].</span>
+<span class="sd">            - name(str): Pin 이름.</span>
+<span class="sd">            - mn(numpy.ndarray): Pin을 생성할 abstract 좌표.</span>
+<span class="sd">            - direction(str): 방향 [optional].</span>
+<span class="sd">            - netname(str): Pin의 net이름 [optional].</span>
+<span class="sd">            - params(dict): Pin 속성 [optional].</span>
 <span class="sd">        반환값</span>
-<span class="sd">        laygo2.physical.Pin: Pin object.</span>
+<span class="sd">            - laygo2.physical.Pin: Pin object.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">pin</span><span class="p">(</span>
@@ -1410,7 +1576,7 @@
     <span class="c1"># I/O functions</span>
 <div class="viewcode-block" id="Design.export_to_template"><a class="viewcode-back" href="../../../laygo2.object.database.Design.export_to_template.html#laygo2.object.database.Design.export_to_template">[docs]</a>    <span class="k">def</span> <span class="nf">export_to_template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Generate NativeInstanceTemplate object corresponding to Design object.</span>
+<span class="sd">        Generate a NativeInstanceTemplate object corresponding to Design object.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>

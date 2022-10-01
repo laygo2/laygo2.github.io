@@ -8,8 +8,9 @@
 
     <title>laygo2.util package &#8212; laygo2</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,15 +20,11 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="_static/autoclasstoc.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -117,6 +114,10 @@
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/niftylab/laygo2" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
       </ul>
       </div>
       
@@ -131,7 +132,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -368,6 +370,9 @@
 
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -378,7 +383,7 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -411,21 +416,21 @@
               <div>
                 
   <section id="module-laygo2.util">
-<span id="laygo2-util-package"></span><h1>laygo2.util package<a class="headerlink" href="#module-laygo2.util" title="Permalink to this headline">¶</a></h1>
+<span id="laygo2-util-package"></span><h1>laygo2.util package<a class="headerlink" href="#module-laygo2.util" title="Permalink to this headline">#</a></h1>
 <p>laygo2 utility package implements various useful functions for layout manipulations.</p>
 <section id="module-laygo2.util.transform">
-<span id="laygo2-util-transform-module"></span><h2>laygo2.util.transform module<a class="headerlink" href="#module-laygo2.util.transform" title="Permalink to this headline">¶</a></h2>
+<span id="laygo2-util-transform-module"></span><h2>laygo2.util.transform module<a class="headerlink" href="#module-laygo2.util.transform" title="Permalink to this headline">#</a></h2>
 <p>Utility functions for coordinate tranformations.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="laygo2.util.transform.combine">
-<span class="sig-prename descclassname"><span class="pre">laygo2.util.transform.</span></span><span class="sig-name descname"><span class="pre">combine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transform1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/util/transform.html#combine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.util.transform.combine" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">laygo2.util.transform.</span></span><span class="sig-name descname"><span class="pre">combine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transform1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/util/transform.html#combine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.util.transform.combine" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the resulting transform parameter of
 two consecutive transforms</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="laygo2.util.transform.Mt">
-<span class="sig-prename descclassname"><span class="pre">laygo2.util.transform.</span></span><span class="sig-name descname"><span class="pre">Mt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transform</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/util/transform.html#Mt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.util.transform.Mt" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">laygo2.util.transform.</span></span><span class="sig-name descname"><span class="pre">Mt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transform</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/util/transform.html#Mt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.util.transform.Mt" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the transform matrix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -442,7 +447,7 @@ two consecutive transforms</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="laygo2.util.transform.Mtinv">
-<span class="sig-prename descclassname"><span class="pre">laygo2.util.transform.</span></span><span class="sig-name descname"><span class="pre">Mtinv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transform</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/util/transform.html#Mtinv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.util.transform.Mtinv" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">laygo2.util.transform.</span></span><span class="sig-name descname"><span class="pre">Mtinv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transform</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/util/transform.html#Mtinv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.util.transform.Mtinv" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the inverse of the transform matrix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -459,7 +464,7 @@ two consecutive transforms</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="laygo2.util.transform.Md">
-<span class="sig-prename descclassname"><span class="pre">laygo2.util.transform.</span></span><span class="sig-name descname"><span class="pre">Md</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">direction</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/util/transform.html#Md"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.util.transform.Md" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">laygo2.util.transform.</span></span><span class="sig-name descname"><span class="pre">Md</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">direction</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/util/transform.html#Md"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.util.transform.Md" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the direction(projection) matrix. The direction matrix is used when placing an object based on relative
 information to other instance(s). For example, if an instance’s center is located at xyc0=[xc0, yc0],
 the xy-coordinate of the center of the new instance xyc1 can be computed from the following equation:</p>
@@ -495,7 +500,7 @@ the precision requirement.</p>
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="laygo2.interface.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -518,7 +523,8 @@ the precision requirement.</p>
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 <footer class="footer mt-5 mt-md-0">
   <div class="container">
     

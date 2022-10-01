@@ -8,8 +8,9 @@
 
     <title>Overview &#8212; laygo2</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,15 +20,11 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="_static/autoclasstoc.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -117,6 +114,10 @@
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/niftylab/laygo2" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
       </ul>
       </div>
       
@@ -131,7 +132,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -139,6 +141,9 @@
     
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -149,7 +154,7 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -206,10 +211,10 @@
               
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+  <section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p><strong>The LAYout with Gridded Object 2 (laygo2)</strong> package is a Python-based layout generation framework with the following goals:</p>
 <ul class="simple">
 <li><p>Automation and reuse of layout generation process.</p></li>
@@ -249,15 +254,15 @@ the Numpy array to implement unlimited indexing over their defined ranges.</p></
 </ol>
 </section>
 <section id="quick-trial">
-<h2>Quick trial<a class="headerlink" href="#quick-trial" title="Permalink to this headline">¶</a></h2>
+<h2>Quick trial<a class="headerlink" href="#quick-trial" title="Permalink to this headline">#</a></h2>
 <p>Example procedures to install and generate simple structures are introduced in the <strong><a class="reference internal" href="trial.html"><span class="doc std std-doc">Trial</span></a></strong> page to help users to understand the basic dynamics of laygo2.</p>
 </section>
 <section id="laygo2-structure">
-<h2>laygo2 structure<a class="headerlink" href="#laygo2-structure" title="Permalink to this headline">¶</a></h2>
+<h2>laygo2 structure<a class="headerlink" href="#laygo2-structure" title="Permalink to this headline">#</a></h2>
 <p>The structures of packages and modules in laygo2 are described in the <strong><a class="reference internal" href="structure.html"><span class="doc std std-doc">Structure</span></a></strong> page.</p>
 </section>
 <section id="typical-design-flow">
-<h2>Typical design flow<a class="headerlink" href="#typical-design-flow" title="Permalink to this headline">¶</a></h2>
+<h2>Typical design flow<a class="headerlink" href="#typical-design-flow" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Load technology parameters, primitive templates, and grids
 (check <a class="reference external" href="https://github.com/niftylab/laygo2/blob/master/laygo2/examples/laygo2_tech/laygo2_tech_templates.py">laygo2_tech.load_templates()</a>
@@ -272,11 +277,11 @@ and <a class="reference external" href="https://github.com/niftylab/laygo2/blob/
 </ol>
 </section>
 <section id="list-of-developers">
-<h2>List of developers<a class="headerlink" href="#list-of-developers" title="Permalink to this headline">¶</a></h2>
+<h2>List of developers<a class="headerlink" href="#list-of-developers" title="Permalink to this headline">#</a></h2>
 <p>See the <a class="reference external" href="https://github.com/niftylab/laygo2">github repository README</a> for the full list of developers and contributors.</p>
 </section>
 <section id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">#</a></h2>
 <p>laygo2 is distributed under the BSD 3-Clause License.</p>
 </section>
 </section>
@@ -286,7 +291,7 @@ and <a class="reference external" href="https://github.com/niftylab/laygo2/blob/
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -309,7 +314,8 @@ and <a class="reference external" href="https://github.com/niftylab/laygo2/blob/
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 <footer class="footer mt-5 mt-md-0">
   <div class="container">
     

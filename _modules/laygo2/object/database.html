@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>laygo2.object.database &#8212; laygo2</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,15 +19,11 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/autoclasstoc.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -41,7 +38,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -114,6 +111,10 @@
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/niftylab/laygo2" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
       </ul>
       </div>
       
@@ -128,7 +129,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -136,6 +138,9 @@
     
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -292,20 +297,20 @@
         <span class="sd">&quot;&quot;&quot;attribute</span>
 <span class="sd">        list: Keys of elements.</span>
 
-<span class="sd">        </span>
+
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’) </span>
-<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.Rect(name=&#39;R0’ ……) </span>
-<span class="sd">        &gt;&gt;&gt; rect1 = laygo2.object.Rect(xy=……) </span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……) </span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect0) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect1) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(pin0) </span>
+<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’)</span>
+<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.Rect(name=&#39;R0’ ……)</span>
+<span class="sd">        &gt;&gt;&gt; rect1 = laygo2.object.Rect(xy=……)</span>
+<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……)</span>
+<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(rect0)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(rect1)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(pin0)</span>
 <span class="sd">        &gt;&gt;&gt; base.append(inst0)</span>
-<span class="sd">        &gt;&gt;&gt; print(base.keys()) </span>
+<span class="sd">        &gt;&gt;&gt; print(base.keys())</span>
 <span class="sd">        [&#39;R0&#39;, &#39;NoName_0&#39;, &#39;NoName_1&#39;, &#39;I0&#39;]</span>
 
 <span class="sd">        Notes</span>
@@ -329,21 +334,21 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’) </span>
-<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.Rect(name=&#39;R0’ ……) </span>
-<span class="sd">        &gt;&gt;&gt; rect1 = laygo2.object.Rect(xy=……) </span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……) </span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect0) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect1) </span>
+<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’)</span>
+<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.Rect(name=&#39;R0’ ……)</span>
+<span class="sd">        &gt;&gt;&gt; rect1 = laygo2.object.Rect(xy=……)</span>
+<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……)</span>
+<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(rect0)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(rect1)</span>
 <span class="sd">        &gt;&gt;&gt; base.append(pin0)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(inst0) </span>
-<span class="sd">        &gt;&gt;&gt; print(base.items()) </span>
+<span class="sd">        &gt;&gt;&gt; base.append(inst0)</span>
+<span class="sd">        &gt;&gt;&gt; print(base.items())</span>
 <span class="sd">        dict_items([(&#39;R0&#39;, &lt;laygo2.object.physical.Rect object&gt;),</span>
 <span class="sd">                    (&#39;NoName_0&#39;, &lt;laygo2.object.physical.Rect object&gt;),</span>
 <span class="sd">                    (&#39;NoName_1&#39;, &lt;laygo2.object.physical.Pin object&gt;),</span>
 <span class="sd">                    (&#39;I0&#39;, &lt;laygo2.object.physical.Instance object&gt;)])</span>
-<span class="sd">        </span>
+
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
 <span class="sd">        Reference in Korean:</span>
@@ -369,20 +374,20 @@
 <span class="sd">        -------</span>
 <span class="sd">        element</span>
 
-<span class="sd">        </span>
+
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’) </span>
-<span class="sd">        &gt;&gt;&gt; rect0= laygo2.object.Rect(name=&#39;R0’ ……) </span>
-<span class="sd">        &gt;&gt;&gt; rect1= laygo2.object.Rect(xy=……) </span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……) </span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect0) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect1) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(pin0) </span>
+<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’)</span>
+<span class="sd">        &gt;&gt;&gt; rect0= laygo2.object.Rect(name=&#39;R0’ ……)</span>
+<span class="sd">        &gt;&gt;&gt; rect1= laygo2.object.Rect(xy=……)</span>
+<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……)</span>
+<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(rect0)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(rect1)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(pin0)</span>
 <span class="sd">        &gt;&gt;&gt; base.append(inst0)</span>
-<span class="sd">        &gt;&gt;&gt; print(base[“R0”]) </span>
+<span class="sd">        &gt;&gt;&gt; print(base[“R0”])</span>
 <span class="sd">        &lt;laygo2.object.physical.Rect object&gt; name: R0, class: Rect  ……</span>
 
 <span class="sd">        Notes</span>
@@ -410,19 +415,19 @@
 <span class="sd">        -------</span>
 <span class="sd">        list</span>
 
-<span class="sd">        </span>
+
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’) </span>
-<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.Rect(name=&#39;R0’ ……) </span>
-<span class="sd">        &gt;&gt;&gt; rect1 = laygo2.object.Rect(xy=……) </span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……) </span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect0) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect1) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(pin0) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(inst0) </span>
+<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’)</span>
+<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.Rect(name=&#39;R0’ ……)</span>
+<span class="sd">        &gt;&gt;&gt; rect1 = laygo2.object.Rect(xy=……)</span>
+<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……)</span>
+<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(rect0)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(rect1)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(pin0)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(inst0)</span>
 <span class="sd">        &gt;&gt;&gt; rect2 = laygo2.object.Rect(name=‘R2’ ……)</span>
 <span class="sd">        &gt;&gt;&gt; base[“R2”]=rect2</span>
 
@@ -449,13 +454,13 @@
                 <span class="n">item_name_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_item_name</span><span class="p">)</span>
                 <span class="n">item_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_item</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">item_name_list</span><span class="p">,</span> <span class="n">item_list</span>
-            <span class="c1">#return [i[0] for i in item_list], [i[1] for i in item_list]</span>
+            <span class="c1"># return [i[0] for i in item_list], [i[1] for i in item_list]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">item_name</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">name</span>
             <span class="k">if</span> <span class="n">item_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># NoName object. Put a name on it.</span>
-                <span class="k">while</span> <span class="s1">&#39;NoName_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noname_index</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">while</span> <span class="s2">&quot;NoName_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noname_index</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">noname_index</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="n">item_name</span> <span class="o">=</span> <span class="s1">&#39;NoName_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noname_index</span><span class="p">)</span>
+                <span class="n">item_name</span> <span class="o">=</span> <span class="s2">&quot;NoName_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noname_index</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">noname_index</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="n">errstr</span> <span class="o">=</span> <span class="n">item_name</span> <span class="o">+</span> <span class="s2">&quot; cannot be added to &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;, as a child object with the same name exists.&quot;</span>
             <span class="k">if</span> <span class="n">item_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -479,23 +484,23 @@
 <span class="sd">        -------</span>
 <span class="sd">        dict_keyiterator</span>
 
-<span class="sd">        </span>
+
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’) </span>
-<span class="sd">        &gt;&gt;&gt; rect0= laygo2.object.Rect(name=&#39;R0’ ……) </span>
-<span class="sd">        &gt;&gt;&gt; rect1= laygo2.object.Rect(xy=……) </span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……) </span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect0) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect1) </span>
-<span class="sd">        &gt;&gt;&gt; base.append(pin0) </span>
+<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’)</span>
+<span class="sd">        &gt;&gt;&gt; rect0= laygo2.object.Rect(name=&#39;R0’ ……)</span>
+<span class="sd">        &gt;&gt;&gt; rect1= laygo2.object.Rect(xy=……)</span>
+<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……)</span>
+<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(rect0)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(rect1)</span>
+<span class="sd">        &gt;&gt;&gt; base.append(pin0)</span>
 <span class="sd">        &gt;&gt;&gt; base.append(inst0)</span>
-<span class="sd">        &gt;&gt;&gt; for obj in base: print(obj) </span>
-<span class="sd">        R0 </span>
-<span class="sd">        NoName_0 </span>
-<span class="sd">        NoName_1 </span>
+<span class="sd">        &gt;&gt;&gt; for obj in base: print(obj)</span>
+<span class="sd">        R0</span>
+<span class="sd">        NoName_0</span>
+<span class="sd">        NoName_1</span>
 <span class="sd">        I0</span>
 
 <span class="sd">        Notes</span>
@@ -516,11 +521,10 @@
 
 <div class="viewcode-block" id="BaseDatabase.summarize"><a class="viewcode-back" href="../../../laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> \
-               <span class="s2">&quot;name: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> \
-               <span class="s2">&quot;params: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span> \
-               <span class="s2">&quot;    elements: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span> <span class="o">+</span> \
-               <span class="s2">&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot;name: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="s2">&quot;params: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;    elements: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="BaseDatabase.__init__"><a class="viewcode-back" href="../../../laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -539,12 +543,12 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.object.BaseDatabase</span>
 
-<span class="sd">        </span>
+
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’) </span>
-<span class="sd">        &gt;&gt;&gt; print(base) </span>
+<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’)</span>
+<span class="sd">        &gt;&gt;&gt; print(base)</span>
 <span class="sd">        &lt;laygo2.object.database.BaseDatabase object&gt; name: mycell, params: None elements: {}&gt;</span>
 
 <span class="sd">        Notes</span>
@@ -602,7 +606,7 @@
 <span class="sd">    Reference in Korean:</span>
 <span class="sd">    str: Library 객체의 이름.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    
+
 <div class="viewcode-block" id="Library.append"><a class="viewcode-back" href="../../../laygo2.object.database.Library.html#laygo2.object.database.Library.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
             <span class="n">item_name_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -634,12 +638,12 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.object.Library</span>
 
-<span class="sd">        </span>
+
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; lib = laygo2.object.Library(name=&#39;mylib’) </span>
-<span class="sd">        &gt;&gt;&gt; print(lib) </span>
+<span class="sd">        &gt;&gt;&gt; lib = laygo2.object.Library(name=&#39;mylib’)</span>
+<span class="sd">        &gt;&gt;&gt; print(lib)</span>
 <span class="sd">        &lt;laygo2.object.database.Library &gt; name: mylib, params: None elements: {} &gt;</span>
 
 <span class="sd">        Notes</span>
@@ -663,13 +667,15 @@
 
 
 <span class="k">class</span> <span class="nc">TemplateLibrary</span><span class="p">(</span><span class="n">Library</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This class implements template libraries that contain templates as their child objects. &quot;&quot;&quot;</span>
-    <span class="c1">#vTODO: implement this.</span>
+    <span class="sd">&quot;&quot;&quot;This class implements template libraries that contain templates as their child objects.&quot;&quot;&quot;</span>
+
+    <span class="c1"># vTODO: implement this.</span>
     <span class="k">pass</span>
 
 
 <span class="k">class</span> <span class="nc">GridLibrary</span><span class="p">(</span><span class="n">Library</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This class implements layout libraries that contain grid objectss as their child objects. &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;This class implements layout libraries that contain grid objectss as their child objects.&quot;&quot;&quot;</span>
+
     <span class="c1"># TODO: implement this.</span>
     <span class="k">pass</span>
 
@@ -686,15 +692,15 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; get design bbox which is union of instances.bbox  &quot;&quot;&quot;</span>
-        <span class="n">libname</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">libname</span>
+        <span class="sd">&quot;&quot;&quot;get design bbox which is union of instances.bbox&quot;&quot;&quot;</span>
+        <span class="n">libname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">libname</span>
         <span class="n">cellname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cellname</span>
         <span class="c1"># Compute boundaries</span>
         <span class="n">xy</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>   <span class="c1"># bl</span>
-                <span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># tr</span>
+                <span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># bl</span>
+                <span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># tr</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
                 <span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">i</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
@@ -710,9 +716,8 @@
                 <span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
                 <span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">i</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
         <span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">xy</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">xy</span>
         <span class="k">pass</span>
-
 
 <div class="viewcode-block" id="Design.get_libname"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.get_libname">[docs]</a>    <span class="k">def</span> <span class="nf">get_libname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_libname</span></div>
@@ -941,18 +946,18 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; dsn = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;) </span>
+<span class="sd">        &gt;&gt;&gt; dsn = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;)</span>
 <span class="sd">        &gt;&gt;&gt; print(dsn)</span>
 <span class="sd">        &lt;laygo2.object.database.Design object&gt;  name: dsn, params: None</span>
-<span class="sd">            elements: {} </span>
-<span class="sd">            libname:testlib </span>
-<span class="sd">            rects:{} </span>
-<span class="sd">            paths:{} </span>
-<span class="sd">            pins:{} </span>
-<span class="sd">            texts:{} </span>
-<span class="sd">            instances:{} </span>
+<span class="sd">            elements: {}</span>
+<span class="sd">            libname:testlib</span>
+<span class="sd">            rects:{}</span>
+<span class="sd">            paths:{}</span>
+<span class="sd">            pins:{}</span>
+<span class="sd">            texts:{}</span>
+<span class="sd">            instances:{}</span>
 <span class="sd">            virtual instances:{}</span>
-<span class="sd">        </span>
+
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
 <span class="sd">        Reference in Korean:</span>
@@ -998,22 +1003,37 @@
 
 <div class="viewcode-block" id="Design.summarize"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
-        <span class="k">return</span> \
-            <span class="n">BaseDatabase</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> \
-            <span class="s2">&quot;    libname:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">libname</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> \
-            <span class="s2">&quot;    rects:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rects</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> \
-            <span class="s2">&quot;    paths:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">paths</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> \
-            <span class="s2">&quot;    pins:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pins</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> \
-            <span class="s2">&quot;    texts:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">texts</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> \
-            <span class="s2">&quot;    instances:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> \
-            <span class="s2">&quot;    virtual instances:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">virtual_instances</span><span class="p">)</span> <span class="o">+</span> \
-            <span class="s2">&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">BaseDatabase</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    libname:&quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">libname</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    rects:&quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rects</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    paths:&quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">paths</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    pins:&quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pins</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    texts:&quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">texts</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    instances:&quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instances</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    virtual instances:&quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">virtual_instances</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">)</span></div>
 
     <span class="c1"># Object creation and manipulation functions.</span>
 <div class="viewcode-block" id="Design.place"><a class="viewcode-back" href="../../../laygo2.object.database.Design.place.html#laygo2.object.database.Design.place">[docs]</a>    <span class="k">def</span> <span class="nf">place</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Place the instance on the abstract coordinate mn, on the abstract grid.</span>
-<span class="sd">        </span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        inst : laygo2.object.physical.Instance or laygo2.object.physical.VirtualInstance</span>
@@ -1025,20 +1045,20 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        laygo2.object.physical.Instance or laygo2.object.physical.VirtualInstance : </span>
+<span class="sd">        laygo2.object.physical.Instance or laygo2.object.physical.VirtualInstance :</span>
 <span class="sd">            The placed instance.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; dsn = Design(name=&#39;mycell&#39;, libname=&quot;testlib&quot;)</span>
-<span class="sd">        &gt;&gt;&gt; g1_x = laygo2.object.grid.OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 20], elements=[0]) </span>
-<span class="sd">        &gt;&gt;&gt; g1_y = laygo2.object.grid.OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[0]) </span>
-<span class="sd">        &gt;&gt;&gt; g2   = laygo2.object.grid.PlacementGrid(name=&#39;test&#39;, vgrid=g1_x, hgrid=g1_y) </span>
+<span class="sd">        &gt;&gt;&gt; g1_x = laygo2.object.grid.OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 20], elements=[0])</span>
+<span class="sd">        &gt;&gt;&gt; g1_y = laygo2.object.grid.OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[0])</span>
+<span class="sd">        &gt;&gt;&gt; g2   = laygo2.object.grid.PlacementGrid(name=&#39;test&#39;, vgrid=g1_x, hgrid=g1_y)</span>
 <span class="sd">        &gt;&gt;&gt; inst0= laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100, 100], transform=‘R0’……)</span>
-<span class="sd">        &gt;&gt;&gt; print(inst0.xy) </span>
+<span class="sd">        &gt;&gt;&gt; print(inst0.xy)</span>
 <span class="sd">        [100, 100]</span>
-<span class="sd">        &gt;&gt;&gt; dsn.place(inst=inst0, grid=g2, mn=[10,10]) </span>
-<span class="sd">        &gt;&gt;&gt; print(inst0.xy) </span>
+<span class="sd">        &gt;&gt;&gt; dsn.place(inst=inst0, grid=g2, mn=[10,10])</span>
+<span class="sd">        &gt;&gt;&gt; print(inst0.xy)</span>
 <span class="sd">        [200, 1000]</span>
 
 <span class="sd">        See Also</span>
@@ -1057,43 +1077,43 @@
 <span class="sd">        참조</span>
 <span class="sd">        없음</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="p">(</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">Instance</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">VirtualInstance</span><span class="p">)</span> <span class="p">)</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="p">(</span><span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">Instance</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">VirtualInstance</span><span class="p">)):</span>
             <span class="n">inst</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">mn</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">inst</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span> <span class="n">inst</span> <span class="p">)</span>
-            <span class="n">size</span>   <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span>
+            <span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
+            <span class="n">size</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span>
 
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
                 <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">size</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="n">matrix</span> <span class="o">=</span> <span class="p">[</span> <span class="n">matrix</span> <span class="p">]</span>
+                <span class="n">matrix</span> <span class="o">=</span> <span class="p">[</span><span class="n">matrix</span><span class="p">]</span>
             <span class="n">mn_ref</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mn</span><span class="p">)</span>
 
             <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
                 <span class="n">row</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-                <span class="k">if</span> <span class="n">index</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">:</span>
+                <span class="k">if</span> <span class="n">index</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="n">ns</span> <span class="o">=</span> <span class="mi">0</span>
-                    <span class="n">ms</span> <span class="o">=</span> <span class="n">index</span> <span class="o">-</span><span class="mi">1</span>
-                    <span class="k">while</span> <span class="n">row</span><span class="p">[</span><span class="n">ns</span><span class="p">]</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>      <span class="c1"># Right search</span>
+                    <span class="n">ms</span> <span class="o">=</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span>
+                    <span class="k">while</span> <span class="n">row</span><span class="p">[</span><span class="n">ns</span><span class="p">]</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># Right search</span>
                         <span class="n">ns</span> <span class="o">=</span> <span class="n">ns</span> <span class="o">+</span> <span class="mi">1</span>
-                    <span class="k">while</span> <span class="n">matrix</span><span class="p">[</span><span class="n">ms</span><span class="p">][</span><span class="n">ns</span><span class="p">]</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># Down search</span>
+                    <span class="k">while</span> <span class="n">matrix</span><span class="p">[</span><span class="n">ms</span><span class="p">][</span><span class="n">ns</span><span class="p">]</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># Down search</span>
                         <span class="n">ms</span> <span class="o">=</span> <span class="n">ms</span> <span class="o">-</span> <span class="mi">1</span>
-                    <span class="n">mn_ref</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">mn</span><span class="o">.</span><span class="n">top_left</span><span class="p">(</span> <span class="n">matrix</span><span class="p">[</span><span class="n">ms</span><span class="p">][</span><span class="n">ns</span><span class="p">]</span> <span class="p">)</span>
+                    <span class="n">mn_ref</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">mn</span><span class="o">.</span><span class="n">top_left</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">ms</span><span class="p">][</span><span class="n">ns</span><span class="p">])</span>
                 <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span> <span class="n">element</span><span class="p">,</span> <span class="p">(</span><span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">Instance</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">VirtualInstance</span><span class="p">)</span> <span class="p">):</span>
-                        <span class="n">mn_bl</span>    <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">mn</span><span class="o">.</span><span class="n">bottom_left</span><span class="p">(</span> <span class="n">element</span> <span class="p">)</span>
-                        <span class="n">mn_comp</span>  <span class="o">=</span> <span class="n">mn_ref</span> <span class="o">-</span> <span class="n">mn_bl</span>
-                        <span class="n">inst_sub</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">place</span><span class="p">(</span> <span class="n">element</span><span class="p">,</span> <span class="n">mn_comp</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="p">(</span><span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">Instance</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">VirtualInstance</span><span class="p">)):</span>
+                        <span class="n">mn_bl</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">mn</span><span class="o">.</span><span class="n">bottom_left</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+                        <span class="n">mn_comp</span> <span class="o">=</span> <span class="n">mn_ref</span> <span class="o">-</span> <span class="n">mn_bl</span>
+                        <span class="n">inst_sub</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">mn_comp</span><span class="p">)</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inst_sub</span><span class="p">)</span>
-                        <span class="n">mn_ref</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">mn</span><span class="o">.</span><span class="n">bottom_right</span><span class="p">(</span> <span class="n">element</span> <span class="p">)</span>
+                        <span class="n">mn_ref</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">mn</span><span class="o">.</span><span class="n">bottom_right</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="k">if</span> <span class="n">element</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
                             <span class="k">pass</span>
-                        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span> <span class="n">element</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
-                            <span class="n">mn_ref</span> <span class="o">=</span> <span class="n">mn_ref</span> <span class="o">+</span> <span class="p">[</span> <span class="n">element</span><span class="p">,</span><span class="mi">0</span> <span class="p">]</span></div>
+                        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                            <span class="n">mn_ref</span> <span class="o">=</span> <span class="n">mn_ref</span> <span class="o">+</span> <span class="p">[</span><span class="n">element</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Design.route"><a class="viewcode-back" href="../../../laygo2.object.database.Design.route.html#laygo2.object.database.Design.route">[docs]</a>    <span class="k">def</span> <span class="nf">route</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">via_tag</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1109,19 +1129,19 @@
 <span class="sd">            None or “vertical” or &quot;horizontal&quot;. The direction of the routing object.</span>
 <span class="sd">        via_tag : list(Boolean), optional.</span>
 <span class="sd">            The list containing switches deciding whether to place via at the edges.</span>
-<span class="sd">        </span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        laygo2.object.physical.Rect or list : </span>
-<span class="sd">            The generated routing object(s). </span>
-<span class="sd">            Check the example code in laygo2.object.grid.RoutingGrid.route for details. </span>
+<span class="sd">        laygo2.object.physical.Rect or list :</span>
+<span class="sd">            The generated routing object(s).</span>
+<span class="sd">            Check the example code in laygo2.object.grid.RoutingGrid.route for details.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; dsn = Design(name=&#39;mycell&#39;, libname=&quot;testlib&quot;)</span>
 <span class="sd">        &gt;&gt;&gt; mygrid = grids[“routing_23_cmos”]</span>
-<span class="sd">        &gt;&gt;&gt; mn_list = [[0, -2], [0, 1], [2, 1], [5,1] ] </span>
-<span class="sd">        &gt;&gt;&gt; route = dsn.route(grid=mygrid, mn=mn_list, via_tag=[True, None, True, True]) </span>
+<span class="sd">        &gt;&gt;&gt; mn_list = [[0, -2], [0, 1], [2, 1], [5,1] ]</span>
+<span class="sd">        &gt;&gt;&gt; route = dsn.route(grid=mygrid, mn=mn_list, via_tag=[True, None, True, True])</span>
 <span class="sd">        &gt;&gt;&gt; print(route)</span>
 <span class="sd">        [&lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;]</span>
 
@@ -1158,7 +1178,7 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        list(physical.PhysicalObject): </span>
+<span class="sd">        list(physical.PhysicalObject):</span>
 <span class="sd">            The list containing the generated via objects.</span>
 
 <span class="sd">        Examples</span>
@@ -1172,11 +1192,11 @@
 
 <span class="sd">        .. image:: ../assets/img/object_grid_RoutingGrid_via.png</span>
 <span class="sd">           :height: 250</span>
-<span class="sd">           </span>
+
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
 <span class="sd">        laygo2.object.grid.RoutingGrid.via</span>
-<span class="sd">        </span>
+
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
 <span class="sd">        Reference in Korean:</span>
@@ -1205,9 +1225,9 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        list: </span>
+<span class="sd">        list:</span>
 <span class="sd">            The list containing the generated routing objects;</span>
-<span class="sd">            The last object corresponds to the routing object on the track.        </span>
+<span class="sd">            The last object corresponds to the routing object on the track.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
@@ -1219,7 +1239,7 @@
 
 <span class="sd">        .. image:: ../assets/img/object_grid_RoutingGrid_route_via_track.png</span>
 <span class="sd">           :height: 250</span>
-<span class="sd">           </span>
+
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
 <span class="sd">        laygo2.object.grid.RoutingGrid.route_via_track</span>
@@ -1241,7 +1261,7 @@
 <div class="viewcode-block" id="Design.pin"><a class="viewcode-back" href="../../../laygo2.object.database.Design.pin.html#laygo2.object.database.Design.pin">[docs]</a>    <span class="k">def</span> <span class="nf">pin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">netname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a Pin object over the abstract coordinates specified by mn,</span>
-<span class="sd">        on the specified routing grid. </span>
+<span class="sd">        on the specified routing grid.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -1264,9 +1284,9 @@
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; dsn = Design(name=&#39;mycell&#39;, libname=&quot;testlib&quot;)</span>
 <span class="sd">        &gt;&gt;&gt; mygrid = grids[“routing_23_cmos”]</span>
-<span class="sd">        &gt;&gt;&gt; mn = [[0, 0], [10, 10]] </span>
+<span class="sd">        &gt;&gt;&gt; mn = [[0, 0], [10, 10]]</span>
 <span class="sd">        &gt;&gt;&gt; pin = dsn.pin(name=&quot;pin&quot;, grid=mygrid, mn=mn)</span>
-<span class="sd">        &gt;&gt;&gt; print(&quot;pin&quot;) </span>
+<span class="sd">        &gt;&gt;&gt; print(&quot;pin&quot;)</span>
 <span class="sd">        &lt;laygo2.object.physical.Pin object&gt; name: pin, class: Pin, xy: [[0, 5], [300, 265]]……</span>
 
 <span class="sd">        Notes</span>
@@ -1281,7 +1301,7 @@
 <span class="sd">        params(dict): Pin 속성 [optional].</span>
 <span class="sd">        반환값</span>
 <span class="sd">        laygo2.physical.Pin: Pin object.</span>
-<span class="sd">        </span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">pin</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="n">mn</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="n">direction</span><span class="p">,</span> <span class="n">netname</span><span class="o">=</span><span class="n">netname</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
@@ -1305,18 +1325,18 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; dsn    = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;) </span>
-<span class="sd">        &gt;&gt;&gt; rect0  = laygo2.object.Rect(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’]……) </span>
-<span class="sd">        &gt;&gt;&gt; pin0   = laygo2.object.Pin(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;pin’]……) </span>
-<span class="sd">        &gt;&gt;&gt; inst0  = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100]……) </span>
-<span class="sd">        &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;VI0’, ……) </span>
-<span class="sd">        &gt;&gt;&gt; text0  = laygo2.object.physical.Text(xy=[[ 0, 0], [100,100 ]], layer=[&#39;text&#39;, &#39;drawing’]……) </span>
-<span class="sd">        &gt;&gt;&gt; dsn.append(rect0) </span>
+<span class="sd">        &gt;&gt;&gt; dsn    = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; rect0  = laygo2.object.Rect(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’]……)</span>
+<span class="sd">        &gt;&gt;&gt; pin0   = laygo2.object.Pin(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;pin’]……)</span>
+<span class="sd">        &gt;&gt;&gt; inst0  = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100]……)</span>
+<span class="sd">        &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;VI0’, ……)</span>
+<span class="sd">        &gt;&gt;&gt; text0  = laygo2.object.physical.Text(xy=[[ 0, 0], [100,100 ]], layer=[&#39;text&#39;, &#39;drawing’]……)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(rect0)</span>
 <span class="sd">        &gt;&gt;&gt; dsn.append(pin0)</span>
-<span class="sd">        &gt;&gt;&gt; dsn.append(inst0) </span>
-<span class="sd">        &gt;&gt;&gt; dsn.append(vinst0) </span>
-<span class="sd">        &gt;&gt;&gt; dsn.append(text0) </span>
-<span class="sd">        &gt;&gt;&gt; print(dsn.export_to_template()) </span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(inst0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(vinst0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(text0)</span>
+<span class="sd">        &gt;&gt;&gt; print(dsn.export_to_template())</span>
 <span class="sd">        &lt;laygo2.object.template.NativeInstanceTemplate object&gt; name: dsn,</span>
 <span class="sd">         class: NativeInstanceTemplate,</span>
 <span class="sd">         bbox: [[100, 100], [800, 700]],</span>
@@ -1336,11 +1356,11 @@
         <span class="k">if</span> <span class="n">cellname</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">cellname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cellname</span>
 
-        <span class="n">xy</span>   <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span>
+        <span class="n">xy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span>
         <span class="n">pins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pins</span>
         <span class="k">return</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">NativeInstanceTemplate</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="n">libname</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="n">cellname</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">pins</span><span class="o">=</span><span class="n">pins</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Design.get_matched_rects_by_layer"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.get_matched_rects_by_layer">[docs]</a>    <span class="k">def</span> <span class="nf">get_matched_rects_by_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span> <span class="p">):</span>
+<div class="viewcode-block" id="Design.get_matched_rects_by_layer"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.get_matched_rects_by_layer">[docs]</a>    <span class="k">def</span> <span class="nf">get_matched_rects_by_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list containing physical objects matched with the layer input in Design object.</span>
 
@@ -1355,20 +1375,20 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; dsn    = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;) </span>
-<span class="sd">        &gt;&gt;&gt; rect0  = laygo2.object.Rect(xy=[[0, 0], [100, 100]], layer=[‘M1’, ‘drawing’]……) </span>
-<span class="sd">        &gt;&gt;&gt; pin0   = laygo2.object.Pin(xy=[[0, 0], [100, 100]], layer=[‘M1’, ‘pin’]……) </span>
-<span class="sd">        &gt;&gt;&gt; inst0  = laygo2.object.Instance(name=‘I0’, xy=[100, 100]……) </span>
-<span class="sd">        &gt;&gt;&gt; vinst0_pins[‘in’]  = laygo2.object.physical.Pin(xy=[[0, 0], [10, 10]], layer=[‘M1’,’drawing’]……) </span>
-<span class="sd">        &gt;&gt;&gt; vinst0_pins[‘out’] = laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]], layer=[‘M1’, drawing’] ……) </span>
-<span class="sd">        &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=‘VI0’, ……) </span>
-<span class="sd">        &gt;&gt;&gt; text0  = laygo2.object.physical.Text(xy=[[ 0, 0], [100,100 ]], layer=[‘text’, ‘drawing’]……) </span>
-<span class="sd">        &gt;&gt;&gt; dsn.append(rect0) </span>
+<span class="sd">        &gt;&gt;&gt; dsn    = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; rect0  = laygo2.object.Rect(xy=[[0, 0], [100, 100]], layer=[‘M1’, ‘drawing’]……)</span>
+<span class="sd">        &gt;&gt;&gt; pin0   = laygo2.object.Pin(xy=[[0, 0], [100, 100]], layer=[‘M1’, ‘pin’]……)</span>
+<span class="sd">        &gt;&gt;&gt; inst0  = laygo2.object.Instance(name=‘I0’, xy=[100, 100]……)</span>
+<span class="sd">        &gt;&gt;&gt; vinst0_pins[‘in’]  = laygo2.object.physical.Pin(xy=[[0, 0], [10, 10]], layer=[‘M1’,’drawing’]……)</span>
+<span class="sd">        &gt;&gt;&gt; vinst0_pins[‘out’] = laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]], layer=[‘M1’, drawing’] ……)</span>
+<span class="sd">        &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=‘VI0’, ……)</span>
+<span class="sd">        &gt;&gt;&gt; text0  = laygo2.object.physical.Text(xy=[[ 0, 0], [100,100 ]], layer=[‘text’, ‘drawing’]……)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(rect0)</span>
 <span class="sd">        &gt;&gt;&gt; dsn.append(pin0)</span>
-<span class="sd">        &gt;&gt;&gt; dsn.append(inst0) </span>
-<span class="sd">        &gt;&gt;&gt; dsn.append(vinst0) </span>
-<span class="sd">        &gt;&gt;&gt; dsn.append(text0) </span>
-<span class="sd">        &gt;&gt;&gt; print( dsn.get_matchedrects_by_layer( [“M1”, “drawing”] ) </span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(inst0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(vinst0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(text0)</span>
+<span class="sd">        &gt;&gt;&gt; print( dsn.get_matchedrects_by_layer( [“M1”, “drawing”] )</span>
 <span class="sd">        [&lt;laygo2.object.physical.Rect object&gt;,</span>
 <span class="sd">         &lt;laygo2.object.physical.Pin object&gt;,</span>
 <span class="sd">         &lt;laygo2.object.physical.Pin object&gt;,</span>
@@ -1385,55 +1405,70 @@
 <span class="sd">        참조</span>
 <span class="sd">        없음</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">rects</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rects</span>
-        <span class="n">insts</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">instances</span>
+        <span class="n">rects</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rects</span>
+        <span class="n">insts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">instances</span>
         <span class="n">vinsts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">virtual_instances</span>
 
         <span class="n">obj_check</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="k">for</span> <span class="n">rname</span><span class="p">,</span> <span class="n">rect</span> <span class="ow">in</span> <span class="n">rects</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span> <span class="n">rect</span><span class="o">.</span><span class="n">layer</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">rect</span><span class="o">.</span><span class="n">layer</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
                 <span class="n">obj_check</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">iname</span><span class="p">,</span> <span class="n">inst</span> <span class="ow">in</span> <span class="n">insts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">for</span> <span class="n">pname</span> <span class="p">,</span> <span class="n">pin</span> <span class="ow">in</span> <span class="n">inst</span><span class="o">.</span><span class="n">pins</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span> <span class="n">pin</span><span class="o">.</span><span class="n">layer</span><span class="p">,</span> <span class="n">layer</span> <span class="p">):</span>
+            <span class="k">for</span> <span class="n">pname</span><span class="p">,</span> <span class="n">pin</span> <span class="ow">in</span> <span class="n">inst</span><span class="o">.</span><span class="n">pins</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">pin</span><span class="o">.</span><span class="n">layer</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
                     <span class="n">obj_check</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">iname</span><span class="p">,</span> <span class="n">vinst</span> <span class="ow">in</span> <span class="n">vinsts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">inst</span> <span class="ow">in</span> <span class="n">vinst</span><span class="o">.</span><span class="n">native_elements</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Rect</span><span class="p">):</span>
-                    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span> <span class="n">inst</span><span class="o">.</span><span class="n">layer</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
-                        <span class="n">_xy</span>   <span class="o">=</span> <span class="n">vinst</span><span class="o">.</span><span class="n">get_element_position</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">inst</span><span class="o">.</span><span class="n">layer</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
+                        <span class="n">_xy</span> <span class="o">=</span> <span class="n">vinst</span><span class="o">.</span><span class="n">get_element_position</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
                         <span class="n">ninst</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span>
-                            <span class="n">xy</span><span class="o">=</span><span class="n">_xy</span><span class="p">,</span> <span class="n">layer</span> <span class="o">=</span> <span class="n">layer</span><span class="p">,</span> <span class="n">hextension</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">hextension</span><span class="p">,</span> <span class="n">vextension</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">vextension</span>
-                            <span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">color</span> <span class="p">)</span>
-                        <span class="n">obj_check</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ninst</span><span class="p">)</span>   <span class="c1">## ninst is for sort, inst should be frozen for implement to layout</span>
+                            <span class="n">xy</span><span class="o">=</span><span class="n">_xy</span><span class="p">,</span>
+                            <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span>
+                            <span class="n">hextension</span><span class="o">=</span><span class="n">inst</span><span class="o">.</span><span class="n">hextension</span><span class="p">,</span>
+                            <span class="n">vextension</span><span class="o">=</span><span class="n">inst</span><span class="o">.</span><span class="n">vextension</span><span class="p">,</span>
+                            <span class="n">color</span><span class="o">=</span><span class="n">inst</span><span class="o">.</span><span class="n">color</span><span class="p">,</span>
+                        <span class="p">)</span>
+                        <span class="n">obj_check</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ninst</span><span class="p">)</span>  <span class="c1">## ninst is for sort, inst should be frozen for implement to layout</span>
         <span class="k">return</span> <span class="n">obj_check</span></div></div>
 
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="o">*</span>
+
     <span class="c1"># Test</span>
-    <span class="n">lib</span> <span class="o">=</span> <span class="n">Library</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">)</span>
-    <span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;mycell&#39;</span><span class="p">)</span>
+    <span class="n">lib</span> <span class="o">=</span> <span class="n">Library</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mylib&quot;</span><span class="p">)</span>
+    <span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">)</span>
     <span class="n">lib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dsn</span><span class="p">)</span>
-    <span class="n">rect0</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;R0&#39;</span><span class="p">,</span> <span class="n">netname</span><span class="o">=</span><span class="s1">&#39;net0&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;maxI&#39;</span><span class="p">:</span> <span class="mf">0.005</span><span class="p">})</span>
+    <span class="n">rect0</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;R0&quot;</span><span class="p">,</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;net0&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;maxI&quot;</span><span class="p">:</span> <span class="mf">0.005</span><span class="p">})</span>
     <span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rect0</span><span class="p">)</span>
-    <span class="n">rect1</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s1">&#39;net0&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;maxI&#39;</span><span class="p">:</span> <span class="mf">0.005</span><span class="p">})</span>
+    <span class="n">rect1</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;net0&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;maxI&quot;</span><span class="p">:</span> <span class="mf">0.005</span><span class="p">})</span>
     <span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rect1</span><span class="p">)</span>
-    <span class="n">path0</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s1">&#39;net0&#39;</span><span class="p">,</span>
-                 <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;maxI&#39;</span><span class="p">:</span> <span class="mf">0.005</span><span class="p">})</span>
+    <span class="n">path0</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span>
+        <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;net0&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;maxI&quot;</span><span class="p">:</span> <span class="mf">0.005</span><span class="p">}</span>
+    <span class="p">)</span>
     <span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path0</span><span class="p">)</span>
-    <span class="n">pin0</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;pin&#39;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s1">&#39;n0&#39;</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="n">rect0</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;direction&#39;</span><span class="p">:</span> <span class="s1">&#39;input&#39;</span><span class="p">})</span>
+    <span class="n">pin0</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;pin&quot;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;n0&quot;</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="n">rect0</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;input&quot;</span><span class="p">})</span>
     <span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pin0</span><span class="p">)</span>
-    <span class="c1">#text0 = Text(xy=[0, 0], layer=[&#39;text&#39;, &#39;drawing&#39;], text=&#39;test&#39;, params=None)</span>
-    <span class="c1">#dsn.append(text0)</span>
+    <span class="c1"># text0 = Text(xy=[0, 0], layer=[&#39;text&#39;, &#39;drawing&#39;], text=&#39;test&#39;, params=None)</span>
+    <span class="c1"># dsn.append(text0)</span>
     <span class="n">inst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-    <span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;in&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
-    <span class="n">inst0_pins</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s1">&#39;out&#39;</span><span class="p">)</span>
-    <span class="n">inst0</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;I0&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;mycell&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">pitch</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
-                     <span class="n">unit_size</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">pins</span><span class="o">=</span><span class="n">inst0_pins</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="s1">&#39;R0&#39;</span><span class="p">)</span>
+    <span class="n">inst0_pins</span><span class="p">[</span><span class="s2">&quot;in&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;in&quot;</span><span class="p">)</span>
+    <span class="n">inst0_pins</span><span class="p">[</span><span class="s2">&quot;out&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;out&quot;</span><span class="p">)</span>
+    <span class="n">inst0</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span>
+        <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;mylib&quot;</span><span class="p">,</span>
+        <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span>
+        <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+        <span class="n">pitch</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="n">unit_size</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+        <span class="n">pins</span><span class="o">=</span><span class="n">inst0_pins</span><span class="p">,</span>
+        <span class="n">transform</span><span class="o">=</span><span class="s2">&quot;R0&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
     <span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inst0</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">dsn</span><span class="p">)</span>
@@ -1452,7 +1487,8 @@
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 <footer class="footer mt-5 mt-md-0">
   <div class="container">
     

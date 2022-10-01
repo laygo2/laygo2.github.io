@@ -8,8 +8,9 @@
 
     <title>Tech Setup &#8212; laygo2</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,15 +20,11 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="_static/autoclasstoc.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -117,6 +114,10 @@
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/niftylab/laygo2" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
       </ul>
       </div>
       
@@ -131,7 +132,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -139,6 +141,9 @@
     
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -149,7 +154,7 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -201,8 +206,8 @@
               
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="tech-setup">
-<h1>Tech Setup<a class="headerlink" href="#tech-setup" title="Permalink to this headline">¶</a></h1>
+  <section id="tech-setup">
+<h1>Tech Setup<a class="headerlink" href="#tech-setup" title="Permalink to this headline">#</a></h1>
 <p>To set up laygo2 for a new technology, prepare the following files first to be imported in the layout generators for template and grid generations.</p>
 <ul class="simple">
 <li><p><em><strong>__init__.py</strong></em>: The package definition file.</p></li>
@@ -215,11 +220,11 @@
 <p>A simple example for the technology setup for Laygo2 can be found <a class="reference external" href="https://github.com/niftylab/laygo2/tree/master/laygo2/examples/laygo2_tech">here</a>.</p>
 <p>Please find detailed descriptions for the listed files below:</p>
 <section id="init-py">
-<h2>__init__.py<a class="headerlink" href="#init-py" title="Permalink to this headline">¶</a></h2>
+<h2>__init__.py<a class="headerlink" href="#init-py" title="Permalink to this headline">#</a></h2>
 <p>Contains import statements for technlogy-specific functions such as load_templates() and load_grids().</p>
 </section>
 <section id="laygo2-tech-templates-py">
-<h2>laygo2_tech_templates.py<a class="headerlink" href="#laygo2-tech-templates-py" title="Permalink to this headline">¶</a></h2>
+<h2>laygo2_tech_templates.py<a class="headerlink" href="#laygo2-tech-templates-py" title="Permalink to this headline">#</a></h2>
 <p>Implements technology-specific templates and their functions. It also contains load_template() function,
 which returns a TemplateLibrary object containing template objects (MOSFET, Capacitors, Resistors) of core devices.</p>
 <p>The templates are typically implemented by utilizing on of the predefined template classes,
@@ -227,18 +232,18 @@ such as NativeInstanceTemplate(for vanilla instances), ParameterizedInstanceTemp
 UserDefinedTemplate(for user-defined virtual instances). Or users can define their own template classes.</p>
 </section>
 <section id="laygo2-tech-grids-py">
-<h2>laygo2_tech_grids.py<a class="headerlink" href="#laygo2-tech-grids-py" title="Permalink to this headline">¶</a></h2>
+<h2>laygo2_tech_grids.py<a class="headerlink" href="#laygo2-tech-grids-py" title="Permalink to this headline">#</a></h2>
 <p>Implements technology-specific placement/routing grids and their function. It also contains load_grid() function,
 which returns a GridLibrary object containing grid objects.</p>
 </section>
 <section id="laygo2-tech-yaml">
-<h2>laygo2_tech.yaml<a class="headerlink" href="#laygo2-tech-yaml" title="Permalink to this headline">¶</a></h2>
+<h2>laygo2_tech.yaml<a class="headerlink" href="#laygo2-tech-yaml" title="Permalink to this headline">#</a></h2>
 <p>This yaml file contains technology-specific parameters (such as unit resolution, pin location, structure size, and grid parameters)
 for template and grid generation functions in the _template.py and _grid.py files.
 Instead of using the yaml file to store technology information, users can hard-code all required numeric files in the template and grid files.</p>
 </section>
 <section id="laygo2-tech-layermap">
-<h2>laygo2_tech.layermap<a class="headerlink" href="#laygo2-tech-layermap" title="Permalink to this headline">¶</a></h2>
+<h2>laygo2_tech.layermap<a class="headerlink" href="#laygo2-tech-layermap" title="Permalink to this headline">#</a></h2>
 <p>Contains layer mapping information for the target technology, which is used for layout object generation, gds export, and skill export.</p>
 <p>The layermap file is normally provided by the technology ventor.
 If the layermap file is created manually by users, please use the following format to define layer parameters.</p>
@@ -252,7 +257,7 @@ If the layermap file is created manually by users, please use the following form
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="structure.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -275,7 +280,8 @@ If the layermap file is created manually by users, please use the following form
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 <footer class="footer mt-5 mt-md-0">
   <div class="container">
     

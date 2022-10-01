@@ -8,8 +8,9 @@
 
     <title>Trial &#8212; laygo2</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,15 +20,11 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="_static/autoclasstoc.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -117,6 +114,10 @@
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/niftylab/laygo2" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
       </ul>
       </div>
       
@@ -131,7 +132,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -139,6 +141,9 @@
     
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -149,7 +154,7 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -213,8 +218,8 @@
               
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="trial">
-<h1>Trial<a class="headerlink" href="#trial" title="Permalink to this headline">¶</a></h1>
+  <section id="trial">
+<h1>Trial<a class="headerlink" href="#trial" title="Permalink to this headline">#</a></h1>
 <p>This document introduces setup procedure and trial example for begineers.</p>
 <!--
 * **[Quick installation and setup](#Quick-Installation-and-Setup)** describes the installation and set up procedure of 
@@ -223,15 +228,15 @@ laygo in linux environments.
 * **[simple-gates](#Simple-Gates)**: introduces layout generators for simple logic gates.
 -->
 <section id="colab-tutorial">
-<h2>Colab tutorial<a class="headerlink" href="#colab-tutorial" title="Permalink to this headline">¶</a></h2>
+<h2>Colab tutorial<a class="headerlink" href="#colab-tutorial" title="Permalink to this headline">#</a></h2>
 <p>The easiest way of exercising laygo2 without installing it locally is using Colab;
 the example tutorial can be found <a class="reference external" href="https://colab.research.google.com/drive/1tpuUvqb6BujzZI6RBf2cFdAfMqBsxpep?usp=sharing">here</a>.</p>
 </section>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <p>There are two ways of installing laygo2 in your environment; 1) cloning from github and 2) using pip.</p>
 <section id="installing-laygo2-from-github">
-<h3>Installing laygo2 from <a class="reference external" href="https://github.com/niftylab/laygo2.git">Github</a><a class="headerlink" href="#installing-laygo2-from-github" title="Permalink to this headline">¶</a></h3>
+<h3>Installing laygo2 from <a class="reference external" href="https://github.com/niftylab/laygo2.git">Github</a><a class="headerlink" href="#installing-laygo2-from-github" title="Permalink to this headline">#</a></h3>
 <p>Users can download and install the laygo2 package by cloning its github
 repository by typing the following command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;&gt; git clone https://github.com/niftylab/laygo2.git
@@ -248,7 +253,7 @@ setenv PYTHONPATH ${PYTHONPATH}:[LAYGO2_INSTALLATION_PATH]/laygo2
 </div>
 </section>
 <section id="installing-laygo2-from-pypi">
-<h3>Installing laygo2 from <a class="reference external" href="https://pypi.org/project/laygo2">Pypi</a><a class="headerlink" href="#installing-laygo2-from-pypi" title="Permalink to this headline">¶</a></h3>
+<h3>Installing laygo2 from <a class="reference external" href="https://pypi.org/project/laygo2">Pypi</a><a class="headerlink" href="#installing-laygo2-from-pypi" title="Permalink to this headline">#</a></h3>
 <p>Instead of cloning github repository, laygo2 package can be installed by running the following pip command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;&gt; pip install laygo2
 </pre></div>
@@ -256,7 +261,7 @@ setenv PYTHONPATH ${PYTHONPATH}:[LAYGO2_INSTALLATION_PATH]/laygo2
 </section>
 </section>
 <section id="technology-setup">
-<h2>Technology setup<a class="headerlink" href="#technology-setup" title="Permalink to this headline">¶</a></h2>
+<h2>Technology setup<a class="headerlink" href="#technology-setup" title="Permalink to this headline">#</a></h2>
 <p>Users need to set up the following files in the <strong>laygo_tech</strong> directory to enable laygo2 for a new technology:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>laygo2_tech_templayes.py  # for templates
 laygo2_tech_grids.py      # for grids
@@ -267,7 +272,7 @@ laygo2_tech.yaml          # for technology parameters
 A more complete tech setup example for <strong>gpdk045</strong> can be found <a class="reference external" href="https://github.com/niftylab/laygo2_workspace_gpdk045/tree/master/laygo2_tech_example">here</a>.</p>
 </section>
 <section id="simple-gate-generation">
-<h2>Simple gate generation<a class="headerlink" href="#simple-gate-generation" title="Permalink to this headline">¶</a></h2>
+<h2>Simple gate generation<a class="headerlink" href="#simple-gate-generation" title="Permalink to this headline">#</a></h2>
 <p>Running the following command will generate a NAND gate layout.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(after git clone)
 &gt;&gt;&gt;&gt; cd laygo2 
@@ -279,7 +284,7 @@ A more complete tech setup example for <strong>gpdk045</strong> can be found <a 
 <p><img alt="laygo2 nand gate" src="_images/user_guide_nandgate.png" /></p>
 </section>
 <section id="trial-in-sky130-technology">
-<h2>Trial in SKY130 technology<a class="headerlink" href="#trial-in-sky130-technology" title="Permalink to this headline">¶</a></h2>
+<h2>Trial in SKY130 technology<a class="headerlink" href="#trial-in-sky130-technology" title="Permalink to this headline">#</a></h2>
 <p>An example tutorial of laygo2 in SkyWater <a class="reference external" href="https://skywater-pdk.readthedocs.io/en/main/">SKY130</a>
 technology can be found in this <a class="reference external" href="https://laygo2-sky130-docs.readthedocs.io/en/latest/">link</a>.</p>
 </section>
@@ -290,7 +295,7 @@ technology can be found in this <a class="reference external" href="https://layg
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -313,7 +318,8 @@ technology can be found in this <a class="reference external" href="https://layg
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 <footer class="footer mt-5 mt-md-0">
   <div class="container">
     

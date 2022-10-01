@@ -8,8 +8,9 @@
 
     <title>Structure &#8212; laygo2</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,15 +20,11 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="_static/autoclasstoc.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -117,6 +114,10 @@
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/niftylab/laygo2" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
       </ul>
       </div>
       
@@ -131,7 +132,8 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -139,6 +141,9 @@
     
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -149,7 +154,7 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -235,34 +240,34 @@
               
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="structure">
-<h1>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h1>
+  <section id="structure">
+<h1>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">#</a></h1>
 <p>laygo2 is composed of the following three sub-packages.</p>
 <ul class="simple">
-<li><p><strong><a class="reference external" href="#object-package">object</a></strong> package implements various physical and abstract objects that compose layouts.</p></li>
-<li><p><strong><a class="reference external" href="#interface-package">interface</a></strong> package handles various interactions between laygo2 and external objects
+<li><p><strong><span class="xref myst">object</span></strong> package implements various physical and abstract objects that compose layouts.</p></li>
+<li><p><strong><span class="xref myst">interface</span></strong> package handles various interactions between laygo2 and external objects
 (EDA tools, data structures, files).</p></li>
-<li><p><strong><a class="reference external" href="#util-package">util</a></strong> package contains useful functions for other sub-packages.</p></li>
+<li><p><strong><span class="xref myst">util</span></strong> package contains useful functions for other sub-packages.</p></li>
 </ul>
 <p>Brief explanations on the sub-packages can be found in the following sections,
 and check the API reference for details on key classes and functions.</p>
 <section id="object-package">
-<h2>object package<a class="headerlink" href="#object-package" title="Permalink to this headline">¶</a></h2>
+<h2>object package<a class="headerlink" href="#object-package" title="Permalink to this headline">#</a></h2>
 <p>The object package includes various classes for physical and abstract objects
 (<a class="reference external" href="https://laygo2.github.io/laygo2.object.html">API reference link</a>).</p>
 <p>The folowing modules compose the object package:</p>
 <ul class="simple">
-<li><p><strong><a class="reference external" href="#physical-module">physical</a></strong> module is defining classes for physical objects that compose actual IC layout.</p></li>
-<li><p><strong><a class="reference external" href="#template-module">template</a></strong> module describes classes for templates that generate various
+<li><p><strong><span class="xref myst">physical</span></strong> module is defining classes for physical objects that compose actual IC layout.</p></li>
+<li><p><strong><span class="xref myst">template</span></strong> module describes classes for templates that generate various
 instance objects for target technology and design parameters.</p></li>
-<li><p><strong><a class="reference external" href="#grid-module">grid</a></strong> module describes grid classes to abstract placement and routing coordinates.
+<li><p><strong><span class="xref myst">grid</span></strong> module describes grid classes to abstract placement and routing coordinates.
 parameterizations.</p></li>
-<li><p><strong><a class="reference external" href="#database-module">database</a></strong> module implements classes for design hierarchy management.</p></li>
+<li><p><strong><span class="xref myst">database</span></strong> module implements classes for design hierarchy management.</p></li>
 </ul>
 <p>The following figure illustrates a UML diagram of the object package.
 <img alt="laygo2 UML diagram" src="_images/user_guide_uml.png" /></p>
 <section id="physical-module">
-<h3>physical module<a class="headerlink" href="#physical-module" title="Permalink to this headline">¶</a></h3>
+<h3>physical module<a class="headerlink" href="#physical-module" title="Permalink to this headline">#</a></h3>
 <p>The physical module implments classes for physical layout objects
 (<a class="reference external" href="https://laygo2.github.io/laygo2.object.physical.html">API reference link</a>).</p>
 <p>Here are the summary of classes in the physical module:</p>
@@ -284,7 +289,7 @@ groups of physical objects (not implemented yet).</p></li>
 <p><img alt="laygo2 physical_objects" src="_images/user_guide_physical.png" /></p>
 </section>
 <section id="template-module">
-<h3>template module<a class="headerlink" href="#template-module" title="Permalink to this headline">¶</a></h3>
+<h3>template module<a class="headerlink" href="#template-module" title="Permalink to this headline">#</a></h3>
 <p>template module is composed of classes that abstract instances and virtual instances.
 (<a class="reference external" href="https://laygo2.github.io/laygo2.object.template.html">API reference link</a>).</p>
 <p>Here are the summary of classes in the template module:</p>
@@ -299,7 +304,7 @@ generates VirtualInstance objects with its bbox / pins / generate functions.</p>
 </ul>
 </section>
 <section id="grid-module">
-<h3>grid module<a class="headerlink" href="#grid-module" title="Permalink to this headline">¶</a></h3>
+<h3>grid module<a class="headerlink" href="#grid-module" title="Permalink to this headline">#</a></h3>
 <p>grid module is composed of classes that implement abstract coordinate systems that are interacting with
 technology-specific physical coordinate systems.
 (<a class="reference external" href="https://laygo2.github.io/laygo2.object.grid.html">API reference link</a>).</p>
@@ -317,7 +322,7 @@ technology-specific physical coordinate systems.
 <li><p><strong><a class="reference external" href="https://laygo2.github.io/laygo2.object.grid.RoutingGrid.html">RoutingGrid</a></strong>(Grid): a 2-dimensional grid class for wire routing.</p></li>
 </ul>
 <section id="circularmapping-class">
-<h4>CircularMapping class<a class="headerlink" href="#circularmapping-class" title="Permalink to this headline">¶</a></h4>
+<h4>CircularMapping class<a class="headerlink" href="#circularmapping-class" title="Permalink to this headline">#</a></h4>
 <p>CircularMapping class implements basic circular mappings (their indices extend to the entire axis with cyclic mapping).
 The following code block shows several examples of using CircularMapping objects.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; map = CircularMapping(elements=[100, 200, 300])
@@ -337,21 +342,21 @@ The following code block shows several examples of using CircularMapping objects
 </div>
 </section>
 <section id="abstophygridconverter-class">
-<h4>_AbsToPhyGridConverter class<a class="headerlink" href="#abstophygridconverter-class" title="Permalink to this headline">¶</a></h4>
+<h4>_AbsToPhyGridConverter class<a class="headerlink" href="#abstophygridconverter-class" title="Permalink to this headline">#</a></h4>
 <p>_AbsToPhyGridConverter is an internal class that converts abstract coordinates to physical coordinates.
 It also supports reverse conversions (physical-to-abstract) with comparison operators
 (which requires its pair converter class, _PhyToAbsGridConverter defined in its master grid object).</p>
 <p><img alt="laygo2 abs2phy" src="_images/user_guide_abs2phy.png" /></p>
 </section>
 <section id="phytoabsgridconverter-class">
-<h4>_PhyToAbsGridConverter class<a class="headerlink" href="#phytoabsgridconverter-class" title="Permalink to this headline">¶</a></h4>
+<h4>_PhyToAbsGridConverter class<a class="headerlink" href="#phytoabsgridconverter-class" title="Permalink to this headline">#</a></h4>
 <p>_PhyToAbsGridConverter is an internal class that converts physical coordinates to abstract coordinates.
 It also supports reverse conversions (abstract-to-physical) with comparison operators
 (which requires its pair converter class, _AbsToPhyGridConverter defined in its master grid object).</p>
 <p><img alt="laygo2 phy2abs" src="_images/user_guide_phy2abs.png" /></p>
 </section>
 <section id="grid-class">
-<h4>Grid class<a class="headerlink" href="#grid-class" title="Permalink to this headline">¶</a></h4>
+<h4>Grid class<a class="headerlink" href="#grid-class" title="Permalink to this headline">#</a></h4>
 <p>Grid class implements an abstract coordinate that is mapped to a 2-dimensional physical coordinate system.</p>
 <p>The Grid class and its objects support various coordinate conversion functions, with their examples introduced in the
 following figure.</p>
@@ -359,7 +364,7 @@ following figure.</p>
 </section>
 </section>
 <section id="database-module">
-<h3>database module<a class="headerlink" href="#database-module" title="Permalink to this headline">¶</a></h3>
+<h3>database module<a class="headerlink" href="#database-module" title="Permalink to this headline">#</a></h3>
 <p>database module consists classes that implement design hierarchy to manage designs and libraries with its component
 classes described as follows:</p>
 <ul class="simple">
@@ -371,7 +376,7 @@ classes described as follows:</p>
 </section>
 </section>
 <section id="interface-package">
-<h2>interface package<a class="headerlink" href="#interface-package" title="Permalink to this headline">¶</a></h2>
+<h2>interface package<a class="headerlink" href="#interface-package" title="Permalink to this headline">#</a></h2>
 <p>interface package includes classes and functions that interact with laygo2 and external EDA tools or data structures.
 (<a class="reference external" href="https://laygo2.github.io/laygo2.interface.html">API reference link</a>).</p>
 <p><img alt="laygo2 interface" src="_images/user_guide_interface.png" /></p>
@@ -383,7 +388,7 @@ format to store layout structures.</p></li>
 </ul>
 </section>
 <section id="util-package">
-<h2>util package<a class="headerlink" href="#util-package" title="Permalink to this headline">¶</a></h2>
+<h2>util package<a class="headerlink" href="#util-package" title="Permalink to this headline">#</a></h2>
 <p>util package contains various functions used in other packages.</p>
 </section>
 </section>
@@ -393,7 +398,7 @@ format to store layout structures.</p></li>
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="trial.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -416,7 +421,8 @@ format to store layout structures.</p></li>
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 <footer class="footer mt-5 mt-md-0">
   <div class="container">
     

@@ -2367,11 +2367,15 @@
 
 <div class="viewcode-block" id="VirtualInstance"><a class="viewcode-back" href="../../../laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance">[docs]</a><span class="k">class</span> <span class="nc">VirtualInstance</span><span class="p">(</span><span class="n">Instance</span><span class="p">):</span>  <span class="c1"># IterablePhysicalObject):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    VirtualInstance object class.</span>
+<span class="sd">    The VirtualInstance class implements functions for a group of objects, </span>
+<span class="sd">    which can be treated as a single instance with dedicated dimensional, </span>
+<span class="sd">    port, and any related parameters.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**: VirtualInstance 객체 클래스.</span>
+<span class="sd">    **(Korean)**: VirtualInstance 객체 클래스. VirtualInstance는 여러 개의</span>
+<span class="sd">    레이아웃 오브젝트를 하나의 그룹으로 묶어 크기/포트 등의 관련된 파라미터</span>
+<span class="sd">    들을 이용해 추상화 할 수 있는 객체를 구현한다.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">native_elements</span> <span class="o">=</span> <span class="kc">None</span>

@@ -202,121 +202,124 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    BaseDatabase는 데이터베이스 객체들의 기본 기능을 구현하는 클래스.</span>
+<span class="sd">    **(Korean)** BaseDatabase는 데이터베이스 객체들의 기본 기능을 구현하는 클래스.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;attribute</span>
-<span class="sd">    str: BaseDatabase object name.</span>
-
-<span class="sd">    </span>
+    <span class="sd">&quot;&quot;&quot;str: BaseDatabase object name.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’) </span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; base = laygo2.object.database.BaseDatabase(name=&quot;mycell&quot;) </span>
 <span class="sd">    &gt;&gt;&gt; base.name </span>
-<span class="sd">    “mycell”</span>
+<span class="sd">    &quot;mycell&quot;</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    str: BaseDatabase 이름.</span>
+<span class="sd">    **(Korean)** BaseDatabase 이름.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">params</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;attribute</span>
-<span class="sd">    dict or None: Dictionary containing parameters of BaseDatabase object.</span>
-
-<span class="sd">    </span>
+    <span class="sd">&quot;&quot;&quot;dict or None: Dictionary containing parameters of BaseDatabase object.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’) </span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; base = laygo2.object.database.BaseDatabase(name=&quot;mycell&quot;,</span>
+<span class="sd">                   params={&#39;ivdd&#39;: 0.001}) </span>
 <span class="sd">    &gt;&gt;&gt; base.params </span>
-<span class="sd">    None</span>
+<span class="sd">    {&#39;ivdd&#39;: 0.001}</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    dict or None: BaseDatabase의 속성.</span>
+<span class="sd">    **(Korean)** BaseDatabase의 속성.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">elements</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;attribute</span>
-<span class="sd">    dict: Dictionary having objects.</span>
-
-<span class="sd">    </span>
+    <span class="sd">&quot;&quot;&quot;dict: Dictionary containing its element objects.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’) </span>
-<span class="sd">    &gt;&gt;&gt; rect0 = laygo2.object.Rect(name=&#39;R0’ ……) </span>
-<span class="sd">    &gt;&gt;&gt; rect1 = laygo2.object.Rect(xy=……) </span>
-<span class="sd">    &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……) </span>
-<span class="sd">    &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……) </span>
-<span class="sd">    &gt;&gt;&gt; base.append(rect0) </span>
-<span class="sd">    &gt;&gt;&gt; base.append(rect1) </span>
-<span class="sd">    &gt;&gt;&gt; base.append(pin0) </span>
-<span class="sd">    &gt;&gt;&gt; base.append(inst0)</span>
-<span class="sd">    &gt;&gt;&gt; print(base.elements()) </span>
-<span class="sd">    {&#39;R0&#39;: &lt;laygo2.object.physical.Rect object&gt;, &#39;NoName_0&#39;: &lt;laygo2.object.physical.Rect object&gt;, &#39;NoName_1&#39;: &lt;laygo2.object.physical.Pin object&gt;, &#39;I0&#39;: &lt;laygo2.object.physical.Instance object&gt;}</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">    &gt;&gt;&gt; # Create a design</span>
+<span class="sd">    &gt;&gt;&gt; dsn = BaseDatabase(name=&quot;mycell&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; # Create layout objects</span>
+<span class="sd">    &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">    &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
+<span class="sd">    &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(r0)</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(p0)</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(i0)</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(t0)</span>
+<span class="sd">    &gt;&gt;&gt; print(dsn.elements) </span>
+<span class="sd">    {&#39;NoName_0&#39;: &lt;laygo2.object.physical.Rect object at 0x0000024C6C230F40&gt;, </span>
+<span class="sd">    &#39;P&#39;: &lt;laygo2.object.physical.Pin object at 0x0000024C6C2EFF40&gt;, </span>
+<span class="sd">    &#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x0000024C6C2EFDC0&gt;, </span>
+<span class="sd">    &#39;NoName_1&#39;: &lt;laygo2.object.physical.Text object at 0x0000024C6C2EF8B0&gt;}</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    BaseDatabase 객체의 구성 요소를 담고 있는 Dictionary.</span>
+<span class="sd">    **(Korean)** BaseDatabase 객체의 구성 요소를 담고 있는 Dictionary.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">noname_index</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="sd">&quot;&quot;&quot;attribute</span>
-<span class="sd">    int: A unique number used as the name of an unnamed object belonging to the database.</span>
-
-<span class="sd">    </span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: A unique number used as the name of an unnamed object belonging to </span>
+<span class="sd">    the database.    </span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’) </span>
-<span class="sd">    &gt;&gt;&gt; rect0 = laygo2.object.Rect(name=&#39;R0’ ……) </span>
-<span class="sd">    &gt;&gt;&gt; base.append(rect0) </span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">    &gt;&gt;&gt; # Create a design</span>
+<span class="sd">    &gt;&gt;&gt; dsn = BaseDatabase(name=&quot;mycell&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; # Create layout objects</span>
+<span class="sd">    &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(r0)</span>
 <span class="sd">    &gt;&gt;&gt; print(base.noname_index) </span>
 <span class="sd">    0 </span>
-<span class="sd">    &gt;&gt;&gt; rect1 = laygo2.object.Rect(xy=……) </span>
-<span class="sd">    &gt;&gt;&gt; base.append(rect1)</span>
+<span class="sd">    &gt;&gt;&gt; r1 = Rect(xy=[[100, 100], [200, 200]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(r1)</span>
 <span class="sd">    &gt;&gt;&gt; print(base.noname_index) </span>
 <span class="sd">    1</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    int: BaseDatabase의 소속 객체들 중 이름이 정해지지 않은 객체의 이름을 사용할 때 부여되는 고유 번호.</span>
+<span class="sd">    **(Korean)** BaseDatabase의 소속 객체들 중 이름이 정해지지 않은 객체의 </span>
+<span class="sd">    이름을 정할 때 부여되는 고유 번호.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;attribute</span>
-<span class="sd">        list: Keys of elements.</span>
-
-
+        <span class="sd">&quot;&quot;&quot; Keys of elements.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’)</span>
-<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.Rect(name=&#39;R0’ ……)</span>
-<span class="sd">        &gt;&gt;&gt; rect1 = laygo2.object.Rect(xy=……)</span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……)</span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect0)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect1)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(pin0)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(inst0)</span>
-<span class="sd">        &gt;&gt;&gt; print(base.keys())</span>
-<span class="sd">        [&#39;R0&#39;, &#39;NoName_0&#39;, &#39;NoName_1&#39;, &#39;I0&#39;]</span>
+<span class="sd">        &gt;&gt;&gt; import laygo2</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">        &gt;&gt;&gt; # Create a design</span>
+<span class="sd">        &gt;&gt;&gt; dsn = BaseDatabase(name=&quot;mycell&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # Create layout objects</span>
+<span class="sd">        &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">        &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
+<span class="sd">        &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(r0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(p0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(i0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(t0)</span>
+<span class="sd">        &gt;&gt;&gt; print(dsn.keys())</span>
+<span class="sd">        dict_keys([&#39;NoName_0&#39;, &#39;P&#39;, &#39;I0&#39;, &#39;NoName_1&#39;])</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        list: BaseDatabase 객체의 구성 요소를 담고 있는 Dictionary.</span>
+<span class="sd">        **(Korean)** BaseDatabase 객체의 구성 요소를 담고 있는 Dictionary.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">keys</span>
 
@@ -334,31 +337,29 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’)</span>
-<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.Rect(name=&#39;R0’ ……)</span>
-<span class="sd">        &gt;&gt;&gt; rect1 = laygo2.object.Rect(xy=……)</span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……)</span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect0)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect1)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(pin0)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(inst0)</span>
-<span class="sd">        &gt;&gt;&gt; print(base.items())</span>
-<span class="sd">        dict_items([(&#39;R0&#39;, &lt;laygo2.object.physical.Rect object&gt;),</span>
-<span class="sd">                    (&#39;NoName_0&#39;, &lt;laygo2.object.physical.Rect object&gt;),</span>
-<span class="sd">                    (&#39;NoName_1&#39;, &lt;laygo2.object.physical.Pin object&gt;),</span>
-<span class="sd">                    (&#39;I0&#39;, &lt;laygo2.object.physical.Instance object&gt;)])</span>
+<span class="sd">        &gt;&gt;&gt; import laygo2</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">        &gt;&gt;&gt; # Create a design</span>
+<span class="sd">        &gt;&gt;&gt; dsn = BaseDatabase(name=&quot;mycell&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # Create layout objects</span>
+<span class="sd">        &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">        &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
+<span class="sd">        &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(r0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(p0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(i0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(t0)</span>
+<span class="sd">        &gt;&gt;&gt; print(dsn.items())</span>
+<span class="sd">        dict_items([(&#39;NoName_0&#39;, &lt;laygo2.object.physical.Rect object at 0x0000024C6C230F40&gt;), </span>
+<span class="sd">                    (&#39;P&#39;, &lt;laygo2.object.physical.Pin object at 0x0000024C6C2EFF40&gt;), </span>
+<span class="sd">                    (&#39;I0&#39;, &lt;laygo2.object.physical.Instance object at 0x0000024C6C2EFDC0&gt;), </span>
+<span class="sd">                    (&#39;NoName_1&#39;, &lt;laygo2.object.physical.Text object at 0x0000024C6C2EF8B0&gt;)])</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        elements의 key/object 짝 출력.</span>
-<span class="sd">        파라미터</span>
-<span class="sd">        없음</span>
-<span class="sd">        반환값</span>
-<span class="sd">        dict_items</span>
-<span class="sd">        참조</span>
-<span class="sd">        없음</span>
+<span class="sd">        **(Korean)** elements의 key/object 짝 출력.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">items</span><span class="p">()</span></div>
 
@@ -372,34 +373,39 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        element</span>
-
-
+<span class="sd">        laygo2.object.physical : corresponding object.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’)</span>
-<span class="sd">        &gt;&gt;&gt; rect0= laygo2.object.Rect(name=&#39;R0’ ……)</span>
-<span class="sd">        &gt;&gt;&gt; rect1= laygo2.object.Rect(xy=……)</span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……)</span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect0)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect1)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(pin0)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(inst0)</span>
-<span class="sd">        &gt;&gt;&gt; print(base[“R0”])</span>
-<span class="sd">        &lt;laygo2.object.physical.Rect object&gt; name: R0, class: Rect  ……</span>
+<span class="sd">        &gt;&gt;&gt; import laygo2</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">        &gt;&gt;&gt; # Create a design</span>
+<span class="sd">        &gt;&gt;&gt; dsn = BaseDatabase(name=&quot;mycell&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # Create layout objects</span>
+<span class="sd">        &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">        &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
+<span class="sd">        &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(r0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(p0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(i0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(t0)</span>
+<span class="sd">        &gt;&gt;&gt; print(dsn[&quot;I0&quot;])</span>
+<span class="sd">        &lt;laygo2.object.physical.Instance object at 0x0000024C6C2EFDC0&gt; </span>
+<span class="sd">        name: I0,</span>
+<span class="sd">        class: Instance,</span>
+<span class="sd">        xy: [0, 0],</span>
+<span class="sd">        params: None,</span>
+<span class="sd">        size: [0, 0]</span>
+<span class="sd">        shape: None</span>
+<span class="sd">        pitch: [0, 0]   </span>
+<span class="sd">        transform: R0</span>
+<span class="sd">        pins: {}</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        key에 해당하는 object 반환.</span>
-<span class="sd">        파라미터</span>
-<span class="sd">        key(str)</span>
-<span class="sd">        반환값</span>
-<span class="sd">        element</span>
-<span class="sd">        참조</span>
-<span class="sd">        없음</span>
+<span class="sd">        **(Korean)** key에 해당하는 object 반환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
 
@@ -415,37 +421,75 @@
 <span class="sd">        -------</span>
 <span class="sd">        list</span>
 
-
-
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’)</span>
-<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.Rect(name=&#39;R0’ ……)</span>
-<span class="sd">        &gt;&gt;&gt; rect1 = laygo2.object.Rect(xy=……)</span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……)</span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect0)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect1)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(pin0)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(inst0)</span>
-<span class="sd">        &gt;&gt;&gt; rect2 = laygo2.object.Rect(name=‘R2’ ……)</span>
-<span class="sd">        &gt;&gt;&gt; base[“R2”]=rect2</span>
+<span class="sd">        &gt;&gt;&gt; import laygo2</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">        &gt;&gt;&gt; # Create a design</span>
+<span class="sd">        &gt;&gt;&gt; dsn = BaseDatabase(name=&quot;mycell&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # Create layout objects</span>
+<span class="sd">        &gt;&gt;&gt; r1 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(r1)</span>
+<span class="sd">        &gt;&gt;&gt; r2 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">        &gt;&gt;&gt; dsn[&quot;R2&quot;] = r2</span>
+<span class="sd">        &gt;&gt;&gt; print(dsn[&quot;R2&quot;])</span>
+<span class="sd">        &lt;laygo2.object.physical.Rect object at 0x0000024C6C107C40&gt; </span>
+<span class="sd">        name: R2,</span>
+<span class="sd">        class: Rect,</span>
+<span class="sd">        xy: [[0, 0], [100, 100]],</span>
+<span class="sd">        params: None, , layer: [&#39;M1&#39;, &#39;drawing&#39;], netname: None</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        요소 추가 함수.</span>
-<span class="sd">        파라미터</span>
-<span class="sd">        key(str)</span>
-<span class="sd">        반환값</span>
-<span class="sd">        list</span>
-<span class="sd">        참조</span>
-<span class="sd">        없음</span>
+<span class="sd">        **(Korean)** 요소 추가 함수.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">item</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">key</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
 <div class="viewcode-block" id="BaseDatabase.append"><a class="viewcode-back" href="../../../laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;(Simply) add a physical object to the BaseDatabase object.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        item : laygo2.object.physical.PhysicalObject</span>
+<span class="sd">            The physical object to be added. </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        list : </span>
+<span class="sd">            A list containing the name of item and the item itself ([item.name, item]).</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; import laygo2</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">        &gt;&gt;&gt; # Create a design</span>
+<span class="sd">        &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # Create layout objects</span>
+<span class="sd">        &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">        &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
+<span class="sd">        &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(r0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(p0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(i0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(t0)</span>
+<span class="sd">        &gt;&gt;&gt; print(dsn)</span>
+<span class="sd">        &lt;laygo2.object.database.BaseDatabase object at 0x0000024C6C2EF010&gt; </span>
+<span class="sd">            name: mycell, params: None </span>
+<span class="sd">            elements: {</span>
+<span class="sd">                &#39;NoName_0&#39;: &lt;laygo2.object.physical.Rect object at 0x0000024C6C230F40&gt;,</span>
+<span class="sd">                &#39;P&#39;: &lt;laygo2.object.physical.Pin object at 0x0000024C6C2EFF40&gt;, </span>
+<span class="sd">                &#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x0000024C6C2EFDC0&gt;, </span>
+<span class="sd">                &#39;NoName_1&#39;: &lt;laygo2.object.physical.Text object at 0x0000024C6C2EF8B0&gt;}</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">            laygo2.object.database.Library.append</span>
+<span class="sd">            laygo2.object.database.Design.append</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
             <span class="n">item_name_list</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="n">item_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -478,46 +522,33 @@
             <span class="k">return</span> <span class="n">item_name</span><span class="p">,</span> <span class="n">item</span></div>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Iterator object of BaseDatabaseParameters.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        None</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        dict_keyiterator</span>
-
-
+        <span class="sd">&quot;&quot;&quot;Iterator function. Directly mapped to its elements.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’)</span>
-<span class="sd">        &gt;&gt;&gt; rect0= laygo2.object.Rect(name=&#39;R0’ ……)</span>
-<span class="sd">        &gt;&gt;&gt; rect1= laygo2.object.Rect(xy=……)</span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.Pin(xy=……)</span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100] ……)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect0)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(rect1)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(pin0)</span>
-<span class="sd">        &gt;&gt;&gt; base.append(inst0)</span>
-<span class="sd">        &gt;&gt;&gt; for obj in base: print(obj)</span>
-<span class="sd">        R0</span>
-<span class="sd">        NoName_0</span>
-<span class="sd">        NoName_1</span>
-<span class="sd">        I0</span>
+<span class="sd">        &gt;&gt;&gt; import laygo2</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">        &gt;&gt;&gt; # Create a design</span>
+<span class="sd">        &gt;&gt;&gt; dsn = BaseDatabase(name=&quot;mycell&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # Create layout objects</span>
+<span class="sd">        &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">        &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
+<span class="sd">        &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(r0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(p0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(i0)</span>
+<span class="sd">        &gt;&gt;&gt; for o in dsn.items():</span>
+<span class="sd">        &gt;&gt;&gt;     print(o)</span>
+<span class="sd">        (&#39;NoName_0&#39;, &lt;laygo2.object.physical.Rect object at 0x0000024C6C230F40&gt;)</span>
+<span class="sd">        (&#39;P&#39;, &lt;laygo2.object.physical.Pin object at 0x0000024C6C2EFF40&gt;)</span>
+<span class="sd">        (&#39;I0&#39;, &lt;laygo2.object.physical.Instance object at 0x0000024C6C2EFDC0&gt;)</span>
+<span class="sd">        (&#39;NoName_1&#39;, &lt;laygo2.object.physical.Text object at 0x0000024C6C2EF8B0&gt;)</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        BaseDatabase의 Iterable 객체 반환.</span>
-<span class="sd">        파라미터</span>
-<span class="sd">        없음</span>
-<span class="sd">        반환값</span>
-<span class="sd">        dict_keyiterator</span>
-<span class="sd">        참조</span>
-<span class="sd">        없음</span>
+<span class="sd">        **(Korean)** BaseDatabase의 Iterable 함수.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span>
 
@@ -555,26 +586,24 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.object.BaseDatabase</span>
 
-
-
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; base = laygo2.object.BaseDatabase(name=&#39;mycell’)</span>
+<span class="sd">        &gt;&gt;&gt; import laygo2</span>
+<span class="sd">        &gt;&gt;&gt; base = laygo2.object.database.BaseDatabase(name=&#39;mycell&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; print(base)</span>
-<span class="sd">        &lt;laygo2.object.database.BaseDatabase object&gt; name: mycell, params: None elements: {}&gt;</span>
+<span class="sd">        &lt;laygo2.object.database.BaseDatabase object&gt; </span>
+<span class="sd">        name: mycell, params: None elements: {}&gt;</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        BaseDatabase 클래스 생성자 함수.</span>
+<span class="sd">        **(Korean)** BaseDatabase 클래스 생성자 함수.</span>
+
 <span class="sd">        파라미터</span>
-<span class="sd">        name(str): BaseDatabase 객체의 이름</span>
-<span class="sd">        params(dict): BaseDatabase의 parameters [optional]</span>
-<span class="sd">        elements(dict): BaseDatabase의 elements를 갖고 있는 dict [optional]</span>
+<span class="sd">            - name(str): BaseDatabase 객체의 이름</span>
+<span class="sd">            - params(dict): BaseDatabase의 parameters [optional]</span>
+<span class="sd">            - elements(dict): BaseDatabase의 elements를 갖고 있는 dict [optional]</span>
 <span class="sd">        반환값</span>
-<span class="sd">        laygo2.object.BaseDatabase</span>
-<span class="sd">        참조</span>
-<span class="sd">        없음</span>
+<span class="sd">            - laygo2.object.BaseDatabase</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">params</span>
@@ -591,8 +620,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    Library 클래스는 라이브러리 관리 기능을 구현한다.</span>
+<span class="sd">    **(Korean)** Library 클래스는 라이브러리 관리 기능을 구현한다.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Library.get_libname"><a class="viewcode-back" href="../../../laygo2.object.database.Library.html#laygo2.object.database.Library.get_libname">[docs]</a>    <span class="k">def</span> <span class="nf">get_libname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -602,10 +630,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">val</span></div>
 
     <span class="n">libname</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_libname</span><span class="p">,</span> <span class="n">set_libname</span><span class="p">)</span>
-    <span class="sd">&quot;&quot;&quot;attribute</span>
-<span class="sd">    str: Library object name.</span>
-
-<span class="sd">    </span>
+    <span class="sd">&quot;&quot;&quot;str: Library object name.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -615,8 +640,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    str: Library 객체의 이름.</span>
+<span class="sd">    **(Korean)** Library 객체의 이름.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Library.append"><a class="viewcode-back" href="../../../laygo2.object.database.Library.html#laygo2.object.database.Library.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
@@ -634,8 +658,7 @@
             <span class="k">return</span> <span class="n">item_name</span><span class="p">,</span> <span class="n">item</span></div>
 
 <div class="viewcode-block" id="Library.__init__"><a class="viewcode-back" href="../../../laygo2.object.database.Library.html#laygo2.object.database.Library.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Constructor function of Library class.</span>
+        <span class="sd">&quot;&quot;&quot;Constructor function of Library class.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -650,8 +673,6 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.object.Library</span>
 
-
-
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; lib = laygo2.object.Library(name=&#39;mylib’)</span>
@@ -660,16 +681,13 @@
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        Library 클래스의 생성자 함수.</span>
+<span class="sd">        **(Korean)** Library 클래스의 생성자 함수.</span>
 <span class="sd">        파라미터</span>
-<span class="sd">        name(str): Library 객체의 이름</span>
-<span class="sd">        params(dict): Library의 parameters [optional]</span>
-<span class="sd">        elements(dict): Library의 elements를 갖고 있는 dict [optional]</span>
+<span class="sd">            - name(str): Library 객체의 이름</span>
+<span class="sd">            - params(dict): Library의 parameters [optional]</span>
+<span class="sd">            - elements(dict): Library의 elements를 갖고 있는 dict [optional]</span>
 <span class="sd">        반환값</span>
-<span class="sd">        laygo2.object.Library</span>
-<span class="sd">        참조</span>
-<span class="sd">        없음</span>
+<span class="sd">            - laygo2.object.Library</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">BaseDatabase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="n">elements</span><span class="p">)</span></div>
 
@@ -704,7 +722,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;get design bbox which is union of instances.bbox&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;get the design bbox which is union of self.instances.bbox.&quot;&quot;&quot;</span>
         <span class="n">libname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">libname</span>
         <span class="n">cellname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cellname</span>
         <span class="c1"># Compute boundaries</span>
@@ -729,7 +747,6 @@
                 <span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">i</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
         <span class="n">xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">xy</span>
-        <span class="k">pass</span>
 
 <div class="viewcode-block" id="Design.get_libname"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.get_libname">[docs]</a>    <span class="k">def</span> <span class="nf">get_libname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_libname</span></div>
@@ -738,31 +755,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_libname</span> <span class="o">=</span> <span class="n">val</span></div>
 
     <span class="n">libname</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_libname</span><span class="p">,</span> <span class="n">set_libname</span><span class="p">)</span>
-    <span class="sd">&quot;&quot;&quot;attribute</span>
-<span class="sd">    str: Library name of Design object.</span>
-
-<span class="sd">    </span>
+    <span class="sd">&quot;&quot;&quot;str: Library name of Design object.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; dsn = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;) </span>
-<span class="sd">    &gt;&gt;&gt; rect0  = laygo2.object.Rect(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; pin0   = laygo2.object.Pin(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;pin’]……) </span>
-<span class="sd">    &gt;&gt;&gt; inst0  = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100]……) </span>
-<span class="sd">    &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;VI0’, ……) </span>
-<span class="sd">    &gt;&gt;&gt; text0  = laygo2.object.physical.Text(xy=[[ 0, 0], [100,100 ]], layer=[&#39;text&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(rect0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(pin0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(inst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(vinst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(text0)</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; dsn = laygo2.object.database.Design(name=&quot;dsn&quot;, libname=&quot;testlib&quot;) </span>
 <span class="sd">    &gt;&gt;&gt; print(dsn.libname) </span>
 <span class="sd">    “testlib”</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    str: Design 객체의 라이브러리 이름.</span>
+<span class="sd">    **(Korean)** Design 객체의 라이브러리 이름.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Design.get_cellname"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.get_cellname">[docs]</a>    <span class="k">def</span> <span class="nf">get_cellname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -772,171 +776,138 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">val</span></div>
 
     <span class="n">cellname</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_cellname</span><span class="p">,</span> <span class="n">set_cellname</span><span class="p">)</span>
-    <span class="sd">&quot;&quot;&quot;attribute</span>
-<span class="sd">    str: Cell name of Design object.</span>
-
-<span class="sd">    </span>
+    <span class="sd">&quot;&quot;&quot;str: Cell name of Design object.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; dsn = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;) </span>
-<span class="sd">    &gt;&gt;&gt; rect0  = laygo2.object.Rect(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; pin0   = laygo2.object.Pin(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;pin’]……) </span>
-<span class="sd">    &gt;&gt;&gt; inst0  = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100]……) </span>
-<span class="sd">    &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;VI0’, ……) </span>
-<span class="sd">    &gt;&gt;&gt; text0  = laygo2.object.physical.Text(xy=[[ 0, 0], [100,100 ]], layer=[&#39;text&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(rect0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(pin0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(inst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(vinst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(text0)</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; dsn = laygo2.object.database.Design(name=&quot;dsn&quot;, libname=&quot;testlib&quot;) </span>
 <span class="sd">    &gt;&gt;&gt; print(dsn.cellname) </span>
 <span class="sd">    “dsn”</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    str: Design 객체의 셀 이름.</span>
+<span class="sd">    **(Korean)** Design 객체의 셀 이름.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">rects</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;attribute</span>
-<span class="sd">    dict: Dictionary containing Rectangle object affiliated with Design object.</span>
 
-<span class="sd">    </span>
+    <span class="n">rects</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="sd">&quot;&quot;&quot;dict: Dictionary containing Rectangle object affiliated with the </span>
+<span class="sd">    Design object.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; dsn = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;) </span>
-<span class="sd">    &gt;&gt;&gt; rect0  = laygo2.object.Rect(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; pin0   = laygo2.object.Pin(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;pin’]……) </span>
-<span class="sd">    &gt;&gt;&gt; inst0  = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100]……) </span>
-<span class="sd">    &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;VI0’, ……) </span>
-<span class="sd">    &gt;&gt;&gt; text0  = laygo2.object.physical.Text(xy=[[ 0, 0], [100,100 ]], layer=[&#39;text&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(rect0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(pin0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(inst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(vinst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(text0)</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.database import Design</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">    &gt;&gt;&gt; dsn = Design(name=&quot;dsn&quot;, libname=&quot;testlib&quot;) </span>
+<span class="sd">    &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(r0) </span>
 <span class="sd">    &gt;&gt;&gt; print(dsn.rects) </span>
 <span class="sd">    {&#39;R0&#39;: &lt;laygo2.object.physical.Rect object&gt;}</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    dict: Design 객체에 소속된 Rect 객체들을 갖고 있는 dictionary.</span>
+<span class="sd">    **(Korean)** Design 객체에 소속된 Rect 객체들을 갖고 있는 dictionary.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    
     <span class="n">paths</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">pins</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;attribute</span>
-<span class="sd">    dict: Dictionary having the collection of Pin objects affiliated with Design object.</span>
 
-<span class="sd">    </span>
+    <span class="n">pins</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="sd">&quot;&quot;&quot;dict: Dictionary having the collection of Pin objects affiliated </span>
+<span class="sd">    with the Design object.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; dsn = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;) </span>
-<span class="sd">    &gt;&gt;&gt; rect0  = laygo2.object.Rect(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; pin0   = laygo2.object.Pin(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;pin’]……) </span>
-<span class="sd">    &gt;&gt;&gt; inst0  = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100]……) </span>
-<span class="sd">    &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;VI0’, ……) </span>
-<span class="sd">    &gt;&gt;&gt; text0  = laygo2.object.physical.Text(xy=[[ 0, 0], [100,100 ]], layer=[&#39;text&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(rect0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(pin0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(inst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(vinst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(text0)</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.database import Design</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">    &gt;&gt;&gt; dsn = Design(name=&quot;dsn&quot;, libname=&quot;testlib&quot;) </span>
+<span class="sd">    &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(p0) </span>
 <span class="sd">    &gt;&gt;&gt; print(dsn.pins) </span>
 <span class="sd">    {&#39;NoName_0&#39;: &lt;laygo2.object.physical.Pin object&gt;}</span>
 <span class="sd">    </span>
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    dict: Design 객체에 소속된 Pin 객체들을 갖고 있는 dictionary.</span>
+<span class="sd">    **(Korean)** Design 객체에 소속된 Pin 객체들을 갖고 있는 dictionary.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">texts</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;attribute</span>
-<span class="sd">    dict: Dictionary containing Text objects affiliated with Design object.</span>
 
-<span class="sd">    </span>
+    <span class="n">texts</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="sd">&quot;&quot;&quot;dict: Dictionary containing Text objects affiliated with Design object.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; dsn = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;) </span>
-<span class="sd">    &gt;&gt;&gt; rect0  = laygo2.object.Rect(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; pin0   = laygo2.object.Pin(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;pin’]……) </span>
-<span class="sd">    &gt;&gt;&gt; inst0  = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100]……) </span>
-<span class="sd">    &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;VI0’, ……) </span>
-<span class="sd">    &gt;&gt;&gt; text0  = laygo2.object.physical.Text(xy=[[ 0, 0], [100,100 ]], layer=[&#39;text&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(rect0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(pin0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(inst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(vinst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(text0)</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.database import Design</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">    &gt;&gt;&gt; dsn = Design(name=&quot;dsn&quot;, libname=&quot;testlib&quot;) </span>
+<span class="sd">    &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(t0) </span>
 <span class="sd">    &gt;&gt;&gt; print(dsn.texts) </span>
 <span class="sd">    {&#39;NoName_1&#39;: &lt;laygo2.object.physical.Text object&gt;}</span>
 <span class="sd">    </span>
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    dict: Design 객체에 소속된 Text 객체들을 갖고 있는 dictionary.</span>
+<span class="sd">    **(Korean)** Design 객체에 소속된 Text 객체들을 갖고 있는 dictionary.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">instances</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;attribute</span>
-<span class="sd">    dict: Dictionary containing Instance objects affiliated with Design object.</span>
 
-<span class="sd">    </span>
+    <span class="n">instances</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="sd">&quot;&quot;&quot;dict: Dictionary containing Instance objects affiliated with Design object.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; dsn = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;) </span>
-<span class="sd">    &gt;&gt;&gt; rect0  = laygo2.object.Rect(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; pin0   = laygo2.object.Pin(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;pin’]……) </span>
-<span class="sd">    &gt;&gt;&gt; inst0  = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100]……) </span>
-<span class="sd">    &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;VI0’, ……) </span>
-<span class="sd">    &gt;&gt;&gt; text0  = laygo2.object.physical.Text(xy=[[ 0, 0], [100,100 ]], layer=[&#39;text&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(rect0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(pin0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(inst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(vinst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(text0)</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.database import Design</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">    &gt;&gt;&gt; dsn = Design(name=&quot;dsn&quot;, libname=&quot;testlib&quot;) </span>
+<span class="sd">    &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(i0) </span>
 <span class="sd">    &gt;&gt;&gt; print(dsn.instances) </span>
 <span class="sd">    {&#39;I0&#39;: &lt;laygo2.object.physical.Instance object&gt;}</span>
 <span class="sd">    </span>
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    dict: Design 객체에 소속된 Instance 객체들을 갖고 있는 dictionary.</span>
+<span class="sd">    **(Korean)** Design 객체에 소속된 Instance 객체들을 갖고 있는 dictionary.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">virtual_instances</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;attribute</span>
-<span class="sd">    dict: Dictionary containing VirtualInstance objects affiliated with Design object.</span>
+    <span class="sd">&quot;&quot;&quot;dict: Dictionary containing VirtualInstance objects affiliated with </span>
+<span class="sd">    Design object.</span>
 
-<span class="sd">    </span>
-
-<span class="sd">    Examples</span>
+<span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; dsn = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;) </span>
-<span class="sd">    &gt;&gt;&gt; rect0  = laygo2.object.Rect(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; pin0   = laygo2.object.Pin(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;pin’]……) </span>
-<span class="sd">    &gt;&gt;&gt; inst0  = laygo2.object.Instance(name=&#39;I0&#39;, xy=[100, 100]……) </span>
-<span class="sd">    &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;VI0’, ……) </span>
-<span class="sd">    &gt;&gt;&gt; text0  = laygo2.object.physical.Text(xy=[[ 0, 0], [100,100 ]], layer=[&#39;text&#39;, &#39;drawing’]……) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(rect0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(pin0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(inst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(vinst0) </span>
-<span class="sd">    &gt;&gt;&gt; dsn.append(text0)</span>
-<span class="sd">    &gt;&gt;&gt; print(dsn.virtual_instances) </span>
-<span class="sd">    virtual_instnaces {&#39;VI0&#39;: &lt;laygo2.object.physical.VirtualInstance object&gt;}</span>
+<span class="sd">    instances</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**</span>
-<span class="sd">    dict: Design 객체에 소속된 VirtualInstance 객체들을 갖고 있는 dictionary.</span>
+<span class="sd">    **(Korean)** Design 객체에 소속된 VirtualInstance 객체들을 갖고 있는 dictionary.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Iterator function. Directly mapped to its elements.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Iterator function. Directly mapped to its elements.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; import laygo2</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.database import Design</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">        &gt;&gt;&gt; # Create a design</span>
+<span class="sd">        &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # Create layout objects</span>
+<span class="sd">        &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">        &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
+<span class="sd">        &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(r0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(p0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(i0)</span>
+<span class="sd">        &gt;&gt;&gt; for o in dsn.items():</span>
+<span class="sd">        &gt;&gt;&gt;     print(o)</span>
+<span class="sd">        (&#39;NoName_0&#39;, &lt;laygo2.object.physical.Rect object at 0x0000024C6C230F40&gt;)</span>
+<span class="sd">        (&#39;P&#39;, &lt;laygo2.object.physical.Pin object at 0x0000024C6C2EFF40&gt;)</span>
+<span class="sd">        (&#39;I0&#39;, &lt;laygo2.object.physical.Instance object at 0x0000024C6C2EFDC0&gt;)</span>
+<span class="sd">        (&#39;NoName_1&#39;, &lt;laygo2.object.physical.Text object at 0x0000024C6C2EF8B0&gt;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span>
 
 <div class="viewcode-block" id="Design.__init__"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -958,7 +929,8 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; dsn = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; import laygo2</span>
+<span class="sd">        &gt;&gt;&gt; dsn = laygo2.object.database.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;)</span>
 <span class="sd">        &gt;&gt;&gt; print(dsn)</span>
 <span class="sd">        &lt;laygo2.object.database.Design object&gt;  name: dsn, params: None</span>
 <span class="sd">            elements: {}</span>
@@ -972,16 +944,14 @@
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        Design 클래스의 생성자 함수.</span>
+<span class="sd">        **(Korean)** Design 클래스의 생성자 함수.</span>
+
 <span class="sd">        파라미터</span>
-<span class="sd">        name(str): Design 객체의 이름</span>
-<span class="sd">        params(dict): Design 객체의 parameters [optional]</span>
-<span class="sd">        elements(dict): Design 객체의 elements [optional]</span>
+<span class="sd">            - name(str): Design 객체의 이름</span>
+<span class="sd">            - params(dict): Design 객체의 parameters [optional]</span>
+<span class="sd">            - elements(dict): Design 객체의 elements [optional]</span>
 <span class="sd">        반환값</span>
-<span class="sd">        laygo2.object.BaseDatabase</span>
-<span class="sd">        참조</span>
-<span class="sd">        없음</span>
+<span class="sd">            - laygo2.object.BaseDatabase</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">libname</span> <span class="o">=</span> <span class="n">libname</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rects</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
@@ -1002,8 +972,8 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        list : A list containing the name of item and the item itself </span>
-<span class="sd">        ([item.name, item]).</span>
+<span class="sd">        list : </span>
+<span class="sd">            A list containing the name of item and the item itself ([item.name, item]).</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>

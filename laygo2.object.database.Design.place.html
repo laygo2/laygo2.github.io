@@ -410,7 +410,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.place">
 <span class="sig-prename descclassname"><span class="pre">Design.</span></span><span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.place"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.place" title="Permalink to this definition">#</a></dt>
-<dd><p>Place the instance on the abstract coordinate mn, on the abstract grid.</p>
+<dd><p>Place the instance on the abstract coordinate <strong>mn</strong>, on the abstract grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -428,29 +428,38 @@
 </dl>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;testlib&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a grid</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span>  <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;xgrid&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span>  <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;ygrid&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span>    <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">PlacementGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">vgrid</span><span class="o">=</span><span class="n">g1_x</span><span class="p">,</span> <span class="n">hgrid</span><span class="o">=</span><span class="n">g1_y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">PlacementGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.database</span> <span class="kn">import</span> <span class="n">Design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Instance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a grid (not needed if laygo2_tech is set up).</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gx</span>  <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;gx&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gy</span>  <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;gy&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span>   <span class="o">=</span> <span class="n">PlacementGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">vgrid</span><span class="o">=</span><span class="n">gx</span><span class="p">,</span> <span class="n">hgrid</span><span class="o">=</span><span class="n">gy</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;genlib&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create an instance</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s2">&quot;templates&quot;</span><span class="p">,</span>
-<span class="go">            cellname=&quot;template0&quot;, name=&quot;I0&quot;, xy=[100, 100])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i0</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s2">&quot;tlib&quot;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">inst0</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
 <span class="go">[100, 100]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Place the instance</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">inst</span><span class="o">=</span><span class="n">inst0</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">g1</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">inst0</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">inst</span><span class="o">=</span><span class="n">i0</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print parameters of the placed instance.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">i0</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
 <span class="go">[200, 1000]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dsn</span><span class="p">)</span>
-<span class="go">&lt;laygo2.object.database.Design object at 0x000002803D4C0F40&gt; name: mycell, params: None</span>
-<span class="go">    elements: {&#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x000002803D57F010&gt;}</span>
-<span class="go">    libname:testlib</span>
+<span class="go">&lt;laygo2.object.database.Design object at 0x000002803D4C0F40&gt;</span>
+<span class="go">    name: mycell</span>
+<span class="go">    params: None</span>
+<span class="go">    elements:</span>
+<span class="go">        {&#39;I0&#39;: &lt;laygo2.object.physical.Instance object at</span>
+<span class="go">                0x000002803D57F010&gt;}</span>
+<span class="go">    libname:genlib</span>
 <span class="go">    rects:{}</span>
 <span class="go">    paths:{}</span>
 <span class="go">    pins:{}</span>
 <span class="go">    texts:{}</span>
-<span class="go">    instances:{&#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x000002803D57F010&gt;}</span>
+<span class="go">    instances:</span>
+<span class="go">        {&#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x000002803D57F010&gt;}</span>
 <span class="go">    virtual instances:{}</span>
 </pre></div>
 </div>
@@ -459,15 +468,15 @@
 <p><a class="reference internal" href="laygo2.object.grid.PlacementGrid.html#laygo2.object.grid.PlacementGrid.place" title="laygo2.object.grid.PlacementGrid.place"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.PlacementGrid.place</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 인스턴스를 grid위 추상 좌표 mn에 배치하는 함수.</p>
+<p><strong>(Korean)</strong> 인스턴스를 grid위 추상 좌표 mn에 배치하는 함수.</p>
 <dl class="simple">
 <dt>파라미터</dt><dd><ul class="simple">
-<li><p>inst(laygo2.physical.instance): 배치할 인스턴스</p></li>
-<li><p>mn(numpy.ndarray or list): 인스턴스를 배치할 추상좌표</p></li>
+<li><p>inst(laygo2.physical.instance): 배치할 인스턴스.</p></li>
+<li><p>mn(numpy.ndarray or list): 인스턴스를 배치할 추상좌표.</p></li>
 </ul>
 </dd>
 <dt>반환값</dt><dd><ul class="simple">
-<li><p>laygo2.physical.instance: 좌표가 수정된 인스턴스</p></li>
+<li><p>laygo2.physical.instance: 좌표가 수정된 인스턴스.</p></li>
 </ul>
 </dd>
 </dl>

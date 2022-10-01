@@ -410,31 +410,91 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.route">
 <span class="sig-prename descclassname"><span class="pre">Design.</span></span><span class="sig-name descname"><span class="pre">route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">via_tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.route" title="Permalink to this definition">#</a></dt>
-<dd><p>Create wire object(s) for routing.</p>
+<dd><p>Create wire object(s) for routing, on the abstract coordinate <strong>mn</strong>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grid</strong> (<a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid" title="laygo2.object.grid.RoutingGrid"><em>laygo2.object.grid.RoutingGrid</em></a>) – The placement grid where the wire is placed on.</p></li>
 <li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>)</em>) – The list containing two or more mn coordinates to be connected.</p></li>
-<li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional.</em>) – None or “vertical” or “horizontal”. The direction of the routing object.</p></li>
-<li><p><strong>via_tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><em>Boolean</em><em>)</em><em>, </em><em>optional.</em>) – The list containing switches deciding whether to place via at the edges.</p></li>
+<li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional.</em>) – None or “vertical” or “horizontal”. The direction of the routing
+object.</p></li>
+<li><p><strong>via_tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><em>Boolean</em><em>)</em><em>, </em><em>optional.</em>) – The list containing switches deciding whether to place via at
+the edges.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The generated routing object(s).
-Check the example code in laygo2.object.grid.RoutingGrid.route for details.</p>
+Check the example code in laygo2.object.grid.RoutingGrid.route
+for details.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.physical.Rect.html#laygo2.object.physical.Rect" title="laygo2.object.physical.Rect">laygo2.object.physical.Rect</a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; dsn = Design(name=&#39;mycell&#39;, libname=&quot;testlib&quot;)
-&gt;&gt;&gt; mygrid = grids[“routing_23_cmos”]
-&gt;&gt;&gt; mn_list = [[0, -2], [0, 1], [2, 1], [5,1] ]
-&gt;&gt;&gt; route = dsn.route(grid=mygrid, mn=mn_list, via_tag=[True, None, True, True])
-&gt;&gt;&gt; print(route)
-[&lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;]
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">CircularMapping</span> <span class="k">as</span> <span class="n">CM</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">CircularMappingArray</span> <span class="k">as</span> <span class="n">CMA</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">RoutingGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.template</span> <span class="kn">import</span> <span class="n">NativeInstanceTemplate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.database</span> <span class="kn">import</span> <span class="n">Design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Instance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Routing grid construction (not needed if laygo2_tech is set up).</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;gv&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gh</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;gv&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wv</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="mi">10</span><span class="p">])</span>           <span class="c1"># vertical (xgrid) width</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wh</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>   <span class="c1"># horizontal (ygrid) width</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ev</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="mi">10</span><span class="p">])</span>           <span class="c1"># vertical (xgrid) extension</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eh</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>   <span class="c1"># horizontal (ygrid) extension</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e0v</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="mi">15</span><span class="p">])</span>          <span class="c1"># vert. extension (for zero-length wires)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e0h</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>  <span class="c1"># hori. extension (for zero-length wires)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lv</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>  <span class="c1"># layer information</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lh</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([[</span><span class="s1">&#39;M2&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">]]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plv</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;pin&#39;</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span> <span class="c1"># pin layers</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plh</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([[</span><span class="s1">&#39;M2&#39;</span><span class="p">,</span> <span class="s1">&#39;pin&#39;</span><span class="p">]]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xcolor</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="s1">&#39;not MPT&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>  <span class="c1"># &#39;not MPT&#39; for non-multipatterning</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ycolor</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="s1">&#39;not MPT&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">primary_grid</span> <span class="o">=</span> <span class="s1">&#39;horizontal&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tvia</span> <span class="o">=</span> <span class="n">NativeInstanceTemplate</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s1">&#39;tlib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;via0&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">viamap</span> <span class="o">=</span> <span class="n">CMA</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="p">[[</span><span class="n">tvia</span><span class="p">,</span> <span class="n">tvia</span><span class="p">,</span> <span class="n">tvia</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">RoutingGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;mygrid&#39;</span><span class="p">,</span> <span class="n">vgrid</span><span class="o">=</span><span class="n">gv</span><span class="p">,</span> <span class="n">hgrid</span><span class="o">=</span><span class="n">gh</span><span class="p">,</span>
+<span class="go">                                       vwidth=wv, hwidth=wh,</span>
+<span class="go">                                       vextension=ev, hextension=eh,</span>
+<span class="go">                                       vlayer=lv, hlayer=lh,</span>
+<span class="go">                                       pin_vlayer=plv, pin_hlayer=plh,</span>
+<span class="go">                                       viamap=viamap, primary_grid=primary_grid,</span>
+<span class="go">                                       xcolor=xcolor, ycolor=ycolor,</span>
+<span class="go">                                       vextension0=e0v, hextension0=e0h)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;genlib&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Routing on grid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mn_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">route</span> <span class="o">=</span> <span class="n">dsn</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="n">mn_list</span><span class="p">,</span>
+<span class="go">                      via_tag=[True, None, True, True])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Display generated design.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dsn</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.database.Design object at 0x000001C71AE3A110&gt;</span>
+<span class="go">    name: mycell, params: None</span>
+<span class="go">    elements: {</span>
+<span class="go">    &#39;NoName_0&#39;: &lt;laygo2.object.physical.Instance object at 0x000001C71AE3BA90&gt;,</span>
+<span class="go">    &#39;NoName_1&#39;: &lt;laygo2.object.physical.Rect object at 0x000001C71AE3B820&gt;,</span>
+<span class="go">    &#39;NoName_2&#39;: &lt;laygo2.object.physical.Rect object at 0x000001C71AE3ABF0&gt;,</span>
+<span class="go">    &#39;NoName_3&#39;: &lt;laygo2.object.physical.Instance object at 0x000001C71AE3A140&gt;,</span>
+<span class="go">    &#39;NoName_4&#39;: &lt;laygo2.object.physical.Rect object at 0x000001C71AE39DB0&gt;,</span>
+<span class="go">    &#39;NoName_5&#39;: &lt;laygo2.object.physical.Instance object at 0x000001C71AE3AB60&gt;}</span>
+<span class="go">    libname:genlib</span>
+<span class="go">    rects: {  # wires</span>
+<span class="go">    &#39;NoName_1&#39;: &lt;laygo2.object.physical.Rect object at 0x000001C71AE3B820&gt;,</span>
+<span class="go">    &#39;NoName_2&#39;: &lt;laygo2.object.physical.Rect object at 0x000001C71AE3ABF0&gt;,</span>
+<span class="go">    &#39;NoName_4&#39;: &lt;laygo2.object.physical.Rect object at 0x000001C71AE39DB0&gt;}</span>
+<span class="go">    paths:{}</span>
+<span class="go">    pins:{}</span>
+<span class="go">    texts:{}</span>
+<span class="go">    instances:{  # vias</span>
+<span class="go">    &#39;NoName_0&#39;: &lt;laygo2.object.physical.Instance object at 0x000001C71AE3BA90&gt;,</span>
+<span class="go">    &#39;NoName_3&#39;: &lt;laygo2.object.physical.Instance object at 0x000001C71AE3A140&gt;,</span>
+<span class="go">    &#39;NoName_5&#39;: &lt;laygo2.object.physical.Instance object at 0x000001C71AE3AB60&gt;}</span>
+<span class="go">    virtual instances:{}</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_route.png"><img alt="_images/object_grid_RoutingGrid_route.png" src="_images/object_grid_RoutingGrid_route.png" style="height: 250px;" /></a>
@@ -443,14 +503,19 @@ Check the example code in laygo2.object.grid.RoutingGrid.route for details.</p>
 <p><a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid.route" title="laygo2.object.grid.RoutingGrid.route"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.RoutingGrid.route</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
-추상 좌표 위에 라우팅을 수행 하는 함수.
-파라미터
-mn(list(numpy.ndarray)): 배선을 수행할 2개 이상의 mn 좌표를 담고 있는 list.
-direction(str): None or “vertical”; path의 방향을 결정 (수평 or 수직) [optional].
-via_tag(list(Boolean)): Path에 via를 형성 할지를 결정하는 switch들을 담고 있는 list [optional].
-반환값
-list: 생성된 routing object들을 담고 있는 list.</p>
+<p><strong>(Korean)</strong> 추상 좌표 위에 라우팅을 수행 하는 함수.</p>
+<dl class="simple">
+<dt>파라미터</dt><dd><ul class="simple">
+<li><p>mn(list(numpy.ndarray)): 배선을 수행할 2개 이상의 mn 좌표를 담고 있는 list.</p></li>
+<li><p>direction(str): None or “vertical”; path의 방향을 결정 (수평 or 수직) [optional].</p></li>
+<li><p>via_tag(list(Boolean)): Path에 via를 형성 할지를 결정하는 switch들을 담고 있는 list [optional].</p></li>
+</ul>
+</dd>
+<dt>반환값</dt><dd><ul class="simple">
+<li><p>list: 생성된 routing object들을 담고 있는 list.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </section>

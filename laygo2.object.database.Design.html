@@ -423,7 +423,7 @@
 <dd><p>Bases: <a class="reference internal" href="laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase" title="laygo2.object.database.BaseDatabase"><code class="xref py py-class docutils literal notranslate"><span class="pre">laygo2.object.database.BaseDatabase</span></code></a></p>
 <p>Design class implements the design management function.</p>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 Design 클래스는 디자인 관리 기능을 구현한다.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
@@ -519,10 +519,10 @@ Design 클래스는 디자인 관리 기능을 구현한다.</p>
 <td><p>Return the summary of the object information.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.Design.place.html#laygo2.object.database.Design.place" title="laygo2.object.database.Design.place"><code class="xref py py-obj docutils literal notranslate"><span class="pre">place</span></code></a>(inst, grid, mn)</p></td>
-<td><p>Place the instance on the abstract coordinate mn, on the abstract grid.</p></td>
+<td><p>Place the instance on the abstract coordinate <strong>mn</strong>, on the abstract grid.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="laygo2.object.database.Design.route.html#laygo2.object.database.Design.route" title="laygo2.object.database.Design.route"><code class="xref py py-obj docutils literal notranslate"><span class="pre">route</span></code></a>(grid, mn[, direction, via_tag])</p></td>
-<td><p>Create wire object(s) for routing.</p></td>
+<td><p>Create wire object(s) for routing, on the abstract coordinate <strong>mn</strong>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.Design.via.html#laygo2.object.database.Design.via" title="laygo2.object.database.Design.via"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via</span></code></a>(grid, mn[, params])</p></td>
 <td><p>Create Via object(s) on abstract grid.</p></td>
@@ -606,7 +606,7 @@ Design 클래스는 디자인 관리 기능을 구현한다.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 Design 클래스의 생성자 함수.
 파라미터
 name(str): Design 객체의 이름
@@ -661,7 +661,7 @@ laygo2.object.BaseDatabase
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 Design 객체에 해당하는 NativeInstanceTemplate 객체 생성.
 파라미터
 없음
@@ -716,7 +716,7 @@ laygo2.NativeInstanceTemplate</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 주어진 layer와 일치되는 Physical object 갖는 list 반환.
 파라미터
 layer purpose pair(list): 레이어 정보
@@ -756,7 +756,7 @@ dict_items([(&#39;R0&#39;, &lt;laygo2.object.physical.Rect object&gt;),
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 elements의 key/object 짝 출력.
 파라미터
 없음
@@ -798,7 +798,7 @@ on the specified routing grid.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 pin 생성함수.
 파라미터
 name(str): Pin 이름.
@@ -813,7 +813,7 @@ laygo2.physical.Pin: Pin object.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.place">
 <span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.place"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.place" title="Permalink to this definition">#</a></dt>
-<dd><p>Place the instance on the abstract coordinate mn, on the abstract grid.</p>
+<dd><p>Place the instance on the abstract coordinate <strong>mn</strong>, on the abstract grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -831,29 +831,38 @@ laygo2.physical.Pin: Pin object.</p>
 </dl>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;testlib&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a grid</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span>  <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;xgrid&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span>  <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;ygrid&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span>    <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">PlacementGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">vgrid</span><span class="o">=</span><span class="n">g1_x</span><span class="p">,</span> <span class="n">hgrid</span><span class="o">=</span><span class="n">g1_y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">PlacementGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.database</span> <span class="kn">import</span> <span class="n">Design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Instance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a grid (not needed if laygo2_tech is set up).</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gx</span>  <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;gx&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gy</span>  <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;gy&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span>   <span class="o">=</span> <span class="n">PlacementGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">vgrid</span><span class="o">=</span><span class="n">gx</span><span class="p">,</span> <span class="n">hgrid</span><span class="o">=</span><span class="n">gy</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;genlib&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create an instance</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inst0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s2">&quot;templates&quot;</span><span class="p">,</span>
-<span class="go">            cellname=&quot;template0&quot;, name=&quot;I0&quot;, xy=[100, 100])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i0</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s2">&quot;tlib&quot;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">inst0</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
 <span class="go">[100, 100]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Place the instance</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">inst</span><span class="o">=</span><span class="n">inst0</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">g1</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">inst0</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">inst</span><span class="o">=</span><span class="n">i0</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print parameters of the placed instance.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">i0</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
 <span class="go">[200, 1000]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dsn</span><span class="p">)</span>
-<span class="go">&lt;laygo2.object.database.Design object at 0x000002803D4C0F40&gt; name: mycell, params: None</span>
-<span class="go">    elements: {&#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x000002803D57F010&gt;}</span>
-<span class="go">    libname:testlib</span>
+<span class="go">&lt;laygo2.object.database.Design object at 0x000002803D4C0F40&gt;</span>
+<span class="go">    name: mycell</span>
+<span class="go">    params: None</span>
+<span class="go">    elements:</span>
+<span class="go">        {&#39;I0&#39;: &lt;laygo2.object.physical.Instance object at</span>
+<span class="go">                0x000002803D57F010&gt;}</span>
+<span class="go">    libname:genlib</span>
 <span class="go">    rects:{}</span>
 <span class="go">    paths:{}</span>
 <span class="go">    pins:{}</span>
 <span class="go">    texts:{}</span>
-<span class="go">    instances:{&#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x000002803D57F010&gt;}</span>
+<span class="go">    instances:</span>
+<span class="go">        {&#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x000002803D57F010&gt;}</span>
 <span class="go">    virtual instances:{}</span>
 </pre></div>
 </div>
@@ -862,15 +871,15 @@ laygo2.physical.Pin: Pin object.</p>
 <p><a class="reference internal" href="laygo2.object.grid.PlacementGrid.html#laygo2.object.grid.PlacementGrid.place" title="laygo2.object.grid.PlacementGrid.place"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.PlacementGrid.place</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 인스턴스를 grid위 추상 좌표 mn에 배치하는 함수.</p>
+<p><strong>(Korean)</strong> 인스턴스를 grid위 추상 좌표 mn에 배치하는 함수.</p>
 <dl class="simple">
 <dt>파라미터</dt><dd><ul class="simple">
-<li><p>inst(laygo2.physical.instance): 배치할 인스턴스</p></li>
-<li><p>mn(numpy.ndarray or list): 인스턴스를 배치할 추상좌표</p></li>
+<li><p>inst(laygo2.physical.instance): 배치할 인스턴스.</p></li>
+<li><p>mn(numpy.ndarray or list): 인스턴스를 배치할 추상좌표.</p></li>
 </ul>
 </dd>
 <dt>반환값</dt><dd><ul class="simple">
-<li><p>laygo2.physical.instance: 좌표가 수정된 인스턴스</p></li>
+<li><p>laygo2.physical.instance: 좌표가 수정된 인스턴스.</p></li>
 </ul>
 </dd>
 </dl>
@@ -879,31 +888,91 @@ laygo2.physical.Pin: Pin object.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.route">
 <span class="sig-name descname"><span class="pre">route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">via_tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.route" title="Permalink to this definition">#</a></dt>
-<dd><p>Create wire object(s) for routing.</p>
+<dd><p>Create wire object(s) for routing, on the abstract coordinate <strong>mn</strong>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grid</strong> (<a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid" title="laygo2.object.grid.RoutingGrid"><em>laygo2.object.grid.RoutingGrid</em></a>) – The placement grid where the wire is placed on.</p></li>
 <li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>)</em>) – The list containing two or more mn coordinates to be connected.</p></li>
-<li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional.</em>) – None or “vertical” or “horizontal”. The direction of the routing object.</p></li>
-<li><p><strong>via_tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><em>Boolean</em><em>)</em><em>, </em><em>optional.</em>) – The list containing switches deciding whether to place via at the edges.</p></li>
+<li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional.</em>) – None or “vertical” or “horizontal”. The direction of the routing
+object.</p></li>
+<li><p><strong>via_tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><em>Boolean</em><em>)</em><em>, </em><em>optional.</em>) – The list containing switches deciding whether to place via at
+the edges.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The generated routing object(s).
-Check the example code in laygo2.object.grid.RoutingGrid.route for details.</p>
+Check the example code in laygo2.object.grid.RoutingGrid.route
+for details.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.physical.Rect.html#laygo2.object.physical.Rect" title="laygo2.object.physical.Rect">laygo2.object.physical.Rect</a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; dsn = Design(name=&#39;mycell&#39;, libname=&quot;testlib&quot;)
-&gt;&gt;&gt; mygrid = grids[“routing_23_cmos”]
-&gt;&gt;&gt; mn_list = [[0, -2], [0, 1], [2, 1], [5,1] ]
-&gt;&gt;&gt; route = dsn.route(grid=mygrid, mn=mn_list, via_tag=[True, None, True, True])
-&gt;&gt;&gt; print(route)
-[&lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;, &lt;laygo2.object.physical.Rect object&gt;, &lt;laygo2.object.physical.VirtualInstance object&gt;]
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">CircularMapping</span> <span class="k">as</span> <span class="n">CM</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">CircularMappingArray</span> <span class="k">as</span> <span class="n">CMA</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">RoutingGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.template</span> <span class="kn">import</span> <span class="n">NativeInstanceTemplate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.database</span> <span class="kn">import</span> <span class="n">Design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Instance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Routing grid construction (not needed if laygo2_tech is set up).</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gv</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;gv&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gh</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;gv&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wv</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="mi">10</span><span class="p">])</span>           <span class="c1"># vertical (xgrid) width</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wh</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>   <span class="c1"># horizontal (ygrid) width</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ev</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="mi">10</span><span class="p">])</span>           <span class="c1"># vertical (xgrid) extension</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eh</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>   <span class="c1"># horizontal (ygrid) extension</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e0v</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="mi">15</span><span class="p">])</span>          <span class="c1"># vert. extension (for zero-length wires)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e0h</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">])</span>  <span class="c1"># hori. extension (for zero-length wires)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lv</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>  <span class="c1"># layer information</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lh</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([[</span><span class="s1">&#39;M2&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">]]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plv</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;pin&#39;</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span> <span class="c1"># pin layers</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plh</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([[</span><span class="s1">&#39;M2&#39;</span><span class="p">,</span> <span class="s1">&#39;pin&#39;</span><span class="p">]]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xcolor</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="s1">&#39;not MPT&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>  <span class="c1"># &#39;not MPT&#39; for non-multipatterning</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ycolor</span> <span class="o">=</span> <span class="n">CM</span><span class="p">([</span><span class="s1">&#39;not MPT&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">primary_grid</span> <span class="o">=</span> <span class="s1">&#39;horizontal&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tvia</span> <span class="o">=</span> <span class="n">NativeInstanceTemplate</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s1">&#39;tlib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;via0&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">viamap</span> <span class="o">=</span> <span class="n">CMA</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="p">[[</span><span class="n">tvia</span><span class="p">,</span> <span class="n">tvia</span><span class="p">,</span> <span class="n">tvia</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">RoutingGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;mygrid&#39;</span><span class="p">,</span> <span class="n">vgrid</span><span class="o">=</span><span class="n">gv</span><span class="p">,</span> <span class="n">hgrid</span><span class="o">=</span><span class="n">gh</span><span class="p">,</span>
+<span class="go">                                       vwidth=wv, hwidth=wh,</span>
+<span class="go">                                       vextension=ev, hextension=eh,</span>
+<span class="go">                                       vlayer=lv, hlayer=lh,</span>
+<span class="go">                                       pin_vlayer=plv, pin_hlayer=plh,</span>
+<span class="go">                                       viamap=viamap, primary_grid=primary_grid,</span>
+<span class="go">                                       xcolor=xcolor, ycolor=ycolor,</span>
+<span class="go">                                       vextension0=e0v, hextension0=e0h)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;genlib&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Routing on grid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mn_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">route</span> <span class="o">=</span> <span class="n">dsn</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="n">mn_list</span><span class="p">,</span>
+<span class="go">                      via_tag=[True, None, True, True])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Display generated design.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dsn</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.database.Design object at 0x000001C71AE3A110&gt;</span>
+<span class="go">    name: mycell, params: None</span>
+<span class="go">    elements: {</span>
+<span class="go">    &#39;NoName_0&#39;: &lt;laygo2.object.physical.Instance object at 0x000001C71AE3BA90&gt;,</span>
+<span class="go">    &#39;NoName_1&#39;: &lt;laygo2.object.physical.Rect object at 0x000001C71AE3B820&gt;,</span>
+<span class="go">    &#39;NoName_2&#39;: &lt;laygo2.object.physical.Rect object at 0x000001C71AE3ABF0&gt;,</span>
+<span class="go">    &#39;NoName_3&#39;: &lt;laygo2.object.physical.Instance object at 0x000001C71AE3A140&gt;,</span>
+<span class="go">    &#39;NoName_4&#39;: &lt;laygo2.object.physical.Rect object at 0x000001C71AE39DB0&gt;,</span>
+<span class="go">    &#39;NoName_5&#39;: &lt;laygo2.object.physical.Instance object at 0x000001C71AE3AB60&gt;}</span>
+<span class="go">    libname:genlib</span>
+<span class="go">    rects: {  # wires</span>
+<span class="go">    &#39;NoName_1&#39;: &lt;laygo2.object.physical.Rect object at 0x000001C71AE3B820&gt;,</span>
+<span class="go">    &#39;NoName_2&#39;: &lt;laygo2.object.physical.Rect object at 0x000001C71AE3ABF0&gt;,</span>
+<span class="go">    &#39;NoName_4&#39;: &lt;laygo2.object.physical.Rect object at 0x000001C71AE39DB0&gt;}</span>
+<span class="go">    paths:{}</span>
+<span class="go">    pins:{}</span>
+<span class="go">    texts:{}</span>
+<span class="go">    instances:{  # vias</span>
+<span class="go">    &#39;NoName_0&#39;: &lt;laygo2.object.physical.Instance object at 0x000001C71AE3BA90&gt;,</span>
+<span class="go">    &#39;NoName_3&#39;: &lt;laygo2.object.physical.Instance object at 0x000001C71AE3A140&gt;,</span>
+<span class="go">    &#39;NoName_5&#39;: &lt;laygo2.object.physical.Instance object at 0x000001C71AE3AB60&gt;}</span>
+<span class="go">    virtual instances:{}</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_route.png"><img alt="_images/object_grid_RoutingGrid_route.png" src="_images/object_grid_RoutingGrid_route.png" style="height: 250px;" /></a>
@@ -912,14 +981,19 @@ Check the example code in laygo2.object.grid.RoutingGrid.route for details.</p>
 <p><a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid.route" title="laygo2.object.grid.RoutingGrid.route"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.RoutingGrid.route</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
-추상 좌표 위에 라우팅을 수행 하는 함수.
-파라미터
-mn(list(numpy.ndarray)): 배선을 수행할 2개 이상의 mn 좌표를 담고 있는 list.
-direction(str): None or “vertical”; path의 방향을 결정 (수평 or 수직) [optional].
-via_tag(list(Boolean)): Path에 via를 형성 할지를 결정하는 switch들을 담고 있는 list [optional].
-반환값
-list: 생성된 routing object들을 담고 있는 list.</p>
+<p><strong>(Korean)</strong> 추상 좌표 위에 라우팅을 수행 하는 함수.</p>
+<dl class="simple">
+<dt>파라미터</dt><dd><ul class="simple">
+<li><p>mn(list(numpy.ndarray)): 배선을 수행할 2개 이상의 mn 좌표를 담고 있는 list.</p></li>
+<li><p>direction(str): None or “vertical”; path의 방향을 결정 (수평 or 수직) [optional].</p></li>
+<li><p>via_tag(list(Boolean)): Path에 via를 형성 할지를 결정하는 switch들을 담고 있는 list [optional].</p></li>
+</ul>
+</dd>
+<dt>반환값</dt><dd><ul class="simple">
+<li><p>list: 생성된 routing object들을 담고 있는 list.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -957,7 +1031,7 @@ The last object corresponds to the routing object on the track.</p>
 <p><a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid.route_via_track" title="laygo2.object.grid.RoutingGrid.route_via_track"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.RoutingGrid.route_via_track</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 wire 라우팅 함수, track을 기준점으로 routing을 진행한다.
 파라미터
 track(numpy.ndarray): track의 좌표값과 방향을 담고 있는 list. 수직 트랙일 경우 [v, None], 수평 트랙일 경우 [None, v]의 형태를 가지고 있다 (v는 track의 좌표값).
@@ -1012,7 +1086,7 @@ list: 생성된 routing object들을 담고 있는 list. 마지막 object가 tra
 <p><a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid.via" title="laygo2.object.grid.RoutingGrid.via"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.RoutingGrid.via</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 via 생성함수.
 파라미터
 mn(list(numpy.ndarray)): via를 생성할 mn좌표. 복수 개 입력 가능.
@@ -1048,7 +1122,7 @@ str: Cell name of Design object.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 str: Design 객체의 셀 이름.</p>
 </dd></dl>
 
@@ -1072,7 +1146,7 @@ dict: Dictionary having objects.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 BaseDatabase 객체의 구성 요소를 담고 있는 Dictionary.</p>
 </dd></dl>
 
@@ -1098,7 +1172,7 @@ dict: Dictionary containing Instance objects affiliated with Design object.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 dict: Design 객체에 소속된 Instance 객체들을 갖고 있는 dictionary.</p>
 </dd></dl>
 
@@ -1122,7 +1196,7 @@ list: Keys of elements.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 list: BaseDatabase 객체의 구성 요소를 담고 있는 Dictionary.</p>
 </dd></dl>
 
@@ -1148,7 +1222,7 @@ str: Library name of Design object.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 str: Design 객체의 라이브러리 이름.</p>
 </dd></dl>
 
@@ -1164,7 +1238,7 @@ str: BaseDatabase object name.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 str: BaseDatabase 이름.</p>
 </dd></dl>
 
@@ -1186,7 +1260,7 @@ int: A unique number used as the name of an unnamed object belonging to the data
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 int: BaseDatabase의 소속 객체들 중 이름이 정해지지 않은 객체의 이름을 사용할 때 부여되는 고유 번호.</p>
 </dd></dl>
 
@@ -1202,7 +1276,7 @@ dict or None: Dictionary containing parameters of BaseDatabase object.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 dict or None: BaseDatabase의 속성.</p>
 </dd></dl>
 
@@ -1233,7 +1307,7 @@ dict: Dictionary having the collection of Pin objects affiliated with Design obj
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 dict: Design 객체에 소속된 Pin 객체들을 갖고 있는 dictionary.</p>
 </dd></dl>
 
@@ -1259,7 +1333,7 @@ dict: Dictionary containing Rectangle object affiliated with Design object.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 dict: Design 객체에 소속된 Rect 객체들을 갖고 있는 dictionary.</p>
 </dd></dl>
 
@@ -1285,7 +1359,7 @@ dict: Dictionary containing Text objects affiliated with Design object.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 dict: Design 객체에 소속된 Text 객체들을 갖고 있는 dictionary.</p>
 </dd></dl>
 
@@ -1311,7 +1385,7 @@ virtual_instnaces {&#39;VI0&#39;: &lt;laygo2.object.physical.VirtualInstance obj
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:
+<p><strong>(Korean)</strong>
 dict: Design 객체에 소속된 VirtualInstance 객체들을 갖고 있는 dictionary.</p>
 </dd></dl>
 

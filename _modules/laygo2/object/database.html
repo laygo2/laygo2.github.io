@@ -992,7 +992,66 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">virtual_instances</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">BaseDatabase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="n">elements</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Design.append"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<div class="viewcode-block" id="Design.append"><a class="viewcode-back" href="../../../laygo2.object.database.Design.append.html#laygo2.object.database.Design.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;(Simply) add a physical object to the design.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        item : laygo2.object.physical.PhysicalObject</span>
+<span class="sd">            The physical object to be added. </span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        list : A list containing the name of item and the item itself </span>
+<span class="sd">        ([item.name, item]).</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; import laygo2</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.database import Design</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">        &gt;&gt;&gt; # Create a design</span>
+<span class="sd">        &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # Create layout objects</span>
+<span class="sd">        &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">        &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
+<span class="sd">        &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(r0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(p0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(i0)</span>
+<span class="sd">        &gt;&gt;&gt; dsn.append(t0)</span>
+<span class="sd">        &gt;&gt;&gt; print(dsn)</span>
+<span class="sd">        &lt;laygo2.object.database.Design object at 0x0000024C6C2EF010&gt; </span>
+<span class="sd">            name: mycell, params: None </span>
+<span class="sd">            elements: {</span>
+<span class="sd">                &#39;NoName_0&#39;: &lt;laygo2.object.physical.Rect object at 0x0000024C6C230F40&gt;,</span>
+<span class="sd">                &#39;P&#39;: &lt;laygo2.object.physical.Pin object at 0x0000024C6C2EFF40&gt;, </span>
+<span class="sd">                &#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x0000024C6C2EFDC0&gt;, </span>
+<span class="sd">                &#39;NoName_1&#39;: &lt;laygo2.object.physical.Text object at 0x0000024C6C2EF8B0&gt;}</span>
+<span class="sd">            libname:genlib</span>
+<span class="sd">            rects:{</span>
+<span class="sd">                &#39;NoName_0&#39;: &lt;laygo2.object.physical.Rect object at 0x0000024C6C230F40&gt;}</span>
+<span class="sd">            paths:{}</span>
+<span class="sd">            pins:{</span>
+<span class="sd">                &#39;P&#39;: &lt;laygo2.object.physical.Pin object at 0x0000024C6C2EFF40&gt;}</span>
+<span class="sd">            texts:{</span>
+<span class="sd">                &#39;NoName_1&#39;: &lt;laygo2.object.physical.Text object at 0x0000024C6C2EF8B0&gt;}</span>
+<span class="sd">            instances:{</span>
+<span class="sd">                &#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x0000024C6C2EFDC0&gt;}</span>
+<span class="sd">            virtual instances:{}</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">            laygo2.object.database.Design.place : Place a (virtual) instance </span>
+<span class="sd">            on a grid and append to the design.</span>
+<span class="sd">            laygo2.object.database.Design.route : Route on a grid and append </span>
+<span class="sd">            to the design.</span>
+<span class="sd">            laygo2.object.database.Design.route_via_track : Route on a track </span>
+<span class="sd">            on a grid and append.</span>
+<span class="sd">            laygo2.object.database.Design.pin : Place a pin on a grid and </span>
+<span class="sd">            append to the design.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
             <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">item</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
@@ -1099,7 +1158,8 @@
 
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
-<span class="sd">        laygo2.object.grid.PlacementGrid.place</span>
+<span class="sd">        laygo2.object.grid.PlacementGrid.place : place a (virtual) instance </span>
+<span class="sd">        on the grid.</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
@@ -1247,7 +1307,7 @@
 
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
-<span class="sd">        laygo2.object.grid.RoutingGrid.route</span>
+<span class="sd">        laygo2.object.grid.RoutingGrid.route : route wire(s) on the grid.</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
@@ -1605,12 +1665,20 @@
 <span class="sd">        &gt;&gt;&gt; dsn.append(p0)</span>
 <span class="sd">        &gt;&gt;&gt; dsn.append(i0)</span>
 <span class="sd">        &gt;&gt;&gt; dsn.append(t0)</span>
+<span class="sd">        &gt;&gt;&gt; # Export the design to a template.</span>
 <span class="sd">        &gt;&gt;&gt; nt0 = dsn.export_to_template()</span>
 <span class="sd">        &gt;&gt;&gt; print(nt0)</span>
 <span class="sd">        &lt;laygo2.object.template.NativeInstanceTemplate object at XXXX&gt; </span>
 <span class="sd">            name: mycell, class: NativeInstanceTemplate, </span>
 <span class="sd">            bbox: [[0, 0], [0, 0]], </span>
 <span class="sd">            pins: {&#39;P&#39;: &lt;laygo2.object.physical.Pin object at YYYY&gt;},</span>
+<span class="sd">        &gt;&gt;&gt; # Save the template into a yaml file.</span>
+<span class="sd">        &gt;&gt;&gt; laygo2.interface.yaml.export_template(nt0, filename=&#39;mytemp.yaml&#39;)</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">            laygo2.interface.yaml.export_template : Export a template to </span>
+<span class="sd">            a yaml file.</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>

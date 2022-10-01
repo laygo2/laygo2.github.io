@@ -321,6 +321,11 @@
       </label>
       <ul class="current">
        <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.append.html">
+         append() method
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="laygo2.object.database.Design.place.html">
          place() method
         </a>
@@ -440,13 +445,23 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Export the design to a template.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nt0</span> <span class="o">=</span> <span class="n">dsn</span><span class="o">.</span><span class="n">export_to_template</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nt0</span><span class="p">)</span>
 <span class="go">&lt;laygo2.object.template.NativeInstanceTemplate object at XXXX&gt;</span>
 <span class="go">    name: mycell, class: NativeInstanceTemplate,</span>
 <span class="go">    bbox: [[0, 0], [0, 0]],</span>
 <span class="go">    pins: {&#39;P&#39;: &lt;laygo2.object.physical.Pin object at YYYY&gt;},</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Save the template into a yaml file.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">laygo2</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">yaml</span><span class="o">.</span><span class="n">export_template</span><span class="p">(</span><span class="n">nt0</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;mytemp.yaml&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="laygo2.interface.html#laygo2.interface.yaml.export_template" title="laygo2.interface.yaml.export_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.interface.yaml.export_template</span></code></a></dt><dd><p>Export a template to a yaml file.</p>
+</dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <p><strong>(Korean)</strong> Design 객체에 해당하는 NativeInstanceTemplate 객체 생성.</p>

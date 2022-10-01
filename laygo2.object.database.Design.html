@@ -32,7 +32,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="place() method" href="laygo2.object.database.Design.place.html" />
+    <link rel="next" title="append() method" href="laygo2.object.database.Design.append.html" />
     <link rel="prev" title="Library class" href="laygo2.object.database.Library.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -321,6 +321,11 @@
       </label>
       <ul>
        <li class="toctree-l4">
+        <a class="reference internal" href="laygo2.object.database.Design.append.html">
+         append() method
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="laygo2.object.database.Design.place.html">
          place() method
         </a>
@@ -409,6 +414,7 @@
 <h1>Design class<a class="headerlink" href="#design-class" title="Permalink to this headline">#</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="laygo2.object.database.Design.append.html">append() method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="laygo2.object.database.Design.place.html">place() method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="laygo2.object.database.Design.route.html">route() method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="laygo2.object.database.Design.route_via_track.html">route_via_track() method</a></li>
@@ -512,8 +518,8 @@ Design 클래스는 디자인 관리 기능을 구현한다.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.__init__" title="laygo2.object.database.Design.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(name[, params, elements, libname])</p></td>
 <td><p>Constructor function of Design class.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.append" title="laygo2.object.database.Design.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(item)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.Design.append.html#laygo2.object.database.Design.append" title="laygo2.object.database.Design.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(item)</p></td>
+<td><p>(Simply) add a physical object to the design.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.summarize" title="laygo2.object.database.Design.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
 <td><p>Return the summary of the object information.</p></td>
@@ -556,8 +562,8 @@ Design 클래스는 디자인 관리 기능을 구현한다.</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__setitem__</span></code>(key, item)</p></td>
 <td><p>Add key/object pair.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.append" title="laygo2.object.database.Design.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(item)</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="laygo2.object.database.Design.append.html#laygo2.object.database.Design.append" title="laygo2.object.database.Design.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(item)</p></td>
+<td><p>(Simply) add a physical object to the design.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iter__</span></code>()</p></td>
 <td><p>Iterator function.</p></td>
@@ -621,7 +627,69 @@ laygo2.object.BaseDatabase
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.append">
 <span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.append"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.append" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>(Simply) add a physical object to the design.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>item</strong> (<a class="reference internal" href="laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject" title="laygo2.object.physical.PhysicalObject"><em>laygo2.object.physical.PhysicalObject</em></a>) – The physical object to be added.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>list</strong> (<em>A list containing the name of item and the item itself</em>)</p></li>
+<li><p><em>([item.name, item]).</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.database</span> <span class="kn">import</span> <span class="n">Design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Rect</span><span class="p">,</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">Instance</span><span class="p">,</span> <span class="n">Text</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;genlib&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create layout objects</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r0</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p0</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;pin&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;P&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i0</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s2">&quot;tlib&quot;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;T&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dsn</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.database.Design object at 0x0000024C6C2EF010&gt;</span>
+<span class="go">    name: mycell, params: None</span>
+<span class="go">    elements: {</span>
+<span class="go">        &#39;NoName_0&#39;: &lt;laygo2.object.physical.Rect object at 0x0000024C6C230F40&gt;,</span>
+<span class="go">        &#39;P&#39;: &lt;laygo2.object.physical.Pin object at 0x0000024C6C2EFF40&gt;,</span>
+<span class="go">        &#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x0000024C6C2EFDC0&gt;,</span>
+<span class="go">        &#39;NoName_1&#39;: &lt;laygo2.object.physical.Text object at 0x0000024C6C2EF8B0&gt;}</span>
+<span class="go">    libname:genlib</span>
+<span class="go">    rects:{</span>
+<span class="go">        &#39;NoName_0&#39;: &lt;laygo2.object.physical.Rect object at 0x0000024C6C230F40&gt;}</span>
+<span class="go">    paths:{}</span>
+<span class="go">    pins:{</span>
+<span class="go">        &#39;P&#39;: &lt;laygo2.object.physical.Pin object at 0x0000024C6C2EFF40&gt;}</span>
+<span class="go">    texts:{</span>
+<span class="go">        &#39;NoName_1&#39;: &lt;laygo2.object.physical.Text object at 0x0000024C6C2EF8B0&gt;}</span>
+<span class="go">    instances:{</span>
+<span class="go">        &#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x0000024C6C2EFDC0&gt;}</span>
+<span class="go">    virtual instances:{}</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="laygo2.object.database.Design.place.html#laygo2.object.database.Design.place" title="laygo2.object.database.Design.place"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.database.Design.place</span></code></a></dt><dd><p>Place a (virtual) instance on a grid and append to the design.</p>
+</dd>
+<dt><a class="reference internal" href="laygo2.object.database.Design.route.html#laygo2.object.database.Design.route" title="laygo2.object.database.Design.route"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.database.Design.route</span></code></a></dt><dd><p>Route on a grid and append to the design.</p>
+</dd>
+<dt><a class="reference internal" href="laygo2.object.database.Design.route_via_track.html#laygo2.object.database.Design.route_via_track" title="laygo2.object.database.Design.route_via_track"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.database.Design.route_via_track</span></code></a></dt><dd><p>Route on a track on a grid and append.</p>
+</dd>
+<dt><a class="reference internal" href="laygo2.object.database.Design.pin.html#laygo2.object.database.Design.pin" title="laygo2.object.database.Design.pin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.database.Design.pin</span></code></a></dt><dd><p>Place a pin on a grid and append to the design.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.export_to_template">
@@ -656,13 +724,23 @@ laygo2.object.BaseDatabase
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Export the design to a template.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nt0</span> <span class="o">=</span> <span class="n">dsn</span><span class="o">.</span><span class="n">export_to_template</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nt0</span><span class="p">)</span>
 <span class="go">&lt;laygo2.object.template.NativeInstanceTemplate object at XXXX&gt;</span>
 <span class="go">    name: mycell, class: NativeInstanceTemplate,</span>
 <span class="go">    bbox: [[0, 0], [0, 0]],</span>
 <span class="go">    pins: {&#39;P&#39;: &lt;laygo2.object.physical.Pin object at YYYY&gt;},</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Save the template into a yaml file.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">laygo2</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">yaml</span><span class="o">.</span><span class="n">export_template</span><span class="p">(</span><span class="n">nt0</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;mytemp.yaml&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="laygo2.interface.html#laygo2.interface.yaml.export_template" title="laygo2.interface.yaml.export_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.interface.yaml.export_template</span></code></a></dt><dd><p>Export a template to a yaml file.</p>
+</dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <p><strong>(Korean)</strong> Design 객체에 해당하는 NativeInstanceTemplate 객체 생성.</p>
@@ -928,7 +1006,11 @@ pin 생성함수.</p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="laygo2.object.grid.PlacementGrid.html#laygo2.object.grid.PlacementGrid.place" title="laygo2.object.grid.PlacementGrid.place"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.PlacementGrid.place</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="laygo2.object.grid.PlacementGrid.html#laygo2.object.grid.PlacementGrid.place" title="laygo2.object.grid.PlacementGrid.place"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.PlacementGrid.place</span></code></a></dt><dd><p>place a (virtual) instance</p>
+</dd>
+</dl>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on</span></code></p>
 </div>
 <p class="rubric">Notes</p>
 <p><strong>(Korean)</strong> 인스턴스를 grid위 추상 좌표 mn에 배치하는 함수.</p>
@@ -1038,7 +1120,10 @@ for details.</p>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_route.png"><img alt="_images/object_grid_RoutingGrid_route.png" src="_images/object_grid_RoutingGrid_route.png" style="height: 250px;" /></a>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid.route" title="laygo2.object.grid.RoutingGrid.route"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.RoutingGrid.route</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid.route" title="laygo2.object.grid.RoutingGrid.route"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.RoutingGrid.route</span></code></a></dt><dd><p>route wire(s) on the grid.</p>
+</dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <p><strong>(Korean)</strong> 추상 좌표 위에 라우팅을 수행 하는 함수.</p>
@@ -1595,10 +1680,10 @@ dict: Design 객체에 소속된 VirtualInstance 객체들을 갖고 있는 dict
             <p class="prev-next-title">Library class</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="laygo2.object.database.Design.place.html" title="next page">
+    <a class='right-next' id="next-link" href="laygo2.object.database.Design.append.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">place() method</p>
+        <p class="prev-next-title">append() method</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

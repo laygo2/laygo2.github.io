@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>laygo2.util package &#8212; laygo2</title>
+    <title>append() method &#8212; laygo2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -32,8 +32,8 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Korean" href="kor.html" />
-    <link rel="prev" title="laygo2.interface package" href="laygo2.interface.html" />
+    <link rel="next" title="place() method" href="laygo2.object.database.Design.place.html" />
+    <link rel="prev" title="Design class" href="laygo2.object.database.Design.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -139,16 +139,16 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="laygo2.object.html">
    laygo2.object package
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="laygo2.object.physical.html">
      laygo2.object.physical module
@@ -290,16 +290,16 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 has-children">
+   <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="laygo2.object.database.html">
      laygo2.object.database module
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
     <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="laygo2.object.database.BaseDatabase.html">
        BaseDatabase class
@@ -310,18 +310,18 @@
        Library class
       </a>
      </li>
-     <li class="toctree-l3 has-children">
+     <li class="toctree-l3 current active has-children">
       <a class="reference internal" href="laygo2.object.database.Design.html">
        Design class
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
       <label for="toctree-checkbox-6">
        <i class="fas fa-chevron-down">
        </i>
       </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="laygo2.object.database.Design.append.html">
+      <ul class="current">
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
          append() method
         </a>
        </li>
@@ -366,8 +366,8 @@
    laygo2.interface package
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="laygo2.util.html">
    laygo2.util package
   </a>
  </li>
@@ -388,19 +388,9 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage mt-5 pt-1 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-laygo2.util.transform">
-   laygo2.util.transform module
-  </a>
- </li>
-</ul>
-
+    
 </nav>
               </div>
               
@@ -420,84 +410,75 @@
               
               <div>
                 
-  <section id="module-laygo2.util">
-<span id="laygo2-util-package"></span><h1>laygo2.util package<a class="headerlink" href="#module-laygo2.util" title="Permalink to this headline">#</a></h1>
-<p>laygo2 utility package implements various useful functions for layout manipulations.</p>
-<section id="module-laygo2.util.transform">
-<span id="laygo2-util-transform-module"></span><h2>laygo2.util.transform module<a class="headerlink" href="#module-laygo2.util.transform" title="Permalink to this headline">#</a></h2>
-<p>Utility functions for coordinate tranformations.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="laygo2.util.transform.combine">
-<span class="sig-prename descclassname"><span class="pre">laygo2.util.transform.</span></span><span class="sig-name descname"><span class="pre">combine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transform1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/util/transform.html#combine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.util.transform.combine" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the resulting transform parameter of
-two consecutive transforms</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="laygo2.util.transform.Mt">
-<span class="sig-prename descclassname"><span class="pre">laygo2.util.transform.</span></span><span class="sig-name descname"><span class="pre">Mt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transform</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/util/transform.html#Mt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.util.transform.Mt" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the transform matrix.</p>
+  <section id="append-method">
+<h1>append() method<a class="headerlink" href="#append-method" title="Permalink to this headline">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.database.Design.append">
+<span class="sig-prename descclassname"><span class="pre">Design.</span></span><span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.append"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.append" title="Permalink to this definition">#</a></dt>
+<dd><p>(Simply) add a physical object to the design.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>transform</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The transform parameter. Possible values are ‘R0’, ‘MX’, ‘MY’, ‘MXY’, and ‘R180’.</p>
+<dd class="field-odd"><p><strong>item</strong> (<a class="reference internal" href="laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject" title="laygo2.object.physical.PhysicalObject"><em>laygo2.object.physical.PhysicalObject</em></a>) – The physical object to be added.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The transform matrix corresponding to the transform parameter.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a>(dtype=int)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="laygo2.util.transform.Mtinv">
-<span class="sig-prename descclassname"><span class="pre">laygo2.util.transform.</span></span><span class="sig-name descname"><span class="pre">Mtinv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transform</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/util/transform.html#Mtinv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.util.transform.Mtinv" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the inverse of the transform matrix.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>transform</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The transform parameter. possible values are ‘R0’, ‘MX’, ‘MY’, ‘MXY’, and ‘R180’.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The inverse of the transform matrix.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a>(dtype=int)</p>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>list</strong> (<em>A list containing the name of item and the item itself</em>)</p></li>
+<li><p><em>([item.name, item]).</em></p></li>
+</ul>
+</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="laygo2.util.transform.Md">
-<span class="sig-prename descclassname"><span class="pre">laygo2.util.transform.</span></span><span class="sig-name descname"><span class="pre">Md</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">direction</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/util/transform.html#Md"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.util.transform.Md" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the direction(projection) matrix. The direction matrix is used when placing an object based on relative
-information to other instance(s). For example, if an instance’s center is located at xyc0=[xc0, yc0],
-the xy-coordinate of the center of the new instance xyc1 can be computed from the following equation:</p>
-<ol class="arabic simple">
-<li><p>xyc1 = xyc0 + 0.5 * Md * (xys0 + xys1)</p></li>
-</ol>
-<p>where xys0, xys1 are the size of the reference and the new instance, respectively, and Md is the direction matrix
-corresponding to the direction of the placement.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The direction parameter. Possible values are ‘left’, ‘right’, ‘top’, ‘bottom’, ‘omni’, ‘x’, ‘y’.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.database</span> <span class="kn">import</span> <span class="n">Design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Rect</span><span class="p">,</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">Instance</span><span class="p">,</span> <span class="n">Text</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;genlib&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create layout objects</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r0</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p0</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;pin&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;P&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i0</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s2">&quot;tlib&quot;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;T&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dsn</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.database.Design object at 0x0000024C6C2EF010&gt;</span>
+<span class="go">    name: mycell, params: None</span>
+<span class="go">    elements: {</span>
+<span class="go">        &#39;NoName_0&#39;: &lt;laygo2.object.physical.Rect object at 0x0000024C6C230F40&gt;,</span>
+<span class="go">        &#39;P&#39;: &lt;laygo2.object.physical.Pin object at 0x0000024C6C2EFF40&gt;,</span>
+<span class="go">        &#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x0000024C6C2EFDC0&gt;,</span>
+<span class="go">        &#39;NoName_1&#39;: &lt;laygo2.object.physical.Text object at 0x0000024C6C2EF8B0&gt;}</span>
+<span class="go">    libname:genlib</span>
+<span class="go">    rects:{</span>
+<span class="go">        &#39;NoName_0&#39;: &lt;laygo2.object.physical.Rect object at 0x0000024C6C230F40&gt;}</span>
+<span class="go">    paths:{}</span>
+<span class="go">    pins:{</span>
+<span class="go">        &#39;P&#39;: &lt;laygo2.object.physical.Pin object at 0x0000024C6C2EFF40&gt;}</span>
+<span class="go">    texts:{</span>
+<span class="go">        &#39;NoName_1&#39;: &lt;laygo2.object.physical.Text object at 0x0000024C6C2EF8B0&gt;}</span>
+<span class="go">    instances:{</span>
+<span class="go">        &#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x0000024C6C2EFDC0&gt;}</span>
+<span class="go">    virtual instances:{}</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="laygo2.object.database.Design.place.html#laygo2.object.database.Design.place" title="laygo2.object.database.Design.place"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.database.Design.place</span></code></a></dt><dd><p>Place a (virtual) instance on a grid and append to the design.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The direction matrix.</p>
+<dt><a class="reference internal" href="laygo2.object.database.Design.route.html#laygo2.object.database.Design.route" title="laygo2.object.database.Design.route"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.database.Design.route</span></code></a></dt><dd><p>Route on a grid and append to the design.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>np.array([[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a>], [<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a>]])</p>
+<dt><a class="reference internal" href="laygo2.object.database.Design.route_via_track.html#laygo2.object.database.Design.route_via_track" title="laygo2.object.database.Design.route_via_track"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.database.Design.route_via_track</span></code></a></dt><dd><p>Route on a track on a grid and append.</p>
+</dd>
+<dt><a class="reference internal" href="laygo2.object.database.Design.pin.html#laygo2.object.database.Design.pin" title="laygo2.object.database.Design.pin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.database.Design.pin</span></code></a></dt><dd><p>Place a pin on a grid and append to the design.</p>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<p>The following equation will be used instead of (1) in the future versions, to avoid the 0.5 scaling that increases
-the precision requirement.</p>
-<ol class="arabic simple" start="2">
-<li><p>xy1 = xy0 + 0.5 * [(Md + Mt0) * xys0 + (Md - Mt1) * xys1]</p></li>
-</ol>
+</div>
 </dd></dl>
 
-</section>
 </section>
 
 
@@ -506,17 +487,17 @@ the precision requirement.</p>
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="laygo2.interface.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="laygo2.object.database.Design.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">laygo2.interface package</p>
+            <p class="prev-next-title">Design class</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="kor.html" title="next page">
+    <a class='right-next' id="next-link" href="laygo2.object.database.Design.place.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Korean</p>
+        <p class="prev-next-title">place() method</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

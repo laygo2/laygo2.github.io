@@ -416,10 +416,13 @@
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">PlacementGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hgrid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#PlacementGrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.PlacementGrid" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="laygo2.object.grid.Grid.html#laygo2.object.grid.Grid" title="laygo2.object.grid.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">laygo2.object.grid.Grid</span></code></a></p>
-<p>PlacementGrid class implements a grid for placement of Instance and VirtualInstance.</p>
+<p>PlacementGrid class implements a grid for placement of Instance and
+VirtualInstance objects.</p>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-PlacementGrid 클래스는 Instance 및 VirtualInstance 개체들의 배치를 위한 격자 그리드를 구현한다.</p>
+<dl class="simple">
+<dt><strong>(Korean)</strong> PlacementGrid 클래스는 Instance 및 VirtualInstance 개체들의</dt><dd><p>배치를 위한 격자 그리드를 구현한다.</p>
+</dd>
+</dl>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
 <table class="longtable table autosummary">
@@ -429,7 +432,7 @@ PlacementGrid 클래스는 Instance 및 VirtualInstance 개체들의 배치를 �
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.PlacementGrid.type" title="laygo2.object.grid.PlacementGrid.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
-<td><p></p></td>
+<td><p>Type of grid.</p></td>
 </tr>
 </tbody>
 </table>
@@ -681,34 +684,41 @@ See _PhyToAbsGridConverter.overlap() for details.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The placed instance.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance">laygo2.object.physical.Instance</a> or <a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance">laygo2.object.physical.VirtualInstance</a></p>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>laygo2.object.physical.Instance or</em></p></li>
+<li><p><em>laygo2.object.physical.VirtualInstance</em> – The placed instance.</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; g1_x = laygo2.object.grid.OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 20], elements=[0])
-&gt;&gt;&gt; g1_y = laygo2.object.grid.OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[0])
-&gt;&gt;&gt; g2   = laygo2.object.grid.PlacementGrid(name=&#39;test&#39;, vgrid=g1_x, hgrid=g1_y)
-&gt;&gt;&gt; inst0= laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100, 100], transform=‘R0’……)
-&gt;&gt;&gt; print(inst0.xy)
-[100, 100]
-&gt;&gt;&gt; g2.place(inst=inst0, mn=[10,10])
-&gt;&gt;&gt; print(inst0.xy)
-[200, 1000]
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">PlacementGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Instance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a grid (not needed if laygo2_tech is set up).</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gx</span>  <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;gx&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gy</span>  <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;gy&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span>   <span class="o">=</span> <span class="n">PlacementGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">vgrid</span><span class="o">=</span><span class="n">gx</span><span class="p">,</span> <span class="n">hgrid</span><span class="o">=</span><span class="n">gy</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create an instance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i0</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s2">&quot;tlib&quot;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">inst0</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
+<span class="go">[100, 100]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Place the instance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">inst</span><span class="o">=</span><span class="n">i0</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print parameters of the placed instance.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">i0</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
+<span class="go">[200, 1000]</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-인스턴스 xy속성에 추상좌표를 매핑함.
-파라미터
-inst(laygo2.physical.instance): 배치할 인스턴스
-mn(numpy.ndarray or list): 인스턴스를 배치할 추상좌표
+<dl class="simple">
+<dt><strong>(Korean)</strong> 인스턴스 xy속성에 추상좌표를 매핑함.</dt><dd><p>파라미터
+- inst(laygo2.physical.instance): 배치할 인스턴스
+- mn(numpy.ndarray or list): 인스턴스를 배치할 추상좌표
 반환값
-laygo2.physical.instance: 좌표가 수정된 인스턴스
-참조
-없음</p>
+- laygo2.physical.instance: 좌표가 수정된 인스턴스</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1008,7 +1018,8 @@ y좌표계 1차원 _PhyToAbsConverter.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.type">
 <span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'placement'</span></em><a class="headerlink" href="#laygo2.object.grid.PlacementGrid.type" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Type of grid. Should be ‘placement’ for placement grids.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.PlacementGrid.v">

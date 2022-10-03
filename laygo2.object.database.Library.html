@@ -443,7 +443,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Library.libname" title="laygo2.object.database.Library.libname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">libname</span></code></a></p></td>
-<td><p>Library object name.</p></td>
+<td><p>The name of library.</p></td>
 </tr>
 </tbody>
 </table>
@@ -480,12 +480,12 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Library.get_libname" title="laygo2.object.database.Library.get_libname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_libname</span></code></a>()</p></td>
-<td><p></p></td>
+<td><p>getter function of libname property.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Library.set_libname" title="laygo2.object.database.Library.set_libname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_libname</span></code></a>(val)</p></td>
-<td><p></p></td>
+<td><p>setter function of libname property.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Library.append" title="laygo2.object.database.Library.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(item)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.Library.append.html#laygo2.object.database.Library.append" title="laygo2.object.database.Library.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(item)</p></td>
 <td><p>(Simply) add a physical object to the BaseDatabase object.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Library.__init__" title="laygo2.object.database.Library.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(name[, params, elements])</p></td>
@@ -511,7 +511,7 @@
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__setitem__</span></code>(key, item)</p></td>
 <td><p>Add key/object pair.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Library.append" title="laygo2.object.database.Library.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(item)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="laygo2.object.database.Library.append.html#laygo2.object.database.Library.append" title="laygo2.object.database.Library.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(item)</p></td>
 <td><p>(Simply) add a physical object to the BaseDatabase object.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iter__</span></code>()</p></td>
@@ -616,7 +616,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Library.get_libname">
 <span class="sig-name descname"><span class="pre">get_libname</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Library.get_libname"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Library.get_libname" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>getter function of libname property.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Library.items">
@@ -659,7 +660,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Library.set_libname">
 <span class="sig-name descname"><span class="pre">set_libname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Library.set_libname"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Library.set_libname" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>setter function of libname property.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Library.summarize">
@@ -732,9 +734,10 @@
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.database.Library.libname">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">libname</span></span><a class="headerlink" href="#laygo2.object.database.Library.libname" title="Permalink to this definition">#</a></dt>
-<dd><p>Library object name.</p>
+<dd><p>The name of library.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">Library</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">Library</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="go">&quot;mylib&quot;</span>
 </pre></div>

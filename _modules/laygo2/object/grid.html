@@ -281,6 +281,7 @@
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; laygo2.object.grid._conv_slice_to_list(slice(0, 10, 2))               </span>
 <span class="sd">    [0, 2, 4, 6, 8]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -307,6 +308,15 @@
 <span class="sd">    ----------</span>
 <span class="sd">    bbox : numpy.ndarray</span>
 <span class="sd">        The bounding box to be converted.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; laygo2.object.grid._conv_bbox_to_array(np.array([[0, 0], [1, 2]])) </span>
+<span class="sd">    array([[[0, 0], [1, 0]],</span>
+<span class="sd">           [[0, 1], [1, 1]],</span>
+<span class="sd">           [[0, 2], [1, 2]]])</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">array</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -325,6 +335,13 @@
 <span class="sd">    ----------</span>
 <span class="sd">    bbox : numpy.ndarray</span>
 <span class="sd">        The bounding box to be converted.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; laygo2.object.grid._conv_bbox_to_list(np.array([[0, 0], [1, 2]])) </span>
+<span class="sd">    [[0, 0], [1, 0], [0, 1], [1, 1], [0, 2], [1, 2]]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">array</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -340,8 +357,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 기본적인 순환맵핑(인덱싱 넘버가 무한히 확장) 클래스.</span>
-
+<span class="sd">    **(Korean)** 기본 순환 맵핑 (인덱싱 넘버가 무한히 확장) 클래스.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_elements</span> <span class="o">=</span> <span class="kc">None</span>
@@ -362,13 +378,10 @@
 <span class="sd">    -----</span>
 <span class="sd">    **(Korean)**</span>
 <span class="sd">    순환 맵핑의 구성 요소로 이루어진 배열. </span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int</span>
-    <span class="sd">&quot;&quot;&quot;type: Data type of circular mapping.</span>
-
-<span class="sd">    </span>
+    <span class="sd">&quot;&quot;&quot;type: Data type of the circular mapping.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -388,11 +401,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="CircularMapping.get_elements"><a class="viewcode-back" href="../../../laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping.get_elements">[docs]</a>    <span class="k">def</span> <span class="nf">get_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray: get the elements.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray: getter of elements.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_elements</span></div>
 
 <div class="viewcode-block" id="CircularMapping.set_elements"><a class="viewcode-back" href="../../../laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping.set_elements">[docs]</a>    <span class="k">def</span> <span class="nf">set_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray: set the elements.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray: setter of elements.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_elements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span></div>
 
     <span class="n">elements</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_elements</span><span class="p">,</span> <span class="n">set_elements</span><span class="p">)</span>
@@ -408,7 +421,7 @@
 <span class="sd">        &gt;&gt;&gt; elements = [0, 35, 85, 130, 180]</span>
 <span class="sd">        &gt;&gt;&gt; cm = CircularMapping(elements)</span>
 <span class="sd">        &gt;&gt;&gt; cm.shape</span>
-<span class="sd">        [4]</span>
+<span class="sd">        array([5])</span>
 
 <span class="sd">        .. image:: ../assets/img/object_grid_CircularMapping_shape.png</span>
 <span class="sd">           :height: 250</span>
@@ -437,7 +450,7 @@
 <span class="sd">        &gt;&gt;&gt; elements = [0, 35, 85, 130, 180]</span>
 <span class="sd">        &gt;&gt;&gt; cm = CircularMapping(elements)</span>
 <span class="sd">        &gt;&gt;&gt; cm.shape</span>
-<span class="sd">        [4]</span>
+<span class="sd">        [5]</span>
 <span class="sd">        &gt;&gt;&gt; cm[5]</span>
 <span class="sd">        35</span>
 <span class="sd">        &gt;&gt;&gt; cm[0:10]</span>
@@ -507,7 +520,6 @@
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    **(Korean)** 다차원 순환맵핑(인덱싱 넘버가 무한히 확장) 클래스.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
@@ -521,16 +533,17 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        element</span>
+<span class="sd">        numpy.ndarray </span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; elements  = [[0,0], [35,0], [85,0], [130,0],</span>
-<span class="sd">        &gt;&gt;&gt; cm = CircularMapping( elements = elements )</span>
-<span class="sd">        &gt;&gt;&gt; cm[1]</span>
-<span class="sd">        [ 35, 0 ]</span>
-<span class="sd">        &gt;&gt;&gt; cm[3]</span>
-<span class="sd">        [ 130, 0 ]</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray</span>
+<span class="sd">        &gt;&gt;&gt; elements = [[0, 0], [35, 0], [85, 0], [130, 0]]</span>
+<span class="sd">        &gt;&gt;&gt; cm = CircularMappingArray(elements = elements)</span>
+<span class="sd">        &gt;&gt;&gt; cm[1, :]</span>
+<span class="sd">        array([[35, 0]])</span>
+<span class="sd">        &gt;&gt;&gt; cm[3, 0]</span>
+<span class="sd">        130</span>
 
 <span class="sd">        .. image:: ../assets/img/object_grid_CircularMappingArray_getitem.png</span>
 <span class="sd">           :height: 250</span>
@@ -2813,8 +2826,6 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.Grid</span>
 
-
-
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
@@ -2825,16 +2836,13 @@
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        Grid 클래스의 생성자함수.</span>
+<span class="sd">        **(Korean)** Grid 클래스의 생성자함수.</span>
 <span class="sd">        파라미터</span>
-<span class="sd">        name(str): 이름</span>
-<span class="sd">        vgrid(laygo2.OneDimGrid): x좌표계 OneDimGrid 객체</span>
-<span class="sd">        hgrid(laygo2.OneDimGrid): y좌표계 OneDimGrid 객체</span>
+<span class="sd">            - name(str): 이름</span>
+<span class="sd">            - vgrid(laygo2.OneDimGrid): x좌표계 OneDimGrid 객체</span>
+<span class="sd">            - hgrid(laygo2.OneDimGrid): y좌표계 OneDimGrid 객체</span>
 <span class="sd">        반환값</span>
-<span class="sd">        laygo2.Grid</span>
-<span class="sd">        참조</span>
-<span class="sd">        없음</span>
+<span class="sd">            - laygo2.Grid</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span> <span class="o">=</span> <span class="p">[</span><span class="n">vgrid</span><span class="p">,</span> <span class="n">hgrid</span><span class="p">]</span>
@@ -2843,7 +2851,10 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">elements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;list: return elements of subgrids ([_xy[0].elements, _xy[1].elements]).&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;list: return elements of subgrids </span>
+<span class="sd">        ([_xy[0].elements, _xy[1].elements]).</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_xy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">elements</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">elements</span><span class="p">]</span>
 
     <span class="c1"># Indexing and slicing functions</span>
@@ -2856,81 +2867,129 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the largest but less than other.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the largest </span>
+<span class="sd">        but less than other.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="o">.</span><span class="fm">__lt__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the largest but less than or equal to other.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the largest </span>
+<span class="sd">        but less than or equal to other.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="o">.</span><span class="fm">__le__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the smallest but greater than other.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the smallest </span>
+<span class="sd">        but greater than other.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="o">.</span><span class="fm">__gt__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the smallest but greater than or equal to other.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the smallest </span>
+<span class="sd">        but greater than or equal to other.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="o">.</span><span class="fm">__ge__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Grid.bbox"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.bbox">[docs]</a>    <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the &#39;internal&#39; bounding box of obj.</span>
-<span class="sd">        See _PhyToAbsGridConverter.bbox() for details.</span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the </span>
+<span class="sd">        &#39;internal&#39; bounding box of obj.</span>
+<span class="sd">        </span>
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        _PhyToAbsGridConverter.bbox</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phy2abs</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Grid.bottom_left"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.bottom_left">[docs]</a>    <span class="k">def</span> <span class="nf">bottom_left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the bottom-left corner of obj.</span>
-<span class="sd">        See _PhyToAbsGridConverter.bottom_left() for details.</span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the </span>
+<span class="sd">        bottom-left corner of obj.</span>
+<span class="sd">        </span>
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        _PhyToAbsGridConverter.bottom_left</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phy2abs</span><span class="o">.</span><span class="n">bottom_left</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Grid.bottom_right"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.bottom_right">[docs]</a>    <span class="k">def</span> <span class="nf">bottom_right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the bottom-right corner of obj.</span>
-<span class="sd">        See _PhyToAbsGridConverter.bottom_right() for details.</span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the </span>
+<span class="sd">        bottom-right corner of obj.</span>
+<span class="sd">        </span>
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        _PhyToAbsGridConverter.bottom_right</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phy2abs</span><span class="o">.</span><span class="n">bottom_right</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Grid.top_left"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.top_left">[docs]</a>    <span class="k">def</span> <span class="nf">top_left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the top-left corner of obj.</span>
-<span class="sd">        See _PhyToAbsGridConverter.top_left() for details.</span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the top-left </span>
+<span class="sd">        corner of obj.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        _PhyToAbsGridConverter.top_left</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phy2abs</span><span class="o">.</span><span class="n">top_left</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Grid.top_right"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.top_right">[docs]</a>    <span class="k">def</span> <span class="nf">top_right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the top-right corner of obj.</span>
-<span class="sd">        See _PhyToAbsGridConverter.top_right() for details.</span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the top-right </span>
+<span class="sd">        corner of obj.</span>
+<span class="sd">        </span>
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        _PhyToAbsGridConverter.top_right</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phy2abs</span><span class="o">.</span><span class="n">top_right</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Grid.crossing"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.crossing">[docs]</a>    <span class="k">def</span> <span class="nf">crossing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the crossing point of args.</span>
-<span class="sd">        See _PhyToAbsGridConverter.crossing() for details.</span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the crossing </span>
+<span class="sd">        point of args.</span>
+<span class="sd">        </span>
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        laygo2.object.grid._PhyToAbsGridConverter.crossing</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phy2abs</span><span class="o">.</span><span class="n">crossing</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Grid.overlap"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.overlap">[docs]</a>    <span class="k">def</span> <span class="nf">overlap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;bbox&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the overlap of args.</span>
-<span class="sd">        See _PhyToAbsGridConverter.overlap() for details.</span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the overlap </span>
+<span class="sd">        of args.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        laygo2.object.grid._PhyToAbsGridConverter.overlap</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phy2abs</span><span class="o">.</span><span class="n">overlap</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">type</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Grid.union"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.union">[docs]</a>    <span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the abstract grid coordinates corresponding to union of args.</span>
-<span class="sd">        See _PhyToAbsGridConverter.union() for details.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        laygo2.object.grid._PhyToAbsGridConverter.union</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phy2abs</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Grid.center"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.center">[docs]</a>    <span class="k">def</span> <span class="nf">center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstrack grid coordinates corresponding to the center point of obj.</span>
-<span class="sd">        See _PhyToAbsGridConverter.center for details.</span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the center </span>
+<span class="sd">        point of obj.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        obj : laygo2.object.physical.PhysicalObject</span>
+<span class="sd">            The object of which center coordinate is computed.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        laygo2.object.grid._PhyToAbsGridConverter.center</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phy2abs</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
 
@@ -2960,10 +3019,9 @@
 <span class="sd">        -------</span>
 <span class="sd">        str</span>
 
-
-
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=‘ygrid’, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
 <span class="sd">        &gt;&gt;&gt; g2   = Grid(name=“test”, vgrid = g1_x, hgrid = g1_y )</span>
@@ -2972,14 +3030,7 @@
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        해당 Grid의 정보 출력.</span>
-<span class="sd">        파라미터</span>
-<span class="sd">        없음</span>
-<span class="sd">        반환값</span>
-<span class="sd">        str</span>
-<span class="sd">        참조</span>
-<span class="sd">        없음</span>
+<span class="sd">        **(Korean)** 해당 Grid의 정보 출력.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>

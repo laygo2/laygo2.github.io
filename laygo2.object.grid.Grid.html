@@ -545,7 +545,7 @@
 <td><p>Return the abstract grid coordinates corresponding to union of args.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.center" title="laygo2.object.grid.Grid.center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">center</span></code></a>(obj)</p></td>
-<td><p>Return the abstrack grid coordinates corresponding to the center point of obj.</p></td>
+<td><p>Return the abstract grid coordinates corresponding to the center point of obj.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iter__</span></code>()</p></td>
 <td><p></p></td>
@@ -588,51 +588,81 @@
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-Grid 클래스의 생성자함수.
-파라미터
-name(str): 이름
-vgrid(laygo2.OneDimGrid): x좌표계 OneDimGrid 객체
-hgrid(laygo2.OneDimGrid): y좌표계 OneDimGrid 객체
-반환값
-laygo2.Grid
-참조
-없음</p>
+<p><strong>(Korean)</strong> Grid 클래스의 생성자함수.
+파라미터</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>name(str): 이름</p></li>
+<li><p>vgrid(laygo2.OneDimGrid): x좌표계 OneDimGrid 객체</p></li>
+<li><p>hgrid(laygo2.OneDimGrid): y좌표계 OneDimGrid 객체</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>반환값</dt><dd><ul class="simple">
+<li><p>laygo2.Grid</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.bbox">
 <span class="sig-name descname"><span class="pre">bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.bbox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.bbox" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the abstract grid coordinates corresponding to the ‘internal’ bounding box of obj.
-See _PhyToAbsGridConverter.bbox() for details.</p>
+<dd><p>Return the abstract grid coordinates corresponding to the
+‘internal’ bounding box of obj.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.bbox" title="laygo2.object.grid._PhyToAbsGridConverter.bbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.bbox</span></code></a></p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.bottom_left">
 <span class="sig-name descname"><span class="pre">bottom_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.bottom_left"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.bottom_left" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the abstract grid coordinates corresponding to the bottom-left corner of obj.
-See _PhyToAbsGridConverter.bottom_left() for details.</p>
+<dd><p>Return the abstract grid coordinates corresponding to the
+bottom-left corner of obj.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.bottom_left" title="laygo2.object.grid._PhyToAbsGridConverter.bottom_left"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.bottom_left</span></code></a></p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.bottom_right">
 <span class="sig-name descname"><span class="pre">bottom_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.bottom_right"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.bottom_right" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the abstract grid coordinates corresponding to the bottom-right corner of obj.
-See _PhyToAbsGridConverter.bottom_right() for details.</p>
+<dd><p>Return the abstract grid coordinates corresponding to the
+bottom-right corner of obj.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.bottom_right" title="laygo2.object.grid._PhyToAbsGridConverter.bottom_right"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.bottom_right</span></code></a></p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.center">
 <span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.center"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.center" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the abstrack grid coordinates corresponding to the center point of obj.
-See _PhyToAbsGridConverter.center for details.</p>
+<dd><p>Return the abstract grid coordinates corresponding to the center
+point of obj.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference internal" href="laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject" title="laygo2.object.physical.PhysicalObject"><em>laygo2.object.physical.PhysicalObject</em></a>) – The object of which center coordinate is computed.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.center" title="laygo2.object.grid._PhyToAbsGridConverter.center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.center</span></code></a></p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.crossing">
 <span class="sig-name descname"><span class="pre">crossing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.crossing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.crossing" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the abstract grid coordinates corresponding to the crossing point of args.
-See _PhyToAbsGridConverter.crossing() for details.</p>
+<dd><p>Return the abstract grid coordinates corresponding to the crossing
+point of args.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.crossing" title="laygo2.object.grid._PhyToAbsGridConverter.crossing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.crossing</span></code></a></p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -643,8 +673,12 @@ See _PhyToAbsGridConverter.crossing() for details.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.overlap">
 <span class="sig-name descname"><span class="pre">overlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bbox'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.overlap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.overlap" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the abstract grid coordinates corresponding to the overlap of args.
-See _PhyToAbsGridConverter.overlap() for details.</p>
+<dd><p>Return the abstract grid coordinates corresponding to the overlap
+of args.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.overlap" title="laygo2.object.grid._PhyToAbsGridConverter.overlap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.overlap</span></code></a></p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -665,7 +699,8 @@ See _PhyToAbsGridConverter.overlap() for details.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid
+&gt;&gt;&gt; g1_x = OneDimGrid(name=‘xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])
 &gt;&gt;&gt; g1_y = OneDimGrid(name=‘ygrid’, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])
 &gt;&gt;&gt; g2   = Grid(name=“test”, vgrid = g1_x, hgrid = g1_y )
 &gt;&gt;&gt; g2.summarize()
@@ -673,35 +708,39 @@ See _PhyToAbsGridConverter.overlap() for details.</p>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-해당 Grid의 정보 출력.
-파라미터
-없음
-반환값
-str
-참조
-없음</p>
+<p><strong>(Korean)</strong> 해당 Grid의 정보 출력.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.top_left">
 <span class="sig-name descname"><span class="pre">top_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.top_left"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.top_left" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the abstract grid coordinates corresponding to the top-left corner of obj.
-See _PhyToAbsGridConverter.top_left() for details.</p>
+<dd><p>Return the abstract grid coordinates corresponding to the top-left
+corner of obj.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.top_left" title="laygo2.object.grid._PhyToAbsGridConverter.top_left"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.top_left</span></code></a></p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.top_right">
 <span class="sig-name descname"><span class="pre">top_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.top_right"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.top_right" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the abstract grid coordinates corresponding to the top-right corner of obj.
-See _PhyToAbsGridConverter.top_right() for details.</p>
+<dd><p>Return the abstract grid coordinates corresponding to the top-right
+corner of obj.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.top_right" title="laygo2.object.grid._PhyToAbsGridConverter.top_right"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.top_right</span></code></a></p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.union">
 <span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.union"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.union" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the abstract grid coordinates corresponding to union of args.
-See _PhyToAbsGridConverter.union() for details.</p>
+<dd><p>Return the abstract grid coordinates corresponding to union of args.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.union" title="laygo2.object.grid._PhyToAbsGridConverter.union"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.union</span></code></a></p>
+</div>
 </dd></dl>
 
 <dl class="py attribute">
@@ -724,7 +763,8 @@ See _PhyToAbsGridConverter.union() for details.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.elements">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elements</span></span><a class="headerlink" href="#laygo2.object.grid.Grid.elements" title="Permalink to this definition">#</a></dt>
-<dd><p>return elements of subgrids ([_xy[0].elements, _xy[1].elements]).</p>
+<dd><p>return elements of subgrids
+([_xy[0].elements, _xy[1].elements]).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a></p>

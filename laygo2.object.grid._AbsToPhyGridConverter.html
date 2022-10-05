@@ -416,10 +416,12 @@
 <dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">_AbsToPhyGridConverter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">master</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>A class that converts abstract coordinates into physical coordinates. Conversely, conditional operation converts physical coordinates into abstract coordinates.</p>
+<p>A class that converts abstract coordinates into physical coordinates.
+Conversely, conditional operation converts physical coordinates into
+abstract coordinates.</p>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-추상 좌표를 물리 좌표로 변환하는 클래스, 조건부연산은 반대로 물리좌표를 추상좌표로 변환한다.</p>
+<p><strong>(Korean)</strong> 추상 좌표를 물리 좌표로 변환하는 클래스, 조건부연산은 역변환을
+수행한다.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
 <table class="longtable table autosummary">
@@ -536,14 +538,16 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter.master">
 <span class="sig-name descname"><span class="pre">master</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter.master" title="Permalink to this definition">#</a></dt>
-<dd><p>Coordinate system to which _AbsToPhyGridConverter object belongs.</p>
+<dd><p>Coordinate system to which
+_AbsToPhyGridConverter object belongs.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">180</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span>   <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="n">vgrid</span><span class="o">=</span><span class="n">g1_x</span><span class="p">,</span> <span class="n">hgrid</span><span class="o">=</span><span class="n">g1_y</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span> <span class="n">g1_x</span><span class="o">.</span><span class="n">abs2phy</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xg&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">180</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;yg&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span>   <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">vgrid</span><span class="o">=</span><span class="n">g1_x</span><span class="p">,</span> <span class="n">hgrid</span><span class="o">=</span><span class="n">g1_y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g1_x</span><span class="o">.</span><span class="n">abs2phy</span><span class="p">)</span>
 <span class="go">&lt;laygo2.object.grid._AbsToPhyGridConverter object&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span> <span class="n">g2</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
 <span class="go">&lt;laygo2.object.grid._AbsToPhyGridConverter object&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g1_x</span><span class="o">.</span><span class="n">abs2phy</span><span class="o">.</span><span class="n">master</span><span class="p">)</span>
 <span class="go">&lt;laygo2.object.grid.OneDimGrid object&gt;</span>
@@ -552,8 +556,7 @@
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-_AbsToPhyGridConverter 객체가 속한 좌표계.</p>
+<p><strong>(Korean)</strong> _AbsToPhyGridConverter 객체가 속한 좌표계.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>laygo2.Grid or laygo2.OneDimGrid</p>

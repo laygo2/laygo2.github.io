@@ -557,23 +557,15 @@
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g1_x</span><span class="p">)</span>
 <span class="go">OneDimGrid object name: xgrid, class: OneDimGrid, scope: [0, 180], elements: [0, 35, 85, 130  50]</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_OneDimGrid_init.png"><img alt="_images/object_grid_OneDimGrid_init.png" src="_images/object_grid_OneDimGrid_init.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-OneDimGrid 클래스의 생성자함수.
-파라미터
-name(str): 이름
-scope(numpy.ndarray): 1차원 좌표계의 범위
-elements(numpy.ndarray): 1차원 좌표계 의 구성원
-반환값
-laygo2.OneDimGrid
-참조
-없음</p>
+<p><strong>(Korean)</strong> OneDimGrid 클래스의 생성자함수.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -589,21 +581,15 @@ laygo2.OneDimGrid
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span><span class="o">.</span><span class="n">export_to_dict</span><span class="p">()</span>
 <span class="go">{&#39;scope&#39;: [0, 180], &#39;elements&#39;: [0, 35, 85, 130, 50]}</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_OneDimGrid_export_to_dict.png"><img alt="_images/object_grid_OneDimGrid_export_to_dict.png" src="_images/object_grid_OneDimGrid_export_to_dict.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-그리드의 정보를 담은 dict객체 반환.
-파라미터
-없음
-반환값
-dict
-참조
-없음</p>
+<p><strong>(Korean)</strong> 그리드의 정보를 담은 dict객체 반환.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -650,16 +636,17 @@ dict
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.grid.OneDimGrid.abs2phy">
 <span class="sig-name descname"><span class="pre">abs2phy</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid.OneDimGrid.abs2phy" title="Permalink to this definition">#</a></dt>
-<dd><p>Object that converts abstract coordinates into physical coordinates.</p>
+<dd><p>Object that converts abstract
+coordinates into physical coordinates.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span><span class="o">.</span><span class="n">abs2phy</span>
 <span class="go">&lt;_AbsToPhyGridConverter object&gt;</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-추상 좌표에서 물리 좌표로 변환연산을 해주는 객체.</p>
+<p><strong>(Korean)</strong> 추상 좌표에서 물리 좌표로 변환연산을 해주는 객체.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>self.abs2phy (laygo2._AbsToPhyGridConverter)</p>
@@ -683,15 +670,15 @@ dict
 <span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid.OneDimGrid.name" title="Permalink to this definition">#</a></dt>
 <dd><p>Coordinate system name.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span><span class="o">.</span><span class="n">name</span>
-<span class="go">“xgrid”</span>
+<span class="go">&quot;xgrid&quot;</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_OneDimGrid_name.png"><img alt="_images/object_grid_OneDimGrid_name.png" src="_images/object_grid_OneDimGrid_name.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-좌표계 이름.</p>
+<p><strong>(Korean)</strong> 좌표계 이름.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
@@ -702,16 +689,17 @@ dict
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.grid.OneDimGrid.phy2abs">
 <span class="sig-name descname"><span class="pre">phy2abs</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid.OneDimGrid.phy2abs" title="Permalink to this definition">#</a></dt>
-<dd><p>Object that converts physical coordinates into abstract coordinates.</p>
+<dd><p>Object that converts physical
+coordinates into abstract coordinates.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span>  <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span>  <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span><span class="o">.</span><span class="n">phy2abs</span>
 <span class="go">&lt;_PhyToAbsGridConverter object&gt;</span>
 </pre></div>
 </div>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-물리 좌표에서 추상 좌표로 변환연산을 해주는 객체.</p>
+<p><strong>(Korean)</strong> 물리 좌표에서 추상 좌표로 변환연산을 해주는 객체.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>self.phy2abs (laygo2._PhyToAbsGridConverter)</p>
@@ -722,17 +710,18 @@ dict
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.grid.OneDimGrid.range">
 <span class="sig-name descname"><span class="pre">range</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid.OneDimGrid.range" title="Permalink to this definition">#</a></dt>
-<dd><p>Region in which the coordinate system is defined Coordinates in the defined region are repeatedly expanded.</p>
+<dd><p>Region in which the coordinate system is defined Coordinates in
+the defined region are repeatedly expanded.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span><span class="o">.</span><span class="n">range</span>
 <span class="go">[0, 180]</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_OneDimGrid_range.png"><img alt="_images/object_grid_OneDimGrid_range.png" src="_images/object_grid_OneDimGrid_range.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-좌표계가 정의된 영역. 정의된 영역의 좌표들이 반복되는 형태로 확장된다.</p>
+<p><strong>(Korean)</strong> 좌표계가 정의된 영역. 정의된 영역의 좌표들이 반복되는 형태로 확장된다.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
@@ -768,15 +757,15 @@ dict
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#laygo2.object.grid.OneDimGrid.width" title="Permalink to this definition">#</a></dt>
 <dd><p>The size of the region in which the coordinate system is defined.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span><span class="o">.</span><span class="n">width</span>
 <span class="go">180</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_OneDimGrid_width.png"><img alt="_images/object_grid_OneDimGrid_width.png" src="_images/object_grid_OneDimGrid_width.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-좌표계가 정의된 영역의 크기.</p>
+<p><strong>(Korean)</strong> 좌표계가 정의된 영역의 크기.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a></p>

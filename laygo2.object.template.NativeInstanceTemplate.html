@@ -51,9 +51,11 @@
   <div id="navbar-start">
     
     
+
 <a class="navbar-brand" href="index.html">
-<p class="title">laygo2</p>
+  <img src="_static/logo.png" class="logo" alt="logo">
 </a>
+
 
     
   </div>
@@ -418,7 +420,7 @@
 <dd><p>Bases: <a class="reference internal" href="laygo2.object.template.Template.html#laygo2.object.template.Template" title="laygo2.object.template.Template"><code class="xref py py-class docutils literal notranslate"><span class="pre">laygo2.object.template.Template</span></code></a></p>
 <p>NativeInstanceTemplate class implements the template that generate Instance.</p>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>: NativeInstanceTemplate 클래스는 기본 Instance를 반환하는 템플릿을 구현한다.</p>
+<p><strong>(Korean)</strong> NativeInstanceTemplate 클래스는 기본 Instance를 반환하는 템플릿을 구현한다.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
 <table class="longtable table autosummary">
@@ -428,10 +430,10 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.template.NativeInstanceTemplate.libname" title="laygo2.object.template.NativeInstanceTemplate.libname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">libname</span></code></a></p></td>
-<td><p>attribute str: Library name of NativeInstanceTemplate object.</p></td>
+<td><p>Library name of NativeInstanceTemplate object.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.template.NativeInstanceTemplate.cellname" title="laygo2.object.template.NativeInstanceTemplate.cellname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cellname</span></code></a></p></td>
-<td><p>attribute str: Cellname of NativeInstanceTemplate object.</p></td>
+<td><p>Cellname of NativeInstanceTemplate object.</p></td>
 </tr>
 </tbody>
 </table>
@@ -530,24 +532,26 @@
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; nat_temp_pins = dict()
-&gt;&gt;&gt; nat_temp_pins[&#39;in&#39;]  = laygo2.object.Pin(xy=[[0, 0], [10, 10]], layer=[&#39;M1&#39;, &#39;drawing’], netname=&#39;in’)
-&gt;&gt;&gt; nat_temp_pins[&#39;out&#39;] = laygo2.object.Pin(xy=[[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’], netname=&#39;out’)
-&gt;&gt;&gt; nat_temp = laygo2.object.NativeInstanceTemplate(libname=&#39;mylib&#39;, cellname=&#39;mynattemplate’, bbox=[[0, 0], [100, 100]], pins=nat_temp_pins)
-&lt;laygo2.object.template.NativeInstanceTemplate object&gt;
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.template</span> <span class="kn">import</span> <span class="n">NativeInstanceTemplate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span>
+<span class="go">                 netname=&#39;i&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;o&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span>
+<span class="go">                 netname=&#39;o&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nt</span> <span class="o">=</span> <span class="n">NativeInstanceTemplate</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;mytemp&#39;</span><span class="p">,</span>
+<span class="go">                                bbox=[[0, 0], [100, 100]], pins=p)</span>
+<span class="go">&lt;laygo2.object.template.NativeInstanceTemplate object&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nt</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.template.NativeInstanceTemplate object at 0x0000013C01..&gt;</span>
+<span class="go"> name: mytemp, class: NativeInstanceTemplate, bbox: [[0, 0], [100, 100]],</span>
+<span class="go"> pins: {&#39;i&#39;: &lt;laygo2.object.physical.Pin object at 0x0000013C01CEFDC0&gt;,</span>
+<span class="go">        &#39;o&#39;: &lt;laygo2.object.physical.Pin object at 0x0000013C01C30BE0&gt;},</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_NativeInstanceTemplate_init.png"><img alt="_images/object_template_NativeInstanceTemplate_init.png" src="_images/object_template_NativeInstanceTemplate_init.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>:
-NativeInstanceTemplate 클래스의 생성자함수.
-파라미터
-libname(str): library 이름
-cellname(str): cell 이름
-bbox(numpy.ndarray): bbox
-pins(dict): pin 객체를 갖고있는 dictionary
-반환값
-laygo2.NativeInstanceTemplate</p>
+<p><strong>(Korean)</strong> NativeInstanceTemplate 클래스의 생성자함수.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -563,22 +567,23 @@ laygo2.NativeInstanceTemplate</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; nat_temp_pins = dict()
-&gt;&gt;&gt; nat_temp_pins[&#39;in&#39;]  = laygo2.object.Pin(xy=[[0, 0], [10, 10]], layer=[&#39;M1&#39;, &#39;drawing’], netname=&#39;in’)
-&gt;&gt;&gt; nat_temp_pins[&#39;out&#39;] = laygo2.object.Pin(xy=[[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’], netname=&#39;out’)
-&gt;&gt;&gt; nat_temp = laygo2.object.NativeInstanceTemplate(libname=&#39;mylib&#39;, cellname=&#39;mynattemplate’, bbox=[[0, 0], [100, 100]], pins=nat_temp_pins)
-&gt;&gt;&gt; nat_temp.bbox()
-[[0,0], [100, 100]]
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.template</span> <span class="kn">import</span> <span class="n">NativeInstanceTemplate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span>
+<span class="go">                 netname=&#39;i&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;o&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span>
+<span class="go">                 netname=&#39;o&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nt</span> <span class="o">=</span> <span class="n">NativeInstanceTemplate</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;mytemp&#39;</span><span class="p">,</span>
+<span class="go">                                bbox=[[0, 0], [100, 100]], pins=p)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nt</span><span class="o">.</span><span class="n">bbox</span><span class="p">()</span>
+<span class="go">array([[  0,   0],</span>
+<span class="go">       [100, 100]])</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_NativeInstanceTemplate_bbox.png"><img alt="_images/object_template_NativeInstanceTemplate_bbox.png" src="_images/object_template_NativeInstanceTemplate_bbox.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>:
-NativeInstanceTemplate 객체의 bbox.
-파라미터
-없음
-반환값
-numpy.ndarray</p>
+<p><strong>(Korean)</strong> NativeInstanceTemplate 객체의 bbox.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -608,7 +613,7 @@ numpy.ndarray</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_NativeInstanceTemplate_export_to_dict.png"><img alt="_images/object_template_NativeInstanceTemplate_export_to_dict.png" src="_images/object_template_NativeInstanceTemplate_export_to_dict.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>:
+<p><strong>(Korean)</strong>
 NativeInstanceTemplate 의 정보가 담긴 Dictonary 반환.
 파라미터
 없음
@@ -653,7 +658,7 @@ Class Instance</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_ParameterizedInstanceTemplate_generate.png"><img alt="_images/object_template_ParameterizedInstanceTemplate_generate.png" src="_images/object_template_ParameterizedInstanceTemplate_generate.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>:
+<p><strong>(Korean)</strong>
 Instance 객체 생성.
 파라미터
 name(str): 생성할 인스턴스의 이름
@@ -696,7 +701,7 @@ Class Instance</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_ParameterizedInstanceTemplate_pins.png"><img alt="_images/object_template_ParameterizedInstanceTemplate_pins.png" src="_images/object_template_ParameterizedInstanceTemplate_pins.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>:
+<p><strong>(Korean)</strong>
 NativeInstanceTemplate 객체의 pin dictionary 반환.
 파라미터
 없음
@@ -740,39 +745,57 @@ dict</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.template.NativeInstanceTemplate.cellname">
 <span class="sig-name descname"><span class="pre">cellname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.template.NativeInstanceTemplate.cellname" title="Permalink to this definition">#</a></dt>
-<dd><p>attribute
-str: Cellname of NativeInstanceTemplate object.</p>
+<dd><p>Cellname of NativeInstanceTemplate object.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; nat_temp_pins = dict() &gt;&gt;&gt; nat_temp_pins[&#39;in&#39;]  = laygo2.object.Pin(xy=[[0, 0], [10, 10]], layer=[&#39;M1&#39;, &#39;drawing’], netname=&#39;in’)
-&gt;&gt;&gt; nat_temp_pins[&#39;out&#39;] = laygo2.object.Pin(xy=[[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’], netname=&#39;out’)
-&gt;&gt;&gt; nat_temp = laygo2.object.NativeInstanceTemplate(libname=&#39;mylib&#39;, cellname=&#39;mynattemplate’, bbox=[[0, 0], [100, 100]], pins=nat_temp_pins)
-&gt;&gt;&gt; nat_temp.cellname
-“mynattemplate”
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.template</span> <span class="kn">import</span> <span class="n">NativeInstanceTemplate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span>
+<span class="go">                 netname=&#39;i&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;o&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span>
+<span class="go">                 netname=&#39;o&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nt</span> <span class="o">=</span> <span class="n">NativeInstanceTemplate</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;mytemp&#39;</span><span class="p">,</span>
+<span class="go">                                bbox=[[0, 0], [100, 100]], pins=p)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nt</span><span class="o">.</span><span class="n">cellname</span>
+<span class="go">&#39;mytemp&#39;</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_NativeInstanceTemplate_cellname.png"><img alt="_images/object_template_NativeInstanceTemplate_cellname.png" src="_images/object_template_NativeInstanceTemplate_cellname.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>:
-str: NativeInstanceTemplate 객체의 cellname.</p>
+<p><strong>(Korean)</strong> NativeInstanceTemplate 객체의 cellname.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.template.NativeInstanceTemplate.libname">
 <span class="sig-name descname"><span class="pre">libname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.template.NativeInstanceTemplate.libname" title="Permalink to this definition">#</a></dt>
-<dd><p>attribute
-str: Library name of NativeInstanceTemplate object.</p>
+<dd><p>Library name of NativeInstanceTemplate object.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; nat_temp_pins = dict() &gt;&gt;&gt; nat_temp_pins[&#39;in&#39;] = laygo2.object.Pin(xy=[[0, 0], [10, 10]], layer=[&#39;M1&#39;, &#39;drawing’], netname=&#39;in’)
-&gt;&gt;&gt; nat_temp_pins[&#39;out&#39;] = laygo2.object.Pin(xy=[[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’], netname=&#39;out’)
-&gt;&gt;&gt; nat_temp = laygo2.object.NativeInstanceTemplate(libname=&#39;mylib&#39;, cellname=&#39;mynattemplate’, bbox=[[0, 0], [100, 100]], pins=nat_temp_pins)
-&gt;&gt;&gt; nat_temp.libname
-“mylib”
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.template</span> <span class="kn">import</span> <span class="n">NativeInstanceTemplate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span>
+<span class="go">                 netname=&#39;i&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;o&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span>
+<span class="go">                 netname=&#39;o&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nt</span> <span class="o">=</span> <span class="n">NativeInstanceTemplate</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;mytemp&#39;</span><span class="p">,</span>
+<span class="go">                                bbox=[[0, 0], [100, 100]], pins=p)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nt</span><span class="o">.</span><span class="n">libname</span>
+<span class="go">&#39;mylib&#39;</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_NativeInstanceTemplate_libname.png"><img alt="_images/object_template_NativeInstanceTemplate_libname.png" src="_images/object_template_NativeInstanceTemplate_libname.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>Reference in Korean</strong>:
-str: NativeInstanceTemplate 객체의 library 이름.</p>
+<p><strong>(Korean)</strong> NativeInstanceTemplate 객체의 library 이름.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py attribute">

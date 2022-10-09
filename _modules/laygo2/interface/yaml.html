@@ -199,7 +199,52 @@
 <span class="kn">import</span> <span class="nn">os.path</span>
 <span class="kn">import</span> <span class="nn">laygo2</span>
 
-<div class="viewcode-block" id="export_template"><a class="viewcode-back" href="../../../laygo2.interface.html#laygo2.interface.yaml.export_template">[docs]</a><span class="k">def</span> <span class="nf">export_template</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;append&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="export_template"><a class="viewcode-back" href="../../../laygo2.interface.yaml.html#laygo2.interface.yaml.export_template">[docs]</a><span class="k">def</span> <span class="nf">export_template</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;append&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Export a template to a yaml file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    template: laygo2.object.template.Template</span>
+<span class="sd">        The template object to be exported.        </span>
+<span class="sd">    filename: str</span>
+<span class="sd">        The name of the yaml file.</span>
+<span class="sd">    mode: str</span>
+<span class="sd">        If &#39;append&#39;, it adds the template entry without erasing the </span>
+<span class="sd">        preexisting file.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Pin</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.template import NativeInstanceTemplate</span>
+<span class="sd">    &gt;&gt;&gt; p = dict()</span>
+<span class="sd">    &gt;&gt;&gt; p[&#39;i&#39;] = Pin(xy=[[0, 0], [10, 10]], layer=[&#39;M1&#39;, &#39;drawing&#39;],</span>
+<span class="sd">    &gt;&gt;&gt;                  netname=&#39;i&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; p[&#39;o&#39;] = Pin(xy=[[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;],</span>
+<span class="sd">    &gt;&gt;&gt;                  netname=&#39;o&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; nt = NativeInstanceTemplate(libname=&#39;mylib&#39;, cellname=&#39;mytemp&#39;,</span>
+<span class="sd">    &gt;&gt;&gt;                                 bbox=[[0, 0], [100, 100]], pins=p)</span>
+<span class="sd">    &gt;&gt;&gt; laygo2.interface.yaml.export_template(nt, filename=&quot;mytemplates.yaml&quot;)    </span>
+<span class="sd">    Your design was translated into YAML format.</span>
+<span class="sd">    {&#39;mylib&#39;: {</span>
+<span class="sd">        &#39;mytemp&#39;: {</span>
+<span class="sd">            &#39;libname&#39;: &#39;mylib&#39;, </span>
+<span class="sd">            &#39;cellname&#39;: &#39;mytemp&#39;, </span>
+<span class="sd">            &#39;bbox&#39;: [[0, 0], [100, 100]], </span>
+<span class="sd">            &#39;pins&#39;: {</span>
+<span class="sd">                &#39;i&#39;: {</span>
+<span class="sd">                    &#39;xy&#39;: [[0, 0], [10, 10]], </span>
+<span class="sd">                    &#39;layer&#39;: [&#39;M1&#39;, &#39;drawing&#39;], </span>
+<span class="sd">                    &#39;name&#39;: None, </span>
+<span class="sd">                    &#39;netname&#39;: &#39;i&#39;</span>
+<span class="sd">                    }, </span>
+<span class="sd">                &#39;o&#39;: {</span>
+<span class="sd">                    &#39;xy&#39;: [[90, 90], [100, 100]], </span>
+<span class="sd">                    &#39;layer&#39;: [&#39;M1&#39;, &#39;drawing&#39;], </span>
+<span class="sd">                    &#39;name&#39;: None, </span>
+<span class="sd">                    &#39;netname&#39;: &#39;o&#39;</span>
+<span class="sd">    }}}}}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">libname</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">libname</span>
     <span class="n">cellname</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">cellname</span>
     <span class="n">pins</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">pins</span><span class="p">()</span>
@@ -214,11 +259,42 @@
     <span class="n">db</span><span class="p">[</span><span class="n">libname</span><span class="p">][</span><span class="n">cellname</span><span class="p">]</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">export_to_dict</span><span class="p">()</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
         <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">stream</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your design was translated into YAML format.&quot;</span><span class="p">)</span></div>
+    <span class="c1">#print(&quot;Your design was translated into YAML format.&quot;)</span>
+    <span class="k">return</span> <span class="n">db</span></div>
 
 <span class="c1">#filename=libname+&#39;_templates.yaml&#39;</span>
 
-<div class="viewcode-block" id="import_template"><a class="viewcode-back" href="../../../laygo2.interface.html#laygo2.interface.yaml.import_template">[docs]</a><span class="k">def</span> <span class="nf">import_template</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<div class="viewcode-block" id="import_template"><a class="viewcode-back" href="../../../laygo2.interface.yaml.html#laygo2.interface.yaml.import_template">[docs]</a><span class="k">def</span> <span class="nf">import_template</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Import templates from a yaml file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    filename: str</span>
+<span class="sd">        The name of the yaml file.</span>
+<span class="sd">    </span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Pin</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.template import NativeInstanceTemplate</span>
+<span class="sd">    &gt;&gt;&gt; p = dict()</span>
+<span class="sd">    &gt;&gt;&gt; p[&#39;i&#39;] = Pin(xy=[[0, 0], [10, 10]], layer=[&#39;M1&#39;, &#39;drawing&#39;],</span>
+<span class="sd">    &gt;&gt;&gt;                  netname=&#39;i&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; p[&#39;o&#39;] = Pin(xy=[[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;],</span>
+<span class="sd">    &gt;&gt;&gt;                  netname=&#39;o&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; nt = NativeInstanceTemplate(libname=&#39;mylib&#39;, cellname=&#39;mytemp&#39;,</span>
+<span class="sd">    &gt;&gt;&gt;                                 bbox=[[0, 0], [100, 100]], pins=p)</span>
+<span class="sd">    &gt;&gt;&gt; laygo2.interface.yaml.export_template(nt, filename=&quot;mytemplates.yaml&quot;)    </span>
+<span class="sd">    &gt;&gt;&gt; # Import the template back to python.</span>
+<span class="sd">    &gt;&gt;&gt; my_tlib = laygo2.interface.yaml.import_template(&quot;mytemplates.yaml&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; print(my_tlib)</span>
+<span class="sd">    &lt;laygo2.object.database.TemplateLibrary object at 0x000001FE3440A410&gt; </span>
+<span class="sd">        name: mylib, </span>
+<span class="sd">        params: None       </span>
+<span class="sd">        elements: {</span>
+<span class="sd">            &#39;mytemp&#39;: &lt;laygo2.object.template.NativeInstanceTemplate object at 0x000001FE3440A2C0&gt;</span>
+<span class="sd">        }</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># load yaml file</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>

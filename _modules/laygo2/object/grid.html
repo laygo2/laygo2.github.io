@@ -226,8 +226,8 @@
 <span class="sd">    Iterable</span>
 <span class="sd">        The extended index.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; # 0-dim to 1-dim</span>
 <span class="sd">    &gt;&gt;&gt; laygo2.object.grid._extend_index_dim(None, [3, 4, 6], None)</span>
@@ -281,8 +281,8 @@
 <span class="sd">    step_def : int, optional</span>
 <span class="sd">        The default stepping index if the slice object has no step specified.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; laygo2.object.grid._conv_slice_to_list(slice(0, 10, 2))               </span>
 <span class="sd">    [0, 2, 4, 6, 8]</span>
@@ -311,8 +311,8 @@
 <span class="sd">    bbox : numpy.ndarray</span>
 <span class="sd">        The bounding box to be converted.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; import numpy as np</span>
 <span class="sd">    &gt;&gt;&gt; laygo2.object.grid._conv_bbox_to_array(np.array([[0, 0], [1, 2]])) </span>
@@ -338,8 +338,8 @@
 <span class="sd">    bbox : numpy.ndarray</span>
 <span class="sd">        The bounding box to be converted.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; import numpy as np</span>
 <span class="sd">    &gt;&gt;&gt; laygo2.object.grid._conv_bbox_to_list(np.array([[0, 0], [1, 2]])) </span>
@@ -365,8 +365,8 @@
     <span class="n">_elements</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;list: Array consisting of the elements of circular mapping.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping</span>
 <span class="sd">    &gt;&gt;&gt; elements = [0, 35, 85, 130, 180] </span>
 <span class="sd">    &gt;&gt;&gt; cm = CircularMapping(elements) </span>
@@ -385,8 +385,8 @@
     <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int</span>
     <span class="sd">&quot;&quot;&quot;type: Data type of the circular mapping.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping</span>
 <span class="sd">    &gt;&gt;&gt; elements = [0, 35, 85, 130, 180] </span>
 <span class="sd">    &gt;&gt;&gt; cm = CircularMapping(elements) </span>
@@ -417,8 +417,8 @@
     <span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;numpy.ndarray: The shape of circular mapping.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping</span>
 <span class="sd">        &gt;&gt;&gt; elements = [0, 35, 85, 130, 180]</span>
 <span class="sd">        &gt;&gt;&gt; cm = CircularMapping(elements)</span>
@@ -446,8 +446,8 @@
 <span class="sd">        dtype : type</span>
 <span class="sd">            data type of elements.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping</span>
 <span class="sd">        &gt;&gt;&gt; elements = [0, 35, 85, 130, 180]</span>
 <span class="sd">        &gt;&gt;&gt; cm = CircularMapping(elements)</span>
@@ -537,8 +537,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        numpy.ndarray </span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray</span>
 <span class="sd">        &gt;&gt;&gt; elements = [[0, 0], [35, 0], [85, 0], [130, 0]]</span>
 <span class="sd">        &gt;&gt;&gt; cm = CircularMappingArray(elements = elements)</span>
@@ -566,7 +566,7 @@
                 <span class="n">idx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span> <span class="o">%</span> <span class="n">s</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">idx</span><span class="p">)]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># pos is mapped to multiple indices. (possible examples include ([0:5, 3], [[1,2,3], 3], ...).</span>
+            <span class="c1"># pos is mapped to multiple indices. (possible Example include ([0:5, 3], [[1,2,3], 3], ...).</span>
             <span class="c1"># Create a list containing the indices to iterate over, and return a numpy.ndarray containing items</span>
             <span class="c1"># corresponding to the indices in the list.</span>
             <span class="c1"># When the indices don&#39;t specify the lower boundary (e.g., [:5]), it iterates from 0.</span>
@@ -600,8 +600,8 @@
     <span class="sd">&quot;&quot;&quot;laygo2.Grid or laygo2.OneDimGrid: Coordinate system to which </span>
 <span class="sd">    _AbsToPhyGridConverter object belongs.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">    &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xg&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180]) </span>
 <span class="sd">    &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;yg&#39;, scope=[0, 30], elements=[0]) </span>
@@ -641,8 +641,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            physical coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xg&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;yg&#39;, scope=[0,30], elements=[0])</span>
@@ -676,8 +676,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            physical coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xg&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;yg&#39;, scope=[0, 30], elements=[0])</span>
@@ -783,8 +783,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xg&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;yg&#39;, scope=[0, 30], elements=[0])</span>
@@ -818,8 +818,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xg&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;yg&#39;, scope=[0, 30], elements=[0])</span>
@@ -924,8 +924,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0,30], elements=[0])</span>
@@ -981,8 +981,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 30], elements=[0])</span>
@@ -1038,8 +1038,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0,30], elements=[0])</span>
@@ -1099,8 +1099,8 @@
     <span class="sd">&quot;&quot;&quot;laygo2.Grid or laygo2.OneDimGrid: Coordinate system to which </span>
 <span class="sd">    _PhyToAbsGridConverter object belongs.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">    &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xg&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180]) </span>
 <span class="sd">    &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;yg&#39;, scope=[0, 30], elements=[0]) </span>
@@ -1140,8 +1140,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 30], elements=[0])</span>
@@ -1174,8 +1174,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xg&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;yg&#39;, scope=[0, 30], elements=[0])</span>
@@ -1290,8 +1290,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            physical coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xg&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;yg&#39;, scope=[0, 30], elements=[0])</span>
@@ -1347,8 +1347,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            physical coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 30], elements=[0])</span>
@@ -1399,8 +1399,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            physical coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xg&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;yg&#39;, scope=[0, 30], elements=[0])</span>
@@ -1434,8 +1434,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            physical coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 30], elements=[0])</span>
@@ -1488,8 +1488,8 @@
 <span class="sd">        int or numpy.ndarray</span>
 <span class="sd">            physical coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 180])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 30], elements=[0])</span>
@@ -1523,8 +1523,8 @@
 <span class="sd">        numy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x    = OneDimGrid(name=&#39;xg&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y    = OneDimGrid(name=&#39;yg&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
@@ -1570,8 +1570,8 @@
 <span class="sd">        numy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x    = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y    = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
@@ -1613,8 +1613,8 @@
 <span class="sd">        numy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x    = OneDimGrid(name=&#39;xg&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y    = OneDimGrid(name=&#39;yg&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
@@ -1656,8 +1656,8 @@
 <span class="sd">        numy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x    = OneDimGrid(name=&#39;xg&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y    = OneDimGrid(name=&#39;yg&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
@@ -1699,8 +1699,8 @@
 <span class="sd">        numy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x    = OneDimGrid(name=&#39;xg&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y    = OneDimGrid(name=&#39;yg&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
@@ -1770,8 +1770,8 @@
 <span class="sd">        numpy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x    = OneDimGrid(name=&#39;xg&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y    = OneDimGrid(name=&#39;yg&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
@@ -1807,8 +1807,8 @@
 <span class="sd">        numpy.ndarray(int, int)</span>
 <span class="sd">            abstract points.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xg&#39;, scope=[0, 10], elements=[0])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;yg’, scope=[0, 120], elements=[0, 20, 40, 80, 100, 120])</span>
@@ -1852,8 +1852,8 @@
 <span class="sd">        numpy.ndarray</span>
 <span class="sd">            bbox abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xg&#39;, scope=[0, 10], elements=[0])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;yg&#39;, scope=[0, 120], elements=[0, 20, 40, 80, 100, 120])</span>
@@ -1917,8 +1917,8 @@
 <span class="sd">        numpy.ndarray</span>
 <span class="sd">            bbox abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 10], elements=[0])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 120], elements=[0, 20, 40, 80, 100, 120 )</span>
@@ -1962,8 +1962,8 @@
 <span class="sd">        numy.ndarray</span>
 <span class="sd">            abstract coordinates.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x    = OneDimGrid(name=&#39;xg&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y    = OneDimGrid(name=&#39;yg&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
@@ -2021,8 +2021,8 @@
     <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;str: Coordinate system name.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid</span>
 <span class="sd">    &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 50]) </span>
 <span class="sd">    &gt;&gt;&gt; g1_x.name</span>
@@ -2040,8 +2040,8 @@
     <span class="sd">&quot;&quot;&quot;str: Region in which the coordinate system is defined Coordinates in </span>
 <span class="sd">    the defined region are repeatedly expanded.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid</span>
 <span class="sd">    &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 50]) </span>
 <span class="sd">    &gt;&gt;&gt; g1_x.range</span>
@@ -2059,8 +2059,8 @@
     <span class="sd">&quot;&quot;&quot;self.phy2abs (laygo2._PhyToAbsGridConverter): Object that converts physical </span>
 <span class="sd">    coordinates into abstract coordinates.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid</span>
 <span class="sd">    &gt;&gt;&gt; g1_x  = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 50]) </span>
 <span class="sd">    &gt;&gt;&gt; g1_x.phy2abs</span>
@@ -2075,8 +2075,8 @@
     <span class="sd">&quot;&quot;&quot;self.abs2phy (laygo2._AbsToPhyGridConverter): Object that converts abstract </span>
 <span class="sd">    coordinates into physical coordinates.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid</span>
 <span class="sd">    &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 50]) </span>
 <span class="sd">    &gt;&gt;&gt; g1_x.abs2phy</span>
@@ -2091,8 +2091,8 @@
     <span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;int: The size of the region in which the coordinate system is defined.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 50])</span>
 <span class="sd">        &gt;&gt;&gt; g1_x.width</span>
@@ -2126,8 +2126,8 @@
 
 
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 50])</span>
 <span class="sd">        &gt;&gt;&gt; print(g1_x)</span>
@@ -2208,8 +2208,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        dict</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 180], elements=[0, 35, 85, 130, 50])</span>
 <span class="sd">        &gt;&gt;&gt; g1_x.export_to_dict()</span>
@@ -2251,8 +2251,8 @@
         <span class="sd">&quot;&quot;&quot;numpy.ndarray: Two-dimensional element of a coordinate system.</span>
 <span class="sd">            x elements, y elements</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
@@ -2280,8 +2280,8 @@
         <span class="sd">&quot;&quot;&quot;_AbsToPhyGridConverter: Two-dimensional </span>
 <span class="sd">        _AbsToPhyConverter of a coordinate system.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60])</span>
@@ -2310,8 +2310,8 @@
         <span class="sd">&quot;&quot;&quot;_AbsToPhyGridConverter: One-dimensional _AbsToPhyGridConverter </span>
 <span class="sd">            of the x-coordinate system.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2339,8 +2339,8 @@
         <span class="sd">&quot;&quot;&quot;_AbsToPhyGridConverter: One-dimensional _AbsToPhyGridConverter </span>
 <span class="sd">        of the y-coordinate system.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2366,8 +2366,8 @@
     <span class="k">def</span> <span class="nf">v</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;OneDimGrid: OneDimGrid of the x-coordinate system (=self.x).</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2385,8 +2385,8 @@
     <span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;OneDimGrid: OneDimGrid of the y-coordinate system (=self.y).</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2405,8 +2405,8 @@
         <span class="sd">&quot;&quot;&quot;laygo2._PhyToAbsGridConverter: Two-dimensional _PhyToAbsConverter of </span>
 <span class="sd">        a coordinate system.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2436,8 +2436,8 @@
         <span class="sd">&quot;&quot;&quot;_PhyToAbsGridConverter: One-dimensional _PhyToAbsConverter of </span>
 <span class="sd">        the x-coordinate system.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2466,8 +2466,8 @@
         <span class="sd">&quot;&quot;&quot;_PhyToAbsGridConverter: One-dimensional _PhyToAbsConverter of</span>
 <span class="sd">         the y-coordinate system.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2496,8 +2496,8 @@
         <span class="sd">&quot;&quot;&quot;numpy.ndarray: Two-dimensional element length in a coordinate system.</span>
 <span class="sd">            length of x-axis elements, length of y-axis elements</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2522,8 +2522,8 @@
     <span class="sd">&quot;&quot;&quot;numpy.ndarray: Region in which the coordinate system is defined.</span>
 <span class="sd">        bbox of the respective Grid</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">    &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ]) </span>
 <span class="sd">    &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ]) </span>
@@ -2541,8 +2541,8 @@
         <span class="sd">&quot;&quot;&quot;numpy.int32: Width of the region in which the coordinate system is defined.</span>
 <span class="sd">            x scope</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2560,8 +2560,8 @@
     <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;numpy.int32: Height of the region in which the coordinate system is defined.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2579,8 +2579,8 @@
     <span class="k">def</span> <span class="nf">height_vec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;numpy.ndarray: Return the height vector [0, h].</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2599,8 +2599,8 @@
         <span class="sd">&quot;&quot;&quot;numpy.ndarray: Return width as a list.</span>
 <span class="sd">            length of the respective axis and zero</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2630,8 +2630,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.object.grid.Grid</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2824,8 +2824,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        str</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, Grid</span>
 <span class="sd">        &gt;&gt;&gt; g1_x = OneDimGrid(name=&#39;xgrid&#39;, scope=[0, 100], elements=[0, 10, 20, 40, 50 ])</span>
 <span class="sd">        &gt;&gt;&gt; g1_y = OneDimGrid(name=&#39;ygrid&#39;, scope=[0, 100], elements=[10, 20, 40, 50, 60 ])</span>
@@ -2886,8 +2886,8 @@
 <span class="sd">        laygo2.object.physical.VirtualInstance :</span>
 <span class="sd">            The placed instance.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, PlacementGrid</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Instance</span>
@@ -2933,8 +2933,8 @@
     <span class="n">vwidth</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: Width of vertical wires.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -2986,8 +2986,8 @@
     <span class="n">hwidth</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: Width of horizontal wires.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -3039,8 +3039,8 @@
     <span class="n">vextension</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: Extension of vertical wires.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -3088,8 +3088,8 @@
     <span class="n">hextension</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: Extension of horizontal wires.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -3137,8 +3137,8 @@
     <span class="n">vextension0</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: the array containing the extension of the zero-length wires on the vertical grid.</span>
 <span class="sd">    </span>
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -3179,8 +3179,8 @@
     <span class="n">hextension0</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: the array containing the extension of the zero-length wires on the horizontal grid. </span>
 <span class="sd">    </span>
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -3221,8 +3221,8 @@
     <span class="n">vlayer</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: Layer information of vertical wires.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -3270,8 +3270,8 @@
     <span class="n">hlayer</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: Layer information of horizontal wires.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -3319,8 +3319,8 @@
     <span class="n">pin_vlayer</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: Layer information of vertical pin wires.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -3368,8 +3368,8 @@
     <span class="n">pin_hlayer</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: Layer information of horizontal pine wires.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -3417,8 +3417,8 @@
     <span class="n">viamap</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMappingArray: Array containing Via objects positioned on grid crossing points.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -3470,8 +3470,8 @@
     <span class="sd">&quot;&quot;&quot;str: The default direction of routing </span>
 <span class="sd">        (Direction of wire having length 0).</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -3517,8 +3517,8 @@
     <span class="n">xcolor</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: Color of horizontal wires.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; templates = tech.load_templates() </span>
 <span class="sd">    &gt;&gt;&gt; grids = tech.load_grids(templates=templates) </span>
 <span class="sd">    &gt;&gt;&gt; r23   = grids[&#39;routing_23_cmos’] </span>
@@ -3537,8 +3537,8 @@
     <span class="n">ycolor</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: Color of vertical wires.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; templates = tech.load_templates() </span>
 <span class="sd">    &gt;&gt;&gt; grids = tech.load_grids(templates=templates) </span>
 <span class="sd">    &gt;&gt;&gt; r23   = grids[&#39;routing_23_cmos’]</span>
@@ -3614,8 +3614,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.RoutingGrid</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -3767,8 +3767,8 @@
 <span class="sd">        laygo2.object.physical.Rect or list :</span>
 <span class="sd">            The generated routing object(s). Check the example code for details.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -3967,8 +3967,8 @@
 <span class="sd">        list(physical.PhysicalObject):</span>
 <span class="sd">            The list containing the generated via objects.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -4062,8 +4062,8 @@
 <span class="sd">            The list containing the generated routing objects;</span>
 <span class="sd">            The last object corresponds to the routing object on the track.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -4192,8 +4192,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.physical.Pin: The generated pin object.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>

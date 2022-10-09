@@ -317,10 +317,10 @@
 
     <span class="k">return</span> <span class="s2">&quot;&quot;</span>
 
-<div class="viewcode-block" id="export"><a class="viewcode-back" href="../../../laygo2.interface.html#laygo2.interface.magic.export">[docs]</a><span class="k">def</span> <span class="nf">export</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">libpath</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+<div class="viewcode-block" id="export"><a class="viewcode-back" href="../../../laygo2.interface.magic.html#laygo2.interface.magic.export">[docs]</a><span class="k">def</span> <span class="nf">export</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">libpath</span><span class="o">=</span><span class="s1">&#39;./magic_layout&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
            <span class="n">reset_library</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tech_library</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gds_filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Export design(s) to magic&#39;s tcl code.</span>
+<span class="sd">    Export a laygo2.object.database.Library object to magic&#39;s tcl code.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -330,6 +330,8 @@
 <span class="sd">        If specified, the generated magic(tcl) script is stored in filename.</span>
 <span class="sd">    cellname: str or List[str]</span>
 <span class="sd">        The name(s) of cell(s) to be exported.</span>
+<span class="sd">    libpath: str</span>
+<span class="sd">        The path where the generated magic layout is stored.</span>
 <span class="sd">    scale: float</span>
 <span class="sd">        The scaling factor between laygo2&#39;s integer coordinats actual physical coordinates.</span>
 <span class="sd">    reset_library: bool, optional</span>
@@ -338,6 +340,37 @@
 <span class="sd">        The name of technology library to be attached to the resetted library.</span>
 <span class="sd">    gds_filename: str, optional</span>
 <span class="sd">        If specified, export a gds file with the filename provided.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.database import Design</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">    &gt;&gt;&gt; # Create a design.</span>
+<span class="sd">    &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; # Create layout objects.</span>
+<span class="sd">    &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">    &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
+<span class="sd">    &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; # Add the layout objects to the design object.</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(r0)</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(p0)</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(i0)</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(t0)</span>
+<span class="sd">    &gt;&gt;&gt; #</span>
+<span class="sd">    &gt;&gt;&gt; # Export to magic tcl.</span>
+<span class="sd">    &gt;&gt;&gt; lib = laygo2.object.database.Library(name=&quot;mylib&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; lib.append(dsn)</span>
+<span class="sd">    &gt;&gt;&gt; scr = laygo2.interface.magic.export(lib, filename=&quot;myscript.tcl&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; print(scr)</span>
+<span class="sd">    (definitions of laygo2 tcl functions)</span>
+<span class="sd">    # exporting mylib__mycell</span>
+<span class="sd">    _laygo2_create_layout ./magic_layout/mylib mylib_mycell None</span>
+<span class="sd">    _laygo2_generate_rect M1 { { 0.0  0.0  } { 100.0  100.0  } } ; # for the Rect object NoName_0</span>
+<span class="sd">    _laygo2_generate_pin P M1 { { 0.0  0.0  } { 50.0  50.0  } }  ; # for the Pin object P</span>
+<span class="sd">    _laygo2_generate_instance I0 ./magic_layout/tlib tlib_t0 { 0.0  0.0  } R0 1 1 0 0 ; # for the Instance object I0</span>
+<span class="sd">    save</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -364,13 +397,14 @@
             <span class="n">cmd</span> <span class="o">+=</span> <span class="n">_translate_obj</span><span class="p">(</span><span class="n">libpath</span><span class="p">,</span> <span class="n">objname</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">)</span>
         <span class="n">cmd</span> <span class="o">+=</span> <span class="s2">&quot;save</span><span class="se">\n</span><span class="s2">&quot;</span>
     
-    <span class="c1"># gds export</span>
+    <span class="c1"># optional gds export</span>
     <span class="k">if</span> <span class="n">gds_filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">cmd</span> <span class="o">+=</span> <span class="s2">&quot;gds write &quot;</span><span class="o">+</span><span class="n">gds_filename</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
 
     <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># export to a file.</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+
     <span class="k">return</span> <span class="n">cmd</span></div>
 </pre></div>
 

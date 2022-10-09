@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>laygo2.interface package &#8212; laygo2</title>
+    <title>laygo2.interface.gdspy module &#8212; laygo2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -32,8 +32,8 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="laygo2.interface.bag module" href="laygo2.interface.bag.html" />
-    <link rel="prev" title="export_to_template() method" href="laygo2.object.database.Design.export_to_template.html" />
+    <link rel="next" title="laygo2.interface.magic module" href="laygo2.interface.magic.html" />
+    <link rel="prev" title="laygo2.interface.skillbridge module" href="laygo2.interface.skillbridge.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -364,7 +364,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="laygo2.interface.html">
    laygo2.interface package
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -372,7 +372,7 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="laygo2.interface.bag.html">
      laygo2.interface.bag module
@@ -388,8 +388,8 @@
      laygo2.interface.skillbridge module
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="laygo2.interface.gdspy.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      laygo2.interface.gdspy module
     </a>
    </li>
@@ -449,19 +449,55 @@
               
               <div>
                 
-  <section id="module-laygo2.interface">
-<span id="laygo2-interface-package"></span><h1>laygo2.interface package<a class="headerlink" href="#module-laygo2.interface" title="Permalink to this headline">#</a></h1>
-<p>laygo2 interface package implements all interfaces to external data structure and tools (yaml, gds, skill, skillbridge, bag).</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.interface.bag.html">laygo2.interface.bag module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.interface.skill.html">laygo2.interface.skill module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.interface.skillbridge.html">laygo2.interface.skillbridge module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.interface.gdspy.html">laygo2.interface.gdspy module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.interface.magic.html">laygo2.interface.magic module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.interface.yaml.html">laygo2.interface.yaml module</a></li>
+  <section id="laygo2-interface-gdspy-module">
+<h1>laygo2.interface.gdspy module<a class="headerlink" href="#laygo2-interface-gdspy-module" title="Permalink to this headline">#</a></h1>
+<span class="target" id="module-laygo2.interface.gdspy"></span><p>This module implements interfaces with gds files via gdspy.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="laygo2.interface.gdspy.export">
+<span class="sig-prename descclassname"><span class="pre">laygo2.interface.gdspy.</span></span><span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-09</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layermapfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default.layermap'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">physical_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-09</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logical_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_label_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">svg_filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">png_filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/interface/gdspy.html#export"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.interface.gdspy.export" title="Permalink to this definition">#</a></dt>
+<dd><p>Export a laygo2.object.database.Library object to a gds file via gdspy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<em>laygo2.database.Library</em>) – The library database to exported.</p></li>
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – The name of output gds file.</p></li>
+<li><p><strong>cellname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>List</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>]</em>) – The name(s) of cell(s) to be exported.</p></li>
+<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – The scaling factor between laygo2’s integer coordinats actual physical coordinates.</p></li>
+<li><p><strong>layermapfile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the name of layermap file.</p></li>
+<li><p><strong>physical_unit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><em>optional</em>) – GDS physical unit.</p></li>
+<li><p><strong>logical_unit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><em>optional</em>) – GDS logical unit.</p></li>
+<li><p><strong>pin_label_height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><em>optional</em>) – the height of pin label.</p></li>
+<li><p><strong>svg_filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – If specified, it exports a svg file with the specified filename.</p></li>
+<li><p><strong>svg_filename</strong> – If specified, it exports a png file with the specified filename
+(svg_filename needs to be specified as well).</p></li>
 </ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.database</span> <span class="kn">import</span> <span class="n">Design</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Rect</span><span class="p">,</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">Instance</span><span class="p">,</span> <span class="n">Text</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a design.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;genlib&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create layout objects.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r0</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p0</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;pin&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;P&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i0</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s2">&quot;tlib&quot;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;T&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Add the layout objects to the design object.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Export to a gds file.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">Library</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mylib&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dsn</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">laygo2</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">gds</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;mylayout.gds&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
+</dd></dl>
+
 </section>
 
 
@@ -470,17 +506,17 @@
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="laygo2.object.database.Design.export_to_template.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="laygo2.interface.skillbridge.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">export_to_template() method</p>
+            <p class="prev-next-title">laygo2.interface.skillbridge module</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="laygo2.interface.bag.html" title="next page">
+    <a class='right-next' id="next-link" href="laygo2.interface.magic.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">laygo2.interface.bag module</p>
+        <p class="prev-next-title">laygo2.interface.magic module</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>laygo2.interface package &#8212; laygo2</title>
+    <title>laygo2.interface.yaml module &#8212; laygo2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -32,8 +32,8 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="laygo2.interface.bag module" href="laygo2.interface.bag.html" />
-    <link rel="prev" title="export_to_template() method" href="laygo2.object.database.Design.export_to_template.html" />
+    <link rel="next" title="laygo2.util package" href="laygo2.util.html" />
+    <link rel="prev" title="laygo2.interface.magic module" href="laygo2.interface.magic.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -364,7 +364,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="laygo2.interface.html">
    laygo2.interface package
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -372,7 +372,7 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="laygo2.interface.bag.html">
      laygo2.interface.bag module
@@ -398,8 +398,8 @@
      laygo2.interface.magic module
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="laygo2.interface.yaml.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      laygo2.interface.yaml module
     </a>
    </li>
@@ -449,19 +449,92 @@
               
               <div>
                 
-  <section id="module-laygo2.interface">
-<span id="laygo2-interface-package"></span><h1>laygo2.interface package<a class="headerlink" href="#module-laygo2.interface" title="Permalink to this headline">#</a></h1>
-<p>laygo2 interface package implements all interfaces to external data structure and tools (yaml, gds, skill, skillbridge, bag).</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.interface.bag.html">laygo2.interface.bag module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.interface.skill.html">laygo2.interface.skill module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.interface.skillbridge.html">laygo2.interface.skillbridge module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.interface.gdspy.html">laygo2.interface.gdspy module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.interface.magic.html">laygo2.interface.magic module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.interface.yaml.html">laygo2.interface.yaml module</a></li>
+  <section id="laygo2-interface-yaml-module">
+<h1>laygo2.interface.yaml module<a class="headerlink" href="#laygo2-interface-yaml-module" title="Permalink to this headline">#</a></h1>
+<span class="target" id="module-laygo2.interface.yaml"></span><p>This module implements interfaces with yaml files.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="laygo2.interface.yaml.export_template">
+<span class="sig-prename descclassname"><span class="pre">laygo2.interface.yaml.</span></span><span class="sig-name descname"><span class="pre">export_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'append'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/interface/yaml.html#export_template"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.interface.yaml.export_template" title="Permalink to this definition">#</a></dt>
+<dd><p>Export a template to a yaml file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>template</strong> (<a class="reference internal" href="laygo2.object.template.Template.html#laygo2.object.template.Template" title="laygo2.object.template.Template"><em>laygo2.object.template.Template</em></a>) – The template object to be exported.</p></li>
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The name of the yaml file.</p></li>
+<li><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – If ‘append’, it adds the template entry without erasing the
+preexisting file.</p></li>
 </ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.template</span> <span class="kn">import</span> <span class="n">NativeInstanceTemplate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>                 <span class="n">netname</span><span class="o">=</span><span class="s1">&#39;i&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;o&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>                 <span class="n">netname</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nt</span> <span class="o">=</span> <span class="n">NativeInstanceTemplate</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;mytemp&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                                <span class="n">bbox</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">pins</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">laygo2</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">yaml</span><span class="o">.</span><span class="n">export_template</span><span class="p">(</span><span class="n">nt</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;mytemplates.yaml&quot;</span><span class="p">)</span>
+<span class="go">Your design was translated into YAML format.</span>
+<span class="go">{&#39;mylib&#39;: {</span>
+<span class="go">    &#39;mytemp&#39;: {</span>
+<span class="go">        &#39;libname&#39;: &#39;mylib&#39;,</span>
+<span class="go">        &#39;cellname&#39;: &#39;mytemp&#39;,</span>
+<span class="go">        &#39;bbox&#39;: [[0, 0], [100, 100]],</span>
+<span class="go">        &#39;pins&#39;: {</span>
+<span class="go">            &#39;i&#39;: {</span>
+<span class="go">                &#39;xy&#39;: [[0, 0], [10, 10]],</span>
+<span class="go">                &#39;layer&#39;: [&#39;M1&#39;, &#39;drawing&#39;],</span>
+<span class="go">                &#39;name&#39;: None,</span>
+<span class="go">                &#39;netname&#39;: &#39;i&#39;</span>
+<span class="go">                },</span>
+<span class="go">            &#39;o&#39;: {</span>
+<span class="go">                &#39;xy&#39;: [[90, 90], [100, 100]],</span>
+<span class="go">                &#39;layer&#39;: [&#39;M1&#39;, &#39;drawing&#39;],</span>
+<span class="go">                &#39;name&#39;: None,</span>
+<span class="go">                &#39;netname&#39;: &#39;o&#39;</span>
+<span class="go">}}}}}</span>
+</pre></div>
 </div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="laygo2.interface.yaml.import_template">
+<span class="sig-prename descclassname"><span class="pre">laygo2.interface.yaml.</span></span><span class="sig-name descname"><span class="pre">import_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/interface/yaml.html#import_template"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.interface.yaml.import_template" title="Permalink to this definition">#</a></dt>
+<dd><p>Import templates from a yaml file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The name of the yaml file.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.template</span> <span class="kn">import</span> <span class="n">NativeInstanceTemplate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>                 <span class="n">netname</span><span class="o">=</span><span class="s1">&#39;i&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;o&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;drawing&#39;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>                 <span class="n">netname</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nt</span> <span class="o">=</span> <span class="n">NativeInstanceTemplate</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;mytemp&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                                <span class="n">bbox</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">pins</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">laygo2</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">yaml</span><span class="o">.</span><span class="n">export_template</span><span class="p">(</span><span class="n">nt</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;mytemplates.yaml&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import the template back to python.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_tlib</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">yaml</span><span class="o">.</span><span class="n">import_template</span><span class="p">(</span><span class="s2">&quot;mytemplates.yaml&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">my_tlib</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.database.TemplateLibrary object at 0x000001FE3440A410&gt;</span>
+<span class="go">    name: mylib,</span>
+<span class="go">    params: None</span>
+<span class="go">    elements: {</span>
+<span class="go">        &#39;mytemp&#39;: &lt;laygo2.object.template.NativeInstanceTemplate object at 0x000001FE3440A2C0&gt;</span>
+<span class="go">    }</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </section>
 
 
@@ -470,17 +543,17 @@
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="laygo2.object.database.Design.export_to_template.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="laygo2.interface.magic.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">export_to_template() method</p>
+            <p class="prev-next-title">laygo2.interface.magic module</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="laygo2.interface.bag.html" title="next page">
+    <a class='right-next' id="next-link" href="laygo2.util.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">laygo2.interface.bag module</p>
+        <p class="prev-next-title">laygo2.util package</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

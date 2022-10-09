@@ -210,8 +210,8 @@
     <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;str: BaseDatabase object name.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; base = laygo2.object.database.BaseDatabase(name=&quot;mycell&quot;) </span>
 <span class="sd">    &gt;&gt;&gt; base.name </span>
@@ -225,8 +225,8 @@
     <span class="n">params</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;dict or None: Dictionary containing parameters of BaseDatabase object.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; base = laygo2.object.database.BaseDatabase(name=&quot;mycell&quot;,</span>
 <span class="sd">                   params={&#39;ivdd&#39;: 0.001}) </span>
@@ -241,8 +241,8 @@
     <span class="n">elements</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;dict: Dictionary containing its element objects.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -276,8 +276,8 @@
 <span class="sd">    int: A unique number used as the name of an unnamed object belonging to </span>
 <span class="sd">    the database.    </span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -303,8 +303,8 @@
     <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Keys of elements.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -340,8 +340,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        dict_items</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -380,8 +380,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.object.physical : corresponding object.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -426,8 +426,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        list</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -465,8 +465,8 @@
 <span class="sd">        list : </span>
 <span class="sd">            A list containing the name of item and the item itself ([item.name, item]).</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -529,8 +529,8 @@
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Iterator function. Directly mapped to its elements.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -591,8 +591,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.object.BaseDatabase</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; base = laygo2.object.database.BaseDatabase(name=&#39;mycell&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; print(base)</span>
@@ -623,8 +623,8 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Library class implements the library management function.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; lib = laygo2.object.database.Library(name=&quot;mylib&quot;)</span>
 <span class="sd">    &gt;&gt;&gt; dsn0 = laygo2.object.database.Design(name=&quot;mycell0&quot;)</span>
@@ -640,7 +640,7 @@
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    laygo2.object.databse.Design: Check for more comprehensive examples.</span>
+<span class="sd">    laygo2.object.databse.Design: Check for more comprehensive Example.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -659,8 +659,8 @@
     <span class="n">libname</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_libname</span><span class="p">,</span> <span class="n">set_libname</span><span class="p">)</span>
     <span class="sd">&quot;&quot;&quot;str: The name of library.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; lib = laygo2.object.database.Library(name=&#39;mylib&#39;) </span>
 <span class="sd">    &gt;&gt;&gt; print(lib.name) </span>
@@ -671,7 +671,7 @@
 <span class="sd">    **(Korean)** Library 객체의 이름.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Library.append"><a class="viewcode-back" href="../../../laygo2.object.database.Library.append.html#laygo2.object.database.Library.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<div class="viewcode-block" id="Library.append"><a class="viewcode-back" href="../../../laygo2.object.database.Library.html#laygo2.object.database.Library.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
             <span class="n">item_name_list</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="n">item_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -701,8 +701,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.object.Library</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; lib = laygo2.object.database.Library(name=&#39;mylib&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; print(lib)</span>
@@ -743,8 +743,8 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Design class implements the design management function.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 
 <span class="sd">    A physical (non-abstract) grid example:</span>
 
@@ -960,8 +960,8 @@
     <span class="n">libname</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_libname</span><span class="p">,</span> <span class="n">set_libname</span><span class="p">)</span>
     <span class="sd">&quot;&quot;&quot;str: Library name of Design object.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; dsn = laygo2.object.database.Design(name=&quot;dsn&quot;, libname=&quot;testlib&quot;) </span>
 <span class="sd">    &gt;&gt;&gt; print(dsn.libname) </span>
@@ -981,8 +981,8 @@
     <span class="n">cellname</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_cellname</span><span class="p">,</span> <span class="n">set_cellname</span><span class="p">)</span>
     <span class="sd">&quot;&quot;&quot;str: Cell name of Design object.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; dsn = laygo2.object.database.Design(name=&quot;dsn&quot;, libname=&quot;testlib&quot;) </span>
 <span class="sd">    &gt;&gt;&gt; print(dsn.cellname) </span>
@@ -997,8 +997,8 @@
     <span class="sd">&quot;&quot;&quot;dict: Dictionary containing Rectangle object affiliated with the </span>
 <span class="sd">    Design object.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.database import Design</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -1019,8 +1019,8 @@
     <span class="sd">&quot;&quot;&quot;dict: Dictionary having the collection of Pin objects affiliated </span>
 <span class="sd">    with the Design object.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.database import Design</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -1038,8 +1038,8 @@
     <span class="n">texts</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;dict: Dictionary containing Text objects affiliated with Design object.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.database import Design</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -1057,8 +1057,8 @@
     <span class="n">instances</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;dict: Dictionary containing Instance objects affiliated with Design object.</span>
 
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.database import Design</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -1089,8 +1089,8 @@
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Iterator function. Directly mapped to its elements.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.database import Design</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -1130,8 +1130,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.object.BaseDatabase</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; dsn = laygo2.object.database.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;)</span>
 <span class="sd">        &gt;&gt;&gt; print(dsn)</span>
@@ -1178,8 +1178,8 @@
 <span class="sd">        list : </span>
 <span class="sd">            A list containing the name of item and the item itself ([item.name, item]).</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.database import Design</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -1292,8 +1292,8 @@
 <span class="sd">        laygo2.object.physical.Instance or laygo2.object.physical.VirtualInstance :</span>
 <span class="sd">            The placed instance.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, PlacementGrid</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.database import Design</span>
@@ -1409,8 +1409,8 @@
 <span class="sd">            Check the example code in laygo2.object.grid.RoutingGrid.route </span>
 <span class="sd">            for details.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -1512,8 +1512,8 @@
 <span class="sd">        list(physical.PhysicalObject):</span>
 <span class="sd">            The list containing the generated via objects.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -1614,8 +1614,8 @@
 <span class="sd">            The list containing the generated routing objects;</span>
 <span class="sd">            The last object corresponds to the routing object on the track.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -1732,8 +1732,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.physical.Pin: The generated pin object.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
@@ -1827,8 +1827,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.NativeInstanceTemplate: The generated template object.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.database import Design</span>
 <span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
@@ -1889,8 +1889,8 @@
 <span class="sd">        -------</span>
 <span class="sd">        list: The list containing the matched Physical objects.</span>
 
-<span class="sd">        Examples</span>
-<span class="sd">        --------</span>
+<span class="sd">        Example</span>
+<span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; dsn    = laygo2.object.Design(name=&#39;dsn&#39;, libname=&quot;testlib&quot;)</span>
 <span class="sd">        &gt;&gt;&gt; rect0  = laygo2.object.Rect(xy=[[0, 0], [100, 100]], layer=[‘M1’, ‘drawing’]……)</span>
 <span class="sd">        &gt;&gt;&gt; pin0   = laygo2.object.Pin(xy=[[0, 0], [100, 100]], layer=[‘M1’, ‘pin’]……)</span>

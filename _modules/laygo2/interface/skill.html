@@ -213,7 +213,7 @@
     <span class="n">fmt_str</span> <span class="o">=</span> <span class="s2">&quot;%.&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">log10</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;f&quot;</span>  <span class="c1"># for truncations</span>
     <span class="c1"># convert to exponentail expression</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">fmt_str</span> <span class="o">%</span> <span class="p">(</span><span class="n">value</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">exp</span><span class="p">)</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;e&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">exp</span><span class="p">))</span> 
+    <span class="k">return</span> <span class="n">fmt_str</span> <span class="o">%</span> <span class="p">(</span><span class="n">value</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">exp</span><span class="p">)</span> <span class="o">*</span> <span class="n">scale</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;e&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">exp</span><span class="p">))</span>
 
 
 <span class="k">def</span> <span class="nf">_py2skill_list</span><span class="p">(</span><span class="n">pylist</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
@@ -225,7 +225,7 @@
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>  <span class="c1"># nested list</span>
             <span class="n">list_str</span> <span class="o">+=</span> <span class="n">_py2skill_list</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-            <span class="n">list_str</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2"> &quot;</span>
+            <span class="n">list_str</span> <span class="o">+=</span> <span class="s1">&#39;&quot;&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&quot; &#39;</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">item</span><span class="p">:</span>
                 <span class="n">list_str</span> <span class="o">+=</span> <span class="s2">&quot;t &quot;</span>
@@ -248,10 +248,10 @@
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>  <span class="c1"># nested list</span>
             <span class="n">list_str</span> <span class="o">+=</span> <span class="n">_py2skill_inst_params_list</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-            <span class="n">list_str</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2"> &quot;</span>
+            <span class="n">list_str</span> <span class="o">+=</span> <span class="s1">&#39;&quot;&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&quot; &#39;</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
             <span class="n">list_str</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-            <span class="c1">#list_str += _py2skill_float(item, scale) + &quot; &quot;  </span>
+            <span class="c1"># list_str += _py2skill_float(item, scale) + &quot; &quot;</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">item</span><span class="p">:</span>
                 <span class="n">list_str</span> <span class="o">+=</span> <span class="s2">&quot;t &quot;</span>
@@ -260,7 +260,7 @@
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">):</span>
             <span class="c1"># fmt_str = &quot;%.&quot;+&quot;%d&quot; % (-1*log10(scale)+1)+&quot;f &quot;  # for truncations</span>
             <span class="c1"># list_str += fmt_str%(item*scale) + &quot; &quot;</span>
-            <span class="c1">#list_str += _py2skill_number(item, 1) + &quot; &quot;  # do not scale integers</span>
+            <span class="c1"># list_str += _py2skill_number(item, 1) + &quot; &quot;  # do not scale integers</span>
             <span class="n">list_str</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>  <span class="c1"># do not scale integers</span>
     <span class="n">list_str</span> <span class="o">+=</span> <span class="s2">&quot;)&quot;</span>
     <span class="k">return</span> <span class="n">list_str</span>
@@ -288,22 +288,31 @@
 <span class="sd">    offset : np.array([int, int])</span>
 <span class="sd">        Offsets to obj.xy</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">master</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  
+    <span class="k">if</span> <span class="n">master</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">mxy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-        <span class="n">mtf</span> <span class="o">=</span> <span class="s1">&#39;R0&#39;</span>
-    <span class="k">else</span><span class="p">:</span> <span class="c1"># if the translated object has a master (e.g. VirtualInstance)</span>
+        <span class="n">mtf</span> <span class="o">=</span> <span class="s2">&quot;R0&quot;</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># if the translated object has a master (e.g. VirtualInstance)</span>
         <span class="n">mxy</span> <span class="o">=</span> <span class="n">master</span><span class="o">.</span><span class="n">xy</span>
         <span class="n">mtf</span> <span class="o">=</span> <span class="n">master</span><span class="o">.</span><span class="n">transform</span>
     <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">Rect</span><span class="p">:</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">color</span> <span class="c1"># coloring func. added</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">color</span>  <span class="c1"># coloring func. added</span>
         <span class="c1"># Invoke _laygo2_generate_rect( cv layer bbox ) in {header_filename}</span>
         <span class="n">_xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># make sure obj.xy is sorted</span>
-        <span class="n">_xy</span> <span class="o">=</span> <span class="n">mxy</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">_xy</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="n">obj</span><span class="o">.</span><span class="n">hextension</span><span class="p">,</span> <span class="o">-</span><span class="n">obj</span><span class="o">.</span><span class="n">vextension</span><span class="p">],</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">hextension</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">vextension</span><span class="p">]]),</span>
-                           <span class="n">tf</span><span class="o">.</span><span class="n">Mt</span><span class="p">(</span><span class="n">mtf</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-        <span class="c1">#_xy = mxy + np.dot(obj.xy + np.array([[-obj.hextension, -obj.vextension], [obj.hextension, obj.vextension]]),</span>
+        <span class="n">_xy</span> <span class="o">=</span> <span class="n">mxy</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span>
+            <span class="n">_xy</span>
+            <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">[[</span><span class="o">-</span><span class="n">obj</span><span class="o">.</span><span class="n">hextension</span><span class="p">,</span> <span class="o">-</span><span class="n">obj</span><span class="o">.</span><span class="n">vextension</span><span class="p">],</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">hextension</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">vextension</span><span class="p">]]</span>
+            <span class="p">),</span>
+            <span class="n">tf</span><span class="o">.</span><span class="n">Mt</span><span class="p">(</span><span class="n">mtf</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># _xy = mxy + np.dot(obj.xy + np.array([[-obj.hextension, -obj.vextension], [obj.hextension, obj.vextension]]),</span>
         <span class="c1">#                   tf.Mt(mtf).T)</span>
-        <span class="k">return</span> <span class="s2">&quot;_laygo2_generate_rect(cv, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">) ; for the Rect object </span><span class="si">%s</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> \
-               <span class="o">%</span> <span class="p">(</span><span class="n">_py2skill_list</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">layer</span><span class="p">),</span> <span class="n">_py2skill_list</span><span class="p">(</span><span class="n">_xy</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">),</span> <span class="n">color</span><span class="p">,</span> <span class="n">objname</span><span class="p">)</span> <span class="c1"># coloring func. added</span>
+        <span class="k">return</span> <span class="s1">&#39;_laygo2_generate_rect(cv, </span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">, &quot;</span><span class="si">%s</span><span class="s1">&quot;) ; for the Rect object </span><span class="si">%s</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="n">_py2skill_list</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">layer</span><span class="p">),</span>
+            <span class="n">_py2skill_list</span><span class="p">(</span><span class="n">_xy</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">),</span>
+            <span class="n">color</span><span class="p">,</span>
+            <span class="n">objname</span><span class="p">,</span>
+        <span class="p">)</span>  <span class="c1"># coloring func. added</span>
     <span class="k">elif</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">Path</span><span class="p">:</span>
         <span class="c1"># TODO: implement path export function.</span>
         <span class="k">pass</span>
@@ -315,9 +324,15 @@
         <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">_obj</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="n">_objelem</span><span class="p">):</span>
             <span class="c1"># Invoke _laygo2_generate_pin(cv, name, layer, bbox) in {header_filename}</span>
             <span class="n">_xy</span> <span class="o">=</span> <span class="n">mxy</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">_obj</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">Mt</span><span class="p">(</span><span class="n">mtf</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-            <span class="k">return</span> <span class="s2">&quot;_laygo2_generate_pin(cv, </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2"> ) ; for the Pin object </span><span class="si">%s</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> \
-                   <span class="o">%</span> <span class="p">(</span><span class="n">_obj</span><span class="o">.</span><span class="n">netname</span><span class="p">,</span> <span class="n">_py2skill_list</span><span class="p">(</span><span class="n">_obj</span><span class="o">.</span><span class="n">layer</span><span class="p">),</span> <span class="n">_py2skill_list</span><span class="p">(</span><span class="n">_xy</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">),</span>
-                      <span class="n">objname</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="s1">&#39;_laygo2_generate_pin(cv, &quot;</span><span class="si">%s</span><span class="s1">&quot;, </span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1"> ) ; for the Pin object </span><span class="si">%s</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span>
+                <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">_obj</span><span class="o">.</span><span class="n">netname</span><span class="p">,</span>
+                    <span class="n">_py2skill_list</span><span class="p">(</span><span class="n">_obj</span><span class="o">.</span><span class="n">layer</span><span class="p">),</span>
+                    <span class="n">_py2skill_list</span><span class="p">(</span><span class="n">_xy</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">),</span>
+                    <span class="n">objname</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
     <span class="k">elif</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">Text</span><span class="p">:</span>
         <span class="c1"># TODO: implement text export function.</span>
         <span class="k">pass</span>
@@ -325,9 +340,9 @@
         <span class="c1"># Invoke _laygo2_generate_instance( cv name libname cellname viewname loc orient num_rows num_cols</span>
         <span class="c1"># sp_rows sp_cols params params_order )</span>
         <span class="n">_xy</span> <span class="o">=</span> <span class="n">mxy</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">Mt</span><span class="p">(</span><span class="n">mtf</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">master</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  
+        <span class="k">if</span> <span class="n">master</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">transform</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">transform</span>
-        <span class="k">else</span><span class="p">:</span> <span class="c1"># if the translated object has a master (e.g. VirtualInstance)</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># if the translated object has a master (e.g. VirtualInstance)</span>
             <span class="n">transform</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">transform</span><span class="p">,</span> <span class="n">master</span><span class="o">.</span><span class="n">transform</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">num_rows</span> <span class="o">=</span> <span class="mi">1</span>
@@ -342,37 +357,61 @@
         <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">inst_params</span> <span class="o">=</span> <span class="s2">&quot;nil&quot;</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">inst_params</span> <span class="o">=</span> <span class="n">_py2skill_inst_params</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;pcell_params&#39;</span><span class="p">])</span>
-            <span class="c1">#inst_params = _py2skill_list([[&quot;Wfg&quot;, &quot;string&quot;, &quot;500n&quot;], [&quot;fingers&quot;, &quot;string&quot;, &quot;4&quot;], [&quot;l&quot;, &quot;string&quot;, &quot;500n&quot;]])</span>
-        <span class="k">return</span> <span class="s2">&quot;_laygo2_generate_instance(cv, </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">, </span><span class="si">%d</span><span class="s2">, </span><span class="si">%d</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">) &quot;</span> \
-               <span class="s2">&quot;; for the Instance object </span><span class="si">%s</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> \
-               <span class="o">%</span> <span class="p">(</span><span class="n">objname</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">libname</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">cellname</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">viewname</span><span class="p">,</span> <span class="n">_py2skill_list</span><span class="p">(</span><span class="n">_xy</span><span class="p">),</span> <span class="n">transform</span><span class="p">,</span>
-                  <span class="n">num_rows</span><span class="p">,</span> <span class="n">num_cols</span><span class="p">,</span> <span class="n">sp_rows</span><span class="p">,</span> <span class="n">sp_cols</span><span class="p">,</span> <span class="n">inst_params</span><span class="p">,</span> <span class="s2">&quot;nil&quot;</span><span class="p">,</span> <span class="n">objname</span><span class="p">)</span>
+            <span class="n">inst_params</span> <span class="o">=</span> <span class="n">_py2skill_inst_params</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;pcell_params&quot;</span><span class="p">])</span>
+            <span class="c1"># inst_params = _py2skill_list([[&quot;Wfg&quot;, &quot;string&quot;, &quot;500n&quot;], [&quot;fingers&quot;, &quot;string&quot;, &quot;4&quot;], [&quot;l&quot;, &quot;string&quot;, &quot;500n&quot;]])</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="s1">&#39;_laygo2_generate_instance(cv, &quot;</span><span class="si">%s</span><span class="s1">&quot;, &quot;</span><span class="si">%s</span><span class="s1">&quot;, &quot;</span><span class="si">%s</span><span class="s1">&quot;, &quot;</span><span class="si">%s</span><span class="s1">&quot;, </span><span class="si">%s</span><span class="s1">, &quot;</span><span class="si">%s</span><span class="s1">&quot;, </span><span class="si">%d</span><span class="s1">, </span><span class="si">%d</span><span class="s1">, </span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">) &#39;</span>
+            <span class="s2">&quot;; for the Instance object </span><span class="si">%s</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">%</span> <span class="p">(</span>
+                <span class="n">objname</span><span class="p">,</span>
+                <span class="n">obj</span><span class="o">.</span><span class="n">libname</span><span class="p">,</span>
+                <span class="n">obj</span><span class="o">.</span><span class="n">cellname</span><span class="p">,</span>
+                <span class="n">obj</span><span class="o">.</span><span class="n">viewname</span><span class="p">,</span>
+                <span class="n">_py2skill_list</span><span class="p">(</span><span class="n">_xy</span><span class="p">),</span>
+                <span class="n">transform</span><span class="p">,</span>
+                <span class="n">num_rows</span><span class="p">,</span>
+                <span class="n">num_cols</span><span class="p">,</span>
+                <span class="n">sp_rows</span><span class="p">,</span>
+                <span class="n">sp_cols</span><span class="p">,</span>
+                <span class="n">inst_params</span><span class="p">,</span>
+                <span class="s2">&quot;nil&quot;</span><span class="p">,</span>
+                <span class="n">objname</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
     <span class="k">elif</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">VirtualInstance</span><span class="p">:</span>
         <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">elem_name</span><span class="p">,</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">native_elements</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">elem</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">Pin</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-                        <span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;NoName&#39;</span>
+                        <span class="n">obj</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;NoName&quot;</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="k">pass</span>
-                    <span class="n">cmd</span> <span class="o">+=</span> <span class="n">_translate_obj</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">elem_name</span><span class="p">,</span> <span class="n">elem</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="n">obj</span><span class="p">)</span>
+                    <span class="n">cmd</span> <span class="o">+=</span> <span class="n">_translate_obj</span><span class="p">(</span>
+                        <span class="n">obj</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">elem_name</span><span class="p">,</span> <span class="n">elem</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="n">obj</span>
+                    <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>  <span class="c1"># arrayed VirtualInstance</span>
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ndindex</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">tolist</span><span class="p">())):</span>  <span class="c1"># iterate over obj.shape</span>
                 <span class="k">for</span> <span class="n">elem_name</span><span class="p">,</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">native_elements</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                     <span class="k">if</span> <span class="ow">not</span> <span class="n">elem</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">Pin</span><span class="p">:</span>
-                        <span class="n">cmd</span> <span class="o">+=</span> <span class="n">_translate_obj</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">elem_name</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span> 
-                                              <span class="n">elem</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="n">obj</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>            
+                        <span class="n">cmd</span> <span class="o">+=</span> <span class="n">_translate_obj</span><span class="p">(</span>
+                            <span class="n">obj</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">elem_name</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span>
+                            <span class="n">elem</span><span class="p">,</span>
+                            <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span>
+                            <span class="n">master</span><span class="o">=</span><span class="n">obj</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span>
+                        <span class="p">)</span>
         <span class="k">return</span> <span class="n">cmd</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">translate_to_skill</span><span class="p">()</span>  <span class="c1">#</span>
 
     <span class="k">return</span> <span class="s2">&quot;&quot;</span>
 
-<div class="viewcode-block" id="export"><a class="viewcode-back" href="../../../laygo2.interface.html#laygo2.interface.skill.export">[docs]</a><span class="k">def</span> <span class="nf">export</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">reset_library</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tech_library</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="export"><a class="viewcode-back" href="../../../laygo2.interface.skill.html#laygo2.interface.skill.export">[docs]</a><span class="k">def</span> <span class="nf">export</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">reset_library</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tech_library</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Export design(s) to skill code.</span>
+<span class="sd">    Export a laygo2.object.database.Library object to skill code.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -391,30 +430,72 @@
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    str: the string object contains corresponding skill scripts.</span>
+<span class="sd">    str: The generated skill script.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.database import Design</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
+<span class="sd">    &gt;&gt;&gt; # Create a design.</span>
+<span class="sd">    &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; # Create layout objects.</span>
+<span class="sd">    &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
+<span class="sd">    &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
+<span class="sd">    &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; # Add the layout objects to the design object.</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(r0)</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(p0)</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(i0)</span>
+<span class="sd">    &gt;&gt;&gt; dsn.append(t0)</span>
+<span class="sd">    &gt;&gt;&gt; #</span>
+<span class="sd">    &gt;&gt;&gt; # Export to skill.</span>
+<span class="sd">    &gt;&gt;&gt; lib = laygo2.object.database.Library(name=&quot;mylib&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; lib.append(dsn)</span>
+<span class="sd">    &gt;&gt;&gt; scr = laygo2.interface.skill.export(lib, filename=&quot;myscript.il&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; print(scr)</span>
+<span class="sd">    ; (definitions of laygo2 skill functions)</span>
+<span class="sd">    ; exporting mylib__mycell</span>
+<span class="sd">    cv = _laygo2_open_layout(&quot;mylib&quot; &quot;mycell&quot; &quot;layout&quot;)</span>
+<span class="sd">    _laygo2_generate_rect(cv, list( &quot;M1&quot; &quot;drawing&quot; ), list( list( 0.0000  0.0000  ) list( 0.1000  0.1000  ) ), &quot;None&quot;)</span>
+<span class="sd">    _laygo2_generate_pin(cv, &quot;P&quot;, list( &quot;M1&quot; &quot;pin&quot; ), list( list( 0.0000  0.0000  ) list( 0.0500  0.0500  ) ) )</span>
+<span class="sd">    _laygo2_generate_instance(cv, &quot;I0&quot;, &quot;tlib&quot;, &quot;t0&quot;, &quot;layout&quot;, list( 0.0000  0.0000  ), &quot;R0&quot;, 1, 1, 0, 0, nil, nil)</span>
+<span class="sd">    _laygo2_save_and_close_layout(cv)</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># parse header functions.</span>
     <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;; laygo2 layout export skill script.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
     <span class="kn">import</span> <span class="nn">os</span>
-    <span class="n">header_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">laygo2</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)[:</span><span class="o">-</span><span class="mi">11</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;skill_export.il&#39;</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">header_filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">cmd</span> <span class="o">+=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
 
-    <span class="n">cellname</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">cellname</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">cellname</span>  <span class="c1"># export all cells if cellname is not given.</span>
-    <span class="n">cellname</span> <span class="o">=</span> <span class="p">[</span><span class="n">cellname</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cellname</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">cellname</span>  <span class="c1"># convert to a list for iteration.</span>
+    <span class="n">header_filename</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">laygo2</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)[:</span><span class="o">-</span><span class="mi">11</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;skill_export.il&quot;</span>
+    <span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">header_filename</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">cmd</span> <span class="o">+=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">cmd</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+    <span class="n">cellname</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">cellname</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">cellname</span>
+    <span class="p">)</span>  <span class="c1"># export all cells if cellname is not given.</span>
+    <span class="n">cellname</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">[</span><span class="n">cellname</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cellname</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">cellname</span>
+    <span class="p">)</span>  <span class="c1"># convert to a list for iteration.</span>
     <span class="k">if</span> <span class="n">reset_library</span><span class="p">:</span>
-        <span class="n">cmd</span> <span class="o">+=</span> <span class="s2">&quot;_laygo2_reset_library(</span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2"> </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">tech_library</span><span class="p">)</span>
+        <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39;_laygo2_reset_library(&quot;</span><span class="si">%s</span><span class="s1">&quot; &quot;</span><span class="si">%s</span><span class="s1">&quot;)</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">tech_library</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">cn</span> <span class="ow">in</span> <span class="n">cellname</span><span class="p">:</span>
         <span class="n">cmd</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">; exporting </span><span class="si">%s</span><span class="s2">__</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">cn</span><span class="p">)</span>  <span class="c1"># open the design.</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Export_to_SKILL: Cellname:&#39;</span> <span class="o">+</span> <span class="n">cn</span><span class="p">)</span>
-        <span class="c1">#cmd += &quot;let( (cv) \n&quot;  # limit the scope of cv. Disabled to prevent overflow.</span>
-        <span class="n">cmd</span> <span class="o">+=</span> <span class="s2">&quot;cv = _laygo2_open_layout(</span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2"> </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2"> </span><span class="se">\&quot;</span><span class="s2">layout</span><span class="se">\&quot;</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">cn</span><span class="p">)</span>  <span class="c1"># open the design.</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Export_to_SKILL: Cellname:&quot;</span> <span class="o">+</span> <span class="n">cn</span><span class="p">)</span>
+        <span class="c1"># cmd += &quot;let( (cv) \n&quot;  # limit the scope of cv. Disabled to prevent overflow.</span>
+        <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39;cv = _laygo2_open_layout(&quot;</span><span class="si">%s</span><span class="s1">&quot; &quot;</span><span class="si">%s</span><span class="s1">&quot; &quot;layout&quot;)</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">cn</span><span class="p">,</span>
+        <span class="p">)</span>  <span class="c1"># open the design.</span>
         <span class="c1"># export objects</span>
         <span class="k">for</span> <span class="n">objname</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">db</span><span class="p">[</span><span class="n">cn</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="n">cmd</span> <span class="o">+=</span> <span class="n">_translate_obj</span><span class="p">(</span><span class="n">objname</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">)</span>
         <span class="n">cmd</span> <span class="o">+=</span> <span class="s2">&quot;_laygo2_save_and_close_layout(cv)</span><span class="se">\n</span><span class="s2">&quot;</span>  <span class="c1"># close the layout</span>
-        <span class="c1">#cmd += &quot;);let\n&quot; Disabled to prevent overflow.</span>
+        <span class="c1"># cmd += &quot;);let\n&quot; Disabled to prevent overflow.</span>
     <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># export to a file.</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>

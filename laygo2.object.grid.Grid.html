@@ -363,10 +363,47 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="laygo2.interface.html">
    laygo2.interface package
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="laygo2.interface.bag.html">
+     laygo2.interface.bag module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="laygo2.interface.skill.html">
+     laygo2.interface.skill module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="laygo2.interface.skillbridge.html">
+     laygo2.interface.skillbridge module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="laygo2.interface.gdspy.html">
+     laygo2.interface.gdspy module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="laygo2.interface.magic.html">
+     laygo2.interface.magic module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="laygo2.interface.yaml.html">
+     laygo2.interface.yaml module
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="laygo2.util.html">
@@ -582,7 +619,7 @@ between two-dimensional physical coordinates and abstract coordinates.</p>
 <dd class="field-even"><p><a class="reference internal" href="#laygo2.object.grid.Grid" title="laygo2.object.grid.Grid">laygo2.object.grid.Grid</a></p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -702,7 +739,7 @@ of args.</p>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -780,7 +817,7 @@ corner of obj.</p>
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.h">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">h</span></span><a class="headerlink" href="#laygo2.object.grid.Grid.h" title="Permalink to this definition">#</a></dt>
 <dd><p>OneDimGrid of the y-coordinate system (=self.y).</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -802,7 +839,7 @@ corner of obj.</p>
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.height">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#laygo2.object.grid.Grid.height" title="Permalink to this definition">#</a></dt>
 <dd><p>Height of the region in which the coordinate system is defined.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -824,7 +861,7 @@ corner of obj.</p>
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.height_vec">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height_vec</span></span><a class="headerlink" href="#laygo2.object.grid.Grid.height_vec" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the height vector [0, h].</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -847,7 +884,7 @@ corner of obj.</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">m</span></span><a class="headerlink" href="#laygo2.object.grid.Grid.m" title="Permalink to this definition">#</a></dt>
 <dd><p>One-dimensional _PhyToAbsConverter of
 the x-coordinate system.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -880,7 +917,7 @@ the x-coordinate system.</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mn</span></span><a class="headerlink" href="#laygo2.object.grid.Grid.mn" title="Permalink to this definition">#</a></dt>
 <dd><p>Two-dimensional _PhyToAbsConverter of
 a coordinate system.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -916,7 +953,7 @@ a coordinate system.</p>
 <dt>One-dimensional _PhyToAbsConverter of</dt><dd><p>the y-coordinate system.</p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -968,7 +1005,7 @@ a coordinate system.</p>
 <dt>Region in which the coordinate system is defined.</dt><dd><p>bbox of the respective Grid</p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -993,7 +1030,7 @@ a coordinate system.</p>
 <dt>Two-dimensional element length in a coordinate system.</dt><dd><p>length of x-axis elements, length of y-axis elements</p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -1015,7 +1052,7 @@ a coordinate system.</p>
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.v">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">v</span></span><a class="headerlink" href="#laygo2.object.grid.Grid.v" title="Permalink to this definition">#</a></dt>
 <dd><p>OneDimGrid of the x-coordinate system (=self.x).</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -1040,7 +1077,7 @@ a coordinate system.</p>
 <dt>Width of the region in which the coordinate system is defined.</dt><dd><p>x scope</p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -1065,7 +1102,7 @@ a coordinate system.</p>
 <dt>Return width as a list.</dt><dd><p>length of the respective axis and zero</p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -1090,7 +1127,7 @@ a coordinate system.</p>
 <dt>One-dimensional _AbsToPhyGridConverter</dt><dd><p>of the x-coordinate system.</p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
@@ -1122,7 +1159,7 @@ x좌표계 1차원 _AbsToPhyGridConverter.</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xy</span></span><a class="headerlink" href="#laygo2.object.grid.Grid.xy" title="Permalink to this definition">#</a></dt>
 <dd><p>Two-dimensional
 _AbsToPhyConverter of a coordinate system.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">])</span>
@@ -1155,7 +1192,7 @@ _AbsToPhyConverter of a coordinate system.</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#laygo2.object.grid.Grid.y" title="Permalink to this definition">#</a></dt>
 <dd><p>One-dimensional _AbsToPhyGridConverter
 of the y-coordinate system.</p>
-<p class="rubric">Examples</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>

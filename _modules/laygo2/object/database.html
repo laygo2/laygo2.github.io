@@ -246,17 +246,20 @@
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.database import BaseDatabase</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
-<span class="sd">    &gt;&gt;&gt; # Create a design</span>
+<span class="sd">    &gt;&gt;&gt; # Create a design.</span>
 <span class="sd">    &gt;&gt;&gt; dsn = BaseDatabase(name=&quot;mycell&quot;)</span>
-<span class="sd">    &gt;&gt;&gt; # Create layout objects</span>
+<span class="sd">    &gt;&gt;&gt; # Create layout objects.</span>
 <span class="sd">    &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
 <span class="sd">    &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
 <span class="sd">    &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
 <span class="sd">    &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; # Add layout objects to the design.</span>
 <span class="sd">    &gt;&gt;&gt; dsn.append(r0)</span>
 <span class="sd">    &gt;&gt;&gt; dsn.append(p0)</span>
 <span class="sd">    &gt;&gt;&gt; dsn.append(i0)</span>
 <span class="sd">    &gt;&gt;&gt; dsn.append(t0)</span>
+<span class="sd">    &gt;&gt;&gt; # </span>
+<span class="sd">    &gt;&gt;&gt; # Display elements of the design.</span>
 <span class="sd">    &gt;&gt;&gt; print(dsn.elements) </span>
 <span class="sd">    {&#39;NoName_0&#39;: &lt;laygo2.object.physical.Rect object at 0x0000024C6C230F40&gt;, </span>
 <span class="sd">    &#39;P&#39;: &lt;laygo2.object.physical.Pin object at 0x0000024C6C2EFF40&gt;, </span>
@@ -635,9 +638,14 @@
 <span class="sd">        &#39;mycell0&#39;: &lt;laygo2.object.database.Design object at 0x0000025F2D25B010&gt;, </span>
 <span class="sd">        &#39;mycell1&#39;: &lt;laygo2.object.database.Design object at 0x0000025F2D25BF70&gt;}</span>
 
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    laygo2.object.databse.Design: Check for more comprehensive examples.</span>
+
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    **(Korean)** Library 클래스는 라이브러리 관리 기능을 구현한다.</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Library.get_libname"><a class="viewcode-back" href="../../../laygo2.object.database.Library.html#laygo2.object.database.Library.get_libname">[docs]</a>    <span class="k">def</span> <span class="nf">get_libname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -737,16 +745,20 @@
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+
+<span class="sd">    A physical (non-abstract) grid example:</span>
+
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.database import Design</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect, Pin, Instance, Text</span>
-<span class="sd">    &gt;&gt;&gt; # Create a design</span>
+<span class="sd">    &gt;&gt;&gt; # Create a design.</span>
 <span class="sd">    &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
-<span class="sd">    &gt;&gt;&gt; # Create layout objects</span>
+<span class="sd">    &gt;&gt;&gt; # Create layout objects.</span>
 <span class="sd">    &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
 <span class="sd">    &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
 <span class="sd">    &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
 <span class="sd">    &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; # Add the layout objects to the design object.</span>
 <span class="sd">    &gt;&gt;&gt; dsn.append(r0)</span>
 <span class="sd">    &gt;&gt;&gt; dsn.append(p0)</span>
 <span class="sd">    &gt;&gt;&gt; dsn.append(i0)</span>
@@ -770,6 +782,140 @@
 <span class="sd">        instances:{</span>
 <span class="sd">            &#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x0000024C6C2EFDC0&gt;}</span>
 <span class="sd">        virtual instances:{}</span>
+<span class="sd">    &gt;&gt;&gt; # </span>
+<span class="sd">    &gt;&gt;&gt; # Export to a NativeInstanceTemplate for reuse in higher levels.</span>
+<span class="sd">    &gt;&gt;&gt; nt0 = dsn.export_to_template()</span>
+<span class="sd">    &gt;&gt;&gt; nt0.dsn.export_to_template()</span>
+<span class="sd">    &gt;&gt;&gt; print(nt0)</span>
+<span class="sd">        &lt;laygo2.object.template.NativeInstanceTemplate object at 0x000001CB5A9CE380&gt; </span>
+<span class="sd">        name: mycell, </span>
+<span class="sd">        class: NativeInstanceTemplate,</span>
+<span class="sd">         bbox: [[0, 0], [0, 0]], </span>
+<span class="sd">         pins: {&#39;P&#39;: &lt;laygo2.object.physical.Pin object at 0x000001CB5A9CFF40&gt;},</span>
+<span class="sd">    &gt;&gt;&gt; # </span>
+<span class="sd">    &gt;&gt;&gt; # Export to a skill script.</span>
+<span class="sd">    &gt;&gt;&gt; lib = laygo2.object.database.Library(name=&quot;mylib&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; lib.append(dsn)</span>
+<span class="sd">    &gt;&gt;&gt; scr = laygo2.interface.skill.export(lib, filename=&quot;myscript.il&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; print(scr)</span>
+<span class="sd">    ; (definitions of laygo2 skill functions)</span>
+<span class="sd">    ; exporting mylib__mycell</span>
+<span class="sd">    cv = _laygo2_open_layout(&quot;mylib&quot; &quot;mycell&quot; &quot;layout&quot;)</span>
+<span class="sd">    _laygo2_generate_rect(cv, list( &quot;M1&quot; &quot;drawing&quot; ), list( list( 0.0000  0.0000  ) list( 0.1000  0.1000  ) ), &quot;None&quot;)</span>
+<span class="sd">    _laygo2_generate_pin(cv, &quot;P&quot;, list( &quot;M1&quot; &quot;pin&quot; ), list( list( 0.0000  0.0000  ) list( 0.0500  0.0500  ) ) )</span>
+<span class="sd">    _laygo2_generate_instance(cv, &quot;I0&quot;, &quot;tlib&quot;, &quot;t0&quot;, &quot;layout&quot;, list( 0.0000  0.0000  ), &quot;R0&quot;, 1, 1, 0, 0, nil, nil)</span>
+<span class="sd">    _laygo2_save_and_close_layout(cv)</span>
+<span class="sd">    </span>
+<span class="sd">    An abstract grid example:</span>
+
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMapping as CM</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import CircularMappingArray as CMA</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import OneDimGrid, PlacementGrid, RoutingGrid</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.template import NativeInstanceTemplate</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.database import Design</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Instance</span>
+<span class="sd">    &gt;&gt;&gt; # Placement grid construction (not needed if laygo2_tech is set up).</span>
+<span class="sd">    &gt;&gt;&gt; gx  = OneDimGrid(name=&quot;gx&quot;, scope=[0, 20], elements=[0])</span>
+<span class="sd">    &gt;&gt;&gt; gy  = OneDimGrid(name=&quot;gy&quot;, scope=[0, 100], elements=[0])</span>
+<span class="sd">    &gt;&gt;&gt; gp  = PlacementGrid(name=&quot;test&quot;, vgrid=gx, hgrid=gy)</span>
+<span class="sd">    &gt;&gt;&gt; # Routing grid construction (not needed if laygo2_tech is set up).</span>
+<span class="sd">    &gt;&gt;&gt; gv = OneDimGrid(name=&quot;gv&quot;, scope=[0, 50], elements=[0])</span>
+<span class="sd">    &gt;&gt;&gt; gh = OneDimGrid(name=&quot;gv&quot;, scope=[0, 100], elements=[0, 40, 60])</span>
+<span class="sd">    &gt;&gt;&gt; wv = CM([10])           # vertical (xgrid) width</span>
+<span class="sd">    &gt;&gt;&gt; wh = CM([20, 10, 10])   # horizontal (ygrid) width</span>
+<span class="sd">    &gt;&gt;&gt; ev = CM([10])           # vertical (xgrid) extension</span>
+<span class="sd">    &gt;&gt;&gt; eh = CM([10, 10, 10])   # horizontal (ygrid) extension</span>
+<span class="sd">    &gt;&gt;&gt; e0v = CM([15])          # vert. extension (for zero-length wires)</span>
+<span class="sd">    &gt;&gt;&gt; e0h = CM([15, 15, 15])  # hori. extension (for zero-length wires)</span>
+<span class="sd">    &gt;&gt;&gt; lv = CM([[&#39;M1&#39;, &#39;drawing&#39;]], dtype=object)  # layer information</span>
+<span class="sd">    &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
+<span class="sd">    &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
+<span class="sd">    &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
+<span class="sd">    &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
+<span class="sd">    &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
+<span class="sd">    &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
+<span class="sd">    &gt;&gt;&gt; gr = laygo2.object.grid.RoutingGrid(name=&#39;mygrid&#39;, vgrid=gv, hgrid=gh,</span>
+<span class="sd">                                            vwidth=wv, hwidth=wh,</span>
+<span class="sd">                                            vextension=ev, hextension=eh,</span>
+<span class="sd">                                            vlayer=lv, hlayer=lh,</span>
+<span class="sd">                                            pin_vlayer=plv, pin_hlayer=plh,</span>
+<span class="sd">                                            viamap=viamap, primary_grid=primary_grid,</span>
+<span class="sd">                                            xcolor=xcolor, ycolor=ycolor,</span>
+<span class="sd">                                            vextension0=e0v, hextension0=e0h)</span>
+<span class="sd">    &gt;&gt;&gt; # Create a design</span>
+<span class="sd">    &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; # Create an instance</span>
+<span class="sd">    &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
+<span class="sd">    &gt;&gt;&gt; print(inst0.xy)</span>
+<span class="sd">    [100, 100]</span>
+<span class="sd">    &gt;&gt;&gt; # Place the instance</span>
+<span class="sd">    &gt;&gt;&gt; dsn.place(inst=i0, grid=gp, mn=[10,10])</span>
+<span class="sd">    &gt;&gt;&gt; # Routing on grid </span>
+<span class="sd">    &gt;&gt;&gt; mn_list = [[0, -2], [0, 1], [2, 1], [5,1] ]</span>
+<span class="sd">    &gt;&gt;&gt; route = dsn.route(grid=gr, mn=mn_list, </span>
+<span class="sd">                          via_tag=[True, None, True, True])</span>
+<span class="sd">    &gt;&gt;&gt; #</span>
+<span class="sd">    &gt;&gt;&gt; # Display generated design.</span>
+<span class="sd">    &gt;&gt;&gt; print(dsn)</span>
+<span class="sd">    &lt;laygo2.object.database.Design object at 0x000001C71AE3A110&gt;</span>
+<span class="sd">        ...</span>
+<span class="sd">    &gt;&gt;&gt; # </span>
+<span class="sd">    &gt;&gt;&gt; # Export to a NativeInstanceTemplate for reuse in higher levels.</span>
+<span class="sd">    &gt;&gt;&gt; nt0 = dsn.export_to_template()</span>
+<span class="sd">    &gt;&gt;&gt; nt0.dsn.export_to_template()</span>
+<span class="sd">    &gt;&gt;&gt; print(nt0)</span>
+<span class="sd">        ...</span>
+<span class="sd">    &gt;&gt;&gt; # </span>
+<span class="sd">    &gt;&gt;&gt; # Export to a skill script.</span>
+<span class="sd">    &gt;&gt;&gt; lib = laygo2.object.database.Library(name=&quot;mylib&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; lib.append(dsn)</span>
+<span class="sd">    &gt;&gt;&gt; scr = laygo2.interface.skill.export(lib, filename=&quot;myscript.il&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; print(scr)</span>
+<span class="sd">        ...</span>
+<span class="sd">    </span>
+<span class="sd">    An abstract template/grid example with technology setup (laygo2_tech):</span>
+
+<span class="sd">    &gt;&gt;&gt; import laygo2</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2.interface</span>
+<span class="sd">    &gt;&gt;&gt; import laygo2_tech_quick_start as tech  # target tech&#39;s laygo2_tech</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.database import Design</span>
+<span class="sd">    &gt;&gt;&gt; templates = tech.load_templates()</span>
+<span class="sd">    &gt;&gt;&gt; mytemplate = templates[&#39;nmos&#39;]</span>
+<span class="sd">    &gt;&gt;&gt; grids = tech.load_grids(templates=templates)</span>
+<span class="sd">    &gt;&gt;&gt; gp = grids[&#39;placement_basic&#39;]</span>
+<span class="sd">    &gt;&gt;&gt; gr = grids[&#39;routing_23_cmos&#39;]</span>
+<span class="sd">    &gt;&gt;&gt; # Create a design</span>
+<span class="sd">    &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; # Create an instance</span>
+<span class="sd">    &gt;&gt;&gt; i0 = tnmos.generate(name=&#39;MN0&#39;, params={&#39;nf&#39;: 4})</span>
+<span class="sd">    &gt;&gt;&gt; # Place the instance</span>
+<span class="sd">    &gt;&gt;&gt; dsn.place(inst=i0, grid=gp, mn=[10,10])</span>
+<span class="sd">    &gt;&gt;&gt; # Routing on grid </span>
+<span class="sd">    &gt;&gt;&gt; mn_list = [[0, -2], [0, 1], [2, 1], [5,1] ]</span>
+<span class="sd">    &gt;&gt;&gt; route = dsn.route(grid=gr, mn=mn_list, </span>
+<span class="sd">                          via_tag=[True, None, True, True])</span>
+<span class="sd">    &gt;&gt;&gt; #</span>
+<span class="sd">    &gt;&gt;&gt; # Display generated design.</span>
+<span class="sd">    &gt;&gt;&gt; print(dsn)</span>
+<span class="sd">    &lt;laygo2.object.database.Design object at 0x000001C71AE3A110&gt;</span>
+<span class="sd">        ...</span>
+<span class="sd">    &gt;&gt;&gt; # </span>
+<span class="sd">    &gt;&gt;&gt; # Export to a NativeInstanceTemplate for reuse in higher levels.</span>
+<span class="sd">    &gt;&gt;&gt; nt0 = dsn.export_to_template()</span>
+<span class="sd">    &gt;&gt;&gt; nt0.dsn.export_to_template()</span>
+<span class="sd">    &gt;&gt;&gt; print(nt0)</span>
+<span class="sd">        ...</span>
+<span class="sd">    &gt;&gt;&gt; # </span>
+<span class="sd">    &gt;&gt;&gt; # Export to a skill script.</span>
+<span class="sd">    &gt;&gt;&gt; lib = laygo2.object.database.Library(name=&quot;mylib&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; lib.append(dsn)</span>
+<span class="sd">    &gt;&gt;&gt; scr = laygo2.interface.skill.export(lib, filename=&quot;myscript.il&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; print(scr)</span>
+<span class="sd">        ...</span>
+<span class="sd">    </span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>

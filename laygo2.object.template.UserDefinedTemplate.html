@@ -418,9 +418,12 @@
 <dt class="sig sig-object py" id="laygo2.object.template.UserDefinedTemplate">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.template.</span></span><span class="sig-name descname"><span class="pre">UserDefinedTemplate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bbox_func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pins_func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generate_func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/template.html#UserDefinedTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.template.UserDefinedTemplate" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="laygo2.object.template.Template.html#laygo2.object.template.Template" title="laygo2.object.template.Template"><code class="xref py py-class docutils literal notranslate"><span class="pre">laygo2.object.template.Template</span></code></a></p>
-<p>UserDefinedTemplate class implements the template that generate VirtualInstance.</p>
+<p>UserDefinedTemplate class implements the template that generates
+a VirtualInstance object corresponding to the template and input
+parameters.</p>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> UserDefinedTemplate 클래스는 VirtualInstance를 반환하는 템플릿을 구현한다.</p>
+<p><strong>(Korean)</strong> UserDefinedTemplate 클래스는 VirtualInstance를 반환하는
+템플릿을 구현한다.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
 <details><summary>Inherited from <a class="reference internal" href="laygo2.object.template.Template.html#laygo2.object.template.Template" title="laygo2.object.template.Template"><code class="xref py py-class docutils literal notranslate"><span class="pre">Template</span></code></a></summary><table class="longtable table autosummary">
@@ -501,14 +504,17 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>bbox_func</strong> (<em>callable</em>) – method computing bbox.</p></li>
-<li><p><strong>pins_func</strong> (<em>callable</em>) – method computing pins.</p></li>
-<li><p><strong>generate_func</strong> (<em>callable</em>) – method generating VirtualInstance.</p></li>
-<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – template name.</p></li>
+<li><p><strong>bbox_func</strong> (<em>callable</em>) – The function that computes the bounding box of the template from
+its input parameters.</p></li>
+<li><p><strong>pins_func</strong> (<em>callable</em>) – The function that returns a dictionary that contains its pin
+objects for its input parameters.</p></li>
+<li><p><strong>generate_func</strong> (<em>callable</em>) – The function that returns a generated VirtualInstance object
+for its input parameters.</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The name of the template.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>laygo2.UserDefinedTemplate</p>
+<dd class="field-even"><p><a class="reference internal" href="#laygo2.object.template.UserDefinedTemplate" title="laygo2.object.template.UserDefinedTemplate">laygo2.object.template.UserDefinedTemplate</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -704,17 +710,20 @@ dict
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.template.UserDefinedTemplate._bbox">
 <span class="sig-name descname"><span class="pre">_bbox</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.template.UserDefinedTemplate._bbox" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The internal pointer to the bbox computing function.</p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.template.UserDefinedTemplate._generate">
 <span class="sig-name descname"><span class="pre">_generate</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.template.UserDefinedTemplate._generate" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The internal pointer to the instance generation function.</p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.template.UserDefinedTemplate._pins">
 <span class="sig-name descname"><span class="pre">_pins</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.template.UserDefinedTemplate._pins" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The internal pointer to the pin creation function.</p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.template.UserDefinedTemplate.name">

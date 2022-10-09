@@ -418,9 +418,13 @@
 <dt class="sig sig-object py" id="laygo2.object.template.ParameterizedInstanceTemplate">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.template.</span></span><span class="sig-name descname"><span class="pre">ParameterizedInstanceTemplate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">libname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pins_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/template.html#ParameterizedInstanceTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.template.ParameterizedInstanceTemplate" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="laygo2.object.template.Template.html#laygo2.object.template.Template" title="laygo2.object.template.Template"><code class="xref py py-class docutils literal notranslate"><span class="pre">laygo2.object.template.Template</span></code></a></p>
-<p>ParameterizedInstanceTemplate class implements the template that generate ParameterizedInstnace.</p>
+<p>ParameterizedInstanceTemplate class implements the template that generates
+an instance with variable size (bbox) and pin parameters, based on its
+input parameters (such as instances mapped to Cadence Virtuoso’s pcells
+or Pycells).</p>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> ParameterizedInstanceTemplate 클래스는 Parameterized Instance를 반환하는 템플릿을 구현한다.</p>
+<p><strong>(Korean)</strong> ParameterizedInstanceTemplate 클래스는 입력 파라미터에 따라
+크기와 pin 정보가 가변하는 인스턴스를 생성하는 템플릿을 구현한다.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
 <table class="longtable table autosummary">
@@ -430,10 +434,10 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.libname" title="laygo2.object.template.ParameterizedInstanceTemplate.libname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">libname</span></code></a></p></td>
-<td><p>Libname of the instance being generated.</p></td>
+<td><p>The libname of the instance being generated.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.cellname" title="laygo2.object.template.ParameterizedInstanceTemplate.cellname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cellname</span></code></a></p></td>
-<td><p>Cellname of the instance being generated.</p></td>
+<td><p>The cellname of the instance being generated.</p></td>
 </tr>
 </tbody>
 </table>
@@ -458,7 +462,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.__init__" title="laygo2.object.template.ParameterizedInstanceTemplate.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(libname, cellname[, bbox_func, ...])</p></td>
-<td><p>Generate ParameterizedInstanceTemplate object.</p></td>
+<td><p>Constructor of ParameterizedInstanceTemplate class.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.bbox" title="laygo2.object.template.ParameterizedInstanceTemplate.bbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bbox</span></code></a>([params])</p></td>
 <td><p>bbox of ParameterizedInstanceTemplate object.</p></td>
@@ -467,7 +471,7 @@
 <td><p>Return pin dictionary of ParameterizedInstanceTemplate object.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.generate" title="laygo2.object.template.ParameterizedInstanceTemplate.generate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate</span></code></a>([name, shape, pitch, transform, params])</p></td>
-<td><p>Generate ParameterizedInstance object.</p></td>
+<td><p>Generate an Instance object corresponding to the template and its input parameters.</p></td>
 </tr>
 </tbody>
 </table>
@@ -478,7 +482,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.__init__" title="laygo2.object.template.ParameterizedInstanceTemplate.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(libname, cellname[, bbox_func, ...])</p></td>
-<td><p>Generate ParameterizedInstanceTemplate object.</p></td>
+<td><p>Constructor of ParameterizedInstanceTemplate class.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code>()</p></td>
 <td><p>Return a string corresponding to this object's information.</p></td>
@@ -502,7 +506,7 @@
 <td><p>Return pin dictionary of ParameterizedInstanceTemplate object.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.generate" title="laygo2.object.template.ParameterizedInstanceTemplate.generate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate</span></code></a>([name, shape, pitch, transform, params])</p></td>
-<td><p>Generate ParameterizedInstance object.</p></td>
+<td><p>Generate an Instance object corresponding to the template and its input parameters.</p></td>
 </tr>
 </tbody>
 </table>
@@ -511,27 +515,78 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.template.ParameterizedInstanceTemplate.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">libname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pins_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/template.html#ParameterizedInstanceTemplate.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.template.ParameterizedInstanceTemplate.__init__" title="Permalink to this definition">#</a></dt>
-<dd><p>Generate ParameterizedInstanceTemplate object.</p>
+<dd><p>Constructor of ParameterizedInstanceTemplate class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>libname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – library name.</p></li>
+<li><p><strong>libname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The library name.</p></li>
 <li><p><strong>cellname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The cell name of the template.</p></li>
-<li><p><strong>bbox_func</strong> (<em>callable</em>) – bbox.</p></li>
-<li><p><strong>pins_func</strong> (<em>callable</em>) – dictionary having the pin object.</p></li>
+<li><p><strong>bbox_func</strong> (<em>callable</em>) – The function that computes the bounding box of the template from
+its input parameters.</p></li>
+<li><p><strong>pins_func</strong> (<em>callable</em>) – The function that returns a dictionary that contains its pin
+objects for its input parameters.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>laygo2.NativeInstanceTemplate</p>
+<dd class="field-even"><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate" title="laygo2.object.template.ParameterizedInstanceTemplate">laygo2.object.template.ParameterizedInstanceTemplate</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">pcell_bbox_func</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
-<span class="go">    ……</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.template</span> <span class="kn">import</span> <span class="n">ParameterizedInstanceTemplate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># bbox computation function.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">pcell_bbox_func</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+<span class="go">        return np.array([[0, 0], [100 * params[&quot;mult&quot;], 100]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># pin generation function.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">pcell_pins_func</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
-<span class="go">    ……</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_temp</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">ParameterizedInstanceTemplate</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;mynattemplate’, bbox_func= pcell_bbox_func, pins_func= pcell_pins_func)</span>
-<span class="go">&lt;laygo2.object.template.ParameterizedInstanceTemplate object&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">template_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;mult&quot;</span><span class="p">]):</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="n">template_pins</span><span class="p">[</span><span class="s2">&quot;in&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;in&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="n">template_pins</span><span class="p">[</span><span class="s2">&quot;out&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;out&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">template_pins</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a template</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_temp</span> <span class="o">=</span> <span class="n">ParameterizedInstanceTemplate</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;mylib&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;mypcelltemplate&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">bbox_func</span><span class="o">=</span><span class="n">pcell_bbox_func</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">pins_func</span><span class="o">=</span><span class="n">pcell_pins_func</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Generate an instance for input parameters.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_inst_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;mult&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_inst</span> <span class="o">=</span> <span class="n">pcell_temp</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mypcellinst&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="n">transform</span><span class="o">=</span><span class="s2">&quot;R0&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="n">params</span><span class="o">=</span><span class="n">pcell_inst_params</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># display</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">pcell_temp</span><span class="p">)</span>
+<span class="go">    &lt;laygo2.object.template.ParameterizedInstanceTemplate object at 0x000001B1BA91D9C0&gt;</span>
+<span class="go">    name: mypcelltemplate,</span>
+<span class="go">    class: ParameterizedInstanceTemplate,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">pcell_inst</span><span class="p">)</span>
+<span class="go">    xy: [0, 0],</span>
+<span class="go">    params: {&#39;mult&#39;: 4},</span>
+<span class="go">    size: [400, 100],</span>
+<span class="go">    shape: None,</span>
+<span class="go">    pitch: [400, 100],</span>
+<span class="go">    transform: R0,</span>
+<span class="go">    pins: {&#39;in0&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91FCA0&gt;,</span>
+<span class="go">           &#39;out0&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91FC70&gt;,</span>
+<span class="go">           &#39;in1&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91FC10&gt;,</span>
+<span class="go">           &#39;out1&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91E8C0&gt;,</span>
+<span class="go">           &#39;in2&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91E890&gt;,</span>
+<span class="go">           &#39;out2&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91FBE0&gt;,</span>
+<span class="go">           &#39;in3&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91E7D0&gt;,</span>
+<span class="go">           &#39;out3&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91E710&gt;},</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_ParameterizedInstanceTemplate_init.png"><img alt="_images/object_template_ParameterizedInstanceTemplate_init.png" src="_images/object_template_ParameterizedInstanceTemplate_init.png" style="height: 250px;" /></a>
@@ -545,22 +600,50 @@
 <dd><p>bbox of ParameterizedInstanceTemplate object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>None</strong> – </p>
+<dd class="field-odd"><p><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – A dictionary that contains input parameters corresponding to the
+bounding box to be computed.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)">numpy.ndarray</a></p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>numpy.ndarray</strong> – coordinates corresponding to the input parameters.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>A 2x2 numpy array that contains the bounding box</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">pcell_bbox_func</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
-<span class="go">        if params==None:</span>
-<span class="go">            params={“W”:1}</span>
-<span class="go">        return np.array([[0, 0], [100 , 100* params[&#39;W&#39;]]])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.template</span> <span class="kn">import</span> <span class="n">ParameterizedInstanceTemplate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># bbox computation function.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">pcell_bbox_func</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+<span class="go">        return np.array([[0, 0], [100 * params[&quot;mult&quot;], 100]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># pin generation function.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">pcell_pins_func</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
-<span class="go">    ……</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_temp</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">ParameterizedInstanceTemplate</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;mynattemplate’, bbox_func= pcell_bbox_func, pins_func= pcell_pins_func)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_temp</span><span class="o">.</span><span class="n">bbox</span>
-<span class="go">[[0,0], [100,100]]</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">template_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;mult&quot;</span><span class="p">]):</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="n">template_pins</span><span class="p">[</span><span class="s2">&quot;in&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;in&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="n">template_pins</span><span class="p">[</span><span class="s2">&quot;out&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;out&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">template_pins</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a template</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_temp</span> <span class="o">=</span> <span class="n">ParameterizedInstanceTemplate</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;mylib&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;mypcelltemplate&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">bbox_func</span><span class="o">=</span><span class="n">pcell_bbox_func</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">pins_func</span><span class="o">=</span><span class="n">pcell_pins_func</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Compute bbox for input parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_inst_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;mult&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_temp</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">pcell_inst_params</span><span class="p">)</span>
+<span class="go">array([[  0,   0],</span>
+<span class="go">       [400, 100]])</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_ParameterizedInstanceTemplate_bbox.png"><img alt="_images/object_template_ParameterizedInstanceTemplate_bbox.png" src="_images/object_template_ParameterizedInstanceTemplate_bbox.png" style="height: 250px;" /></a>
@@ -571,7 +654,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.template.ParameterizedInstanceTemplate.generate">
 <span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'R0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/template.html#ParameterizedInstanceTemplate.generate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.template.ParameterizedInstanceTemplate.generate" title="Permalink to this definition">#</a></dt>
-<dd><p>Generate ParameterizedInstance object.</p>
+<dd><p>Generate an Instance object corresponding to the template and its
+input parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -582,40 +666,88 @@
 <li><p><strong>transform</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional.</em>) – transformation attribute of the entity to be generated.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance">laygo2.object.physical.Instance</a>) generated Instance object</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>laygo2.object.physical.Instance</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The generated Instance object</p>
 </dd>
 </dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Class</span></code></p>
-</div>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; def pcell_bbox_func(params):
-    ……
-&gt;&gt;&gt; def pins_bbox_func(params):
-    ……
-&gt;&gt;&gt; pcell_temp = laygo2.object.ParameterizedInstanceTemplate(libname=&#39;mylib&#39;, cellname=&#39;mynattemplate’, bbox_func=pcell_bbox_func, pins_func=pcell_pins_func)
-&gt;&gt;&gt; pcell_temp.generate(name=“I1”, params={“W”=2, “L”=1})
-&lt;laygo2.object.physical.Instance object&gt;
-&gt;&gt;&gt; pcell_temp.generate(name=“I2”, params={“W”=2, “L”=1})
-&lt;laygo2.object.physical.Instance object&gt;
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.template</span> <span class="kn">import</span> <span class="n">ParameterizedInstanceTemplate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># bbox computation function.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">pcell_bbox_func</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+<span class="go">        return np.array([[0, 0], [100 * params[&quot;mult&quot;], 100]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># pin generation function.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">pcell_pins_func</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">template_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;mult&quot;</span><span class="p">]):</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="n">template_pins</span><span class="p">[</span><span class="s2">&quot;in&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;in&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="n">template_pins</span><span class="p">[</span><span class="s2">&quot;out&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;out&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">template_pins</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a template</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_temp</span> <span class="o">=</span> <span class="n">ParameterizedInstanceTemplate</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;mylib&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;mypcelltemplate&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">bbox_func</span><span class="o">=</span><span class="n">pcell_bbox_func</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">pins_func</span><span class="o">=</span><span class="n">pcell_pins_func</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Generate an instance for input parameters.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_inst_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;mult&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_inst</span> <span class="o">=</span> <span class="n">pcell_temp</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mypcellinst&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="n">transform</span><span class="o">=</span><span class="s2">&quot;R0&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="n">params</span><span class="o">=</span><span class="n">pcell_inst_params</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># display</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">pcell_temp</span><span class="p">)</span>
+<span class="go">    &lt;laygo2.object.template.ParameterizedInstanceTemplate object at 0x000001B1BA91D9C0&gt;</span>
+<span class="go">    name: mypcelltemplate,</span>
+<span class="go">    class: ParameterizedInstanceTemplate,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">pcell_inst</span><span class="p">)</span>
+<span class="go">    xy: [0, 0],</span>
+<span class="go">    params: {&#39;mult&#39;: 4},</span>
+<span class="go">    size: [400, 100],</span>
+<span class="go">    shape: None,</span>
+<span class="go">    pitch: [400, 100],</span>
+<span class="go">    transform: R0,</span>
+<span class="go">    pins: {&#39;in0&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91FCA0&gt;,</span>
+<span class="go">           &#39;out0&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91FC70&gt;,</span>
+<span class="go">           &#39;in1&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91FC10&gt;,</span>
+<span class="go">           &#39;out1&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91E8C0&gt;,</span>
+<span class="go">           &#39;in2&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91E890&gt;,</span>
+<span class="go">           &#39;out2&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91FBE0&gt;,</span>
+<span class="go">           &#39;in3&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91E7D0&gt;,</span>
+<span class="go">           &#39;out3&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91E710&gt;},</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_ParameterizedInstanceTemplate_generate.png"><img alt="_images/object_template_ParameterizedInstanceTemplate_generate.png" src="_images/object_template_ParameterizedInstanceTemplate_generate.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-ParameterizedInstance 객체 생성.
-파라미터
-name(str): 생성할 인스턴스의 이름
-shape(numpy.ndarray): 생성할 객체의 shape [ optional ]
-pitch(numpy.ndarray): 생성할 객체간의 간격 [ optional ]
-params(dict) : 개체의 속성을 갖는 Dictionary [ optional ]
-transform(str):  생성할 개체의 변환 속성 [ optional ]
-반환값
-laygo2.Instance: 생성된 객체
-참조
-Class Instance</p>
+<p><strong>(Korean)</strong> ParameterizedInstance 객체 생성.</p>
+<dl class="simple">
+<dt>파라미터</dt><dd><ul class="simple">
+<li><p>name(str): 생성할 인스턴스의 이름.</p></li>
+<li><p>shape(numpy.ndarray): (optional) 생성할 객체의 배열 shape.</p></li>
+<li><p>pitch(numpy.ndarray): (optional) 생성할 객체 간의 간격.</p></li>
+<li><p>params(dict) : 개체의 속성이 담긴 dictionary.</p></li>
+<li><p>transform(str): 생성할 개체의 변환 속성.</p></li>
+</ul>
+</dd>
+<dt>반환값</dt><dd><ul class="simple">
+<li><p>laygo2.Instance: 생성된 객체</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -630,40 +762,61 @@ Class Instance</p>
 <dd><p>Return pin dictionary of ParameterizedInstanceTemplate object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>None</strong> – </p>
+<dd class="field-odd"><p><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – A dictionary that contains input parameters corresponding to the
+pin objects to be produced.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)">dict</a></p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dict</strong> – input parameters.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>A dictionary that contains pin object corresponding to the</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">pcell_bbox_func</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
-<span class="go">    ……</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.template</span> <span class="kn">import</span> <span class="n">ParameterizedInstanceTemplate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># bbox computation function.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">pcell_bbox_func</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+<span class="go">        return np.array([[0, 0], [100 * params[&quot;mult&quot;], 100]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># pin generation function.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">pcell_pins_func</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
-<span class="go">        if params==None:</span>
-<span class="go">            params={&quot;W&quot;:1}</span>
-<span class="go">            i = params[&#39;W&#39;]</span>
-<span class="go">        template_pins = dict()</span>
-<span class="go">        pin_in  = laygo2.object.Pin(xy =[ [ 0, 0], [100 , 0 ] ],      layer=[&#39;M1&#39;, &#39;pin&#39;], netname=&#39;in&#39;)</span>
-<span class="go">        pin_out = laygo2.object.Pin(xy =[ [ 0, 100], [100 , 100* i]], layer=[&#39;M1&#39;, &#39;pin’], netname=&#39;out&#39;)</span>
-<span class="go">        template_pins[&#39;in&#39; ] = pin_in</span>
-<span class="go">        template_pins[&#39;out&#39;] = pin_out</span>
-<span class="go">        return template_pins</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_temp</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">ParameterizedInstanceTemplate</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;mynattemplate’, bbox_func= pcell_bbox_func, pins_func= pcell_pins_func)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_temp</span><span class="o">.</span><span class="n">pins</span>
-<span class="go">{&#39;in&#39;: &lt;laygo2.object.physical.Pin object&gt;, &#39;out&#39;: &lt;laygo2.object.physical.Pin object&gt;}</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">template_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;mult&quot;</span><span class="p">]):</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="n">template_pins</span><span class="p">[</span><span class="s2">&quot;in&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;in&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="n">template_pins</span><span class="p">[</span><span class="s2">&quot;out&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;out&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">template_pins</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a template</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_temp</span> <span class="o">=</span> <span class="n">ParameterizedInstanceTemplate</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;mylib&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;mypcelltemplate&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">bbox_func</span><span class="o">=</span><span class="n">pcell_bbox_func</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">pins_func</span><span class="o">=</span><span class="n">pcell_pins_func</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Compute bbox for input parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_inst_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;mult&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pcell_temp</span><span class="o">.</span><span class="n">pins</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">pcell_inst_params</span><span class="p">)</span>
+<span class="go">    {&#39;in0&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91F7C0&gt;,</span>
+<span class="go">     &#39;out0&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91E830&gt;,</span>
+<span class="go">     &#39;in1&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91DAB0&gt;,</span>
+<span class="go">     &#39;out1&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91E860&gt;,</span>
+<span class="go">     &#39;in2&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91E560&gt;,</span>
+<span class="go">     &#39;out2&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91E800&gt;,</span>
+<span class="go">     &#39;in3&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91E770&gt;,</span>
+<span class="go">     &#39;out3&#39;: &lt;laygo2.object.physical.Pin object at 0x000001B1BA91EA40&gt;}</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_ParameterizedInstanceTemplate_pins.png"><img alt="_images/object_template_ParameterizedInstanceTemplate_pins.png" src="_images/object_template_ParameterizedInstanceTemplate_pins.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-ParameterizedInstanceTemplate 객체의 pin dictionary 반환.
-파라미터
-없음
-반환값
-dict
-참조
-없음</p>
+<p><strong>(Korean)</strong> ParameterizedInstanceTemplate 객체의 pin dictionary 반환.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -702,7 +855,7 @@ dict
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.template.ParameterizedInstanceTemplate.cellname">
 <span class="sig-name descname"><span class="pre">cellname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.template.ParameterizedInstanceTemplate.cellname" title="Permalink to this definition">#</a></dt>
-<dd><p>Cellname of the instance being generated.</p>
+<dd><p>The cellname of the instance being generated.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
@@ -713,7 +866,7 @@ dict
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.template.ParameterizedInstanceTemplate.libname">
 <span class="sig-name descname"><span class="pre">libname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.template.ParameterizedInstanceTemplate.libname" title="Permalink to this definition">#</a></dt>
-<dd><p>Libname of the instance being generated.</p>
+<dd><p>The libname of the instance being generated.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>

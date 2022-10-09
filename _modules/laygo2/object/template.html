@@ -446,32 +446,39 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        dict</span>
-
-
+<span class="sd">        dict : A dictionary that contains pin information.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp_pins = dict()</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp_pins[&#39;in&#39;]  = laygo2.object.Pin(xy=[[0, 0], [10, 10]], layer=[&#39;M1&#39;, &#39;drawing’], netname=&#39;in’)</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp_pins[&#39;out&#39;] = laygo2.object.Pin(xy=[[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing’], netname=&#39;out’)</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp = laygo2.object.NativeInstanceTemplate(libname=&#39;mylib&#39;, cellname=&#39;mynattemplate’, bbox=[[0, 0], [100, 100]], pins=nat_temp_pins)</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp.pins()</span>
-<span class="sd">        {&#39;in&#39;: &lt;laygo2.object.physical.Pin object&gt;, &#39;out&#39;: &lt;laygo2.object.physical.Pin object&gt;}</span>
-
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Pin</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.template import NativeInstanceTemplate</span>
+<span class="sd">        &gt;&gt;&gt; p = dict() </span>
+<span class="sd">        &gt;&gt;&gt; p[&#39;i&#39;] = Pin(xy=[[0, 0], [10, 10]], layer=[&#39;M1&#39;, &#39;drawing&#39;], </span>
+<span class="sd">                         netname=&#39;i&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; p[&#39;o&#39;] = Pin(xy=[[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], </span>
+<span class="sd">                         netname=&#39;o&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; nt = NativeInstanceTemplate(libname=&#39;mylib&#39;, cellname=&#39;mytemp&#39;, </span>
+<span class="sd">                                        bbox=[[0, 0], [100, 100]], pins=p)</span>
+<span class="sd">        &gt;&gt;&gt; nt.pins()</span>
+<span class="sd">        &gt;&gt;&gt; {&#39;i&#39;: &lt;laygo2.object.physical.Pin object at 0x000002578C762500&gt;, </span>
+<span class="sd">             &#39;o&#39;: &lt;laygo2.object.physical.Pin object at 0x00000257FBA87C40&gt;}                   </span>
+<span class="sd">        &gt;&gt;&gt; print(nt.pins()[&#39;i&#39;]) </span>
+<span class="sd">            &lt;laygo2.object.physical.Pin object at 0x000002578C762500&gt; </span>
+<span class="sd">                name: None,</span>
+<span class="sd">                class: Pin,</span>
+<span class="sd">                xy: [[0, 0], [10, 10]],</span>
+<span class="sd">                params: None, </span>
+<span class="sd">                layer: [&#39;M1&#39; &#39;drawing&#39;], </span>
+<span class="sd">                netname: i, </span>
+<span class="sd">                shape: None, </span>
+<span class="sd">                master: None</span>
 
 <span class="sd">        .. image:: ../assets/img/object_template_ParameterizedInstanceTemplate_pins.png</span>
 <span class="sd">          :height: 250</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        NativeInstanceTemplate 객체의 pin dictionary 반환.</span>
-<span class="sd">        파라미터</span>
-<span class="sd">        없음</span>
-<span class="sd">        반환값</span>
-<span class="sd">        dict</span>
-
+<span class="sd">        **(Korean)** NativeInstanceTemplate 객체의 pin dictionary 반환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pins</span></div>
 
@@ -502,34 +509,48 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp_pins = dict()</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp_pins[&#39;in&#39;] = laygo2.object.Pin(xy=[[0, 0], [10, 10]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;in&#39;)</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp_pins[&#39;out&#39;] = laygo2.object.Pin(xy=[[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp = laygo2.object.NativeInstanceTemplate(libname=&#39;mylib&#39;, cellname=&#39;mynattemplate&#39;, bbox=[[0, 0], [100, 100]], pins=nat_temp_pins)</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp.generate(name=&quot;I1&quot;)</span>
-<span class="sd">        &lt;laygo2.object.physical.Instance object&gt;</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp.generate(name=&quot;I2&quot;)</span>
-<span class="sd">        &lt;laygo2.object.physical.Instance object&gt;</span>
-
-
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Pin</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.template import NativeInstanceTemplate</span>
+<span class="sd">        &gt;&gt;&gt; p = dict() </span>
+<span class="sd">        &gt;&gt;&gt; p[&#39;i&#39;] = Pin(xy=[[0, 0], [10, 10]], layer=[&#39;M1&#39;, &#39;drawing&#39;], </span>
+<span class="sd">                         netname=&#39;i&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; p[&#39;o&#39;] = Pin(xy=[[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], </span>
+<span class="sd">                         netname=&#39;o&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; nt = NativeInstanceTemplate(libname=&#39;mylib&#39;, cellname=&#39;mytemp&#39;, </span>
+<span class="sd">                                        bbox=[[0, 0], [100, 100]], pins=p)</span>
+<span class="sd">        &gt;&gt;&gt; i0 = nt.generate(name=&quot;I0&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; i1 = nt.generate(name=&quot;I1&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; print(i0)</span>
+<span class="sd">        &lt;laygo2.object.physical.Instance object at 0x000002C3F717F850&gt; </span>
+<span class="sd">        name: I0,</span>
+<span class="sd">        class: Instance,</span>
+<span class="sd">        xy: [0, 0],</span>
+<span class="sd">        params: None,</span>
+<span class="sd">        size: [100, 100],</span>
+<span class="sd">        shape: None,</span>
+<span class="sd">        pitch: [100, 100],</span>
+<span class="sd">        transform: R0,</span>
+<span class="sd">        pins: {&#39;i&#39;: &lt;laygo2.object.physical.Pin object at 0x000002C3F717F820&gt;, </span>
+<span class="sd">               &#39;o&#39;: &lt;laygo2.object.physical.Pin object at 0x000002C3F717FD90&gt;},</span>
+<span class="sd">        &gt;&gt;&gt; print(i1)</span>
+<span class="sd">        &lt;laygo2.object.physical.Instance object at 0x000002C3FF91C100&gt; </span>
+<span class="sd">        name: I1,</span>
+<span class="sd">        class: Instance,</span>
+<span class="sd">        xy: [0, 0],</span>
+<span class="sd">        params: None,</span>
+<span class="sd">        size: [100, 100],</span>
+<span class="sd">        shape: None,</span>
+<span class="sd">        pitch: [100, 100],</span>
+<span class="sd">        transform: R0,</span>
+<span class="sd">        pins: {&#39;i&#39;: &lt;laygo2.object.physical.Pin object at 0x000002C3FF91C0A0&gt;, </span>
+<span class="sd">               &#39;o&#39;: &lt;laygo2.object.physical.Pin object at 0x000002C3FF91C070&gt;},</span>
+<span class="sd">        </span>
 <span class="sd">        .. image:: ../assets/img/object_template_ParameterizedInstanceTemplate_generate.png</span>
 <span class="sd">          :height: 250</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        Instance 객체 생성.</span>
-<span class="sd">        파라미터</span>
-<span class="sd">        name(str): 생성할 인스턴스의 이름</span>
-<span class="sd">        shape(numpy.ndarray): 생성할 객체의 shape [ optional ]</span>
-<span class="sd">        pitch(numpy.ndarray): 생성할 객체간의 간격 [ optional ]</span>
-<span class="sd">        params(dict) : 객체의 속성을 갖는 Dictionary [ optional ]</span>
-<span class="sd">        transform(str): 생성할 객체의 변환 속성 [ optional ]</span>
-<span class="sd">        반환값</span>
-<span class="sd">        laygo2.Instance: 생성된 개체</span>
-<span class="sd">        참조</span>
-<span class="sd">        Class Instance</span>
-
+<span class="sd">        **(Korean)** 템플릿으로부터 Instance 객체 생성.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span>
             <span class="n">libname</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">libname</span><span class="p">,</span>
@@ -563,28 +584,36 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp_pins = dict()</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp_pins[&#39;in&#39;] = laygo2.object.Pin(xy=[[0, 0], [10, 10]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;in&#39;)</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp_pins[&#39;out&#39;] = laygo2.object.Pin(xy=[[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp = laygo2.object.NativeInstanceTemplate(libname=&#39;mylib&#39;, cellname=&#39;mynattemplate&#39;, bbox=[[0, 0], [100, 100]], pins=nat_temp_pins)</span>
-<span class="sd">        &gt;&gt;&gt; nat_temp.export_to_dict()</span>
-<span class="sd">        {&#39;libname&#39;: &#39;mylib&#39;, &#39;cellname&#39;: &#39;mynattemplate&#39;, &#39;bbox&#39;: [[0, 0], [100, 100]], &#39;pins&#39;: {&#39;in&#39;: {&#39;xy&#39;: [[0, 0], [10, 10]], &#39;layer&#39;: [&#39;M1&#39;, &#39;drawing&#39;], &#39;name&#39;: None, &#39;netname&#39;: &#39;in&#39;}, &#39;out&#39;: {&#39;xy&#39;: [[90, 9 0], [100, 100]], &#39;layer&#39;: [&#39;M1&#39;, &#39;drawing&#39;], &#39;name&#39;: None, &#39;netname&#39;: &#39;out&#39;}}}</span>
-
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.physical import Pin</span>
+<span class="sd">        &gt;&gt;&gt; from laygo2.object.template import NativeInstanceTemplate</span>
+<span class="sd">        &gt;&gt;&gt; p = dict() </span>
+<span class="sd">        &gt;&gt;&gt; p[&#39;i&#39;] = Pin(xy=[[0, 0], [10, 10]], layer=[&#39;M1&#39;, &#39;drawing&#39;], </span>
+<span class="sd">                         netname=&#39;i&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; p[&#39;o&#39;] = Pin(xy=[[90, 90], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], </span>
+<span class="sd">                         netname=&#39;o&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; nt = NativeInstanceTemplate(libname=&#39;mylib&#39;, cellname=&#39;mytemp&#39;, </span>
+<span class="sd">                                        bbox=[[0, 0], [100, 100]], pins=p)</span>
+<span class="sd">        &gt;&gt;&gt; nt.export_to_dict()</span>
+<span class="sd">            {&#39;libname&#39;: &#39;mylib&#39;, </span>
+<span class="sd">             &#39;cellname&#39;: &#39;mytemp&#39;, </span>
+<span class="sd">             &#39;bbox&#39;: [[0, 0], [100, 100]], </span>
+<span class="sd">             &#39;pins&#39;: {&#39;i&#39;: {&#39;xy&#39;: [[0, 0], [10, 10]], </span>
+<span class="sd">                            &#39;layer&#39;: [&#39;M1&#39;, &#39;drawing&#39;], </span>
+<span class="sd">                            &#39;name&#39;: None, </span>
+<span class="sd">                            &#39;netname&#39;: &#39;i&#39;}, </span>
+<span class="sd">                      &#39;o&#39;: {&#39;xy&#39;: [[90, 90], [100, 100]], </span>
+<span class="sd">                            &#39;layer&#39;: [&#39;M1&#39;, &#39;drawing&#39;], </span>
+<span class="sd">                            &#39;name&#39;: None, </span>
+<span class="sd">                            &#39;netname&#39;: &#39;o&#39;}</span>
+<span class="sd">                     }</span>
+<span class="sd">            }</span>
 
 <span class="sd">        .. image:: ../assets/img/object_template_NativeInstanceTemplate_export_to_dict.png</span>
 <span class="sd">          :height: 250</span>
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        NativeInstanceTemplate 의 정보가 담긴 Dictonary 반환.</span>
-<span class="sd">        파라미터</span>
-<span class="sd">        없음</span>
-<span class="sd">        반환값</span>
-<span class="sd">        dict</span>
-<span class="sd">        참조</span>
-<span class="sd">        Class Instance</span>
-
+<span class="sd">        **(Korean)** NativeInstanceTemplate 의 정보가 담긴 Dictonary 반환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">db</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">db</span><span class="p">[</span><span class="s2">&quot;libname&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">libname</span>
@@ -635,8 +664,6 @@
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.NativeInstanceTemplate</span>
 
-
-
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; def pcell_bbox_func(params):</span>
@@ -652,18 +679,7 @@
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        ParameterizedInstanceTemplate 클래스의 생성자함수.</span>
-<span class="sd">        파라미터</span>
-<span class="sd">        libname(str): library 이름</span>
-<span class="sd">        cellname(str): cell 이름</span>
-<span class="sd">        bbox_func(callable): bbox</span>
-<span class="sd">        pins_func(callable): pin 객체를 갖고있는 dictionary</span>
-<span class="sd">        반환값</span>
-<span class="sd">        laygo2.NativeInstanceTemplate</span>
-<span class="sd">        참조</span>
-<span class="sd">        없음</span>
-
+<span class="sd">        **(Korean)** ParameterizedInstanceTemplate 클래스의 생성자함수.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">libname</span> <span class="o">=</span> <span class="n">libname</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cellname</span> <span class="o">=</span> <span class="n">cellname</span>
@@ -684,8 +700,6 @@
 <span class="sd">        -------</span>
 <span class="sd">        numpy.ndarray</span>
 
-
-
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; def pcell_bbox_func(params):</span>
@@ -704,15 +718,7 @@
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        ParameterizedInstanceTemplate 객체의 bbox.</span>
-<span class="sd">        파라미터</span>
-<span class="sd">        없음</span>
-<span class="sd">        반환값</span>
-<span class="sd">        numpy.ndarray</span>
-<span class="sd">        참조</span>
-<span class="sd">        없음</span>
-
+<span class="sd">        **(Korean)** ParameterizedInstanceTemplate 객체의 bbox.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bbox</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span></div>
 

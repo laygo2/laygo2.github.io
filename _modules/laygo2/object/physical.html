@@ -597,19 +597,11 @@
         <span class="sd">&quot;&quot;&quot;Return the summary of this object.&quot;&quot;&quot;</span>
         <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;None&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
-            <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    name: &quot;</span>
-            <span class="o">+</span> <span class="n">name</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    class: &quot;</span>
-            <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    xy: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    params: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;    name: &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    class: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    xy: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    params: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="PhysicalObject._update_pointers"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject._update_pointers">[docs]</a>    <span class="k">def</span> <span class="nf">_update_pointers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -818,9 +810,7 @@
         <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;  elements: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;    elements: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="PhysicalObjectGroup.__init__"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObjectGroup.html#laygo2.object.physical.PhysicalObjectGroup.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1228,13 +1218,9 @@
 <div class="viewcode-block" id="Rect.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.Rect.html#laygo2.object.physical.Rect.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;layer: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;netname: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">netname</span><span class="p">)</span>
+            <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> 
+            <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    netname: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">netname</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div></div>
 
 
@@ -1397,19 +1383,11 @@
 <div class="viewcode-block" id="Path.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.Path.html#laygo2.object.physical.Path.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;width: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;extension: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">extension</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;layer: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;netname: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">netname</span><span class="p">)</span>
+            <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> 
+            <span class="o">+</span> <span class="s2">&quot;    width: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    extension: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">extension</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    netname: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">netname</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div></div>
 
 
@@ -1590,18 +1568,10 @@
         <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;layer: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;netname: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">netname</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;shape: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;master: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    netname: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">netname</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    shape: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    master: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Pin.export_to_dict"><a class="viewcode-back" href="../../../laygo2.object.physical.Pin.html#laygo2.object.physical.Pin.export_to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">export_to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1716,11 +1686,8 @@
         <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    layer: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    text: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    text: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div></div>
 
 
@@ -2352,18 +2319,14 @@
 
 <div class="viewcode-block" id="Instance.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Summarize object information.&quot;&quot;&quot;</span>
+        <span class="n">_shape</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    size: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    shape: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    pitch: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pitch</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    transform: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    pins: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pins</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;    size: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    shape: &quot;</span> <span class="o">+</span> <span class="n">_shape</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    pitch: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pitch</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    transform: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    pins: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pins</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div></div>
 
 
@@ -2538,8 +2501,7 @@
         <span class="sd">&quot;&quot;&quot;Summarize object information.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">Instance</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    native elements: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">native_elements</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;    native elements: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">native_elements</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="VirtualInstance.get_element_position"><a class="viewcode-back" href="../../../laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance.get_element_position">[docs]</a>    <span class="k">def</span> <span class="nf">get_element_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>

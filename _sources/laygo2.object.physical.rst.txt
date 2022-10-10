@@ -1,5 +1,7 @@
 laygo2.object.physical module
 =============================
+Check the following links for the details of component classes.
+
 .. automodule:: laygo2.object.physical
    :undoc-members:
 

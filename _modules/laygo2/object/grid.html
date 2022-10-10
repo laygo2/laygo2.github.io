@@ -80,20 +80,14 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../structure.html">
-  Structure
+ <a class="reference internal nav-link" href="../../../laygo2.html">
+  API Reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../technology.html">
   Tech Setup
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../laygo2.html">
-  API Reference
  </a>
 </li>
 
@@ -187,7 +181,16 @@
 <span class="c1">########################################################################################################################</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Module containing functions and objects related to abstract coordinate system and coordinate conversion.</span>
+<span class="sd">laygo2.object.grid module contains classes that implement abstract coordinate</span>
+<span class="sd"> systems that are interacting with technology-specific physical coordinate systems.</span>
+
+<span class="sd">laygo2 implements the layout designs based on the abstract coordinate system.</span>
+
+<span class="sd">.. image:: ../assets/img/user_guide_grid.png</span>
+
+
+
+<span class="sd">Check the following links for the details of component classes.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jaeduk Han&quot;</span>
@@ -356,6 +359,23 @@
 <div class="viewcode-block" id="CircularMapping"><a class="viewcode-back" href="../../../laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping">[docs]</a><span class="k">class</span> <span class="nc">CircularMapping</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Basic circular mapping class (index number expands infinitely).</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; from laygo2.object.grid import Circularmapping</span>
+<span class="sd">    &gt;&gt;&gt; map = CircularMapping(elements=[100, 200, 300])</span>
+<span class="sd">    &gt;&gt;&gt; print(map[0])</span>
+<span class="sd">    100</span>
+<span class="sd">    &gt;&gt;&gt; print(map[2])</span>
+<span class="sd">    300</span>
+<span class="sd">    &gt;&gt;&gt; print(map[4])</span>
+<span class="sd">    200</span>
+<span class="sd">    &gt;&gt;&gt; print(map[-3])</span>
+<span class="sd">    100</span>
+<span class="sd">    &gt;&gt;&gt; print(map[[2, 3, -2])</span>
+<span class="sd">    [300, 100, 200]</span>
+<span class="sd">    &gt;&gt;&gt; print(map[2:7])</span>
+<span class="sd">    [300, 100, 200, 300, 100]</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -586,9 +606,11 @@
 
 <div class="viewcode-block" id="_AbsToPhyGridConverter"><a class="viewcode-back" href="../../../laygo2.object.grid._AbsToPhyGridConverter.html#laygo2.object.grid._AbsToPhyGridConverter">[docs]</a><span class="k">class</span> <span class="nc">_AbsToPhyGridConverter</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A class that converts abstract coordinates into physical coordinates. </span>
-<span class="sd">    Conversely, conditional operation converts physical coordinates into </span>
-<span class="sd">    abstract coordinates.</span>
+<span class="sd">    An internal class that converts abstract coordinates into physical </span>
+<span class="sd">    coordinates. Conversely, conditional operators convert physical </span>
+<span class="sd">    coordinates into abstract coordinates.</span>
+
+<span class="sd">    .. image:: ../assets/img/user_guide_abs2phy.png</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -1084,8 +1106,10 @@
 <div class="viewcode-block" id="_PhyToAbsGridConverter"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter">[docs]</a><span class="k">class</span> <span class="nc">_PhyToAbsGridConverter</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A class that converts physical coordinates into abstract coordinates.</span>
-<span class="sd">    Conversely, conditional operations convert abstract coordinates into </span>
-<span class="sd">    physical coordinates. </span>
+<span class="sd">    Conversely, conditional operators convert abstract coordinates into </span>
+<span class="sd">    physical coordinates.</span>
+
+<span class="sd">    .. image:: ../assets/img/user_guide_phy2abs.png</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -2233,6 +2257,12 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A base class having conversion operators and the mapping information (element) </span>
 <span class="sd">    between two-dimensional physical coordinates and abstract coordinates.</span>
+
+<span class="sd">    Examplar grid conversions between abstract and physical coordinates are </span>
+<span class="sd">    summarized in the following figure.</span>
+
+<span class="sd">    .. image:: ../assets/img/user_guide_grid_conversion.png</span>
+
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>

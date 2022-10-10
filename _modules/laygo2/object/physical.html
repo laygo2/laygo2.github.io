@@ -80,20 +80,14 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../structure.html">
-  Structure
+ <a class="reference internal nav-link" href="../../../laygo2.html">
+  API Reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../technology.html">
   Tech Setup
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../laygo2.html">
-  API Reference
  </a>
 </li>
 
@@ -187,14 +181,16 @@
 <span class="c1">########################################################################################################################</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">The physical module implements classes for various physical layout objects.</span>
-<span class="sd">The types of objects supported are summarized below:</span>
+<span class="sd">laygo2.object.physical module is defining classes for physical objects that </span>
+<span class="sd">compose actual IC layout.</span>
 
-<span class="sd">:obj:`PhysicalObject` - a base class for physical layout objects.</span>
+<span class="sd">The types of objects supported by the physical module are summarized below:</span>
 
-<span class="sd">:obj:`IterablePhysicalObject` - a base class for iterable physical objects (eg. arrayed instances).</span>
+<span class="sd">:obj:`PhysicalObject` - base class for physical layout objects.</span>
 
-<span class="sd">:obj:`PhysicalObjectGroup` - defines a group of physical objects.</span>
+<span class="sd">:obj:`IterablePhysicalObject` - base class for iterable physical objects (eg. arrayed instances).</span>
+
+<span class="sd">:obj:`PhysicalObjectGroup` - defines a group of physical objects (not implemented yet).</span>
 
 <span class="sd">:obj:`Rect` - defines a rect.</span>
 
@@ -206,8 +202,16 @@
 
 <span class="sd">:obj:`Instance` - defines an instance.</span>
 
-<span class="sd">:obj:`VirtualInstance` - defines a virtual instance composed of multiple physical objects.</span>
+<span class="sd">:obj:`VirtualInstance` - defines a virtual instance composed of multiple physical objects</span>
+<span class="sd">(a group of objects that acts as a single instance).</span>
 
+<span class="sd">The following figure illustrates examples of the physical objects supported by this module.</span>
+
+<span class="sd">.. image:: ../assets/img/user_guide_physical.png</span>
+
+
+
+<span class="sd">Check the following links for the details of component classes.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jaeduk Han&quot;</span>
@@ -215,7 +219,6 @@
 <span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;Prototype&quot;</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
 <span class="c1"># from copy import deepcopy</span>
 <span class="kn">import</span> <span class="nn">laygo2.util.transform</span> <span class="k">as</span> <span class="nn">tf</span>
 

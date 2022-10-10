@@ -82,21 +82,15 @@
  </a>
 </li>
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="structure.html">
-  Structure
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="laygo2.html">
+  API Reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="technology.html">
   Tech Setup
- </a>
-</li>
-
-<li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="laygo2.html">
-  API Reference
  </a>
 </li>
 
@@ -451,7 +445,18 @@
                 
   <section id="module-laygo2.object">
 <span id="laygo2-object-package"></span><h1>laygo2.object package<a class="headerlink" href="#module-laygo2.object" title="Permalink to this headline">#</a></h1>
-<p>laygo2 object package implements physical/template/grid/design-hierarchy objects.</p>
+<p><strong>laygo2.object</strong> package implements core object classes for physical
+layout structures and design hierarchies.</p>
+<p>The folowing modules compose the object package:</p>
+<ul class="simple">
+<li><p><strong>laygo2.object.physical</strong> module is defining classes for physical objects that compose actual IC layout.</p></li>
+<li><p><strong>laygo2.object.template</strong> module describes classes for templates that generate various instance objects for target technology and design parameters.</p></li>
+<li><p><strong>laygo2.object.grid</strong> module describes grid classes to abstract placement and routing coordinates. parameterizations.</p></li>
+<li><p><strong>laygo2.object.database</strong> module implements classes for design hierarchy management.</p></li>
+</ul>
+<p>The following figure illustrates a UML diagram of the object package.</p>
+<img alt="_images/user_guide_uml.png" src="_images/user_guide_uml.png" />
+<p>Check the following links for the details of submodules and classes.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="laygo2.object.physical.html">laygo2.object.physical module</a><ul>

@@ -496,7 +496,9 @@
 <span class="go">                                       vextension0=e0v, hextension0=e0h)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a design</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;genlib&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Via on grid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">##############</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Place vias #</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">##############</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mn_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">via</span> <span class="o">=</span> <span class="n">dsn</span><span class="o">.</span><span class="n">via</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="n">mn_list</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Display generated design.</span>

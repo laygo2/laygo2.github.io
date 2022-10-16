@@ -159,7 +159,7 @@
 <span></span><span class="ch">#!/usr/bin/python</span>
 <span class="c1">########################################################################################################################</span>
 <span class="c1">#</span>
-<span class="c1"># Copyright (c) 2014, Regents of the University of California</span>
+<span class="c1"># Copyright (c) 2020, Nifty Chips Laboratory, Hanyang University</span>
 <span class="c1"># All rights reserved.</span>
 <span class="c1">#</span>
 <span class="c1"># Redistribution and use in source and binary forms, with or without modification, are permitted provided that the</span>
@@ -1302,7 +1302,9 @@
 <span class="sd">        &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
 <span class="sd">        &gt;&gt;&gt; print(inst0.xy)</span>
 <span class="sd">        [100, 100]</span>
-<span class="sd">        &gt;&gt;&gt; # Place the instance</span>
+<span class="sd">        &gt;&gt;&gt; ######################</span>
+<span class="sd">        &gt;&gt;&gt; # Place the instance #</span>
+<span class="sd">        &gt;&gt;&gt; ######################</span>
 <span class="sd">        &gt;&gt;&gt; dsn.place(inst=i0, grid=g, mn=[10,10])</span>
 <span class="sd">        &gt;&gt;&gt; # Print parameters of the placed instance.</span>
 <span class="sd">        &gt;&gt;&gt; print(i0.xy)</span>
@@ -1440,7 +1442,9 @@
 <span class="sd">                                               vextension0=e0v, hextension0=e0h)</span>
 <span class="sd">        &gt;&gt;&gt; # Create a design</span>
 <span class="sd">        &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
-<span class="sd">        &gt;&gt;&gt; # Routing on grid </span>
+<span class="sd">        &gt;&gt;&gt; #################</span>
+<span class="sd">        &gt;&gt;&gt; # Route on grid #</span>
+<span class="sd">        &gt;&gt;&gt; #################</span>
 <span class="sd">        &gt;&gt;&gt; mn_list = [[0, -2], [0, 1], [2, 1], [5,1] ]</span>
 <span class="sd">        &gt;&gt;&gt; route = dsn.route(grid=g, mn=mn_list, </span>
 <span class="sd">                              via_tag=[True, None, True, True])</span>
@@ -1543,7 +1547,9 @@
 <span class="sd">                                               vextension0=e0v, hextension0=e0h)</span>
 <span class="sd">        &gt;&gt;&gt; # Create a design</span>
 <span class="sd">        &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
-<span class="sd">        &gt;&gt;&gt; # Via on grid </span>
+<span class="sd">        &gt;&gt;&gt; ##############</span>
+<span class="sd">        &gt;&gt;&gt; # Place vias #</span>
+<span class="sd">        &gt;&gt;&gt; ##############</span>
 <span class="sd">        &gt;&gt;&gt; mn_list = [[0, -2], [1, 0], [2, 5]]</span>
 <span class="sd">        &gt;&gt;&gt; via = dsn.via(grid=g, mn=mn_list)</span>
 <span class="sd">        &gt;&gt;&gt; # Display generated design.</span>
@@ -1763,6 +1769,9 @@
 <span class="sd">                                               vextension0=e0v, hextension0=e0h)</span>
 <span class="sd">        &gt;&gt;&gt; # Create a design</span>
 <span class="sd">        &gt;&gt;&gt; dsn = Design(name=&quot;mycell&quot;, libname=&quot;genlib&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; ###############</span>
+<span class="sd">        &gt;&gt;&gt; # Place a pin #</span>
+<span class="sd">        &gt;&gt;&gt; ###############</span>
 <span class="sd">        &gt;&gt;&gt; mn = [[0, 0], [10, 10]]</span>
 <span class="sd">        &gt;&gt;&gt; pin = dsn.pin(name=&quot;pin&quot;, grid=g, mn=mn)</span>
 <span class="sd">        &gt;&gt;&gt; print(pin)</span>

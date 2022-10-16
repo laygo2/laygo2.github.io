@@ -1112,6 +1112,9 @@ on the specified routing grid.</p>
 <span class="go">                                       vextension0=e0v, hextension0=e0h)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a design</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;genlib&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">###############</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Place a pin #</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">###############</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mn</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pin</span> <span class="o">=</span> <span class="n">dsn</span><span class="o">.</span><span class="n">pin</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;pin&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="n">mn</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
@@ -1187,7 +1190,9 @@ pin 생성함수.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">i0</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s2">&quot;tlib&quot;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">inst0</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
 <span class="go">[100, 100]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Place the instance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">######################</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Place the instance #</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">######################</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">inst</span><span class="o">=</span><span class="n">i0</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print parameters of the placed instance.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">i0</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
@@ -1291,7 +1296,9 @@ for details.</p>
 <span class="go">                                       vextension0=e0v, hextension0=e0h)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a design</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;genlib&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Routing on grid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#################</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Route on grid #</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#################</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mn_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">route</span> <span class="o">=</span> <span class="n">dsn</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="n">mn_list</span><span class="p">,</span>
 <span class="go">                      via_tag=[True, None, True, True])</span>
@@ -1531,7 +1538,9 @@ The last object corresponds to the routing object on the track.</p>
 <span class="go">                                       vextension0=e0v, hextension0=e0h)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a design</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;genlib&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Via on grid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">##############</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Place vias #</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">##############</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mn_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">via</span> <span class="o">=</span> <span class="n">dsn</span><span class="o">.</span><span class="n">via</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="n">mn_list</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Display generated design.</span>

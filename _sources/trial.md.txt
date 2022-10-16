@@ -11,12 +11,12 @@ laygo in linux environments.
 
 ## Colab tutorial
 
-The easiest way of exercising laygo2 without installing it locally is using Colab; 
-the example tutorial can be found [here](https://colab.research.google.com/drive/1tpuUvqb6BujzZI6RBf2cFdAfMqBsxpep?usp=sharing).
+The easiest way of exercising laygo2 without installing it locally is using **[Colab](https://colab.research.google.com/)**; 
+the example tutorial can be found **[here](https://colab.research.google.com/drive/1tpuUvqb6BujzZI6RBf2cFdAfMqBsxpep?usp=sharing)**.
 
 ## Installation 
 
-There are two ways of installing laygo2 in your environment; 1) cloning from github and 2) using pip.
+There are two ways of installing laygo2 in your environment; 1) cloning from **[github](https://www.github.com)** and 2) using **[pip](https://pipy.org)**.
 
 ### Installing laygo2 from [Github](https://github.com/niftylab/laygo2.git)
 
@@ -42,7 +42,7 @@ Instead of cloning github repository, laygo2 package can be installed by running
 
 ## Technology setup
 
-Users need to set up the following files in the **laygo_tech** directory to enable laygo2 for a new technology:
+Users need to set up the following files in the **laygo2_tech** directory to enable laygo2 for a new technology:
 
     laygo2_tech_templayes.py  # for templates
     laygo2_tech_grids.py      # for grids

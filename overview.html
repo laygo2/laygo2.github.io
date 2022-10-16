@@ -232,16 +232,42 @@
 <section id="typical-design-flow">
 <h2>Typical design flow<a class="headerlink" href="#typical-design-flow" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
-<li><p>Load technology parameters, primitive templates, and grids from tech-specific setup <em>laygo2_tech</em>
-(check <a class="reference external" href="https://github.com/niftylab/laygo2/blob/master/laygo2/examples/laygo2_tech/laygo2_tech_templates.py">laygo2_tech.load_templates()</a>
-and <a class="reference external" href="https://github.com/niftylab/laygo2/blob/master/laygo2/examples/laygo2_tech/laygo2_tech_grids.py">laygo2_tech.load_grids()</a>).</p></li>
-<li><p>Generate instances from templates (check <a class="reference external" href="https://laygo2.github.io/laygo2.object.template.Template.html#laygo2.object.template.Template.generate">object.Template.generate()</a>).</p></li>
-<li><p>Place the generated instances (check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.place">object.database.Design.place()</a>).</p></li>
-<li><p>Route wires and vias between the instances’ terminals (check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.route">object.database.Design.route()</a>).</p></li>
-<li><p>Create Pins (check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.pin">object.database.Design.pin()</a>).</p></li>
-<li><p>Export the generated design in proper formats
-(check <a class="reference external" href="https://laygo2.github.io/laygo2.interface.html#laygo2.interface.skill.export">interface.skill.export()</a>).</p></li>
-<li><p><em>(Optional)</em> export the design as a new template (check <a class="reference external" href="https://laygo2.github.io/laygo2.interface.html#laygo2.interface.yaml.export_template">interface.yaml.export_template()</a>).</p></li>
+<li><p><strong>Load technology</strong> parameters, primitive templates, and grids from <em>laygo2_tech</em>.</p>
+<ul class="simple">
+<li><p>Check <a class="reference external" href="https://github.com/niftylab/laygo2/blob/master/laygo2/examples/laygo2_tech/laygo2_tech_templates.py">laygo2_tech.load_templates()</a>
+and <a class="reference external" href="https://github.com/niftylab/laygo2/blob/master/laygo2/examples/laygo2_tech/laygo2_tech_grids.py">laygo2_tech.load_grids()</a>.</p></li>
+</ul>
+</li>
+<li><p><strong>Generate instances</strong> from templates.</p>
+<ul class="simple">
+<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.object.template.Template.html#laygo2.object.template.Template.generate">object.Template.generate()</a>.</p></li>
+</ul>
+</li>
+<li><p><strong>Place</strong> the generated instances.</p>
+<ul class="simple">
+<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.place">object.database.Design.place()</a>.</p></li>
+</ul>
+</li>
+<li><p><strong>Route</strong> wires and vias between the instances’ terminals.</p>
+<ul class="simple">
+<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.route">object.database.Design.route()</a>.</p></li>
+</ul>
+</li>
+<li><p>Create <strong>Pins</strong>.</p>
+<ul class="simple">
+<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.pin">object.database.Design.pin()</a>.</p></li>
+</ul>
+</li>
+<li><p><strong>Export</strong> the generated design in proper format.</p>
+<ul class="simple">
+<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.interface.skill.html#laygo2.interface.skill.export">interface.skill.export()</a>.</p></li>
+</ul>
+</li>
+<li><p><em>(Optional)</em> export the design as a new template.</p>
+<ul class="simple">
+<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.interface.html#laygo2.interface.yaml.export_template">interface.yaml.export_template()</a>.</p></li>
+</ul>
+</li>
 </ol>
 </section>
 <section id="list-of-developers">
@@ -250,7 +276,7 @@ and <a class="reference external" href="https://github.com/niftylab/laygo2/blob/
 </section>
 <section id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">#</a></h2>
-<p>laygo2 is distributed under the BSD 3-Clause License.</p>
+<p><strong>laygo2</strong> is distributed under the BSD 3-Clause License.</p>
 </section>
 </section>
 

@@ -40,7 +40,7 @@ The anotomy of laygo2 is described in the **[API reference](laygo2.rst)** page.
     - Check [interface.yaml.export_template()](https://laygo2.github.io/laygo2.interface.html#laygo2.interface.yaml.export_template).
 
 ## List of developers
-See the [github repository README](https://github.com/niftylab/laygo2) for the full list of developers and contributors.
+See the **[github repository README](https://github.com/niftylab/laygo2)** for the full list of developers and contributors.
 
 ## License
 **laygo2** is distributed under the BSD 3-Clause License.

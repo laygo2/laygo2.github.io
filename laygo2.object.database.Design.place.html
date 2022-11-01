@@ -452,16 +452,16 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>inst</strong> (<a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><em>laygo2.object.physical.Instance</em></a><em> or </em><a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance"><em>laygo2.object.physical.VirtualInstance</em></a>) – The instance to be placed.</p></li>
+<li><p><strong>inst</strong> (<a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><em>laygo2.object.physical.Instance</em></a><em> or </em><a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance"><em>laygo2.object.physical.VirtualInstance</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – The instance to be placed. When inst is a list, the elements in the list are placed in order.</p></li>
 <li><p><strong>grid</strong> (<a class="reference internal" href="laygo2.object.grid.PlacementGrid.html#laygo2.object.grid.PlacementGrid" title="laygo2.object.grid.PlacementGrid"><em>laygo2.object.grid.PlacementGrid</em></a>) – The placement grid where the instance is placed on.</p></li>
-<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a>) – The abstract coordinate value [m, n] to place the instance.</p></li>
+<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – The abstract coordinate value [m, n] to place the instance.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The placed instance.</p>
+<dd class="field-even"><p>The placed instance or a list containing the placed instances.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance">laygo2.object.physical.Instance</a> or <a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance">laygo2.object.physical.VirtualInstance</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance">laygo2.object.physical.Instance</a> or <a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance">laygo2.object.physical.VirtualInstance</a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)">list</a>(<a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance">laygo2.object.physical.Instance</a>)</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
@@ -501,6 +501,37 @@
 <span class="go">    instances:</span>
 <span class="go">        {&#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x000002803D57F010&gt;}</span>
 <span class="go">    virtual instances:{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># When placing multiple instances by wrapping them with a list.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i1</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s2">&quot;tlib&quot;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;t1&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I1&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i2</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s2">&quot;tlib&quot;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;t2&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I2&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i3</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s2">&quot;tlib&quot;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;t3&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I3&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">inst</span><span class="o">=</span> <span class="p">[</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">,</span> <span class="n">i3</span><span class="p">],</span> <span class="n">grid</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dsn</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.database.Design object at 0x000002803D4C0F40&gt;</span>
+<span class="go">    name: mycell</span>
+<span class="go">    params: None</span>
+<span class="go">    elements:</span>
+<span class="go">        {&#39;I0&#39;: &lt;laygo2.object.physical.Instance object at</span>
+<span class="go">                0x000002803D57F010&gt;,</span>
+<span class="go">         &#39;I1&#39;: &lt;laygo2.object.physical.Instance object at</span>
+<span class="go">                0x000002803D57F011&gt;,</span>
+<span class="go">         &#39;I2&#39;: &lt;laygo2.object.physical.Instance object at</span>
+<span class="go">                0x000002803D57F012&gt;,</span>
+<span class="go">         &#39;I3&#39;: &lt;laygo2.object.physical.Instance object at</span>
+<span class="go">                0x000002803D57F013&gt;</span>
+<span class="go">                }</span>
+<span class="go">    libname:genlib</span>
+<span class="go">    rects:{}</span>
+<span class="go">    paths:{}</span>
+<span class="go">    pins:{}</span>
+<span class="go">    texts:{}</span>
+<span class="go">    instances:</span>
+<span class="go">        {&#39;I0&#39;: &lt;laygo2.object.physical.Instance object at 0x000002803D57F010&gt;,</span>
+<span class="go">         &#39;I1&#39;: &lt;laygo2.object.physical.Instance object at 0x000002803D57F011&gt;,</span>
+<span class="go">         &#39;I2&#39;: &lt;laygo2.object.physical.Instance object at 0x000002803D57F012&gt;,</span>
+<span class="go">         &#39;I3&#39;: &lt;laygo2.object.physical.Instance object at 0x000002803D57F013&gt;</span>
+<span class="go">        }</span>
+<span class="go">    virtual instances:{}</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -514,12 +545,12 @@
 <p><strong>(Korean)</strong> 인스턴스를 grid위 추상 좌표 mn에 배치하는 함수.</p>
 <dl class="simple">
 <dt>파라미터</dt><dd><ul class="simple">
-<li><p>inst(laygo2.physical.instance): 배치할 인스턴스.</p></li>
+<li><p>inst(laygo2.physical.instance or list(laygo2.object.physical.Instance)): 배치할 인스턴스 또는 배치할 인스턴스 들을 갖는 리스트.</p></li>
 <li><p>mn(numpy.ndarray or list): 인스턴스를 배치할 추상좌표.</p></li>
 </ul>
 </dd>
 <dt>반환값</dt><dd><ul class="simple">
-<li><p>laygo2.physical.instance: 좌표가 수정된 인스턴스.</p></li>
+<li><p>laygo2.physical.instance or list(laygo2.object.physical.Instance) : 좌표가 수정된 인스턴스 또는 좌표가 수정된 인스턴스 들을 갖는 리스트.</p></li>
 </ul>
 </dd>
 </dl>

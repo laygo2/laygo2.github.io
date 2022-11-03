@@ -73,6 +73,5 @@ The generated layout of a D-flip-flop is shown in the figure below:
 
 ![sky130 dff2x](../assets/img/trial_sky130_dff.png "sky130 dff2x")
 
-A colab version of the tutorial is provided as well. Check [this link](https://colab.research.google.com/drive/1dToEQe7500TUNOPN2aPTJGRgcbbNsqhj#scrollTo=qHTHuUmTACM_).
-
+A colab version of the tutorial is provided as well. Check **[this link](https://colab.research.google.com/drive/1dToEQe7500TUNOPN2aPTJGRgcbbNsqhj?usp=sharing)**.
 ![sky130 dff2x colab](../assets/img/trial_sky130_dff_colab.png "sky130 dff2x colab")

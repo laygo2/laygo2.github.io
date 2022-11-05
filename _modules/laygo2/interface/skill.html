@@ -289,7 +289,11 @@
         <span class="n">mxy</span> <span class="o">=</span> <span class="n">master</span><span class="o">.</span><span class="n">xy</span>
         <span class="n">mtf</span> <span class="o">=</span> <span class="n">master</span><span class="o">.</span><span class="n">transform</span>
     <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">Rect</span><span class="p">:</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">color</span>  <span class="c1"># coloring func. added</span>
+        <span class="c1"># coloring</span>
+        <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">color</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;not MPT&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">color</span>
         <span class="c1"># Invoke _laygo2_generate_rect( cv layer bbox ) in {header_filename}</span>
         <span class="n">_xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># make sure obj.xy is sorted</span>
         <span class="n">_xy</span> <span class="o">=</span> <span class="n">mxy</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span>

@@ -286,7 +286,7 @@
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
-<span class="sd">    &gt;&gt;&gt; laygo2.object.grid._conv_slice_to_list(slice(0, 10, 2))               </span>
+<span class="sd">    &gt;&gt;&gt; laygo2.object.grid._conv_slice_to_list(slice(0, 10, 2))</span>
 <span class="sd">    [0, 2, 4, 6, 8]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">slice_obj</span><span class="o">.</span><span class="n">start</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -317,7 +317,7 @@
 <span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; import numpy as np</span>
-<span class="sd">    &gt;&gt;&gt; laygo2.object.grid._conv_bbox_to_array(np.array([[0, 0], [1, 2]])) </span>
+<span class="sd">    &gt;&gt;&gt; laygo2.object.grid._conv_bbox_to_array(np.array([[0, 0], [1, 2]]))</span>
 <span class="sd">    array([[[0, 0], [1, 0]],</span>
 <span class="sd">           [[0, 1], [1, 1]],</span>
 <span class="sd">           [[0, 2], [1, 2]]])</span>
@@ -344,7 +344,7 @@
 <span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
 <span class="sd">    &gt;&gt;&gt; import numpy as np</span>
-<span class="sd">    &gt;&gt;&gt; laygo2.object.grid._conv_bbox_to_list(np.array([[0, 0], [1, 2]])) </span>
+<span class="sd">    &gt;&gt;&gt; laygo2.object.grid._conv_bbox_to_list(np.array([[0, 0], [1, 2]]))</span>
 <span class="sd">    [[0, 0], [1, 0], [0, 1], [1, 1], [0, 2], [1, 2]]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">array</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -496,9 +496,7 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">[</span><span class="n">pos</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span>
-                <span class="n">pos</span><span class="o">=</span><span class="n">_conv_slice_to_list</span><span class="p">(</span><span class="n">slice_obj</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">stop_def</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-            <span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">_conv_slice_to_list</span><span class="p">(</span><span class="n">slice_obj</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">stop_def</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">])</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
@@ -524,14 +522,7 @@
 
 <div class="viewcode-block" id="CircularMapping.summarize"><a class="viewcode-back" href="../../../laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
-            <span class="s2">&quot;class: &quot;</span>
-            <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
-            <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;elements: &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span>
-        <span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="s2">&quot;class: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="s2">&quot;elements: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span></div></div>
 
 
 <div class="viewcode-block" id="CircularMappingArray"><a class="viewcode-back" href="../../../laygo2.object.grid.CircularMappingArray.html#laygo2.object.grid.CircularMappingArray">[docs]</a><span class="k">class</span> <span class="nc">CircularMappingArray</span><span class="p">(</span><span class="n">CircularMapping</span><span class="p">):</span>
@@ -554,7 +545,7 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        numpy.ndarray </span>
+<span class="sd">        numpy.ndarray</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -595,9 +586,7 @@
                 <span class="n">idx</span> <span class="o">=</span> <span class="n">_extend_index_dim</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
             <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
             <span class="c1"># iterate and generate the list to return</span>
-            <span class="n">item</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span>
-                <span class="n">idx</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span>
-            <span class="p">)</span>  <span class="c1"># -1 because the tuples in idx are flatten.</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">idx</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>  <span class="c1"># -1 because the tuples in idx are flatten.</span>
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_null</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
                 <span class="n">item</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">idx</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">item</span><span class="p">)</span></div>
@@ -605,15 +594,15 @@
 
 <div class="viewcode-block" id="_AbsToPhyGridConverter"><a class="viewcode-back" href="../../../laygo2.object.grid._AbsToPhyGridConverter.html#laygo2.object.grid._AbsToPhyGridConverter">[docs]</a><span class="k">class</span> <span class="nc">_AbsToPhyGridConverter</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    An internal class that converts abstract coordinates into physical </span>
-<span class="sd">    coordinates. Conversely, conditional operators convert physical </span>
+<span class="sd">    An internal class that converts abstract coordinates into physical</span>
+<span class="sd">    coordinates. Conversely, conditional operators convert physical</span>
 <span class="sd">    coordinates into abstract coordinates.</span>
 
 <span class="sd">    .. image:: ../assets/img/user_guide_abs2phy.png</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 추상 좌표를 물리 좌표로 변환하는 클래스, 조건부연산은 역변환을 </span>
+<span class="sd">    **(Korean)** 추상 좌표를 물리 좌표로 변환하는 클래스, 조건부연산은 역변환을</span>
 <span class="sd">    수행한다.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -649,7 +638,7 @@
     <span class="c1"># Access functions.</span>
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert abstract coordinates of the master grid into corresponding </span>
+<span class="sd">        Convert abstract coordinates of the master grid into corresponding</span>
 <span class="sd">        physical coordinates.</span>
 
 <span class="sd">        Parameters</span>
@@ -684,7 +673,7 @@
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert abstract coordinates of the master grid into corresponding </span>
+<span class="sd">        Convert abstract coordinates of the master grid into corresponding</span>
 <span class="sd">        physical coordinates.</span>
 
 <span class="sd">        Parameters</span>
@@ -715,13 +704,9 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)** 추상 좌표를 master 좌표계에서 대응되는 물리 좌표로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_1d</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_2d</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
@@ -730,17 +715,13 @@
         <span class="sd">&quot;&quot;&quot;An internal function of __getitem__() for 1-d grids.&quot;&quot;&quot;</span>
         <span class="c1"># Check if pos has multiple elements.</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_1d</span><span class="p">(</span>
-                <span class="n">_conv_slice_to_list</span><span class="p">(</span><span class="n">slice_obj</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">stop_def</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-            <span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_1d</span><span class="p">(</span><span class="n">_conv_slice_to_list</span><span class="p">(</span><span class="n">slice_obj</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">stop_def</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_1d</span><span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_getitem_1d</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">])</span>
         <span class="k">elif</span> <span class="n">pos</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                <span class="s2">&quot;_AbsToPhyConverter._getitem_1d does not accept None as its input.&quot;</span>
-            <span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;_AbsToPhyConverter._getitem_1d does not accept None as its input.&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># pos is a single element. Compute quotient and modulo for grid extension.</span>
             <span class="n">quo</span> <span class="o">=</span> <span class="mi">0</span>
@@ -771,9 +752,7 @@
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
         <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
         <span class="c1"># TODO: Refactor the following code to avoid the use of double for loops and list comprehensions.</span>
-        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span>
-            <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span>
-        <span class="p">):</span>  <span class="c1"># x and y are scalars.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>  <span class="c1"># x and y are scalars.</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>  <span class="c1"># x is a scalar.</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">_y</span><span class="p">])</span> <span class="k">for</span> <span class="n">_y</span> <span class="ow">in</span> <span class="n">y</span><span class="p">])</span>
@@ -791,7 +770,7 @@
     <span class="c1"># Reverse-access operators (comparison operators are used for reverse-access).</span>
     <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert physical coordinates into abstract coordinates of the master grid </span>
+<span class="sd">        Convert physical coordinates into abstract coordinates of the master grid</span>
 <span class="sd">        satisfying conditional operations.</span>
 
 <span class="sd">        Parameters</span>
@@ -826,7 +805,7 @@
 
     <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert physical coordinates into abstract coordinates of the master grid </span>
+<span class="sd">        Convert physical coordinates into abstract coordinates of the master grid</span>
 <span class="sd">        satisfying conditional operations.</span>
 
 <span class="sd">        Parameters</span>
@@ -857,13 +836,9 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)** 물리 좌표를 master 좌표계에서 조건부 연산을 만족하는 추상 좌표로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lt_1d</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lt_2d</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
@@ -932,7 +907,7 @@
 
     <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert physical coordinates into abstract coordinates of the master grid </span>
+<span class="sd">        Convert physical coordinates into abstract coordinates of the master grid</span>
 <span class="sd">        satisfying conditional operations.</span>
 
 <span class="sd">        Parameters</span>
@@ -963,13 +938,9 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)** 물리 좌표를 master 좌표계에서 조건부 연산을 만족하는 추상 좌표로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_le_1d</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_le_2d</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">)</span>
 
 <div class="viewcode-block" id="_AbsToPhyGridConverter._le_1d"><a class="viewcode-back" href="../../../laygo2.object.grid._AbsToPhyGridConverter.html#laygo2.object.grid._AbsToPhyGridConverter._le_1d">[docs]</a>    <span class="k">def</span> <span class="nf">_le_1d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
@@ -989,7 +960,7 @@
 
     <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert physical coordinates into abstract coordinates of the master grid </span>
+<span class="sd">        Convert physical coordinates into abstract coordinates of the master grid</span>
 <span class="sd">        satisfying conditional operations.</span>
 
 <span class="sd">        Parameters</span>
@@ -1020,13 +991,9 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)** 물리 좌표를 master 좌표계에서 조건부 연산을 만족하는 추상 좌표로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gt_1d</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gt_2d</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">)</span>
 
 <div class="viewcode-block" id="_AbsToPhyGridConverter._gt_1d"><a class="viewcode-back" href="../../../laygo2.object.grid._AbsToPhyGridConverter.html#laygo2.object.grid._AbsToPhyGridConverter._gt_1d">[docs]</a>    <span class="k">def</span> <span class="nf">_gt_1d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
@@ -1046,7 +1013,7 @@
 
     <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert physical coordinates into abstract coordinates of the master grid </span>
+<span class="sd">        Convert physical coordinates into abstract coordinates of the master grid</span>
 <span class="sd">        satisfying conditional operations.</span>
 
 <span class="sd">        Parameters</span>
@@ -1077,13 +1044,9 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)** 물리 좌표를 master 좌표계에서 조건부 연산을 만족하는 추상 좌표로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ge_1d</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ge_2d</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">)</span>
 
 <div class="viewcode-block" id="_AbsToPhyGridConverter._ge_1d"><a class="viewcode-back" href="../../../laygo2.object.grid._AbsToPhyGridConverter.html#laygo2.object.grid._AbsToPhyGridConverter._ge_1d">[docs]</a>    <span class="k">def</span> <span class="nf">_ge_1d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
@@ -1105,7 +1068,7 @@
 <div class="viewcode-block" id="_PhyToAbsGridConverter"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter">[docs]</a><span class="k">class</span> <span class="nc">_PhyToAbsGridConverter</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A class that converts physical coordinates into abstract coordinates.</span>
-<span class="sd">    Conversely, conditional operators convert abstract coordinates into </span>
+<span class="sd">    Conversely, conditional operators convert abstract coordinates into</span>
 <span class="sd">    physical coordinates.</span>
 
 <span class="sd">    .. image:: ../assets/img/user_guide_phy2abs.png</span>
@@ -1113,7 +1076,7 @@
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    **(Korean)**</span>
-<span class="sd">    물리 좌표를 추상 좌표로 변환하는 클래스, 조건부연산은 반대로 추상 좌표를 </span>
+<span class="sd">    물리 좌표를 추상 좌표로 변환하는 클래스, 조건부연산은 반대로 추상 좌표를</span>
 <span class="sd">    물리 좌표로 변환한다.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1150,7 +1113,7 @@
     <span class="c1"># Access functions.</span>
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert physical coordinates into the corresponding abstract coordinates of </span>
+<span class="sd">        Convert physical coordinates into the corresponding abstract coordinates of</span>
 <span class="sd">        the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1215,13 +1178,9 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)** 물리 좌표를 master 좌표계에서 대응되는 추상 좌표로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_1d</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_2d</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
@@ -1232,57 +1191,41 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_1d</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_1d</span><span class="p">(</span>
-                <span class="n">_conv_slice_to_list</span><span class="p">(</span><span class="n">slice_obj</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">stop_def</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-            <span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_1d</span><span class="p">(</span><span class="n">_conv_slice_to_list</span><span class="p">(</span><span class="n">slice_obj</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">stop_def</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_1d</span><span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_getitem_1d</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">])</span>
         <span class="k">elif</span> <span class="n">pos</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                <span class="s2">&quot;_AbsToPhyConverter._getitem_1d does not accept None as its input.&quot;</span>
-            <span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;_AbsToPhyConverter._getitem_1d does not accept None as its input.&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># pos is a single element.</span>
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">elements</span><span class="p">):</span>
                 <span class="k">if</span> <span class="p">(</span><span class="n">pos</span> <span class="o">-</span> <span class="n">e</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">width</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="k">return</span> <span class="p">(</span>
-                        <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">((</span><span class="n">pos</span> <span class="o">-</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">width</span><span class="p">))</span>
-                        <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                        <span class="o">+</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                    <span class="p">)</span>
+                    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">((</span><span class="n">pos</span> <span class="o">-</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">width</span><span class="p">))</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="k">return</span> <span class="kc">None</span>  <span class="c1"># no matched coordinate</span></div>
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter._getitem_2d"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter._getitem_2d">[docs]</a>    <span class="k">def</span> <span class="nf">_getitem_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;An internal function of __getitem__() for 2-d grid.&quot;&quot;&quot;</span>
         <span class="c1"># If pos contains multiple coordinates (or objects), convert recursively.</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span>
-                <span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)</span>
-            <span class="p">):</span>  <span class="c1"># It&#39;s actually a single coordinate.</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>  <span class="c1"># It&#39;s actually a single coordinate.</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">]</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span>
-                <span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)</span>
-            <span class="p">):</span>  <span class="c1"># It&#39;s actually a single coordinate.</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>  <span class="c1"># It&#39;s actually a single coordinate.</span>
                 <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">])</span>
         <span class="c1"># If pos contains only one physical object, convert its bounding box to abstract coordinates</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
         <span class="c1"># If pos contains only one coordinate, convert it to abstract grid.</span>
         <span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
         <span class="c1"># refactor the following code to avoid the use of double for-loops and list comprehensions.</span>
-        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span>
-            <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span>
-        <span class="p">):</span>  <span class="c1"># x and y are scalars.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>  <span class="c1"># x and y are scalars.</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">])</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>  <span class="c1"># x is a scalar.</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">m</span><span class="p">,</span> <span class="n">_n</span><span class="p">])</span> <span class="k">for</span> <span class="n">_n</span> <span class="ow">in</span> <span class="n">n</span><span class="p">])</span>
@@ -1300,7 +1243,7 @@
     <span class="c1"># Reverse-access operators (comparison operators are used for reverse-access).</span>
     <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert abstract coordinates into physical coordinates satisfying </span>
+<span class="sd">        Convert abstract coordinates into physical coordinates satisfying</span>
 <span class="sd">        conditional operations in the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1357,7 +1300,7 @@
 
     <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert abstract coordinates into physical coordinates satisfying </span>
+<span class="sd">        Convert abstract coordinates into physical coordinates satisfying</span>
 <span class="sd">        conditional operations in the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1388,13 +1331,9 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)** 추상 좌표를 master 좌표계에서 조건부 연산을 만족하는 물리 좌표로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lt_1d</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lt_2d</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">)</span>
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter._lt_1d"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter._lt_1d">[docs]</a>    <span class="k">def</span> <span class="nf">_lt_1d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
@@ -1409,7 +1348,7 @@
 
     <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert abstract coordinates into physical coordinates satisfying </span>
+<span class="sd">        Convert abstract coordinates into physical coordinates satisfying</span>
 <span class="sd">        conditional operations in the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1444,7 +1383,7 @@
 
     <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert abstract coordinates into physical coordinates satisfying </span>
+<span class="sd">        Convert abstract coordinates into physical coordinates satisfying</span>
 <span class="sd">        conditional operations in the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1475,13 +1414,9 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)** 추상 좌표를 master 좌표계에서 조건부 연산을 만족하는 물리 좌표로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;OneDimGrid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">OneDimGrid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gt_1d</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Grid&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">Grid</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gt_2d</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
@@ -1498,7 +1433,7 @@
 
     <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert abstract coordinates into physical coordinates satisfying </span>
+<span class="sd">        Convert abstract coordinates into physical coordinates satisfying</span>
 <span class="sd">        conditional operations in the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1533,7 +1468,7 @@
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter.bbox"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.bbox">[docs]</a>    <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert the bounding box of the object into the abstract coordinates </span>
+<span class="sd">        Convert the bounding box of the object into the abstract coordinates</span>
 <span class="sd">        of the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1567,9 +1502,7 @@
 <span class="sd">        **(Korean)** 객체의 bounding box를 master 좌표계의 추상 좌표로 변환.</span>
 <span class="sd">        _AbsToPhyGridConverter 객체의 &gt;=, &lt;=를 사용하므로 추상면적이 작아질수있다.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)):</span>
             <span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">bbox</span>
 
         <span class="c1"># phy -&gt; abs</span>
@@ -1580,7 +1513,7 @@
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter.bottom_left"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.bottom_left">[docs]</a>    <span class="k">def</span> <span class="nf">bottom_left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert an object&#39;s physical corner coordinates into abstract coordinates </span>
+<span class="sd">        Convert an object&#39;s physical corner coordinates into abstract coordinates</span>
 <span class="sd">        of the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1613,9 +1546,7 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)** 객체의 물리 코너 좌표를 master 좌표계의 추상 좌표로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom_left</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">_i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
@@ -1623,7 +1554,7 @@
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter.bottom_right"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.bottom_right">[docs]</a>    <span class="k">def</span> <span class="nf">bottom_right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert an object&#39;s physical corner coordinates into abstract coordinates </span>
+<span class="sd">        Convert an object&#39;s physical corner coordinates into abstract coordinates</span>
 <span class="sd">        of the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1656,9 +1587,7 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)** 객체의 물리 코너 좌표를 master 좌표계의 추상 좌표로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom_right</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">_i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
@@ -1666,7 +1595,7 @@
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter.top_left"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.top_left">[docs]</a>    <span class="k">def</span> <span class="nf">top_left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert an object&#39;s physical corner coordinates into abstract coordinates </span>
+<span class="sd">        Convert an object&#39;s physical corner coordinates into abstract coordinates</span>
 <span class="sd">        of the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1699,9 +1628,7 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)** 객체의 물리 코너 좌표를 master 좌표계의 추상 좌표로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">top_left</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">_i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
@@ -1709,7 +1636,7 @@
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter.top_right"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.top_right">[docs]</a>    <span class="k">def</span> <span class="nf">top_right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert an object&#39;s physical corner coordinates into abstract </span>
+<span class="sd">        Convert an object&#39;s physical corner coordinates into abstract</span>
 <span class="sd">        coordinates of the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1742,9 +1669,7 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)** 객체의 물리 코너 좌표를 master 좌표계의 추상 좌표로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">top_right</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">_i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
@@ -1752,9 +1677,7 @@
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter.width"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.width">[docs]</a>    <span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the width of an object on this grid.&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">_i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
@@ -1762,9 +1685,7 @@
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter.height"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.height">[docs]</a>    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the height of an object on this grid.&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-            <span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">_i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
@@ -1780,7 +1701,7 @@
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter.size"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.size">[docs]</a>    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert an object&#39;s size ([width, height]) into abstract coordinates </span>
+<span class="sd">        Convert an object&#39;s size ([width, height]) into abstract coordinates</span>
 <span class="sd">        of the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1817,7 +1738,7 @@
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter.crossing"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.crossing">[docs]</a>    <span class="k">def</span> <span class="nf">crossing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert the physical intersections of objects into abstract coordinates </span>
+<span class="sd">        Convert the physical intersections of objects into abstract coordinates</span>
 <span class="sd">        of the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1855,14 +1776,14 @@
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter.overlap"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.overlap">[docs]</a>    <span class="k">def</span> <span class="nf">overlap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;bbox&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert the overlapping area of objects into abstract coordinates of </span>
+<span class="sd">        Convert the overlapping area of objects into abstract coordinates of</span>
 <span class="sd">        the master grid and return in a format specified in type.</span>
 
 <span class="sd">        A bounding box is returned if type=&#39;bbox&#39;</span>
-<span class="sd">        </span>
-<span class="sd">        All coordinates in the overlapped region are returned in a </span>
+
+<span class="sd">        All coordinates in the overlapped region are returned in a</span>
 <span class="sd">        two-dimensional array if type=&#39;array&#39;</span>
-<span class="sd">        </span>
+
 <span class="sd">        An one-dimensional list is returned if type=&#39;list&#39;.</span>
 
 <span class="sd">        Parameters</span>
@@ -1894,13 +1815,13 @@
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)** 객체들의 겹치는 면적을 master 좌표계의 추상 좌표로 변환 후 </span>
+<span class="sd">        **(Korean)** 객체들의 겹치는 면적을 master 좌표계의 추상 좌표로 변환 후</span>
 <span class="sd">        type에 따른 형태로 반환.</span>
-<span class="sd">        </span>
+
 <span class="sd">        &#39;bbox&#39;인 경우, bounding box로 반환.</span>
-<span class="sd">        </span>
-<span class="sd">        &#39;array&#39; 인 경우 모든 교점을 2차원 array로 반환. </span>
-<span class="sd">        </span>
+
+<span class="sd">        &#39;array&#39; 인 경우 모든 교점을 2차원 array로 반환.</span>
+
 <span class="sd">        &#39;list&#39; 인경우 모든 교점을 1차원 list로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">_ib</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1921,13 +1842,11 @@
         <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s2">&quot;array&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">_conv_bbox_to_array</span><span class="p">(</span><span class="n">_ib</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="s2">&quot;overlap() should receive a valid value for its type (bbox, point, array, ...)&quot;</span>
-            <span class="p">)</span></div>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;overlap() should receive a valid value for its type (bbox, point, array, ...)&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter.union"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.union">[docs]</a>    <span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert the bounding box containing all objects into abstract coordinates </span>
+<span class="sd">        Convert the bounding box containing all objects into abstract coordinates</span>
 <span class="sd">        of the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -1956,7 +1875,7 @@
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)** 객체들을 모두 포함하는 bounding box를 master 좌표계의 </span>
+<span class="sd">        **(Korean)** 객체들을 모두 포함하는 bounding box를 master 좌표계의</span>
 <span class="sd">        추상 좌표로 변환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">_ub</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1972,7 +1891,7 @@
 
 <div class="viewcode-block" id="_PhyToAbsGridConverter.center"><a class="viewcode-back" href="../../../laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.center">[docs]</a>    <span class="k">def</span> <span class="nf">center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Convert an object&#39;s physical center coordinates into abstract coordinates </span>
+<span class="sd">        Convert an object&#39;s physical center coordinates into abstract coordinates</span>
 <span class="sd">        of the master grid.</span>
 
 <span class="sd">        Parameters</span>
@@ -2017,13 +1936,9 @@
         <span class="n">dist_list</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">point_list</span><span class="p">:</span>
-            <span class="n">dist_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                <span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">point</span> <span class="o">-</span> <span class="n">obj</span><span class="o">.</span><span class="n">center</span><span class="p">)]</span>
-            <span class="p">)</span>  <span class="c1"># Calculate Euclidean distances.</span>
+            <span class="n">dist_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">idx</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">point</span> <span class="o">-</span> <span class="n">obj</span><span class="o">.</span><span class="n">center</span><span class="p">)])</span>  <span class="c1"># Calculate Euclidean distances.</span>
             <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">dist_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
-            <span class="n">dist_list</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">distance</span><span class="p">:</span> <span class="n">distance</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="p">)</span>  <span class="c1"># Sort distances in ascending order.</span>
+        <span class="n">dist_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dist_list</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">distance</span><span class="p">:</span> <span class="n">distance</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Sort distances in ascending order.</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">mn</span><span class="p">(</span>
             <span class="n">point_list</span><span class="p">[</span><span class="n">dist_sorted</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
         <span class="p">)</span>  <span class="c1"># Convert the closest point to abstract coordinate and then return.</span></div></div>
@@ -2254,10 +2169,10 @@
 
 <div class="viewcode-block" id="Grid"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid">[docs]</a><span class="k">class</span> <span class="nc">Grid</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A base class having conversion operators and the mapping information (element) </span>
+<span class="sd">    A base class having conversion operators and the mapping information (element)</span>
 <span class="sd">    between two-dimensional physical coordinates and abstract coordinates.</span>
 
-<span class="sd">    Examplar grid conversions between abstract and physical coordinates are </span>
+<span class="sd">    Examplar grid conversions between abstract and physical coordinates are</span>
 <span class="sd">    summarized in the following figure.</span>
 
 <span class="sd">    .. image:: ../assets/img/user_guide_grid_conversion.png</span>
@@ -2265,7 +2180,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 2차원 물리좌표와 추상좌표간 mapping 정보(element) 를 갖고 있으며 </span>
+<span class="sd">    **(Korean)** 2차원 물리좌표와 추상좌표간 mapping 정보(element) 를 갖고 있으며</span>
 <span class="sd">    해당 element를 활용하는 좌표 연산자를 가지고 있는 기본 클래스.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -2306,7 +2221,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">xy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;_AbsToPhyGridConverter: Two-dimensional </span>
+        <span class="sd">&quot;&quot;&quot;_AbsToPhyGridConverter: Two-dimensional</span>
 <span class="sd">        _AbsToPhyConverter of a coordinate system.</span>
 
 <span class="sd">        Example</span>
@@ -2336,7 +2251,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;_AbsToPhyGridConverter: One-dimensional _AbsToPhyGridConverter </span>
+        <span class="sd">&quot;&quot;&quot;_AbsToPhyGridConverter: One-dimensional _AbsToPhyGridConverter</span>
 <span class="sd">            of the x-coordinate system.</span>
 
 <span class="sd">        Example</span>
@@ -2365,7 +2280,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;_AbsToPhyGridConverter: One-dimensional _AbsToPhyGridConverter </span>
+        <span class="sd">&quot;&quot;&quot;_AbsToPhyGridConverter: One-dimensional _AbsToPhyGridConverter</span>
 <span class="sd">        of the y-coordinate system.</span>
 
 <span class="sd">        Example</span>
@@ -2431,7 +2346,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">mn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;laygo2._PhyToAbsGridConverter: Two-dimensional _PhyToAbsConverter of </span>
+        <span class="sd">&quot;&quot;&quot;laygo2._PhyToAbsGridConverter: Two-dimensional _PhyToAbsConverter of</span>
 <span class="sd">        a coordinate system.</span>
 
 <span class="sd">        Example</span>
@@ -2462,7 +2377,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">m</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;_PhyToAbsGridConverter: One-dimensional _PhyToAbsConverter of </span>
+        <span class="sd">&quot;&quot;&quot;_PhyToAbsGridConverter: One-dimensional _PhyToAbsConverter of</span>
 <span class="sd">        the x-coordinate system.</span>
 
 <span class="sd">        Example</span>
@@ -2685,9 +2600,9 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">elements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;list: return elements of subgrids </span>
+        <span class="sd">&quot;&quot;&quot;list: return elements of subgrids</span>
 <span class="sd">        ([_xy[0].elements, _xy[1].elements]).</span>
-<span class="sd">        </span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_xy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">elements</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">elements</span><span class="p">]</span>
 
@@ -2701,34 +2616,34 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the largest </span>
+        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the largest</span>
 <span class="sd">        but less than other.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="o">.</span><span class="fm">__lt__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the largest </span>
+        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the largest</span>
 <span class="sd">        but less than or equal to other.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="o">.</span><span class="fm">__le__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the smallest </span>
+        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the smallest</span>
 <span class="sd">        but greater than other.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="o">.</span><span class="fm">__gt__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the smallest </span>
+        <span class="sd">&quot;&quot;&quot;Return the index of the grid coordinate that is the smallest</span>
 <span class="sd">        but greater than or equal to other.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="o">.</span><span class="fm">__ge__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Grid.bbox"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.bbox">[docs]</a>    <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the </span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the</span>
 <span class="sd">        &#39;internal&#39; bounding box of obj.</span>
-<span class="sd">        </span>
+
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
 <span class="sd">        _PhyToAbsGridConverter.bbox</span>
@@ -2737,9 +2652,9 @@
 
 <div class="viewcode-block" id="Grid.bottom_left"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.bottom_left">[docs]</a>    <span class="k">def</span> <span class="nf">bottom_left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the </span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the</span>
 <span class="sd">        bottom-left corner of obj.</span>
-<span class="sd">        </span>
+
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
 <span class="sd">        _PhyToAbsGridConverter.bottom_left</span>
@@ -2748,9 +2663,9 @@
 
 <div class="viewcode-block" id="Grid.bottom_right"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.bottom_right">[docs]</a>    <span class="k">def</span> <span class="nf">bottom_right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the </span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the</span>
 <span class="sd">        bottom-right corner of obj.</span>
-<span class="sd">        </span>
+
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
 <span class="sd">        _PhyToAbsGridConverter.bottom_right</span>
@@ -2759,7 +2674,7 @@
 
 <div class="viewcode-block" id="Grid.top_left"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.top_left">[docs]</a>    <span class="k">def</span> <span class="nf">top_left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the top-left </span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the top-left</span>
 <span class="sd">        corner of obj.</span>
 
 <span class="sd">        See Also</span>
@@ -2770,9 +2685,9 @@
 
 <div class="viewcode-block" id="Grid.top_right"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.top_right">[docs]</a>    <span class="k">def</span> <span class="nf">top_right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the top-right </span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the top-right</span>
 <span class="sd">        corner of obj.</span>
-<span class="sd">        </span>
+
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
 <span class="sd">        _PhyToAbsGridConverter.top_right</span>
@@ -2781,9 +2696,9 @@
 
 <div class="viewcode-block" id="Grid.crossing"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.crossing">[docs]</a>    <span class="k">def</span> <span class="nf">crossing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the crossing </span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the crossing</span>
 <span class="sd">        point of args.</span>
-<span class="sd">        </span>
+
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
 <span class="sd">        laygo2.object.grid._PhyToAbsGridConverter.crossing</span>
@@ -2792,7 +2707,7 @@
 
 <div class="viewcode-block" id="Grid.overlap"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.overlap">[docs]</a>    <span class="k">def</span> <span class="nf">overlap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;bbox&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the overlap </span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the overlap</span>
 <span class="sd">        of args.</span>
 
 <span class="sd">        See Also</span>
@@ -2813,7 +2728,7 @@
 
 <div class="viewcode-block" id="Grid.center"><a class="viewcode-back" href="../../../laygo2.object.grid.Grid.html#laygo2.object.grid.Grid.center">[docs]</a>    <span class="k">def</span> <span class="nf">center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the abstract grid coordinates corresponding to the center </span>
+<span class="sd">        Return the abstract grid coordinates corresponding to the center</span>
 <span class="sd">        point of obj.</span>
 
 <span class="sd">        Parameters</span>
@@ -2885,12 +2800,12 @@
 <span class="c1"># Regular classes.</span>
 <div class="viewcode-block" id="PlacementGrid"><a class="viewcode-back" href="../../../laygo2.object.grid.PlacementGrid.html#laygo2.object.grid.PlacementGrid">[docs]</a><span class="k">class</span> <span class="nc">PlacementGrid</span><span class="p">(</span><span class="n">Grid</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    PlacementGrid class implements a grid for placement of Instance and </span>
+<span class="sd">    PlacementGrid class implements a grid for placement of Instance and</span>
 <span class="sd">    VirtualInstance objects.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)** PlacementGrid 클래스는 Instance 및 VirtualInstance 개체들의 </span>
+<span class="sd">    **(Korean)** PlacementGrid 클래스는 Instance 및 VirtualInstance 개체들의</span>
 <span class="sd">        배치를 위한 격자 그리드를 구현한다.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2911,7 +2826,7 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        laygo2.object.physical.Instance or </span>
+<span class="sd">        laygo2.object.physical.Instance or</span>
 <span class="sd">        laygo2.object.physical.VirtualInstance :</span>
 <span class="sd">            The placed instance.</span>
 
@@ -2971,7 +2886,7 @@
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.template import NativeInstanceTemplate</span>
 <span class="sd">    &gt;&gt;&gt; # Routing grid construction (not needed if laygo2_tech is set up).</span>
 <span class="sd">    &gt;&gt;&gt; gv = OneDimGrid(name=&quot;gv&quot;, scope=[0, 50], elements=[0])</span>
-<span class="sd">    &gt;&gt;&gt; gh = OneDimGrid(name=&quot;gv&quot;, scope=[0, 100], elements=[0, 40, 60])</span>
+<span class="sd">    &gt;&gt;&gt; gh = OneDimGrid(name=&quot;gh&quot;, scope=[0, 100], elements=[0, 40, 60])</span>
 <span class="sd">    &gt;&gt;&gt; wv = CM([10])           # vertical (xgrid) width</span>
 <span class="sd">    &gt;&gt;&gt; wh = CM([20, 10, 10])   # horizontal (ygrid) width</span>
 <span class="sd">    &gt;&gt;&gt; ev = CM([10])           # vertical (xgrid) extension</span>
@@ -2982,8 +2897,8 @@
 <span class="sd">    &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">    &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">    &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">    &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned </span>
+<span class="sd">    &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
 <span class="sd">    &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
 <span class="sd">    &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
@@ -3035,8 +2950,8 @@
 <span class="sd">    &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">    &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">    &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">    &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned </span>
+<span class="sd">    &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
 <span class="sd">    &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
 <span class="sd">    &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
@@ -3088,8 +3003,8 @@
 <span class="sd">    &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">    &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">    &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">    &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned </span>
+<span class="sd">    &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
 <span class="sd">    &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
 <span class="sd">    &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
@@ -3137,8 +3052,8 @@
 <span class="sd">    &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">    &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">    &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">    &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned </span>
+<span class="sd">    &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
 <span class="sd">    &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
 <span class="sd">    &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
@@ -3186,8 +3101,8 @@
 <span class="sd">    &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">    &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">    &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">    &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned </span>
+<span class="sd">    &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
 <span class="sd">    &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
 <span class="sd">    &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
@@ -3204,7 +3119,7 @@
 <span class="sd">        class: CircularMapping, </span>
 <span class="sd">        elements: [15]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    
+
     <span class="n">hextension0</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: the array containing the extension of the zero-length wires on the horizontal grid. </span>
 <span class="sd">    </span>
@@ -3228,8 +3143,8 @@
 <span class="sd">    &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">    &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">    &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">    &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned </span>
+<span class="sd">    &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
 <span class="sd">    &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
 <span class="sd">    &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
@@ -3246,7 +3161,7 @@
 <span class="sd">        class: CircularMapping, </span>
 <span class="sd">        elements: [15, 15, 15]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    
+
     <span class="n">vlayer</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;CircularMapping: Layer information of vertical wires.</span>
 
@@ -3270,8 +3185,8 @@
 <span class="sd">    &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">    &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">    &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">    &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned </span>
+<span class="sd">    &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
 <span class="sd">    &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
 <span class="sd">    &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
@@ -3319,8 +3234,8 @@
 <span class="sd">    &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">    &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">    &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">    &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned </span>
+<span class="sd">    &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
 <span class="sd">    &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
 <span class="sd">    &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
@@ -3368,8 +3283,8 @@
 <span class="sd">    &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">    &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">    &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">    &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned </span>
+<span class="sd">    &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
 <span class="sd">    &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
 <span class="sd">    &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
@@ -3417,8 +3332,8 @@
 <span class="sd">    &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">    &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">    &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">    &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned </span>
+<span class="sd">    &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
 <span class="sd">    &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
 <span class="sd">    &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
@@ -3466,8 +3381,8 @@
 <span class="sd">    &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">    &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">    &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">    &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned </span>
+<span class="sd">    &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
 <span class="sd">    &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
 <span class="sd">    &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
@@ -3519,8 +3434,8 @@
 <span class="sd">    &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">    &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">    &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">    &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">    &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned </span>
+<span class="sd">    &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object) </span>
 <span class="sd">    &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
 <span class="sd">    &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
 <span class="sd">    &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
@@ -3661,13 +3576,13 @@
 <span class="sd">        &gt;&gt;&gt; e0v = CM([15])          # vert. extension (for zero-length wires)</span>
 <span class="sd">        &gt;&gt;&gt; e0h = CM([15, 15, 15])  # hori. extension (for zero-length wires)</span>
 <span class="sd">        &gt;&gt;&gt; lv = CM([[&#39;M1&#39;, &#39;drawing&#39;]], dtype=object)  # layer information</span>
-<span class="sd">        &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">        &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">        &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">        &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned</span>
+<span class="sd">        &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
-<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
+<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via</span>
 <span class="sd">        &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; g = laygo2.object.grid.RoutingGrid(name=&#39;mygrid&#39;, vgrid=gv, hgrid=gh,</span>
 <span class="sd">                                               vwidth=wv, hwidth=wh,</span>
@@ -3677,12 +3592,12 @@
 <span class="sd">                                               viamap=viamap, primary_grid=primary_grid,</span>
 <span class="sd">                                               xcolor=xcolor, ycolor=ycolor,</span>
 <span class="sd">                                               vextension0=e0v, hextension0=e0h)</span>
-<span class="sd">        &gt;&gt;&gt; # Routing on grid </span>
+<span class="sd">        &gt;&gt;&gt; # Routing on grid</span>
 <span class="sd">        &gt;&gt;&gt; mn_list = [[0, -2], [0, 1], [2, 1], [5,1] ]</span>
 <span class="sd">        &gt;&gt;&gt; route = g.route(mn=mn_list, via_tag=[True, None, True, True])</span>
 <span class="sd">        &gt;&gt;&gt; for r in route:</span>
 <span class="sd">        &gt;&gt;&gt;     print(r)</span>
-<span class="sd">        &lt;laygo2.object.physical.Instance object at 0x0000016939A23A90&gt; </span>
+<span class="sd">        &lt;laygo2.object.physical.Instance object at 0x0000016939A23A90&gt;</span>
 <span class="sd">            name: None,</span>
 <span class="sd">            class: Instance,</span>
 <span class="sd">            xy: [0, -60],</span>
@@ -3727,7 +3642,7 @@
 <span class="sd">            pitch: [0, 0]</span>
 <span class="sd">            transform: R0</span>
 <span class="sd">            pins: {}</span>
-<span class="sd">        </span>
+
 <span class="sd">        .. image:: ../assets/img/object_grid_RoutingGrid_init.png</span>
 <span class="sd">           :height: 250</span>
 
@@ -3814,13 +3729,13 @@
 <span class="sd">        &gt;&gt;&gt; e0v = CM([15])          # vert. extension (for zero-length wires)</span>
 <span class="sd">        &gt;&gt;&gt; e0h = CM([15, 15, 15])  # hori. extension (for zero-length wires)</span>
 <span class="sd">        &gt;&gt;&gt; lv = CM([[&#39;M1&#39;, &#39;drawing&#39;]], dtype=object)  # layer information</span>
-<span class="sd">        &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">        &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">        &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">        &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned</span>
+<span class="sd">        &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
-<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
+<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via</span>
 <span class="sd">        &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; g = laygo2.object.grid.RoutingGrid(name=&#39;mygrid&#39;, vgrid=gv, hgrid=gh,</span>
 <span class="sd">                                               vwidth=wv, hwidth=wh,</span>
@@ -3830,12 +3745,12 @@
 <span class="sd">                                               viamap=viamap, primary_grid=primary_grid,</span>
 <span class="sd">                                               xcolor=xcolor, ycolor=ycolor,</span>
 <span class="sd">                                               vextension0=e0v, hextension0=e0h)</span>
-<span class="sd">        &gt;&gt;&gt; # Routing on grid </span>
+<span class="sd">        &gt;&gt;&gt; # Routing on grid</span>
 <span class="sd">        &gt;&gt;&gt; mn_list = [[0, -2], [0, 1], [2, 1], [5,1] ]</span>
 <span class="sd">        &gt;&gt;&gt; route = g.route(mn=mn_list, via_tag=[True, None, True, True])</span>
 <span class="sd">        &gt;&gt;&gt; for r in route:</span>
 <span class="sd">        &gt;&gt;&gt;     print(r)</span>
-<span class="sd">        &lt;laygo2.object.physical.Instance object at 0x0000016939A23A90&gt; </span>
+<span class="sd">        &lt;laygo2.object.physical.Instance object at 0x0000016939A23A90&gt;</span>
 <span class="sd">            name: None,</span>
 <span class="sd">            class: Instance,</span>
 <span class="sd">            xy: [0, -60],</span>
@@ -3912,12 +3827,8 @@
             <span class="n">xy0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="p">[</span><span class="n">__mn</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
             <span class="n">xy1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="p">[</span><span class="n">__mn</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
             <span class="n">_xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">xy0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xy0</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="n">xy1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xy1</span><span class="p">[</span><span class="mi">1</span><span class="p">]]])</span>
-            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span>
-                <span class="n">xy0</span> <span class="o">==</span> <span class="n">xy1</span>
-            <span class="p">):</span>  <span class="c1"># if two points are identical, generate a metal stub on the bottom layer.</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;vertical&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-                    <span class="p">(</span><span class="n">direction</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">primary_grid</span> <span class="o">==</span> <span class="s2">&quot;vertical&quot;</span><span class="p">)</span>
-                <span class="p">):</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">xy0</span> <span class="o">==</span> <span class="n">xy1</span><span class="p">):</span>  <span class="c1"># if two points are identical, generate a metal stub on the bottom layer.</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;vertical&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">((</span><span class="n">direction</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">primary_grid</span> <span class="o">==</span> <span class="s2">&quot;vertical&quot;</span><span class="p">)):</span>
                     <span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vwidth</span><span class="p">[</span><span class="n">__mn</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
                     <span class="n">hextension</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
                     <span class="n">vextension</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vextension0</span><span class="p">[</span><span class="n">__mn</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
@@ -3927,7 +3838,7 @@
                             <span class="n">__mn</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">xcolor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
                         <span class="p">]</span>  <span class="c1"># xcolor is determined by its grid layer.</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;not MPT&quot;</span>
+                        <span class="n">color</span> <span class="o">=</span> <span class="kc">None</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hwidth</span><span class="p">[</span><span class="n">__mn</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
                     <span class="n">hextension</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hextension0</span><span class="p">[</span><span class="n">__mn</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
@@ -3938,7 +3849,7 @@
                             <span class="n">__mn</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">ycolor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
                         <span class="p">]</span>  <span class="c1"># ycolor is determined by its grid layer.</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;not MPT&quot;</span>
+                        <span class="n">color</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">if</span> <span class="p">(</span><span class="n">xy0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">xy1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">or</span> <span class="p">(</span><span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;vertical&quot;</span><span class="p">):</span>  <span class="c1"># vertical routing</span>
                     <span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vwidth</span><span class="p">[</span><span class="n">__mn</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
@@ -3950,7 +3861,7 @@
                             <span class="n">__mn</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">xcolor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
                         <span class="p">]</span>  <span class="c1"># xcolor is determined by its grid layer.</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;not MPT&quot;</span>
+                        <span class="n">color</span> <span class="o">=</span> <span class="kc">None</span>
                 <span class="k">else</span><span class="p">:</span>  <span class="c1"># horizontal routing</span>
                     <span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hwidth</span><span class="p">[</span><span class="n">__mn</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
                     <span class="n">hextension</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hextension</span><span class="p">[</span><span class="n">__mn</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
@@ -3961,7 +3872,7 @@
                             <span class="n">__mn</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">ycolor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
                         <span class="p">]</span>  <span class="c1"># ycolor is determined by its grid layer.</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;not MPT&quot;</span>
+                        <span class="n">color</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="n">p</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span>
                 <span class="n">xy</span><span class="o">=</span><span class="n">_xy</span><span class="p">,</span>
                 <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span>
@@ -4014,13 +3925,13 @@
 <span class="sd">        &gt;&gt;&gt; e0v = CM([15])          # vert. extension (for zero-length wires)</span>
 <span class="sd">        &gt;&gt;&gt; e0h = CM([15, 15, 15])  # hori. extension (for zero-length wires)</span>
 <span class="sd">        &gt;&gt;&gt; lv = CM([[&#39;M1&#39;, &#39;drawing&#39;]], dtype=object)  # layer information</span>
-<span class="sd">        &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">        &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">        &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">        &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned</span>
+<span class="sd">        &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
-<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
+<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via</span>
 <span class="sd">        &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; g = laygo2.object.grid.RoutingGrid(name=&#39;mygrid&#39;, vgrid=gv, hgrid=gh,</span>
 <span class="sd">                                               vwidth=wv, hwidth=wh,</span>
@@ -4030,12 +3941,12 @@
 <span class="sd">                                               viamap=viamap, primary_grid=primary_grid,</span>
 <span class="sd">                                               xcolor=xcolor, ycolor=ycolor,</span>
 <span class="sd">                                               vextension0=e0v, hextension0=e0h)</span>
-<span class="sd">        &gt;&gt;&gt; # Routing on grid </span>
+<span class="sd">        &gt;&gt;&gt; # Routing on grid</span>
 <span class="sd">        &gt;&gt;&gt; mn_list = [[0, -2], [1, 0], [2, 5]]</span>
 <span class="sd">        &gt;&gt;&gt; via = mygrid.via(mn=mn_list)</span>
 <span class="sd">        &gt;&gt;&gt; print(via)</span>
-<span class="sd">        [&lt;laygo2.object.physical.VirtualInstance object&gt;, </span>
-<span class="sd">         &lt;laygo2.object.physical.VirtualInstance object&gt;, </span>
+<span class="sd">        [&lt;laygo2.object.physical.VirtualInstance object&gt;,</span>
+<span class="sd">         &lt;laygo2.object.physical.VirtualInstance object&gt;,</span>
 <span class="sd">         &lt;laygo2.object.physical.VirtualInstance object&gt;]</span>
 
 <span class="sd">        .. image:: ../assets/img/object_grid_RoutingGrid_via.png</span>
@@ -4052,16 +3963,12 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># If mn contains multiple coordinates (or objects), place iteratively.</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mn</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span>
-                <span class="n">mn</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)</span>
-            <span class="p">):</span>  <span class="c1"># It&#39;s actually a single coordinate.</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mn</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>  <span class="c1"># It&#39;s actually a single coordinate.</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">via</span><span class="p">(</span><span class="n">mn</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mn</span><span class="p">),</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">via</span><span class="p">(</span><span class="n">mn</span><span class="o">=</span><span class="n">_mn</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span> <span class="k">for</span> <span class="n">_mn</span> <span class="ow">in</span> <span class="n">mn</span><span class="p">]</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mn</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span>
-                <span class="n">mn</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)</span>
-            <span class="p">):</span>  <span class="c1"># It&#39;s actually a single coordinate.</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mn</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>  <span class="c1"># It&#39;s actually a single coordinate.</span>
                 <span class="k">pass</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">via</span><span class="p">(</span><span class="n">mn</span><span class="o">=</span><span class="n">_mn</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span> <span class="k">for</span> <span class="n">_mn</span> <span class="ow">in</span> <span class="n">mn</span><span class="p">])</span>
@@ -4109,13 +4016,13 @@
 <span class="sd">        &gt;&gt;&gt; e0v = CM([15])          # vert. extension (for zero-length wires)</span>
 <span class="sd">        &gt;&gt;&gt; e0h = CM([15, 15, 15])  # hori. extension (for zero-length wires)</span>
 <span class="sd">        &gt;&gt;&gt; lv = CM([[&#39;M1&#39;, &#39;drawing&#39;]], dtype=object)  # layer information</span>
-<span class="sd">        &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">        &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">        &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">        &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned</span>
+<span class="sd">        &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
-<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
+<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via</span>
 <span class="sd">        &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; g = laygo2.object.grid.RoutingGrid(name=&#39;mygrid&#39;, vgrid=gv, hgrid=gh,</span>
 <span class="sd">                                               vwidth=wv, hwidth=wh,</span>
@@ -4125,21 +4032,21 @@
 <span class="sd">                                               viamap=viamap, primary_grid=primary_grid,</span>
 <span class="sd">                                               xcolor=xcolor, ycolor=ycolor,</span>
 <span class="sd">                                               vextension0=e0v, hextension0=e0h)</span>
-<span class="sd">        &gt;&gt;&gt; # Routing on grid </span>
+<span class="sd">        &gt;&gt;&gt; # Routing on grid</span>
 <span class="sd">        &gt;&gt;&gt; mn_list = [[0, -2], [1, 0], [2, 5], [3, 4], [4, 5], [5, 5]]</span>
 <span class="sd">        &gt;&gt;&gt; track = g.route_via_track(mn=mn_list, track=[None, 0])</span>
 <span class="sd">        &gt;&gt;&gt; print(track)</span>
-<span class="sd">        [[&lt;laygo2.object.physical.Rect object&gt;, </span>
-<span class="sd">          &lt;laygo2.object.physical.VirtualInstance object&gt;], </span>
-<span class="sd">          &lt;laygo2.object.physical.VirtualInstance object&gt;, </span>
-<span class="sd">         [&lt;laygo2.object.physical.Rect object&gt;, </span>
-<span class="sd">          &lt;laygo2.object.physical.VirtualInstance object&gt;], </span>
-<span class="sd">         [&lt;laygo2.object.physical.Rect object&gt;, </span>
-<span class="sd">          &lt;laygo2.object.physical.VirtualInstance object&gt;], </span>
-<span class="sd">         [&lt;laygo2.object.physical.Rect object&gt;, </span>
-<span class="sd">          &lt;laygo2.object.physical.VirtualInstance object&gt;], </span>
-<span class="sd">         [&lt;laygo2.object.physical.Rect object&gt;, </span>
-<span class="sd">          &lt;laygo2.object.physical.VirtualInstance object&gt;], </span>
+<span class="sd">        [[&lt;laygo2.object.physical.Rect object&gt;,</span>
+<span class="sd">          &lt;laygo2.object.physical.VirtualInstance object&gt;],</span>
+<span class="sd">          &lt;laygo2.object.physical.VirtualInstance object&gt;,</span>
+<span class="sd">         [&lt;laygo2.object.physical.Rect object&gt;,</span>
+<span class="sd">          &lt;laygo2.object.physical.VirtualInstance object&gt;],</span>
+<span class="sd">         [&lt;laygo2.object.physical.Rect object&gt;,</span>
+<span class="sd">          &lt;laygo2.object.physical.VirtualInstance object&gt;],</span>
+<span class="sd">         [&lt;laygo2.object.physical.Rect object&gt;,</span>
+<span class="sd">          &lt;laygo2.object.physical.VirtualInstance object&gt;],</span>
+<span class="sd">         [&lt;laygo2.object.physical.Rect object&gt;,</span>
+<span class="sd">          &lt;laygo2.object.physical.VirtualInstance object&gt;],</span>
 <span class="sd">          &lt;laygo2.object.physical.Rect object&gt;]</span>
 
 <span class="sd">        .. image:: ../assets/img/object_grid_RoutingGrid_route_via_track.png</span>
@@ -4148,14 +4055,14 @@
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)** wire 라우팅 함수, track을 기준점으로 routing을 진행한다.</span>
-<span class="sd">        </span>
+
 <span class="sd">        파라미터</span>
-<span class="sd">            - track(numpy.ndarray): track의 좌표값과 방향을 담고 있는 list. </span>
-<span class="sd">                수직 트랙일 경우 [v, None], </span>
+<span class="sd">            - track(numpy.ndarray): track의 좌표값과 방향을 담고 있는 list.</span>
+<span class="sd">                수직 트랙일 경우 [v, None],</span>
 <span class="sd">                수평 트랙일 경우 [None, v]의 형태를 가지고 있다 (v는 track의 좌표값).</span>
 <span class="sd">            - mn(list(numpy.ndarray)): track을 통해 연결될 지점들의 좌표를 담고 있는 list.</span>
 <span class="sd">        반환값</span>
-<span class="sd">            - list: 생성된 routing object들을 담고 있는 list. </span>
+<span class="sd">            - list: 생성된 routing object들을 담고 있는 list.</span>
 <span class="sd">                마지막 object가 track위의 routing object에 해당.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">mn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mn</span><span class="p">)</span>
@@ -4238,13 +4145,13 @@
 <span class="sd">        &gt;&gt;&gt; e0v = CM([15])          # vert. extension (for zero-length wires)</span>
 <span class="sd">        &gt;&gt;&gt; e0h = CM([15, 15, 15])  # hori. extension (for zero-length wires)</span>
 <span class="sd">        &gt;&gt;&gt; lv = CM([[&#39;M1&#39;, &#39;drawing&#39;]], dtype=object)  # layer information</span>
-<span class="sd">        &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; lh = CM([[&#39;M2&#39;, &#39;drawing&#39;]]*3, dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; plv = CM([[&#39;M1&#39;, &#39;pin&#39;]], dtype=object) # pin layers</span>
 <span class="sd">        &gt;&gt;&gt; plh = CM([[&#39;M2&#39;, &#39;pin&#39;]]*3, dtype=object)</span>
-<span class="sd">        &gt;&gt;&gt; xcolor = CM([&#39;not MPT&#39;], dtype=object)  # &#39;not MPT&#39; for non-multipatterning </span>
-<span class="sd">        &gt;&gt;&gt; ycolor = CM([&#39;not MPT&#39;]*3, dtype=object) </span>
+<span class="sd">        &gt;&gt;&gt; xcolor = CM([None], dtype=object)  # not multi-patterned</span>
+<span class="sd">        &gt;&gt;&gt; ycolor = CM([None]*3, dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
-<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via </span>
+<span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via</span>
 <span class="sd">        &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
 <span class="sd">        &gt;&gt;&gt; g = laygo2.object.grid.RoutingGrid(name=&#39;mygrid&#39;, vgrid=gv, hgrid=gh,</span>
 <span class="sd">                                               vwidth=wv, hwidth=wh,</span>
@@ -4257,11 +4164,11 @@
 <span class="sd">        &gt;&gt;&gt; mn = [[0, 0], [10, 10]]</span>
 <span class="sd">        &gt;&gt;&gt; pin = g.pin(name=&quot;pin&quot;, grid=g, mn=mn)</span>
 <span class="sd">        &gt;&gt;&gt; print(pin)</span>
-<span class="sd">        &lt;laygo2.object.physical.Pin object at 0x0000028DABE3AB90&gt; </span>
+<span class="sd">        &lt;laygo2.object.physical.Pin object at 0x0000028DABE3AB90&gt;</span>
 <span class="sd">            name: pin,</span>
 <span class="sd">            class: Pin,</span>
 <span class="sd">            xy: [[0, -10], [500, 350]],</span>
-<span class="sd">            params: None, , layer: [&#39;M2&#39; &#39;pin&#39;], netname: pin, shape: None, </span>
+<span class="sd">            params: None, , layer: [&#39;M2&#39; &#39;pin&#39;], netname: pin, shape: None,</span>
 <span class="sd">            master: None</span>
 
 <span class="sd">        Notes</span>
@@ -4280,12 +4187,8 @@
         <span class="n">xy0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="p">[</span><span class="n">mn</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
         <span class="n">xy1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="p">[</span><span class="n">mn</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
         <span class="c1"># _xy = np.array([[xy0[0], xy0[1]], [xy1[0], xy1[1]]])</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span>
-            <span class="n">xy0</span> <span class="o">==</span> <span class="n">xy1</span>
-        <span class="p">):</span>  <span class="c1"># if two points are identical, generate a metal stub on the bottom layer.</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;vertical&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
-                <span class="p">(</span><span class="n">direction</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">primary_grid</span> <span class="o">==</span> <span class="s2">&quot;vertical&quot;</span><span class="p">)</span>
-            <span class="p">):</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">xy0</span> <span class="o">==</span> <span class="n">xy1</span><span class="p">):</span>  <span class="c1"># if two points are identical, generate a metal stub on the bottom layer.</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;vertical&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">((</span><span class="n">direction</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">primary_grid</span> <span class="o">==</span> <span class="s2">&quot;vertical&quot;</span><span class="p">)):</span>
                 <span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vwidth</span><span class="p">[</span><span class="n">mn</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
                 <span class="n">hextension</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
                 <span class="n">vextension</span> <span class="o">=</span> <span class="mi">0</span>
@@ -4313,9 +4216,7 @@
                 <span class="p">[</span><span class="n">xy1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">hextension</span><span class="p">,</span> <span class="n">xy1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">vextension</span><span class="p">],</span>
             <span class="p">]</span>
         <span class="p">)</span>  <span class="c1">## need to check</span>
-        <span class="n">p</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span>
-            <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">_xy</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span> <span class="n">netname</span><span class="o">=</span><span class="n">netname</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span>
-        <span class="p">)</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">_xy</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span> <span class="n">netname</span><span class="o">=</span><span class="n">netname</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">p</span></div></div>
 
 

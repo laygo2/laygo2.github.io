@@ -219,6 +219,7 @@
 <span class="n">__status__</span> <span class="o">=</span> <span class="s2">&quot;Prototype&quot;</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
 <span class="c1"># from copy import deepcopy</span>
 <span class="kn">import</span> <span class="nn">laygo2.util.transform</span> <span class="k">as</span> <span class="nn">tf</span>
 
@@ -234,12 +235,12 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="PhysicalObject._get_xy"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject._get_xy">[docs]</a>    <span class="k">def</span> <span class="nf">_get_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Get the x and y coordinate values of </span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Get the x and y coordinate values of</span>
 <span class="sd">        this object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span></div>
 
 <div class="viewcode-block" id="PhysicalObject._set_xy"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject._set_xy">[docs]</a>    <span class="k">def</span> <span class="nf">_set_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Set the x and y coordinate values of </span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Set the x and y coordinate values of</span>
 <span class="sd">        this object.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_update_pointers</span><span class="p">()</span></div>
@@ -549,7 +550,7 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; obj = laygo2.object.physical.PhysicalObject(xy = [[0, 0], [200, 200]], </span>
+<span class="sd">        &gt;&gt;&gt; obj = laygo2.object.physical.PhysicalObject(xy = [[0, 0], [200, 200]],</span>
 <span class="sd">                name=&quot;test&quot;, params={&#39;maxI&#39;: 0.005})</span>
 <span class="sd">        &gt;&gt;&gt; print(obj)</span>
 <span class="sd">        &lt;laygo2.object.physical.PhysicalObject object at 0x000001ECF0022948&gt;</span>
@@ -601,14 +602,22 @@
         <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;None&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;    name: &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    class: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    xy: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    params: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;    name: &quot;</span>
+            <span class="o">+</span> <span class="n">name</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    class: &quot;</span>
+            <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    xy: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    params: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="PhysicalObject._update_pointers"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject._update_pointers">[docs]</a>    <span class="k">def</span> <span class="nf">_update_pointers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Update pointers of this object. Called when the xy-coordinate of this </span>
+        <span class="sd">&quot;&quot;&quot;Update pointers of this object. Called when the xy-coordinate of this</span>
 <span class="sd">        object is updated.&quot;&quot;&quot;</span>
         <span class="n">xy_left</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">))</span>
         <span class="n">xy_right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">))</span>
@@ -675,12 +684,12 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="IterablePhysicalObject._get_xy"><a class="viewcode-back" href="../../../laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject._get_xy">[docs]</a>    <span class="k">def</span> <span class="nf">_get_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Get the x and y coordinate values of </span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Get the x and y coordinate values of</span>
 <span class="sd">        this object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span></div>
 
 <div class="viewcode-block" id="IterablePhysicalObject._set_xy"><a class="viewcode-back" href="../../../laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject._set_xy">[docs]</a>    <span class="k">def</span> <span class="nf">_set_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Set the x and y coordinate values of </span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Set the x and y coordinate values of</span>
 <span class="sd">        this object.&quot;&quot;&quot;</span>
         <span class="c1"># Update the coordinate value of its elements.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_update_elements</span><span class="p">(</span><span class="n">xy_ofst</span><span class="o">=</span><span class="n">value</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
@@ -696,10 +705,10 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; phy0 = laygo2.object.physical.PhysicalObject(xy=[[0, 0], [100, 100]]) </span>
-<span class="sd">        &gt;&gt;&gt; phy1 = laygo2.object.physical.PhysicalObject(xy=[[0, 0], [200, 200]]) </span>
-<span class="sd">        &gt;&gt;&gt; phy2 = laygo2.object.physical.PhysicalObject(xy=[[0, 0], [300, 300]]) </span>
-<span class="sd">        &gt;&gt;&gt; element = [phy0, phy1, phy2] </span>
+<span class="sd">        &gt;&gt;&gt; phy0 = laygo2.object.physical.PhysicalObject(xy=[[0, 0], [100, 100]])</span>
+<span class="sd">        &gt;&gt;&gt; phy1 = laygo2.object.physical.PhysicalObject(xy=[[0, 0], [200, 200]])</span>
+<span class="sd">        &gt;&gt;&gt; phy2 = laygo2.object.physical.PhysicalObject(xy=[[0, 0], [300, 300]])</span>
+<span class="sd">        &gt;&gt;&gt; element = [phy0, phy1, phy2]</span>
 <span class="sd">        &gt;&gt;&gt; iphy0 = laygo2.object.physical.IterablePhysicalObject(</span>
 <span class="sd">            xy=[[0, 0], [300, 300]], elements = elements)</span>
 <span class="sd">        &gt;&gt;&gt; iphy0.shape</span>
@@ -736,14 +745,14 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; phy0 = laygo2.object.physical.PhysicalObject(xy=[[0, 0], [100, 100]]) </span>
-<span class="sd">        &gt;&gt;&gt; phy1 = laygo2.object.physical.PhysicalObject(xy=[[0, 0], [200, 200]]) </span>
-<span class="sd">        &gt;&gt;&gt; phy2 = laygo2.object.physical.PhysicalObject(xy=[[0, 0], [300, 300]]) </span>
-<span class="sd">        &gt;&gt;&gt; element = [phy0, phy1, phy2] </span>
+<span class="sd">        &gt;&gt;&gt; phy0 = laygo2.object.physical.PhysicalObject(xy=[[0, 0], [100, 100]])</span>
+<span class="sd">        &gt;&gt;&gt; phy1 = laygo2.object.physical.PhysicalObject(xy=[[0, 0], [200, 200]])</span>
+<span class="sd">        &gt;&gt;&gt; phy2 = laygo2.object.physical.PhysicalObject(xy=[[0, 0], [300, 300]])</span>
+<span class="sd">        &gt;&gt;&gt; element = [phy0, phy1, phy2]</span>
 <span class="sd">        &gt;&gt;&gt; iphy0 = laygo2.object.physical.IterablePhysicalObject(</span>
 <span class="sd">            xy=[[0, 0], [300, 300]], elements = elements)</span>
 <span class="sd">        &gt;&gt;&gt; print(iphy0)</span>
-<span class="sd">        &lt;laygo2.object.physical.IterablePhysicalObject object at 0x000002049A77E380&gt; </span>
+<span class="sd">        &lt;laygo2.object.physical.IterablePhysicalObject object at 0x000002049A77E380&gt;</span>
 <span class="sd">        name: None,</span>
 <span class="sd">        class: IterablePhysicalObject,</span>
 <span class="sd">        xy: [[0, 0], [300, 300]],</span>
@@ -771,27 +780,27 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Set the sub-elements of this object, based on the pos and item </span>
+        <span class="sd">&quot;&quot;&quot;Set the sub-elements of this object, based on the pos and item</span>
 <span class="sd">        parameter.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Iterator function. Directly mapped to the iterator of the elements </span>
+        <span class="sd">&quot;&quot;&quot;Iterator function. Directly mapped to the iterator of the elements</span>
 <span class="sd">        attribute of this object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Iterator function. Directly mapped to the iterator of the elements </span>
+        <span class="sd">&quot;&quot;&quot;Iterator function. Directly mapped to the iterator of the elements</span>
 <span class="sd">        attribute of this object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="fm">__next__</span><span class="p">()</span>
 
 <div class="viewcode-block" id="IterablePhysicalObject.ndenumerate"><a class="viewcode-back" href="../../../laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject.ndenumerate">[docs]</a>    <span class="k">def</span> <span class="nf">ndenumerate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Enumerate over the element array. Calls np.ndenumerate() of the elements </span>
+        <span class="sd">&quot;&quot;&quot;Enumerate over the element array. Calls np.ndenumerate() of the elements</span>
 <span class="sd">        of this object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="IterablePhysicalObject._update_elements"><a class="viewcode-back" href="../../../laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject._update_elements">[docs]</a>    <span class="k">def</span> <span class="nf">_update_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy_ofst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Update xy-coordinates of this object&#39;s elements. An internal function </span>
+        <span class="sd">&quot;&quot;&quot;Update xy-coordinates of this object&#39;s elements. An internal function</span>
 <span class="sd">        for _set_xy()&quot;&quot;&quot;</span>
         <span class="c1"># print(&quot;aa?&quot;)</span>
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
@@ -803,7 +812,7 @@
 
 <div class="viewcode-block" id="PhysicalObjectGroup"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObjectGroup.html#laygo2.object.physical.PhysicalObjectGroup">[docs]</a><span class="k">class</span> <span class="nc">PhysicalObjectGroup</span><span class="p">(</span><span class="n">IterablePhysicalObject</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A grouped physical object. Intended to be generated as a group in Virtuoso </span>
+<span class="sd">    A grouped physical object. Intended to be generated as a group in Virtuoso</span>
 <span class="sd">    (not implemented yet).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -811,10 +820,7 @@
 
 <div class="viewcode-block" id="PhysicalObjectGroup.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObjectGroup.html#laygo2.object.physical.PhysicalObjectGroup.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">(</span>
-            <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;    elements: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;    elements: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span></div>
 
 <div class="viewcode-block" id="PhysicalObjectGroup.__init__"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObjectGroup.html#laygo2.object.physical.PhysicalObjectGroup.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -827,14 +833,13 @@
 <span class="sd">        name : str, optional</span>
 <span class="sd">            The name of the object.</span>
 <span class="sd">        params : dict or None</span>
-<span class="sd">            The dictionary that contains the parameters of this object, with </span>
+<span class="sd">            The dictionary that contains the parameters of this object, with</span>
 <span class="sd">            parameter names as keys.</span>
 <span class="sd">        elements : numpy.ndarray(dtype=LayoutObject) or None</span>
 <span class="sd">            The iterable elements of the object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="n">elements</span>
-        <span class="p">)</span></div></div>
+        <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="n">elements</span><span class="p">)</span></div></div>
+
 
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd"># Deprecated as PhysicalObjectGroup can be used instead in most cases.</span>
@@ -931,7 +936,7 @@
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Rect</span>
 <span class="sd">    &gt;&gt;&gt; rect0 = Rect(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;])</span>
 <span class="sd">    &gt;&gt;&gt; print(rect0)</span>
-<span class="sd">    &lt;laygo2.object.physical.Rect object at 0x000002049A77F3A0&gt; </span>
+<span class="sd">    &lt;laygo2.object.physical.Rect object at 0x000002049A77F3A0&gt;</span>
 <span class="sd">    name: None,</span>
 <span class="sd">    class: Rect,</span>
 <span class="sd">    xy: [[0, 0], [100, 100]],</span>
@@ -1041,7 +1046,7 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.physical.Rect(xy=[[0, 0], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.physical.Rect(xy=[[0, 0], [100, 100]],</span>
 <span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;])</span>
 <span class="sd">        &gt;&gt;&gt; rect0.height</span>
 <span class="sd">        100</span>
@@ -1063,7 +1068,7 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.physical.Rect(xy=[[0, 0], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.physical.Rect(xy=[[0, 0], [100, 100]],</span>
 <span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;])</span>
 <span class="sd">        &gt;&gt;&gt; rect0.width</span>
 <span class="sd">        100</span>
@@ -1095,7 +1100,7 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.physical.Rect(xy=[[0, 0], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.physical.Rect(xy=[[0, 0], [100, 100]],</span>
 <span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;])</span>
 <span class="sd">        &gt;&gt;&gt; rect0.size</span>
 <span class="sd">        array([100, 100])</span>
@@ -1153,10 +1158,10 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.physical.Rect(xy=[[0, 0], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; rect0 = laygo2.object.physical.Rect(xy=[[0, 0], [100, 100]],</span>
 <span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;net0&#39;, color=1)</span>
 <span class="sd">        &gt;&gt;&gt; print(rect0)</span>
-<span class="sd">        &lt;laygo2.object.physical.Rect object at 0x000002049A77F3A0&gt; </span>
+<span class="sd">        &lt;laygo2.object.physical.Rect object at 0x000002049A77F3A0&gt;</span>
 <span class="sd">        name: None,</span>
 <span class="sd">        class: Rect,</span>
 <span class="sd">        xy: [[0, 0], [100, 100]],</span>
@@ -1191,7 +1196,7 @@
 
 <div class="viewcode-block" id="Rect.align"><a class="viewcode-back" href="../../../laygo2.object.physical.Rect.html#laygo2.object.physical.Rect.align">[docs]</a>    <span class="k">def</span> <span class="nf">align</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rect2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Match the length of self and rect2 wires, when either width or height of </span>
+<span class="sd">        Match the length of self and rect2 wires, when either width or height of</span>
 <span class="sd">        the two objects is zero.</span>
 
 <span class="sd">        Parameters</span>
@@ -1232,9 +1237,13 @@
 <div class="viewcode-block" id="Rect.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.Rect.html#laygo2.object.physical.Rect.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> 
-            <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    netname: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">netname</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    netname: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">netname</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div></div>
 
 
@@ -1245,22 +1254,23 @@
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.physical.Path import Path</span>
-<span class="sd">    &gt;&gt;&gt; path0 = Path(xy=[[0, 0], [0, 100]], width=10, </span>
+<span class="sd">    &gt;&gt;&gt; path0 = Path(xy=[[0, 0], [0, 100]], width=10,</span>
 <span class="sd">                     extension=5, layer=[&#39;M1&#39;, &#39;drawing&#39;])</span>
 <span class="sd">    &gt;&gt;&gt; print(path0)</span>
-<span class="sd">    &lt;laygo2.object.physical.Path object at 0x00000280D1F3CE88&gt; </span>
-<span class="sd">    name: None, </span>
-<span class="sd">    class: Path, </span>
-<span class="sd">    xy: [[0, 0], [0, 100]], </span>
-<span class="sd">    params: None, </span>
-<span class="sd">    width: 10, </span>
-<span class="sd">    extension: 5, </span>
-<span class="sd">    layer: [&#39;M1&#39;, &#39;drawing&#39;], </span>
+<span class="sd">    &lt;laygo2.object.physical.Path object at 0x00000280D1F3CE88&gt;</span>
+<span class="sd">    name: None,</span>
+<span class="sd">    class: Path,</span>
+<span class="sd">    xy: [[0, 0], [0, 100]],</span>
+<span class="sd">    params: None,</span>
+<span class="sd">    width: 10,</span>
+<span class="sd">    extension: 5,</span>
+<span class="sd">    layer: [&#39;M1&#39;, &#39;drawing&#39;],</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    **(Korean)**: Path 객체 클래스.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="c1"># TODO: implement pointers.</span>
 
     <span class="n">layer</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1337,13 +1347,11 @@
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Path._update_pointers"><a class="viewcode-back" href="../../../laygo2.object.physical.Path.html#laygo2.object.physical.Path._update_pointers">[docs]</a>    <span class="k">def</span> <span class="nf">_update_pointers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Update pointers of this object. Called when the value of xy of this </span>
+        <span class="sd">&quot;&quot;&quot;Update pointers of this object. Called when the value of xy of this</span>
 <span class="sd">        object is updated.&quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="Path.__init__"><a class="viewcode-back" href="../../../laygo2.object.physical.Path.html#laygo2.object.physical.Path.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">netname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span>
-    <span class="p">):</span>
+<div class="viewcode-block" id="Path.__init__"><a class="viewcode-back" href="../../../laygo2.object.physical.Path.html#laygo2.object.physical.Path.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">netname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The constructor function.</span>
 
@@ -1371,17 +1379,17 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; path0 = laygo2.object.physical.Path(xy=[[0, 0], [0, 100]], width=10, </span>
+<span class="sd">        &gt;&gt;&gt; path0 = laygo2.object.physical.Path(xy=[[0, 0], [0, 100]], width=10,</span>
 <span class="sd">                extension=5, layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;net0’)</span>
 <span class="sd">        &gt;&gt;&gt; print(path0)</span>
-<span class="sd">        &lt;laygo2.object.physical.Path object at 0x00000280D1F3CE88&gt; </span>
-<span class="sd">        name: None, </span>
-<span class="sd">        class: Path, </span>
-<span class="sd">        xy: [[0, 0], [0, 100]], </span>
-<span class="sd">        params: None, </span>
-<span class="sd">        width: 10, </span>
-<span class="sd">        extension: 5, </span>
-<span class="sd">        layer: [&#39;M1&#39;, &#39;drawing&#39;], </span>
+<span class="sd">        &lt;laygo2.object.physical.Path object at 0x00000280D1F3CE88&gt;</span>
+<span class="sd">        name: None,</span>
+<span class="sd">        class: Path,</span>
+<span class="sd">        xy: [[0, 0], [0, 100]],</span>
+<span class="sd">        params: None,</span>
+<span class="sd">        width: 10,</span>
+<span class="sd">        extension: 5,</span>
+<span class="sd">        layer: [&#39;M1&#39;, &#39;drawing&#39;],</span>
 <span class="sd">        netname: net0</span>
 
 <span class="sd">        .. image:: ../assets/img/object_physical_path_init.png</span>
@@ -1411,11 +1419,19 @@
 <div class="viewcode-block" id="Path.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.Path.html#laygo2.object.physical.Path.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> 
-            <span class="o">+</span> <span class="s2">&quot;    width: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    extension: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">extension</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    netname: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">netname</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;    width: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    extension: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">extension</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    netname: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">netname</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div></div>
 
 
@@ -1426,14 +1442,14 @@
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; from laygo2.object.physical import Pin</span>
-<span class="sd">    &gt;&gt;&gt; pin0 = Pin(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;], </span>
+<span class="sd">    &gt;&gt;&gt; pin0 = Pin(xy=[[0, 0], [100, 100]], layer=[&#39;M1&#39;, &#39;drawing&#39;],</span>
 <span class="sd">                   netname=&#39;net0&#39;, params={&#39;direction&#39;: &#39;input&#39;})</span>
 <span class="sd">    &gt;&gt;&gt; print(pin0)</span>
-<span class="sd">    &lt;laygo2.object.physical.Pin object at 0x000002049A77FF70&gt; </span>
+<span class="sd">    &lt;laygo2.object.physical.Pin object at 0x000002049A77FF70&gt;</span>
 <span class="sd">        name: None,</span>
 <span class="sd">        class: Pin,</span>
 <span class="sd">        xy: [[0, 0], [100, 100]],</span>
-<span class="sd">        params: {&#39;direction&#39;: &#39;input&#39;}, , layer: [&#39;M1&#39; &#39;drawing&#39;], </span>
+<span class="sd">        params: {&#39;direction&#39;: &#39;input&#39;}, , layer: [&#39;M1&#39; &#39;drawing&#39;],</span>
 <span class="sd">        netname: net0, shape: None, master: None</span>
 
 <span class="sd">    Notes</span>
@@ -1482,7 +1498,7 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.physical.Pin(xy=[[0, 0], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.physical.Pin(xy=[[0, 0], [100, 100]],</span>
 <span class="sd">            layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;net0&#39;, params={&#39;direction&#39;: &#39;input&#39;})</span>
 <span class="sd">        &gt;&gt;&gt; pin0.height</span>
 <span class="sd">        100</span>
@@ -1501,7 +1517,7 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.physical.Pin(xy=[[0, 0], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.physical.Pin(xy=[[0, 0], [100, 100]],</span>
 <span class="sd">            layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;net0&#39;, params={&#39;direction&#39;: &#39;input&#39;})</span>
 <span class="sd">        &gt;&gt;&gt; pin0.width</span>
 <span class="sd">        100</span>
@@ -1520,7 +1536,7 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.physical.Pin(xy=[[0, 0], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.physical.Pin(xy=[[0, 0], [100, 100]],</span>
 <span class="sd">            layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;net0&#39;, params={&#39;direction&#39;: &#39;input&#39;})</span>
 <span class="sd">        &gt;&gt;&gt; pin0.size</span>
 <span class="sd">        [100, 100]</span>
@@ -1574,14 +1590,14 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.physical.Pin(xy=[[0, 0], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; pin0 = laygo2.object.physical.Pin(xy=[[0, 0], [100, 100]],</span>
 <span class="sd">            layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;net0&#39;, params={&#39;direction&#39;: &#39;input&#39;})</span>
 <span class="sd">        &gt;&gt;&gt; print(pin0)</span>
-<span class="sd">        &lt;laygo2.object.physical.Pin object at 0x000002049A77FF70&gt; </span>
+<span class="sd">        &lt;laygo2.object.physical.Pin object at 0x000002049A77FF70&gt;</span>
 <span class="sd">            name: None,</span>
 <span class="sd">            class: Pin,</span>
 <span class="sd">            xy: [[0, 0], [100, 100]],</span>
-<span class="sd">            params: {&#39;direction&#39;: &#39;input&#39;}, , layer: [&#39;M1&#39; &#39;drawing&#39;], </span>
+<span class="sd">            params: {&#39;direction&#39;: &#39;input&#39;}, , layer: [&#39;M1&#39; &#39;drawing&#39;],</span>
 <span class="sd">            netname: net0, shape: None, master: None</span>
 
 <span class="sd">        Notes</span>
@@ -1601,18 +1617,24 @@
             <span class="n">netname</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">netname</span> <span class="o">=</span> <span class="n">netname</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">master</span> <span class="o">=</span> <span class="n">master</span>
-        <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="n">elements</span>
-        <span class="p">)</span></div>
+        <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="n">elements</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Pin.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.Pin.html#laygo2.object.physical.Pin.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    netname: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">netname</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    shape: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    master: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    netname: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">netname</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    shape: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    master: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Pin.export_to_dict"><a class="viewcode-back" href="../../../laygo2.object.physical.Pin.html#laygo2.object.physical.Pin.export_to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">export_to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1631,10 +1653,10 @@
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
-<span class="sd">    &gt;&gt;&gt; text0 = laygo2.object.physical.Text(xy=[[ 0, 0], [100, 100]], </span>
+<span class="sd">    &gt;&gt;&gt; text0 = laygo2.object.physical.Text(xy=[[ 0, 0], [100, 100]],</span>
 <span class="sd">        layer=[&#39;text&#39;, &#39;drawing&#39;], text=&#39;test&#39;, params=None)</span>
 <span class="sd">    &gt;&gt;&gt; print(text0)</span>
-<span class="sd">    &lt;laygo2.object.physical.Text object at 0x000002049A77FD90&gt; </span>
+<span class="sd">    &lt;laygo2.object.physical.Text object at 0x000002049A77FD90&gt;</span>
 <span class="sd">        name: None,</span>
 <span class="sd">        class: Text,</span>
 <span class="sd">        xy: [[0, 0], [100, 100]],</span>
@@ -1709,10 +1731,10 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; text0 = laygo2.object.physical.Text(xy=[[ 0, 0], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; text0 = laygo2.object.physical.Text(xy=[[ 0, 0], [100, 100]],</span>
 <span class="sd">            layer=[&#39;text&#39;, &#39;drawing&#39;], text=&#39;test&#39;, params=None)</span>
 <span class="sd">        &gt;&gt;&gt; print(text0)</span>
-<span class="sd">        &lt;laygo2.object.physical.Text object at 0x000002049A77FD90&gt; </span>
+<span class="sd">        &lt;laygo2.object.physical.Text object at 0x000002049A77FD90&gt;</span>
 <span class="sd">            name: None,</span>
 <span class="sd">            class: Text,</span>
 <span class="sd">            xy: [[0, 0], [100, 100]],</span>
@@ -1741,8 +1763,12 @@
         <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    text: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    text: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div></div>
 
 
@@ -1753,16 +1779,16 @@
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
-<span class="sd">    &gt;&gt;&gt; inst0_pins = dict() </span>
-<span class="sd">    &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]], </span>
-<span class="sd">            layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;) </span>
-<span class="sd">    &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]], </span>
+<span class="sd">    &gt;&gt;&gt; inst0_pins = dict()</span>
+<span class="sd">    &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]],</span>
+<span class="sd">            layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]],</span>
 <span class="sd">            layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100], </span>
-<span class="sd">            libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200], </span>
-<span class="sd">            unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)  </span>
+<span class="sd">    &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100],</span>
+<span class="sd">            libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
+<span class="sd">            unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
 <span class="sd">    &gt;&gt;&gt; print(inst0)</span>
-<span class="sd">    &lt;laygo2.object.physical.Instance object at 0x000001AF458AF8E0&gt; </span>
+<span class="sd">    &lt;laygo2.object.physical.Instance object at 0x000001AF458AF8E0&gt;</span>
 <span class="sd">        name: I0,</span>
 <span class="sd">        class: Instance,</span>
 <span class="sd">        xy: [100, 100],</span>
@@ -1771,8 +1797,8 @@
 <span class="sd">        shape: [3, 2],</span>
 <span class="sd">        pitch: [200, 200],</span>
 <span class="sd">        transform: R0,</span>
-<span class="sd">        pins: {&#39;in&#39;: &lt;laygo2.object.physical.Pin object at 0x000001AF560D6170&gt;, </span>
-<span class="sd">               &#39;out&#39;: &lt;laygo2.object.physical.Pin object at 0x000001AF560D5F30&gt;}, </span>
+<span class="sd">        pins: {&#39;in&#39;: &lt;laygo2.object.physical.Pin object at 0x000001AF560D6170&gt;,</span>
+<span class="sd">               &#39;out&#39;: &lt;laygo2.object.physical.Pin object at 0x000001AF560D5F30&gt;},</span>
 <span class="sd">    &gt;&gt;&gt; print( inst0[1,0].xy0 )</span>
 <span class="sd">    array([300, 100])</span>
 
@@ -1931,7 +1957,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Instance._update_pins"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance._update_pins">[docs]</a>    <span class="k">def</span> <span class="nf">_update_pins</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy_ofst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Update xy-coordinates of this object&#39;s pins. An internal function for </span>
+        <span class="sd">&quot;&quot;&quot;Update xy-coordinates of this object&#39;s pins. An internal function for</span>
 <span class="sd">        _set_xy()&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pins</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">pn</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pins</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -1942,12 +1968,12 @@
                             <span class="n">e</span><span class="o">.</span><span class="n">xy</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">xy</span> <span class="o">+</span> <span class="n">xy_ofst</span></div>
 
 <div class="viewcode-block" id="Instance._get_xy"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance._get_xy">[docs]</a>    <span class="k">def</span> <span class="nf">_get_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Get the x and y coordinate values of </span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Get the x and y coordinate values of</span>
 <span class="sd">        this object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span></div>
 
 <div class="viewcode-block" id="Instance._set_xy"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance._set_xy">[docs]</a>    <span class="k">def</span> <span class="nf">_set_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Set the x and y coordinate values of </span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Set the x and y coordinate values of</span>
 <span class="sd">        this object.&quot;&quot;&quot;</span>
         <span class="c1"># Update the coordinate value of its pins.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_update_pins</span><span class="p">(</span><span class="n">xy_ofst</span><span class="o">=</span><span class="n">value</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
@@ -1963,13 +1989,13 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins = dict() </span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]], </span>
-<span class="sd">                layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;) </span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins = dict()</span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]],</span>
+<span class="sd">                layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]],</span>
 <span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100], </span>
-<span class="sd">                libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200], </span>
+<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100],</span>
+<span class="sd">                libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
 <span class="sd">                unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; inst0.xy0</span>
 <span class="sd">        array([100, 100])</span>
@@ -1991,13 +2017,13 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins = dict() </span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]], </span>
-<span class="sd">                layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;) </span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins = dict()</span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]],</span>
+<span class="sd">                layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]],</span>
 <span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100], </span>
-<span class="sd">                libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200], </span>
+<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100],</span>
+<span class="sd">                libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
 <span class="sd">                unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; inst0.xy1</span>
 <span class="sd">        array([600, 400])</span>
@@ -2022,13 +2048,13 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins = dict() </span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]], </span>
-<span class="sd">                layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;) </span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins = dict()</span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]],</span>
+<span class="sd">                layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]],</span>
 <span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100], </span>
-<span class="sd">                libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200], </span>
+<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100],</span>
+<span class="sd">                libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
 <span class="sd">                unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; inst0.size</span>
 <span class="sd">        array([500, 300])</span>
@@ -2137,14 +2163,14 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins = dict() </span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]], </span>
-<span class="sd">                layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;) </span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins = dict()</span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]],</span>
+<span class="sd">                layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]],</span>
 <span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100], </span>
-<span class="sd">                libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200], </span>
-<span class="sd">                unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)        </span>
+<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100],</span>
+<span class="sd">                libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
+<span class="sd">                unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; inst0.height</span>
 <span class="sd">        300</span>
 
@@ -2165,14 +2191,14 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins = dict() </span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]], </span>
-<span class="sd">                layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;) </span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins = dict()</span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]],</span>
+<span class="sd">                layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]],</span>
 <span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100], </span>
-<span class="sd">                libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200], </span>
-<span class="sd">                unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)   </span>
+<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100],</span>
+<span class="sd">                libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
+<span class="sd">                unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; inst0.width</span>
 <span class="sd">        500</span>
 
@@ -2233,7 +2259,7 @@
 <span class="sd">        name : str</span>
 <span class="sd">            The name of the object.</span>
 <span class="sd">        params : dict</span>
-<span class="sd">            The dictionary containing attributes of the object.</span>
+<span class="sd">            (optional) The dictionary containing attributes of the object.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -2246,16 +2272,16 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins = dict() </span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]], </span>
-<span class="sd">                layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;) </span>
-<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins = dict()</span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10,10]],</span>
+<span class="sd">                layer = [&#39;M1&#39;, &#39;drawing&#39;], netname = &#39;in&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; inst0_pins[&#39;out&#39;]= laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]],</span>
 <span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
-<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100], </span>
-<span class="sd">                libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200], </span>
-<span class="sd">                unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)   </span>
+<span class="sd">        &gt;&gt;&gt; inst0 = laygo2.object.physical.Instance(name=&quot;I0&quot;, xy=[100,100],</span>
+<span class="sd">                libname=&quot;mylib&quot;, cellname=&quot;mycell&quot;, shape=[3, 2], pitch=[200,200],</span>
+<span class="sd">                unit_size=[100, 100], pins=inst0_pins, transform=&#39;R0&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; print(inst0)</span>
-<span class="sd">        &lt;laygo2.object.physical.Instance object at 0x000001AF458AF8E0&gt; </span>
+<span class="sd">        &lt;laygo2.object.physical.Instance object at 0x000001AF458AF8E0&gt;</span>
 <span class="sd">            name: I0,</span>
 <span class="sd">            class: Instance,</span>
 <span class="sd">            xy: [100, 100],</span>
@@ -2264,8 +2290,8 @@
 <span class="sd">            shape: [3, 2],</span>
 <span class="sd">            pitch: [200, 200],</span>
 <span class="sd">            transform: R0,</span>
-<span class="sd">            pins: {&#39;in&#39;: &lt;laygo2.object.physical.Pin object at 0x000001AF560D6170&gt;, </span>
-<span class="sd">                   &#39;out&#39;: &lt;laygo2.object.physical.Pin object at 0x000001AF560D5F30&gt;}, </span>
+<span class="sd">            pins: {&#39;in&#39;: &lt;laygo2.object.physical.Pin object at 0x000001AF560D6170&gt;,</span>
+<span class="sd">                   &#39;out&#39;: &lt;laygo2.object.physical.Pin object at 0x000001AF560D5F30&gt;},</span>
 <span class="sd">        &gt;&gt;&gt; print( inst0[1,0].xy0 )</span>
 <span class="sd">        array([300, 100])</span>
 
@@ -2296,9 +2322,7 @@
         <span class="k">if</span> <span class="n">shape</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">_shape</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,):</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                    <span class="s2">&quot;Instance shape should be a (2, ) numpy array or None.&quot;</span>
-                <span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Instance shape should be a (2, ) numpy array or None.&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="n">_shape</span>
         <span class="k">if</span> <span class="n">pitch</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">pitch</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pitch</span><span class="p">)</span>
@@ -2307,7 +2331,7 @@
 
         <span class="c1"># Construct an array for elements.</span>
         <span class="k">if</span> <span class="n">shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="c1"># elements = self  # self-referencing causes recursion errors. </span>
+            <span class="c1"># elements = self  # self-referencing causes recursion errors.</span>
             <span class="c1"># (Deprecated).</span>
             <span class="n">elements</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
@@ -2333,17 +2357,13 @@
                 <span class="n">elements</span><span class="p">[</span><span class="n">_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">inst</span>
                 <span class="n">_it</span><span class="o">.</span><span class="n">iternext</span><span class="p">()</span>
 
-        <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="n">elements</span>
-        <span class="p">)</span>
-        <span class="c1"># Create the pin dictionary. Can we do the same thing without generating </span>
+        <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="n">elements</span><span class="p">)</span>
+        <span class="c1"># Create the pin dictionary. Can we do the same thing without generating</span>
         <span class="c1"># these many Pin objects?</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">pins</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pins</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                    <span class="s2">&quot;The pins parameter for Instance objects should be a dictionary.&quot;</span>
-                <span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The pins parameter for Instance objects should be a dictionary.&quot;</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">pn</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pins</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="n">_xy0</span> <span class="o">=</span> <span class="n">xy</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">Mt</span><span class="p">(</span><span class="n">transform</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">shape</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -2351,10 +2371,8 @@
                     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
                         <span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">([])</span>
                         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-                            <span class="n">_xy</span> <span class="o">=</span> <span class="n">_xy0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span>
-                                <span class="bp">self</span><span class="o">.</span><span class="n">pitch</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]),</span> <span class="n">tf</span><span class="o">.</span><span class="n">Mt</span><span class="p">(</span><span class="n">transform</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
-                            <span class="p">)</span>
-                            <span class="c1"># If p has elements, they need to be copied and </span>
+                            <span class="n">_xy</span> <span class="o">=</span> <span class="n">_xy0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pitch</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]),</span> <span class="n">tf</span><span class="o">.</span><span class="n">Mt</span><span class="p">(</span><span class="n">transform</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+                            <span class="c1"># If p has elements, they need to be copied and</span>
                             <span class="c1"># transferred to the new pin.</span>
                             <span class="n">_pelem</span> <span class="o">=</span> <span class="kc">None</span>
                             <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">elements</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -2386,7 +2404,7 @@
                             <span class="n">elements</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
                     <span class="n">elements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="c1"># If p has elements, they need to be copied and transferred </span>
+                    <span class="c1"># If p has elements, they need to be copied and transferred</span>
                     <span class="c1"># to the new pin.</span>
                     <span class="n">_pelem</span> <span class="o">=</span> <span class="kc">None</span>
                     <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">elements</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -2415,44 +2433,60 @@
         <span class="n">_shape</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;    size: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    shape: &quot;</span> <span class="o">+</span> <span class="n">_shape</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    pitch: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pitch</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    transform: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="s2">&quot;    pins: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pins</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="p">)</span></div></div>
+            <span class="o">+</span> <span class="s2">&quot;    size: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    shape: &quot;</span>
+            <span class="o">+</span> <span class="n">_shape</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    pitch: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pitch</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    transform: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;    pins: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pins</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Instance.update_netname"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance.update_netname">[docs]</a>    <span class="k">def</span> <span class="nf">update_netname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netmap</span><span class="p">:</span><span class="nb">dict</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;update netname information of pins&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">pn</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pins</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">netname</span> <span class="ow">in</span> <span class="n">netmap</span><span class="p">:</span>
+                <span class="n">p</span><span class="o">.</span><span class="n">netname</span> <span class="o">=</span> <span class="n">netmap</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">netname</span><span class="p">]</span>  <span class="c1"># update netname information</span></div></div>
 
 
 <div class="viewcode-block" id="VirtualInstance"><a class="viewcode-back" href="../../../laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance">[docs]</a><span class="k">class</span> <span class="nc">VirtualInstance</span><span class="p">(</span><span class="n">Instance</span><span class="p">):</span>  <span class="c1"># IterablePhysicalObject):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The VirtualInstance class implements functions for a group of objects, </span>
-<span class="sd">    which can be treated as a single instance with dedicated dimensional, </span>
+<span class="sd">    The VirtualInstance class implements functions for a group of objects,</span>
+<span class="sd">    which can be treated as a single instance with dedicated dimensional,</span>
 <span class="sd">    port, and any related parameters.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
-<span class="sd">    &gt;&gt;&gt; vinst0_pins = dict() </span>
+<span class="sd">    &gt;&gt;&gt; vinst0_pins = dict()</span>
 <span class="sd">    &gt;&gt;&gt; # Pin information</span>
-<span class="sd">    &gt;&gt;&gt; vinst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10, 10]], </span>
-<span class="sd">            layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;in&#39;) </span>
-<span class="sd">    &gt;&gt;&gt; vinst0_pins[&#39;out&#39;] = laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]], </span>
+<span class="sd">    &gt;&gt;&gt; vinst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10, 10]],</span>
+<span class="sd">            layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;in&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; vinst0_pins[&#39;out&#39;] = laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]],</span>
 <span class="sd">            layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
 <span class="sd">    &gt;&gt;&gt; # Element information</span>
-<span class="sd">    &gt;&gt;&gt; native_elements = dict() </span>
-<span class="sd">    &gt;&gt;&gt; native_elements[&#39;R0&#39;] = laygo2.object.physical.Rect(xy=[[0, 0], [10, 10]], </span>
-<span class="sd">            layer=[&#39;M1&#39;, &#39;drawing&#39;]) </span>
-<span class="sd">    &gt;&gt;&gt; native_elements[&#39;R1&#39;] = laygo2.object.physical.Rect(xy=[[90, 90], [100, 100]], </span>
-<span class="sd">            layer=[&#39;M1&#39;, &#39;drawing&#39;]) </span>
-<span class="sd">    &gt;&gt;&gt; native_elements[&#39;R2&#39;] = laygo2.object.physical.Rect(xy=[[0, 0], [100, 100]], </span>
+<span class="sd">    &gt;&gt;&gt; native_elements = dict()</span>
+<span class="sd">    &gt;&gt;&gt; native_elements[&#39;R0&#39;] = laygo2.object.physical.Rect(xy=[[0, 0], [10, 10]],</span>
+<span class="sd">            layer=[&#39;M1&#39;, &#39;drawing&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; native_elements[&#39;R1&#39;] = laygo2.object.physical.Rect(xy=[[90, 90], [100, 100]],</span>
+<span class="sd">            layer=[&#39;M1&#39;, &#39;drawing&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; native_elements[&#39;R2&#39;] = laygo2.object.physical.Rect(xy=[[0, 0], [100, 100]],</span>
 <span class="sd">            layer=[&#39;prBoundary&#39;, &#39;drawing&#39;])</span>
-<span class="sd">    &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;I0&#39;, libname=&#39;mylib&#39;, </span>
-<span class="sd">            cellname=&#39;myvcell&#39;, xy=[500, 500], native_elements=native_elements, </span>
-<span class="sd">            shape=[3, 2], pitch=[100, 100], unit_size=[100, 100], pins=vinst0_pins, </span>
+<span class="sd">    &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;I0&#39;, libname=&#39;mylib&#39;,</span>
+<span class="sd">            cellname=&#39;myvcell&#39;, xy=[500, 500], native_elements=native_elements,</span>
+<span class="sd">            shape=[3, 2], pitch=[100, 100], unit_size=[100, 100], pins=vinst0_pins,</span>
 <span class="sd">            transform=&#39;R0&#39;)</span>
-<span class="sd">    &gt;&gt;&gt; vinst0.native_elements </span>
-<span class="sd">    {&#39;R0&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCE170&gt;, </span>
-<span class="sd">     &#39;R1&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCEA40&gt;, </span>
+<span class="sd">    &gt;&gt;&gt; vinst0.native_elements</span>
+<span class="sd">    {&#39;R0&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCE170&gt;,</span>
+<span class="sd">     &#39;R1&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCEA40&gt;,</span>
 <span class="sd">     &#39;R2&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCE0B0&gt;}</span>
 
 <span class="sd">    Notes</span>
@@ -2555,27 +2589,27 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; vinst0_pins = dict() </span>
+<span class="sd">        &gt;&gt;&gt; vinst0_pins = dict()</span>
 <span class="sd">        &gt;&gt;&gt; # Pin information</span>
-<span class="sd">        &gt;&gt;&gt; vinst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10, 10]], </span>
-<span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;in&#39;) </span>
-<span class="sd">        &gt;&gt;&gt; vinst0_pins[&#39;out&#39;] = laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; vinst0_pins[&#39;in&#39;] = laygo2.object.physical.Pin(xy=[[0, 0], [10, 10]],</span>
+<span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;in&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; vinst0_pins[&#39;out&#39;] = laygo2.object.physical.Pin(xy=[[90, 90], [100, 100]],</span>
 <span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;], netname=&#39;out&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; # Element information</span>
-<span class="sd">        &gt;&gt;&gt; native_elements = dict() </span>
-<span class="sd">        &gt;&gt;&gt; native_elements[&#39;R0&#39;] = laygo2.object.physical.Rect(xy=[[0, 0], [10, 10]], </span>
-<span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;]) </span>
-<span class="sd">        &gt;&gt;&gt; native_elements[&#39;R1&#39;] = laygo2.object.physical.Rect(xy=[[90, 90], [100, 100]], </span>
-<span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;]) </span>
-<span class="sd">        &gt;&gt;&gt; native_elements[&#39;R2&#39;] = laygo2.object.physical.Rect(xy=[[0, 0], [100, 100]], </span>
+<span class="sd">        &gt;&gt;&gt; native_elements = dict()</span>
+<span class="sd">        &gt;&gt;&gt; native_elements[&#39;R0&#39;] = laygo2.object.physical.Rect(xy=[[0, 0], [10, 10]],</span>
+<span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;])</span>
+<span class="sd">        &gt;&gt;&gt; native_elements[&#39;R1&#39;] = laygo2.object.physical.Rect(xy=[[90, 90], [100, 100]],</span>
+<span class="sd">                layer=[&#39;M1&#39;, &#39;drawing&#39;])</span>
+<span class="sd">        &gt;&gt;&gt; native_elements[&#39;R2&#39;] = laygo2.object.physical.Rect(xy=[[0, 0], [100, 100]],</span>
 <span class="sd">                layer=[&#39;prBoundary&#39;, &#39;drawing&#39;])</span>
-<span class="sd">        &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;I0&#39;, libname=&#39;mylib&#39;, </span>
-<span class="sd">                cellname=&#39;myvcell&#39;, xy=[500, 500], native_elements=native_elements, </span>
-<span class="sd">                shape=[3, 2], pitch=[100, 100], unit_size=[100, 100], pins=vinst0_pins, </span>
+<span class="sd">        &gt;&gt;&gt; vinst0 = laygo2.object.physical.VirtualInstance(name=&#39;I0&#39;, libname=&#39;mylib&#39;,</span>
+<span class="sd">                cellname=&#39;myvcell&#39;, xy=[500, 500], native_elements=native_elements,</span>
+<span class="sd">                shape=[3, 2], pitch=[100, 100], unit_size=[100, 100], pins=vinst0_pins,</span>
 <span class="sd">                transform=&#39;R0&#39;)</span>
-<span class="sd">        &gt;&gt;&gt; vinst0.native_elements </span>
-<span class="sd">        {&#39;R0&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCE170&gt;, </span>
-<span class="sd">         &#39;R1&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCEA40&gt;, </span>
+<span class="sd">        &gt;&gt;&gt; vinst0.native_elements</span>
+<span class="sd">        {&#39;R0&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCE170&gt;,</span>
+<span class="sd">         &#39;R1&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCEA40&gt;,</span>
 <span class="sd">         &#39;R2&#39;: &lt;laygo2.object.physical.Rect object at 0x00000204AAFCE0B0&gt;}</span>
 
 <span class="sd">        .. image:: ../assets/img/object_physical_VirtualInstance_init.png</span>
@@ -2618,10 +2652,7 @@
 
 <div class="viewcode-block" id="VirtualInstance.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Summarize object information.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">(</span>
-            <span class="n">Instance</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot;    native elements: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">native_elements</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Instance</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;    native elements: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">native_elements</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span></div>
 
 <div class="viewcode-block" id="VirtualInstance.get_element_position"><a class="viewcode-back" href="../../../laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance.get_element_position">[docs]</a>    <span class="k">def</span> <span class="nf">get_element_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -2710,12 +2741,8 @@
     <span class="k">if</span> <span class="n">test_instance</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Instance test - creating a vanilla instance.&quot;</span><span class="p">)</span>
         <span class="n">inst0_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-        <span class="n">inst0_pins</span><span class="p">[</span><span class="s2">&quot;in&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span>
-            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;in&quot;</span>
-        <span class="p">)</span>
-        <span class="n">inst0_pins</span><span class="p">[</span><span class="s2">&quot;out&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span>
-            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;out&quot;</span>
-        <span class="p">)</span>
+        <span class="n">inst0_pins</span><span class="p">[</span><span class="s2">&quot;in&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;in&quot;</span><span class="p">)</span>
+        <span class="n">inst0_pins</span><span class="p">[</span><span class="s2">&quot;out&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;out&quot;</span><span class="p">)</span>
         <span class="n">inst0</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span>
             <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span>
             <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
@@ -2744,22 +2771,12 @@
     <span class="k">if</span> <span class="n">test_virtual_instance</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;VirtualInstance test - creating a vanilla virtual instance.&quot;</span><span class="p">)</span>
         <span class="n">inst1_pins</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-        <span class="n">inst1_pins</span><span class="p">[</span><span class="s2">&quot;in&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span>
-            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;in&quot;</span>
-        <span class="p">)</span>
-        <span class="n">inst1_pins</span><span class="p">[</span><span class="s2">&quot;out&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span>
-            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;out&quot;</span>
-        <span class="p">)</span>
+        <span class="n">inst1_pins</span><span class="p">[</span><span class="s2">&quot;in&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;in&quot;</span><span class="p">)</span>
+        <span class="n">inst1_pins</span><span class="p">[</span><span class="s2">&quot;out&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">netname</span><span class="o">=</span><span class="s2">&quot;out&quot;</span><span class="p">)</span>
         <span class="n">inst1_native_elements</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-        <span class="n">inst1_native_elements</span><span class="p">[</span><span class="s2">&quot;R0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span>
-            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">]</span>
-        <span class="p">)</span>
-        <span class="n">inst1_native_elements</span><span class="p">[</span><span class="s2">&quot;R1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span>
-            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">]</span>
-        <span class="p">)</span>
-        <span class="n">inst1_native_elements</span><span class="p">[</span><span class="s2">&quot;R2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span>
-            <span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;prBoundary&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">]</span>
-        <span class="p">)</span>
+        <span class="n">inst1_native_elements</span><span class="p">[</span><span class="s2">&quot;R0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">])</span>
+        <span class="n">inst1_native_elements</span><span class="p">[</span><span class="s2">&quot;R1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">])</span>
+        <span class="n">inst1_native_elements</span><span class="p">[</span><span class="s2">&quot;R2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;prBoundary&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">])</span>
         <span class="n">inst1</span> <span class="o">=</span> <span class="n">VirtualInstance</span><span class="p">(</span>
             <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span>
             <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;mylib&quot;</span><span class="p">,</span>

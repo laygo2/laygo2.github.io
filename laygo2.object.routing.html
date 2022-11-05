@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>API Reference &#8212; laygo2</title>
+    <title>laygo2.object.routing module &#8212; laygo2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -32,8 +32,8 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="laygo2.object package" href="laygo2.object.html" />
-    <link rel="prev" title="Trial" href="trial.html" />
+    <link rel="next" title="RoutingMesh class" href="laygo2.object.routing.RoutingMesh.html" />
+    <link rel="prev" title="export_to_template() method" href="laygo2.object.database.Design.export_to_template.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -83,7 +83,7 @@
 </li>
 
 <li class="toctree-l1 current active nav-item">
- <a class="current reference internal nav-link" href="#">
+ <a class="reference internal nav-link" href="laygo2.html">
   API Reference
  </a>
 </li>
@@ -134,17 +134,17 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="laygo2.object.html">
    laygo2.object package
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="laygo2.object.physical.html">
      laygo2.object.physical module
@@ -355,11 +355,11 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="laygo2.object.routing.html">
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
      laygo2.object.routing module
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
     <label for="toctree-checkbox-7">
      <i class="fas fa-chevron-down">
      </i>
@@ -460,89 +460,12 @@
               
               <div>
                 
-  <section id="api-reference">
-<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">#</a></h1>
-<p>The <strong>LAYout with Gridded Object 2 (laygo2)</strong> package is a Python-based layout generation framework with the following goals:</p>
-<ul class="simple">
-<li><p>Automation and reuse of layout generation process.</p></li>
-<li><p>Parametrized layout generation.</p></li>
-<li><p>Layout automation in advanced technologies such as FinFET.</p></li>
-<li><p>Code-based layout generation.</p></li>
-</ul>
-<p>Laygo2 contains the following subpackages:</p>
-<ul class="simple">
-<li><p><strong>laygo2.object</strong>: implements core object classes for physical layout structures and design hierarchies.</p></li>
-<li><p><strong>laygo2.interface</strong>: implements interfaces to external data structures and EDA tools (<strong>yaml</strong>, <strong>skill</strong>, <strong>BAG</strong>, <strong>GDS</strong>, <strong>matplotlib</strong> and so on).</p></li>
-<li><p><strong>laygo2.util</strong>: implements utility functions for internal use.</p></li>
-</ul>
-<p>Use the following link to get information about its subpackages and modules.</p>
+  <section id="module-laygo2.object.routing">
+<span id="laygo2-object-routing-module"></span><h1>laygo2.object.routing module<a class="headerlink" href="#module-laygo2.object.routing" title="Permalink to this headline">#</a></h1>
+<p><strong>laygo2.object.routing</strong> module is defining functions and classes for basic routing.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.object.html">laygo2.object package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="laygo2.object.physical.html">laygo2.object.physical module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.physical.PhysicalObject.html">PhysicalObject class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.physical.IterablePhysicalObject.html">IterablePhysicalObject class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.physical.PhysicalObjectGroup.html">PhysicalObjectGroup class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.physical.Rect.html">Rect class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.physical.Path.html">Path class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.physical.Pin.html">Pin class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.physical.Text.html">Text class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.physical.Instance.html">Instance class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.physical.VirtualInstance.html">VirtualInstance class</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="laygo2.object.template.html">laygo2.object.template module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.template.Template.html">Template class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.template.NativeInstanceTemplate.html">NativeInstanceTemplate class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.template.ParameterizedInstanceTemplate.html">ParameterizedInstanceTemplate class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.template.UserDefinedTemplate.html">UserDefinedTemplate class</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="laygo2.object.grid.html">laygo2.object.grid module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.grid.CircularMapping.html">CircularMapping class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.grid.CircularMappingArray.html">CircularMappingArray class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.grid._AbsToPhyGridConverter.html">_AbsToPhyGridConverter class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html">_PhyToAbsGridConverter class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.grid.OneDimGrid.html">OneDimGrid class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.grid.Grid.html">Grid class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.grid.PlacementGrid.html">PlacementGrid class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.grid.RoutingGrid.html">RoutingGrid class</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="laygo2.object.database.html">laygo2.object.database module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.database.BaseDatabase.html">BaseDatabase class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.database.Library.html">Library class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.database.Design.html">Design class</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="laygo2.object.database.Design.append.html">append() method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="laygo2.object.database.Design.place.html">place() method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="laygo2.object.database.Design.route.html">route() method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="laygo2.object.database.Design.route_via_track.html">route_via_track() method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="laygo2.object.database.Design.via.html">via() method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="laygo2.object.database.Design.pin.html">pin() method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="laygo2.object.database.Design.export_to_template.html">export_to_template() method</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="laygo2.object.routing.html">laygo2.object.routing module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="laygo2.object.routing.RoutingMesh.html">RoutingMesh class</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.interface.html">laygo2.interface package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="laygo2.interface.bag.html">laygo2.interface.bag module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laygo2.interface.skill.html">laygo2.interface.skill module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laygo2.interface.skillbridge.html">laygo2.interface.skillbridge module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laygo2.interface.gdspy.html">laygo2.interface.gdspy module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laygo2.interface.magic.html">laygo2.interface.magic module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laygo2.interface.yaml.html">laygo2.interface.yaml module</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="laygo2.util.html">laygo2.util package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="laygo2.util.html#module-laygo2.util.transform">laygo2.util.transform module</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="laygo2.object.routing.RoutingMesh.html">RoutingMesh class</a></li>
 </ul>
 </div>
 </section>
@@ -553,17 +476,17 @@
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="trial.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="laygo2.object.database.Design.export_to_template.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Trial</p>
+            <p class="prev-next-title">export_to_template() method</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="laygo2.object.html" title="next page">
+    <a class='right-next' id="next-link" href="laygo2.object.routing.RoutingMesh.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">laygo2.object package</p>
+        <p class="prev-next-title">RoutingMesh class</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

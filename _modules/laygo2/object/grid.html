@@ -3584,14 +3584,14 @@
 <span class="sd">        &gt;&gt;&gt; primary_grid = &#39;horizontal&#39;</span>
 <span class="sd">        &gt;&gt;&gt; tvia = NativeInstanceTemplate(libname=&#39;tlib&#39;, cellname=&#39;via0&#39;)  # via</span>
 <span class="sd">        &gt;&gt;&gt; viamap = CMA(elements=[[tvia, tvia, tvia]], dtype=object)</span>
-<span class="sd">        &gt;&gt;&gt; g = laygo2.object.grid.RoutingGrid(name=&#39;mygrid&#39;, vgrid=gv, hgrid=gh,</span>
-<span class="sd">                                               vwidth=wv, hwidth=wh,</span>
-<span class="sd">                                               vextension=ev, hextension=eh,</span>
-<span class="sd">                                               vlayer=lv, hlayer=lh,</span>
-<span class="sd">                                               pin_vlayer=plv, pin_hlayer=plh,</span>
-<span class="sd">                                               viamap=viamap, primary_grid=primary_grid,</span>
-<span class="sd">                                               xcolor=xcolor, ycolor=ycolor,</span>
-<span class="sd">                                               vextension0=e0v, hextension0=e0h)</span>
+<span class="sd">        &gt;&gt;&gt; g = RoutingGrid(name=&#39;mygrid&#39;, vgrid=gv, hgrid=gh,</span>
+<span class="sd">                            vwidth=wv, hwidth=wh,</span>
+<span class="sd">                            vextension=ev, hextension=eh,</span>
+<span class="sd">                            vlayer=lv, hlayer=lh,</span>
+<span class="sd">                            pin_vlayer=plv, pin_hlayer=plh,</span>
+<span class="sd">                            viamap=viamap, primary_grid=primary_grid,</span>
+<span class="sd">                            xcolor=xcolor, ycolor=ycolor,</span>
+<span class="sd">                            vextension0=e0v, hextension0=e0h)</span>
 <span class="sd">        &gt;&gt;&gt; # Routing on grid</span>
 <span class="sd">        &gt;&gt;&gt; mn_list = [[0, -2], [0, 1], [2, 1], [5,1] ]</span>
 <span class="sd">        &gt;&gt;&gt; route = g.route(mn=mn_list, via_tag=[True, None, True, True])</span>

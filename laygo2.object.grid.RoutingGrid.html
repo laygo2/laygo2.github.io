@@ -355,14 +355,31 @@
      </li>
     </ul>
    </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="laygo2.object.routing.html">
+     laygo2.object.routing module
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="laygo2.object.routing.RoutingMesh.html">
+       RoutingMesh class
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="laygo2.interface.html">
    laygo2.interface package
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -724,14 +741,14 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">primary_grid</span> <span class="o">=</span> <span class="s1">&#39;horizontal&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tvia</span> <span class="o">=</span> <span class="n">NativeInstanceTemplate</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s1">&#39;tlib&#39;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s1">&#39;via0&#39;</span><span class="p">)</span>  <span class="c1"># via</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">viamap</span> <span class="o">=</span> <span class="n">CMA</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="p">[[</span><span class="n">tvia</span><span class="p">,</span> <span class="n">tvia</span><span class="p">,</span> <span class="n">tvia</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">RoutingGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;mygrid&#39;</span><span class="p">,</span> <span class="n">vgrid</span><span class="o">=</span><span class="n">gv</span><span class="p">,</span> <span class="n">hgrid</span><span class="o">=</span><span class="n">gh</span><span class="p">,</span>
-<span class="go">                                       vwidth=wv, hwidth=wh,</span>
-<span class="go">                                       vextension=ev, hextension=eh,</span>
-<span class="go">                                       vlayer=lv, hlayer=lh,</span>
-<span class="go">                                       pin_vlayer=plv, pin_hlayer=plh,</span>
-<span class="go">                                       viamap=viamap, primary_grid=primary_grid,</span>
-<span class="go">                                       xcolor=xcolor, ycolor=ycolor,</span>
-<span class="go">                                       vextension0=e0v, hextension0=e0h)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">RoutingGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;mygrid&#39;</span><span class="p">,</span> <span class="n">vgrid</span><span class="o">=</span><span class="n">gv</span><span class="p">,</span> <span class="n">hgrid</span><span class="o">=</span><span class="n">gh</span><span class="p">,</span>
+<span class="go">                    vwidth=wv, hwidth=wh,</span>
+<span class="go">                    vextension=ev, hextension=eh,</span>
+<span class="go">                    vlayer=lv, hlayer=lh,</span>
+<span class="go">                    pin_vlayer=plv, pin_hlayer=plh,</span>
+<span class="go">                    viamap=viamap, primary_grid=primary_grid,</span>
+<span class="go">                    xcolor=xcolor, ycolor=ycolor,</span>
+<span class="go">                    vextension0=e0v, hextension0=e0h)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Routing on grid</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mn_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">route</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="n">mn</span><span class="o">=</span><span class="n">mn_list</span><span class="p">,</span> <span class="n">via_tag</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>

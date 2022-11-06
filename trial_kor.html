@@ -32,8 +32,8 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="laygo2의 구조" href="structure_kor.html" />
-    <link rel="prev" title="laygo2 사용자 안내서" href="overview_kor.html" />
+    <link rel="next" title="신규 공정에서의 laygo2 셋업" href="technology_kor.html" />
+    <link rel="prev" title="laygo2 개관" href="overview_kor.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -137,17 +137,12 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="overview_kor.html">
-   laygo2 사용자 안내서
+   laygo2 개관
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    laygo2의 쉬운 예제들
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="structure_kor.html">
-   laygo2의 구조
   </a>
  </li>
  <li class="toctree-l1">
@@ -206,8 +201,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simple-gates">
-   simple_gates
+  <a class="reference internal nav-link" href="#id3">
+   간단한 게이트 생성 예제
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -241,8 +236,8 @@
 <p>이 문서는 laygo2의 활용을 돕는 몇 가지의 간단한 예제들을 포함하고 있다.</p>
 <section id="colab-tutorial">
 <h2>Colab tutorial<a class="headerlink" href="#colab-tutorial" title="Permalink to this headline">#</a></h2>
-<p>The easiest way of exercising laygo2 without installing it locally is using Colab;
-the example tutorial can be found <a class="reference external" href="https://colab.research.google.com/drive/1tpuUvqb6BujzZI6RBf2cFdAfMqBsxpep?usp=sharing">here</a>.</p>
+<p>laygo2를 설치 없이 시도해보는 가장 쉬운 방법은 <a class="reference external" href="https://colab.research.google.com/">Colab</a>을 사용하는 것이다;
+Colab 예제 튜토리얼을 이 **<a class="reference external" href="https://colab.research.google.com/drive/1tpuUvqb6BujzZI6RBf2cFdAfMqBsxpep?usp=sharing">링크</a>**에서 찾을 수 있다.</p>
 </section>
 <section id="id1">
 <h2>설치 및 환경 설정<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
@@ -284,13 +279,13 @@ laygo2_tech.yaml          # for technology parameters
 아래 quick_start.py 예제를 위한 가장 기초적인 공정 셋업은 <a class="reference external" href="https://github.com/niftylab/laygo2/tree/master/laygo2/examples/laygo2_tech">여기</a>에서 찾을 수 있다.
 좀 더 완성된 형태의 셋업이 <strong>gpdk045</strong> 공정을 위해 준비되어 있으며 <a class="reference external" href="https://github.com/niftylab/laygo2_workspace_gpdk045/tree/master/laygo2_tech_example">여기</a>에서 찾을 수 있다.</p>
 </section>
-<section id="simple-gates">
-<h2>simple_gates<a class="headerlink" href="#simple-gates" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h2>간단한 게이트 생성 예제<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>다음 커맨드를 실행함으로서 간단한 NAND gate의 레이아웃을 생성할 수 있다.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(after git clone)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># after git clone
 &gt;&gt;&gt;&gt; cd laygo2 
 &gt;&gt;&gt;&gt; python -m quick_start.py
-(or you can run ipython and type run &#39;quick_start.py&#39; instead)
+# or you can run ipython and type run &#39;quick_start.py&#39; instead.
 </pre></div>
 </div>
 <p>위 스크립트를 실행하여 생성된 NAND gate의 레이아웃은 다음과 같다.</p>
@@ -298,8 +293,12 @@ laygo2_tech.yaml          # for technology parameters
 </section>
 <section id="trial-in-sky130-technology">
 <h2>Trial in SKY130 technology<a class="headerlink" href="#trial-in-sky130-technology" title="Permalink to this headline">#</a></h2>
-<p>An example tutorial of laygo2 in SkyWater <a class="reference external" href="https://skywater-pdk.readthedocs.io/en/main/">SKY130</a>
-technology can be found in this <a class="reference external" href="https://laygo2-sky130-docs.readthedocs.io/en/latest/">link</a>.</p>
+<p><a class="reference external" href="https://skywater-pdk.readthedocs.io/en/main/">SKY130</a> 공정에서 laygo2를 셋업하는
+기본 예제를 이 <a class="reference external" href="https://laygo2-sky130-docs.readthedocs.io/en/latest/">링크</a>에서 찾을 수 있다.</p>
+<p>생성된 D flip-flop의 레이아웃이 아래 나타나 있다:</p>
+<p><img alt="sky130 dff2x" src="_images/trial_sky130_dff.png" /></p>
+<p>SKY130 공정에서의 Colab 예제는 이 **<a class="reference external" href="https://colab.research.google.com/drive/1dToEQe7500TUNOPN2aPTJGRgcbbNsqhj?usp=sharing">링크</a>**에서 찾을 수 있다.
+<img alt="sky130 dff2x colab" src="_images/trial_sky130_dff_colab.png" /></p>
 </section>
 </section>
 
@@ -313,13 +312,13 @@ technology can be found in this <a class="reference external" href="https://layg
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">laygo2 사용자 안내서</p>
+            <p class="prev-next-title">laygo2 개관</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="structure_kor.html" title="next page">
+    <a class='right-next' id="next-link" href="technology_kor.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">laygo2의 구조</p>
+        <p class="prev-next-title">신규 공정에서의 laygo2 셋업</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

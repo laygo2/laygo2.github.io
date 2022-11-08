@@ -5,7 +5,7 @@
 ## Colab tutorial
 
 laygo2를 설치 없이 시도해보는 가장 쉬운 방법은 [Colab](https://colab.research.google.com/)을 사용하는 것이다; 
-Colab 예제 튜토리얼을 이 **[링크](https://colab.research.google.com/drive/1tpuUvqb6BujzZI6RBf2cFdAfMqBsxpep?usp=sharing)**에서 찾을 수 있다.
+Colab 예제 튜토리얼을 이 [링크](https://colab.research.google.com/drive/1tpuUvqb6BujzZI6RBf2cFdAfMqBsxpep?usp=sharing)에서 찾을 수 있다.
 
 
 ## 설치 및 환경 설정
@@ -69,7 +69,7 @@ laygo2를 설치하는 방법은 크게 1) github repository에서 clone하는 �
 
 ![sky130 dff2x](../assets/img/trial_sky130_dff.png "sky130 dff2x")
 
-SKY130 공정에서의 Colab 예제는 이 **[링크](https://colab.research.google.com/drive/1dToEQe7500TUNOPN2aPTJGRgcbbNsqhj?usp=sharing)**에서 찾을 수 있다.
+SKY130 공정에서의 Colab 예제는 이 [링크](https://colab.research.google.com/drive/1dToEQe7500TUNOPN2aPTJGRgcbbNsqhj?usp=sharing)에서 찾을 수 있다.
 ![sky130 dff2x colab](../assets/img/trial_sky130_dff_colab.png "sky130 dff2x colab")
 
 

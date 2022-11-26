@@ -268,6 +268,11 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
+      <a class="reference internal" href="laygo2.object.grid.core.html">
+       laygo2.object.grid.core module
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="laygo2.object.grid.CircularMapping.html">
        CircularMapping class
       </a>
@@ -470,8 +475,8 @@
 <h1>CircularMappingArray class<a class="headerlink" href="#circularmappingarray-class" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="laygo2.object.grid.CircularMappingArray">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">CircularMappingArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elements=array([0])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype=&lt;class</span> <span class="pre">'int'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#CircularMappingArray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.CircularMappingArray" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping" title="laygo2.object.grid.CircularMapping"><code class="xref py py-class docutils literal notranslate"><span class="pre">laygo2.object.grid.CircularMapping</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">CircularMappingArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elements=array([0])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype=&lt;class</span> <span class="pre">'int'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#CircularMappingArray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.CircularMappingArray" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="laygo2.object.grid.core.html#laygo2.object.grid.core.CircularMapping" title="laygo2.object.grid.core.CircularMapping"><code class="xref py py-class docutils literal notranslate"><span class="pre">laygo2.object.grid.core.CircularMapping</span></code></a></p>
 <p>Multi-dimensional circular mapping class (index number expands infinitely).</p>
 <p class="rubric">Notes</p>
 <p><strong>(Korean)</strong> 다차원 순환맵핑(인덱싱 넘버가 무한히 확장) 클래스.</p>
@@ -502,6 +507,12 @@
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code>(pos)</p></td>
 <td><p>Element access function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.CircularMappingArray.flip" title="laygo2.object.grid.CircularMappingArray.flip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flip</span></code></a>(axis)</p></td>
+<td><p>Flip the elements of the object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.CircularMappingArray.copy" title="laygo2.object.grid.CircularMappingArray.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<td><p>Copy the object.</p></td>
 </tr>
 </tbody>
 </table>
@@ -534,6 +545,18 @@
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.CircularMappingArray.summarize" title="laygo2.object.grid.CircularMappingArray.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
 <td><p>Return the summary of the object information.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.CircularMappingArray.append" title="laygo2.object.grid.CircularMappingArray.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(elem)</p></td>
+<td><p>Append elements to the mapping.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.CircularMappingArray.flip" title="laygo2.object.grid.CircularMappingArray.flip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flip</span></code></a>(axis)</p></td>
+<td><p>Flip the elements of the object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.CircularMappingArray.copy" title="laygo2.object.grid.CircularMappingArray.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<td><p>Copy the object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.CircularMappingArray.concatenate" title="laygo2.object.grid.CircularMappingArray.concatenate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate</span></code></a>(obj)</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -577,6 +600,29 @@
 - dtype(type): 구성 요소의 datatype</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.CircularMappingArray.append">
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.CircularMappingArray.append" title="Permalink to this definition">#</a></dt>
+<dd><p>Append elements to the mapping.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.CircularMappingArray.concatenate">
+<span class="sig-name descname"><span class="pre">concatenate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.CircularMappingArray.concatenate" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.CircularMappingArray.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#CircularMappingArray.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.CircularMappingArray.copy" title="Permalink to this definition">#</a></dt>
+<dd><p>Copy the object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.CircularMappingArray.flip">
+<span class="sig-name descname"><span class="pre">flip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#CircularMappingArray.flip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.CircularMappingArray.flip" title="Permalink to this definition">#</a></dt>
+<dd><p>Flip the elements of the object.</p>
 </dd></dl>
 
 <dl class="py method">

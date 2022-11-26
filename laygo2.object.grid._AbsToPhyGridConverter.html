@@ -268,6 +268,11 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
+      <a class="reference internal" href="laygo2.object.grid.core.html">
+       Key methods
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="laygo2.object.grid.CircularMapping.html">
        CircularMapping class
       </a>
@@ -468,161 +473,6 @@
                 
   <section id="abstophygridconverter-class">
 <h1>_AbsToPhyGridConverter class<a class="headerlink" href="#abstophygridconverter-class" title="Permalink to this headline">#</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">_AbsToPhyGridConverter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">master</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>An internal class that converts abstract coordinates into physical
-coordinates. Conversely, conditional operators convert physical
-coordinates into abstract coordinates.</p>
-<img alt="_images/user_guide_abs2phy.png" src="_images/user_guide_abs2phy.png" />
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 추상 좌표를 물리 좌표로 변환하는 클래스, 조건부연산은 역변환을
-수행한다.</p>
-<div class="autoclasstoc docutils container">
-<p class="rubric">Public Data Attributes:</p>
-<table class="longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid._AbsToPhyGridConverter.master" title="laygo2.object.grid._AbsToPhyGridConverter.master"><code class="xref py py-obj docutils literal notranslate"><span class="pre">master</span></code></a></p></td>
-<td><p>Coordinate system to which _AbsToPhyGridConverter object belongs.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="autoclasstoc docutils container">
-<p class="rubric">Public Methods:</p>
-<table class="longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid._AbsToPhyGridConverter.__init__" title="laygo2.object.grid._AbsToPhyGridConverter.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(master)</p></td>
-<td><p>Constructor function of _AbsToPhyGridConverter class.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(pos)</p></td>
-<td><p>Convert abstract coordinates of the master grid into corresponding physical coordinates.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code>(pos)</p></td>
-<td><p>Convert abstract coordinates of the master grid into corresponding physical coordinates.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__eq__</span></code>(other)</p></td>
-<td><p>Convert physical coordinates into abstract coordinates of the master grid satisfying conditional operations.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__lt__</span></code>(other)</p></td>
-<td><p>Convert physical coordinates into abstract coordinates of the master grid satisfying conditional operations.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__le__</span></code>(other)</p></td>
-<td><p>Convert physical coordinates into abstract coordinates of the master grid satisfying conditional operations.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__gt__</span></code>(other)</p></td>
-<td><p>Convert physical coordinates into abstract coordinates of the master grid satisfying conditional operations.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__ge__</span></code>(other)</p></td>
-<td><p>Convert physical coordinates into abstract coordinates of the master grid satisfying conditional operations.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr class="docutils" />
-<dl class="py method">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">master</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter.__init__" title="Permalink to this definition">#</a></dt>
-<dd><p>Constructor function of _AbsToPhyGridConverter class.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter._ge_1d">
-<span class="sig-name descname"><span class="pre">_ge_1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter._ge_1d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter._ge_1d" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter._ge_2d">
-<span class="sig-name descname"><span class="pre">_ge_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter._ge_2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter._ge_2d" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter._getitem_1d">
-<span class="sig-name descname"><span class="pre">_getitem_1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter._getitem_1d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter._getitem_1d" title="Permalink to this definition">#</a></dt>
-<dd><p>An internal function of __getitem__() for 1-d grids.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter._getitem_2d">
-<span class="sig-name descname"><span class="pre">_getitem_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter._getitem_2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter._getitem_2d" title="Permalink to this definition">#</a></dt>
-<dd><p>An internal function of __getitem__() for 2-d grids.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter._gt_1d">
-<span class="sig-name descname"><span class="pre">_gt_1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter._gt_1d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter._gt_1d" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter._gt_2d">
-<span class="sig-name descname"><span class="pre">_gt_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter._gt_2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter._gt_2d" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter._le_1d">
-<span class="sig-name descname"><span class="pre">_le_1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter._le_1d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter._le_1d" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter._le_2d">
-<span class="sig-name descname"><span class="pre">_le_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter._le_2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter._le_2d" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter._lt_1d">
-<span class="sig-name descname"><span class="pre">_lt_1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter._lt_1d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter._lt_1d" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter._lt_2d">
-<span class="sig-name descname"><span class="pre">_lt_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter._lt_2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter._lt_2d" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter._phy2abs_operator">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_phy2abs_operator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#_AbsToPhyGridConverter._phy2abs_operator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter._phy2abs_operator" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="laygo2.object.grid._AbsToPhyGridConverter.master">
-<span class="sig-name descname"><span class="pre">master</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.grid._AbsToPhyGridConverter.master" title="Permalink to this definition">#</a></dt>
-<dd><p>Coordinate system to which
-_AbsToPhyGridConverter object belongs.</p>
-<p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xg&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">180</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;yg&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span>   <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">vgrid</span><span class="o">=</span><span class="n">g1_x</span><span class="p">,</span> <span class="n">hgrid</span><span class="o">=</span><span class="n">g1_y</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g1_x</span><span class="o">.</span><span class="n">abs2phy</span><span class="p">)</span>
-<span class="go">&lt;laygo2.object.grid._AbsToPhyGridConverter object&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
-<span class="go">&lt;laygo2.object.grid._AbsToPhyGridConverter object&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g1_x</span><span class="o">.</span><span class="n">abs2phy</span><span class="o">.</span><span class="n">master</span><span class="p">)</span>
-<span class="go">&lt;laygo2.object.grid.OneDimGrid object&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2</span><span class="o">.</span><span class="n">xy</span><span class="o">.</span><span class="n">master</span><span class="p">)</span>
-<span class="go">&lt;laygo2.object.grid.Grid object&gt;</span>
-</pre></div>
-</div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> _AbsToPhyGridConverter 객체가 속한 좌표계.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>laygo2.Grid or laygo2.OneDimGrid</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </section>
 
 

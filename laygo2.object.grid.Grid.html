@@ -268,6 +268,11 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
+      <a class="reference internal" href="laygo2.object.grid.core.html">
+       laygo2.object.grid.core module
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="laygo2.object.grid.CircularMapping.html">
        CircularMapping class
       </a>
@@ -470,7 +475,7 @@
 <h1>Grid class<a class="headerlink" href="#grid-class" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">Grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hgrid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">Grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hgrid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>A base class having conversion operators and the mapping information (element)
 between two-dimensional physical coordinates and abstract coordinates.</p>
@@ -490,6 +495,12 @@ summarized in the following figure.</p>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.name" title="laygo2.object.grid.Grid.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
 <td><p>the name of the grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.vgrid" title="laygo2.object.grid.Grid.vgrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vgrid</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.hgrid" title="laygo2.object.grid.Grid.hgrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hgrid</span></code></a></p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.elements" title="laygo2.object.grid.Grid.elements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">elements</span></code></a></p></td>
 <td><p>return elements of subgrids ([_xy[0].elements, _xy[1].elements]).</p></td>
@@ -625,7 +636,7 @@ summarized in the following figure.</p>
 <hr class="docutils" />
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hgrid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hgrid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Constructor function of Grid class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -667,41 +678,61 @@ summarized in the following figure.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid._get_hgrid">
+<span class="sig-name descname"><span class="pre">_get_hgrid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid._get_hgrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid._get_hgrid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid._get_vgrid">
+<span class="sig-name descname"><span class="pre">_get_vgrid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid._get_vgrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid._get_vgrid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid._set_hgrid">
+<span class="sig-name descname"><span class="pre">_set_hgrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid._set_hgrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid._set_hgrid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid._set_vgrid">
+<span class="sig-name descname"><span class="pre">_set_vgrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid._set_vgrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid._set_vgrid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.bbox">
-<span class="sig-name descname"><span class="pre">bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.bbox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.bbox" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.bbox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.bbox" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the
 ‘internal’ bounding box of obj.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.bbox" title="laygo2.object.grid._PhyToAbsGridConverter.bbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.bbox</span></code></a></p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.bbox</span></code></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.bottom_left">
-<span class="sig-name descname"><span class="pre">bottom_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.bottom_left"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.bottom_left" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">bottom_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.bottom_left"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.bottom_left" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the
 bottom-left corner of obj.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.bottom_left" title="laygo2.object.grid._PhyToAbsGridConverter.bottom_left"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.bottom_left</span></code></a></p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.bottom_left</span></code></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.bottom_right">
-<span class="sig-name descname"><span class="pre">bottom_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.bottom_right"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.bottom_right" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">bottom_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.bottom_right"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.bottom_right" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the
 bottom-right corner of obj.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.bottom_right" title="laygo2.object.grid._PhyToAbsGridConverter.bottom_right"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.bottom_right</span></code></a></p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.bottom_right</span></code></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.center">
-<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.center"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.center" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.center"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.center" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the center
 point of obj.</p>
 <dl class="field-list simple">
@@ -711,45 +742,45 @@ point of obj.</p>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.center" title="laygo2.object.grid._PhyToAbsGridConverter.center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.center</span></code></a></p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.center</span></code></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.crossing">
-<span class="sig-name descname"><span class="pre">crossing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.crossing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.crossing" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">crossing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.crossing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.crossing" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the crossing
 point of args.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.crossing" title="laygo2.object.grid._PhyToAbsGridConverter.crossing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.crossing</span></code></a></p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.crossing</span></code></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.get_range">
-<span class="sig-name descname"><span class="pre">get_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.get_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.get_range" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.get_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.get_range" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.overlap">
-<span class="sig-name descname"><span class="pre">overlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bbox'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.overlap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.overlap" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">overlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bbox'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.overlap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.overlap" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the overlap
 of args.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.overlap" title="laygo2.object.grid._PhyToAbsGridConverter.overlap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.overlap</span></code></a></p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.overlap</span></code></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.set_range">
-<span class="sig-name descname"><span class="pre">set_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.set_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.set_range" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.set_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.set_range" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.summarize">
-<span class="sig-name descname"><span class="pre">summarize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.summarize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.summarize" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">summarize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.summarize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.summarize" title="Permalink to this definition">#</a></dt>
 <dd><p>Output the information of the respective grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -774,33 +805,33 @@ of args.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.top_left">
-<span class="sig-name descname"><span class="pre">top_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.top_left"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.top_left" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">top_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.top_left"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.top_left" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the top-left
 corner of obj.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.top_left" title="laygo2.object.grid._PhyToAbsGridConverter.top_left"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.top_left</span></code></a></p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.top_left</span></code></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.top_right">
-<span class="sig-name descname"><span class="pre">top_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.top_right"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.top_right" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">top_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.top_right"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.top_right" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the top-right
 corner of obj.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.top_right" title="laygo2.object.grid._PhyToAbsGridConverter.top_right"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.top_right</span></code></a></p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_PhyToAbsGridConverter.top_right</span></code></p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.union">
-<span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid.html#Grid.union"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.union" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.union"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.union" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to union of args.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter.union" title="laygo2.object.grid._PhyToAbsGridConverter.union"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.union</span></code></a></p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.union</span></code></p>
 </div>
 </dd></dl>
 
@@ -900,6 +931,11 @@ corner of obj.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid.hgrid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hgrid</span></span><a class="headerlink" href="#laygo2.object.grid.Grid.hgrid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.m">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">m</span></span><a class="headerlink" href="#laygo2.object.grid.Grid.m" title="Permalink to this definition">#</a></dt>
 <dd><p>One-dimensional _PhyToAbsConverter of
@@ -927,7 +963,7 @@ the x-coordinate system.</p>
 <p><strong>(Korean)</strong> x좌표계 1차원 _PhyToAbsConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter" title="laygo2.object.grid._PhyToAbsGridConverter">_PhyToAbsGridConverter</a></p>
+<dd class="field-odd"><p>_PhyToAbsGridConverter</p>
 </dd>
 </dl>
 </dd></dl>
@@ -996,7 +1032,7 @@ a coordinate system.</p>
 <p><strong>(Korean)</strong> y좌표계 1차원 _PhyToAbsConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid._PhyToAbsGridConverter.html#laygo2.object.grid._PhyToAbsGridConverter" title="laygo2.object.grid._PhyToAbsGridConverter">_PhyToAbsGridConverter</a></p>
+<dd class="field-odd"><p>_PhyToAbsGridConverter</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1091,6 +1127,11 @@ a coordinate system.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid.vgrid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vgrid</span></span><a class="headerlink" href="#laygo2.object.grid.Grid.vgrid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.width">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#laygo2.object.grid.Grid.width" title="Permalink to this definition">#</a></dt>
 <dd><dl class="simple">
@@ -1169,7 +1210,7 @@ a coordinate system.</p>
 x좌표계 1차원 _AbsToPhyGridConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid._AbsToPhyGridConverter.html#laygo2.object.grid._AbsToPhyGridConverter" title="laygo2.object.grid._AbsToPhyGridConverter">_AbsToPhyGridConverter</a></p>
+<dd class="field-odd"><p>_AbsToPhyGridConverter</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1202,7 +1243,7 @@ _AbsToPhyConverter of a coordinate system.</p>
 <p><strong>(Korean)</strong> 2차원 _AbsToPhyConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid._AbsToPhyGridConverter.html#laygo2.object.grid._AbsToPhyGridConverter" title="laygo2.object.grid._AbsToPhyGridConverter">_AbsToPhyGridConverter</a></p>
+<dd class="field-odd"><p>_AbsToPhyGridConverter</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1233,7 +1274,7 @@ of the y-coordinate system.</p>
 <p><strong>(Korean)</strong> y좌표계 1차원 _AbsToPhyGridConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid._AbsToPhyGridConverter.html#laygo2.object.grid._AbsToPhyGridConverter" title="laygo2.object.grid._AbsToPhyGridConverter">_AbsToPhyGridConverter</a></p>
+<dd class="field-odd"><p>_AbsToPhyGridConverter</p>
 </dd>
 </dl>
 </dd></dl>

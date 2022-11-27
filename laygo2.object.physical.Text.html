@@ -480,13 +480,13 @@
 <p>Text object class.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">text0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">text0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="go">    layer=[&#39;text&#39;, &#39;drawing&#39;], text=&#39;test&#39;, params=None)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">text0</span><span class="p">)</span>
 <span class="go">&lt;laygo2.object.physical.Text object at 0x000002049A77FD90&gt;</span>
 <span class="go">    name: None,</span>
 <span class="go">    class: Text,</span>
-<span class="go">    xy: [[0, 0], [100, 100]],</span>
+<span class="go">    xy: [0, 0],</span>
 <span class="go">    params: None,</span>
 <span class="go">    layer: [&#39;text&#39;, &#39;drawing&#39;],</span>
 <span class="go">    text: test</span>
@@ -626,13 +626,13 @@
 </div>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">text0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">text0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="go">    layer=[&#39;text&#39;, &#39;drawing&#39;], text=&#39;test&#39;, params=None)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">text0</span><span class="p">)</span>
 <span class="go">&lt;laygo2.object.physical.Text object at 0x000002049A77FD90&gt;</span>
 <span class="go">    name: None,</span>
 <span class="go">    class: Text,</span>
-<span class="go">    xy: [[0, 0], [100, 100]],</span>
+<span class="go">    xy: [0, 0],</span>
 <span class="go">    params: None,</span>
 <span class="go">    layer: [&#39;text&#39;, &#39;drawing&#39;],</span>
 <span class="go">    text: test</span>
@@ -802,7 +802,7 @@ object is updated.</p>
 <dd><p>Layer information of object.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">text0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">text0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="go">        layer=[&#39;text&#39;, &#39;drawing&#39;], text=&#39;test&#39;, params=None)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text0</span><span class="o">.</span><span class="n">layer</span>
 <span class="go">[&#39;text&#39;, &#39;drawing&#39;]</span>
@@ -958,7 +958,7 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 <dd><p>Text content of object.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">text0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">text0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
 <span class="go">        layer=[&#39;text&#39;, &#39;drawing&#39;], text=&#39;test&#39;, params=None)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text0</span><span class="o">.</span><span class="n">text</span>
 <span class="go">&#39;test&#39;</span>

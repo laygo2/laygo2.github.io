@@ -193,6 +193,7 @@
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log10</span>
 <span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">laygo2.object</span>
@@ -447,7 +448,7 @@
 <span class="sd">    &gt;&gt;&gt; r0 = Rect(xy=[[0, 0], [100, 100]], layer=[&quot;M1&quot;, &quot;drawing&quot;])</span>
 <span class="sd">    &gt;&gt;&gt; p0 = Pin(xy=[[0, 0], [50, 50]], layer=[&quot;M1&quot;, &quot;pin&quot;], name=&quot;P&quot;)</span>
 <span class="sd">    &gt;&gt;&gt; i0 = Instance(libname=&quot;tlib&quot;, cellname=&quot;t0&quot;, name=&quot;I0&quot;, xy=[0, 0])</span>
-<span class="sd">    &gt;&gt;&gt; t0 = Text(xy=[[50, 50], [100, 100]], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; t0 = Text(xy=[50, 50], layer=[&quot;text&quot;, &quot;drawing&quot;], text=&quot;T&quot;)</span>
 <span class="sd">    &gt;&gt;&gt; # Add the layout objects to the design object.</span>
 <span class="sd">    &gt;&gt;&gt; dsn.append(r0)</span>
 <span class="sd">    &gt;&gt;&gt; dsn.append(p0)</span>
@@ -504,6 +505,36 @@
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">cmd</span></div>
+
+
+<div class="viewcode-block" id="load_cell_list"><a class="viewcode-back" href="../../../laygo2.interface.skill.html#laygo2.interface.skill.load_cell_list">[docs]</a><span class="k">def</span> <span class="nf">load_cell_list</span><span class="p">(</span><span class="n">libname</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">yaml_filename</span><span class="o">=</span><span class="s2">&quot;import_skill_scratch.yaml&quot;</span><span class="p">):</span>
+    <span class="c1"># parse header functions.</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;; laygo2 cell-list load script.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+
+    <span class="n">header_filename</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">laygo2</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)[:</span><span class="o">-</span><span class="mi">11</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;skill_import.il&quot;</span>
+    <span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">header_filename</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">cmd</span> <span class="o">+=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">cmd</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39;_laygo2_get_cell_list(&quot;</span><span class="si">%s</span><span class="s1">&quot; &quot;</span><span class="si">%s</span><span class="s1">&quot;)</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">libname</span><span class="p">,</span> <span class="n">yaml_filename</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># export to a file.</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cmd</span></div>
+
+
+<div class="viewcode-block" id="load"><a class="viewcode-back" href="../../../laygo2.interface.skill.html#laygo2.interface.skill.load">[docs]</a><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">libname</span><span class="p">,</span> <span class="n">mpt</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yaml_filename</span><span class="o">=</span><span class="s2">&quot;import_skill_scratch.yaml&quot;</span><span class="p">):</span>
+    <span class="n">mpt</span> <span class="o">=</span> <span class="s2">&quot;t&quot;</span> <span class="k">if</span> <span class="n">mpt</span> <span class="k">else</span> <span class="s2">&quot;nil&quot;</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;; laygo2 cell load script.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+    <span class="n">cmd</span> <span class="o">+=</span> <span class="s1">&#39;_laygo2_parse_cad_layout(&quot;</span><span class="si">%s</span><span class="s1">&quot; &quot;</span><span class="si">%s</span><span class="s1">&quot; &quot;</span><span class="si">%s</span><span class="s1">&quot; &quot;</span><span class="si">%s</span><span class="s1">&quot; )</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">libname</span><span class="p">,</span> <span class="n">cellname</span><span class="p">,</span> <span class="n">yaml_filename</span><span class="p">,</span> <span class="n">mpt</span><span class="p">)</span>
+    <span class="c1">#cmd += &quot;_laygo2_parse_cad_layout(\&quot;&quot; + libname + &quot;\&quot; \&quot;&quot; + cn + &quot;\&quot; \&quot;&quot; + yaml_filename + &quot;\&quot; \&quot;&quot; + mpt + &quot;\&quot;)&quot;</span>
+    <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># export to a file.</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cmd</span></div>
+
 </pre></div>
 
               </div>

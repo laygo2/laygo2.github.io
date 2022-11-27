@@ -534,7 +534,11 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)**: numpy.ndarray: 객체의 bbox (bounding box).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1">#if self.xy.ndim == 2:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>  
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># single-point object.</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">])</span>
 
 <div class="viewcode-block" id="PhysicalObject.__init__"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1659,13 +1663,13 @@
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
-<span class="sd">    &gt;&gt;&gt; text0 = laygo2.object.physical.Text(xy=[[ 0, 0], [100, 100]],</span>
+<span class="sd">    &gt;&gt;&gt; text0 = laygo2.object.physical.Text(xy=[0, 0],</span>
 <span class="sd">        layer=[&#39;text&#39;, &#39;drawing&#39;], text=&#39;test&#39;, params=None)</span>
 <span class="sd">    &gt;&gt;&gt; print(text0)</span>
 <span class="sd">    &lt;laygo2.object.physical.Text object at 0x000002049A77FD90&gt;</span>
 <span class="sd">        name: None,</span>
 <span class="sd">        class: Text,</span>
-<span class="sd">        xy: [[0, 0], [100, 100]],</span>
+<span class="sd">        xy: [0, 0],</span>
 <span class="sd">        params: None,</span>
 <span class="sd">        layer: [&#39;text&#39;, &#39;drawing&#39;],</span>
 <span class="sd">        text: test</span>
@@ -1682,7 +1686,7 @@
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
-<span class="sd">    &gt;&gt;&gt; text0 = laygo2.object.physical.Text(xy=[[ 0, 0], [100, 100]], </span>
+<span class="sd">    &gt;&gt;&gt; text0 = laygo2.object.physical.Text(xy=[0, 0], </span>
 <span class="sd">            layer=[&#39;text&#39;, &#39;drawing&#39;], text=&#39;test&#39;, params=None)</span>
 <span class="sd">    &gt;&gt;&gt; text0.layer </span>
 <span class="sd">    [&#39;text&#39;, &#39;drawing&#39;]</span>
@@ -1699,7 +1703,7 @@
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
-<span class="sd">    &gt;&gt;&gt; text0 = laygo2.object.physical.Text(xy=[[ 0, 0], [100, 100]], </span>
+<span class="sd">    &gt;&gt;&gt; text0 = laygo2.object.physical.Text(xy=[0, 0], </span>
 <span class="sd">            layer=[&#39;text&#39;, &#39;drawing&#39;], text=&#39;test&#39;, params=None)</span>
 <span class="sd">    &gt;&gt;&gt; text0.text </span>
 <span class="sd">    &#39;test&#39;</span>
@@ -1737,13 +1741,13 @@
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
-<span class="sd">        &gt;&gt;&gt; text0 = laygo2.object.physical.Text(xy=[[ 0, 0], [100, 100]],</span>
+<span class="sd">        &gt;&gt;&gt; text0 = laygo2.object.physical.Text(xy=[0, 0],</span>
 <span class="sd">            layer=[&#39;text&#39;, &#39;drawing&#39;], text=&#39;test&#39;, params=None)</span>
 <span class="sd">        &gt;&gt;&gt; print(text0)</span>
 <span class="sd">        &lt;laygo2.object.physical.Text object at 0x000002049A77FD90&gt;</span>
 <span class="sd">            name: None,</span>
 <span class="sd">            class: Text,</span>
-<span class="sd">            xy: [[0, 0], [100, 100]],</span>
+<span class="sd">            xy: [0, 0],</span>
 <span class="sd">            params: None,</span>
 <span class="sd">            layer: [&#39;text&#39;, &#39;drawing&#39;],</span>
 <span class="sd">            text: test</span>

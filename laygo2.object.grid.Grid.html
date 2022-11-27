@@ -269,7 +269,7 @@
     <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="laygo2.object.grid.core.html">
-       laygo2.object.grid.core module
+       Core methods
       </a>
      </li>
      <li class="toctree-l3">
@@ -618,16 +618,31 @@ summarized in the following figure.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.center" title="laygo2.object.grid.Grid.center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">center</span></code></a>(obj)</p></td>
 <td><p>Return the abstract grid coordinates corresponding to the center point of obj.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iter__</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.copy" title="laygo2.object.grid.Grid.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<td><p>Make a copy of the current Grid object</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.vflip" title="laygo2.object.grid.Grid.vflip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vflip</span></code></a>([copy])</p></td>
+<td><p>Flip the grid in vertical direction.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.hflip" title="laygo2.object.grid.Grid.hflip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hflip</span></code></a>([copy])</p></td>
+<td><p>Flip the grid in horizontal direction.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.vstack" title="laygo2.object.grid.Grid.vstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vstack</span></code></a>(obj[, copy])</p></td>
+<td><p>Stack grid(s) on top of the current grid in vertical direction.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.hstack" title="laygo2.object.grid.Grid.hstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hstack</span></code></a>(obj[, copy])</p></td>
+<td><p>Stack grid(s) on top of the current grid in horizontal direction.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iter__</span></code>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__next__</span></code>()</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__next__</span></code>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code>()</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code>()</p></td>
 <td><p>Return the string representation of the object.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.summarize" title="laygo2.object.grid.Grid.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.summarize" title="laygo2.object.grid.Grid.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
 <td><p>Output the information of the respective grid.</p></td>
 </tr>
 </tbody>
@@ -747,6 +762,24 @@ point of obj.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.copy" title="Permalink to this definition">#</a></dt>
+<dd><p>Make a copy of the current Grid object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>laygo2.object.grid.Grid</strong></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>the copied Grid object.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid.core.html#laygo2.object.grid.copy" title="laygo2.object.grid.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.copy</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.crossing">
 <span class="sig-name descname"><span class="pre">crossing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.crossing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.crossing" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the crossing
@@ -761,6 +794,34 @@ point of args.</p>
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.get_range">
 <span class="sig-name descname"><span class="pre">get_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.get_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.get_range" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid.hflip">
+<span class="sig-name descname"><span class="pre">hflip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.hflip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.hflip" title="Permalink to this definition">#</a></dt>
+<dd><p>Flip the grid in horizontal direction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>copy</strong> (<em>optional</em><em>, </em><em>boolean</em>) – If True, make a copy and flip the copied grid (default).
+If False, flip the current grid object.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>laygo2.object.grid.Grid</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>the flipped Grid object.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid.core.html#laygo2.object.grid.hflip" title="laygo2.object.grid.hflip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.hflip</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid.hstack">
+<span class="sig-name descname"><span class="pre">hstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.hstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.hstack" title="Permalink to this definition">#</a></dt>
+<dd><p>Stack grid(s) on top of the current grid in horizontal direction.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.overlap">
@@ -833,6 +894,34 @@ corner of obj.</p>
 <p class="admonition-title">See also</p>
 <p><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.union</span></code></p>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid.vflip">
+<span class="sig-name descname"><span class="pre">vflip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.vflip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.vflip" title="Permalink to this definition">#</a></dt>
+<dd><p>Flip the grid in vertical direction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>copy</strong> (<em>optional</em><em>, </em><em>boolean</em>) – If True, make a copy and flip the copied grid (default).
+If False, flip the current grid object.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>laygo2.object.grid.Grid</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>the flipped Grid object.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="laygo2.object.grid.core.html#laygo2.object.grid.vflip" title="laygo2.object.grid.vflip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.vflip</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid.vstack">
+<span class="sig-name descname"><span class="pre">vstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.vstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.vstack" title="Permalink to this definition">#</a></dt>
+<dd><p>Stack grid(s) on top of the current grid in vertical direction.</p>
 </dd></dl>
 
 <dl class="py attribute">

@@ -269,7 +269,7 @@
     <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="laygo2.object.grid.core.html">
-       laygo2.object.grid.core module
+       Core methods
       </a>
      </li>
      <li class="toctree-l3">
@@ -476,7 +476,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">RoutingGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vwidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hwidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vextension</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hextension</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vlayer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hlayer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_vlayer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_hlayer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viamap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xcolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ycolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary_grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vertical'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vextension0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hextension0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/routing.html#RoutingGrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.RoutingGrid" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="laygo2.object.grid.core.html#laygo2.object.grid.core.Grid" title="laygo2.object.grid.core.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">laygo2.object.grid.core.Grid</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="laygo2.object.grid.Grid.html#laygo2.object.grid.Grid" title="laygo2.object.grid.core.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">laygo2.object.grid.core.Grid</span></code></a></p>
 <p>A class that implements wire connections in an abstract coordinate system.</p>
 <p class="rubric">Notes</p>
 <p><strong>(Korean)</strong> 추상 좌표계 상의 배선 동작을 구현하는 클래스.</p>
@@ -640,7 +640,7 @@
 <td><p>Stack routing grid(s) on top of the routing grid in vertical direction.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.hstack" title="laygo2.object.grid.RoutingGrid.hstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hstack</span></code></a>(obj[, copy])</p></td>
-<td><p>Stack another routing grid to the routing grid in horizontal direction.</p></td>
+<td><p>Stack routing grid(s) on top of the routing grid in horizontal direction.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.summarize" title="laygo2.object.grid.RoutingGrid.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
 <td><p>Summarize object information.</p></td>
@@ -707,16 +707,31 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.center" title="laygo2.object.grid.RoutingGrid.center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">center</span></code></a>(obj)</p></td>
 <td><p>Return the abstract grid coordinates corresponding to the center point of obj.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iter__</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.copy" title="laygo2.object.grid.RoutingGrid.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<td><p>Copy the current RoutingGrid object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.vflip" title="laygo2.object.grid.RoutingGrid.vflip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vflip</span></code></a>([copy])</p></td>
+<td><p>Flip the routing grid in vertical direction.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.hflip" title="laygo2.object.grid.RoutingGrid.hflip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hflip</span></code></a>([copy])</p></td>
+<td><p>Flip the routing grid in horizontal direction.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.vstack" title="laygo2.object.grid.RoutingGrid.vstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vstack</span></code></a>(obj[, copy])</p></td>
+<td><p>Stack routing grid(s) on top of the routing grid in vertical direction.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.hstack" title="laygo2.object.grid.RoutingGrid.hstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hstack</span></code></a>(obj[, copy])</p></td>
+<td><p>Stack routing grid(s) on top of the routing grid in horizontal direction.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iter__</span></code>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__next__</span></code>()</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__next__</span></code>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code>()</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code>()</p></td>
 <td><p>Return the string representation of the object.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.summarize" title="laygo2.object.grid.RoutingGrid.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.summarize" title="laygo2.object.grid.RoutingGrid.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
 <td><p>Summarize object information.</p></td>
 </tr>
 </tbody>
@@ -962,7 +977,7 @@ point of args.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid.hstack">
 <span class="sig-name descname"><span class="pre">hstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/routing.html#RoutingGrid.hstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.RoutingGrid.hstack" title="Permalink to this definition">#</a></dt>
-<dd><p>Stack another routing grid to the routing grid in horizontal direction.</p>
+<dd><p>Stack routing grid(s) on top of the routing grid in horizontal direction.</p>
 </dd></dl>
 
 <dl class="py method">

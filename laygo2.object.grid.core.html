@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Key methods &#8212; laygo2</title>
+    <title>Core methods &#8212; laygo2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -269,7 +269,7 @@
     <ul class="current">
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Key methods
+       Core methods
       </a>
      </li>
      <li class="toctree-l3">
@@ -472,35 +472,201 @@
               <div>
                 
   <section id="module-laygo2.object.grid">
-<span id="key-methods"></span><h1>Key methods<a class="headerlink" href="#module-laygo2.object.grid" title="Permalink to this headline">#</a></h1>
+<span id="core-methods"></span><h1>Core methods<a class="headerlink" href="#module-laygo2.object.grid" title="Permalink to this headline">#</a></h1>
+<p><strong>laygo2.object.grid</strong> module contains classes that implement abstract coordinate systems that are interacting with technology-specific physical coordinate systems.</p>
+<p>laygo2 implements the layout designs based on the abstract coordinate system.</p>
+<img alt="_images/user_guide_grid.png" src="_images/user_guide_grid.png" />
+<p>Check the following links for the details of component classes.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="laygo2.object.grid.copy">
 <span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.copy" title="Permalink to this definition">#</a></dt>
-<dd><p>Copy a grid object.</p>
+<dd><p>Make a copy of the input grid object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference internal" href="laygo2.object.grid.Grid.html#laygo2.object.grid.Grid" title="laygo2.object.grid.Grid"><em>laygo2.object.grid.Grid</em></a>) – The input grid object to be copied.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>laygo2.object.grid.Grid or derived</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>the copied grid object.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span>   <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">vgrid</span> <span class="o">=</span> <span class="n">g1_x</span><span class="p">,</span> <span class="n">hgrid</span> <span class="o">=</span> <span class="n">g1_y</span> <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2_copy</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.grid.core.Grid object at 0x000002002EBA67A0&gt;</span>
+<span class="go"> name: test,</span>
+<span class="go">class: Grid,</span>
+<span class="go">scope: [[0, 0], [100, 100]],</span>
+<span class="go">elements: [array([ 0, 10, 20, 40, 50]), array([10, 20, 40, 50, 60])],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2_copy</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.grid.core.Grid object at 0x0000020040C35240&gt;</span>
+<span class="go"> name: test,</span>
+<span class="go"> class: Grid,</span>
+<span class="go"> scope: [[0, 0], [100, 100]],</span>
+<span class="go"> elements: [array([ 0, 10, 20, 40, 50]), array([10, 20, 40, 50, 60])],</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="laygo2.object.grid.vflip">
 <span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">vflip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#vflip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.vflip" title="Permalink to this definition">#</a></dt>
-<dd><p>Flip a grid object in vertical direction.</p>
+<dd><p>Make a vertically-flipped copy of the input grid object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference internal" href="laygo2.object.grid.Grid.html#laygo2.object.grid.Grid" title="laygo2.object.grid.Grid"><em>laygo2.object.grid.Grid</em></a>) – The input grid object to be copied and flipped.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>laygo2.object.grid.Grid or derived</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>the generated grid object.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span>   <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">vgrid</span> <span class="o">=</span> <span class="n">g1_x</span><span class="p">,</span> <span class="n">hgrid</span> <span class="o">=</span> <span class="n">g1_y</span> <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2_copy</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">vflip</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.grid.core.Grid object at 0x000001EE82660BE0&gt;</span>
+<span class="go"> name: test,</span>
+<span class="go"> class: Grid,</span>
+<span class="go"> scope: [[0, 0], [100, 100]],</span>
+<span class="go"> elements: [array([ 0, 10, 20, 40, 50]), array([10, 20, 40, 50, 60])],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2_copy</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.grid.core.Grid object at 0x000001EE947152D0&gt;</span>
+<span class="go"> name: test,</span>
+<span class="go"> class: Grid,</span>
+<span class="go"> scope: [[0, 0], [100, 100]],</span>
+<span class="go"> elements: [array([ 0, 10, 20, 40, 50]), array([40, 50, 60, 80, 90])],</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="laygo2.object.grid.hflip">
 <span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">hflip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#hflip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.hflip" title="Permalink to this definition">#</a></dt>
-<dd><p>Flip a grid object in horizontal direction.</p>
+<dd><p>Make a horizontally-flipped copy of the input grid object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference internal" href="laygo2.object.grid.Grid.html#laygo2.object.grid.Grid" title="laygo2.object.grid.Grid"><em>laygo2.object.grid.Grid</em></a>) – The input grid object to be copied and flipped.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>laygo2.object.grid.Grid</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>the generated grid object.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span>   <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">vgrid</span> <span class="o">=</span> <span class="n">g1_x</span><span class="p">,</span> <span class="n">hgrid</span> <span class="o">=</span> <span class="n">g1_y</span> <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2_copy</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">hflip</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.grid.core.Grid object at 0x000001ACECC30BE0&gt;</span>
+<span class="go"> name: test,</span>
+<span class="go"> class: Grid,</span>
+<span class="go"> scope: [[0, 0], [100, 100]],</span>
+<span class="go"> elements: [array([ 0, 10, 20, 40, 50]), array([10, 20, 40, 50, 60])],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2_copy</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.grid.core.Grid object at 0x000001ACFED15300&gt;</span>
+<span class="go"> name: test,</span>
+<span class="go"> class: Grid,</span>
+<span class="go"> scope: [[0, 0], [100, 100]],</span>
+<span class="go"> elements: [array([ 50,  60,  80,  90, 100]), array([10, 20, 40, 50, 60])],</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="laygo2.object.grid.hstack">
 <span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">hstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#hstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.hstack" title="Permalink to this definition">#</a></dt>
-<dd><p>Stack routing grid(s) on top of the routing grid in horizontal direction.</p>
+<dd><p>Stack grid(s) in horizontal direction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>list of laygo2.object.grid.Grid</em>) – The list containing grid objects to be stacked.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>laygo2.object.grid.Grid</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>the generated grid object.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span>   <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">vgrid</span> <span class="o">=</span> <span class="n">g1_x</span><span class="p">,</span> <span class="n">hgrid</span> <span class="o">=</span> <span class="n">g1_y</span> <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2_copy</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2_stack</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">g2</span><span class="p">,</span> <span class="n">g2_copy</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.grid.core.Grid object at 0x000001799FAA0BE0&gt;</span>
+<span class="go"> name: test,</span>
+<span class="go"> class: Grid,</span>
+<span class="go"> scope: [[0, 0], [100, 100]],</span>
+<span class="go"> elements: [array([ 0, 10, 20, 40, 50]), array([10, 20, 40, 50, 60])],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2_stack</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.grid.core.Grid object at 0x0000015BD8C85570&gt;</span>
+<span class="go"> name: test,</span>
+<span class="go"> class: Grid,</span>
+<span class="go"> scope: [[0, 0], [200, 100]],</span>
+<span class="go"> elements: [array([  0,  10,  20,  40,  50, 100, 110, 120, 140, 150]), array([10, 20, 40, 50, 60])],</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="laygo2.object.grid.vstack">
 <span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">vstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#vstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.vstack" title="Permalink to this definition">#</a></dt>
-<dd><p>Stack routing grid(s) on top of the routing grid in vertical direction.</p>
+<dd><p>Stack grid(s) in vertical direction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>list of laygo2.object.grid.Grid</em>) – The list containing grid objects to be stacked.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>laygo2.object.grid.Grid</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>the generated grid object.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.grid</span> <span class="kn">import</span> <span class="n">OneDimGrid</span><span class="p">,</span> <span class="n">Grid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_x</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;xgrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_y</span> <span class="o">=</span> <span class="n">OneDimGrid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ygrid&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span>   <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">vgrid</span> <span class="o">=</span> <span class="n">g1_x</span><span class="p">,</span> <span class="n">hgrid</span> <span class="o">=</span> <span class="n">g1_y</span> <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2_copy</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2_stack</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">g2</span><span class="p">,</span> <span class="n">g2_copy</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.grid.core.Grid object at 0x000001799FAA0BE0&gt;</span>
+<span class="go"> name: test,</span>
+<span class="go"> class: Grid,</span>
+<span class="go"> scope: [[0, 0], [100, 100]],</span>
+<span class="go"> elements: [array([ 0, 10, 20, 40, 50]), array([10, 20, 40, 50, 60])],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g2_stack</span><span class="p">)</span>
+<span class="go">&lt;laygo2.object.grid.core.Grid object at 0x00000179B1B05870&gt;</span>
+<span class="go"> name: test,</span>
+<span class="go"> class: Grid,</span>
+<span class="go"> scope: [[0, 0], [100, 200]],</span>
+<span class="go"> elements: [array([ 0, 10, 20, 40, 50]), array([ 10,  20,  40,  50,  60, 110, 120, 140, 150, 160])],</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>

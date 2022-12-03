@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>laygo2.interface.magic module &#8212; laygo2</title>
+    <title>laygo2.interface.mpl module &#8212; laygo2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -32,8 +32,8 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="laygo2.interface.yaml module" href="laygo2.interface.yaml.html" />
-    <link rel="prev" title="laygo2.interface.gdspy module" href="laygo2.interface.gdspy.html" />
+    <link rel="next" title="laygo2.util package" href="laygo2.util.html" />
+    <link rel="prev" title="laygo2.interface.yaml module" href="laygo2.interface.yaml.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -415,8 +415,8 @@
      laygo2.interface.gdspy module
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="laygo2.interface.magic.html">
      laygo2.interface.magic module
     </a>
    </li>
@@ -425,8 +425,8 @@
      laygo2.interface.yaml module
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="laygo2.interface.mpl.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      laygo2.interface.mpl module
     </a>
    </li>
@@ -476,63 +476,31 @@
               
               <div>
                 
-  <section id="laygo2-interface-magic-module">
-<h1>laygo2.interface.magic module<a class="headerlink" href="#laygo2-interface-magic-module" title="Permalink to this headline">#</a></h1>
-<span class="target" id="module-laygo2.interface.magic"></span><dl class="py function">
-<dt class="sig sig-object py" id="laygo2.interface.magic.export">
-<span class="sig-prename descclassname"><span class="pre">laygo2.interface.magic.</span></span><span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./magic_layout'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset_library</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tech_library</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gds_filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/interface/magic.html#export"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.interface.magic.export" title="Permalink to this definition">#</a></dt>
-<dd><p>Export a laygo2.object.database.Library object to magic’s tcl code.</p>
+  <section id="laygo2-interface-mpl-module">
+<h1>laygo2.interface.mpl module<a class="headerlink" href="#laygo2-interface-mpl-module" title="Permalink to this headline">#</a></h1>
+<span class="target" id="module-laygo2.interface.mpl"></span><p>This module implements the interface with matplotlib.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="laygo2.interface.mpl.export">
+<span class="sig-prename descclassname"><span class="pre">laygo2.interface.mpl.</span></span><span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colormap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[-</span> <span class="pre">100,</span> <span class="pre">400]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[-</span> <span class="pre">100,</span> <span class="pre">300]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/interface/mpl.html#export"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.interface.mpl.export" title="Permalink to this definition">#</a></dt>
+<dd><p>Export a laygo2.object.database.Library object to a matplotlib plot.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>db</strong> (<em>laygo2.database.Library</em>) – The library database to be exported.</p></li>
-<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><em>optional</em>) – If specified, the generated magic(tcl) script is stored in filename.</p></li>
-<li><p><strong>cellname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> or </em><em>List</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>]</em>) – The name(s) of cell(s) to be exported.</p></li>
-<li><p><strong>libpath</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The path where the generated magic layout is stored.</p></li>
-<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – The scaling factor between laygo2’s integer coordinats actual physical coordinates.</p></li>
-<li><p><strong>reset_library</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, the library to export the cells is reset.</p></li>
-<li><p><strong>tech_library</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><em>optional</em>) – The name of technology library to be attached to the resetted library.</p></li>
-<li><p><strong>gds_filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><em>optional</em>) – If specified, export a gds file with the filename provided.</p></li>
+<li><p><strong>db</strong> (<em>laygo2.database.Library</em>) – The library database to exported.</p></li>
+<li><p><strong>cellname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> or </em><em>List</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>]</em>) – (optional) The name(s) of cell(s) to be exported.</p></li>
+<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – (optional) The scaling factor between laygo2’s integer coordinates and plot coordinates.</p></li>
+<li><p><strong>colormap</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a>) – A dictionary that contains layer-color mapping information.</p></li>
+<li><p><strong>order</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – A list that contains the order of layers to be displayed (former is plotter first).</p></li>
+<li><p><strong>xlim</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – (optional) A list that specifies the range of plot in x-axis.</p></li>
+<li><p><strong>ylim</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – (optional) A list that specifies the range of plot in y-axis.</p></li>
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – (optional) If specified, export a output file for the plot.</p></li>
 </ul>
 </dd>
-</dl>
-<p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.database</span> <span class="kn">import</span> <span class="n">Design</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.physical</span> <span class="kn">import</span> <span class="n">Rect</span><span class="p">,</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">Instance</span><span class="p">,</span> <span class="n">Text</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a design.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;genlib&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create layout objects.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">r0</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p0</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;pin&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;P&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">i0</span> <span class="o">=</span> <span class="n">Instance</span><span class="p">(</span><span class="n">libname</span><span class="o">=</span><span class="s2">&quot;tlib&quot;</span><span class="p">,</span> <span class="n">cellname</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;I0&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span> <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;drawing&quot;</span><span class="p">],</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;T&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Add the layout objects to the design object.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Export to magic tcl.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">Library</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mylib&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dsn</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">scr</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">interface</span><span class="o">.</span><span class="n">magic</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;myscript.tcl&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">scr</span><span class="p">)</span>
-<span class="go">(definitions of laygo2 tcl functions)</span>
-<span class="go"># exporting mylib__mycell</span>
-<span class="go">_laygo2_create_layout ./magic_layout/mylib mylib_mycell None</span>
-<span class="go">_laygo2_generate_rect M1 { { 0.0  0.0  } { 100.0  100.0  } } ; # for the Rect object NoName_0</span>
-<span class="go">_laygo2_generate_pin P M1 { { 0.0  0.0  } { 50.0  50.0  } }  ; # for the Pin object P</span>
-<span class="go">_laygo2_generate_instance I0 ./magic_layout/tlib tlib_t0 { 0.0  0.0  } R0 1 1 0 0 ; # for the Instance object I0</span>
-<span class="go">save</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>str</strong></p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>matplotlib.pyplot.figure or list</strong></p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>the string object contains corresponding tcl scripts.</p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>The generated figure object(s).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -545,17 +513,17 @@
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="laygo2.interface.gdspy.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="laygo2.interface.yaml.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">laygo2.interface.gdspy module</p>
+            <p class="prev-next-title">laygo2.interface.yaml module</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="laygo2.interface.yaml.html" title="next page">
+    <a class='right-next' id="next-link" href="laygo2.util.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">laygo2.interface.yaml module</p>
+        <p class="prev-next-title">laygo2.util package</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

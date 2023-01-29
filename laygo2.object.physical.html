@@ -478,22 +478,20 @@
                 
   <section id="module-laygo2.object.physical">
 <span id="laygo2-object-physical-module"></span><h1>laygo2.object.physical module<a class="headerlink" href="#module-laygo2.object.physical" title="Permalink to this headline">#</a></h1>
-<p><strong>laygo2.object.physical</strong> module is defining classes for physical objects that
-compose actual IC layout.</p>
-<p>The types of objects supported by the physical module are summarized below:</p>
-<p><a class="reference internal" href="laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject" title="laygo2.object.physical.PhysicalObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PhysicalObject</span></code></a> - base class for physical layout objects.</p>
-<p><a class="reference internal" href="laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject" title="laygo2.object.physical.IterablePhysicalObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IterablePhysicalObject</span></code></a> - base class for iterable physical objects (eg. arrayed instances).</p>
-<p><a class="reference internal" href="laygo2.object.physical.PhysicalObjectGroup.html#laygo2.object.physical.PhysicalObjectGroup" title="laygo2.object.physical.PhysicalObjectGroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PhysicalObjectGroup</span></code></a> - defines a group of physical objects (not implemented yet).</p>
-<p><a class="reference internal" href="laygo2.object.physical.Rect.html#laygo2.object.physical.Rect" title="laygo2.object.physical.Rect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Rect</span></code></a> - defines a rect.</p>
-<p><a class="reference internal" href="laygo2.object.physical.Path.html#laygo2.object.physical.Path" title="laygo2.object.physical.Path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Path</span></code></a> - defines a path.</p>
-<p><a class="reference internal" href="laygo2.object.physical.Pin.html#laygo2.object.physical.Pin" title="laygo2.object.physical.Pin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pin</span></code></a> - defines a pin.</p>
-<p><a class="reference internal" href="laygo2.object.physical.Text.html#laygo2.object.physical.Text" title="laygo2.object.physical.Text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Text</span></code></a> - defines a text label.</p>
-<p><a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Instance</span></code></a> - defines an instance.</p>
-<p><a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VirtualInstance</span></code></a> - defines a virtual instance composed of multiple physical objects
-(a group of objects that acts as a single instance).</p>
-<p>The following figure illustrates examples of the physical objects supported by this module.</p>
+<p><strong>laygo2.object.physical</strong> module provides classes for physical objects
+used in IC layout design. The supported physical objects include:</p>
+<p><a class="reference internal" href="laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject" title="laygo2.object.physical.PhysicalObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PhysicalObject</span></code></a> - Base class for all physical layout objects.</p>
+<p><a class="reference internal" href="laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject" title="laygo2.object.physical.IterablePhysicalObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IterablePhysicalObject</span></code></a> - Base class for physical objects that can be iterated (eg. arrayed instances).</p>
+<p><a class="reference internal" href="laygo2.object.physical.PhysicalObjectGroup.html#laygo2.object.physical.PhysicalObjectGroup" title="laygo2.object.physical.PhysicalObjectGroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PhysicalObjectGroup</span></code></a> - Defines a group of physical objects (currently not implemented).</p>
+<p><a class="reference internal" href="laygo2.object.physical.Rect.html#laygo2.object.physical.Rect" title="laygo2.object.physical.Rect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Rect</span></code></a> - Represents a rectangular shape.</p>
+<p><a class="reference internal" href="laygo2.object.physical.Path.html#laygo2.object.physical.Path" title="laygo2.object.physical.Path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Path</span></code></a> - Defines a path.</p>
+<p><a class="reference internal" href="laygo2.object.physical.Pin.html#laygo2.object.physical.Pin" title="laygo2.object.physical.Pin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pin</span></code></a> - Defines a pin.</p>
+<p><a class="reference internal" href="laygo2.object.physical.Text.html#laygo2.object.physical.Text" title="laygo2.object.physical.Text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Text</span></code></a> - Defines a text label.</p>
+<p><a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Instance</span></code></a> - Represents an instance of a design element.</p>
+<p><a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VirtualInstance</span></code></a> - Represents a virtual instance composed of multiple physical objects, acting as a single instance.</p>
+<p>Examples of the physical objects supported by this module are shown in the followng figure.</p>
 <img alt="_images/user_guide_physical.png" src="_images/user_guide_physical.png" />
-<p>Check the following links for the details of component classes.</p>
+<p>Check the following links for further details.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="laygo2.object.physical.PhysicalObject.html">PhysicalObject class</a></li>

@@ -187,37 +187,34 @@
 <span class="c1">########################################################################################################################</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">**laygo2.object.physical** module is defining classes for physical objects that </span>
-<span class="sd">compose actual IC layout.</span>
+<span class="sd">**laygo2.object.physical** module provides classes for physical objects </span>
+<span class="sd">used in IC layout design. The supported physical objects include:</span>
 
-<span class="sd">The types of objects supported by the physical module are summarized below:</span>
+<span class="sd">:obj:`PhysicalObject` - Base class for all physical layout objects.</span>
 
-<span class="sd">:obj:`PhysicalObject` - base class for physical layout objects.</span>
+<span class="sd">:obj:`IterablePhysicalObject` - Base class for physical objects that can be iterated (eg. arrayed instances).</span>
 
-<span class="sd">:obj:`IterablePhysicalObject` - base class for iterable physical objects (eg. arrayed instances).</span>
+<span class="sd">:obj:`PhysicalObjectGroup` - Defines a group of physical objects (currently not implemented).</span>
 
-<span class="sd">:obj:`PhysicalObjectGroup` - defines a group of physical objects (not implemented yet).</span>
+<span class="sd">:obj:`Rect` - Represents a rectangular shape.</span>
 
-<span class="sd">:obj:`Rect` - defines a rect.</span>
+<span class="sd">:obj:`Path` - Defines a path.</span>
 
-<span class="sd">:obj:`Path` - defines a path.</span>
+<span class="sd">:obj:`Pin` - Defines a pin.</span>
 
-<span class="sd">:obj:`Pin` - defines a pin.</span>
+<span class="sd">:obj:`Text` - Defines a text label.</span>
 
-<span class="sd">:obj:`Text` - defines a text label.</span>
+<span class="sd">:obj:`Instance` - Represents an instance of a design element.</span>
 
-<span class="sd">:obj:`Instance` - defines an instance.</span>
+<span class="sd">:obj:`VirtualInstance` - Represents a virtual instance composed of multiple physical objects, acting as a single instance.</span>
 
-<span class="sd">:obj:`VirtualInstance` - defines a virtual instance composed of multiple physical objects</span>
-<span class="sd">(a group of objects that acts as a single instance).</span>
-
-<span class="sd">The following figure illustrates examples of the physical objects supported by this module.</span>
+<span class="sd">Examples of the physical objects supported by this module are shown in the followng figure.</span>
 
 <span class="sd">.. image:: ../assets/img/user_guide_physical.png</span>
 
 
 
-<span class="sd">Check the following links for the details of component classes.</span>
+<span class="sd">Check the following links for further details.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Jaeduk Han&quot;</span>

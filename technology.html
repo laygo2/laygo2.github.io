@@ -210,47 +210,59 @@
                 
   <section id="tech-setup">
 <h1>Tech Setup<a class="headerlink" href="#tech-setup" title="Permalink to this headline">#</a></h1>
-<p>To set up laygo2 for a new technology, prepare the following files first to be imported in the layout generators for template and grid generations.</p>
+<p>The following files needs to be prepared in order to set up <strong>laygo2</strong>
+for a new technology:</p>
 <ul class="simple">
-<li><p><em><strong>__init__.py</strong></em>: The package definition file.</p></li>
-<li><p><strong>laygo2_tech_templates.py</strong>: Contains code for template definitions.</p></li>
-<li><p><strong>laygo2_tech_grids.py</strong>: Contains code for grid definitions.</p></li>
-<li><p><strong>laygo2_tech.yaml</strong>: Contains technology-related parameters (used by _template.py, _grid.py files).</p></li>
-<li><p><strong>laygo2_tech.layermap</strong>: (optional) Contains layer information defined by process-speckfic PDK.</p></li>
-<li><p><strong>laygo2_tech.lyp</strong>: (optional) Contains layer display information for KLayout.</p></li>
+<li><p><em><strong>__init__.py</strong></em>: Package definition file.</p></li>
+<li><p><strong>laygo2_tech_templates.py</strong>: Code for template definitions.</p></li>
+<li><p><strong>laygo2_tech_grids.py</strong>: Code for grid definitions.</p></li>
+<li><p><strong>laygo2_tech.yaml</strong>: Technology parameters used by _template.py, _grid.py files.</p></li>
+<li><p><strong>laygo2_tech.layermap</strong>: (optional) Layer information defined by technology-speckfic PDK.</p></li>
+<li><p><strong>laygo2_tech.lyp</strong>: (optional) Layer display information for KLayout.</p></li>
 </ul>
-<p>A simple example for the technology setup for Laygo2 can be found <a class="reference external" href="https://github.com/niftylab/laygo2/tree/master/laygo2/examples/laygo2_tech">here</a>.</p>
+<p>A simple technology setup example for <strong>laygo2</strong> is available <a class="reference external" href="https://github.com/niftylab/laygo2/tree/master/laygo2/examples/laygo2_tech">here</a>.</p>
 <p>Please find detailed descriptions for the listed files below:</p>
 <section id="init-py">
 <h2>__init__.py<a class="headerlink" href="#init-py" title="Permalink to this headline">#</a></h2>
-<p>Contains import statements for technlogy-specific functions such as load_templates() and load_grids().</p>
+<p>Contains import statements for technlogy-specific functions such as <strong>load_templates()</strong> and <strong>load_grids()</strong>.</p>
 </section>
 <section id="laygo2-tech-templates-py">
 <h2>laygo2_tech_templates.py<a class="headerlink" href="#laygo2-tech-templates-py" title="Permalink to this headline">#</a></h2>
-<p>Implements technology-specific templates and their functions. It also contains load_template() function,
-which returns a TemplateLibrary object containing template objects (MOSFET, Capacitors, Resistors) of core devices.</p>
-<p>The templates are typically implemented by utilizing on of the predefined template classes,
-such as NativeInstanceTemplate(for vanilla instances), ParameterizedInstanceTemplate(for PCell instances),
-UserDefinedTemplate(for user-defined virtual instances). Or users can define their own template classes.</p>
+<p>This file implements technology-specific templates and their
+associated functions. It also contains the <strong>load_template()</strong> function
+which returns a <strong>TemplateLibrary</strong> object that holds template objects
+(such as MOSFETs, capacitors, and resistors) of core devices.</p>
+<p>The templates are typically created using predefined template classes
+such as <strong>NativeInstanceTemplate</strong>(for vanilla instances),
+<strong>ParameterizedInstanceTemplate</strong>(for PCell instances),
+or <strong>UserDefinedTemplate</strong>(for user-defined virtual instances),
+or users can define their own template classes.</p>
 </section>
 <section id="laygo2-tech-grids-py">
 <h2>laygo2_tech_grids.py<a class="headerlink" href="#laygo2-tech-grids-py" title="Permalink to this headline">#</a></h2>
-<p>Implements technology-specific placement/routing grids and their function. It also contains load_grid() function,
-which returns a GridLibrary object containing grid objects.</p>
+<p>This file implements the technology-specific placement and routing grids
+along with their functions. The <strong>load_grid()</strong> function, in this file,
+returns a <strong>GridLibrary</strong> object which contains grid objects.</p>
 </section>
 <section id="laygo2-tech-yaml">
 <h2>laygo2_tech.yaml<a class="headerlink" href="#laygo2-tech-yaml" title="Permalink to this headline">#</a></h2>
-<p>This yaml file contains technology-specific parameters (such as unit resolution, pin location, structure size, and grid parameters)
-for template and grid generation functions in the _template.py and _grid.py files.
-Instead of using the yaml file to store technology information, users can hard-code all required numeric files in the template and grid files.</p>
+<p>This yaml file contains technology-specific parameters required for
+template and grid generation (such as unit resolution, pin location,
+structure size, and grid parameters).
+This file serves as a central repository for all technology-related
+information for template and grid generation functions in the <strong>laygo2_tech_template.py</strong> and <strong>laygo2_tech_grid.py</strong> files.
+Instead of using this yaml file, users can also hard-code the required
+the numeric parameters.</p>
 </section>
 <section id="laygo2-tech-layermap">
 <h2>laygo2_tech.layermap<a class="headerlink" href="#laygo2-tech-layermap" title="Permalink to this headline">#</a></h2>
-<p>Contains layer mapping information for the target technology, which is used for layout object generation, gds export, and skill export.</p>
+<p>Contains layer mapping information for the target technology.
+The layer information is used for layout generation ation, gds export, and skill export.</p>
 <p>The layermap file is normally provided by the technology ventor.
 If the layermap file is created manually by users, please use the following format to define layer parameters.</p>
 <p><em>layername layerpurpose stream_layer_number datatype</em></p>
-<p>(please find the example layermap file for reference).</p>
+<p>(please find the example layermap file in the <strong>laygo2_tech</strong> directiory
+for reference).</p>
 </section>
 </section>
 

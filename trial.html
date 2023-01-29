@@ -173,19 +173,20 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#installing-laygo2-from-github-repository">
-     Installing laygo2 from
+    <a class="reference internal nav-link" href="#cloning-from-github-repository">
+     1. Cloning from
      <strong>
       Github repository
      </strong>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#installing-laygo2-from-pypi">
-     Installing laygo2 from
+    <a class="reference internal nav-link" href="#pip-installation">
+     2.
      <strong>
-      Pypi
+      Pip
      </strong>
+     installation
     </a>
    </li>
   </ul>
@@ -228,7 +229,8 @@
                 
   <section id="trial">
 <h1>Trial<a class="headerlink" href="#trial" title="Permalink to this headline">#</a></h1>
-<p>This document introduces setup procedure and trial example for begineers.</p>
+<p>This section provides an introductory guide for begineers users to get
+started with using <strong>laygo2</strong>.</p>
 <!--
 * **[Quick installation and setup](#Quick-Installation-and-Setup)** describes the installation and set up procedure of 
 laygo in linux environments.
@@ -237,16 +239,19 @@ laygo in linux environments.
 -->
 <section id="colab-tutorial">
 <h2>Colab tutorial<a class="headerlink" href="#colab-tutorial" title="Permalink to this headline">#</a></h2>
-<p>The easiest way of exercising laygo2 without installing it locally is using <a class="reference external" href="https://colab.research.google.com/">Colab</a>;
-the example tutorial can be found <strong><a class="reference external" href="https://colab.research.google.com/drive/1tpuUvqb6BujzZI6RBf2cFdAfMqBsxpep?usp=sharing">here</a></strong>.</p>
+<p>For individuals seeking to exercise the capabilities of <strong>laygo2</strong>
+without local installation, <a class="reference external" href="https://colab.research.google.com/">Colab</a>,
+a cloud-based Jupyter environment, can be utilized.
+The example tutorial can be accessed at this
+<strong><a class="reference external" href="https://colab.research.google.com/drive/1tpuUvqb6BujzZI6RBf2cFdAfMqBsxpep?usp=sharing">link</a></strong>.</p>
 </section>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
-<p>There are two ways of installing laygo2 in your environment; 1) cloning from <a class="reference external" href="https://www.github.com">github</a> and 2) using <a class="reference external" href="https://pypi.org">pip</a>.</p>
-<section id="installing-laygo2-from-github-repository">
-<h3>Installing laygo2 from <strong><a class="reference external" href="https://github.com/niftylab/laygo2.git">Github repository</a></strong><a class="headerlink" href="#installing-laygo2-from-github-repository" title="Permalink to this headline">#</a></h3>
-<p>Users can download and install the laygo2 package by cloning its github
-repository by typing the following command:</p>
+<p>There are two available options for installing the <strong>laygo2</strong> package.</p>
+<section id="cloning-from-github-repository">
+<h3>1. Cloning from <strong><a class="reference external" href="https://github.com/niftylab/laygo2.git">Github repository</a></strong><a class="headerlink" href="#cloning-from-github-repository" title="Permalink to this headline">#</a></h3>
+<p>Users can obtain the latest version of laygo2 by cloning the Github
+repository by running the following command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; git clone https://github.com/niftylab/laygo2.git
 </pre></div>
 </div>
@@ -260,9 +265,11 @@ setenv PYTHONPATH ${PYTHONPATH}:[LAYGO2_INSTALLATION_PATH]/laygo2
 </pre></div>
 </div>
 </section>
-<section id="installing-laygo2-from-pypi">
-<h3>Installing laygo2 from <strong><a class="reference external" href="https://pypi.org/project/laygo2">Pypi</a></strong><a class="headerlink" href="#installing-laygo2-from-pypi" title="Permalink to this headline">#</a></h3>
-<p>Instead of cloning github repository, laygo2 package can be installed by running the following pip command:</p>
+<section id="pip-installation">
+<h3>2. <strong><a class="reference external" href="https://pypi.org/project/laygo2">Pip</a></strong> installation<a class="headerlink" href="#pip-installation" title="Permalink to this headline">#</a></h3>
+<p>Another option for installation is through the use of <strong><a class="reference external" href="https://pypi.org">pip</a></strong>, the package manager for Python. This method allows for a
+covenient and quick installation process.
+Run the following command to pip-install the <strong>laygo2</strong> package:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; pip install laygo2
 </pre></div>
 </div>
@@ -270,22 +277,28 @@ setenv PYTHONPATH ${PYTHONPATH}:[LAYGO2_INSTALLATION_PATH]/laygo2
 </section>
 <section id="technology-setup">
 <h2>Technology setup<a class="headerlink" href="#technology-setup" title="Permalink to this headline">#</a></h2>
-<p>Users need to set up the following files in the <strong>laygo2_tech</strong> directory to enable laygo2 for a new technology:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>laygo2_tech_templayes.py  # for templates
-laygo2_tech_grids.py      # for grids
-laygo2_tech.yaml          # for technology parameters
+<p>The following files in the <strong>laygo2_tech</strong> directory need to be
+prepared for the usage of <strong>laygo2</strong> with a new technology:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>laygo2_tech_templayes.py  # contains the definitions for templates.
+laygo2_tech_grids.py      # contains the definitions for grids.
+laygo2_tech.yaml          # contains technology parameters.
 </pre></div>
 </div>
-<p>A bare-minimum tech setup for quick_start.py can be found <strong><a class="reference external" href="https://github.com/niftylab/laygo2/tree/master/laygo2/examples/laygo2_tech">here</a></strong>.
-A more complete tech setup example for <strong>gpdk045</strong> can be found <strong><a class="reference external" href="https://github.com/niftylab/laygo2_workspace_gpdk045/tree/master/laygo2_tech_example">here</a></strong>.</p>
+<p>A minimum technology setup, designed for for quick_start.py can be
+found <strong><a class="reference external" href="https://github.com/niftylab/laygo2/tree/master/laygo2/examples/laygo2_tech">here</a></strong>.
+A more comprehensive tech setup example, designed for <strong>gpdk045</strong>,
+can be found <strong><a class="reference external" href="https://github.com/niftylab/laygo2_workspace_gpdk045/tree/master/laygo2_tech_example">here</a></strong>.</p>
 </section>
 <section id="simple-gate-generation">
 <h2>Simple gate generation<a class="headerlink" href="#simple-gate-generation" title="Permalink to this headline">#</a></h2>
 <p>Running the following command will generate a NAND gate layout.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># after git clone type the following commands.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># 1. Clone the laygo2 repository to your local machine.
+# 2. Navigate to the laygo2 directory.
 &gt;&gt;&gt; cd laygo2 
+# 3. Run the quick start script by typing the following command:
 &gt;&gt;&gt; python -m quick_start.py
-# or you can run ipython and type run &#39;quick_start.py&#39; instead.
+# 4. Alternatively, you can run ipython and type the following command:
+&gt;&gt;&gt; run &#39;quick_start.py&#39;
 </pre></div>
 </div>
 <p>The resulting layout of the NAND gate is shown in the figure below:</p>
@@ -293,12 +306,15 @@ A more complete tech setup example for <strong>gpdk045</strong> can be found <st
 </section>
 <section id="trial-in-sky130-technology">
 <h2>Trial in SKY130 technology<a class="headerlink" href="#trial-in-sky130-technology" title="Permalink to this headline">#</a></h2>
-<p>An example tutorial of laygo2 in SkyWater <strong><a class="reference external" href="https://skywater-pdk.readthedocs.io/en/main/">SKY130</a></strong>
-technology can be found <strong><a class="reference external" href="https://laygo2-sky130-docs.readthedocs.io/en/latest/">here</a></strong>.</p>
+<p>Follow the tutorial available at the this
+<strong><a class="reference external" href="https://laygo2-sky130-docs.readthedocs.io/en/latest/">link</a></strong>.
+that covers the use of <strong>laygo2</strong> for generating a D flip-flop layout
+in the <strong><a class="reference external" href="https://skywater-pdk.readthedocs.io/en/main/">SKY130</a></strong>
+technology.</p>
 <p>The generated layout of a D flip-flop is shown in the figure below:</p>
 <p><img alt="sky130 dff2x" src="_images/trial_sky130_dff.png" /></p>
-<p>A colab version of the tutorial is provided as well. Check <strong><a class="reference external" href="https://colab.research.google.com/drive/1dToEQe7500TUNOPN2aPTJGRgcbbNsqhj?usp=sharing">this link</a></strong>.
-<img alt="sky130 dff2x colab" src="_images/trial_sky130_dff_colab.png" /></p>
+<p>For those who prefer a Colab version, please check this <strong><a class="reference external" href="https://colab.research.google.com/drive/1dToEQe7500TUNOPN2aPTJGRgcbbNsqhj?usp=sharing">link</a></strong>.</p>
+<p><img alt="sky130 dff2x colab" src="_images/trial_sky130_dff_colab.png" /></p>
 </section>
 </section>
 

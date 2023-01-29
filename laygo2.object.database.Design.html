@@ -1096,7 +1096,7 @@ on the specified routing grid.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Pin name.</p></li>
-<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a>) – Abstract coordinates for generating Pin.</p></li>
+<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – Abstract coordinates for generating Pin.</p></li>
 <li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><em>optional.</em>) – Direction.</p></li>
 <li><p><strong>netname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><em>optional.</em>) – Net name of Pin.</p></li>
 <li><p><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a><em>, </em><em>optional</em>) – Pin attributes.</p></li>
@@ -1199,7 +1199,7 @@ pin 생성함수.</p>
 <li><p><strong>inst</strong> (<a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><em>laygo2.object.physical.Instance</em></a><em> or </em><a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance"><em>laygo2.object.physical.VirtualInstance</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – The instance to be placed. When inst is a list, the elements
 in the list are placed in order.</p></li>
 <li><p><strong>grid</strong> (<a class="reference internal" href="laygo2.object.grid.PlacementGrid.html#laygo2.object.grid.PlacementGrid" title="laygo2.object.grid.PlacementGrid"><em>laygo2.object.grid.PlacementGrid</em></a>) – The placement grid where the instance is placed on.</p></li>
-<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – The abstract coordinate value [m, n] to place the instance.</p></li>
+<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – The abstract coordinate value [m, n] to place the instance.</p></li>
 <li><p><strong>anchor_xy</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – Two physical coordinates to be overlapped by the placement.
 The first coordinate is for the absolute physical grid, and the
 second coordinate is for the relative position of the instance
@@ -1313,7 +1313,7 @@ to be placed.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grid</strong> (<a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid" title="laygo2.object.grid.RoutingGrid"><em>laygo2.object.grid.RoutingGrid</em></a>) – The placement grid where the wire is placed on.</p></li>
-<li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>)</em>) – The list containing two or more mn coordinates to be connected.</p></li>
+<li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a><em>)</em>) – The list containing two or more mn coordinates to be connected.</p></li>
 <li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><em>optional.</em>) – None or “vertical” or “horizontal”. The direction of the routing
 object.</p></li>
 <li><p><strong>via_tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>(</em><em>Boolean</em><em>)</em><em>, </em><em>optional.</em>) – The list containing switches deciding whether to place via at
@@ -1429,8 +1429,8 @@ for details.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grid</strong> (<a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid" title="laygo2.object.grid.RoutingGrid"><em>laygo2.object.grid.RoutingGrid</em></a>) – The placement grid where the wire is placed on.</p></li>
-<li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>)</em>) – list containing coordinates of the points being connected through a track</p></li>
-<li><p><strong>track</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a>) – list containing coordinate values and direction of a track.
+<li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a><em>)</em>) – list containing coordinates of the points being connected through a track</p></li>
+<li><p><strong>track</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – list containing coordinate values and direction of a track.
 Vertical tracks have [v, None] format, while horizontal tracks have [None, v] format
 (v is the coordinates of the track).</p></li>
 <li><p><strong>via_tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>(</em><em>Boolean</em><em>)</em><em>, </em><em>optional.</em>) – The list containing switches deciding whether to place via at
@@ -1562,7 +1562,7 @@ The last object corresponds to the routing object on the track.</p>
 <dd><p>Create Via object(s) on abstract grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>)</em>) – Abstract coordinate(s) that specify location(s) to insert via(s).</p>
+<dd class="field-odd"><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a><em>)</em>) – Abstract coordinate(s) that specify location(s) to insert via(s).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The list containing the generated via objects.</p>

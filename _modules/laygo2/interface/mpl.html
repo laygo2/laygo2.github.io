@@ -343,8 +343,8 @@
     <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
     <span class="n">colormap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">400</span><span class="p">],</span>
-    <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span>
+    <span class="n">xlim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">ylim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -421,8 +421,13 @@
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">fig</span> <span class="o">=</span> <span class="n">fig</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
+    <span class="c1"># scale</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">xlim</span> <span class="o">==</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">ylim</span> <span class="o">==</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
+
 
     <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
@@ -475,11 +480,13 @@
     <span class="k">if</span> <span class="n">order</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">order</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="c1"># xlim and ylim</span>
-    <span class="k">if</span> <span class="n">xlim</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">xlim</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">obj</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">width</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">ylim</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">ylim</span> <span class="o">=</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">obj</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">height</span><span class="p">]</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    # xlim and ylim</span>
+<span class="sd">    if xlim is None:</span>
+<span class="sd">        xlim = [obj.bbox[0][0] - obj.width, obj.bbox[1][0] + obj.width]</span>
+<span class="sd">    if ylim is None:</span>
+<span class="sd">        ylim = [obj.bbox[0][1] - obj.height, obj.bbox[1][1] + obj.height]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
     <span class="n">pypobjs</span> <span class="o">=</span> <span class="p">[]</span>
@@ -509,8 +516,12 @@
                         <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
                             <span class="n">_pypobj</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span>
                         <span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
+    <span class="c1"># scale</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">xlim</span> <span class="o">==</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">ylim</span> <span class="o">==</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
@@ -524,8 +535,8 @@
     <span class="n">obj</span><span class="p">,</span>
     <span class="n">colormap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span>
-    <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
+    <span class="n">xlim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">ylim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -636,8 +647,12 @@
                             <span class="n">_pypobj</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span>
                         <span class="p">)</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
+    <span class="c1"># scale</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">xlim</span> <span class="o">==</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">ylim</span> <span class="o">==</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>

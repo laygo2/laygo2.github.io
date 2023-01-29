@@ -478,20 +478,35 @@
                 
   <section id="api-reference">
 <h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">#</a></h1>
-<p>The <strong>LAYout with Gridded Object 2 (laygo2)</strong> package is a Python-based layout generation framework with the following goals:</p>
+<p><strong>LAYout with Gridded Object 2 (laygo2)</strong> is an open-source project
+that offers libraries for automating the creation of custom circuit
+layouts, which satisfy design rules, performance and area efficiency
+in advanced CMOS processes. <strong>laygo2</strong> aims to 1) streamline the layout
+design process through automation, while 2) provide rich parameterization
+capability and 3) compability with cutting-edge technologies such as
+FinFET, making it easier for circuit/mask designers to enhance their
+design productivity.</p>
+<p><strong>laygo2</strong> is implemented with a comprehensive collection of layout
+object classes and methods, written in the Python programmanging language,
+rending it suitible for code-based layout generation.</p>
+<p><strong>laygo2</strong> is cimposed of the following subpackages, each serving
+a distinct purpose:</p>
 <ul class="simple">
-<li><p>Automation and reuse of layout generation process.</p></li>
-<li><p>Parametrized layout generation.</p></li>
-<li><p>Layout automation in advanced technologies such as FinFET.</p></li>
-<li><p>Code-based layout generation.</p></li>
+<li><dl class="simple">
+<dt><strong>laygo2.object</strong>: houses the core object classes, responsible for defining</dt><dd><p>physical layout structures and design hierarchies.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>laygo2.interface</strong>: implements the interfaces to external data structures</dt><dd><p>and EDA tools (<strong>yaml</strong>, <strong>skill</strong>, <strong>BAG</strong>, <strong>GDS</strong>,
+<strong>matplotlib</strong> and others).</p>
+</dd>
+</dl>
+</li>
+<li><p><strong>laygo2.util</strong>: provides a range of utility functions for internal use.</p></li>
 </ul>
-<p>Laygo2 contains the following subpackages:</p>
-<ul class="simple">
-<li><p><strong>laygo2.object</strong>: implements core object classes for physical layout structures and design hierarchies.</p></li>
-<li><p><strong>laygo2.interface</strong>: implements interfaces to external data structures and EDA tools (<strong>yaml</strong>, <strong>skill</strong>, <strong>BAG</strong>, <strong>GDS</strong>, <strong>matplotlib</strong> and so on).</p></li>
-<li><p><strong>laygo2.util</strong>: implements utility functions for internal use.</p></li>
-</ul>
-<p>Use the following link to get information about its subpackages and modules.</p>
+<p>For further information regarding the subpackages and modules in <strong>laygo</strong>,
+please refer the provided link:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="laygo2.object.html">laygo2.object package</a><ul>

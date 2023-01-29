@@ -222,72 +222,86 @@
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p><strong>The LAYout with Gridded Object 2 (laygo2)</strong> package is a Python-based layout generation framework to achieve the following goals:</p>
+<p>The <strong>LAYout with Gridded Object 2 (laygo2)</strong> package is a comprehensive
+framework for IC layout generation, written in the Python programming
+language. Its primary objects are to:</p>
 <ul class="simple">
-<li><p><strong>Automation</strong> and reuse of layout generation process.</p></li>
-<li><p><strong>Parametrized</strong> layout generation.</p></li>
-<li><p><strong>Advanced technology</strong> support (such as FinFET).</p></li>
-<li><p>(Dynamic) <strong>template</strong>-and-<strong>grid</strong>-based layout generation.</p></li>
+<li><p><strong>Automate</strong> and streamline the layout generation process, promoting
+reuse and efficiency.</p></li>
+<li><p>Enable <strong>Parametrized</strong> layout generation, allowing for greater
+flexibility and customization.</p></li>
+<li><p>Provide support for <strong>advanced technologies</strong> suc as FinFET,
+ensuring compatibility with the latest CMOS fabrication processes.</p></li>
+<li><p>Implement dynamic <strong>template</strong>-and-<strong>grid</strong>-based layout generation,
+facilitating the rapid and effective creation of layouts.</p></li>
 </ul>
-<p>laygo2 extends the capability of its previous version (<strong><a class="reference external" href="https://ieeexplore.ieee.org/document/9314047">laygo</a></strong>), which is orignally developed as one of layout generation engines in
-<strong>Berkeley Analog Generator2 (BAG2)</strong>.</p>
+<p><strong>laygo2</strong> builds upon the capabilities of its predecessor,
+<strong><a class="reference external" href="https://ieeexplore.ieee.org/document/9314047">laygo</a></strong>,
+which was orignally developed as one of layout generation
+engines in the <strong>Berkeley Analog Generator2 (BAG2)</strong> platform.</p>
 </section>
 <section id="quick-trial">
 <h2>Quick trial<a class="headerlink" href="#quick-trial" title="Permalink to this headline">#</a></h2>
-<p>For example procedures to install and generate simple structures, see the <strong><a class="reference internal" href="trial.html"><span class="doc std std-doc">Trial</span></a></strong> page.</p>
+<p>For step-by-step instructions on how to install the software and generate simple structures, refer to the <strong><a class="reference internal" href="trial.html"><span class="doc std std-doc">Trial</span></a></strong> page.</p>
 </section>
 <section id="api-docmentation">
 <h2>API docmentation<a class="headerlink" href="#api-docmentation" title="Permalink to this headline">#</a></h2>
-<p>Please see the latest <strong><a class="reference internal" href="laygo2.html"><span class="doc std std-doc">API reference</span></a></strong> for the anatomy of laygo2.</p>
+<p>For an in-depth understanding of the <strong>laygo2</strong> software architecture
+and componenets, refer to the latest <strong><a class="reference internal" href="laygo2.html"><span class="doc std std-doc">API reference</span></a></strong>.
+This reference provides a comprehensive overview of the package’s
+functions, modules, and classes, allowing users to effectively utilize
+the full range of <strong>laygo2</strong>’s capabilities.</p>
 </section>
 <section id="typical-design-flow">
 <h2>Typical design flow<a class="headerlink" href="#typical-design-flow" title="Permalink to this headline">#</a></h2>
+<p>The following steps outline the standard procedure for constructing
+a generator code for a custom layout using the <strong>laygo2</strong> package:</p>
 <ol class="arabic simple">
-<li><p><strong>Load technology</strong> parameters, primitive templates, and grids from <em>laygo2_tech</em>.</p>
+<li><p>Load the necessary <strong>technology</strong> parameters, primitive templates, and grids from the <em>laygo2_tech</em> module.</p>
 <ul class="simple">
 <li><p>Check <a class="reference external" href="https://github.com/niftylab/laygo2/blob/master/laygo2/examples/laygo2_tech/laygo2_tech_templates.py">laygo2_tech.load_templates()</a>
-and <a class="reference external" href="https://github.com/niftylab/laygo2/blob/master/laygo2/examples/laygo2_tech/laygo2_tech_grids.py">laygo2_tech.load_grids()</a>.</p></li>
+and <a class="reference external" href="https://github.com/niftylab/laygo2/blob/master/laygo2/examples/laygo2_tech/laygo2_tech_grids.py">laygo2_tech.load_grids()</a> for further details.</p></li>
 </ul>
 </li>
-<li><p><strong>Generate instances</strong> from templates.</p>
+<li><p><strong>Generate instances</strong> from the loaded templates.</p>
 <ul class="simple">
-<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.object.template.Template.html#laygo2.object.template.Template.generate">object.Template.generate()</a>.</p></li>
+<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.object.template.Template.html#laygo2.object.template.Template.generate">object.Template.generate()</a> for further details.</p></li>
 </ul>
 </li>
-<li><p><strong>Place</strong> the generated instances.</p>
+<li><p>Perform <strong>placement</strong> of the generated instances.</p>
 <ul class="simple">
-<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.place">object.database.Design.place()</a>.</p></li>
+<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.place">object.database.Design.place()</a> for further details.</p></li>
 </ul>
 </li>
 <li><p><strong>Route</strong> wires and vias between the instances’ terminals.</p>
 <ul class="simple">
-<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.route">object.database.Design.route()</a>, <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.route_via_track">object.database.Design.route_via_track()</a>, and <a class="reference external" href="https://laygo2.github.io/laygo2.object.routing.RoutingMesh.html">object.routing.RoutingMesh</a>.</p></li>
+<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.route">object.database.Design.route()</a>, <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.route_via_track">object.database.Design.route_via_track()</a>, and <a class="reference external" href="https://laygo2.github.io/laygo2.object.routing.RoutingMesh.html">object.routing.RoutingMesh</a> for further details.</p></li>
 </ul>
 </li>
-<li><p>Create <strong>Pins</strong>.</p>
+<li><p>Create the necessary <strong>Pins</strong>.</p>
 <ul class="simple">
-<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.pin">object.database.Design.pin()</a>.</p></li>
+<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.object.database.Design.html#laygo2.object.database.Design.pin">object.database.Design.pin()</a> for further details.</p></li>
 </ul>
 </li>
-<li><p><strong>Export</strong> the generated design in proper format.</p>
+<li><p><strong>Export</strong> the completed design in the desired format.</p>
 <ul class="simple">
-<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.interface.skill.html#laygo2.interface.skill.export">interface.skill.export()</a>.</p></li>
+<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.interface.skill.html#laygo2.interface.skill.export">interface.skill.export()</a>, <a class="reference external" href="https://laygo2.github.io/laygo2.interface.skillbridge.html#laygo2.interface.skillbridge.export">interface.skillbridge.export()</a>, <a class="reference external" href="https://laygo2.github.io/laygo2.interface.bag.html#laygo2.interface.bag.export">interface.bag.export()</a>, <a class="reference external" href="https://laygo2.github.io/laygo2.interface.gdspy.html#laygo2.interface.gdspy.export">interface.gdspy.export()</a>, <a class="reference external" href="https://laygo2.github.io/laygo2.interface.magic.html#laygo2.interface.magic.export">interface.magic.export()</a>, and <a class="reference external" href="https://laygo2.github.io/laygo2.interface.mpl.html#laygo2.interface.mpl.export">interface.mpl.export()</a> for further details.</p></li>
 </ul>
 </li>
-<li><p><em>(Optional)</em> export the design as a new template.</p>
+<li><p><em>(Optional)</em> Save the design as a new <strong>template</strong> for future reuse.</p>
 <ul class="simple">
-<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.interface.html#laygo2.interface.yaml.export_template">interface.yaml.export_template()</a>.</p></li>
+<li><p>Check <a class="reference external" href="https://laygo2.github.io/laygo2.interface.html#laygo2.interface.yaml.export_template">interface.yaml.export_template()</a> for details.</p></li>
 </ul>
 </li>
 </ol>
 </section>
 <section id="technology-setup">
 <h2>Technology setup<a class="headerlink" href="#technology-setup" title="Permalink to this headline">#</a></h2>
-<p>See <strong><a class="reference internal" href="technology.html"><span class="doc std std-doc">Tech Setup</span></a></strong> for technology setup instructions.</p>
+<p>See the <strong><a class="reference internal" href="technology.html"><span class="doc std std-doc">Tech Setup</span></a></strong> section for detailed instructions on setting up the technology configurations.</p>
 </section>
 <section id="list-of-developers">
 <h2>List of developers<a class="headerlink" href="#list-of-developers" title="Permalink to this headline">#</a></h2>
-<p>See the <strong><a class="reference external" href="https://github.com/niftylab/laygo2">github repository README</a></strong> for the full list of developers and contributors.</p>
+<p>See the <strong><a class="reference external" href="https://github.com/niftylab/laygo2">README</a></strong> file in the Github repository for a complete list of developers and contributors to the project.</p>
 </section>
 <section id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">#</a></h2>

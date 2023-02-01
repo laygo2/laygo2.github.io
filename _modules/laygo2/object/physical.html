@@ -229,7 +229,7 @@
 
 <div class="viewcode-block" id="PhysicalObject"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject">[docs]</a><span class="k">class</span> <span class="nc">PhysicalObject</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The base class of physical layout objects, which has physical coordinate information.</span>
+<span class="sd">    Base class for physical layout objects with physical coordinate info.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -238,18 +238,18 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="PhysicalObject._get_xy"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject._get_xy">[docs]</a>    <span class="k">def</span> <span class="nf">_get_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Get the x and y coordinate values of</span>
-<span class="sd">        this object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Retrive x,y coordinate values of</span>
+<span class="sd">        the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span></div>
 
 <div class="viewcode-block" id="PhysicalObject._set_xy"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject._set_xy">[docs]</a>    <span class="k">def</span> <span class="nf">_set_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Set the x and y coordinate values of</span>
-<span class="sd">        this object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Update x,y coordinates of</span>
+<span class="sd">        the object.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_update_pointers</span><span class="p">()</span></div>
 
     <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;str: The name of the object.</span>
+    <span class="sd">&quot;&quot;&quot;str: Object name.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -262,17 +262,15 @@
 <span class="sd">    .. image:: ../assets/img/object_physical_PhysicalObject_name.png</span>
 <span class="sd">      :height: 250</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)**: 객체의 이름.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
-    <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): The internal variable of xy.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): The x and y coordinate values </span>
+<span class="sd">    stored within.&quot;&quot;&quot;</span>
 
     <span class="n">xy</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_get_xy</span><span class="p">,</span> <span class="n">_set_xy</span><span class="p">)</span>
-    <span class="sd">&quot;&quot;&quot;numpy.ndarray: The physical coordinates [bottom_left, top_right] </span>
-<span class="sd">    of the object.</span>
+    <span class="sd">&quot;&quot;&quot;numpy.ndarray: Physical coordinate values of the object </span>
+<span class="sd">    in the form of [bottom_left, top_right].</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -286,13 +284,10 @@
 <span class="sd">    .. image:: ../assets/img/object_physical_PhysicalObject_xy.png</span>
 <span class="sd">      :height: 250</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)**: 객체의 좌표.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">master</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;numpy.ndarray: The master of the current object (for array and pin objects).</span>
+    <span class="sd">&quot;&quot;&quot;numpy.ndarray: Master ojbect for current object (for arrays and pins).</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -310,7 +305,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">params</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;dict: The dictionary that contains the object parameters.</span>
+    <span class="sd">&quot;&quot;&quot;dict: Dictionary storing the parameters associated with the object</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -326,8 +321,9 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">pointers</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;dict: The dictionary that contains major physical coordinates of the object. </span>
-<span class="sd">    Possible keys include left, right, top, bottom, bottom_left, center, etc.</span>
+    <span class="sd">&quot;&quot;&quot;dict: The dictionary containing the key-value pairs of the major physical </span>
+<span class="sd">    coordinates of the object, such as &#39;left&#39;, &#39;right&#39;, &#39;top&#39;, &#39;bottom&#39;, </span>
+<span class="sd">    &#39;bottom_left&#39;, &#39;center&#39;, etc.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -346,7 +342,7 @@
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    **(Korean)**: 객체의 주요 좌표들을 담고 있는 dict.</span>
+<span class="sd">    **(Korean)**: 객체의 주요 좌표들을 담고 있는 dictionary.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># Frequently used pointers</span>
@@ -362,10 +358,6 @@
 <span class="sd">    </span>
 <span class="sd">    .. image:: ../assets/img/object_physical_PhysicalObject_left.png</span>
 <span class="sd">      :height: 250</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)**: 객체의 left-center 좌표.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">right</span> <span class="o">=</span> <span class="kc">None</span>
@@ -380,10 +372,6 @@
 <span class="sd">    </span>
 <span class="sd">    .. image:: ../assets/img/object_physical_PhysicalObject_right.png</span>
 <span class="sd">      :height: 250</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)**: 객체의 right-center 좌표.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">top</span> <span class="o">=</span> <span class="kc">None</span>
@@ -398,10 +386,6 @@
 <span class="sd">    </span>
 <span class="sd">    .. image:: ../assets/img/object_physical_PhysicalObject_top.png</span>
 <span class="sd">      :height: 250</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)**: 객체의 top-center 좌표.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">bottom</span> <span class="o">=</span> <span class="kc">None</span>
@@ -416,10 +400,6 @@
 <span class="sd">    </span>
 <span class="sd">    .. image:: ../assets/img/object_physical_PhysicalObject_bottom.png</span>
 <span class="sd">      :height: 250</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)**: 객체의 bottom-center 좌표.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">center</span> <span class="o">=</span> <span class="kc">None</span>
@@ -434,10 +414,6 @@
 <span class="sd">    </span>
 <span class="sd">    .. image:: ../assets/img/object_physical_PhysicalObject_center.png</span>
 <span class="sd">      :height: 250</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)**: 객체의 center-center 좌표.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">bottom_left</span> <span class="o">=</span> <span class="kc">None</span>
@@ -452,10 +428,6 @@
 <span class="sd">    </span>
 <span class="sd">    .. image:: ../assets/img/object_physical_PhysicalObject_bottom_left.png</span>
 <span class="sd">      :height: 250</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)**: 객체의 bottom-left 좌표.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">bottom_right</span> <span class="o">=</span> <span class="kc">None</span>
@@ -470,10 +442,6 @@
 <span class="sd">    </span>
 <span class="sd">    .. image:: ../assets/img/object_physical_PhysicalObject_bottom_right.png </span>
 <span class="sd">      :height: 250</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)**: 객체의 bottom-right 좌표.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">top_left</span> <span class="o">=</span> <span class="kc">None</span>
@@ -488,10 +456,6 @@
 <span class="sd">    </span>
 <span class="sd">    .. image:: ../assets/img/object_physical_PhysicalObject_top_left.png</span>
 <span class="sd">      :height: 250</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)**: 객체의 top-left 좌표.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">top_right</span> <span class="o">=</span> <span class="kc">None</span>
@@ -506,10 +470,6 @@
 <span class="sd">    </span>
 <span class="sd">    .. image:: ../assets/img/object_physical_PhysicalObject_top_right.png</span>
 <span class="sd">      :height: 250</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)**: 객체의 top-right 좌표.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@property</span>
@@ -531,24 +491,25 @@
 <span class="sd">        -----</span>
 <span class="sd">        **(Korean)**: numpy.ndarray: 객체의 bbox (bounding box).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1">#if self.xy.ndim == 2:</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>  
+        <span class="c1"># if self.xy.ndim == 2:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span> <span class="c1"># single-point object.</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># single-point object.</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">])</span>
 
 <div class="viewcode-block" id="PhysicalObject.__init__"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        The constructor function of PhysicalObject class.</span>
+<span class="sd">        The constructor function.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        xy : numpy.ndarray</span>
-<span class="sd">            The physical coordinates [bottom_left, top_right] of the object.</span>
+<span class="sd">            Physical coordinate values of the object</span>
+<span class="sd">            in the form of [bottom_left, top_right].</span>
 <span class="sd">        name : str</span>
-<span class="sd">            The name of the object.</span>
+<span class="sd">            Object name.</span>
 <span class="sd">        params : dict</span>
-<span class="sd">            The dictionary that contains the object parameters.</span>
+<span class="sd">            Dictionary storing the parameters associated with the object.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -601,11 +562,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">xy</span> <span class="o">=</span> <span class="n">xy</span></div>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the summary of this object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">summarize</span><span class="p">()</span>
 
 <div class="viewcode-block" id="PhysicalObject.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the summary of this object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;None&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -624,8 +585,8 @@
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="PhysicalObject._update_pointers"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject._update_pointers">[docs]</a>    <span class="k">def</span> <span class="nf">_update_pointers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Update pointers of this object. Called when the xy-coordinate of this</span>
-<span class="sd">        object is updated.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;The internal function that updates the object&#39;s pointers</span>
+<span class="sd">        after a change in its physical coordinates.&quot;&quot;&quot;</span>
         <span class="n">xy_left</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">))</span>
         <span class="n">xy_right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">))</span>
         <span class="n">xy_bottom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">))</span>
@@ -667,8 +628,7 @@
 
     <span class="n">elements</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    numpy.ndarray: The numpy array that contains this object&#39;s subelements as </span>
-<span class="sd">    its elements.</span>
+<span class="sd">    dict: Numpy array containing its element objects.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -691,13 +651,13 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="IterablePhysicalObject._get_xy"><a class="viewcode-back" href="../../../laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject._get_xy">[docs]</a>    <span class="k">def</span> <span class="nf">_get_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Get the x and y coordinate values of</span>
-<span class="sd">        this object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Retrive x,y coordinate values of</span>
+<span class="sd">        the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span></div>
 
 <div class="viewcode-block" id="IterablePhysicalObject._set_xy"><a class="viewcode-back" href="../../../laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject._set_xy">[docs]</a>    <span class="k">def</span> <span class="nf">_set_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Set the x and y coordinate values of</span>
-<span class="sd">        this object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Update x,y coordinates of</span>
+<span class="sd">        the object.&quot;&quot;&quot;</span>
         <span class="c1"># Update the coordinate value of its elements.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_update_elements</span><span class="p">(</span><span class="n">xy_ofst</span><span class="o">=</span><span class="n">value</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
         <span class="c1"># Update the coordinate value of the object itself.</span>
@@ -707,7 +667,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;The array dimension of this object.</span>
+        <span class="sd">&quot;&quot;&quot;Array size of the object.</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -732,18 +692,19 @@
 
 <div class="viewcode-block" id="IterablePhysicalObject.__init__"><a class="viewcode-back" href="../../../laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Constructor function of IterablePhysicalObject class.</span>
+<span class="sd">        The constructor function.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        xy : numpy.ndarray</span>
-<span class="sd">            The physical coordinates [bottom_left,top_right] of the object.</span>
+<span class="sd">            Physical coordinate values of the object</span>
+<span class="sd">            in the form of [bottom_left, top_right].</span>
 <span class="sd">        name : str</span>
-<span class="sd">            The name of the object.</span>
+<span class="sd">            Object name.</span>
 <span class="sd">        params : dict</span>
-<span class="sd">            The dictionary containing attributes of the object.</span>
+<span class="sd">            Dictionary storing the parameters associated with the object.</span>
 <span class="sd">        elements : list</span>
-<span class="sd">            The dictionary containing element objects that compose the object.</span>
+<span class="sd">            List containing its element objects.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -783,33 +744,32 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">elements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the sub-elements of this object, based on the pos parameter.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return the sub-elements of the object, based on the pos parameter.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Set the sub-elements of this object, based on the pos and item</span>
-<span class="sd">        parameter.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Update the sub-elements of the object, based on the pos and item</span>
+<span class="sd">        parameters.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Iterator function. Directly mapped to the iterator of the elements</span>
-<span class="sd">        attribute of this object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Iterator that maps directly to the elements attribute of</span>
+<span class="sd">        this object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Iterator function. Directly mapped to the iterator of the elements</span>
-<span class="sd">        attribute of this object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Iterator that maps directly to the iterator function of</span>
+<span class="sd">        the elements attribute of this object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="fm">__next__</span><span class="p">()</span>
 
 <div class="viewcode-block" id="IterablePhysicalObject.ndenumerate"><a class="viewcode-back" href="../../../laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject.ndenumerate">[docs]</a>    <span class="k">def</span> <span class="nf">ndenumerate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Enumerate over the element array. Calls np.ndenumerate() of the elements</span>
-<span class="sd">        of this object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Enumerate over the element array. Calls np.ndenumerate() of</span>
+<span class="sd">        the elements of this object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="IterablePhysicalObject._update_elements"><a class="viewcode-back" href="../../../laygo2.object.physical.IterablePhysicalObject.html#laygo2.object.physical.IterablePhysicalObject._update_elements">[docs]</a>    <span class="k">def</span> <span class="nf">_update_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy_ofst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Update xy-coordinates of this object&#39;s elements. An internal function</span>
-<span class="sd">        for _set_xy()&quot;&quot;&quot;</span>
-        <span class="c1"># print(&quot;aa?&quot;)</span>
+        <span class="sd">&quot;&quot;&quot;Update the xy coordinates of the elements of this object,</span>
+<span class="sd">        used internally by the _set_xy() function.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
             <span class="c1"># Update the x and y coordinate values of elements.</span>
             <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">():</span>
@@ -819,8 +779,8 @@
 
 <div class="viewcode-block" id="PhysicalObjectGroup"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObjectGroup.html#laygo2.object.physical.PhysicalObjectGroup">[docs]</a><span class="k">class</span> <span class="nc">PhysicalObjectGroup</span><span class="p">(</span><span class="n">IterablePhysicalObject</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A grouped physical object. Intended to be generated as a group in Virtuoso</span>
-<span class="sd">    (not implemented yet).</span>
+<span class="sd">    A class for grouped physical objects, designed to be generated as a group</span>
+<span class="sd">    in Cadence Virtuoso (currently not implemented).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># TODO: implement this.</span>
@@ -831,7 +791,7 @@
 
 <div class="viewcode-block" id="PhysicalObjectGroup.__init__"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObjectGroup.html#laygo2.object.physical.PhysicalObjectGroup.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Constructor.</span>
+<span class="sd">        The constructor function.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -919,11 +879,11 @@
 <span class="sd">        self.params = getattr(obj, &#39;params&#39;, None)</span>
 
 <span class="sd">    def __str__(self):</span>
-<span class="sd">        &quot;&quot;&quot;Returns the summary of this object.&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
 <span class="sd">        return self.summarize()</span>
 
 <span class="sd">    def summarize(self):</span>
-<span class="sd">        &quot;&quot;&quot;Summarizes object information.&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
 <span class="sd">        return &quot;  &quot; + \</span>
 <span class="sd">               &quot;name:&quot; + self.name + &quot;, &quot; + \</span>
 <span class="sd">               &quot;class:&quot; + self.__class__.__name__ + &quot;, &quot; + \</span>
@@ -955,7 +915,9 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">layer</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;numpy.ndarray: The layer information [name, purpose] of the object.</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    numpy.ndarray: The physical layer information of the object, </span>
+<span class="sd">    represented as a list with two elements: [name, purpose].</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -972,7 +934,7 @@
 
     <span class="n">netname</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    str: The net name of the object.</span>
+<span class="sd">    str: The net name associated with the object.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -989,7 +951,7 @@
 
     <span class="n">hextension</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    int: The extension of the rect object in horizontal direction.</span>
+<span class="sd">    int: The horizontal extension of the rectangle object above its bounding box.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -1009,7 +971,7 @@
 
     <span class="n">vextension</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    int: The extension of the rect object in vertical direction.</span>
+<span class="sd">    int: The vertical extension of the rectangle object above its bounding box.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -1029,7 +991,7 @@
 
     <span class="n">color</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    int or None or &quot;not_MPT&quot;: The color (multi-patterning ID) parameter of </span>
+<span class="sd">    int or None or &quot;not_MPT&quot;: The color (multi-patterning identifier) parameter of </span>
 <span class="sd">    the object.</span>
 
 <span class="sd">    Example</span>
@@ -1091,12 +1053,14 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">height_vec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): The height vector [0, self.height].&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): The height direction vector [0, self.height]</span>
+<span class="sd">        of the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">])</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">width_vec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): The width vector [self.width, 0].&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): The width direction vector [self.width, 0]</span>
+<span class="sd">        of the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 
     <span class="nd">@property</span>
@@ -1138,21 +1102,23 @@
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        xy : numpy.ndarray</span>
-<span class="sd">            The physical coordinates [bottom_left, top_right] of the object.</span>
+<span class="sd">            Physical coordinate values of the object</span>
+<span class="sd">            in the form of [bottom_left, top_right].</span>
 <span class="sd">        layer : list</span>
-<span class="sd">            The layer information of the object.</span>
+<span class="sd">            The physical layer information of the object,</span>
+<span class="sd">            represented as a list with two elements: [name, purpose].</span>
 <span class="sd">        hextension : int</span>
 <span class="sd">            The horizontal extension value of the object.</span>
 <span class="sd">        vextension : int</span>
 <span class="sd">            The vertical extension value of the object.</span>
 <span class="sd">        name : str</span>
-<span class="sd">            The name of the object.</span>
+<span class="sd">            Object name.</span>
 <span class="sd">        netname : str</span>
-<span class="sd">            The net name of the object.</span>
+<span class="sd">            The net name associated with the object.</span>
 <span class="sd">        params : dict</span>
-<span class="sd">            The dictionary containing attributes of the object.</span>
+<span class="sd">            Dictionary storing the parameters associated with the object.</span>
 <span class="sd">        color : str, optional.</span>
-<span class="sd">            The coloring information of the object.</span>
+<span class="sd">            The color (multi-patterning identifier) parameter of the object.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1203,13 +1169,12 @@
 
 <div class="viewcode-block" id="Rect.align"><a class="viewcode-back" href="../../../laygo2.object.physical.Rect.html#laygo2.object.physical.Rect.align">[docs]</a>    <span class="k">def</span> <span class="nf">align</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rect2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Match the length of self and rect2 wires, when either width or height of</span>
-<span class="sd">        the two objects is zero.</span>
+<span class="sd">        Match the length of the self and rect2 objects, if either object has a width or height of 0.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        rect2 : Rect</span>
-<span class="sd">            The other Rect object to be matched to this Rect object.</span>
+<span class="sd">            The rect object to be aligned with `self`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">r0</span> <span class="o">=</span> <span class="bp">self</span>
@@ -1281,7 +1246,8 @@
     <span class="c1"># TODO: implement pointers.</span>
 
     <span class="n">layer</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;numpy.ndarray : The layer information [name, purpose] of object.</span>
+    <span class="sd">&quot;&quot;&quot;numpy.ndarray: The physical layer information of the object, </span>
+<span class="sd">    represented as a list with two elements: [name, purpose].</span>
 <span class="sd">    </span>
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -1290,7 +1256,7 @@
 
     <span class="n">netname</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    str: The net name of the object.</span>
+<span class="sd">    str: The net name associated with the object.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -1330,7 +1296,7 @@
 
     <span class="n">extension</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    int: The extension of the path object from its endpoints.</span>
+<span class="sd">    int: The path extension from its endpoints.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -1350,12 +1316,12 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;The bounding box [bottom_left, top_right] information of the object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;The physical bounding box of the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Path._update_pointers"><a class="viewcode-back" href="../../../laygo2.object.physical.Path.html#laygo2.object.physical.Path._update_pointers">[docs]</a>    <span class="k">def</span> <span class="nf">_update_pointers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Update pointers of this object. Called when the value of xy of this</span>
-<span class="sd">        object is updated.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;The internal function that updates the object&#39;s pointers</span>
+<span class="sd">        after a change in its physical coordinates.&quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
 <div class="viewcode-block" id="Path.__init__"><a class="viewcode-back" href="../../../laygo2.object.physical.Path.html#laygo2.object.physical.Path.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">netname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1365,19 +1331,21 @@
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        xy : numpy.ndarray</span>
-<span class="sd">            The physical coordinates [bottom_left, top_right] of the object.</span>
+<span class="sd">            Physical coordinate values of the object</span>
+<span class="sd">            in the form of [bottom_left, top_right].</span>
 <span class="sd">        layer : list</span>
-<span class="sd">            The layer information of the object.</span>
+<span class="sd">            The physical layer information of the object,</span>
+<span class="sd">            represented as a list with two elements: [name, purpose].</span>
 <span class="sd">        width : int</span>
 <span class="sd">            The width of the object.</span>
 <span class="sd">        extension : int</span>
-<span class="sd">            The extension value of the object.</span>
+<span class="sd">            The path extension from its endpoints.</span>
 <span class="sd">        name : str</span>
-<span class="sd">            The name of the object.</span>
+<span class="sd">            Object name.</span>
 <span class="sd">        netname : str</span>
-<span class="sd">            The net name of the object.</span>
+<span class="sd">            The net name associated with the object.</span>
 <span class="sd">        params : dict</span>
-<span class="sd">            The dictionary containing attributes of the object.</span>
+<span class="sd">            Dictionary storing the parameters associated with the object.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1466,7 +1434,8 @@
 
     <span class="n">layer</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    numpy.ndarray: The layer information of the object.</span>
+<span class="sd">    numpy.ndarray: The physical layer information of the object, </span>
+<span class="sd">    represented as a list with two elements: [name, purpose].</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -1481,7 +1450,7 @@
 
     <span class="n">netname</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    str: The net name of the object.</span>
+<span class="sd">    str: The net name associated with the object.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -1495,7 +1464,9 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">master</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;Instance: The master instance of the pin. Used for instance pins only.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Instance: The instance that the pin belongs to. Used for pins of instances only.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1556,12 +1527,14 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">height_vec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): Return np.array([0, height]).&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): The height direction vector [0, self.height]</span>
+<span class="sd">        of the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">])</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">width_vec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): Return np.array([width, 0]).&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): The width direction vector [self.width, 0]</span>
+<span class="sd">        of the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 
 <div class="viewcode-block" id="Pin.__init__"><a class="viewcode-back" href="../../../laygo2.object.physical.Pin.html#laygo2.object.physical.Pin.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -1575,20 +1548,22 @@
         <span class="n">elements</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        The constructor function of Pin class.</span>
+<span class="sd">        The constructor function.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        xy : numpy.ndarray</span>
-<span class="sd">            The physical coordinates [bottom_left, top_right] of the object.</span>
+<span class="sd">            Physical coordinate values of the object</span>
+<span class="sd">            in the form of [bottom_left, top_right].</span>
 <span class="sd">        layer : list</span>
-<span class="sd">            The layer information of the object.</span>
+<span class="sd">            The physical layer information of the object,</span>
+<span class="sd">            represented as a list with two elements: [name, purpose].</span>
 <span class="sd">        name : str</span>
-<span class="sd">            The name of the object.</span>
+<span class="sd">            Object name.</span>
 <span class="sd">        netname : str</span>
-<span class="sd">            The net name of the object.</span>
+<span class="sd">            The net name associated with the object.</span>
 <span class="sd">        params : dict</span>
-<span class="sd">            The dictionary containing attributes of the object.</span>
+<span class="sd">            Dictionary storing the parameters associated with the object.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1678,7 +1653,8 @@
 
     <span class="n">layer</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    numpy.ndarray: Layer information of object.</span>
+<span class="sd">    list: The physical layer information of the object,</span>
+<span class="sd">          represented as a list with two elements: [name, purpose].</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -1695,7 +1671,7 @@
 
     <span class="n">text</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    str: Text content of object.</span>
+<span class="sd">    str: Text content of the object.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -1712,20 +1688,22 @@
 
 <div class="viewcode-block" id="Text.__init__"><a class="viewcode-back" href="../../../laygo2.object.physical.Text.html#laygo2.object.physical.Text.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        The constructor function of Text class.</span>
+<span class="sd">        The constructor function.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        xy : numpy.ndarray</span>
-<span class="sd">            The physical coordinates [bottom_left, top_right] of the object.</span>
+<span class="sd">            Physical coordinate values of the object</span>
+<span class="sd">            in the form of [bottom_left, top_right].</span>
 <span class="sd">        layer : list</span>
-<span class="sd">            The layer information of the object.</span>
+<span class="sd">            The physical layer information of the object,</span>
+<span class="sd">            represented as a list with two elements: [name, purpose].</span>
 <span class="sd">        text : str</span>
 <span class="sd">            The text content.</span>
 <span class="sd">        name : str</span>
-<span class="sd">            The name of the object.</span>
+<span class="sd">            Object name.</span>
 <span class="sd">        params : dict</span>
-<span class="sd">            The dictionary containing attributes of the object.</span>
+<span class="sd">            Dictionary storing the parameters associated with the object.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1872,15 +1850,15 @@
     <span class="sd">&quot;&quot;&quot;str: The view name of the instance.&quot;&quot;&quot;</span>
 
     <span class="n">shape</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;np.array([int, int]) or None: The shape of the instance mosaic. None if </span>
-<span class="sd">    the instance is non-mosaic.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;np.array([int, int]) or None: The mosaic shape of the instance. </span>
+<span class="sd">    None if the instance is non-mosaic.&quot;&quot;&quot;</span>
 
     <span class="n">_pitch</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;np.array([int, int]) or None: The internal variable for pitch.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;np.array([int, int]) or None: The internal variable for self.pitch.&quot;&quot;&quot;</span>
 
     <span class="n">unit_size</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    numpy.ndarray: The unit size when the object is constructed in array.</span>
+<span class="sd">    numpy.ndarray: The array unit size for the object.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -1906,7 +1884,8 @@
 
     <span class="n">transform</span> <span class="o">=</span> <span class="s2">&quot;R0&quot;</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    str: The transformation attribute of the object.</span>
+<span class="sd">    str: The attribute of the object that defines its transformation </span>
+<span class="sd">    (rotation and mirroring).</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -1932,7 +1911,7 @@
 
     <span class="n">pins</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    dict: The dictionary having the pins belonging to the object.</span>
+<span class="sd">    dict: Dictionary of pins belonging to the object.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -1964,8 +1943,10 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Instance._update_pins"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance._update_pins">[docs]</a>    <span class="k">def</span> <span class="nf">_update_pins</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy_ofst</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Update xy-coordinates of this object&#39;s pins. An internal function for</span>
-<span class="sd">        _set_xy()&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal function to update x,y coordinates of the object&#39;s pins. </span>
+<span class="sd">        Used as part of _set_xy().</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pins</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">pn</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pins</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
@@ -1975,13 +1956,13 @@
                             <span class="n">e</span><span class="o">.</span><span class="n">xy</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">xy</span> <span class="o">+</span> <span class="n">xy_ofst</span></div>
 
 <div class="viewcode-block" id="Instance._get_xy"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance._get_xy">[docs]</a>    <span class="k">def</span> <span class="nf">_get_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Get the x and y coordinate values of</span>
-<span class="sd">        this object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Retrive x,y coordinate values of</span>
+<span class="sd">        the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xy</span></div>
 
 <div class="viewcode-block" id="Instance._set_xy"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance._set_xy">[docs]</a>    <span class="k">def</span> <span class="nf">_set_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Set the x and y coordinate values of</span>
-<span class="sd">        this object.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=numpy.int): Update x,y coordinates of</span>
+<span class="sd">        the object.&quot;&quot;&quot;</span>
         <span class="c1"># Update the coordinate value of its pins.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_update_pins</span><span class="p">(</span><span class="n">xy_ofst</span><span class="o">=</span><span class="n">value</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span>
         <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="n">_set_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
@@ -1991,7 +1972,7 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">xy0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        numpy.ndarray: The coordinates of the primary corner of the object.</span>
+<span class="sd">        numpy.ndarray: The x,y coordinates of the primary corner of the object.</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -2012,14 +1993,14 @@
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**:     numpy.ndarray: 객체의 주 코너 좌표.</span>
+<span class="sd">        **(Korean)**: 객체의 주 코너 좌표.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">xy1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        numpy.ndarray: The coordinates of the secondary corner of the object.</span>
+<span class="sd">        numpy.ndarray: The x,y coordinates of the secondary corner of the object.</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -2040,7 +2021,7 @@
 
 <span class="sd">        Notes</span>
 <span class="sd">        -----</span>
-<span class="sd">        **(Korean)**:     numpy.ndarray: 객체의 보조 코너 좌표.</span>
+<span class="sd">        **(Korean)**: 객체의 보조 코너 좌표.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy</span>
@@ -2050,7 +2031,7 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        numpy.ndarray: The size of the object ([width, height]).</span>
+<span class="sd">        numpy.ndarray: The size of the object ([self.width, self.height]).</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -2079,19 +2060,19 @@
             <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">pitch</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit_size</span>
 
 <div class="viewcode-block" id="Instance.get_pitch"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance.get_pitch">[docs]</a>    <span class="k">def</span> <span class="nf">get_pitch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): Get the pitch of the instance.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): Retrive the pitch of the instance.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pitch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit_size</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pitch</span></div>
 
 <div class="viewcode-block" id="Instance.set_pitch"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance.set_pitch">[docs]</a>    <span class="k">def</span> <span class="nf">set_pitch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): Set the pitch of the instance.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): Update the pitch of the instance.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_pitch</span> <span class="o">=</span> <span class="n">value</span></div>
 
     <span class="n">pitch</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_pitch</span><span class="p">,</span> <span class="n">set_pitch</span><span class="p">)</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    numpy.ndarray: Pitch between unit object of the object in array.</span>
+<span class="sd">    numpy.ndarray: The pitch between unit objects in the array.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -2157,6 +2138,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The physical bounding box of the object.&quot;&quot;&quot;</span>
         <span class="n">bbox</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">xy0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">xy1</span><span class="p">])</span>
         <span class="c1"># return bbox</span>
         <span class="c1"># return self.xy + np.dot(self.size, tf.Mt(self.transform).T)</span>
@@ -2220,12 +2202,14 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">height_vec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): The height vector [0, height].&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): The height direction vector [0, self.height]</span>
+<span class="sd">        of the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">])</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">width_vec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): The width vector [width, 0].&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray(dtype=int): The width direction vector [self.width, 0]</span>
+<span class="sd">        of the object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 
 <div class="viewcode-block" id="Instance.__init__"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -2243,12 +2227,12 @@
         <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        The constructor function of Instance class.</span>
+<span class="sd">        The constructor function.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        xy : numpy.ndarray</span>
-<span class="sd">            The primary coordinate [x0, y0] of the object.</span>
+<span class="sd">            The primary coordinate ([x0, y0]) of the object.</span>
 <span class="sd">        libname : str</span>
 <span class="sd">            The library name of the object.</span>
 <span class="sd">        cellname : str</span>
@@ -2256,21 +2240,23 @@
 <span class="sd">        shape : numpy.ndarray</span>
 <span class="sd">            The shape [col, row] of the elements.</span>
 <span class="sd">        pitch : numpy.ndarray</span>
-<span class="sd">            Pitch between the elements of the object in array.</span>
+<span class="sd">            The pitch between unit objects in the array.</span>
 <span class="sd">        transform : str</span>
-<span class="sd">            The transformation attribute of the object.</span>
+<span class="sd">            The attribute of the object that defines its transformation </span>
+<span class="sd">            (rotation and mirroring).</span>
 <span class="sd">        unit_size : list</span>
-<span class="sd">            Unit size of the object.</span>
+<span class="sd">            The array unit size for the object.</span>
 <span class="sd">        pins : dict</span>
-<span class="sd">            The dictionary containing pins belonging to the object.</span>
+<span class="sd">            Dictionary of pins belonging to the object.</span>
 <span class="sd">        name : str</span>
-<span class="sd">            The name of the object.</span>
+<span class="sd">            Object name.</span>
 <span class="sd">        params : dict</span>
-<span class="sd">            (optional) The dictionary containing attributes of the object.</span>
+<span class="sd">            (optional) Dictionary storing the parameters associated with </span>
+<span class="sd">            the object.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        Instance</span>
+<span class="sd">        Instance : The constructed Instance object.</span>
 
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
@@ -2436,7 +2422,7 @@
                 <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Instance.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Summarize object information.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="n">_shape</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -2456,9 +2442,12 @@
             <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pins</span><span class="p">)</span>
             <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="p">)</span></div>
-    
-<div class="viewcode-block" id="Instance.update_netname"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance.update_netname">[docs]</a>    <span class="k">def</span> <span class="nf">update_netname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netmap</span><span class="p">:</span><span class="nb">dict</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;update netname information of pins&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Instance.update_netname"><a class="viewcode-back" href="../../../laygo2.object.physical.Instance.html#laygo2.object.physical.Instance.update_netname">[docs]</a>    <span class="k">def</span> <span class="nf">update_netname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netmap</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the netname information for all pins belonging </span>
+<span class="sd">        to this object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">pn</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pins</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">netname</span> <span class="ow">in</span> <span class="n">netmap</span><span class="p">:</span>
                 <span class="n">p</span><span class="o">.</span><span class="n">netname</span> <span class="o">=</span> <span class="n">netmap</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">netname</span><span class="p">]</span>  <span class="c1"># update netname information</span></div></div>
@@ -2466,9 +2455,9 @@
 
 <div class="viewcode-block" id="VirtualInstance"><a class="viewcode-back" href="../../../laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance">[docs]</a><span class="k">class</span> <span class="nc">VirtualInstance</span><span class="p">(</span><span class="n">Instance</span><span class="p">):</span>  <span class="c1"># IterablePhysicalObject):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The VirtualInstance class implements functions for a group of objects,</span>
-<span class="sd">    which can be treated as a single instance with dedicated dimensional,</span>
-<span class="sd">    port, and any related parameters.</span>
+<span class="sd">    The VirtualInstance class implements functions for a group of objects </span>
+<span class="sd">    to be treated as a single instance with dedicated dimensional, </span>
+<span class="sd">    port, and related parameters.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -2505,7 +2494,8 @@
 
     <span class="n">native_elements</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    dict: The dictionary containing physical entities constituting the object.</span>
+<span class="sd">    dict: Dictionary that holds the physical element entities </span>
+<span class="sd">        of the VirtualInstance object.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -2558,36 +2548,40 @@
         <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        The constructor function of VirtualInstance class.</span>
+<span class="sd">        The constructor function.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        xy : numpy.ndarray</span>
-<span class="sd">            The primary coordinate [x0, y0] of the object.</span>
+<span class="sd">            Physical coordinate values of the object</span>
+<span class="sd">            in the form of [bottom_left, top_right].</span>
 <span class="sd">        libname : str</span>
 <span class="sd">            The library name of the object.</span>
 <span class="sd">        cellname : str</span>
 <span class="sd">            The cell name of the object.</span>
 <span class="sd">        native_elements : dict</span>
-<span class="sd">            The dictionary containing physical entities constituting the object.</span>
+<span class="sd">            Dictionary that holds the physical element entities </span>
+<span class="sd">            of the VirtualInstance object.</span>
 <span class="sd">        shape : numpy.ndarray</span>
 <span class="sd">            The shape [col, row] of the elements.</span>
 <span class="sd">        pitch : numpy.ndarray</span>
-<span class="sd">            Pitch between elements of the object in array.</span>
+<span class="sd">            The pitch between unit objects in the array.</span>
 <span class="sd">        transform : str</span>
-<span class="sd">            The transformation attribute of the object.</span>
+<span class="sd">            The attribute of the object that defines its transformation </span>
+<span class="sd">            (rotation and mirroring).</span>
 <span class="sd">        unit_size : list</span>
 <span class="sd">            Unit size of object.</span>
 <span class="sd">        pins : dict</span>
-<span class="sd">            The dictionary containing pins belonging to the object.</span>
+<span class="sd">            The array unit size for the object.</span>
 <span class="sd">        name : str</span>
-<span class="sd">            The name of the object.</span>
+<span class="sd">            Object name.</span>
 <span class="sd">        params : dict</span>
-<span class="sd">            The dictionary containing attributes of the object.</span>
+<span class="sd">            (optional) Dictionary storing the parameters associated with </span>
+<span class="sd">            the object.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        laygo2.VirtualInstance</span>
+<span class="sd">        laygo2.VirtualInstance : The constructed VirtualInstance object.</span>
 
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
@@ -2658,17 +2652,18 @@
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="VirtualInstance.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Summarize object information.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Instance</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;    native elements: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">native_elements</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span></div>
 
 <div class="viewcode-block" id="VirtualInstance.get_element_position"><a class="viewcode-back" href="../../../laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance.get_element_position">[docs]</a>    <span class="k">def</span> <span class="nf">get_element_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Get element&#39;s xy-position from origin.</span>
+<span class="sd">        Get x,y coordinates of the element obj (which belongs to the object)</span>
+<span class="sd">        relative to the origin (0, 0).</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        obj : element</span>
-<span class="sd">            element belongs to self</span>
+<span class="sd">            The element belongs to the object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">vinst</span> <span class="o">=</span> <span class="bp">self</span>
         <span class="n">tr</span> <span class="o">=</span> <span class="n">vinst</span><span class="o">.</span><span class="n">transform</span>

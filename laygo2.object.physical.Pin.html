@@ -507,13 +507,13 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.layer" title="laygo2.object.physical.Pin.layer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">layer</span></code></a></p></td>
-<td><p>The layer information of the object.</p></td>
+<td><p>The physical layer information of the object, represented as a list with two elements: [name, purpose].</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.netname" title="laygo2.object.physical.Pin.netname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netname</span></code></a></p></td>
-<td><p>The net name of the object.</p></td>
+<td><p>The net name associated with the object.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.master" title="laygo2.object.physical.Pin.master"><code class="xref py py-obj docutils literal notranslate"><span class="pre">master</span></code></a></p></td>
-<td><p>The master instance of the pin.</p></td>
+<td><p>The instance that the pin belongs to.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.height" title="laygo2.object.physical.Pin.height"><code class="xref py py-obj docutils literal notranslate"><span class="pre">height</span></code></a></p></td>
 <td><p>The height of the object.</p></td>
@@ -525,10 +525,10 @@
 <td><p>The size of the object.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.height_vec" title="laygo2.object.physical.Pin.height_vec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">height_vec</span></code></a></p></td>
-<td><p>Return np.array([0, height]).</p></td>
+<td><p>The height direction vector [0, self.height] of the object.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.width_vec" title="laygo2.object.physical.Pin.width_vec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">width_vec</span></code></a></p></td>
-<td><p>Return np.array([width, 0]).</p></td>
+<td><p>The width direction vector [self.width, 0] of the object.</p></td>
 </tr>
 </tbody>
 </table>
@@ -539,13 +539,13 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.elements" title="laygo2.object.physical.Pin.elements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">elements</span></code></a></p></td>
-<td><p>The numpy array that contains this object's subelements as its elements.</p></td>
+<td><p>Numpy array containing its element objects.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.xy" title="laygo2.object.physical.Pin.xy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xy</span></code></a></p></td>
-<td><p>Get the x and y coordinate values of this object.</p></td>
+<td><p>Retrive x,y coordinate values of the object.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.shape" title="laygo2.object.physical.Pin.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code></a></p></td>
-<td><p>The array dimension of this object.</p></td>
+<td><p>Array size of the object.</p></td>
 </tr>
 </tbody>
 </table>
@@ -556,19 +556,19 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.name" title="laygo2.object.physical.Pin.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
-<td><p>The name of the object.</p></td>
+<td><p>Object name.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.xy" title="laygo2.object.physical.Pin.xy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xy</span></code></a></p></td>
-<td><p>Get the x and y coordinate values of this object.</p></td>
+<td><p>Retrive x,y coordinate values of the object.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.master" title="laygo2.object.physical.Pin.master"><code class="xref py py-obj docutils literal notranslate"><span class="pre">master</span></code></a></p></td>
-<td><p>The master instance of the pin.</p></td>
+<td><p>The instance that the pin belongs to.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.params" title="laygo2.object.physical.Pin.params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">params</span></code></a></p></td>
-<td><p>The dictionary that contains the object parameters.</p></td>
+<td><p>Dictionary storing the parameters associated with the object</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.pointers" title="laygo2.object.physical.Pin.pointers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pointers</span></code></a></p></td>
-<td><p>The dictionary that contains major physical coordinates of the object.</p></td>
+<td><p>The dictionary containing the key-value pairs of the major physical coordinates of the object, such as 'left', 'right', 'top', 'bottom', 'bottom_left', 'center', etc.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.left" title="laygo2.object.physical.Pin.left"><code class="xref py py-obj docutils literal notranslate"><span class="pre">left</span></code></a></p></td>
 <td><p>The left-center coordinate of the object.</p></td>
@@ -612,7 +612,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.__init__" title="laygo2.object.physical.Pin.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(xy, layer[, name, netname, params, ...])</p></td>
-<td><p>The constructor function of Pin class.</p></td>
+<td><p>The constructor function.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.summarize" title="laygo2.object.physical.Pin.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
 <td><p>Get object information summary.</p></td>
@@ -629,19 +629,19 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.__init__" title="laygo2.object.physical.Pin.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(xy, layer[, name, netname, params, ...])</p></td>
-<td><p>The constructor function of Pin class.</p></td>
+<td><p>The constructor function.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code>(pos)</p></td>
-<td><p>Return the sub-elements of this object, based on the pos parameter.</p></td>
+<td><p>Return the sub-elements of the object, based on the pos parameter.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__setitem__</span></code>(pos, item)</p></td>
-<td><p>Set the sub-elements of this object, based on the pos and item parameter.</p></td>
+<td><p>Update the sub-elements of the object, based on the pos and item parameters.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iter__</span></code>()</p></td>
-<td><p>Iterator function.</p></td>
+<td><p>Iterator that maps directly to the elements attribute of this object.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__next__</span></code>()</p></td>
-<td><p>Iterator function.</p></td>
+<td><p>Iterator that maps directly to the iterator function of the elements attribute of this object.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.ndenumerate" title="laygo2.object.physical.Pin.ndenumerate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndenumerate</span></code></a>()</p></td>
 <td><p>Enumerate over the element array.</p></td>
@@ -655,10 +655,10 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.__init__" title="laygo2.object.physical.Pin.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(xy, layer[, name, netname, params, ...])</p></td>
-<td><p>The constructor function of Pin class.</p></td>
+<td><p>The constructor function.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code>()</p></td>
-<td><p>Return the summary of this object.</p></td>
+<td><p>Return the summary of the object information.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.physical.Pin.summarize" title="laygo2.object.physical.Pin.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
 <td><p>Get object information summary.</p></td>
@@ -670,15 +670,17 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">netname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/physical.html#Pin.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.physical.Pin.__init__" title="Permalink to this definition">#</a></dt>
-<dd><p>The constructor function of Pin class.</p>
+<dd><p>The constructor function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>xy</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – The physical coordinates [bottom_left, top_right] of the object.</p></li>
-<li><p><strong>layer</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – The layer information of the object.</p></li>
-<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The name of the object.</p></li>
-<li><p><strong>netname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The net name of the object.</p></li>
-<li><p><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a>) – The dictionary containing attributes of the object.</p></li>
+<li><p><strong>xy</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a>) – Physical coordinate values of the object
+in the form of [bottom_left, top_right].</p></li>
+<li><p><strong>layer</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – The physical layer information of the object,
+represented as a list with two elements: [name, purpose].</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – Object name.</p></li>
+<li><p><strong>netname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The net name associated with the object.</p></li>
+<li><p><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a>) – Dictionary storing the parameters associated with the object.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -715,29 +717,29 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin._get_xy">
 <span class="sig-name descname"><span class="pre">_get_xy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.Pin._get_xy" title="Permalink to this definition">#</a></dt>
-<dd><p>numpy.ndarray(dtype=numpy.int): Get the x and y coordinate values of
-this object.</p>
+<dd><p>numpy.ndarray(dtype=numpy.int): Retrive x,y coordinate values of
+the object.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin._set_xy">
 <span class="sig-name descname"><span class="pre">_set_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.Pin._set_xy" title="Permalink to this definition">#</a></dt>
-<dd><p>numpy.ndarray(dtype=numpy.int): Set the x and y coordinate values of
-this object.</p>
+<dd><p>numpy.ndarray(dtype=numpy.int): Update x,y coordinates of
+the object.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin._update_elements">
 <span class="sig-name descname"><span class="pre">_update_elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy_ofst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.Pin._update_elements" title="Permalink to this definition">#</a></dt>
-<dd><p>Update xy-coordinates of this object’s elements. An internal function
-for _set_xy()</p>
+<dd><p>Update the xy coordinates of the elements of this object,
+used internally by the _set_xy() function.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin._update_pointers">
 <span class="sig-name descname"><span class="pre">_update_pointers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.Pin._update_pointers" title="Permalink to this definition">#</a></dt>
-<dd><p>Update pointers of this object. Called when the xy-coordinate of this
-object is updated.</p>
+<dd><p>The internal function that updates the object’s pointers
+after a change in its physical coordinates.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -748,8 +750,8 @@ object is updated.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin.ndenumerate">
 <span class="sig-name descname"><span class="pre">ndenumerate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.physical.Pin.ndenumerate" title="Permalink to this definition">#</a></dt>
-<dd><p>Enumerate over the element array. Calls np.ndenumerate() of the elements
-of this object.</p>
+<dd><p>Enumerate over the element array. Calls np.ndenumerate() of
+the elements of this object.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -761,7 +763,8 @@ of this object.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin._xy">
 <span class="sig-name descname"><span class="pre">_xy</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([0,</span> <span class="pre">0])</span></em><a class="headerlink" href="#laygo2.object.physical.Pin._xy" title="Permalink to this definition">#</a></dt>
-<dd><p>The internal variable of xy.</p>
+<dd><p>The x and y coordinate values
+stored within.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a>(dtype=numpy.int)</p>
@@ -803,8 +806,6 @@ of this object.</p>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_bottom.png"><img alt="_images/object_physical_PhysicalObject_bottom.png" src="_images/object_physical_PhysicalObject_bottom.png" style="height: 250px;" /></a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 bottom-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
@@ -824,8 +825,6 @@ of this object.</p>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_bottom_left.png"><img alt="_images/object_physical_PhysicalObject_bottom_left.png" src="_images/object_physical_PhysicalObject_bottom_left.png" style="height: 250px;" /></a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 bottom-left 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
@@ -845,8 +844,6 @@ of this object.</p>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_bottom_right.png"><img alt="_images/object_physical_PhysicalObject_bottom_right.png" src="_images/object_physical_PhysicalObject_bottom_right.png" style="height: 250px;" /></a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 bottom-right 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
@@ -866,8 +863,6 @@ of this object.</p>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_center.png"><img alt="_images/object_physical_PhysicalObject_center.png" src="_images/object_physical_PhysicalObject_center.png" style="height: 250px;" /></a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 center-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
@@ -878,8 +873,7 @@ of this object.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin.elements">
 <span class="sig-name descname"><span class="pre">elements</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.Pin.elements" title="Permalink to this definition">#</a></dt>
-<dd><p>The numpy array that contains this object’s subelements as
-its elements.</p>
+<dd><p>Numpy array containing its element objects.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">phy0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]])</span>
@@ -899,7 +893,7 @@ its elements.</p>
 <p><strong>(Korean)</strong>: 객체의 하위 구성원을 담고 있는 list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -928,7 +922,8 @@ its elements.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin.height_vec">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height_vec</span></span><a class="headerlink" href="#laygo2.object.physical.Pin.height_vec" title="Permalink to this definition">#</a></dt>
-<dd><p>Return np.array([0, height]).</p>
+<dd><p>The height direction vector [0, self.height]
+of the object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a>(dtype=int)</p>
@@ -939,7 +934,8 @@ its elements.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin.layer">
 <span class="sig-name descname"><span class="pre">layer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.Pin.layer" title="Permalink to this definition">#</a></dt>
-<dd><p>The layer information of the object.</p>
+<dd><p>The physical layer information of the object,
+represented as a list with two elements: [name, purpose].</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pin0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
@@ -968,8 +964,6 @@ its elements.</p>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_left.png"><img alt="_images/object_physical_PhysicalObject_left.png" src="_images/object_physical_PhysicalObject_left.png" style="height: 250px;" /></a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 left-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
@@ -980,7 +974,7 @@ its elements.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin.master">
 <span class="sig-name descname"><span class="pre">master</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.Pin.master" title="Permalink to this definition">#</a></dt>
-<dd><p>The master instance of the pin. Used for instance pins only.</p>
+<dd><p>The instance that the pin belongs to. Used for pins of instances only.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance">Instance</a></p>
@@ -991,7 +985,7 @@ its elements.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin.name">
 <span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.Pin.name" title="Permalink to this definition">#</a></dt>
-<dd><p>The name of the object.</p>
+<dd><p>Object name.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span>
@@ -1001,8 +995,6 @@ its elements.</p>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_name.png"><img alt="_images/object_physical_PhysicalObject_name.png" src="_images/object_physical_PhysicalObject_name.png" style="height: 250px;" /></a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 이름.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
@@ -1013,7 +1005,7 @@ its elements.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin.netname">
 <span class="sig-name descname"><span class="pre">netname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.Pin.netname" title="Permalink to this definition">#</a></dt>
-<dd><p>The net name of the object.</p>
+<dd><p>The net name associated with the object.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pin0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]],</span>
@@ -1033,7 +1025,7 @@ its elements.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin.params">
 <span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.Pin.params" title="Permalink to this definition">#</a></dt>
-<dd><p>The dictionary that contains the object parameters.</p>
+<dd><p>Dictionary storing the parameters associated with the object</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]],</span>
@@ -1054,8 +1046,9 @@ its elements.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin.pointers">
 <span class="sig-name descname"><span class="pre">pointers</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.physical.Pin.pointers" title="Permalink to this definition">#</a></dt>
-<dd><p>The dictionary that contains major physical coordinates of the object.
-Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
+<dd><p>The dictionary containing the key-value pairs of the major physical
+coordinates of the object, such as ‘left’, ‘right’, ‘top’, ‘bottom’,
+‘bottom_left’, ‘center’, etc.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">]])</span>
@@ -1070,7 +1063,7 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_pointers.png"><img alt="_images/object_physical_PhysicalObject_pointers.png" src="_images/object_physical_PhysicalObject_pointers.png" style="height: 250px;" /></a>
 <p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 주요 좌표들을 담고 있는 dict.</p>
+<p><strong>(Korean)</strong>: 객체의 주요 좌표들을 담고 있는 dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a></p>
@@ -1090,8 +1083,6 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_right.png"><img alt="_images/object_physical_PhysicalObject_right.png" src="_images/object_physical_PhysicalObject_right.png" style="height: 250px;" /></a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 right-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
@@ -1102,7 +1093,7 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin.shape">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#laygo2.object.physical.Pin.shape" title="Permalink to this definition">#</a></dt>
-<dd><p>The array dimension of this object.</p>
+<dd><p>Array size of the object.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">phy0</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]])</span>
@@ -1152,8 +1143,6 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_top.png"><img alt="_images/object_physical_PhysicalObject_top.png" src="_images/object_physical_PhysicalObject_top.png" style="height: 250px;" /></a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 top-center 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
@@ -1173,8 +1162,6 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_top_left.png"><img alt="_images/object_physical_PhysicalObject_top_left.png" src="_images/object_physical_PhysicalObject_top_left.png" style="height: 250px;" /></a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 top-left 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
@@ -1194,8 +1181,6 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_top_right.png"><img alt="_images/object_physical_PhysicalObject_top_right.png" src="_images/object_physical_PhysicalObject_top_right.png" style="height: 250px;" /></a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 top-right 좌표.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a></p>
@@ -1227,7 +1212,8 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin.width_vec">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width_vec</span></span><a class="headerlink" href="#laygo2.object.physical.Pin.width_vec" title="Permalink to this definition">#</a></dt>
-<dd><p>Return np.array([width, 0]).</p>
+<dd><p>The width direction vector [self.width, 0]
+of the object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a>(dtype=int)</p>
@@ -1238,8 +1224,8 @@ Possible keys include left, right, top, bottom, bottom_left, center, etc.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.physical.Pin.xy">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xy</span></span><a class="headerlink" href="#laygo2.object.physical.Pin.xy" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the x and y coordinate values of
-this object.</p>
+<dd><p>Retrive x,y coordinate values of
+the object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)">numpy.ndarray</a>(dtype=numpy.int)</p>

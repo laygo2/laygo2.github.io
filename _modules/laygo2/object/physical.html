@@ -826,7 +826,7 @@
     <span class="c1"># TODO: implement this.</span>
 
 <div class="viewcode-block" id="PhysicalObjectGroup.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObjectGroup.html#laygo2.object.physical.PhysicalObjectGroup.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get object information summary.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;    elements: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, </span><span class="se">\n</span><span class="s2">&quot;</span></div>
 
 <div class="viewcode-block" id="PhysicalObjectGroup.__init__"><a class="viewcode-back" href="../../../laygo2.object.physical.PhysicalObjectGroup.html#laygo2.object.physical.PhysicalObjectGroup.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1242,7 +1242,7 @@
             <span class="n">r1</span><span class="o">.</span><span class="n">xy</span> <span class="o">=</span> <span class="n">_xy</span></div>
 
 <div class="viewcode-block" id="Rect.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.Rect.html#laygo2.object.physical.Rect.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get object information summary.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
             <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span>
@@ -1424,7 +1424,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">pointers</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>  <span class="c1"># Pointers are invalid for Path objects.</span></div>
 
 <div class="viewcode-block" id="Path.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.Path.html#laygo2.object.physical.Path.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get object information summary.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
             <span class="o">+</span> <span class="s2">&quot;    width: &quot;</span>
@@ -1627,7 +1627,7 @@
         <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="n">elements</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Pin.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.Pin.html#laygo2.object.physical.Pin.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get object information summary.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">IterablePhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
             <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span>
@@ -1767,7 +1767,7 @@
         <span class="n">PhysicalObject</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Text.summarize"><a class="viewcode-back" href="../../../laygo2.object.physical.Text.html#laygo2.object.physical.Text.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get object information summary.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">PhysicalObject</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
             <span class="o">+</span> <span class="s2">&quot;    layer: &quot;</span>

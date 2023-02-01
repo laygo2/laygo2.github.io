@@ -623,6 +623,18 @@ summarized in the following figure.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.center" title="laygo2.object.grid.Grid.center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">center</span></code></a>(obj)</p></td>
 <td><p>Return the abstract grid coordinates corresponding to the center point of obj.</p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.left" title="laygo2.object.grid.Grid.left"><code class="xref py py-obj docutils literal notranslate"><span class="pre">left</span></code></a>(obj)</p></td>
+<td><p>Return the abstract grid coordinates corresponding to the left point of obj.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.right" title="laygo2.object.grid.Grid.right"><code class="xref py py-obj docutils literal notranslate"><span class="pre">right</span></code></a>(obj)</p></td>
+<td><p>Return the abstract grid coordinates corresponding to the right point of obj.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.top" title="laygo2.object.grid.Grid.top"><code class="xref py py-obj docutils literal notranslate"><span class="pre">top</span></code></a>(obj)</p></td>
+<td><p>Return the abstract grid coordinates corresponding to the top point of obj.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.bottom" title="laygo2.object.grid.Grid.bottom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bottom</span></code></a>(obj)</p></td>
+<td><p>Return the abstract grid coordinates corresponding to the bottom point of obj.</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.Grid.copy" title="laygo2.object.grid.Grid.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
 <td><p>Make a copy of the current Grid object</p></td>
 </tr>
@@ -729,6 +741,13 @@ summarized in the following figure.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid.bottom">
+<span class="sig-name descname"><span class="pre">bottom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.bottom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.bottom" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the abstract grid coordinates corresponding to the bottom
+point of obj.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.bottom_left">
 <span class="sig-name descname"><span class="pre">bottom_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.bottom_left"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.bottom_left" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the
@@ -829,6 +848,13 @@ If False, flip the current grid object.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid.left">
+<span class="sig-name descname"><span class="pre">left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.left"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.left" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the abstract grid coordinates corresponding to the left
+point of obj.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.Grid.overlap">
 <span class="sig-name descname"><span class="pre">overlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bbox'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.overlap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.overlap" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the overlap
@@ -837,6 +863,13 @@ of args.</p>
 <p class="admonition-title">See also</p>
 <p><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid._PhyToAbsGridConverter.overlap</span></code></p>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid.right">
+<span class="sig-name descname"><span class="pre">right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.right"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.right" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the abstract grid coordinates corresponding to the right
+point of obj.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -867,6 +900,13 @@ of args.</p>
 </div>
 <p class="rubric">Notes</p>
 <p><strong>(Korean)</strong> 해당 Grid의 정보 출력.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.Grid.top">
+<span class="sig-name descname"><span class="pre">top</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#Grid.top"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.Grid.top" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the abstract grid coordinates corresponding to the top
+point of obj.</p>
 </dd></dl>
 
 <dl class="py method">

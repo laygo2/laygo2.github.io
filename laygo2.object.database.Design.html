@@ -493,7 +493,7 @@
 <dt class="sig sig-object py" id="laygo2.object.database.Design">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.database.</span></span><span class="sig-name descname"><span class="pre">Design</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase" title="laygo2.object.database.BaseDatabase"><code class="xref py py-class docutils literal notranslate"><span class="pre">laygo2.object.database.BaseDatabase</span></code></a></p>
-<p>Design class implements the design management function.</p>
+<p>Class for design management function implementation.</p>
 <p class="rubric">Example</p>
 <p>A physical (non-abstract) grid example:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
@@ -677,13 +677,13 @@ Design 클래스는 디자인 관리 기능을 구현한다.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.bbox" title="laygo2.object.database.Design.bbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bbox</span></code></a></p></td>
-<td><p>get the design bbox which is union of self.instances.bbox.</p></td>
+<td><p>Get design bounding box by taking union of instances' bounding boxes.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.libname" title="laygo2.object.database.Design.libname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">libname</span></code></a></p></td>
-<td><p>Library name of Design object.</p></td>
+<td><p>Design object's library name.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.cellname" title="laygo2.object.database.Design.cellname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cellname</span></code></a></p></td>
-<td><p>Cell name of Design object.</p></td>
+<td><p>Design object's cell name.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.rects" title="laygo2.object.database.Design.rects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rects</span></code></a></p></td>
 <td><p>Dictionary containing Rectangle object affiliated with the Design object.</p></td>
@@ -712,16 +712,16 @@ Design 클래스는 디자인 관리 기능을 구현한다.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.name" title="laygo2.object.database.Design.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
-<td><p>BaseDatabase object name.</p></td>
+<td><p>Name of BaseDatabase object.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.params" title="laygo2.object.database.Design.params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">params</span></code></a></p></td>
-<td><p>Dictionary containing parameters of BaseDatabase object.</p></td>
+<td><p>BaseDatabase object's parameter dictionary.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.elements" title="laygo2.object.database.Design.elements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">elements</span></code></a></p></td>
-<td><p>Dictionary containing its element objects.</p></td>
+<td><p>Element object dictionary.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.noname_index" title="laygo2.object.database.Design.noname_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">noname_index</span></code></a></p></td>
-<td><p>A unique number used as the name of an unnamed object belonging to the database.</p></td>
+<td><p>Unique identifier index for unnamed objects.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.keys" title="laygo2.object.database.Design.keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></a></p></td>
 <td><p>Keys of elements.</p></td>
@@ -750,22 +750,22 @@ Design 클래스는 디자인 관리 기능을 구현한다.</p>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iter__</span></code>()</p></td>
-<td><p>Iterator function.</p></td>
+<td><p>Element-mapped direct iterator function.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.__init__" title="laygo2.object.database.Design.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(name[, params, elements, libname])</p></td>
-<td><p>Constructor function of Design class.</p></td>
+<td><p>Design class constructor function.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.Design.append.html#laygo2.object.database.Design.append" title="laygo2.object.database.Design.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(item)</p></td>
-<td><p>(Simply) add a physical object to the design.</p></td>
+<td><p>Add physical object to Design without taking any further actions.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.summarize" title="laygo2.object.database.Design.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
-<td><p>Return the summary of the object information.</p></td>
+<td><p>Get object information summary.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.Design.place.html#laygo2.object.database.Design.place" title="laygo2.object.database.Design.place"><code class="xref py py-obj docutils literal notranslate"><span class="pre">place</span></code></a>(inst, grid[, mn, anchor_xy])</p></td>
-<td><p>Place the instance on the abstract coordinate <strong>mn</strong>, on the abstract grid.</p></td>
+<td><p>Place instance at abstract coordinate mn on abstract grid.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="laygo2.object.database.Design.route.html#laygo2.object.database.Design.route" title="laygo2.object.database.Design.route"><code class="xref py py-obj docutils literal notranslate"><span class="pre">route</span></code></a>(grid, mn[, direction, via_tag])</p></td>
-<td><p>Create wire object(s) for routing, on the abstract coordinate <strong>mn</strong>.</p></td>
+<td><p>Create wire object(s) for routing at abstract coordinate <strong>mn</strong>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.Design.via.html#laygo2.object.database.Design.via" title="laygo2.object.database.Design.via"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via</span></code></a>(grid, mn[, params])</p></td>
 <td><p>Create Via object(s) on abstract grid.</p></td>
@@ -791,28 +791,28 @@ Design 클래스는 디자인 관리 기능을 구현한다.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.items" title="laygo2.object.database.Design.items"><code class="xref py py-obj docutils literal notranslate"><span class="pre">items</span></code></a>()</p></td>
-<td><p>key/object pair of elements.</p></td>
+<td><p>Key-object pairs of elements.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code>(pos)</p></td>
-<td><p>Return the object corresponding to the key.</p></td>
+<td><p>Return the object corresponding to pos.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__setitem__</span></code>(key, item)</p></td>
 <td><p>Add key/object pair.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="laygo2.object.database.Design.append.html#laygo2.object.database.Design.append" title="laygo2.object.database.Design.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(item)</p></td>
-<td><p>(Simply) add a physical object to the design.</p></td>
+<td><p>Add physical object to Design without taking any further actions.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iter__</span></code>()</p></td>
-<td><p>Iterator function.</p></td>
+<td><p>Element-mapped direct iterator function.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code>()</p></td>
 <td><p>Return str(self).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.summarize" title="laygo2.object.database.Design.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
-<td><p>Return the summary of the object information.</p></td>
+<td><p>Get object information summary.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.__init__" title="laygo2.object.database.Design.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(name[, params, elements, libname])</p></td>
-<td><p>Constructor function of Design class.</p></td>
+<td><p>Design class constructor function.</p></td>
 </tr>
 </tbody>
 </table>
@@ -821,7 +821,7 @@ Design 클래스는 디자인 관리 기능을 구현한다.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.__init__" title="Permalink to this definition">#</a></dt>
-<dd><p>Constructor function of Design class.</p>
+<dd><p>Design class constructor function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -868,7 +868,7 @@ Design 클래스는 디자인 관리 기능을 구현한다.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.append">
 <span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.append"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.append" title="Permalink to this definition">#</a></dt>
-<dd><p>(Simply) add a physical object to the design.</p>
+<dd><p>Add physical object to Design without taking any further actions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>item</strong> (<a class="reference internal" href="laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject" title="laygo2.object.physical.PhysicalObject"><em>laygo2.object.physical.PhysicalObject</em></a>) – The physical object to be added.</p>
@@ -1052,7 +1052,7 @@ list: 매치되는 Physical object를 담고 있는 list
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.items">
 <span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.database.Design.items" title="Permalink to this definition">#</a></dt>
-<dd><p>key/object pair of elements.</p>
+<dd><p>Key-object pairs of elements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>None</strong> – </p>
@@ -1192,22 +1192,19 @@ pin 생성함수.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.place">
 <span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anchor_xy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.place"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.place" title="Permalink to this definition">#</a></dt>
-<dd><p>Place the instance on the abstract coordinate <strong>mn</strong>, on the abstract grid.</p>
+<dd><p>Place instance at abstract coordinate mn on abstract grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>inst</strong> (<a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><em>laygo2.object.physical.Instance</em></a><em> or </em><a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance"><em>laygo2.object.physical.VirtualInstance</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – The instance to be placed. When inst is a list, the elements
-in the list are placed in order.</p></li>
-<li><p><strong>grid</strong> (<a class="reference internal" href="laygo2.object.grid.PlacementGrid.html#laygo2.object.grid.PlacementGrid" title="laygo2.object.grid.PlacementGrid"><em>laygo2.object.grid.PlacementGrid</em></a>) – The placement grid where the instance is placed on.</p></li>
-<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – The abstract coordinate value [m, n] to place the instance.</p></li>
-<li><p><strong>anchor_xy</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – Two physical coordinates to be overlapped by the placement.
-The first coordinate is for the absolute physical grid, and the
-second coordinate is for the relative position of the instance
-to be placed.</p></li>
+<li><p><strong>inst</strong> (<a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><em>laygo2.object.physical.Instance</em></a><em> or </em><a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance"><em>laygo2.object.physical.VirtualInstance</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – Instance(s) to be placed (when list, placed in order).</p></li>
+<li><p><strong>grid</strong> (<a class="reference internal" href="laygo2.object.grid.PlacementGrid.html#laygo2.object.grid.PlacementGrid" title="laygo2.object.grid.PlacementGrid"><em>laygo2.object.grid.PlacementGrid</em></a>) – Placement grid for instance placement.</p></li>
+<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – Abstract coordinate value [m, n] for instance placement.</p></li>
+<li><p><strong>anchor_xy</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) – A list that contains two overlap coordinates for placement
+(1st for absolute physical grid, 2nd for relative instance position).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The placed instance or a list containing the placed instances.</p>
+<dd class="field-even"><p>Placed instance(s) (list if multiple).</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance">laygo2.object.physical.Instance</a> or <a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance">laygo2.object.physical.VirtualInstance</a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)">list</a>(<a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance">laygo2.object.physical.Instance</a>)</p>
@@ -1308,12 +1305,12 @@ to be placed.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.route">
 <span class="sig-name descname"><span class="pre">route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">via_tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.route" title="Permalink to this definition">#</a></dt>
-<dd><p>Create wire object(s) for routing, on the abstract coordinate <strong>mn</strong>.</p>
+<dd><p>Create wire object(s) for routing at abstract coordinate <strong>mn</strong>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>grid</strong> (<a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid" title="laygo2.object.grid.RoutingGrid"><em>laygo2.object.grid.RoutingGrid</em></a>) – The placement grid where the wire is placed on.</p></li>
-<li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a><em>)</em>) – The list containing two or more mn coordinates to be connected.</p></li>
+<li><p><strong>grid</strong> (<a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid" title="laygo2.object.grid.RoutingGrid"><em>laygo2.object.grid.RoutingGrid</em></a>) – Placement grid for wire placement.</p></li>
+<li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.24)"><em>numpy.ndarray</em></a><em>)</em>) – List containing two or more <strong>mn</strong> coordinates to be connected.</p></li>
 <li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em>, </em><em>optional.</em>) – None or “vertical” or “horizontal”. The direction of the routing
 object.</p></li>
 <li><p><strong>via_tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a><em>(</em><em>Boolean</em><em>)</em><em>, </em><em>optional.</em>) – The list containing switches deciding whether to place via at
@@ -1553,7 +1550,7 @@ The last object corresponds to the routing object on the track.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.summarize">
 <span class="sig-name descname"><span class="pre">summarize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/database.html#Design.summarize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.database.Design.summarize" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the summary of the object information.</p>
+<dd><p>Get object information summary.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1656,13 +1653,13 @@ The last object corresponds to the routing object on the track.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.bbox">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bbox</span></span><a class="headerlink" href="#laygo2.object.database.Design.bbox" title="Permalink to this definition">#</a></dt>
-<dd><p>get the design bbox which is union of self.instances.bbox.</p>
+<dd><p>Get design bounding box by taking union of instances’ bounding boxes.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.cellname">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cellname</span></span><a class="headerlink" href="#laygo2.object.database.Design.cellname" title="Permalink to this definition">#</a></dt>
-<dd><p>Cell name of Design object.</p>
+<dd><p>Design object’s cell name.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;dsn&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;testlib&quot;</span><span class="p">)</span>
@@ -1682,7 +1679,7 @@ The last object corresponds to the routing object on the track.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.elements">
 <span class="sig-name descname"><span class="pre">elements</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.database.Design.elements" title="Permalink to this definition">#</a></dt>
-<dd><p>Dictionary containing its element objects.</p>
+<dd><p>Element object dictionary.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.database</span> <span class="kn">import</span> <span class="n">BaseDatabase</span>
@@ -1771,7 +1768,7 @@ The last object corresponds to the routing object on the track.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.libname">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">libname</span></span><a class="headerlink" href="#laygo2.object.database.Design.libname" title="Permalink to this definition">#</a></dt>
-<dd><p>Library name of Design object.</p>
+<dd><p>Design object’s library name.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dsn</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">Design</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;dsn&quot;</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="s2">&quot;testlib&quot;</span><span class="p">)</span>
@@ -1791,7 +1788,7 @@ The last object corresponds to the routing object on the track.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.name">
 <span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.database.Design.name" title="Permalink to this definition">#</a></dt>
-<dd><p>BaseDatabase object name.</p>
+<dd><p>Name of BaseDatabase object.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">base</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">BaseDatabase</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">)</span>
@@ -1811,8 +1808,7 @@ The last object corresponds to the routing object on the track.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.noname_index">
 <span class="sig-name descname"><span class="pre">noname_index</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#laygo2.object.database.Design.noname_index" title="Permalink to this definition">#</a></dt>
-<dd><p>A unique number used as the name of an unnamed object belonging to
-the database.</p>
+<dd><p>Unique identifier index for unnamed objects.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">laygo2.object.database</span> <span class="kn">import</span> <span class="n">BaseDatabase</span>
@@ -1843,7 +1839,7 @@ the database.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.database.Design.params">
 <span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.database.Design.params" title="Permalink to this definition">#</a></dt>
-<dd><p>Dictionary containing parameters of BaseDatabase object.</p>
+<dd><p>BaseDatabase object’s parameter dictionary.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">laygo2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">base</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">BaseDatabase</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;mycell&quot;</span><span class="p">,</span>

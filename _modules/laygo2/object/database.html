@@ -200,7 +200,8 @@
 
 <div class="viewcode-block" id="BaseDatabase"><a class="viewcode-back" href="../../../laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase">[docs]</a><span class="k">class</span> <span class="nc">BaseDatabase</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    BaseDatabase is a base class implementing basic functions of various database objects such as library and design.</span>
+<span class="sd">    A base class that implements basic functions for </span>
+<span class="sd">    various database objects, such as libraries and designs.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -208,7 +209,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;str: BaseDatabase object name.</span>
+    <span class="sd">&quot;&quot;&quot;str: Name of BaseDatabase object.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -223,7 +224,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">params</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;dict or None: Dictionary containing parameters of BaseDatabase object.</span>
+    <span class="sd">&quot;&quot;&quot;dict or None: BaseDatabase object&#39;s parameter dictionary.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -239,7 +240,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">elements</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;dict: Dictionary containing its element objects.</span>
+    <span class="sd">&quot;&quot;&quot;dict: Element object dictionary.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -273,8 +274,7 @@
 
     <span class="n">noname_index</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    int: A unique number used as the name of an unnamed object belonging to </span>
-<span class="sd">    the database.    </span>
+<span class="sd">    int: Unique identifier index for unnamed objects.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -330,7 +330,7 @@
 
 <div class="viewcode-block" id="BaseDatabase.items"><a class="viewcode-back" href="../../../laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.items">[docs]</a>    <span class="k">def</span> <span class="nf">items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        key/object pair of elements.</span>
+<span class="sd">        Key-object pairs of elements.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -370,11 +370,12 @@
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return the object corresponding to the key.</span>
+<span class="sd">        Return the object corresponding to pos.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">        key : str</span>
+<span class="sd">        pos : str</span>
+<span class="sd">            Name of object.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -421,10 +422,7 @@
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        key : str</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        list</span>
+<span class="sd">            Object key (name).</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -453,17 +451,17 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
 <div class="viewcode-block" id="BaseDatabase.append"><a class="viewcode-back" href="../../../laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;(Simply) add a physical object to the BaseDatabase object.</span>
+        <span class="sd">&quot;&quot;&quot;Add physical object to BaseDatabase without taking any further actions.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        item : laygo2.object.physical.PhysicalObject</span>
-<span class="sd">            The physical object to be added.</span>
+<span class="sd">            Physical object to be added.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        list :</span>
-<span class="sd">            A list containing the name of item and the item itself ([item.name, item]).</span>
+<span class="sd">            List of item name and item ([item.name, item]).</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -522,8 +520,8 @@
             <span class="k">return</span> <span class="n">item_name</span><span class="p">,</span> <span class="n">item</span></div>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Iterator function. Directly mapped to its elements.</span>
-
+        <span class="sd">&quot;&quot;&quot;Element-mapped direct iterator function.</span>
+<span class="sd">        </span>
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        &gt;&gt;&gt; import laygo2</span>
@@ -556,7 +554,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">summarize</span><span class="p">()</span>
 
 <div class="viewcode-block" id="BaseDatabase.summarize"><a class="viewcode-back" href="../../../laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get object information summary.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot;name: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="s2">&quot;params: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span>
             <span class="s2">&quot;    elements: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&quot;</span>
@@ -609,7 +607,7 @@
 
 <div class="viewcode-block" id="Library"><a class="viewcode-back" href="../../../laygo2.object.database.Library.html#laygo2.object.database.Library">[docs]</a><span class="k">class</span> <span class="nc">Library</span><span class="p">(</span><span class="n">BaseDatabase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Library class implements the library management function.</span>
+<span class="sd">    Class for library management function implementation.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -660,6 +658,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Library.append"><a class="viewcode-back" href="../../../laygo2.object.database.Library.html#laygo2.object.database.Library.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add physical object to Library without taking any further actions.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
             <span class="n">item_name_list</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="n">item_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -709,19 +709,19 @@
         <span class="n">BaseDatabase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="n">elements</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Library.summarize"><a class="viewcode-back" href="../../../laygo2.object.database.Library.html#laygo2.object.database.Library.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get object information summary.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">BaseDatabase</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
 
 
 <span class="k">class</span> <span class="nc">TemplateLibrary</span><span class="p">(</span><span class="n">Library</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This class implements template libraries that contain templates as their child objects.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Class implementing template libraries with templates as child objects.&quot;&quot;&quot;</span>
 
     <span class="c1"># TODO: implement this.</span>
     <span class="k">pass</span>
 
 
 <span class="k">class</span> <span class="nc">GridLibrary</span><span class="p">(</span><span class="n">Library</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This class implements layout libraries that contain grid objectss as their child objects.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Class implementing grid libraries with grids as child objects.&quot;&quot;&quot;</span>
 
     <span class="c1"># TODO: implement this.</span>
     <span class="k">pass</span>
@@ -729,11 +729,10 @@
 
 <div class="viewcode-block" id="Design"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design">[docs]</a><span class="k">class</span> <span class="nc">Design</span><span class="p">(</span><span class="n">BaseDatabase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Design class implements the design management function.</span>
+<span class="sd">    Class for design management function implementation.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
-
 <span class="sd">    A physical (non-abstract) grid example:</span>
 
 <span class="sd">    &gt;&gt;&gt; import laygo2</span>
@@ -913,7 +912,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;get the design bbox which is union of self.instances.bbox.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get design bounding box by taking union of instances&#39; bounding boxes.&quot;&quot;&quot;</span>
         <span class="n">libname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">libname</span>
         <span class="n">cellname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cellname</span>
         <span class="c1"># Compute boundaries</span>
@@ -946,7 +945,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_libname</span> <span class="o">=</span> <span class="n">val</span></div>
 
     <span class="n">libname</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_libname</span><span class="p">,</span> <span class="n">set_libname</span><span class="p">)</span>
-    <span class="sd">&quot;&quot;&quot;str: Library name of Design object.</span>
+    <span class="sd">&quot;&quot;&quot;str: Design object&#39;s library name.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -967,7 +966,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">val</span></div>
 
     <span class="n">cellname</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">get_cellname</span><span class="p">,</span> <span class="n">set_cellname</span><span class="p">)</span>
-    <span class="sd">&quot;&quot;&quot;str: Cell name of Design object.</span>
+    <span class="sd">&quot;&quot;&quot;str: Design object&#39;s cell name.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -1075,7 +1074,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Iterator function. Directly mapped to its elements.</span>
+        <span class="sd">&quot;&quot;&quot;Element-mapped direct iterator function.</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -1103,7 +1102,7 @@
 
 <div class="viewcode-block" id="Design.__init__"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">libname</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Constructor function of Design class.</span>
+<span class="sd">        Design class constructor function.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -1154,7 +1153,7 @@
         <span class="n">BaseDatabase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="n">elements</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Design.append"><a class="viewcode-back" href="../../../laygo2.object.database.Design.append.html#laygo2.object.database.Design.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;(Simply) add a physical object to the design.</span>
+        <span class="sd">&quot;&quot;&quot;Add physical object to Design without taking any further actions.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -1234,7 +1233,7 @@
             <span class="k">return</span> <span class="n">item_name</span><span class="p">,</span> <span class="n">item</span></div>
 
 <div class="viewcode-block" id="Design.summarize"><a class="viewcode-back" href="../../../laygo2.object.database.Design.html#laygo2.object.database.Design.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get object information summary.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="n">BaseDatabase</span><span class="o">.</span><span class="n">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
             <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -1264,27 +1263,24 @@
     <span class="c1"># Object creation and manipulation functions.</span>
 <div class="viewcode-block" id="Design.place"><a class="viewcode-back" href="../../../laygo2.object.database.Design.place.html#laygo2.object.database.Design.place">[docs]</a>    <span class="k">def</span> <span class="nf">place</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">anchor_xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Place the instance on the abstract coordinate **mn**, on the abstract grid.</span>
+<span class="sd">        Place instance at abstract coordinate mn on abstract grid.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        inst : laygo2.object.physical.Instance or laygo2.object.physical.VirtualInstance or list</span>
-<span class="sd">            The instance to be placed. When inst is a list, the elements</span>
-<span class="sd">            in the list are placed in order.</span>
+<span class="sd">            Instance(s) to be placed (when list, placed in order).</span>
 <span class="sd">        grid : laygo2.object.grid.PlacementGrid</span>
-<span class="sd">            The placement grid where the instance is placed on.</span>
+<span class="sd">            Placement grid for instance placement.</span>
 <span class="sd">        mn : numpy.ndarray or list</span>
-<span class="sd">            The abstract coordinate value [m, n] to place the instance.</span>
+<span class="sd">            Abstract coordinate value [m, n] for instance placement.</span>
 <span class="sd">        anchor_xy : list</span>
-<span class="sd">            Two physical coordinates to be overlapped by the placement.</span>
-<span class="sd">            The first coordinate is for the absolute physical grid, and the</span>
-<span class="sd">            second coordinate is for the relative position of the instance</span>
-<span class="sd">            to be placed.</span>
+<span class="sd">            A list that contains two overlap coordinates for placement </span>
+<span class="sd">            (1st for absolute physical grid, 2nd for relative instance position).</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        laygo2.object.physical.Instance or laygo2.object.physical.VirtualInstance or list(laygo2.object.physical.Instance):</span>
-<span class="sd">            The placed instance or a list containing the placed instances.</span>
+<span class="sd">            Placed instance(s) (list if multiple).</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -1421,14 +1417,14 @@
 
 <div class="viewcode-block" id="Design.route"><a class="viewcode-back" href="../../../laygo2.object.database.Design.route.html#laygo2.object.database.Design.route">[docs]</a>    <span class="k">def</span> <span class="nf">route</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">mn</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">via_tag</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Create wire object(s) for routing, on the abstract coordinate **mn**.</span>
+<span class="sd">        Create wire object(s) for routing at abstract coordinate **mn**.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        grid : laygo2.object.grid.RoutingGrid</span>
-<span class="sd">            The placement grid where the wire is placed on.</span>
+<span class="sd">            Placement grid for wire placement.</span>
 <span class="sd">        mn : list(numpy.ndarray)</span>
-<span class="sd">            The list containing two or more mn coordinates to be connected.</span>
+<span class="sd">            List containing two or more **mn** coordinates to be connected.</span>
 <span class="sd">        direction : str, optional.</span>
 <span class="sd">            None or “vertical” or &quot;horizontal&quot;. The direction of the routing</span>
 <span class="sd">            object.</span>

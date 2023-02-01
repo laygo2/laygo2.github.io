@@ -712,6 +712,18 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.center" title="laygo2.object.grid.RoutingGrid.center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">center</span></code></a>(obj)</p></td>
 <td><p>Return the abstract grid coordinates corresponding to the center point of obj.</p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.left" title="laygo2.object.grid.RoutingGrid.left"><code class="xref py py-obj docutils literal notranslate"><span class="pre">left</span></code></a>(obj)</p></td>
+<td><p>Return the abstract grid coordinates corresponding to the left point of obj.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.right" title="laygo2.object.grid.RoutingGrid.right"><code class="xref py py-obj docutils literal notranslate"><span class="pre">right</span></code></a>(obj)</p></td>
+<td><p>Return the abstract grid coordinates corresponding to the right point of obj.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.top" title="laygo2.object.grid.RoutingGrid.top"><code class="xref py py-obj docutils literal notranslate"><span class="pre">top</span></code></a>(obj)</p></td>
+<td><p>Return the abstract grid coordinates corresponding to the top point of obj.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.bottom" title="laygo2.object.grid.RoutingGrid.bottom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bottom</span></code></a>(obj)</p></td>
+<td><p>Return the abstract grid coordinates corresponding to the bottom point of obj.</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.copy" title="laygo2.object.grid.RoutingGrid.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
 <td><p>Copy the current RoutingGrid object.</p></td>
 </tr>
@@ -914,6 +926,13 @@ laygo2.RoutingGrid
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid.bottom">
+<span class="sig-name descname"><span class="pre">bottom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.RoutingGrid.bottom" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the abstract grid coordinates corresponding to the bottom
+point of obj.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid.bottom_left">
 <span class="sig-name descname"><span class="pre">bottom_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.RoutingGrid.bottom_left" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the abstract grid coordinates corresponding to the
@@ -983,6 +1002,13 @@ point of args.</p>
 <dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid.hstack">
 <span class="sig-name descname"><span class="pre">hstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/routing.html#RoutingGrid.hstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.RoutingGrid.hstack" title="Permalink to this definition">#</a></dt>
 <dd><p>Stack routing grid(s) on top of the routing grid in horizontal direction.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid.left">
+<span class="sig-name descname"><span class="pre">left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.RoutingGrid.left" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the abstract grid coordinates corresponding to the left
+point of obj.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1077,6 +1103,13 @@ on the specified routing grid.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid.right">
+<span class="sig-name descname"><span class="pre">right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.RoutingGrid.right" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the abstract grid coordinates corresponding to the right
+point of obj.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1305,6 +1338,13 @@ The last object corresponds to the routing object on the track.</p>
 <dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid.summarize">
 <span class="sig-name descname"><span class="pre">summarize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/routing.html#RoutingGrid.summarize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.RoutingGrid.summarize" title="Permalink to this definition">#</a></dt>
 <dd><p>Summarize object information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="laygo2.object.grid.RoutingGrid.top">
+<span class="sig-name descname"><span class="pre">top</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.grid.RoutingGrid.top" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the abstract grid coordinates corresponding to the top
+point of obj.</p>
 </dd></dl>
 
 <dl class="py method">

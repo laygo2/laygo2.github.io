@@ -209,7 +209,7 @@
 
 <div class="viewcode-block" id="Template.__init__"><a class="viewcode-back" href="../../../../laygo2.object.template.Template.html#laygo2.object.template.Template.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Constructor function of Template class.</span>
+<span class="sd">        The constructor function.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -219,7 +219,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span></div>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return a string corresponding to this object&#39;s information.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return a string representation of this template&#39;s information. &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">summarize</span><span class="p">()</span>
 
 <div class="viewcode-block" id="Template.summarize"><a class="viewcode-back" href="../../../../laygo2.object.template.Template.html#laygo2.object.template.Template.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -236,30 +236,30 @@
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Template.height"><a class="viewcode-back" href="../../../../laygo2.object.template.Template.html#laygo2.object.template.Template.height">[docs]</a>    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;int: Return the height of a template.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;int: Return the height of the template.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span></div>
 
 <div class="viewcode-block" id="Template.width"><a class="viewcode-back" href="../../../../laygo2.object.template.Template.html#laygo2.object.template.Template.width">[docs]</a>    <span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;int: Return the width of a template.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;int: Return the width of the template.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span></div>
 
 <div class="viewcode-block" id="Template.size"><a class="viewcode-back" href="../../../../laygo2.object.template.Template.html#laygo2.object.template.Template.size">[docs]</a>    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;int: Return the size of a template.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;int: Return the size of the template.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)])</span></div>
 
 <div class="viewcode-block" id="Template.bbox"><a class="viewcode-back" href="../../../../laygo2.object.template.Template.html#laygo2.object.template.Template.bbox">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;numpy.ndarray: (Abstract method) Return the bounding box of a template.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;numpy.ndarray: (Abstract method) the physical bounding box of the template.&quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
 <div class="viewcode-block" id="Template.pins"><a class="viewcode-back" href="../../../../laygo2.object.template.Template.html#laygo2.object.template.Template.pins">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">pins</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;dict: (Abstract method) Return dict having the collection of pins of a template.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;dict: (Abstract method) Dictionary storing the pins of the template.&quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
 <div class="viewcode-block" id="Template.generate"><a class="viewcode-back" href="../../../../laygo2.object.template.Template.html#laygo2.object.template.Template.generate">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="s2">&quot;R0&quot;</span><span class="p">,</span> <span class="n">netmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;instance: (Abstract method) Return the instance generated from a template.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;instance: (Abstract method) Generate an instance from the template.&quot;&quot;&quot;</span>
         <span class="k">pass</span></div></div>
         
 
@@ -274,7 +274,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">libname</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;str: Library name of NativeInstanceTemplate object.</span>
+    <span class="sd">&quot;&quot;&quot;str: Library name.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -299,7 +299,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">cellname</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;str: Cellname of NativeInstanceTemplate object.</span>
+    <span class="sd">&quot;&quot;&quot;str: Cell name.</span>
 
 <span class="sd">    Example</span>
 <span class="sd">    -------</span>
@@ -329,18 +329,18 @@
 
 <div class="viewcode-block" id="NativeInstanceTemplate.__init__"><a class="viewcode-back" href="../../../../laygo2.object.template.NativeInstanceTemplate.html#laygo2.object.template.NativeInstanceTemplate.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">libname</span><span class="p">,</span> <span class="n">cellname</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]),</span> <span class="n">pins</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Constructor function of NativeInstanceTemplate class.</span>
+<span class="sd">        Constructor function.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        libname : str</span>
-<span class="sd">            library name.</span>
+<span class="sd">            Library name.</span>
 <span class="sd">        cellname : str</span>
-<span class="sd">            cell name.</span>
+<span class="sd">            Cell name.</span>
 <span class="sd">        bbox : numpy.ndarray</span>
-<span class="sd">            bbox.</span>
+<span class="sd">            Bounding box of the object.</span>
 <span class="sd">        pins : dict</span>
-<span class="sd">            dictionary having the pin object.</span>
+<span class="sd">            Dictionary storing the template&#39;s pin objects.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -378,7 +378,7 @@
         <span class="n">Template</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">cellname</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="NativeInstanceTemplate.summarize"><a class="viewcode-back" href="../../../../laygo2.object.template.NativeInstanceTemplate.html#laygo2.object.template.NativeInstanceTemplate.summarize">[docs]</a>    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the summary of the template information.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return the summary of the object information.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
             <span class="s2">&quot;name: &quot;</span>
@@ -399,7 +399,7 @@
     <span class="c1"># Core template functions</span>
 <div class="viewcode-block" id="NativeInstanceTemplate.bbox"><a class="viewcode-back" href="../../../../laygo2.object.template.NativeInstanceTemplate.html#laygo2.object.template.NativeInstanceTemplate.bbox">[docs]</a>    <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        bbox of NativeInstanceTemplate object.</span>
+<span class="sd">        Bounding box of the object.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -435,7 +435,7 @@
 
 <div class="viewcode-block" id="NativeInstanceTemplate.pins"><a class="viewcode-back" href="../../../../laygo2.object.template.NativeInstanceTemplate.html#laygo2.object.template.NativeInstanceTemplate.pins">[docs]</a>    <span class="k">def</span> <span class="nf">pins</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return pin dictionary of NativeInstanceTemplate object.</span>
+<span class="sd">        Dictionary storing pins of the object.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -443,7 +443,7 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        dict : A dictionary that contains pin information.</span>
+<span class="sd">        dict : Dictionary storing pin objects.</span>
 
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
@@ -486,17 +486,17 @@
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        name : str</span>
-<span class="sd">            name of the instance to be generated.</span>
+<span class="sd">            Name of the instance to be generated.</span>
 <span class="sd">        shape : numpy.ndarray, optional.</span>
-<span class="sd">            shape of the object to be generated.</span>
+<span class="sd">            Shape of the object to be generated.</span>
 <span class="sd">        pitch : numpy.ndarray, optional.</span>
-<span class="sd">            pitch of the object to be generated.</span>
+<span class="sd">            Element pitch of the array object to be generated.</span>
 <span class="sd">        transform : str</span>
-<span class="sd">            transformation attribute of the object to be generated.</span>
+<span class="sd">            Transformation attribute of the object to be generated.</span>
 <span class="sd">        netmap : dict, optional.</span>
-<span class="sd">            dictionary containing netmap conversion information of pins.</span>
+<span class="sd">            Dictionary storing net-pin conversion mappings.</span>
 <span class="sd">        params : dict, optional.</span>
-<span class="sd">            dictionary having the object attributes.</span>
+<span class="sd">            Dictionary storing the parameters associated with the object.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -571,7 +571,7 @@
     <span class="c1"># I/O functions</span>
 <div class="viewcode-block" id="NativeInstanceTemplate.export_to_dict"><a class="viewcode-back" href="../../../../laygo2.object.template.NativeInstanceTemplate.html#laygo2.object.template.NativeInstanceTemplate.export_to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">export_to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Return Dictionary containing the information of NativeInstanceTemplate.</span>
+<span class="sd">        Return a dictionary containing the template information.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -630,10 +630,10 @@
 
 <div class="viewcode-block" id="ParameterizedInstanceTemplate"><a class="viewcode-back" href="../../../../laygo2.object.template.ParameterizedInstanceTemplate.html#laygo2.object.template.ParameterizedInstanceTemplate">[docs]</a><span class="k">class</span> <span class="nc">ParameterizedInstanceTemplate</span><span class="p">(</span><span class="n">Template</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    ParameterizedInstanceTemplate class implements the template that generates </span>
-<span class="sd">    an instance with variable size (bbox) and pin parameters, based on its </span>
-<span class="sd">    input parameters (such as instances mapped to Cadence Virtuoso&#39;s pcells </span>
-<span class="sd">    or Pycells). </span>
+<span class="sd">    The ParameterizedInstanceTemplate class implements a template for </span>
+<span class="sd">    generating instances with varying size (bounding box) and pin </span>
+<span class="sd">    configurations based on input parameters, such as instances mapped </span>
+<span class="sd">    to Cadence Virtuoso&#39;s pcells or Pycells.</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -642,10 +642,10 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">libname</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;str: The libname of the instance being generated.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;str: The libname of the instance to be generated.&quot;&quot;&quot;</span>
 
     <span class="n">cellname</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="sd">&quot;&quot;&quot;str: The cellname of the instance being generated.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;str: The cellname of the instance to be generated.&quot;&quot;&quot;</span>
 
     <span class="n">_bbox</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -746,7 +746,7 @@
     <span class="c1"># Core template functions</span>
 <div class="viewcode-block" id="ParameterizedInstanceTemplate.bbox"><a class="viewcode-back" href="../../../../laygo2.object.template.ParameterizedInstanceTemplate.html#laygo2.object.template.ParameterizedInstanceTemplate.bbox">[docs]</a>    <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        bbox of ParameterizedInstanceTemplate object.</span>
+<span class="sd">        Bounding box of the template object.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>

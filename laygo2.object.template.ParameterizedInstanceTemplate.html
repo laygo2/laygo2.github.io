@@ -482,10 +482,10 @@
 <dt class="sig sig-object py" id="laygo2.object.template.ParameterizedInstanceTemplate">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.template.</span></span><span class="sig-name descname"><span class="pre">ParameterizedInstanceTemplate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">libname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pins_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/template/core.html#ParameterizedInstanceTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.template.ParameterizedInstanceTemplate" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="laygo2.object.template.Template.html#laygo2.object.template.Template" title="laygo2.object.template.core.Template"><code class="xref py py-class docutils literal notranslate"><span class="pre">laygo2.object.template.core.Template</span></code></a></p>
-<p>ParameterizedInstanceTemplate class implements the template that generates
-an instance with variable size (bbox) and pin parameters, based on its
-input parameters (such as instances mapped to Cadence Virtuoso’s pcells
-or Pycells).</p>
+<p>The ParameterizedInstanceTemplate class implements a template for
+generating instances with varying size (bounding box) and pin
+configurations based on input parameters, such as instances mapped
+to Cadence Virtuoso’s pcells or Pycells.</p>
 <p class="rubric">Notes</p>
 <p><strong>(Korean)</strong> ParameterizedInstanceTemplate 클래스는 입력 파라미터에 따라
 크기와 pin 정보가 가변하는 인스턴스를 생성하는 템플릿을 구현한다.</p>
@@ -498,10 +498,10 @@ or Pycells).</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.libname" title="laygo2.object.template.ParameterizedInstanceTemplate.libname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">libname</span></code></a></p></td>
-<td><p>The libname of the instance being generated.</p></td>
+<td><p>The libname of the instance to be generated.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.cellname" title="laygo2.object.template.ParameterizedInstanceTemplate.cellname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cellname</span></code></a></p></td>
-<td><p>The cellname of the instance being generated.</p></td>
+<td><p>The cellname of the instance to be generated.</p></td>
 </tr>
 </tbody>
 </table>
@@ -529,7 +529,7 @@ or Pycells).</p>
 <td><p>Constructor of ParameterizedInstanceTemplate class.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.bbox" title="laygo2.object.template.ParameterizedInstanceTemplate.bbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bbox</span></code></a>([params])</p></td>
-<td><p>bbox of ParameterizedInstanceTemplate object.</p></td>
+<td><p>Bounding box of the template object.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.pins" title="laygo2.object.template.ParameterizedInstanceTemplate.pins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pins</span></code></a>([params])</p></td>
 <td><p>Return pin dictionary of ParameterizedInstanceTemplate object.</p></td>
@@ -549,22 +549,22 @@ or Pycells).</p>
 <td><p>Constructor of ParameterizedInstanceTemplate class.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code>()</p></td>
-<td><p>Return a string corresponding to this object's information.</p></td>
+<td><p>Return a string representation of this template's information.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.summarize" title="laygo2.object.template.ParameterizedInstanceTemplate.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
 <td><p>Return the summary of the template information.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.height" title="laygo2.object.template.ParameterizedInstanceTemplate.height"><code class="xref py py-obj docutils literal notranslate"><span class="pre">height</span></code></a>([params])</p></td>
-<td><p>int: Return the height of a template.</p></td>
+<td><p>int: Return the height of the template.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.width" title="laygo2.object.template.ParameterizedInstanceTemplate.width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">width</span></code></a>([params])</p></td>
-<td><p>int: Return the width of a template.</p></td>
+<td><p>int: Return the width of the template.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.size" title="laygo2.object.template.ParameterizedInstanceTemplate.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a>([params])</p></td>
-<td><p>int: Return the size of a template.</p></td>
+<td><p>int: Return the size of the template.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.bbox" title="laygo2.object.template.ParameterizedInstanceTemplate.bbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bbox</span></code></a>([params])</p></td>
-<td><p>bbox of ParameterizedInstanceTemplate object.</p></td>
+<td><p>Bounding box of the template object.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.template.ParameterizedInstanceTemplate.pins" title="laygo2.object.template.ParameterizedInstanceTemplate.pins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pins</span></code></a>([params])</p></td>
 <td><p>Return pin dictionary of ParameterizedInstanceTemplate object.</p></td>
@@ -661,7 +661,7 @@ objects for its input parameters.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.template.ParameterizedInstanceTemplate.bbox">
 <span class="sig-name descname"><span class="pre">bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/template/core.html#ParameterizedInstanceTemplate.bbox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.template.ParameterizedInstanceTemplate.bbox" title="Permalink to this definition">#</a></dt>
-<dd><p>bbox of ParameterizedInstanceTemplate object.</p>
+<dd><p>Bounding box of the template object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a>) – A dictionary that contains input parameters corresponding to the
@@ -818,7 +818,7 @@ input parameters.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.template.ParameterizedInstanceTemplate.height">
 <span class="sig-name descname"><span class="pre">height</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.template.ParameterizedInstanceTemplate.height" title="Permalink to this definition">#</a></dt>
-<dd><p>int: Return the height of a template.</p>
+<dd><p>int: Return the height of the template.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -887,7 +887,7 @@ pin objects to be produced.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.template.ParameterizedInstanceTemplate.size">
 <span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.template.ParameterizedInstanceTemplate.size" title="Permalink to this definition">#</a></dt>
-<dd><p>int: Return the size of a template.</p>
+<dd><p>int: Return the size of the template.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -899,7 +899,7 @@ pin objects to be produced.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="laygo2.object.template.ParameterizedInstanceTemplate.width">
 <span class="sig-name descname"><span class="pre">width</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#laygo2.object.template.ParameterizedInstanceTemplate.width" title="Permalink to this definition">#</a></dt>
-<dd><p>int: Return the width of a template.</p>
+<dd><p>int: Return the width of the template.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -920,7 +920,7 @@ pin objects to be produced.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.template.ParameterizedInstanceTemplate.cellname">
 <span class="sig-name descname"><span class="pre">cellname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.template.ParameterizedInstanceTemplate.cellname" title="Permalink to this definition">#</a></dt>
-<dd><p>The cellname of the instance being generated.</p>
+<dd><p>The cellname of the instance to be generated.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
@@ -931,7 +931,7 @@ pin objects to be produced.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="laygo2.object.template.ParameterizedInstanceTemplate.libname">
 <span class="sig-name descname"><span class="pre">libname</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#laygo2.object.template.ParameterizedInstanceTemplate.libname" title="Permalink to this definition">#</a></dt>
-<dd><p>The libname of the instance being generated.</p>
+<dd><p>The libname of the instance to be generated.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>

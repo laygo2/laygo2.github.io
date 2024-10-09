@@ -694,9 +694,6 @@ document.write(`
 <span class="go">    ...</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-Design 클래스는 디자인 관리 기능을 구현한다.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
@@ -916,20 +913,6 @@ Design 클래스는 디자인 관리 기능을 구현한다.</p>
 <span class="go">    virtual instances:{}</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> Design 클래스의 생성자 함수.</p>
-<dl class="simple">
-<dt>파라미터</dt><dd><ul class="simple">
-<li><p>name(str): Design 객체의 이름</p></li>
-<li><p>params(dict): Design 객체의 parameters [optional]</p></li>
-<li><p>elements(dict): Design 객체의 elements [optional]</p></li>
-</ul>
-</dd>
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>laygo2.object.BaseDatabase</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1049,14 +1032,6 @@ Design 클래스는 디자인 관리 기능을 구현한다.</p>
 </dd>
 </dl>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> Design 객체에 해당하는 NativeInstanceTemplate 객체 생성.</p>
-<dl class="simple">
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>laygo2.NativeInstanceTemplate</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1110,15 +1085,6 @@ Design 클래스는 디자인 관리 기능을 구현한다.</p>
  &lt;laygo2.object.physical.Rect object&gt;]
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-주어진 layer와 일치되는 Physical object 갖는 list 반환.
-파라미터
-layer purpose pair(list): 레이어 정보
-반환값
-list: 매치되는 Physical object를 담고 있는 list
-참조
-없음</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1170,8 +1136,6 @@ list: 매치되는 Physical object를 담고 있는 list
 <span class="go">            (&#39;NoName_1&#39;, &lt;laygo2.object.physical.Text object at 0x0000024C6C2EF8B0&gt;)])</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> elements의 key/object 짝 출력.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1197,8 +1161,6 @@ list: 매치되는 Physical object를 담고 있는 list
 <span class="go">dict_keys([&#39;NoName_0&#39;, &#39;P&#39;, &#39;I0&#39;, &#39;NoName_1&#39;])</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> BaseDatabase 객체의 구성 요소를 담고 있는 Dictionary.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1284,23 +1246,6 @@ on the specified routing grid.</p>
 <span class="go">    virtual instances:{}</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-pin 생성함수.</p>
-<dl class="simple">
-<dt>파라미터</dt><dd><ul class="simple">
-<li><p>name(str): Pin 이름.</p></li>
-<li><p>mn(numpy.ndarray): Pin을 생성할 abstract 좌표.</p></li>
-<li><p>direction(str): 방향 [optional].</p></li>
-<li><p>netname(str): Pin의 net이름 [optional].</p></li>
-<li><p>params(dict): Pin 속성 [optional].</p></li>
-</ul>
-</dd>
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>laygo2.physical.Pin: Pin object.</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1401,19 +1346,6 @@ pin 생성함수.</p>
 </dd>
 </dl>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 인스턴스를 grid위 추상 좌표 mn에 배치하는 함수.</p>
-<dl class="simple">
-<dt>파라미터</dt><dd><ul class="simple">
-<li><p>inst(laygo2.physical.instance or list(laygo2.object.physical.Instance)): 배치할 인스턴스 또는 배치할 인스턴스 들을 갖는 리스트.</p></li>
-<li><p>mn(numpy.ndarray or list): 인스턴스를 배치할 추상좌표.</p></li>
-</ul>
-</dd>
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>laygo2.physical.instance or list(laygo2.object.physical.Instance) : 좌표가 수정된 인스턴스 또는 좌표가 수정된 인스턴스 들을 갖는 리스트.</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1517,20 +1449,6 @@ for details.</p>
 </dd>
 </dl>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 추상 좌표 위에 라우팅을 수행 하는 함수.</p>
-<dl class="simple">
-<dt>파라미터</dt><dd><ul class="simple">
-<li><p>mn(list(numpy.ndarray)): 배선을 수행할 2개 이상의 mn 좌표를 담고 있는 list.</p></li>
-<li><p>direction(str): None or “vertical”; path의 방향을 결정 (수평 or 수직) [optional].</p></li>
-<li><p>via_tag(list(Boolean)): Path에 via를 형성 할지를 결정하는 switch들을 담고 있는 list [optional].</p></li>
-</ul>
-</dd>
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>list: 생성된 routing object들을 담고 있는 list.</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1634,23 +1552,6 @@ The last object corresponds to the routing object on the track.</p>
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid.route_via_track" title="laygo2.object.grid.RoutingGrid.route_via_track"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.RoutingGrid.route_via_track</span></code></a></p>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> wire 라우팅 함수, track을 기준점으로 routing을 진행한다.</p>
-<dl>
-<dt>파라미터</dt><dd><ul class="simple">
-<li><p>track(numpy.ndarray): track의 좌표값과 방향을 담고 있는 list.</p></li>
-</ul>
-<p>수직 트랙일 경우 [v, None], 수평 트랙일 경우 [None, v]의 형태를
-가지고 있다 (v는 track의 좌표값).
-- mn(list(numpy.ndarray)): track을 통해 연결될 지점들의 좌표를
-담고 있는 list.</p>
-</dd>
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>list: 생성된 routing object들을 담고 있는 list.</p></li>
-</ul>
-<p>마지막 object가 track위의 routing object에 해당.</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1771,20 +1672,6 @@ The last object corresponds to the routing object on the track.</p>
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid.via" title="laygo2.object.grid.RoutingGrid.via"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.RoutingGrid.via</span></code></a></p>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> via 생성함수.
-파라미터</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>mn(list(numpy.ndarray)): via를 생성할 mn좌표. 복수 개 입력 가능.</p></li>
-</ul>
-</div></blockquote>
-<dl class="simple">
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>list(physical.PhysicalObject)): 생성된 via object들을 담고 있는 list.</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
@@ -1804,8 +1691,6 @@ The last object corresponds to the routing object on the track.</p>
 <span class="go">“dsn”</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> Design 객체의 셀 이름.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
@@ -1842,8 +1727,6 @@ The last object corresponds to the routing object on the track.</p>
 <span class="go">&#39;NoName_1&#39;: &lt;laygo2.object.physical.Text object at 0x0000024C6C2EF8B0&gt;}</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> BaseDatabase 객체의 구성 요소를 담고 있는 Dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
@@ -1877,8 +1760,6 @@ The last object corresponds to the routing object on the track.</p>
 <span class="go">{&#39;I0&#39;: &lt;laygo2.object.physical.Instance object&gt;}</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> Design 객체에 소속된 Instance 객체들을 갖고 있는 dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
@@ -1897,8 +1778,6 @@ The last object corresponds to the routing object on the track.</p>
 <span class="go">“testlib”</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> Design 객체의 라이브러리 이름.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
@@ -1917,8 +1796,6 @@ The last object corresponds to the routing object on the track.</p>
 <span class="go">&quot;mycell&quot;</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> BaseDatabase 이름.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
@@ -1947,9 +1824,6 @@ The last object corresponds to the routing object on the track.</p>
 <span class="go">1</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> BaseDatabase의 소속 객체들 중 이름이 정해지지 않은 객체의
-이름을 정할 때 부여되는 고유 번호.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
@@ -1980,8 +1854,6 @@ The last object corresponds to the routing object on the track.</p>
 <span class="go">{&#39;ivdd&#39;: 0.001}</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> BaseDatabase의 속성.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a> or None</p>
@@ -2010,8 +1882,6 @@ with the Design object.</p>
 <span class="go">{&#39;NoName_0&#39;: &lt;laygo2.object.physical.Pin object&gt;}</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> Design 객체에 소속된 Pin 객체들을 갖고 있는 dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
@@ -2046,8 +1916,6 @@ Design object.</p>
 <span class="go">{&#39;R0&#39;: &lt;laygo2.object.physical.Rect object&gt;}</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> Design 객체에 소속된 Rect 객체들을 갖고 있는 dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
@@ -2070,8 +1938,6 @@ Design object.</p>
 <span class="go">{&#39;NoName_1&#39;: &lt;laygo2.object.physical.Text object&gt;}</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> Design 객체에 소속된 Text 객체들을 갖고 있는 dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
@@ -2099,8 +1965,6 @@ Design object.</p>
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="#laygo2.object.database.Design.instances" title="laygo2.object.database.Design.instances"><code class="xref py py-obj docutils literal notranslate"><span class="pre">instances</span></code></a></p>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> Design 객체에 소속된 VirtualInstance 객체들을 갖고 있는 dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>

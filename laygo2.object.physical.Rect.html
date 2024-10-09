@@ -502,8 +502,6 @@ document.write(`
 <span class="go">params: None, , layer: [&#39;M1&#39;, &#39;drawing&#39;]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 사각형 객체 클래스.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
@@ -665,21 +663,6 @@ represented as a list with two elements: [name, purpose].</p></li>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_rect_init.png"><img alt="_images/object_physical_rect_init.png" src="_images/object_physical_rect_init.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: Rect 클래스의 생성자 함수.</p>
-<dl class="simple">
-<dt>파라미터</dt><dd><ul class="simple">
-<li><p>xy(numpy.ndarray): 객체의 물리 좌표 (bbox).</p></li>
-<li><p>layer(list): 객체의 layer 정보.</p></li>
-<li><p>hextension(int): 객체의 수평 방향 확장값.</p></li>
-<li><p>vextension(int): 객체의 수직 방향 확장값.</p></li>
-<li><p>name(str): 객체의 이름.</p></li>
-<li><p>netname(str): 객체의 노드 명.</p></li>
-<li><p>params(dict): 객체의 주요 속성을 갖는 dict [optional].</p></li>
-<li><p>color(str): 객체의 color [optional].</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -746,8 +729,6 @@ stored within.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_bbox.png"><img alt="_images/object_physical_PhysicalObject_bbox.png" src="_images/object_physical_PhysicalObject_bbox.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: numpy.ndarray: 객체의 bbox (bounding box).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
@@ -848,8 +829,6 @@ the object.</p>
 <span class="go">1</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 color (multi-patterning ID).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a> or None or “not_MPT”</p>
@@ -871,8 +850,6 @@ the object.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_rect_height.png"><img alt="_images/object_physical_rect_height.png" src="_images/object_physical_rect_height.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: int: 객체의 높이.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
@@ -906,8 +883,6 @@ of the object.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_rect_hextension.png"><img alt="_images/object_physical_rect_hextension.png" src="_images/object_physical_rect_hextension.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 기존 좌표로부터 수평 방향으로의 확장값.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
@@ -928,8 +903,6 @@ represented as a list with two elements: [name, purpose].</p>
 <span class="go">[&#39;M1&#39;, &#39;drawing&#39;]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 layer 정보 [name, purpose].</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
@@ -971,8 +944,6 @@ represented as a list with two elements: [name, purpose].</p>
 <span class="go">&lt;laygo2.object.physical.PhysicalObject object at 0x00000204AAF3C7C0&gt;</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 master (배열 element 또는 pin 객체들의 master 객체에 연결).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
@@ -1013,8 +984,6 @@ represented as a list with two elements: [name, purpose].</p>
 <span class="go">“net0”</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 노드 이름.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
@@ -1034,8 +1003,6 @@ represented as a list with two elements: [name, purpose].</p>
 <span class="go">{‘maxI’: 0.005 }</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 속성.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
@@ -1063,8 +1030,6 @@ coordinates of the object, such as ‘left’, ‘right’, ‘top’, ‘bottom
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_pointers.png"><img alt="_images/object_physical_PhysicalObject_pointers.png" src="_images/object_physical_PhysicalObject_pointers.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 주요 좌표들을 담고 있는 dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
@@ -1106,8 +1071,6 @@ coordinates of the object, such as ‘left’, ‘right’, ‘top’, ‘bottom
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_rect_size.png"><img alt="_images/object_physical_rect_size.png" src="_images/object_physical_rect_size.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: numpy.ndarray: 객체의 크기 ([폭, 높이]).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
@@ -1189,8 +1152,6 @@ coordinates of the object, such as ‘left’, ‘right’, ‘top’, ‘bottom
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_rect_vextension.png"><img alt="_images/object_physical_rect_vextension.png" src="_images/object_physical_rect_vextension.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 기존 좌표로부터 수직 방향으로의 확장값.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
@@ -1212,8 +1173,6 @@ coordinates of the object, such as ‘left’, ‘right’, ‘top’, ‘bottom
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_rect_width.png"><img alt="_images/object_physical_rect_width.png" src="_images/object_physical_rect_width.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: int: 객체의 폭.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>

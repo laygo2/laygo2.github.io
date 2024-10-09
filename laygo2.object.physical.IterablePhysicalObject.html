@@ -491,8 +491,6 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.physical.</span></span><span class="sig-name descname"><span class="pre">IterablePhysicalObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/physical.html#IterablePhysicalObject"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.physical.IterablePhysicalObject" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="laygo2.object.physical.PhysicalObject.html#laygo2.object.physical.PhysicalObject" title="laygo2.object.physical.PhysicalObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">PhysicalObject</span></code></a></p>
 <p>The base class of entities capable of iterable operations among elements.</p>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 구성 요소의 iterable 연산이 가능한 객체들의 기본 클래스.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
@@ -635,17 +633,6 @@ in the form of [bottom_left, top_right].</p></li>
 <span class="go">params: None,</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>:  IterablePhysicalObject 클래스의 생성자.</p>
-<dl class="simple">
-<dt>파라미터</dt><dd><ul class="simple">
-<li><p>xy(numpy.ndarray): 객체의 물리 좌표 (bbox).</p></li>
-<li><p>name(str): 객체의 이름.</p></li>
-<li><p>params(dict): 객체의 주요 속성이 담긴 dict.</p></li>
-<li><p>elements(list): 객체의 구성 요소 객체들(elements)이 담긴 list.</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -715,8 +702,6 @@ stored within.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_bbox.png"><img alt="_images/object_physical_PhysicalObject_bbox.png" src="_images/object_physical_PhysicalObject_bbox.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: numpy.ndarray: 객체의 bbox (bounding box).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
@@ -823,8 +808,6 @@ stored within.</p>
 <span class="go">      dtype=object)</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 하위 구성원을 담고 있는 list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
@@ -866,8 +849,6 @@ stored within.</p>
 <span class="go">&lt;laygo2.object.physical.PhysicalObject object at 0x00000204AAF3C7C0&gt;</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 master (배열 element 또는 pin 객체들의 master 객체에 연결).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
@@ -908,8 +889,6 @@ stored within.</p>
 <span class="go">{‘maxI’: 0.005 }</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 속성.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
@@ -937,8 +916,6 @@ coordinates of the object, such as ‘left’, ‘right’, ‘top’, ‘bottom
 </div>
 <a class="reference internal image-reference" href="_images/object_physical_PhysicalObject_pointers.png"><img alt="_images/object_physical_PhysicalObject_pointers.png" src="_images/object_physical_PhysicalObject_pointers.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: 객체의 주요 좌표들을 담고 있는 dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)">dict</a></p>
@@ -982,8 +959,6 @@ coordinates of the object, such as ‘left’, ‘right’, ‘top’, ‘bottom
 <span class="go">array([3])</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>: numpy.ndarray: 객체의 element의 배열 크기.</p>
 </dd></dl>
 
 <dl class="py attribute">

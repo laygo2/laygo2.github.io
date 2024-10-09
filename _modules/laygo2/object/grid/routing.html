@@ -1390,6 +1390,16 @@ document.write(`
 <span class="sd">        반환값</span>
 <span class="sd">        list: 생성된 routing object들을 담고 있는 list.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># 1. Check whether the &quot;mn&quot; is physical object list or coordinate list.</span>
+        <span class="n">__mn</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">_mn</span> <span class="ow">in</span> <span class="n">mn</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">_mn</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+                <span class="nb">issubclass</span><span class="p">(</span><span class="n">_mn</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)</span>
+            <span class="p">):</span>
+                <span class="n">__mn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="n">_mn</span><span class="p">)))</span> <span class="c1"># Assume the point to be routed as the center of the object.</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">__mn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">_mn</span><span class="p">))</span>
+
         <span class="n">mn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mn</span><span class="p">)</span>
         <span class="n">_mn</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">mn</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
@@ -1773,6 +1783,12 @@ document.write(`
 <span class="sd">        반환값</span>
 <span class="sd">            - laygo2.physical.Pin: Pin object</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mn</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+            <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">mn</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)):</span> <span class="c1"># object is given for the input coordinate</span>
+            <span class="n">_mn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mn</span><span class="o">.</span><span class="n">bbox</span><span class="p">(</span><span class="n">mn</span><span class="p">)</span>  <span class="c1"># get the bounding box of the object.</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># numerical coordinate</span>
+            <span class="n">_mn</span> <span class="o">=</span> <span class="n">mn</span>
+
         <span class="n">xy0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="p">[</span><span class="n">mn</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
         <span class="n">xy1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">abs2phy</span><span class="p">[</span><span class="n">mn</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
         <span class="c1"># _xy = np.array([[xy0[0], xy0[1]], [xy1[0], xy1[1]]])</span>

@@ -587,23 +587,6 @@ The last object corresponds to the routing object on the track.</p>
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid.route_via_track" title="laygo2.object.grid.RoutingGrid.route_via_track"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laygo2.object.grid.RoutingGrid.route_via_track</span></code></a></p>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> wire 라우팅 함수, track을 기준점으로 routing을 진행한다.</p>
-<dl>
-<dt>파라미터</dt><dd><ul class="simple">
-<li><p>track(numpy.ndarray): track의 좌표값과 방향을 담고 있는 list.</p></li>
-</ul>
-<p>수직 트랙일 경우 [v, None], 수평 트랙일 경우 [None, v]의 형태를
-가지고 있다 (v는 track의 좌표값).
-- mn(list(numpy.ndarray)): track을 통해 연결될 지점들의 좌표를
-담고 있는 list.</p>
-</dd>
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>list: 생성된 routing object들을 담고 있는 list.</p></li>
-</ul>
-<p>마지막 object가 track위의 routing object에 해당.</p>
-</dd>
-</dl>
 </dd></dl>
 
 </section>

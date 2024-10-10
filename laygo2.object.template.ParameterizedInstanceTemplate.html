@@ -494,9 +494,6 @@ document.write(`
 generating instances with varying size (bounding box) and pin
 configurations based on input parameters, such as instances mapped
 to Cadence Virtuoso’s pcells or Pycells.</p>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> ParameterizedInstanceTemplate 클래스는 입력 파라미터에 따라
-크기와 pin 정보가 가변하는 인스턴스를 생성하는 템플릿을 구현한다.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
@@ -651,8 +648,6 @@ objects for its input parameters.</p></li>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_ParameterizedInstanceTemplate_init.png"><img alt="_images/object_template_ParameterizedInstanceTemplate_init.png" src="_images/object_template_ParameterizedInstanceTemplate_init.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> ParameterizedInstanceTemplate 클래스의 생성자함수.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -709,8 +704,6 @@ bounding box to be computed.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_ParameterizedInstanceTemplate_bbox.png"><img alt="_images/object_template_ParameterizedInstanceTemplate_bbox.png" src="_images/object_template_ParameterizedInstanceTemplate_bbox.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> ParameterizedInstanceTemplate 객체의 bbox.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -796,22 +789,6 @@ input parameters.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_ParameterizedInstanceTemplate_generate.png"><img alt="_images/object_template_ParameterizedInstanceTemplate_generate.png" src="_images/object_template_ParameterizedInstanceTemplate_generate.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 템플릿으로부터 입력 파라미터에 따른 Instance 객체 생성.</p>
-<dl class="simple">
-<dt>파라미터</dt><dd><ul class="simple">
-<li><p>name(str): 생성할 인스턴스의 이름.</p></li>
-<li><p>shape(numpy.ndarray): (optional) 생성할 객체의 배열 shape.</p></li>
-<li><p>pitch(numpy.ndarray): (optional) 생성할 객체 간의 간격.</p></li>
-<li><p>params(dict) : 개체의 속성이 담긴 dictionary.</p></li>
-<li><p>transform(str): 생성할 개체의 변환 속성.</p></li>
-</ul>
-</dd>
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>laygo2.Instance: 생성된 객체</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -880,8 +857,6 @@ pin objects to be produced.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_ParameterizedInstanceTemplate_pins.png"><img alt="_images/object_template_ParameterizedInstanceTemplate_pins.png" src="_images/object_template_ParameterizedInstanceTemplate_pins.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> ParameterizedInstanceTemplate 객체의 pin dictionary 반환.</p>
 </dd></dl>
 
 <dl class="py method">

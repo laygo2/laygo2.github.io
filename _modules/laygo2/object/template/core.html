@@ -436,9 +436,6 @@ document.write(`
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The base class that defines the functions and attributes of the template.</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** Template의 기본동작과 속성을 정의한 기본 클래스.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
@@ -532,9 +529,6 @@ document.write(`
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    NativeInstanceTemplate class implements the template that generate Instance.</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** NativeInstanceTemplate 클래스는 기본 Instance를 반환하는 템플릿을 구현한다.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">libname</span> <span class="o">=</span> <span class="kc">None</span>
@@ -557,9 +551,6 @@ document.write(`
 <span class="sd">    .. image:: ../assets/img/object_template_NativeInstanceTemplate_libname.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** NativeInstanceTemplate 객체의 library 이름.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">cellname</span> <span class="o">=</span> <span class="kc">None</span>
@@ -582,9 +573,6 @@ document.write(`
 <span class="sd">    .. image:: ../assets/img/object_template_NativeInstanceTemplate_cellname.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** NativeInstanceTemplate 객체의 cellname.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_bbox</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
@@ -633,9 +621,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_template_NativeInstanceTemplate_init.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** NativeInstanceTemplate 클래스의 생성자함수.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">libname</span> <span class="o">=</span> <span class="n">libname</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cellname</span> <span class="o">=</span> <span class="n">cellname</span>
@@ -699,9 +684,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_template_NativeInstanceTemplate_bbox.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** NativeInstanceTemplate 객체의 bbox.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bbox</span></div>
 
@@ -748,9 +730,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_template_ParameterizedInstanceTemplate_pins.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** NativeInstanceTemplate 객체의 pin dictionary 반환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pins</span></div>
 
@@ -825,9 +804,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_template_ParameterizedInstanceTemplate_generate.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** 템플릿으로부터 Instance 객체 생성.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">inst</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span>
             <span class="n">libname</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">libname</span><span class="p">,</span>
@@ -895,9 +871,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_template_NativeInstanceTemplate_export_to_dict.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** NativeInstanceTemplate 의 정보가 담긴 Dictonary 반환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">db</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">db</span><span class="p">[</span><span class="s2">&quot;libname&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">libname</span>
@@ -920,10 +893,6 @@ document.write(`
 <span class="sd">    configurations based on input parameters, such as instances mapped </span>
 <span class="sd">    to Cadence Virtuoso&#39;s pcells or Pycells.</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** ParameterizedInstanceTemplate 클래스는 입력 파라미터에 따라 </span>
-<span class="sd">    크기와 pin 정보가 가변하는 인스턴스를 생성하는 템플릿을 구현한다. </span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">libname</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1020,9 +989,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_template_ParameterizedInstanceTemplate_init.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** ParameterizedInstanceTemplate 클래스의 생성자함수.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">libname</span> <span class="o">=</span> <span class="n">libname</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cellname</span> <span class="o">=</span> <span class="n">cellname</span>
@@ -1088,9 +1054,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_template_ParameterizedInstanceTemplate_bbox.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** ParameterizedInstanceTemplate 객체의 bbox.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bbox</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span></div>
 
@@ -1157,9 +1120,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_template_ParameterizedInstanceTemplate_pins.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** ParameterizedInstanceTemplate 객체의 pin dictionary 반환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pins</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span></div>
 
@@ -1251,18 +1211,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_template_ParameterizedInstanceTemplate_generate.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** 템플릿으로부터 입력 파라미터에 따른 Instance 객체 생성.</span>
-
-<span class="sd">        파라미터</span>
-<span class="sd">            - name(str): 생성할 인스턴스의 이름.</span>
-<span class="sd">            - shape(numpy.ndarray): (optional) 생성할 객체의 배열 shape.</span>
-<span class="sd">            - pitch(numpy.ndarray): (optional) 생성할 객체 간의 간격.</span>
-<span class="sd">            - params(dict) : 개체의 속성이 담긴 dictionary.</span>
-<span class="sd">            - transform(str): 생성할 개체의 변환 속성.</span>
-<span class="sd">        반환값</span>
-<span class="sd">            - laygo2.Instance: 생성된 객체</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># xy = xy + np.dot(self.xy(params)[0], tf.Mt(transform).T)</span>
         <span class="n">inst</span> <span class="o">=</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span>
@@ -1292,11 +1240,6 @@ document.write(`
 <span class="sd">    UserDefinedTemplate class implements the template that generates </span>
 <span class="sd">    a VirtualInstance object corresponding to the template and input </span>
 <span class="sd">    parameters.</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** UserDefinedTemplate 클래스는 VirtualInstance를 반환하는 </span>
-<span class="sd">    템플릿을 구현한다.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -1440,17 +1383,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_template_UserDefinedTemplate_init.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** UserDefinedTemplate 클래스의 생성자 함수.</span>
-<span class="sd">        </span>
-<span class="sd">        파라미터</span>
-<span class="sd">            - bbox_func(callable): bbox를 연산하는 함수.</span>
-<span class="sd">            - pins_func(callable): pins를 생성하는 함수.</span>
-<span class="sd">            - generate_func(callable): VirtualInstance를 생성하는 함수.</span>
-<span class="sd">            - name(str): 템플릿 이름</span>
-<span class="sd">        반환값</span>
-<span class="sd">            - laygo2.object.template.UserDefinedTemplate</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_bbox</span> <span class="o">=</span> <span class="n">bbox_func</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_pins</span> <span class="o">=</span> <span class="n">pins_func</span>
@@ -1546,9 +1478,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_template_UserDefinedTemplate_bbox.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** UserDefinedTemplate 객체의 bbox 반환.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bbox</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span></div>
 
@@ -1648,9 +1577,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_template_UserDefinedTemplate_pins.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** UserDefinedTemplate 객체의 pin dictionary를 생성 및 반환하는 함수.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pins</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span></div>
 
@@ -1787,17 +1713,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_template_UserDefinedTemplate_generate.png</span>
 <span class="sd">          :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** 템플릿으로부터 입력 파라미터에 따른 VirtualInstance 객체 생성.</span>
-<span class="sd">        파라미터</span>
-<span class="sd">            - name(str): 생성할 인스턴스의 이름.</span>
-<span class="sd">            - shape(numpy.ndarray): (optional) 생성할 객체의 배열 shape.</span>
-<span class="sd">            - pitch(numpy.ndarray): (optional) 생성할 객체 간의 간격.</span>
-<span class="sd">            - params(dict) : 개체의 속성이 담긴 dictionary.</span>
-<span class="sd">            - transform(str): 생성할 개체의 변환 속성.</span>
-<span class="sd">        반환값</span>
-<span class="sd">            - laygo2.VirtualInstance: 생성된 객체</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">inst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generate</span><span class="p">(</span>
             <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="n">pitch</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span>

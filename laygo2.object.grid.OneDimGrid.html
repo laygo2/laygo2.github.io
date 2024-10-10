@@ -491,9 +491,6 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">OneDimGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([0])</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/core.html#OneDimGrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.OneDimGrid" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping" title="laygo2.object.grid.core.CircularMapping"><code class="xref py py-class docutils literal notranslate"><span class="pre">CircularMapping</span></code></a></p>
 <p>Class implementing one-dimensional abstract coordinates.</p>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-1차원 추상좌표를 구현하는 클래스.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
@@ -648,8 +645,6 @@ document.write(`
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_OneDimGrid_init.png"><img alt="_images/object_grid_OneDimGrid_init.png" src="_images/object_grid_OneDimGrid_init.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> OneDimGrid 클래스의 생성자함수.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -690,8 +685,6 @@ document.write(`
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_OneDimGrid_export_to_dict.png"><img alt="_images/object_grid_OneDimGrid_export_to_dict.png" src="_images/object_grid_OneDimGrid_export_to_dict.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 그리드의 정보를 담은 dict객체 반환.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -732,9 +725,6 @@ document.write(`
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_CircularMapping_elements.png"><img alt="_images/object_grid_CircularMapping_elements.png" src="_images/object_grid_CircularMapping_elements.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-순환 맵핑의 구성 요소로 이루어진 배열.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)">list</a></p>
@@ -754,8 +744,6 @@ coordinates into physical coordinates.</p>
 <span class="go">&lt;_AbsToPhyGridConverter object&gt;</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 추상 좌표에서 물리 좌표로 변환연산을 해주는 객체.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>self.abs2phy (laygo2._AbsToPhyGridConverter)</p>
@@ -787,8 +775,6 @@ coordinates into physical coordinates.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_OneDimGrid_name.png"><img alt="_images/object_grid_OneDimGrid_name.png" src="_images/object_grid_OneDimGrid_name.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 좌표계 이름.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
@@ -808,8 +794,6 @@ coordinates into abstract coordinates.</p>
 <span class="go">&lt;_PhyToAbsGridConverter object&gt;</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 물리 좌표에서 추상 좌표로 변환연산을 해주는 객체.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>self.phy2abs (laygo2._PhyToAbsGridConverter)</p>
@@ -831,8 +815,6 @@ the defined region are repeatedly expanded.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_OneDimGrid_range.png"><img alt="_images/object_grid_OneDimGrid_range.png" src="_images/object_grid_OneDimGrid_range.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 좌표계가 정의된 영역. 정의된 영역의 좌표들이 반복되는 형태로 확장된다.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
@@ -854,9 +836,6 @@ the defined region are repeatedly expanded.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_CircularMapping_shape.png"><img alt="_images/object_grid_CircularMapping_shape.png" src="_images/object_grid_CircularMapping_shape.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-순환 맵핑의 shape.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
@@ -877,8 +856,6 @@ the defined region are repeatedly expanded.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_OneDimGrid_width.png"><img alt="_images/object_grid_OneDimGrid_width.png" src="_images/object_grid_OneDimGrid_width.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 좌표계가 정의된 영역의 크기.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>

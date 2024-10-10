@@ -493,9 +493,6 @@ document.write(`
 <p>UserDefinedTemplate class implements the template that generates
 a VirtualInstance object corresponding to the template and input
 parameters.</p>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> UserDefinedTemplate 클래스는 VirtualInstance를 반환하는
-템플릿을 구현한다.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
 <details><summary>Inherited from <a class="reference internal" href="laygo2.object.template.Template.html#laygo2.object.template.Template" title="laygo2.object.template.core.Template"><code class="xref py py-class docutils literal notranslate"><span class="pre">Template</span></code></a></summary><div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
@@ -686,21 +683,6 @@ for its input parameters.</p></li>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_UserDefinedTemplate_init.png"><img alt="_images/object_template_UserDefinedTemplate_init.png" src="_images/object_template_UserDefinedTemplate_init.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> UserDefinedTemplate 클래스의 생성자 함수.</p>
-<dl class="simple">
-<dt>파라미터</dt><dd><ul class="simple">
-<li><p>bbox_func(callable): bbox를 연산하는 함수.</p></li>
-<li><p>pins_func(callable): pins를 생성하는 함수.</p></li>
-<li><p>generate_func(callable): VirtualInstance를 생성하는 함수.</p></li>
-<li><p>name(str): 템플릿 이름</p></li>
-</ul>
-</dd>
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>laygo2.object.template.UserDefinedTemplate</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -788,8 +770,6 @@ bounding box to be computed.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_UserDefinedTemplate_bbox.png"><img alt="_images/object_template_UserDefinedTemplate_bbox.png" src="_images/object_template_UserDefinedTemplate_bbox.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> UserDefinedTemplate 객체의 bbox 반환.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -920,24 +900,6 @@ bounding box to be computed.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_UserDefinedTemplate_generate.png"><img alt="_images/object_template_UserDefinedTemplate_generate.png" src="_images/object_template_UserDefinedTemplate_generate.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 템플릿으로부터 입력 파라미터에 따른 VirtualInstance 객체 생성.
-파라미터</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>name(str): 생성할 인스턴스의 이름.</p></li>
-<li><p>shape(numpy.ndarray): (optional) 생성할 객체의 배열 shape.</p></li>
-<li><p>pitch(numpy.ndarray): (optional) 생성할 객체 간의 간격.</p></li>
-<li><p>params(dict) : 개체의 속성이 담긴 dictionary.</p></li>
-<li><p>transform(str): 생성할 개체의 변환 속성.</p></li>
-</ul>
-</div></blockquote>
-<dl class="simple">
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>laygo2.VirtualInstance: 생성된 객체</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1039,8 +1001,6 @@ pin objects to be produced.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_template_UserDefinedTemplate_pins.png"><img alt="_images/object_template_UserDefinedTemplate_pins.png" src="_images/object_template_UserDefinedTemplate_pins.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> UserDefinedTemplate 객체의 pin dictionary를 생성 및 반환하는 함수.</p>
 </dd></dl>
 
 <dl class="py method">

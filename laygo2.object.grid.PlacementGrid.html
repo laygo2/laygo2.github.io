@@ -492,11 +492,6 @@ document.write(`
 <dd><p>Bases: <a class="reference internal" href="laygo2.object.grid.Grid.html#laygo2.object.grid.Grid" title="laygo2.object.grid.core.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Grid</span></code></a></p>
 <p>PlacementGrid class implements a grid for placement of Instance and
 VirtualInstance objects.</p>
-<p class="rubric">Notes</p>
-<dl class="simple">
-<dt><strong>(Korean)</strong> PlacementGrid 클래스는 Instance 및 VirtualInstance 개체들의</dt><dd><p>배치를 위한 격자 그리드를 구현한다.</p>
-</dd>
-</dl>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
@@ -711,22 +706,6 @@ VirtualInstance objects.</p>
 <span class="go">&lt;laygo2.object.grid.Grid object&gt; name: test, class: Grid, scope: [[0, 0], [100, 100]], elements: [array([ 0, 10, 20, 40, 50]), array([10, 20, 40, 50, 60])</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> Grid 클래스의 생성자함수.
-파라미터</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>name(str): 이름</p></li>
-<li><p>vgrid(laygo2.OneDimGrid): x좌표계 OneDimGrid 객체</p></li>
-<li><p>hgrid(laygo2.OneDimGrid): y좌표계 OneDimGrid 객체</p></li>
-</ul>
-</div></blockquote>
-<dl class="simple">
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>laygo2.Grid</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -929,15 +908,6 @@ of args.</p>
 <span class="go">[200, 1000]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<dl class="simple">
-<dt><strong>(Korean)</strong> 인스턴스 xy속성에 추상좌표를 매핑함.</dt><dd><p>파라미터
-- inst(laygo2.physical.instance): 배치할 인스턴스
-- mn(numpy.ndarray or list): 인스턴스를 배치할 추상좌표
-반환값
-- laygo2.physical.instance: 좌표가 수정된 인스턴스</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -973,8 +943,6 @@ point of obj.</p>
 <span class="go">&lt;laygo2.object.grid.Grid object&gt; name: test, class: Grid, scope: [[0, 0], [100, 100]], elements: [array([ 0, 10, 20, 40, 50]), array([10, 20, 40, 50, 60])</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 해당 Grid의 정보 출력.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1086,8 +1054,6 @@ If False, flip the current grid object.</p>
 <span class="go">g1_y</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> y좌표계 OneDimGrid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.OneDimGrid.html#laygo2.object.grid.OneDimGrid" title="laygo2.object.grid.OneDimGrid">OneDimGrid</a></p>
@@ -1108,8 +1074,6 @@ If False, flip the current grid object.</p>
 <span class="go">100</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 좌표계가 정의된 영역의 높이.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>numpy.int32</p>
@@ -1130,8 +1094,6 @@ If False, flip the current grid object.</p>
 <span class="go">[0, 100]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> height를 list로 반환.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
@@ -1168,8 +1130,6 @@ the x-coordinate system.</p>
 <span class="go">810</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> x좌표계 1차원 _PhyToAbsConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>_PhyToAbsGridConverter</p>
@@ -1201,9 +1161,6 @@ a coordinate system.</p>
 <span class="go">[800, 810]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-좌표계 2차원 _PhyToAbsConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>laygo2._PhyToAbsGridConverter</p>
@@ -1237,8 +1194,6 @@ a coordinate system.</p>
 <span class="go">810</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> y좌표계 1차원 _PhyToAbsConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>_PhyToAbsGridConverter</p>
@@ -1284,8 +1239,6 @@ a coordinate system.</p>
 <span class="go">[5, 5]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 좌표게 2차원 element의 길이.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
@@ -1312,8 +1265,6 @@ a coordinate system.</p>
 <span class="go">g1_x</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> x좌표계 OneDimGrid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.OneDimGrid.html#laygo2.object.grid.OneDimGrid" title="laygo2.object.grid.OneDimGrid">OneDimGrid</a></p>
@@ -1342,8 +1293,6 @@ a coordinate system.</p>
 <span class="go">100</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 좌표계가 정의된 영역의 폭.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>numpy.int32</p>
@@ -1367,8 +1316,6 @@ a coordinate system.</p>
 <span class="go">[100, 0]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> width를 list로 반환.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
@@ -1400,9 +1347,6 @@ a coordinate system.</p>
 <span class="go">[1]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-x좌표계 1차원 _AbsToPhyGridConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>_AbsToPhyGridConverter</p>
@@ -1434,8 +1378,6 @@ _AbsToPhyConverter of a coordinate system.</p>
 <span class="go">[1,0]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 2차원 _AbsToPhyConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>_AbsToPhyGridConverter</p>
@@ -1465,8 +1407,6 @@ of the y-coordinate system.</p>
 <span class="go">[0]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> y좌표계 1차원 _AbsToPhyGridConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>_AbsToPhyGridConverter</p>

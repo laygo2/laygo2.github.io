@@ -430,11 +430,6 @@ document.write(`
 <span class="sd">    PlacementGrid class implements a grid for placement of Instance and</span>
 <span class="sd">    VirtualInstance objects.</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** PlacementGrid 클래스는 Instance 및 VirtualInstance 개체들의</span>
-<span class="sd">        배치를 위한 격자 그리드를 구현한다.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;placement&quot;</span>
@@ -484,14 +479,6 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; print(i0.xy)</span>
 <span class="sd">        [200, 1000]</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** 인스턴스 xy속성에 추상좌표를 매핑함.</span>
-<span class="sd">            파라미터</span>
-<span class="sd">            - inst(laygo2.physical.instance): 배치할 인스턴스</span>
-<span class="sd">            - mn(numpy.ndarray or list): 인스턴스를 배치할 추상좌표</span>
-<span class="sd">            반환값</span>
-<span class="sd">            - laygo2.physical.instance: 좌표가 수정된 인스턴스</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">inst</span><span class="o">.</span><span class="n">xy</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">mn</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">inst</span></div>

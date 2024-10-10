@@ -491,8 +491,6 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">laygo2.object.grid.</span></span><span class="sig-name descname"><span class="pre">RoutingGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hgrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vwidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hwidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vextension</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hextension</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vlayer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hlayer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_vlayer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_hlayer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viamap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xcolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ycolor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary_grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vertical'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vextension0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hextension0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/laygo2/object/grid/routing.html#RoutingGrid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#laygo2.object.grid.RoutingGrid" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="laygo2.object.grid.Grid.html#laygo2.object.grid.Grid" title="laygo2.object.grid.core.Grid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Grid</span></code></a></p>
 <p>A class that implements wire connections in an abstract coordinate system.</p>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 추상 좌표계 상의 배선 동작을 구현하는 클래스.</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
@@ -869,29 +867,6 @@ document.write(`
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_init.png"><img alt="_images/object_grid_RoutingGrid_init.png" src="_images/object_grid_RoutingGrid_init.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-RoutingGrid 클래스의 생성자함수.
-파라미터
-name(str): Routing 객체의 이름
-vgrid(laygo2.OneDimGrid): x좌표계 OneDimGrid
-hgrid(laygo2.OneDimGrid): y좌표계 OneDimGrid
-vwidth(CircularMapping): x좌표계 Width
-hwidth(CircularMapping): y좌표계 Width
-vextension(CircularMapping): x좌표계의 extension
-hextension(CircularMapping): y좌표계의 extension
-vlayer(CircularMapping): x좌표계의 layer
-hlayer(CircularMapping): y좌표계의 layer
-pin_vlayer(CircularMapping): x좌표계 pin의 layer
-pin_hlayer(CircularMapping): y좌표계 pin의 layer
-xcolor(list): x좌표계 color
-ycolor(list): y좌표계 color
-viamap(CircularMappingArray): Grid의 Via map
-primary_grid(str): 길이가 0인 Wire방향
-반환값
-laygo2.RoutingGrid
-참조
-없음</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1087,22 +1062,6 @@ on the specified routing grid.</p>
 <span class="go">    master: None</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> pin 생성함수.</p>
-<dl class="simple">
-<dt>파라미터</dt><dd><ul class="simple">
-<li><p>name(str): Pin 이름</p></li>
-<li><p>mn(numpy.ndarray): Pin을 생성할 abstract 좌표</p></li>
-<li><p>direction(str): 방향 [optional]</p></li>
-<li><p>netname(str): Pin의 net이름 [optional]</p></li>
-<li><p>params(dict): Pin 속성 [optional]</p></li>
-</ul>
-</dd>
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>laygo2.physical.Pin: Pin object</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1222,15 +1181,6 @@ point of obj.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_route.png"><img alt="_images/object_grid_RoutingGrid_route.png" src="_images/object_grid_RoutingGrid_route.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-추상 좌표 위에 라우팅을 수행 하는 함수.
-파라미터
-mn(list(numpy.ndarray)): 배선을 수행할 2개 이상의 mn 좌표를 담고 있는 list.
-direction(str): None or “vertical”; path의 방향을 결정 (수평 or 수직) [optional].
-via_tag(list(Boolean)): Path에 via를 형성 할지를 결정하는 switch들을 담고 있는 list [optional].
-반환값
-list: 생성된 routing object들을 담고 있는 list.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1307,28 +1257,6 @@ The last object corresponds to the routing object on the track.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_route_via_track.png"><img alt="_images/object_grid_RoutingGrid_route_via_track.png" src="_images/object_grid_RoutingGrid_route_via_track.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> wire 라우팅 함수, track을 기준점으로 routing을 진행한다.</p>
-<dl class="simple">
-<dt>파라미터</dt><dd><ul class="simple">
-<li><dl class="simple">
-<dt>track(numpy.ndarray): track의 좌표값과 방향을 담고 있는 list.</dt><dd><p>수직 트랙일 경우 [v, None],
-수평 트랙일 경우 [None, v]의 형태를 가지고 있다 (v는 track의 좌표값).</p>
-</dd>
-</dl>
-</li>
-<li><p>mn(list(numpy.ndarray)): track을 통해 연결될 지점들의 좌표를 담고 있는 list.</p></li>
-</ul>
-</dd>
-<dt>반환값</dt><dd><ul class="simple">
-<li><dl class="simple">
-<dt>list: 생성된 routing object들을 담고 있는 list.</dt><dd><p>마지막 object가 track위의 routing object에 해당.</p>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1446,18 +1374,6 @@ corner of obj.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_via.png"><img alt="_images/object_grid_RoutingGrid_via.png" src="_images/object_grid_RoutingGrid_via.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> via 생성함수.</p>
-<dl class="simple">
-<dt>파라미터</dt><dd><ul class="simple">
-<li><p>mn(list(numpy.ndarray)): via를 생성할 mn좌표. 복수 개 입력 가능.</p></li>
-</ul>
-</dd>
-<dt>반환값</dt><dd><ul class="simple">
-<li><p>list(physical.PhysicalObject)): 생성된 via들을 담고 있는 list.</p></li>
-</ul>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1508,8 +1424,6 @@ corner of obj.</p>
 <span class="go">g1_y</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> y좌표계 OneDimGrid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.OneDimGrid.html#laygo2.object.grid.OneDimGrid" title="laygo2.object.grid.OneDimGrid">OneDimGrid</a></p>
@@ -1530,8 +1444,6 @@ corner of obj.</p>
 <span class="go">100</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 좌표계가 정의된 영역의 높이.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>numpy.int32</p>
@@ -1552,8 +1464,6 @@ corner of obj.</p>
 <span class="go">[0, 100]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> height를 list로 반환.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
@@ -1605,8 +1515,6 @@ corner of obj.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_hextension.png"><img alt="_images/object_grid_RoutingGrid_hextension.png" src="_images/object_grid_RoutingGrid_hextension.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 수평 wire들의 extension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping" title="laygo2.object.grid.CircularMapping">CircularMapping</a></p>
@@ -1712,8 +1620,6 @@ corner of obj.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_hlayer.png"><img alt="_images/object_grid_RoutingGrid_hlayer.png" src="_images/object_grid_RoutingGrid_hlayer.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 수평 wire들의 레이어정보.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping" title="laygo2.object.grid.CircularMapping">CircularMapping</a></p>
@@ -1769,8 +1675,6 @@ corner of obj.</p>
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.vwidth" title="laygo2.object.grid.RoutingGrid.vwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vwidth</span></code></a>, <a class="reference internal" href="#laygo2.object.grid.RoutingGrid.hwidth" title="laygo2.object.grid.RoutingGrid.hwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hwidth</span></code></a>, <a class="reference internal" href="#laygo2.object.grid.RoutingGrid.vextension" title="laygo2.object.grid.RoutingGrid.vextension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vextension</span></code></a>, <a class="reference internal" href="#laygo2.object.grid.RoutingGrid.hextension" title="laygo2.object.grid.RoutingGrid.hextension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hextension</span></code></a>, <a class="reference internal" href="#laygo2.object.grid.RoutingGrid.vextension0" title="laygo2.object.grid.RoutingGrid.vextension0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vextension0</span></code></a>, <a class="reference internal" href="#laygo2.object.grid.RoutingGrid.hextension0" title="laygo2.object.grid.RoutingGrid.hextension0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hextension0</span></code></a></p>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 수평 wire들의 폭.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping" title="laygo2.object.grid.CircularMapping">CircularMapping</a></p>
@@ -1802,8 +1706,6 @@ the x-coordinate system.</p>
 <span class="go">810</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> x좌표계 1차원 _PhyToAbsConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>_PhyToAbsGridConverter</p>
@@ -1835,9 +1737,6 @@ a coordinate system.</p>
 <span class="go">[800, 810]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-좌표계 2차원 _PhyToAbsConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>laygo2._PhyToAbsGridConverter</p>
@@ -1871,8 +1770,6 @@ a coordinate system.</p>
 <span class="go">810</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> y좌표계 1차원 _PhyToAbsConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>_PhyToAbsGridConverter</p>
@@ -1941,8 +1838,6 @@ a coordinate system.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_pin_hlayer.png"><img alt="_images/object_grid_RoutingGrid_pin_hlayer.png" src="_images/object_grid_RoutingGrid_pin_hlayer.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 수평 pin wire 들의 레이어정보.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping" title="laygo2.object.grid.CircularMapping">CircularMapping</a></p>
@@ -1994,8 +1889,6 @@ a coordinate system.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_pin_vlayer.png"><img alt="_images/object_grid_RoutingGrid_pin_vlayer.png" src="_images/object_grid_RoutingGrid_pin_vlayer.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 수직 pin wire들의 레이어 정보.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping" title="laygo2.object.grid.CircularMapping">CircularMapping</a></p>
@@ -2048,8 +1941,6 @@ a coordinate system.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_primary_grid.png"><img alt="_images/object_grid_RoutingGrid_primary_grid.png" src="_images/object_grid_RoutingGrid_primary_grid.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> Routing의 기본 방향 (길이가 0인 wire방향).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
@@ -2078,8 +1969,6 @@ a coordinate system.</p>
 <span class="go">[5, 5]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 좌표게 2차원 element의 길이.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
@@ -2106,8 +1995,6 @@ a coordinate system.</p>
 <span class="go">g1_x</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> x좌표계 OneDimGrid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.OneDimGrid.html#laygo2.object.grid.OneDimGrid" title="laygo2.object.grid.OneDimGrid">OneDimGrid</a></p>
@@ -2159,8 +2046,6 @@ a coordinate system.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_vextension.png"><img alt="_images/object_grid_RoutingGrid_vextension.png" src="_images/object_grid_RoutingGrid_vextension.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 수직 wire들의 extension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping" title="laygo2.object.grid.CircularMapping">CircularMapping</a></p>
@@ -2269,8 +2154,6 @@ a coordinate system.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_viamap.png"><img alt="_images/object_grid_RoutingGrid_viamap.png" src="_images/object_grid_RoutingGrid_viamap.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 그리드 교차점에 위치하는 via개채들을 담고있는배열.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.CircularMappingArray.html#laygo2.object.grid.CircularMappingArray" title="laygo2.object.grid.CircularMappingArray">CircularMappingArray</a></p>
@@ -2322,8 +2205,6 @@ a coordinate system.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_vlayer.png"><img alt="_images/object_grid_RoutingGrid_vlayer.png" src="_images/object_grid_RoutingGrid_vlayer.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 수직 wire들의 레이어 정보.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping" title="laygo2.object.grid.CircularMapping">CircularMapping</a></p>
@@ -2379,8 +2260,6 @@ a coordinate system.</p>
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="#laygo2.object.grid.RoutingGrid.vwidth" title="laygo2.object.grid.RoutingGrid.vwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vwidth</span></code></a>, <a class="reference internal" href="#laygo2.object.grid.RoutingGrid.hwidth" title="laygo2.object.grid.RoutingGrid.hwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hwidth</span></code></a>, <a class="reference internal" href="#laygo2.object.grid.RoutingGrid.vextension" title="laygo2.object.grid.RoutingGrid.vextension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vextension</span></code></a>, <a class="reference internal" href="#laygo2.object.grid.RoutingGrid.hextension" title="laygo2.object.grid.RoutingGrid.hextension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hextension</span></code></a>, <a class="reference internal" href="#laygo2.object.grid.RoutingGrid.vextension0" title="laygo2.object.grid.RoutingGrid.vextension0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vextension0</span></code></a>, <a class="reference internal" href="#laygo2.object.grid.RoutingGrid.hextension0" title="laygo2.object.grid.RoutingGrid.hextension0"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hextension0</span></code></a></p>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 수직 wire들의 폭.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping" title="laygo2.object.grid.CircularMapping">CircularMapping</a></p>
@@ -2404,8 +2283,6 @@ a coordinate system.</p>
 <span class="go">100</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 좌표계가 정의된 영역의 폭.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>numpy.int32</p>
@@ -2429,8 +2306,6 @@ a coordinate system.</p>
 <span class="go">[100, 0]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> width를 list로 반환.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)">numpy.ndarray</a></p>
@@ -2462,9 +2337,6 @@ a coordinate system.</p>
 <span class="go">[1]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong>
-x좌표계 1차원 _AbsToPhyGridConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>_AbsToPhyGridConverter</p>
@@ -2487,8 +2359,6 @@ x좌표계 1차원 _AbsToPhyGridConverter.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_xcolor.png"><img alt="_images/object_grid_RoutingGrid_xcolor.png" src="_images/object_grid_RoutingGrid_xcolor.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 수평 wire 들의 color.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping" title="laygo2.object.grid.CircularMapping">CircularMapping</a></p>
@@ -2520,8 +2390,6 @@ _AbsToPhyConverter of a coordinate system.</p>
 <span class="go">[1,0]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 2차원 _AbsToPhyConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>_AbsToPhyGridConverter</p>
@@ -2551,8 +2419,6 @@ of the y-coordinate system.</p>
 <span class="go">[0]</span>
 </pre></div>
 </div>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> y좌표계 1차원 _AbsToPhyGridConverter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>_AbsToPhyGridConverter</p>
@@ -2575,8 +2441,6 @@ of the y-coordinate system.</p>
 </div>
 <a class="reference internal image-reference" href="_images/object_grid_RoutingGrid_ycolor.png"><img alt="_images/object_grid_RoutingGrid_ycolor.png" src="_images/object_grid_RoutingGrid_ycolor.png" style="height: 250px;" />
 </a>
-<p class="rubric">Notes</p>
-<p><strong>(Korean)</strong> 수직 wire들의 color.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="laygo2.object.grid.CircularMapping.html#laygo2.object.grid.CircularMapping" title="laygo2.object.grid.CircularMapping">CircularMapping</a></p>

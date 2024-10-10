@@ -430,10 +430,6 @@ document.write(`
 <span class="k">class</span> <span class="nc">RoutingGrid</span><span class="p">(</span><span class="n">Grid</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A class that implements wire connections in an abstract coordinate system.</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 추상 좌표계 상의 배선 동작을 구현하는 클래스.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;routing&quot;</span>
@@ -486,10 +482,6 @@ document.write(`
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
 <span class="sd">    vwidth, hwidth, vextension, hextension, vextension0, hextension0</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 수직 wire들의 폭.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">hwidth</span> <span class="o">=</span> <span class="kc">None</span>
@@ -540,9 +532,6 @@ document.write(`
 <span class="sd">    --------</span>
 <span class="sd">    vwidth, hwidth, vextension, hextension, vextension0, hextension0</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 수평 wire들의 폭.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">vextension</span> <span class="o">=</span> <span class="kc">None</span>
@@ -589,9 +578,6 @@ document.write(`
 <span class="sd">    .. image:: ../assets/img/object_grid_RoutingGrid_vextension.png</span>
 <span class="sd">           :height: 250</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 수직 wire들의 extension.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">hextension</span> <span class="o">=</span> <span class="kc">None</span>
@@ -638,9 +624,6 @@ document.write(`
 <span class="sd">    .. image:: ../assets/img/object_grid_RoutingGrid_hextension.png</span>
 <span class="sd">           :height: 250 </span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 수평 wire들의 extension.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">vextension0</span> <span class="o">=</span> <span class="kc">None</span>
@@ -771,9 +754,6 @@ document.write(`
 <span class="sd">    .. image:: ../assets/img/object_grid_RoutingGrid_vlayer.png</span>
 <span class="sd">           :height: 250</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 수직 wire들의 레이어 정보.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">hlayer</span> <span class="o">=</span> <span class="kc">None</span>
@@ -820,9 +800,6 @@ document.write(`
 <span class="sd">    .. image:: ../assets/img/object_grid_RoutingGrid_hlayer.png</span>
 <span class="sd">           :height: 250</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 수평 wire들의 레이어정보.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">pin_vlayer</span> <span class="o">=</span> <span class="kc">None</span>
@@ -869,9 +846,6 @@ document.write(`
 <span class="sd">    .. image:: ../assets/img/object_grid_RoutingGrid_pin_vlayer.png</span>
 <span class="sd">           :height: 250</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 수직 pin wire들의 레이어 정보.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">pin_hlayer</span> <span class="o">=</span> <span class="kc">None</span>
@@ -918,9 +892,6 @@ document.write(`
 <span class="sd">    .. image:: ../assets/img/object_grid_RoutingGrid_pin_hlayer.png</span>
 <span class="sd">           :height: 250</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 수평 pin wire 들의 레이어정보.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">viamap</span> <span class="o">=</span> <span class="kc">None</span>
@@ -970,9 +941,6 @@ document.write(`
 <span class="sd">    .. image:: ../assets/img/object_grid_RoutingGrid_viamap.png</span>
 <span class="sd">           :height: 250</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 그리드 교차점에 위치하는 via개채들을 담고있는배열.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">primary_grid</span> <span class="o">=</span> <span class="s2">&quot;vertical&quot;</span>
@@ -1018,9 +986,6 @@ document.write(`
 <span class="sd">    .. image:: ../assets/img/object_grid_RoutingGrid_primary_grid.png</span>
 <span class="sd">           :height: 250</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** Routing의 기본 방향 (길이가 0인 wire방향).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">xcolor</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1038,9 +1003,6 @@ document.write(`
 <span class="sd">    .. image:: ../assets/img/object_grid_RoutingGrid_xcolor.png</span>
 <span class="sd">           :height: 250</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 수평 wire 들의 color.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">ycolor</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1058,9 +1020,6 @@ document.write(`
 <span class="sd">    .. image:: ../assets/img/object_grid_RoutingGrid_ycolor.png</span>
 <span class="sd">           :height: 250</span>
 
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    **(Korean)** 수직 wire들의 color.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="RoutingGrid.__init__">
@@ -1213,30 +1172,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_grid_RoutingGrid_init.png</span>
 <span class="sd">           :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        RoutingGrid 클래스의 생성자함수.</span>
-<span class="sd">        파라미터</span>
-<span class="sd">        name(str): Routing 객체의 이름</span>
-<span class="sd">        vgrid(laygo2.OneDimGrid): x좌표계 OneDimGrid</span>
-<span class="sd">        hgrid(laygo2.OneDimGrid): y좌표계 OneDimGrid</span>
-<span class="sd">        vwidth(CircularMapping): x좌표계 Width</span>
-<span class="sd">        hwidth(CircularMapping): y좌표계 Width</span>
-<span class="sd">        vextension(CircularMapping): x좌표계의 extension</span>
-<span class="sd">        hextension(CircularMapping): y좌표계의 extension</span>
-<span class="sd">        vlayer(CircularMapping): x좌표계의 layer</span>
-<span class="sd">        hlayer(CircularMapping): y좌표계의 layer</span>
-<span class="sd">        pin_vlayer(CircularMapping): x좌표계 pin의 layer</span>
-<span class="sd">        pin_hlayer(CircularMapping): y좌표계 pin의 layer</span>
-<span class="sd">        xcolor(list): x좌표계 color</span>
-<span class="sd">        ycolor(list): y좌표계 color</span>
-<span class="sd">        viamap(CircularMappingArray): Grid의 Via map</span>
-<span class="sd">        primary_grid(str): 길이가 0인 Wire방향</span>
-<span class="sd">        반환값</span>
-<span class="sd">        laygo2.RoutingGrid</span>
-<span class="sd">        참조</span>
-<span class="sd">        없음</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">vwidth</span> <span class="o">=</span> <span class="n">vwidth</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hwidth</span> <span class="o">=</span> <span class="n">hwidth</span>
@@ -1379,16 +1314,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_grid_RoutingGrid_route.png</span>
 <span class="sd">           :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)**</span>
-<span class="sd">        추상 좌표 위에 라우팅을 수행 하는 함수.</span>
-<span class="sd">        파라미터</span>
-<span class="sd">        mn(list(numpy.ndarray)): 배선을 수행할 2개 이상의 mn 좌표를 담고 있는 list.</span>
-<span class="sd">        direction(str): None or “vertical”; path의 방향을 결정 (수평 or 수직) [optional].</span>
-<span class="sd">        via_tag(list(Boolean)): Path에 via를 형성 할지를 결정하는 switch들을 담고 있는 list [optional].</span>
-<span class="sd">        반환값</span>
-<span class="sd">        list: 생성된 routing object들을 담고 있는 list.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># 1. Check whether the &quot;mn&quot; is physical object list or coordinate list.</span>
         <span class="n">__mn</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1545,14 +1470,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_grid_RoutingGrid_via.png</span>
 <span class="sd">           :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** via 생성함수.</span>
-
-<span class="sd">        파라미터</span>
-<span class="sd">            - mn(list(numpy.ndarray)): via를 생성할 mn좌표. 복수 개 입력 가능.</span>
-<span class="sd">        반환값</span>
-<span class="sd">            - list(physical.PhysicalObject)): 생성된 via들을 담고 있는 list.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># If mn contains multiple coordinates (or objects), place iteratively.</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mn</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
@@ -1648,18 +1565,6 @@ document.write(`
 <span class="sd">        .. image:: ../assets/img/object_grid_RoutingGrid_route_via_track.png</span>
 <span class="sd">           :height: 250</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** wire 라우팅 함수, track을 기준점으로 routing을 진행한다.</span>
-
-<span class="sd">        파라미터</span>
-<span class="sd">            - track(numpy.ndarray): track의 좌표값과 방향을 담고 있는 list.</span>
-<span class="sd">                수직 트랙일 경우 [v, None],</span>
-<span class="sd">                수평 트랙일 경우 [None, v]의 형태를 가지고 있다 (v는 track의 좌표값).</span>
-<span class="sd">            - mn(list(numpy.ndarray)): track을 통해 연결될 지점들의 좌표를 담고 있는 list.</span>
-<span class="sd">        반환값</span>
-<span class="sd">            - list: 생성된 routing object들을 담고 있는 list.</span>
-<span class="sd">                마지막 object가 track위의 routing object에 해당.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">mn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mn</span><span class="p">)</span>
         <span class="n">route</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -1770,18 +1675,6 @@ document.write(`
 <span class="sd">            params: None, , layer: [&#39;M2&#39; &#39;pin&#39;], netname: pin, shape: None,</span>
 <span class="sd">            master: None</span>
 
-<span class="sd">        Notes</span>
-<span class="sd">        -----</span>
-<span class="sd">        **(Korean)** pin 생성함수.</span>
-
-<span class="sd">        파라미터</span>
-<span class="sd">            - name(str): Pin 이름</span>
-<span class="sd">            - mn(numpy.ndarray): Pin을 생성할 abstract 좌표</span>
-<span class="sd">            - direction(str): 방향 [optional]</span>
-<span class="sd">            - netname(str): Pin의 net이름 [optional]</span>
-<span class="sd">            - params(dict): Pin 속성 [optional]</span>
-<span class="sd">        반환값</span>
-<span class="sd">            - laygo2.physical.Pin: Pin object</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">mn</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;PhysicalObject&quot;</span><span class="p">)</span> <span class="ow">or</span> \
             <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">mn</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">laygo2</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">physical</span><span class="o">.</span><span class="n">PhysicalObject</span><span class="p">)):</span> <span class="c1"># object is given for the input coordinate</span>

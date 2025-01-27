@@ -16,25 +16,28 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="_static/autoclasstoc.css?v=08871587" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -46,6 +49,7 @@
     <link rel="prev" title="Library class" href="laygo2.object.database.Library.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -61,19 +65,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -81,7 +74,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -89,8 +81,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -124,7 +116,7 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="laygo2 - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="laygo2 - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="laygo2 - Home"/>
   
   
 </a></div>
@@ -184,29 +176,21 @@
         <div class="navbar-item navbar-persistent--container">
           
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
         </div>
       
       
         <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -231,15 +215,11 @@ document.write(`
   
     <div class="navbar-persistent--mobile">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
     </div>
   
 
@@ -258,7 +238,8 @@ document.write(`
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -319,15 +300,11 @@ document.write(`
         
           <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -426,9 +403,14 @@ document.write(`
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -446,10 +428,6 @@ document.write(`
       
         <div class="header-article-item">
 
-
-
-
-
 <nav aria-label="Breadcrumb" class="d-print-none">
   <ul class="bd-breadcrumbs">
     
@@ -462,12 +440,12 @@ document.write(`
     <li class="breadcrumb-item"><a href="laygo2.html" class="nav-link">API Reference</a></li>
     
     
-    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    <li class="breadcrumb-item"><a href="laygo2.object.html" class="nav-link">laygo2.object package</a></li>
     
     
     <li class="breadcrumb-item"><a href="laygo2.object.database.html" class="nav-link">laygo2.object.database module</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Design class</li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Design class</span></li>
   </ul>
 </nav>
 </div>
@@ -698,46 +676,46 @@ document.write(`
 <p class="rubric">Public Data Attributes:</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bbox</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.bbox" title="laygo2.object.database.Design.bbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bbox</span></code></a></p></td>
 <td><p>Get design bounding box by taking union of instances' bounding boxes.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">libname</span></code></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.libname" title="laygo2.object.database.Design.libname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">libname</span></code></a></p></td>
+<td><p>Design object's library name.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cellname</span></code></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.cellname" title="laygo2.object.database.Design.cellname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cellname</span></code></a></p></td>
+<td><p>Design object's cell name.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rects</span></code></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.rects" title="laygo2.object.database.Design.rects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rects</span></code></a></p></td>
 <td><p>Dictionary containing Rectangle object affiliated with the Design object.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">r</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.r" title="laygo2.object.database.Design.r"><code class="xref py py-obj docutils literal notranslate"><span class="pre">r</span></code></a></p></td>
+<td><p>Alias of rects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.paths" title="laygo2.object.database.Design.paths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">paths</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">paths</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pins</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.pins" title="laygo2.object.database.Design.pins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pins</span></code></a></p></td>
 <td><p>Dictionary having the collection of Pin objects affiliated with the Design object.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">p</span></code></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.p" title="laygo2.object.database.Design.p"><code class="xref py py-obj docutils literal notranslate"><span class="pre">p</span></code></a></p></td>
+<td><p>Alias of pins.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">texts</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.texts" title="laygo2.object.database.Design.texts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">texts</span></code></a></p></td>
 <td><p>Dictionary containing Text objects affiliated with Design object.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">instances</span></code></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.instances" title="laygo2.object.database.Design.instances"><code class="xref py py-obj docutils literal notranslate"><span class="pre">instances</span></code></a></p></td>
 <td><p>Dictionary containing Instance objects affiliated with Design object.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">i</span></code></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.i" title="laygo2.object.database.Design.i"><code class="xref py py-obj docutils literal notranslate"><span class="pre">i</span></code></a></p></td>
+<td><p>Alias of instances.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">virtual_instances</span></code></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.virtual_instances" title="laygo2.object.database.Design.virtual_instances"><code class="xref py py-obj docutils literal notranslate"><span class="pre">virtual_instances</span></code></a></p></td>
 <td><p>Dictionary containing VirtualInstance objects affiliated with Design object.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">vi</span></code></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.vi" title="laygo2.object.database.Design.vi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vi</span></code></a></p></td>
+<td><p>Alias of virtual_instances.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">elements</span></code></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.elements" title="laygo2.object.database.Design.elements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">elements</span></code></a></p></td>
 <td><p>Element object dictionary.</p></td>
 </tr>
 </tbody>
@@ -745,16 +723,16 @@ document.write(`
 </div>
 <details><summary>Inherited from <a class="reference internal" href="laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase" title="laygo2.object.database.BaseDatabase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDatabase</span></code></a></summary><div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.name" title="laygo2.object.database.BaseDatabase.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
 <td><p>Name of BaseDatabase object.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">params</span></code></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.params" title="laygo2.object.database.BaseDatabase.params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">params</span></code></a></p></td>
 <td><p>BaseDatabase object's parameter dictionary.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">elements</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.elements" title="laygo2.object.database.BaseDatabase.elements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">elements</span></code></a></p></td>
 <td><p>Element object dictionary.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">noname_index</span></code></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.noname_index" title="laygo2.object.database.BaseDatabase.noname_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">noname_index</span></code></a></p></td>
 <td><p>Unique identifier index for unnamed objects.</p></td>
 </tr>
 </tbody>
@@ -765,73 +743,73 @@ document.write(`
 <p class="rubric">Public Methods:</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_libname</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.get_libname" title="laygo2.object.database.Design.get_libname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_libname</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_libname</span></code>(val)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.set_libname" title="laygo2.object.database.Design.set_libname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_libname</span></code></a>(val)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_cellname</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.get_cellname" title="laygo2.object.database.Design.get_cellname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_cellname</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_cellname</span></code>(val)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.set_cellname" title="laygo2.object.database.Design.set_cellname"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_cellname</span></code></a>(val)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_r</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.get_r" title="laygo2.object.database.Design.get_r"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_r</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_r</span></code>(val)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.set_r" title="laygo2.object.database.Design.set_r"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_r</span></code></a>(val)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_p</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.get_p" title="laygo2.object.database.Design.get_p"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_p</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_p</span></code>(val)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.set_p" title="laygo2.object.database.Design.set_p"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_p</span></code></a>(val)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_i</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.get_i" title="laygo2.object.database.Design.get_i"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_i</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_i</span></code>(val)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.set_i" title="laygo2.object.database.Design.set_i"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_i</span></code></a>(val)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_vi</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.get_vi" title="laygo2.object.database.Design.get_vi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_vi</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_vi</span></code>(val)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.set_vi" title="laygo2.object.database.Design.set_vi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_vi</span></code></a>(val)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iter__</span></code>()</p></td>
 <td><p>Element-mapped direct iterator function.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code>(name[, params, elements, libname])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.__init__" title="laygo2.object.database.Design.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(name[, params, elements, libname])</p></td>
 <td><p>Design class constructor function.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code>(item)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.Design.append.html#laygo2.object.database.Design.append" title="laygo2.object.database.Design.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(item)</p></td>
 <td><p>Add physical object to Design without taking any further actions.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#laygo2.object.database.Design.summarize" title="laygo2.object.database.Design.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
 <td><p>Get object information summary.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">place</span></code>(inst, grid[, mn, anchor_xy])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.Design.place.html#laygo2.object.database.Design.place" title="laygo2.object.database.Design.place"><code class="xref py py-obj docutils literal notranslate"><span class="pre">place</span></code></a>(inst, grid[, mn, anchor_xy])</p></td>
 <td><p>Place instance at abstract coordinate mn on abstract grid.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">route</span></code>(grid, mn[, direction, via_tag])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="laygo2.object.database.Design.route.html#laygo2.object.database.Design.route" title="laygo2.object.database.Design.route"><code class="xref py py-obj docutils literal notranslate"><span class="pre">route</span></code></a>(grid, mn[, direction, via_tag])</p></td>
 <td><p>Create wire object(s) for routing at abstract coordinate <strong>mn</strong>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">via</span></code>(grid, mn[, params])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.Design.via.html#laygo2.object.database.Design.via" title="laygo2.object.database.Design.via"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via</span></code></a>(grid, mn[, params])</p></td>
 <td><p>Create Via object(s) on abstract grid.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">route_via_track</span></code>(grid, mn, track[, via_tag])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="laygo2.object.database.Design.route_via_track.html#laygo2.object.database.Design.route_via_track" title="laygo2.object.database.Design.route_via_track"><code class="xref py py-obj docutils literal notranslate"><span class="pre">route_via_track</span></code></a>(grid, mn, track[, via_tag])</p></td>
 <td><p>Perform routing on the specified track with accessing wires to mn.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pin</span></code>(name, grid, mn[, direction, netname, params])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.Design.pin.html#laygo2.object.database.Design.pin" title="laygo2.object.database.Design.pin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pin</span></code></a>(name, grid, mn[, direction, netname, params])</p></td>
 <td><p>Create a Pin object over the abstract coordinates specified by mn, on the specified routing grid.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_to_template</span></code>([libname, cellname])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="laygo2.object.database.Design.export_to_template.html#laygo2.object.database.Design.export_to_template" title="laygo2.object.database.Design.export_to_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_to_template</span></code></a>([libname, cellname])</p></td>
 <td><p>Generate a NativeInstanceTemplate object corresponding to Design object.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_matched_rects_by_layer</span></code>(layer)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#laygo2.object.database.Design.get_matched_rects_by_layer" title="laygo2.object.database.Design.get_matched_rects_by_layer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_matched_rects_by_layer</span></code></a>(layer)</p></td>
 <td><p>Return a list containing physical objects matched with the layer input in Design object.</p></td>
 </tr>
 </tbody>
@@ -839,19 +817,19 @@ document.write(`
 </div>
 <details><summary>Inherited from <a class="reference internal" href="laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase" title="laygo2.object.database.BaseDatabase"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDatabase</span></code></a></summary><div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.keys" title="laygo2.object.database.BaseDatabase.keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></a>()</p></td>
 <td><p>Keys of elements.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">items</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.items" title="laygo2.object.database.BaseDatabase.items"><code class="xref py py-obj docutils literal notranslate"><span class="pre">items</span></code></a>()</p></td>
 <td><p>Key-object pairs of elements.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code>(pos)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code>()</p></td>
 <td><p>Return the object corresponding to pos.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__setitem__</span></code>(key, item)</p></td>
 <td><p>Add key/object pair.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code>(item)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.append" title="laygo2.object.database.BaseDatabase.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(item)</p></td>
 <td><p>Add physical object to BaseDatabase without taking any further actions.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iter__</span></code>()</p></td>
@@ -860,10 +838,10 @@ document.write(`
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code>()</p></td>
 <td><p>Return str(self).</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.summarize" title="laygo2.object.database.BaseDatabase.summarize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summarize</span></code></a>()</p></td>
 <td><p>Get object information summary.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code>(name[, params, elements])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="laygo2.object.database.BaseDatabase.html#laygo2.object.database.BaseDatabase.__init__" title="laygo2.object.database.BaseDatabase.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(name[, params, elements])</p></td>
 <td><p>BaseDatabase class constructor function.</p></td>
 </tr>
 </tbody>
@@ -1172,7 +1150,7 @@ on the specified routing grid.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Pin name.</p></li>
-<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>numpy.ndarray</em></a>) – Abstract coordinates for generating Pin.</p></li>
+<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>numpy.ndarray</em></a>) – Abstract coordinates for generating Pin.</p></li>
 <li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional.</em>) – Direction.</p></li>
 <li><p><strong>netname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional.</em>) – Net name of Pin.</p></li>
 <li><p><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a><em>, </em><em>optional</em>) – Pin attributes.</p></li>
@@ -1257,7 +1235,7 @@ on the specified routing grid.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>inst</strong> (<a class="reference internal" href="laygo2.object.physical.Instance.html#laygo2.object.physical.Instance" title="laygo2.object.physical.Instance"><em>laygo2.object.physical.Instance</em></a><em> or </em><a class="reference internal" href="laygo2.object.physical.VirtualInstance.html#laygo2.object.physical.VirtualInstance" title="laygo2.object.physical.VirtualInstance"><em>laygo2.object.physical.VirtualInstance</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a>) – Instance(s) to be placed (when list, placed in order).</p></li>
 <li><p><strong>grid</strong> (<a class="reference internal" href="laygo2.object.grid.PlacementGrid.html#laygo2.object.grid.PlacementGrid" title="laygo2.object.grid.PlacementGrid"><em>laygo2.object.grid.PlacementGrid</em></a>) – Placement grid for instance placement.</p></li>
-<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>numpy.ndarray</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a>) – Abstract coordinate value [m, n] for instance placement.</p></li>
+<li><p><strong>mn</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>numpy.ndarray</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a>) – Abstract coordinate value [m, n] for instance placement.</p></li>
 <li><p><strong>anchor_xy</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a>) – A list that contains two overlap coordinates for placement
 (1st for absolute physical grid, 2nd for relative instance position).</p></li>
 </ul>
@@ -1356,7 +1334,7 @@ on the specified routing grid.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grid</strong> (<a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid" title="laygo2.object.grid.RoutingGrid"><em>laygo2.object.grid.RoutingGrid</em></a>) – Placement grid for wire placement.</p></li>
-<li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>numpy.ndarray</em></a><em>)</em>) – List containing two or more <strong>mn</strong> coordinates to be connected.</p></li>
+<li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>numpy.ndarray</em></a><em>)</em>) – List containing two or more <strong>mn</strong> coordinates to be connected.</p></li>
 <li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional.</em>) – None or “vertical” or “horizontal”. The direction of the routing
 object.</p></li>
 <li><p><strong>via_tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>(</em><em>Boolean</em><em>)</em><em>, </em><em>optional.</em>) – The list containing switches deciding whether to place via at
@@ -1459,8 +1437,8 @@ for details.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grid</strong> (<a class="reference internal" href="laygo2.object.grid.RoutingGrid.html#laygo2.object.grid.RoutingGrid" title="laygo2.object.grid.RoutingGrid"><em>laygo2.object.grid.RoutingGrid</em></a>) – The placement grid where the wire is placed on.</p></li>
-<li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>numpy.ndarray</em></a><em>)</em>) – list containing coordinates of the points being connected through a track</p></li>
-<li><p><strong>track</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>numpy.ndarray</em></a>) – list containing coordinate values and direction of a track.
+<li><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>numpy.ndarray</em></a><em>)</em>) – list containing coordinates of the points being connected through a track</p></li>
+<li><p><strong>track</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>numpy.ndarray</em></a>) – list containing coordinate values and direction of a track.
 Vertical tracks have [v, None] format, while horizontal tracks have [None, v] format
 (v is the coordinates of the track).</p></li>
 <li><p><strong>via_tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>(</em><em>Boolean</em><em>)</em><em>, </em><em>optional.</em>) – The list containing switches deciding whether to place via at
@@ -1596,7 +1574,7 @@ The last object corresponds to the routing object on the track.</p>
 <dd><p>Create Via object(s) on abstract grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>numpy.ndarray</em></a><em>)</em>) – Abstract coordinate(s) that specify location(s) to insert via(s).</p>
+<dd class="field-odd"><p><strong>mn</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>(</em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>numpy.ndarray</em></a><em>)</em>) – Abstract coordinate(s) that specify location(s) to insert via(s).</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The list containing the generated via objects.</p>
@@ -2011,7 +1989,8 @@ Design object.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2070,13 +2049,13 @@ Design object.</p>
   </nav></div>
 
   <div class="sidebar-secondary-item">
-
-  <div class="tocsection sourcelink">
-    <a href="_sources/laygo2.object.database.Design.rst.txt">
-      <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-  </div>
-</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/laygo2.object.database.Design.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
 
 </div></div>
               
@@ -2091,8 +2070,8 @@ Design object.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -2125,7 +2104,8 @@ Design object.</p>
       
         <div class="footer-item">
 <p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
 </p></div>
       
     </div>
